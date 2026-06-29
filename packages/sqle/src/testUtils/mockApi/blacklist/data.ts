@@ -1,5 +1,9 @@
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  BlacklistResV1RuleScopeModeEnum,
+  BlacklistResV1TypeEnum,
+  MatchConditionReqV1TypeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const mockBlacklistData: IBlacklistResV1[] = [
   {
@@ -8,22 +12,40 @@ export const mockBlacklistData: IBlacklistResV1[] = [
     type: BlacklistResV1TypeEnum.sql,
     content: 'SELECT 1;',
     matched_count: 1,
-    last_match_time: '2024-08-22T11:04:29.543+08:00'
+    last_match_time: '2024-08-22T11:04:29.543+08:00',
+    rule_scope_mode: BlacklistResV1RuleScopeModeEnum.all,
+    created_by: 'admin',
+    created_at: '2024-08-22 11:04:29'
   },
   {
     blacklist_id: 2,
-    desc: 'test2',
+    desc: '业务主键查询',
     type: BlacklistResV1TypeEnum.fp_sql,
     content: 'SELECT 1;',
     matched_count: 10,
-    last_match_time: undefined
+    last_match_time: undefined,
+    rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
+    rule_scope: ['dml_check_where_is_invalid'] as unknown as undefined,
+    match_conditions: [
+      {
+        type: MatchConditionReqV1TypeEnum.audit_task_type,
+        content: 'mysql_slow_log'
+      },
+      {
+        type: MatchConditionReqV1TypeEnum.audit_task_id,
+        content: '100'
+      }
+    ],
+    created_by: 'zhangsan',
+    created_at: '2026-06-29 10:00:00'
   },
   {
     blacklist_id: 3,
     desc: 'test3',
     type: BlacklistResV1TypeEnum.ip,
     content: '127.0.0.1',
-    matched_count: 0
+    matched_count: 0,
+    rule_scope_mode: BlacklistResV1RuleScopeModeEnum.all
   },
   {
     blacklist_id: 4,
@@ -51,3 +73,5 @@ export const mockBlacklistData: IBlacklistResV1[] = [
     type: BlacklistResV1TypeEnum.instance
   }
 ];
+
+export const mockBlacklistDetailData: IBlacklistResV1 = mockBlacklistData[1];

@@ -19,7 +19,8 @@ import SQLManageAnalyze from '.';
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useParams: jest.fn()
+    useParams: jest.fn(),
+    useNavigate: () => jest.fn()
   };
 });
 
@@ -51,6 +52,9 @@ describe('SqlAnalyze/SQLManage', () => {
     jest
       .spyOn(SqlManage, 'GetSqlManageRemediationV1')
       .mockImplementation(() => resolveThreeSecond({}));
+    jest
+      .spyOn(SqlManage, 'GetSqlManageListV2')
+      .mockImplementation(() => resolveThreeSecond([]));
     return spy;
   };
 

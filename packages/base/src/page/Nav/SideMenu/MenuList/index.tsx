@@ -13,6 +13,28 @@ import { sideMenuData } from './menus/menu.data';
 import { dmsSideMenuData } from './menus/menu.data.dms';
 // #endif
 
+const stripCustomMenuItemProps = (
+  items: CustomMenuItemType[]
+): MenuProps['items'] =>
+  items.map((item) => {
+    if (!item) {
+      return null;
+    }
+
+    const { structKey, role: menuRole, ...menuItem } = item;
+
+    if ('children' in menuItem && menuItem.children) {
+      return {
+        ...menuItem,
+        children: stripCustomMenuItemProps(
+          menuItem.children as CustomMenuItemType[]
+        )
+      };
+    }
+
+    return menuItem;
+  });
+
 const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
   const location = useLocation();
 
@@ -27,7 +49,7 @@ const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
     menus = dmsSideMenuData(projectID, role);
     // #endif
 
-    return menus;
+    return stripCustomMenuItemProps(menus);
   }, [projectID, role, sqlOptimizationIsSupported]);
 
   const selectMenu = useCallback(

@@ -25,8 +25,6 @@ import {
   IBaseRes,
   IGetSqlManageRuleTipsResp,
   IGetSqlManageRemediationResp,
-  ICreateSqlManageRuleExceptionReqV1,
-  ICreateSqlManageRuleExceptionResV1,
   IGetSqlManageSqlAnalysisResp
 } from '../common.d';
 
@@ -135,24 +133,6 @@ export interface IGetSqlManageRemediationV1Params {
 }
 
 export interface IGetSqlManageRemediationV1Return extends IGetSqlManageRemediationResp {}
-
-export interface ICreateSqlManageRuleExceptionV1Params extends ICreateSqlManageRuleExceptionReqV1 {
-  project_name: string;
-
-  sql_manage_id: string;
-}
-
-export interface ICreateSqlManageRuleExceptionV1Return extends ICreateSqlManageRuleExceptionResV1 {}
-
-export interface IDeleteSqlManageRuleExceptionV1Params {
-  project_name: string;
-
-  sql_manage_id: string;
-
-  rule_name: string;
-}
-
-export interface IDeleteSqlManageRuleExceptionV1Return extends IBaseRes {}
 
 export interface IGetSqlManageSqlAnalysisV1Params {
   project_name: string;

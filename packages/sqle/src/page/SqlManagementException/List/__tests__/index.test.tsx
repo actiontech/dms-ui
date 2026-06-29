@@ -14,6 +14,15 @@ import {
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
+jest.mock('../../../../hooks/useRuleTips', () => ({
+  __esModule: true,
+  default: () => ({
+    updateRuleTips: jest.fn(),
+    ruleNameDescMap: new Map(),
+    mapRuleNamesToSelectValues: jest.fn((values: string[]) => values)
+  })
+}));
+
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
@@ -82,8 +91,8 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(getBlacklistSpy).toHaveBeenCalledTimes(2);
-    expect(getBlacklistSpy).toHaveBeenNthCalledWith(2, {
+    expect(getBlacklistSpy).toHaveBeenCalledTimes(3);
+    expect(getBlacklistSpy).toHaveBeenNthCalledWith(3, {
       fuzzy_search_content: searchText,
       page_index: '1',
       page_size: '20',
@@ -103,12 +112,14 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
   it('should hide table actions', async () => {
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isAdmin: false
+      isAdmin: false,
+      isProjectManager: jest.fn().mockReturnValue(false)
     }));
     superRender(<SqlManagementExceptionList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
+    expect(screen.queryAllByText('查看例外详情').length).toBeGreaterThan(0);
     useCurrentUserSpy.mockClear();
     cleanup();
     useCurrentUserSpy.mockImplementation(() => ({

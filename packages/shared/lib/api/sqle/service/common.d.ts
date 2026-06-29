@@ -442,8 +442,6 @@ export interface IBlacklistResV1 {
 
   matched_count?: number;
 
-  reason?: string;
-
   rule_scope?: undefined;
 
   rule_scope_mode?: BlacklistResV1RuleScopeModeEnum;
@@ -554,8 +552,6 @@ export interface ICreateBlacklistReqV1 {
 
   match_conditions?: IMatchConditionReqV1[];
 
-  reason?: string;
-
   rule_scope?: string;
 
   type?: CreateBlacklistReqV1TypeEnum;
@@ -631,26 +627,6 @@ export interface ICreateSQLAuditRecordResV1 {
   code?: number;
 
   data?: ISQLAuditRecordResData;
-
-  message?: string;
-}
-
-export interface ICreateSqlManageRuleExceptionDataV1 {
-  blacklist_id?: number;
-
-  synced_sql_manage_id?: number;
-}
-
-export interface ICreateSqlManageRuleExceptionReqV1 {
-  reason?: string;
-
-  rule_name?: string;
-}
-
-export interface ICreateSqlManageRuleExceptionResV1 {
-  code?: number;
-
-  data?: ICreateSqlManageRuleExceptionDataV1;
 
   message?: string;
 }
@@ -2349,6 +2325,22 @@ export interface IScheduledTaskDefaultOptionV1Rsp {
   message?: string;
 }
 
+export interface ISkippedByRuleExceptionItem {
+  created_at?: string;
+
+  created_by?: string;
+
+  desc?: string;
+
+  exception_id?: number;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
+}
+
 export interface ISource {
   sql_source_desc?: string;
 
@@ -2450,6 +2442,8 @@ export interface ISqlManage {
 
   schema_name?: string;
 
+  skipped_by_rule_exception?: ISkippedByRuleExceptionItem[];
+
   source?: ISource;
 
   sql?: string;
@@ -2471,6 +2465,8 @@ export interface ISqlManageRemediation {
   latest_audit_time?: string;
 
   rule_diff?: IRuleDiff;
+
+  skipped_by_rule_exception?: ISkippedByRuleExceptionItem[];
 
   sql?: string;
 
@@ -2687,8 +2683,6 @@ export interface IUpdateBlacklistReqV1 {
   desc?: string;
 
   match_conditions?: IMatchConditionReqV1[];
-
-  reason?: string;
 
   rule_scope?: string;
 

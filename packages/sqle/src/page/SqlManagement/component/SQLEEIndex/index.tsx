@@ -45,7 +45,7 @@ import type { MenuProps } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
+import { DB_TYPE_RULE_NAME_SEPARATOR } from '../../../../hooks/useRuleTips';
 import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
 import { actionsButtonData, defaultActionButton } from './index.data';

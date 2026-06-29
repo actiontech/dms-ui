@@ -13,7 +13,7 @@ import { SqlAnalyzeContStyleWrapper, SqlContStyleWrapper } from './style';
 import useTableSchema from './useTableSchema';
 import useSQLExecPlan from './useSQLExecPlan';
 import { SqlAnalyzeProps } from '.';
-import RemediationDiffCompare from '../../../components/RemediationDetailDrawer/RemediationDiffCompare';
+import RemediationComparePanel from '../../../components/RemediationDetailDrawer/RemediationComparePanel';
 
 const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
   const { t } = useTranslation();
@@ -25,6 +25,10 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     performanceStatistics,
     remediationCompare,
     remediationLoadFailed = false,
+    sqlManageId,
+    sqlManageContext,
+    status,
+    onRemediationRefresh,
     errorType = 'error'
   } = props;
 
@@ -112,7 +116,13 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
                         )}
                       />
                     ) : (
-                      <RemediationDiffCompare data={remediationCompare} />
+                      <RemediationComparePanel
+                        data={remediationCompare}
+                        sqlManageId={sqlManageId ?? remediationCompare?.id}
+                        sqlManageContext={sqlManageContext}
+                        status={status}
+                        onRefresh={onRemediationRefresh}
+                      />
                     )}
                   </Card>
                 )}

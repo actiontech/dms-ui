@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/lib/result';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ResponseCode } from '../../../data/common';
@@ -8,13 +8,20 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
+  ISqlManage,
   ISqlManageRemediation,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { ISqlManageRuleExceptionContext } from '../../RuleException/index.data';
+import { resolveDbTypeFromAuditResults } from '../../RuleException/utils';
 
 import SqlAnalyze from '../SqlAnalyze';
+
+type ISqlManageWithInstanceId = ISqlManage & {
+  instance_id?: string;
+};
 
 const SQLManageAnalyze = () => {
   const urlParams = useParams<SQLManageAnalyzeUrlParams>();
@@ -27,6 +34,7 @@ const SQLManageAnalyze = () => {
     useState<IPerformanceStatistics>();
   const [remediationCompare, setRemediationCompare] =
     useState<ISqlManageRemediation>();
+  const [sqlManageRecord, setSqlManageRecord] = useState<ISqlManage>();
   const [remediationLoadFailed, setRemediationLoadFailed] =
     useState<boolean>(false);
   const [
@@ -38,16 +46,22 @@ const SQLManageAnalyze = () => {
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
-      const [analysisResult, remediationResult] = await Promise.allSettled([
-        SqlManage.GetSqlManageSqlAnalysisV1({
-          sql_manage_id: urlParams.sqlManageId ?? '',
-          project_name: projectName
-        }),
-        SqlManage.GetSqlManageRemediationV1({
-          sql_manage_id: urlParams.sqlManageId ?? '',
-          project_name: projectName
-        })
-      ]);
+      const [analysisResult, remediationResult, listResult] =
+        await Promise.allSettled([
+          SqlManage.GetSqlManageSqlAnalysisV1({
+            sql_manage_id: urlParams.sqlManageId ?? '',
+            project_name: projectName
+          }),
+          SqlManage.GetSqlManageRemediationV1({
+            sql_manage_id: urlParams.sqlManageId ?? '',
+            project_name: projectName
+          }),
+          SqlManage.GetSqlManageListV2({
+            project_name: projectName,
+            page_index: 1,
+            page_size: 100
+          })
+        ]);
 
       if (
         analysisResult.status === 'fulfilled' &&
@@ -88,6 +102,18 @@ const SQLManageAnalyze = () => {
         setRemediationCompare(undefined);
         setRemediationLoadFailed(true);
       }
+
+      if (
+        listResult.status === 'fulfilled' &&
+        listResult.value.data.code === ResponseCode.SUCCESS
+      ) {
+        const matchedRecord = listResult.value.data.data?.find(
+          (item) => `${item.id}` === `${urlParams.sqlManageId ?? ''}`
+        );
+        setSqlManageRecord(matchedRecord);
+      } else {
+        setSqlManageRecord(undefined);
+      }
     } finally {
       getSqlAnalyzeFinish();
     }
@@ -102,6 +128,28 @@ const SQLManageAnalyze = () => {
     getSqlAnalyze();
   }, [getSqlAnalyze]);
 
+  const sqlManageContext = useMemo<
+    ISqlManageRuleExceptionContext | undefined
+  >(() => {
+    const sql_fingerprint =
+      sqlManageRecord?.sql_fingerprint ?? remediationCompare?.sql_fingerprint;
+    if (!sql_fingerprint) {
+      return undefined;
+    }
+    const record = sqlManageRecord as ISqlManageWithInstanceId | undefined;
+    const db_type =
+      resolveDbTypeFromAuditResults(sqlManageRecord?.audit_result) ??
+      resolveDbTypeFromAuditResults(sqlManageRecord?.first_audit_result) ??
+      resolveDbTypeFromAuditResults(remediationCompare?.latest_audit_result) ??
+      resolveDbTypeFromAuditResults(remediationCompare?.first_audit_result);
+    return {
+      sql_fingerprint,
+      instance_id: record?.instance_id,
+      source: sqlManageRecord?.source,
+      db_type
+    };
+  }, [remediationCompare, sqlManageRecord]);
+
   return (
     <SqlAnalyze
       errorType={errorType}
@@ -111,6 +159,10 @@ const SQLManageAnalyze = () => {
       performanceStatistics={performanceStatistics}
       remediationCompare={remediationCompare}
       remediationLoadFailed={remediationLoadFailed}
+      sqlManageId={urlParams.sqlManageId}
+      sqlManageContext={sqlManageContext}
+      status={sqlManageRecord?.status}
+      onRemediationRefresh={getSqlAnalyze}
       loading={loading}
     />
   );

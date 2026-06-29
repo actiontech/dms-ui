@@ -4,9 +4,8 @@ import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
-import { useMemo, useEffect } from 'react';
+import { useMemo, useEffect, useState, useCallback } from 'react';
 import { PlusOutlined } from '@actiontech/icons';
-import { useCallback } from 'react';
 import { updateSqlManagementExceptModalStatus } from '../../../store/sqlManagementException';
 import { ModalName } from '../../../data/ModalName';
 import SqlManagementExceptionModal from '../Modal';
@@ -20,25 +19,33 @@ import {
   useTableRequestParams,
   TableToolbar,
   TableFilterContainer,
+  TableFilterButton,
   useTableFilterContainer,
-  FilterCustomProps
+  SearchInput
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   SqlManagementExceptionListColumns,
+  SqlManagementExceptionListFilterMeta,
   SqlManagementExceptionTableFilterParamType,
-  SqlManagementExceptionActions
+  SqlManagementExceptionActions,
+  SqlManagementExceptionFilterCustomProps
 } from './column';
-import { SqlManagementExceptionMatchTypeOptions } from '../index.data';
-import { message } from 'antd';
+import { message, Space } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useSqlManagementExceptionRedux from '../hooks/useSqlManagementExceptionRedux';
+import SqlManagementExceptionDetailDrawer from '../Detail';
+import { useSearchParams } from 'react-router-dom';
+import { RULE_EXCEPTION_DETAIL_QUERY_KEY } from '../../RuleException/index.data';
 
 const SqlManagementExceptionList = () => {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [messageApi, messageContextHolder] = message.useMessage();
+  const [detailBlacklistId, setDetailBlacklistId] = useState<number>();
+  const [detailDrawerOpen, setDetailDrawerOpen] = useState(false);
 
   const { projectName, projectArchive } = useCurrentProject();
 
@@ -87,24 +94,51 @@ const SqlManagementExceptionList = () => {
       return handleTableRequestError(blacklist.getBlacklistV1(params));
     },
     {
-      refreshDeps: [pagination, tableFilterInfo]
+      refreshDeps: [pagination, tableFilterInfo, searchKeyword, projectName]
     }
   );
 
-  const filterCustomProps = useMemo(() => {
-    return new Map<keyof IBlacklistResV1, FilterCustomProps>([
-      ['type', { options: SqlManagementExceptionMatchTypeOptions }]
-    ]);
-  }, []);
+  const listColumns = useMemo(() => SqlManagementExceptionListColumns(), []);
+
+  const filterCustomProps = useMemo(
+    () => SqlManagementExceptionFilterCustomProps(),
+    []
+  );
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(
-      SqlManagementExceptionListColumns(),
-      updateTableFilterInfo
+      listColumns,
+      updateTableFilterInfo,
+      SqlManagementExceptionListFilterMeta()
     );
+
+  const openDetailDrawer = useCallback((blacklistId?: number) => {
+    if (!blacklistId) {
+      return;
+    }
+    setDetailBlacklistId(blacklistId);
+    setDetailDrawerOpen(true);
+  }, []);
+
+  const closeDetailDrawer = useCallback(() => {
+    setDetailDrawerOpen(false);
+    setDetailBlacklistId(undefined);
+    if (searchParams.get(RULE_EXCEPTION_DETAIL_QUERY_KEY)) {
+      searchParams.delete(RULE_EXCEPTION_DETAIL_QUERY_KEY);
+      setSearchParams(searchParams, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
+
+  const onView = useCallback(
+    (selectRow?: IBlacklistResV1) => {
+      openDetailDrawer(selectRow?.blacklist_id);
+    },
+    [openDetailDrawer]
+  );
 
   const onUpdate = useCallback(
     (selectRow?: IBlacklistResV1) => {
+      closeDetailDrawer();
       updateSelectSqlManagementExceptionRecord(selectRow);
       dispatch(
         updateSqlManagementExceptModalStatus({
@@ -113,7 +147,7 @@ const SqlManagementExceptionList = () => {
         })
       );
     },
-    [dispatch, updateSelectSqlManagementExceptionRecord]
+    [closeDetailDrawer, dispatch, updateSelectSqlManagementExceptionRecord]
   );
 
   const onDelete = useCallback(
@@ -149,6 +183,13 @@ const SqlManagementExceptionList = () => {
     return unsubscribe;
   }, [refresh]);
 
+  useEffect(() => {
+    const blacklistId = searchParams.get(RULE_EXCEPTION_DETAIL_QUERY_KEY);
+    if (blacklistId) {
+      openDetailDrawer(Number(blacklistId));
+    }
+  }, [openDetailDrawer, searchParams]);
+
   return (
     <>
       {messageContextHolder}
@@ -170,24 +211,35 @@ const SqlManagementExceptionList = () => {
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
+        filterButton={false}
+        searchInput={false}
         loading={loading}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
+      >
+        <Space size={12} align="center" wrap>
+          <SearchInput
+            onChange={setSearchKeyword}
+            onSearch={() => {
+              refreshBySearchKeyword();
+            }}
+          />
+          <TableFilterButton
+            filterButtonMeta={filterButtonMeta}
+            updateAllSelectedFilterItem={updateAllSelectedFilterItem}
+            disabled={loading}
+          />
+          <TableFilterContainer
+            filterContainerMeta={filterContainerMeta}
+            updateTableFilterInfo={updateTableFilterInfo}
+            disabled={loading}
+            filterCustomProps={filterCustomProps}
+            style={{
+              borderBottom: 'none',
+              padding: 0,
+              backgroundColor: 'transparent'
+            }}
+          />
+        </Space>
+      </TableToolbar>
       <ActiontechTable
         dataSource={whitelistList?.list}
         rowKey={(record: IBlacklistResV1) => {
@@ -196,17 +248,25 @@ const SqlManagementExceptionList = () => {
         pagination={{
           total: whitelistList?.total ?? 0
         }}
-        columns={SqlManagementExceptionListColumns()}
+        columns={listColumns}
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={
+        actions={SqlManagementExceptionActions(
+          onView,
+          onUpdate,
+          onDelete,
           actionPermission && !projectArchive
-            ? SqlManagementExceptionActions(onUpdate, onDelete)
-            : undefined
-        }
+        )}
       />
       <SqlManagementExceptionModal />
+      <SqlManagementExceptionDetailDrawer
+        open={detailDrawerOpen}
+        blacklistId={detailBlacklistId}
+        onClose={closeDetailDrawer}
+        onEdit={onUpdate}
+        onDeleted={refresh}
+      />
     </>
   );
 };

@@ -13,11 +13,13 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useParams: jest.fn()
+    useParams: jest.fn(),
+    useNavigate: () => jest.fn()
   };
 });
 
@@ -49,11 +51,19 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       'getAuditPlanSqlAnalysisDataV1'
     );
     spy.mockImplementation(() => resolveThreeSecond(AuditPlanSqlAnalyzeData));
+    jest
+      .spyOn(SqlManage, 'GetSqlManageRemediationV1')
+      .mockImplementation(() => resolveThreeSecond({}));
+    jest
+      .spyOn(SqlManage, 'GetSqlManageListV2')
+      .mockImplementation(() => resolveThreeSecond([]));
     return spy;
   };
 
   test('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
+    const remediationSpy = jest.spyOn(SqlManage, 'GetSqlManageRemediationV1');
+    const listSpy = jest.spyOn(SqlManage, 'GetSqlManageListV2');
     const { container, baseElement } = renderWithReduxAndTheme(
       <ManagementConfAnalyze />,
       undefined,
@@ -73,6 +83,15 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       project_name: projectName,
       instance_audit_plan_id: '1',
       id: '2'
+    });
+    expect(remediationSpy).toHaveBeenCalledWith({
+      project_name: projectName,
+      sql_manage_id: '2'
+    });
+    expect(listSpy).toHaveBeenCalledWith({
+      project_name: projectName,
+      page_index: 1,
+      page_size: 100
     });
     expect(container).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3500));

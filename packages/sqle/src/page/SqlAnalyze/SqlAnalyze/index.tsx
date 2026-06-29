@@ -7,6 +7,8 @@ import {
   ITableMeta,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { ISqlManageRuleExceptionContext } from '../../RuleException/index.data';
+import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type SqlAnalyzeProps = {
   errorMessage: string;
@@ -16,6 +18,10 @@ export type SqlAnalyzeProps = {
   performanceStatistics?: IPerformanceStatistics;
   remediationCompare?: ISqlManageRemediation;
   remediationLoadFailed?: boolean;
+  sqlManageId?: string;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
+  onRemediationRefresh?: () => void;
   loading?: boolean;
 };
 

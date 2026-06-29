@@ -1,5 +1,5 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '../../../../testUtils/customRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -55,14 +55,14 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
   it('render create sql management exception', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const mockCreated = jest.fn();
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <CreateSqlManagementException onCreated={mockCreated} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('SQL指纹'));
-    fireEvent.input(screen.getByLabelText('描述'), {
+    fireEvent.input(screen.getByLabelText('添加备注'), {
       target: { value: 'test desc' }
     });
     fireEvent.input(screen.getByLabelText('SQL语句'), {
@@ -77,6 +77,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
       content: 'SELECT 1;',
       desc: 'test desc',
       type: CreateBlacklistReqV1TypeEnum.fp_sql,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
@@ -103,9 +104,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is ip', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('IP'));
@@ -119,6 +118,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
     expect(createBlacklistSpy).toHaveBeenCalledWith({
       content: '127.0.0.1',
       type: CreateBlacklistReqV1TypeEnum.ip,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
@@ -138,9 +138,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is cidr', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('网段'));
@@ -154,6 +152,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
     expect(createBlacklistSpy).toHaveBeenCalledWith({
       content: '192.168.21',
       type: CreateBlacklistReqV1TypeEnum.cidr,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
@@ -173,9 +172,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is host', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('主机名'));
@@ -189,6 +186,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
     expect(createBlacklistSpy).toHaveBeenCalledWith({
       content: '/',
       type: CreateBlacklistReqV1TypeEnum.host,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
@@ -208,9 +206,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is instance', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('数据源'));
@@ -227,6 +223,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
     expect(createBlacklistSpy).toHaveBeenCalledWith({
       content: instanceTipsMockData[0].instance_name,
       type: CreateBlacklistReqV1TypeEnum.instance,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
@@ -245,9 +242,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(3);

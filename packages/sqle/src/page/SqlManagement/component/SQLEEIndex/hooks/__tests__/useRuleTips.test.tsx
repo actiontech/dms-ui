@@ -1,4 +1,4 @@
-import useRuleTips from '../useRuleTips';
+import useRuleTips from '../../../../../../hooks/useRuleTips';
 import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';

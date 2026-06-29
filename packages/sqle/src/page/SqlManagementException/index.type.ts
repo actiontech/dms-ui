@@ -1,16 +1,24 @@
 import { FormInstance } from 'antd';
-import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
-type SqlManagementExceptionMatchType = {
-  [key in CreateBlacklistReqV1TypeEnum]?: string;
-};
+import {
+  BlacklistResV1RuleScopeModeEnum,
+  MatchConditionReqV1TypeEnum,
+  CreateBlacklistReqV1TypeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { MatchRow } from '../RuleException/utils';
 
 export type SqlManagementExceptionFormFieldType = {
-  type: CreateBlacklistReqV1TypeEnum;
+  match_rows: MatchRow[];
   desc?: string;
-} & Omit<SqlManagementExceptionMatchType, 'fp_sql'>;
+  rule_scope_mode: BlacklistResV1RuleScopeModeEnum;
+  rule_scope_db_type?: string;
+  rule_scope?: string[];
+};
 
 export type SqlManagementExceptionFormProps = {
   form: FormInstance<SqlManagementExceptionFormFieldType>;
   isUpdate?: boolean;
 };
+
+export type MatchRowFormType = MatchRow;
+
+export type { MatchConditionReqV1TypeEnum, CreateBlacklistReqV1TypeEnum };

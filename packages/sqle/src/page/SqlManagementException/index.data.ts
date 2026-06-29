@@ -1,9 +1,19 @@
 import { t } from '../../locale';
-import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  BlacklistResV1TypeEnum,
+  MatchConditionReqV1TypeEnum,
+  BlacklistResV1RuleScopeModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { getBlacklistV1FilterRuleScopeModeEnum } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.enum';
+import { BASE_MATCH_TYPE_VALUES } from '../RuleException/index.data';
 
-export const SqlManagementExceptionMatchTypeDirection: {
-  [key in BlacklistResV1TypeEnum]: string;
-} = {
+export const SqlManagementExceptionMatchTypeDirection: Record<
+  | BlacklistResV1TypeEnum
+  | MatchConditionReqV1TypeEnum.audit_task_type
+  | MatchConditionReqV1TypeEnum.audit_task_id
+  | MatchConditionReqV1TypeEnum.db_type,
+  string
+> = {
   [BlacklistResV1TypeEnum.sql]: t('sqlManagementException.matchType.sql'),
   [BlacklistResV1TypeEnum.fp_sql]: t(
     'sqlManagementException.matchType.fingerPrint'
@@ -17,63 +27,65 @@ export const SqlManagementExceptionMatchTypeDirection: {
   [BlacklistResV1TypeEnum.db_user]: t(
     'sqlManagementException.matchType.db_user'
   ),
-  [BlacklistResV1TypeEnum.audit_task_type]: t(
+  [MatchConditionReqV1TypeEnum.audit_task_type]: t(
     'sqlManagementException.matchType.audit_task_type'
   ),
-  [BlacklistResV1TypeEnum.audit_task_id]: t(
+  [MatchConditionReqV1TypeEnum.audit_task_id]: t(
     'sqlManagementException.matchType.audit_task_id'
+  ),
+  [MatchConditionReqV1TypeEnum.db_type]: t(
+    'sqlManagementException.matchType.db_type'
   )
 };
 
-export const SqlManagementExceptionMatchTypeOptions: Array<{
-  label: string;
-  value: BlacklistResV1TypeEnum;
-}> = [
+const createMatchTypeOption = (value: BlacklistResV1TypeEnum) => ({
+  label: SqlManagementExceptionMatchTypeDirection[value],
+  value
+});
+
+export const SqlManagementExceptionBaseMatchTypeOptions =
+  BASE_MATCH_TYPE_VALUES.map((value) =>
+    createMatchTypeOption(value as unknown as BlacklistResV1TypeEnum)
+  );
+
+export const SqlManagementExceptionExtendedMatchTypeOptions = [
+  MatchConditionReqV1TypeEnum.instance,
+  MatchConditionReqV1TypeEnum.audit_task_type,
+  MatchConditionReqV1TypeEnum.audit_task_id,
+  MatchConditionReqV1TypeEnum.db_type,
+  MatchConditionReqV1TypeEnum.fp_sql,
+  MatchConditionReqV1TypeEnum.sql,
+  MatchConditionReqV1TypeEnum.ip,
+  MatchConditionReqV1TypeEnum.cidr,
+  MatchConditionReqV1TypeEnum.host,
+  MatchConditionReqV1TypeEnum.db_user
+].map((value) => ({
+  label: SqlManagementExceptionMatchTypeDirection[value],
+  value
+}));
+
+/** @deprecated use SqlManagementExceptionBaseMatchTypeOptions */
+export const SqlManagementExceptionMatchTypeOptions =
+  SqlManagementExceptionBaseMatchTypeOptions;
+
+export const SqlManagementExceptionRuleScopeModeOptions = [
   {
-    label: SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.sql],
-    value: BlacklistResV1TypeEnum.sql
+    label: t('ruleException.form.ruleScopeAll'),
+    value: BlacklistResV1RuleScopeModeEnum.all
   },
   {
-    label:
-      SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.fp_sql],
-    value: BlacklistResV1TypeEnum.fp_sql
+    label: t('ruleException.form.ruleScopeSpecific'),
+    value: BlacklistResV1RuleScopeModeEnum.specific
+  }
+];
+
+export const SqlManagementExceptionRuleScopeFilterOptions = [
+  {
+    label: t('ruleException.form.ruleScopeAll'),
+    value: getBlacklistV1FilterRuleScopeModeEnum.all
   },
   {
-    label: SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.ip],
-    value: BlacklistResV1TypeEnum.ip
-  },
-  {
-    label:
-      SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.cidr],
-    value: BlacklistResV1TypeEnum.cidr
-  },
-  {
-    label:
-      SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.host],
-    value: BlacklistResV1TypeEnum.host
-  },
-  {
-    label:
-      SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.instance],
-    value: BlacklistResV1TypeEnum.instance
-  },
-  {
-    label:
-      SqlManagementExceptionMatchTypeDirection[BlacklistResV1TypeEnum.db_user],
-    value: BlacklistResV1TypeEnum.db_user
-  },
-  {
-    label:
-      SqlManagementExceptionMatchTypeDirection[
-        BlacklistResV1TypeEnum.audit_task_type
-      ],
-    value: BlacklistResV1TypeEnum.audit_task_type
-  },
-  {
-    label:
-      SqlManagementExceptionMatchTypeDirection[
-        BlacklistResV1TypeEnum.audit_task_id
-      ],
-    value: BlacklistResV1TypeEnum.audit_task_id
+    label: t('ruleException.form.ruleScopeSpecific'),
+    value: getBlacklistV1FilterRuleScopeModeEnum.specific
   }
 ];

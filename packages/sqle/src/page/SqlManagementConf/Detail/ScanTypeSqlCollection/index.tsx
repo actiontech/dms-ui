@@ -35,6 +35,7 @@ import {
   formatTime,
   getErrorMessage
 } from '@actiontech/shared/lib/utils/Common';
+import AuditResultMessage from '../../../../components/AuditResultMessage';
 import AuditLevelSummary from '../../../../components/AuditResultMessage/AuditLevelSummary';
 import AuditStatusTag from './AuditStatusTag';
 import {
@@ -51,6 +52,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { Link } from 'react-router-dom';
 import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
+import { ISqlManageRuleExceptionContext } from '../../../../page/RuleException/index.data';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
@@ -120,6 +123,29 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     },
     [openRemediationDrawer]
   );
+
+  const remediationSqlManageContext = useMemo<
+    ISqlManageRuleExceptionContext | undefined
+  >(() => {
+    if (!remediationDrawerRecord) {
+      return undefined;
+    }
+    const sql_fingerprint =
+      remediationDrawerRecord['sql_fingerprint'] ??
+      remediationDrawerRecord['fingerprint'];
+    if (!sql_fingerprint) {
+      return undefined;
+    }
+    return {
+      sql_fingerprint,
+      db_type: instanceType || undefined,
+      instance_id: remediationDrawerRecord['instance_id'],
+      source: {
+        sql_source_type: auditPlanType,
+        sql_source_ids: auditPlanId ? [auditPlanId] : undefined
+      }
+    };
+  }, [auditPlanId, auditPlanType, instanceType, remediationDrawerRecord]);
 
   const {
     data: tableMetas,
@@ -382,6 +408,17 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       record: ScanTypeSqlTableDataSourceItem,
       fieldName: 'first_audit_results' | 'audit_results'
     ) => {
+      const isBeingAudited = record['audit_status'] === BEING_AUDITED;
+
+      if (isBeingAudited) {
+        return (
+          <AuditResultMessage
+            auditResult={{}}
+            auditStatus={getAuditTaskSQLsV2FilterAuditStatusEnum.doing}
+          />
+        );
+      }
+
       const results = parseAuditResult(record[fieldName]);
 
       if (!results.length) {
@@ -518,6 +555,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         open={remediationDrawerVisible}
         onClose={closeRemediationDrawer}
         sqlManageId={remediationDrawerRecord?.id}
+        sqlManageContext={remediationSqlManageContext}
+        status={remediationDrawerRecord?.['status']}
+        title={t('sqlManagement.remediationCompare.drawerTitle')}
       />
     </ScanTypeSqlCollectionStyleWrapper>
   );

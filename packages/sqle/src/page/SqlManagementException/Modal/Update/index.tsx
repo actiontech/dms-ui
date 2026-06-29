@@ -17,16 +17,24 @@ import {
 import EventEmitter from '../../../../utils/EventEmitter';
 import SqlManagementExceptionForm from '../../Common/Form';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  IUpdateBlacklistReqV1,
-  ICreateBlacklistReqV1
-} from '@actiontech/shared/lib/api/sqle/service/common.d';
+import { IUpdateBlacklistReqV1 } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { SqlManagementExceptionFormFieldType } from '../../index.type';
-import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  blacklistRecordToFormValues,
+  formValuesToBlacklistPayload
+} from '../../utils';
+import { RULE_EXCEPTION_CONFLICT_CODE } from '../../../RuleException/index.type';
+import {
+  buildRuleExceptionDetailPath,
+  parseRuleExceptionConflictId
+} from '../../../RuleException/utils';
+import { useNavigate } from 'react-router-dom';
+import useRuleTips from '../../../../hooks/useRuleTips';
 
 const UpdateSqlManagementException = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { mapRuleNamesToSelectValues } = useRuleTips();
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -39,7 +47,7 @@ const UpdateSqlManagementException = () => {
       ]
   );
 
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
 
   const currentSqlManagementExceptionRecord = useSelector<
     IReduxState,
@@ -65,32 +73,29 @@ const UpdateSqlManagementException = () => {
   const submit = useCallback(async () => {
     const values = await form.validateFields();
     startCreate();
-
-    const content = () => {
-      if (
-        values.type === CreateBlacklistReqV1TypeEnum.sql ||
-        values.type === CreateBlacklistReqV1TypeEnum.fp_sql
-      ) {
-        return values.sql;
-      }
-
-      return values[values.type];
-    };
+    const payload = formValuesToBlacklistPayload(values);
 
     blacklist
       .updateBlacklistV1({
         project_name: projectName,
         blacklist_id: `${currentSqlManagementExceptionRecord?.blacklist_id}`,
-        content: content(),
-        desc: values.desc,
-        // list\create\update 接口type枚举相同 但是生成了三种枚举类型 所以这里需要做了断言
-        type: values.type as unknown as IUpdateBlacklistReqV1['type']
+        ...payload,
+        rule_scope: payload.rule_scope as string | undefined,
+        type: payload.type as unknown as IUpdateBlacklistReqV1['type']
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           EventEmitter.emit(EmitterKey.Refresh_Sql_management_Exception_List);
           closeModal();
           messageApi.success(t('sqlManagementException.modal.update.success'));
+          return;
+        }
+        if (res.data.code === RULE_EXCEPTION_CONFLICT_CODE) {
+          const conflictId = parseRuleExceptionConflictId(res.data.message);
+          messageApi.warning(t('ruleException.quickAdd.conflict'));
+          if (conflictId) {
+            navigate(buildRuleExceptionDetailPath(projectID, conflictId));
+          }
         }
       })
       .finally(() => {
@@ -101,33 +106,23 @@ const UpdateSqlManagementException = () => {
     createFinish,
     currentSqlManagementExceptionRecord,
     form,
+    messageApi,
+    navigate,
+    projectID,
     projectName,
     startCreate,
-    messageApi,
     t
   ]);
 
   useEffect(() => {
     if (visible) {
+      const values = blacklistRecordToFormValues(
+        currentSqlManagementExceptionRecord
+      );
       form.setFieldsValue({
-        desc: currentSqlManagementExceptionRecord?.desc,
-        type: currentSqlManagementExceptionRecord?.type as ICreateBlacklistReqV1['type']
+        ...values,
+        rule_scope: mapRuleNamesToSelectValues(values.rule_scope ?? [])
       });
-      if (
-        currentSqlManagementExceptionRecord?.type ===
-          BlacklistResV1TypeEnum.sql ||
-        currentSqlManagementExceptionRecord?.type ===
-          BlacklistResV1TypeEnum.fp_sql
-      ) {
-        form.setFieldsValue({
-          sql: currentSqlManagementExceptionRecord?.content
-        });
-      } else if (currentSqlManagementExceptionRecord?.type) {
-        form.setFieldsValue({
-          [currentSqlManagementExceptionRecord.type]:
-            currentSqlManagementExceptionRecord?.content
-        });
-      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);

@@ -20,11 +20,17 @@ import SqlManagementExceptionForm from '../../Common/Form';
 import { SqlManagementExceptionFormFieldType } from '../../index.type';
 import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { formValuesToBlacklistPayload } from '../../utils';
+import { RULE_EXCEPTION_CONFLICT_CODE } from '../../../RuleException/index.type';
+import { parseRuleExceptionConflictId } from '../../../RuleException/utils';
+import { useNavigate } from 'react-router-dom';
+import { buildRuleExceptionDetailPath } from '../../../RuleException/utils';
 
 const CreateSqlManagementException: React.FC<{
   onCreated?: () => void;
 }> = ({ onCreated }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -47,7 +53,7 @@ const CreateSqlManagementException: React.FC<{
   const [createLoading, { setTrue: startCreate, setFalse: createFinish }] =
     useBoolean();
 
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
 
   const closeModal = useCallback(() => {
     form.resetFields();
@@ -63,21 +69,11 @@ const CreateSqlManagementException: React.FC<{
   const submit = useCallback(async () => {
     const values = await form.validateFields();
     startCreate();
-    const content = () => {
-      if (
-        values.type === CreateBlacklistReqV1TypeEnum.sql ||
-        values.type === CreateBlacklistReqV1TypeEnum.fp_sql
-      ) {
-        return values.sql;
-      }
-
-      return values[values.type];
-    };
+    const payload = formValuesToBlacklistPayload(values);
     blacklist
       .createBlacklistV1({
-        content: content(),
-        desc: values.desc,
-        type: values.type,
+        ...payload,
+        rule_scope: payload.rule_scope as string | undefined,
         project_name: projectName
       })
       .then((res) => {
@@ -86,6 +82,14 @@ const CreateSqlManagementException: React.FC<{
           EventEmitter.emit(EmitterKey.Refresh_Sql_management_Exception_List);
           closeModal();
           messageApi.success(t('sqlManagementException.modal.add.success'));
+          return;
+        }
+        if (res.data.code === RULE_EXCEPTION_CONFLICT_CODE) {
+          const conflictId = parseRuleExceptionConflictId(res.data.message);
+          messageApi.warning(t('ruleException.quickAdd.conflict'));
+          if (conflictId) {
+            navigate(buildRuleExceptionDetailPath(projectID, conflictId));
+          }
         }
       })
       .finally(() => {
@@ -95,10 +99,12 @@ const CreateSqlManagementException: React.FC<{
     closeModal,
     createFinish,
     form,
+    messageApi,
+    navigate,
+    onCreated,
+    projectID,
     projectName,
     startCreate,
-    onCreated,
-    messageApi,
     t
   ]);
 
@@ -112,7 +118,12 @@ const CreateSqlManagementException: React.FC<{
   useEffect(() => {
     if (visible && !!currentSqlManagementExceptionRecord?.content) {
       form.setFieldsValue({
-        sql: currentSqlManagementExceptionRecord?.content
+        match_rows: [
+          {
+            type: CreateBlacklistReqV1TypeEnum.fp_sql,
+            content: currentSqlManagementExceptionRecord.content
+          }
+        ]
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

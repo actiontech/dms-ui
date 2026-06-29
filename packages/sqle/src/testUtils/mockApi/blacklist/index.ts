@@ -3,11 +3,12 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockBlacklistData } from './data';
+import { mockBlacklistData, mockBlacklistDetailData } from './data';
 
 class AuditWhiteList implements MockSpyApy {
   public mockAllApi(): void {
     this.getBlacklist();
+    this.getBlacklistByID();
     this.deleteBlackList();
     this.createBlacklist();
     this.updateBlacklist();
@@ -23,6 +24,16 @@ class AuditWhiteList implements MockSpyApy {
     return spy;
   }
 
+  public getBlacklistByID() {
+    const spy = jest.spyOn(blacklist, 'getBlacklistByIDV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockBlacklistDetailData
+      })
+    );
+    return spy;
+  }
+
   public deleteBlackList() {
     const spy = jest.spyOn(blacklist, 'deleteBlackList');
     spy.mockImplementation(() => createSpySuccessResponse({}));
@@ -31,7 +42,13 @@ class AuditWhiteList implements MockSpyApy {
 
   public createBlacklist() {
     const spy = jest.spyOn(blacklist, 'createBlacklistV1');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          blacklist_id: 42
+        }
+      })
+    );
     return spy;
   }
 

@@ -1,5 +1,6 @@
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { AuditResultDisplayMode } from './getAuditResultDisplayText';
+import { IAuditResultWithExemption } from '../../page/RuleException/index.type';
 
 /**
  * Swagger 类型 `IAuditResult` 之外、业务侧常用的补丁字段。
@@ -15,9 +16,13 @@ export type AuditResultExtra = {
       error_info?: string;
     }
   >;
+  is_exempted?: boolean;
+  exception_id?: number | null;
 };
 
-export type IAuditResultWithExtra = IAuditResult & AuditResultExtra;
+export type IAuditResultWithExtra = IAuditResult &
+  AuditResultExtra &
+  IAuditResultWithExemption;
 
 export type AuditResultMessageProps = {
   auditResult?: IAuditResultWithExtra;

@@ -9,7 +9,9 @@ export default {
     desc: 'Description',
     matchType: 'Match type',
     matchCount: 'Matched count',
-    lastMatchedTime: 'The last matching time'
+    lastMatchedTime: 'The last matching time',
+    ruleScopeAll: 'All rules',
+    ruleScopePartial: 'Partial rules'
   },
 
   matchType: {
@@ -20,6 +22,7 @@ export default {
     host: 'Host',
     instance: 'Name of DB instance',
     db_user: 'DB user',
+    db_type: 'DB type',
     audit_task_type: 'Audit task type',
     audit_task_id: 'Audit task ID'
   },
@@ -32,6 +35,10 @@ export default {
       'Are you sure you want to delete this SQL management whitelist item?'
   },
 
+  detail: {
+    auditTaskName: 'Audit task name'
+  },
+
   modal: {
     add: {
       title: 'Add SQL management whitelist',
@@ -39,7 +46,8 @@ export default {
     },
     update: {
       title: 'Update SQL management whitelist',
-      success: 'Successfully updated SQL management whitelist'
+      success: 'Successfully updated SQL management whitelist',
+      tips: 'When the match type or content is changed, the matched count and last matched time will be reset.'
     },
     sql: 'SQL'
   }

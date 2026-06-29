@@ -1,8 +1,21 @@
 import { screen, within } from '@testing-library/react';
 import { renderWithTheme } from '../../testUtils/customRender';
 import RemediationDiffCompare from './RemediationDiffCompare';
+import { IAuditResultWithExemption } from '../../page/RuleException/index.type';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => jest.fn()
+}));
 
 describe('sqle/components/RemediationDetailDrawer/RemediationDiffCompare', () => {
+  beforeEach(() => {
+    mockUseCurrentUser({
+      isAdmin: true,
+      isProjectManager: jest.fn().mockReturnValue(true)
+    });
+  });
   it('renders side-by-side audit results grouped into diff sections', () => {
     renderWithTheme(
       <RemediationDiffCompare
@@ -74,5 +87,40 @@ describe('sqle/components/RemediationDetailDrawer/RemediationDiffCompare', () =>
     ).not.toBeInTheDocument();
     expect(screen.queryByText('规则差异')).not.toBeInTheDocument();
     expect(screen.queryByText('新发现')).not.toBeInTheDocument();
+  });
+
+  it('excludes is_exempted audit results from diff section counts', () => {
+    renderWithTheme(
+      <RemediationDiffCompare
+        data={{
+          latest_audit_result: [
+            {
+              level: 'warn',
+              rule_name: 'active_rule',
+              message: 'active'
+            },
+            {
+              level: 'error',
+              rule_name: 'exempted_rule',
+              message: 'exempted',
+              is_exempted: true
+            }
+          ] as IAuditResultWithExemption[],
+          rule_diff: {
+            unchanged: [
+              { rule_name: 'active_rule' },
+              { rule_name: 'exempted_rule' }
+            ]
+          }
+        }}
+      />
+    );
+
+    const unchangedSection = screen
+      .getByText('未变动')
+      .closest('.diff-section') as HTMLElement;
+
+    expect(within(unchangedSection).getByText('1')).toBeInTheDocument();
+    expect(within(unchangedSection).getByText('exempted')).toBeInTheDocument();
   });
 });

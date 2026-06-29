@@ -69,9 +69,9 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByLabelText('字符串')).toBeChecked();
-    expect(screen.getByLabelText('描述')).toHaveValue(mackSelectRow.desc);
+    expect(screen.getByLabelText('添加备注')).toHaveValue(mackSelectRow.desc);
     expect(screen.getByLabelText('SQL语句')).toHaveValue(mackSelectRow.content);
-    fireEvent.input(screen.getByLabelText('描述'), {
+    fireEvent.input(screen.getByLabelText('添加备注'), {
       target: { value: 'test desc' }
     });
     fireEvent.input(screen.getByLabelText('SQL语句'), {
@@ -86,6 +86,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
       content: 'SELECT 1;',
       desc: 'test desc',
       type: BlacklistResV1TypeEnum.sql,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName,
       blacklist_id: `${mackSelectRow.blacklist_id}`
     });
@@ -123,9 +124,9 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByLabelText('SQL指纹')).toBeChecked();
-    expect(screen.getByLabelText('描述')).toHaveValue(mackSelectRow.desc);
+    expect(screen.getByLabelText('添加备注')).toHaveValue(mackSelectRow.desc);
     expect(screen.getByLabelText('SQL语句')).toHaveValue(mackSelectRow.content);
-    fireEvent.input(screen.getByLabelText('描述'), {
+    fireEvent.input(screen.getByLabelText('添加备注'), {
       target: { value: 'test desc' }
     });
     fireEvent.input(screen.getByLabelText('SQL语句'), {
@@ -138,6 +139,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
       content: 'SELECT 1;',
       desc: 'test desc',
       type: BlacklistResV1TypeEnum.fp_sql,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName,
       blacklist_id: `${mackSelectRow.blacklist_id}`
     });
@@ -176,6 +178,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     expect(updateBlacklistSpy).toHaveBeenCalledWith({
       content: '127.0.0.2',
       type: BlacklistResV1TypeEnum.ip,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName,
       blacklist_id: `${mackSelectRow.blacklist_id}`
     });
@@ -201,6 +204,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     expect(updateBlacklistSpy).toHaveBeenCalledWith({
       content: '10.182.12',
       type: BlacklistResV1TypeEnum.cidr,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName,
       blacklist_id: `${mackSelectRow.blacklist_id}`
     });
@@ -226,6 +230,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     expect(updateBlacklistSpy).toHaveBeenCalledWith({
       content: '/',
       type: BlacklistResV1TypeEnum.host,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName,
       blacklist_id: `${mackSelectRow.blacklist_id}`
     });
@@ -256,6 +261,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     expect(updateBlacklistSpy).toHaveBeenCalledWith({
       content: instanceTipsMockData[1].instance_name,
       type: BlacklistResV1TypeEnum.instance,
+      rule_scope: 'ALL',
       project_name: mockProjectInfo.projectName,
       blacklist_id: `${mackSelectRow.blacklist_id}`
     });

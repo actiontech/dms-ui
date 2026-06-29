@@ -121,11 +121,7 @@ export enum BlacklistResV1TypeEnum {
 
   instance = 'instance',
 
-  db_user = 'db_user',
-
-  audit_task_type = 'audit_task_type',
-
-  audit_task_id = 'audit_task_id'
+  db_user = 'db_user'
 }
 
 export enum CreateAuditTaskReqV1ExecModeEnum {
@@ -159,11 +155,7 @@ export enum CreateBlacklistReqV1TypeEnum {
 
   instance = 'instance',
 
-  db_user = 'db_user',
-
-  audit_task_type = 'audit_task_type',
-
-  audit_task_id = 'audit_task_id'
+  db_user = 'db_user'
 }
 
 export enum CreateCustomRuleReqV1LevelEnum {
@@ -281,7 +273,9 @@ export enum MatchConditionReqV1TypeEnum {
 
   audit_task_type = 'audit_task_type',
 
-  audit_task_id = 'audit_task_id'
+  audit_task_id = 'audit_task_id',
+
+  db_type = 'db_type'
 }
 
 export enum OperationRecordListStatusEnum {
@@ -391,11 +385,7 @@ export enum UpdateBlacklistReqV1TypeEnum {
 
   instance = 'instance',
 
-  db_user = 'db_user',
-
-  audit_task_type = 'audit_task_type',
-
-  audit_task_id = 'audit_task_id'
+  db_user = 'db_user'
 }
 
 export enum UpdateCustomRuleReqV1LevelEnum {

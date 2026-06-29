@@ -8,50 +8,80 @@ import {
   IAuditResult,
   ISqlManageRemediation
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IAuditResultWithExemption } from '../../page/RuleException/index.type';
+import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
+import { resolveRuleExceptionDbType } from '../../page/RuleException/utils';
+import { AuditResultWithRuleException } from '../RuleException';
 import { RemediationDiffCompareStyleWrapper } from './style';
 
 type RemediationDiffCompareProps = {
   data?: ISqlManageRemediation;
+  sqlManageId?: number | string;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
+  onRefresh?: () => void;
 };
 
 type DiffSectionVariant = 'optimized' | 'new' | 'unchanged';
 
 type DiffAuditResultListProps = {
-  auditResult: IAuditResult[];
+  auditResult: IAuditResultWithExemption[];
   optimizedRuleNames?: Set<string>;
+  sqlManageId?: number | string;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
+  onRefresh?: () => void;
+  showRuleExceptionActions?: boolean;
 };
 
 type DiffSectionProps = {
   title: string;
   variant: DiffSectionVariant;
-  auditResult: IAuditResult[];
+  auditResult: IAuditResultWithExemption[];
+  sqlManageId?: number | string;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
+  onRefresh?: () => void;
+  showRuleExceptionActions?: boolean;
 };
+
+const isExemptedAuditResult = (item: IAuditResultWithExemption) =>
+  !!item.is_exempted;
+
+const excludeExemptedAuditResults = (
+  auditResult?: IAuditResultWithExemption[]
+) => (auditResult ?? []).filter((item) => !isExemptedAuditResult(item));
 
 const ruleNameSet = (rules?: IAuditResult[]) =>
   new Set(
-    (rules ?? [])
+    excludeExemptedAuditResults(rules as IAuditResultWithExemption[])
       .map((rule) => rule.rule_name ?? '')
       .filter((ruleName) => !!ruleName)
   );
 
 const filterAuditResultsByRuleNames = (
-  auditResult: IAuditResult[] | undefined,
+  auditResult: IAuditResultWithExemption[] | undefined,
   ruleNames: Set<string>
 ) => {
-  return (auditResult ?? []).filter((item) => {
+  return excludeExemptedAuditResults(auditResult).filter((item) => {
     const ruleName = item.rule_name ?? '';
     return ruleName && ruleNames.has(ruleName);
   });
 };
 
 const groupAuditResults = (
-  auditResult: IAuditResult[] | undefined,
+  auditResult: IAuditResultWithExemption[] | undefined,
   highlightedRuleNames: Set<string>
 ) => {
-  const highlighted: IAuditResult[] = [];
-  const unchanged: IAuditResult[] = [];
+  const highlighted: IAuditResultWithExemption[] = [];
+  const unchanged: IAuditResultWithExemption[] = [];
 
   for (const item of auditResult ?? []) {
+    if (isExemptedAuditResult(item)) {
+      unchanged.push(item);
+      continue;
+    }
     const ruleName = item.rule_name ?? '';
     if (ruleName && highlightedRuleNames.has(ruleName)) {
       highlighted.push(item);
@@ -65,7 +95,11 @@ const groupAuditResults = (
 
 const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
   auditResult,
-  optimizedRuleNames
+  optimizedRuleNames,
+  sqlManageContext,
+  status,
+  onRefresh,
+  showRuleExceptionActions
 }) => {
   return (
     <Space direction="vertical" size={8} className="full-width-element">
@@ -80,7 +114,16 @@ const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
               isOptimized ? 'diff-item diff-item-optimized' : 'diff-item'
             }
           >
-            <AuditResultMessage auditResult={item} />
+            {showRuleExceptionActions ? (
+              <AuditResultWithRuleException
+                auditResult={item}
+                sqlManageContext={sqlManageContext}
+                status={status}
+                onRefresh={onRefresh}
+              />
+            ) : (
+              <AuditResultMessage auditResult={item} />
+            )}
           </div>
         );
       })}
@@ -89,7 +132,7 @@ const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
 };
 
 const DiffFirstAuditPanel: React.FC<{
-  auditResult: IAuditResult[];
+  auditResult: IAuditResultWithExemption[];
   optimizedRuleNames: Set<string>;
 }> = ({ auditResult, optimizedRuleNames }) => {
   if (!auditResult.length) {
@@ -111,7 +154,11 @@ const DiffFirstAuditPanel: React.FC<{
 const DiffSection: React.FC<DiffSectionProps> = ({
   title,
   variant,
-  auditResult
+  auditResult,
+  sqlManageContext,
+  status,
+  onRefresh,
+  showRuleExceptionActions
 }) => {
   const [expanded, setExpanded] = useState(true);
 
@@ -152,12 +199,18 @@ const DiffSection: React.FC<DiffSectionProps> = ({
           </Typography.Text>
         </div>
         <Typography.Text type="secondary" className="diff-section-count">
-          {auditResult.length}
+          {auditResult.filter((item) => !isExemptedAuditResult(item)).length}
         </Typography.Text>
       </div>
       {expanded && (
         <div className="diff-section-body">
-          <DiffAuditResultList auditResult={auditResult} />
+          <DiffAuditResultList
+            auditResult={auditResult}
+            sqlManageContext={sqlManageContext}
+            status={status}
+            onRefresh={onRefresh}
+            showRuleExceptionActions={showRuleExceptionActions}
+          />
         </div>
       )}
     </div>
@@ -165,9 +218,33 @@ const DiffSection: React.FC<DiffSectionProps> = ({
 };
 
 const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
-  data
+  data,
+  sqlManageId,
+  sqlManageContext,
+  status,
+  onRefresh
 }) => {
   const { t } = useTranslation();
+
+  const resolvedSqlManageContext = useMemo(() => {
+    const baseContext = sqlManageContext?.sql_fingerprint
+      ? sqlManageContext
+      : data?.sql_fingerprint
+      ? { sql_fingerprint: data.sql_fingerprint }
+      : undefined;
+    if (!baseContext) {
+      return undefined;
+    }
+    const db_type = resolveRuleExceptionDbType(
+      baseContext,
+      undefined,
+      data?.latest_audit_result as IAuditResult[] | undefined
+    );
+    if (!db_type) {
+      return baseContext;
+    }
+    return { ...baseContext, db_type };
+  }, [data?.latest_audit_result, data?.sql_fingerprint, sqlManageContext]);
 
   const { removedRuleNames, addedRuleNames } = useMemo(
     () => ({
@@ -179,13 +256,13 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
 
   const { optimizedResults, latestNew, latestUnchanged } = useMemo(() => {
     const latestGrouped = groupAuditResults(
-      data?.latest_audit_result,
+      data?.latest_audit_result as IAuditResultWithExemption[],
       addedRuleNames
     );
 
     return {
       optimizedResults: filterAuditResultsByRuleNames(
-        data?.first_audit_result,
+        data?.first_audit_result as IAuditResultWithExemption[],
         removedRuleNames
       ),
       latestNew: latestGrouped.highlighted,
@@ -198,7 +275,8 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
     removedRuleNames
   ]);
 
-  const firstAuditResults = data?.first_audit_result ?? [];
+  const firstAuditResults =
+    (data?.first_audit_result as IAuditResultWithExemption[]) ?? [];
 
   if (!data) {
     return <Empty />;
@@ -265,6 +343,10 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
                 title={t('sqlManagement.remediationCompare.diffSectionNew')}
                 variant="new"
                 auditResult={latestNew}
+                sqlManageContext={resolvedSqlManageContext}
+                status={status}
+                onRefresh={onRefresh}
+                showRuleExceptionActions
               />
               <DiffSection
                 title={t(
@@ -279,6 +361,10 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
                 )}
                 variant="unchanged"
                 auditResult={latestUnchanged}
+                sqlManageContext={resolvedSqlManageContext}
+                status={status}
+                onRefresh={onRefresh}
+                showRuleExceptionActions
               />
             </Space>
           ) : (

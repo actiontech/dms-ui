@@ -152,3 +152,46 @@ export const sqlManageListData = {
   sql_manage_optimized_num: 1,
   sql_manage_total_num: 2
 };
+
+export const remediationMockData = {
+  id: 1001,
+  latest_audit_result: [
+    {
+      rule_name: 'dml_check_affected_rows',
+      level: 'warn',
+      message: '影响行数过多',
+      db_type: 'MySQL',
+      is_exempted: false
+    },
+    {
+      rule_name: 'dml_check_where_is_invalid',
+      level: 'warn',
+      message: '无 WHERE 条件',
+      db_type: 'MySQL',
+      is_exempted: true,
+      exception_id: 42
+    }
+  ],
+  skipped_by_rule_exception: [
+    {
+      rule_name: 'dml_check_where_is_invalid',
+      level: 'warn',
+      message: '无 WHERE 条件',
+      created_by: 'zhangsan',
+      desc: '主键点查',
+      exception_id: 42,
+      created_at: '2026-06-29 14:30:00'
+    }
+  ],
+  rule_diff: {
+    resolved: [],
+    new: [
+      {
+        rule_name: 'dml_check_affected_rows',
+        level: 'warn',
+        message: '影响行数过多'
+      }
+    ],
+    unchanged: []
+  }
+};

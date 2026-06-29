@@ -9,7 +9,9 @@ export default {
     desc: '描述',
     matchType: '匹配类型',
     matchCount: '匹配次数',
-    lastMatchedTime: '最近一次匹配时间'
+    lastMatchedTime: '最近一次匹配时间',
+    ruleScopeAll: '全部规则',
+    ruleScopePartial: '部分规则'
   },
 
   matchType: {
@@ -20,6 +22,7 @@ export default {
     host: '主机名',
     instance: '数据源',
     db_user: '数据库用户',
+    db_type: '数据源类型',
     audit_task_type: '审核任务类型',
     audit_task_id: '审核任务ID'
   },
@@ -30,6 +33,10 @@ export default {
     deleting: '正在删除管控SQL例外语句...',
     deleteSuccess: '删除管控SQL例外语句成功',
     confirmDelete: '确认删除这条管控SQL例外么？'
+  },
+
+  detail: {
+    auditTaskName: '审核任务名称'
   },
 
   modal: {

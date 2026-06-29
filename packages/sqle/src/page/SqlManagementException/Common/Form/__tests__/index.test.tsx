@@ -8,7 +8,40 @@ import { SqlManagementExceptionFormFieldType } from '../../../index.type';
 import instance from '../../../../../testUtils/mockApi/instance';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+
+jest.mock('../../../../../hooks/useInstance', () => ({
+  __esModule: true,
+  default: () => ({
+    updateInstanceList: jest.fn(),
+    instanceIDOptions: [],
+    loading: false
+  })
+}));
+
+jest.mock('../../../../../hooks/useRuleTips', () => ({
+  __esModule: true,
+  default: () => ({
+    updateRuleTips: jest.fn(),
+    ruleTips: [],
+    generateRuleTipsSelectOptions: [],
+    generateFlatRuleOptionsByDbType: () => [],
+    dbTypeOptions: [],
+    ruleNameDescMap: new Map(),
+    mapRuleNamesToSelectValues: jest.fn((values: string[]) => values),
+    loading: false
+  }),
+  splitRuleTipSelectValue: (value: string) => value
+}));
+
+jest.mock('../../../hooks/useAuditTaskSelectOptions', () => ({
+  __esModule: true,
+  default: () => ({
+    auditTaskTypeOptions: [],
+    getAuditTaskIdOptions: () => [],
+    auditTaskTypeLoading: false,
+    auditTaskIdLoading: false
+  })
+}));
 
 describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
   let getInstanceTipListSpy: jest.SpyInstance;
@@ -35,42 +68,18 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
   it('should match snapshot', () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
-    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByLabelText('字符串')).toBeChecked();
-    expect(screen.getByLabelText('SQL语句')).toBeInTheDocument();
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(0);
+    expect(screen.getByText('匹配方式')).toBeInTheDocument();
+    expect(screen.getByText('添加条件')).toBeInTheDocument();
   });
 
-  it('render switch match type ', async () => {
-    const { baseElement } = customRender();
+  it('render unified match rows', async () => {
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(screen.getByLabelText('字符串')).toBeChecked();
-    expect(screen.getByLabelText('SQL语句')).toBeInTheDocument();
-
-    fireEvent.click(screen.getByText('SQL指纹'));
+    expect(screen.getByText('匹配方式')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('添加条件'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.getByLabelText('SQL指纹')).toBeChecked();
-    expect(screen.getByLabelText('SQL语句')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('IP'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(getBySelector('#ip')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('网段'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(getBySelector('#cidr')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('主机名'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(getBySelector('#host')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('数据源'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(getBySelector('#instance')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
+    expect(screen.getAllByText('数据源').length).toBeGreaterThan(0);
   });
 });

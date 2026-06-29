@@ -1,15 +1,22 @@
 import {
   ActiontechTableColumn,
+  ActiontechTableFilterMeta,
+  ActiontechTableFilterMetaValue,
   PageInfoWithoutIndexAndSize,
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { SqlManagementExceptionMatchTypeDirection } from '../index.data';
+import {
+  SqlManagementExceptionBaseMatchTypeOptions,
+  SqlManagementExceptionRuleScopeFilterOptions
+} from '../index.data';
+import {
+  MatchModeDisplay,
+  RuleScopeDisplay
+} from '../../../components/RuleException';
 
 export type SqlManagementExceptionTableFilterParamType =
   PageInfoWithoutIndexAndSize<
@@ -20,72 +27,103 @@ export type SqlManagementExceptionTableFilterParamType =
     'project_name'
   >;
 
-export const SqlManagementExceptionListColumns: () => ActiontechTableColumn<
+export const SqlManagementExceptionListFilterMeta: () => ActiontechTableFilterMeta<
   IBlacklistResV1,
   IGetBlacklistV1Params
 > = () => {
-  return [
-    {
-      dataIndex: 'content',
-      title: () => t('sqlManagementException.table.content'),
-      className: 'ellipsis-column-width',
-      render: (value, record) => {
-        if (
-          record.type === BlacklistResV1TypeEnum.sql ||
-          record.type === BlacklistResV1TypeEnum.fp_sql
-        ) {
-          return (
-            <SQLRenderer.Snippet
-              sql={value}
-              rows={2}
-              showCopyIcon
-              cuttingLength={200}
-            />
-          );
-        }
-        return value;
+  return new Map<
+    keyof IBlacklistResV1,
+    ActiontechTableFilterMetaValue<IGetBlacklistV1Params>
+  >([
+    [
+      'type',
+      {
+        filterCustomType: 'select',
+        filterKey: 'filter_type',
+        filterLabel: t('ruleException.table.matchMode'),
+        checked: false
       }
-    },
-    {
-      dataIndex: 'desc',
-      title: () => t('sqlManagementException.table.desc'),
-      className: 'ellipsis-column-width',
-      render: (desc) => {
-        if (!desc) return '-';
-        return <BasicTypographyEllipsis textCont={desc} />;
+    ],
+    [
+      'rule_scope_mode',
+      {
+        filterCustomType: 'select',
+        filterKey: 'filter_rule_scope_mode',
+        filterLabel: t('ruleException.table.ruleScope'),
+        checked: false
       }
-    },
-    {
-      dataIndex: 'type',
-      title: () => t('sqlManagementException.table.matchType'),
-      render: (type, record) => {
-        return type ? SqlManagementExceptionMatchTypeDirection[type] : '-';
-      },
-      filterCustomType: 'select',
-      filterKey: 'filter_type'
-    },
-    {
-      dataIndex: 'matched_count',
-      title: () => t('sqlManagementException.table.matchCount')
-    },
-    {
-      dataIndex: 'last_match_time',
-      title: () => t('sqlManagementException.table.lastMatchedTime'),
-      render: (value) => {
-        return formatTime(value, '-');
+    ],
+    [
+      'created_by',
+      {
+        filterCustomType: 'input',
+        filterKey: 'filter_created_by',
+        filterLabel: t('ruleException.table.createdBy'),
+        checked: false
       }
-    }
-  ];
+    ],
+    [
+      'created_at',
+      {
+        filterCustomType: 'date-range',
+        filterKey: ['filter_created_at_from', 'filter_created_at_to'],
+        filterLabel: t('ruleException.table.createdAt'),
+        checked: false
+      }
+    ]
+  ]);
 };
 
+export const SqlManagementExceptionListColumns = (): ActiontechTableColumn<
+  IBlacklistResV1,
+  IGetBlacklistV1Params
+> => [
+  {
+    dataIndex: 'type',
+    title: () => t('ruleException.table.matchMode'),
+    className: 'ellipsis-column-width',
+    render: (_, record) => <MatchModeDisplay record={record} labelsOnly />
+  },
+  {
+    dataIndex: 'rule_scope_mode',
+    title: () => t('ruleException.table.ruleScope'),
+    render: (_, record) => <RuleScopeDisplay record={record} modeOnly />
+  },
+  {
+    dataIndex: 'created_by',
+    title: () => t('ruleException.table.createdBy')
+  },
+  {
+    dataIndex: 'created_at',
+    title: () => t('ruleException.table.createdAt'),
+    render: (value) => formatTime(value, '-')
+  },
+  {
+    dataIndex: 'matched_count',
+    title: () => t('sqlManagementException.table.matchCount')
+  }
+];
+
 export const SqlManagementExceptionActions: (
+  onView: (record?: IBlacklistResV1) => void,
   onUpdate: (record?: IBlacklistResV1) => void,
-  onDelete: (id?: number) => void
+  onDelete: (id?: number) => void,
+  canWrite?: boolean
 ) => {
   buttons: ActiontechTableActionMeta<IBlacklistResV1>[];
-} = (onUpdate, onDelete) => {
-  return {
-    buttons: [
+} = (onView, onUpdate, onDelete, canWrite = true) => {
+  const buttons: ActiontechTableActionMeta<IBlacklistResV1>[] = [
+    {
+      key: 'view-button',
+      text: t('ruleException.skippedSection.viewDetail'),
+      buttonProps: (record) => ({
+        onClick: () => onView(record)
+      })
+    }
+  ];
+
+  if (canWrite) {
+    buttons.push(
       {
         key: 'edit-button',
         text: t('common.edit'),
@@ -102,6 +140,17 @@ export const SqlManagementExceptionActions: (
           onConfirm: () => onDelete(record?.blacklist_id)
         })
       }
-    ]
-  };
+    );
+  }
+
+  return { buttons };
 };
+
+export const SqlManagementExceptionFilterCustomProps = () =>
+  new Map([
+    ['type', { options: SqlManagementExceptionBaseMatchTypeOptions }],
+    [
+      'rule_scope_mode',
+      { options: SqlManagementExceptionRuleScopeFilterOptions }
+    ]
+  ] as const);
