@@ -35,7 +35,6 @@ import {
   formatTime,
   getErrorMessage
 } from '@actiontech/shared/lib/utils/Common';
-import AuditResultMessage from '../../../../components/AuditResultMessage';
 import AuditLevelSummary from '../../../../components/AuditResultMessage/AuditLevelSummary';
 import AuditStatusTag from './AuditStatusTag';
 import {
@@ -52,7 +51,6 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { Link } from 'react-router-dom';
 import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
@@ -384,18 +382,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       record: ScanTypeSqlTableDataSourceItem,
       fieldName: 'first_audit_results' | 'audit_results'
     ) => {
-      const isBeingAudited = record['audit_status'] === BEING_AUDITED;
-
-      if (isBeingAudited) {
-        return (
-          <AuditResultMessage
-            auditResult={{}}
-            auditStatus={getAuditTaskSQLsV2FilterAuditStatusEnum.doing}
-          />
-        );
-      }
-
       const results = parseAuditResult(record[fieldName]);
+
+      if (!results.length) {
+        return '-';
+      }
 
       return (
         <BasicToolTips
