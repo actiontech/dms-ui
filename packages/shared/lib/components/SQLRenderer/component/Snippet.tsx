@@ -72,11 +72,15 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
             {...paragraph}
             className={classNames('margin-bottom-0', paragraph?.className)}
           >
-            <span
-              dangerouslySetInnerHTML={{
-                __html: HighlightCode.highlightSql(slicedSql)
-              }}
-            />
+            {highlightSyntax ? (
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: HighlightCode.highlightSql(slicedSql)
+                }}
+              />
+            ) : (
+              slicedSql
+            )}
           </Typography.Paragraph>
         ) : (
           <span className="empty-sql-placeholder">{emptySqlContent}</span>

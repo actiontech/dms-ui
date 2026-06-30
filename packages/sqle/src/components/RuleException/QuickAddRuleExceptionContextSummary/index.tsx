@@ -1,13 +1,71 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SQLRenderer } from '@actiontech/shared';
 import {
   buildQuickAddRuleExceptionSummaryItems,
   ISqlManageRuleExceptionContext
 } from '../../../page/RuleException/index.data';
+import useSourceTips, {
+  resolveAuditTaskTypeLabel
+} from '../../../page/SqlManagement/component/SQLEEIndex/hooks/useSourceTips';
 import { QuickAddRuleExceptionContextSummaryStyleWrapper } from './style';
 
-const SQL_FINGERPRINT_PREVIEW_ROWS = 2;
+const SQL_FINGERPRINT_COLLAPSED_ROWS = 1;
+
+type ContextSummaryFingerPrintValueProps = {
+  sql?: string;
+};
+
+const ContextSummaryFingerPrintValue: React.FC<
+  ContextSummaryFingerPrintValueProps
+> = ({ sql }) => {
+  const { t } = useTranslation();
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [sql]);
+
+  if (!sql) {
+    return null;
+  }
+
+  if (expanded) {
+    return (
+      <>
+        <SQLRenderer sql={sql} showCopyIcon={false} />
+        <Typography.Link
+          className="context-summary-sql-toggle"
+          onClick={() => setExpanded(false)}
+        >
+          {t('common.collapse')}
+        </Typography.Link>
+      </>
+    );
+  }
+
+  return (
+    <SQLRenderer.Snippet
+      sql={sql}
+      rows={SQL_FINGERPRINT_COLLAPSED_ROWS}
+      showCopyIcon={false}
+      tooltip={false}
+      highlightSyntax={false}
+      paragraph={{
+        ellipsis: {
+          expandable: true,
+          rows: SQL_FINGERPRINT_COLLAPSED_ROWS,
+          symbol: t('common.expansion'),
+          tooltip: false,
+          onExpand: () => {
+            setExpanded(true);
+          }
+        }
+      }}
+    />
+  );
+};
 
 type QuickAddRuleExceptionContextSummaryProps = {
   sqlManageContext?: ISqlManageRuleExceptionContext;
@@ -19,17 +77,30 @@ const QuickAddRuleExceptionContextSummary: React.FC<
   QuickAddRuleExceptionContextSummaryProps
 > = ({ sqlManageContext, ruleName, ruleLabel }) => {
   const { t } = useTranslation();
+  const { generateSourceSelectOptions } = useSourceTips();
 
-  const summaryItems = useMemo(
-    () =>
-      buildQuickAddRuleExceptionSummaryItems({
-        sqlManageContext,
-        ruleName,
-        ruleLabel,
-        getLabel: (key) => t(`ruleException.quickAdd.context.${key}`)
-      }),
-    [ruleLabel, ruleName, sqlManageContext, t]
-  );
+  const summaryItems = useMemo(() => {
+    const items = buildQuickAddRuleExceptionSummaryItems({
+      sqlManageContext,
+      ruleName,
+      ruleLabel,
+      getLabel: (key) => t(`ruleException.quickAdd.context.${key}`)
+    });
+
+    return items.map((item) => {
+      if (item.key === 'audit_task_type' && item.value) {
+        return {
+          ...item,
+          value:
+            resolveAuditTaskTypeLabel(
+              item.value,
+              generateSourceSelectOptions
+            ) ?? item.value
+        };
+      }
+      return item;
+    });
+  }, [generateSourceSelectOptions, ruleLabel, ruleName, sqlManageContext, t]);
 
   return (
     <QuickAddRuleExceptionContextSummaryStyleWrapper>
@@ -46,18 +117,7 @@ const QuickAddRuleExceptionContextSummary: React.FC<
               }`}
             >
               {item.key === 'fingerPrint' && item.value ? (
-                <SQLRenderer.Snippet
-                  sql={item.value}
-                  rows={SQL_FINGERPRINT_PREVIEW_ROWS}
-                  showCopyIcon={false}
-                  tooltip={false}
-                  paragraph={{
-                    ellipsis: {
-                      expandable: true,
-                      rows: SQL_FINGERPRINT_PREVIEW_ROWS
-                    }
-                  }}
-                />
+                <ContextSummaryFingerPrintValue sql={item.value} />
               ) : (
                 item.value || t('ruleException.matchConditionsSummary.empty')
               )}

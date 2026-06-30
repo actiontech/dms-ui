@@ -5,6 +5,37 @@ import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/s
 import { SelectProps } from 'antd';
 import { groupBy } from 'lodash';
 
+export const resolveAuditTaskTypeLabel = (
+  auditTaskType: string | undefined,
+  sourceSelectOptions: SelectProps['options']
+): string | undefined => {
+  if (!auditTaskType?.trim()) {
+    return undefined;
+  }
+  const type = auditTaskType.trim();
+  for (const option of sourceSelectOptions ?? []) {
+    if (
+      option &&
+      'value' in option &&
+      option.value === type &&
+      option.label != null
+    ) {
+      return typeof option.label === 'string'
+        ? option.label
+        : String(option.label);
+    }
+    if (option && 'options' in option && Array.isArray(option.options)) {
+      const matched = option.options.find((sub) => sub?.value === type);
+      if (matched?.label != null) {
+        return typeof matched.label === 'string'
+          ? matched.label
+          : String(matched.label);
+      }
+    }
+  }
+  return type;
+};
+
 const useSourceTips = () => {
   const { t } = useTranslation();
   const { updateAuditPlanTypes, loading, auditPlanTypes } = useAuditPlanTypes();

@@ -2,7 +2,8 @@ import { TFunction } from 'i18next';
 import { SqlManagementExceptionFormFieldType } from './index.type';
 import {
   IBlacklistResV1,
-  IInstanceAuditPlanResV1
+  IInstanceAuditPlanResV1,
+  IRuleTips
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   blacklistToRows,
@@ -22,6 +23,7 @@ import {
 import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { SQLAuditRecordListUrlParamsKey } from '../SqlManagement/component/SQLEEIndex/index.data';
 import {
+  DB_TYPE_RULE_NAME_SEPARATOR,
   extractDbTypeFromRuleSelectValue,
   splitRuleTipSelectValue
 } from '../../hooks/useRuleTips';
@@ -178,5 +180,40 @@ export const blacklistRecordToFormValues = (
     rule_scope_mode: ruleScopeMode,
     rule_scope_db_type: ruleScopeDbType,
     rule_scope: normalizeRuleScopeList(extended.rule_scope)
+  };
+};
+
+export const buildUpdateFormValuesFromRecord = (
+  record: IBlacklistResV1 | null | undefined,
+  ruleTips: IRuleTips[]
+): Partial<SqlManagementExceptionFormFieldType> => {
+  if (!record) {
+    return {};
+  }
+
+  const baseValues = blacklistRecordToFormValues(record);
+  const ruleNames = baseValues.rule_scope ?? [];
+  let ruleScopeDbType = baseValues.rule_scope_db_type;
+  const mappedRuleScope: string[] = [];
+
+  ruleTips.forEach((group) => {
+    group.rule?.forEach((rule) => {
+      if (rule.rule_name && ruleNames.includes(rule.rule_name)) {
+        mappedRuleScope.push(
+          `${group.db_type ?? ''}${DB_TYPE_RULE_NAME_SEPARATOR}${
+            rule.rule_name
+          }`
+        );
+        if (!ruleScopeDbType && group.db_type) {
+          ruleScopeDbType = group.db_type;
+        }
+      }
+    });
+  });
+
+  return {
+    ...baseValues,
+    rule_scope_db_type: ruleScopeDbType,
+    rule_scope: mappedRuleScope
   };
 };

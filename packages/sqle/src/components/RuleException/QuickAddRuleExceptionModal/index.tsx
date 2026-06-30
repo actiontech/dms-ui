@@ -60,6 +60,7 @@ const QuickAddRuleExceptionModal: React.FC<QuickAddRuleExceptionModalProps> = ({
   return (
     <BasicModal
       title={t('ruleException.quickAdd.title')}
+      size="large"
       open={open}
       onCancel={onClose}
       destroyOnClose

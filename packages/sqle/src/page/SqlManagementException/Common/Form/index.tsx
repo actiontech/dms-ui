@@ -33,6 +33,7 @@ import useRuleTips from '../../../../hooks/useRuleTips';
 import { MatchRow, validateMatchRows } from '../../../RuleException/utils';
 import useAuditTaskSelectOptions from '../../hooks/useAuditTaskSelectOptions';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { SqlManagementExceptionFormStyleWrapper } from './style';
 
 type MatchRowContentFieldProps = {
   form: FormInstance<SqlManagementExceptionFormFieldType>;
@@ -50,6 +51,42 @@ type MatchRowContentFieldProps = {
   selectedAuditTaskType?: string;
   clearAuditTaskIdRows: () => void;
   dbTypeOptions: Array<{ label: string; value: string }>;
+};
+
+const MATCH_ROW_CONTENT_WIDTH = 320;
+
+const MatchRowSqlContentInput: React.FC<{
+  form: FormInstance<SqlManagementExceptionFormFieldType>;
+  fieldName: number;
+}> = ({ form, fieldName }) => {
+  const { t } = useTranslation();
+  const content =
+    Form.useWatch(['match_rows', fieldName, 'content'], form) ?? '';
+  const hasNewlines = content.includes('\n');
+  const lineCount = content.split('\n').length;
+
+  return (
+    <Form.Item
+      name={[fieldName, 'content']}
+      rules={[{ required: true }]}
+      noStyle
+    >
+      <BasicInput.TextArea
+        aria-label={t('sqlManagementException.modal.sql')}
+        className={
+          hasNewlines
+            ? undefined
+            : 'match-row-content-single-line textarea-no-resize'
+        }
+        style={{
+          width: MATCH_ROW_CONTENT_WIDTH,
+          ...(hasNewlines ? { resize: 'vertical' } : undefined)
+        }}
+        rows={hasNewlines ? Math.max(lineCount, 2) : 1}
+        placeholder={t('common.form.placeholder.input')}
+      />
+    </Form.Item>
+  );
 };
 
 const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
@@ -76,7 +113,7 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
         noStyle
       >
         <BasicSelect
-          style={{ width: 320 }}
+          style={{ width: MATCH_ROW_CONTENT_WIDTH }}
           loading={loading}
           options={instanceIDOptions}
           placeholder={t('common.form.placeholder.select')}
@@ -93,7 +130,7 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
         noStyle
       >
         <BasicSelect
-          style={{ width: 320 }}
+          style={{ width: MATCH_ROW_CONTENT_WIDTH }}
           loading={auditTaskTypeLoading}
           options={auditTaskTypeOptions}
           placeholder={t('common.form.placeholder.select')}
@@ -111,7 +148,7 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
         noStyle
       >
         <BasicSelect
-          style={{ width: 320 }}
+          style={{ width: MATCH_ROW_CONTENT_WIDTH }}
           loading={auditTaskIdLoading}
           options={getAuditTaskIdOptions(selectedAuditTaskType)}
           placeholder={t('common.form.placeholder.select')}
@@ -128,7 +165,7 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
         noStyle
       >
         <BasicSelect
-          style={{ width: 320 }}
+          style={{ width: MATCH_ROW_CONTENT_WIDTH }}
           options={dbTypeOptions}
           placeholder={t('common.form.placeholder.select')}
         />
@@ -140,19 +177,7 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
     type === CreateBlacklistReqV1TypeEnum.sql ||
     type === CreateBlacklistReqV1TypeEnum.fp_sql
   ) {
-    return (
-      <Form.Item
-        name={[fieldName, 'content']}
-        rules={[{ required: true }]}
-        noStyle
-      >
-        <BasicInput.TextArea
-          style={{ width: 320 }}
-          autoSize={{ minRows: 2, maxRows: 8 }}
-          placeholder={t('common.form.placeholder.input')}
-        />
-      </Form.Item>
-    );
+    return <MatchRowSqlContentInput form={form} fieldName={fieldName} />;
   }
 
   return (
@@ -162,7 +187,7 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
       noStyle
     >
       <BasicInput
-        style={{ width: 320 }}
+        style={{ width: MATCH_ROW_CONTENT_WIDTH }}
         placeholder={t('common.form.placeholder.input')}
       />
     </Form.Item>
@@ -245,164 +270,172 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
   }, [clearRuleScopeFields, ruleScopeMode]);
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      {...DrawerFormLayout}
-      initialValues={{
-        rule_scope_mode: BlacklistResV1RuleScopeModeEnum.all,
-        match_rows: [{ type: CreateBlacklistReqV1TypeEnum.sql, content: '' }]
-      }}
-    >
-      <Form.Item label={t('ruleException.table.matchMode')} required>
-        <Form.List
-          name="match_rows"
-          rules={[
-            {
-              validator: async (_, rows) => {
-                const errorCode = validateMatchRows(rows);
-                if (errorCode === 'empty') {
-                  return Promise.reject(
-                    new Error(t('ruleException.form.validation.atLeastOneRow'))
-                  );
-                }
-                if (errorCode === 'invalidFirstType') {
-                  return Promise.reject(
-                    new Error(
-                      t('ruleException.form.validation.invalidFirstRowType')
-                    )
-                  );
-                }
-                if (errorCode === 'duplicate') {
-                  return Promise.reject(
-                    new Error(t('ruleException.form.validation.duplicateRow'))
-                  );
-                }
-                if (errorCode === 'incomplete') {
-                  return Promise.reject(
-                    new Error(t('ruleException.form.validation.incompleteRow'))
-                  );
-                }
-                return Promise.resolve();
-              }
-            }
-          ]}
-        >
-          {(fields, { add, remove }) => (
-            <Space
-              direction="vertical"
-              size={12}
-              className="full-width-element"
-            >
-              {fields.map((field, index) => (
-                <Space key={field.key} align="baseline">
-                  <Form.Item
-                    {...field}
-                    name={[field.name, 'type']}
-                    rules={[{ required: true }]}
-                  >
-                    <BasicSelect
-                      style={{ width: 180 }}
-                      options={
-                        index === 0
-                          ? SqlManagementExceptionBaseMatchTypeOptions
-                          : SqlManagementExceptionExtendedMatchTypeOptions
-                      }
-                    />
-                  </Form.Item>
-                  <MatchRowContentField
-                    form={form}
-                    fieldName={field.name}
-                    loading={loading}
-                    instanceIDOptions={instanceIDOptions}
-                    auditTaskTypeOptions={auditTaskTypeOptions}
-                    getAuditTaskIdOptions={getAuditTaskIdOptions}
-                    auditTaskTypeLoading={auditTaskTypeLoading}
-                    auditTaskIdLoading={auditTaskIdLoading}
-                    selectedAuditTaskType={selectedAuditTaskType}
-                    clearAuditTaskIdRows={clearAuditTaskIdRows}
-                    dbTypeOptions={dbTypeOptions}
-                  />
-                  <EmptyBox if={fields.length > 1}>
-                    <MinusCircleOutlined
-                      className="pointer"
-                      onClick={() => remove(field.name)}
-                    />
-                  </EmptyBox>
-                </Space>
-              ))}
-              <BasicButton
-                type="dashed"
-                icon={
-                  <PlusOutlined width={10} height={10} color="currentColor" />
-                }
-                onClick={() =>
-                  add({
-                    type: MatchConditionReqV1TypeEnum.instance,
-                    content: ''
-                  })
-                }
-              >
-                {t('ruleException.form.addCondition')}
-              </BasicButton>
-            </Space>
-          )}
-        </Form.List>
-      </Form.Item>
-
-      <Form.Item label={t('ruleException.form.reason')} name="desc">
-        <BasicInput.TextArea
-          className="textarea-no-resize"
-          autoSize={{
-            minRows: 3,
-            maxRows: 10
-          }}
-          placeholder={t('common.form.placeholder.input')}
-        />
-      </Form.Item>
-
-      <Form.Item
-        label={t('ruleException.form.ruleScopeMode')}
-        name="rule_scope_mode"
+    <SqlManagementExceptionFormStyleWrapper>
+      <Form
+        form={form}
+        layout="vertical"
+        {...DrawerFormLayout}
+        initialValues={{
+          rule_scope_mode: BlacklistResV1RuleScopeModeEnum.all,
+          match_rows: [{ type: CreateBlacklistReqV1TypeEnum.sql, content: '' }]
+        }}
       >
-        <Radio.Group options={SqlManagementExceptionRuleScopeModeOptions} />
-      </Form.Item>
-      <EmptyBox if={ruleScopeMode === BlacklistResV1RuleScopeModeEnum.specific}>
-        <Form.Item
-          label={t('ruleException.form.selectDbType')}
-          name="rule_scope_db_type"
-          rules={[{ required: true }]}
-        >
-          <BasicSelect
-            loading={ruleTipsLoading}
-            options={dbTypeOptions}
-            placeholder={t('common.form.placeholder.select')}
-            onChange={handleRuleScopeDbTypeChange}
+        <Form.Item label={t('ruleException.table.matchMode')} required>
+          <Form.List
+            name="match_rows"
+            rules={[
+              {
+                validator: async (_, rows) => {
+                  const errorCode = validateMatchRows(rows);
+                  if (errorCode === 'empty') {
+                    return Promise.reject(
+                      new Error(
+                        t('ruleException.form.validation.atLeastOneRow')
+                      )
+                    );
+                  }
+                  if (errorCode === 'invalidFirstType') {
+                    return Promise.reject(
+                      new Error(
+                        t('ruleException.form.validation.invalidFirstRowType')
+                      )
+                    );
+                  }
+                  if (errorCode === 'duplicate') {
+                    return Promise.reject(
+                      new Error(t('ruleException.form.validation.duplicateRow'))
+                    );
+                  }
+                  if (errorCode === 'incomplete') {
+                    return Promise.reject(
+                      new Error(
+                        t('ruleException.form.validation.incompleteRow')
+                      )
+                    );
+                  }
+                  return Promise.resolve();
+                }
+              }
+            ]}
+          >
+            {(fields, { add, remove }) => (
+              <Space
+                direction="vertical"
+                size={12}
+                className="full-width-element"
+              >
+                {fields.map((field, index) => (
+                  <Space key={field.key} align="start" className="match-row">
+                    <Form.Item
+                      {...field}
+                      name={[field.name, 'type']}
+                      rules={[{ required: true }]}
+                    >
+                      <BasicSelect
+                        style={{ width: 180 }}
+                        options={
+                          index === 0
+                            ? SqlManagementExceptionBaseMatchTypeOptions
+                            : SqlManagementExceptionExtendedMatchTypeOptions
+                        }
+                      />
+                    </Form.Item>
+                    <MatchRowContentField
+                      form={form}
+                      fieldName={field.name}
+                      loading={loading}
+                      instanceIDOptions={instanceIDOptions}
+                      auditTaskTypeOptions={auditTaskTypeOptions}
+                      getAuditTaskIdOptions={getAuditTaskIdOptions}
+                      auditTaskTypeLoading={auditTaskTypeLoading}
+                      auditTaskIdLoading={auditTaskIdLoading}
+                      selectedAuditTaskType={selectedAuditTaskType}
+                      clearAuditTaskIdRows={clearAuditTaskIdRows}
+                      dbTypeOptions={dbTypeOptions}
+                    />
+                    <EmptyBox if={fields.length > 1}>
+                      <MinusCircleOutlined
+                        className="pointer"
+                        onClick={() => remove(field.name)}
+                      />
+                    </EmptyBox>
+                  </Space>
+                ))}
+                <BasicButton
+                  type="dashed"
+                  icon={
+                    <PlusOutlined width={10} height={10} color="currentColor" />
+                  }
+                  onClick={() =>
+                    add({
+                      type: MatchConditionReqV1TypeEnum.instance,
+                      content: ''
+                    })
+                  }
+                >
+                  {t('ruleException.form.addCondition')}
+                </BasicButton>
+              </Space>
+            )}
+          </Form.List>
+        </Form.Item>
+
+        <Form.Item label={t('ruleException.form.reason')} name="desc">
+          <BasicInput.TextArea
+            className="textarea-no-resize"
+            autoSize={{
+              minRows: 3,
+              maxRows: 10
+            }}
+            placeholder={t('common.form.placeholder.input')}
           />
         </Form.Item>
+
         <Form.Item
-          label={t('ruleException.form.selectRules')}
-          name="rule_scope"
-          rules={[{ required: true, type: 'array', min: 1 }]}
+          label={t('ruleException.form.ruleScopeMode')}
+          name="rule_scope_mode"
         >
-          <BasicSelect
-            mode="multiple"
-            loading={ruleTipsLoading}
-            disabled={!ruleScopeDbType}
-            options={filteredRuleOptions}
-            placeholder={t('common.form.placeholder.select')}
-          />
+          <Radio.Group options={SqlManagementExceptionRuleScopeModeOptions} />
         </Form.Item>
-      </EmptyBox>
-      <EmptyBox if={isUpdate}>
-        <Alert
-          showIcon
-          icon={<WarningFilled />}
-          message={t('sqlManagementException.modal.update.tips')}
-          type="warning"
-        />
-      </EmptyBox>
-    </Form>
+        <EmptyBox
+          if={ruleScopeMode === BlacklistResV1RuleScopeModeEnum.specific}
+        >
+          <Form.Item
+            label={t('ruleException.form.selectDbType')}
+            name="rule_scope_db_type"
+            rules={[{ required: true }]}
+          >
+            <BasicSelect
+              loading={ruleTipsLoading}
+              options={dbTypeOptions}
+              placeholder={t('common.form.placeholder.select')}
+              onChange={handleRuleScopeDbTypeChange}
+            />
+          </Form.Item>
+          <Form.Item
+            label={t('ruleException.form.selectRules')}
+            name="rule_scope"
+            rules={[{ required: true, type: 'array', min: 1 }]}
+          >
+            <BasicSelect
+              mode="multiple"
+              loading={ruleTipsLoading}
+              disabled={!ruleScopeDbType}
+              options={filteredRuleOptions}
+              placeholder={t('common.form.placeholder.select')}
+            />
+          </Form.Item>
+        </EmptyBox>
+        <EmptyBox if={isUpdate}>
+          <Alert
+            showIcon
+            icon={<WarningFilled />}
+            message={t('sqlManagementException.modal.update.tips')}
+            type="warning"
+          />
+        </EmptyBox>
+      </Form>
+    </SqlManagementExceptionFormStyleWrapper>
   );
 };
 

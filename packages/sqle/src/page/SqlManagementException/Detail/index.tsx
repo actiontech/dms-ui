@@ -1,8 +1,13 @@
-import { ReactNode, useCallback, useEffect, useMemo } from 'react';
+import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Space, Spin, Typography, message } from 'antd';
-import { BasicButton, BasicDrawer, SQLRenderer } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicDrawer,
+  BasicTag,
+  SQLRenderer
+} from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
 import {
@@ -36,7 +41,7 @@ import {
 
 export const SQL_MANAGEMENT_EXCEPTION_DETAIL_DRAWER_WIDTH = 960;
 
-const SQL_SNIPPET_PREVIEW_ROWS = 3;
+const SQL_SNIPPET_COLLAPSED_ROWS = 1;
 
 type SqlManagementExceptionDetailDrawerProps = {
   open: boolean;
@@ -63,16 +68,21 @@ const DetailMetaInfoItem: React.FC<DetailMetaInfoItemProps> = ({
 
 type DetailFieldCardProps = {
   label: string;
-  children: ReactNode;
+  labelExtra?: ReactNode;
+  children?: ReactNode;
 };
 
 const DetailFieldCard: React.FC<DetailFieldCardProps> = ({
   label,
+  labelExtra,
   children
 }) => (
   <DetailFieldCardStyleWrapper>
-    <div className="detail-field-label">{label}</div>
-    <div className="detail-field-value">{children}</div>
+    <div className="detail-field-header">
+      <div className="detail-field-label">{label}</div>
+      {labelExtra}
+    </div>
+    {children ? <div className="detail-field-value">{children}</div> : null}
   </DetailFieldCardStyleWrapper>
 );
 
@@ -91,25 +101,58 @@ const getMatchTypeLabel = (type?: string) => {
   return type ?? '-';
 };
 
+const MatchModeSqlValue: React.FC<{ sql?: string }> = ({ sql }) => {
+  const { t } = useTranslation();
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [sql]);
+
+  if (!sql) {
+    return <>-</>;
+  }
+
+  if (expanded) {
+    return (
+      <>
+        <SQLRenderer sql={sql} showCopyIcon />
+        <Typography.Link
+          className="match-mode-sql-toggle"
+          onClick={() => setExpanded(false)}
+        >
+          {t('common.collapse')}
+        </Typography.Link>
+      </>
+    );
+  }
+
+  return (
+    <SQLRenderer.Snippet
+      sql={sql}
+      rows={SQL_SNIPPET_COLLAPSED_ROWS}
+      showCopyIcon
+      tooltip={false}
+      highlightSyntax={false}
+      paragraph={{
+        ellipsis: {
+          expandable: true,
+          rows: SQL_SNIPPET_COLLAPSED_ROWS,
+          symbol: t('common.expansion'),
+          tooltip: false,
+          onExpand: () => setExpanded(true)
+        }
+      }}
+    />
+  );
+};
+
 const renderMatchContent = (type?: string, content?: string) => {
   if (
     type === BlacklistResV1TypeEnum.sql ||
     type === BlacklistResV1TypeEnum.fp_sql
   ) {
-    return (
-      <SQLRenderer.Snippet
-        sql={content}
-        rows={SQL_SNIPPET_PREVIEW_ROWS}
-        showCopyIcon
-        tooltip={false}
-        paragraph={{
-          ellipsis: {
-            expandable: true,
-            rows: SQL_SNIPPET_PREVIEW_ROWS
-          }
-        }}
-      />
-    );
+    return <MatchModeSqlValue sql={content} />;
   }
   return content || '-';
 };
@@ -235,15 +278,28 @@ const SqlManagementExceptionDetailDrawer: React.FC<
       .finally(() => hide());
   }, [blacklistId, messageApi, onClose, onDeleted, projectName, t]);
 
-  const renderRuleScopeValue = () => {
+  const renderRuleScopeTag = () => {
     if (!formattedRuleScope) {
-      return '-';
+      return null;
     }
-    if (formattedRuleScope.mode === BlacklistResV1RuleScopeModeEnum.all) {
-      return t('ruleException.form.ruleScopeAll');
-    }
-    if (!formattedRuleScope.ruleLabels.length) {
-      return t('ruleException.form.ruleScopeSpecific');
+    const isAll =
+      formattedRuleScope.mode === BlacklistResV1RuleScopeModeEnum.all;
+    return (
+      <BasicTag size="small">
+        {isAll
+          ? t('ruleException.ruleScope.all')
+          : t('sqlManagementException.table.ruleScopePartial')}
+      </BasicTag>
+    );
+  };
+
+  const renderRuleScopeValue = () => {
+    if (
+      !formattedRuleScope ||
+      formattedRuleScope.mode === BlacklistResV1RuleScopeModeEnum.all ||
+      !formattedRuleScope.ruleLabels.length
+    ) {
+      return null;
     }
     return (
       <div className="detail-internal-list">
@@ -313,7 +369,7 @@ const SqlManagementExceptionDetailDrawer: React.FC<
                     {matchModeItems.map((row, index) => (
                       <div
                         key={`${row.type ?? 'row'}-${index}`}
-                        className="detail-internal-list-item full-width-element"
+                        className="detail-internal-list-item match-mode-item"
                       >
                         <div className="match-mode-item-label">
                           {row.typeLabel}
@@ -324,7 +380,7 @@ const SqlManagementExceptionDetailDrawer: React.FC<
                       </div>
                     ))}
                     {auditTaskMatchInfo?.auditTaskId ? (
-                      <div className="detail-internal-list-item full-width-element">
+                      <div className="detail-internal-list-item match-mode-item">
                         <div className="match-mode-item-label">
                           {t('sqlManagementException.detail.auditTaskName')}
                         </div>
@@ -346,7 +402,10 @@ const SqlManagementExceptionDetailDrawer: React.FC<
                   '-'
                 )}
               </DetailFieldCard>
-              <DetailFieldCard label={t('ruleException.detail.ruleScope')}>
+              <DetailFieldCard
+                label={t('ruleException.detail.ruleScope')}
+                labelExtra={renderRuleScopeTag()}
+              >
                 {renderRuleScopeValue()}
               </DetailFieldCard>
               <DetailFieldCard label={t('ruleException.detail.reason')}>

@@ -20,6 +20,10 @@ export const QuickAddRuleExceptionContextSummaryStyleWrapper = styled('div')`
   }
 
   .context-summary-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
     border-radius: 6px;
     border: 1px solid
       ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
@@ -29,18 +33,62 @@ export const QuickAddRuleExceptionContextSummaryStyleWrapper = styled('div')`
   }
 
   .context-summary-item-label {
+    flex-shrink: 0;
+    min-width: 96px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
     font-size: 13px;
     font-weight: 500;
     line-height: 20px;
-    margin-bottom: 4px;
   }
 
   .context-summary-item-value {
+    flex: 1;
+    min-width: 0;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
     font-size: 13px;
     line-height: 20px;
     word-break: break-all;
+
+    .actiontech-sql-snippet-renderer-wrapper,
+    .actiontech-sql-renderer-wrapper {
+      width: 100%;
+
+      .ant-typography {
+        flex: 1;
+        min-width: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .actiontech-sql-renderer-wrapper {
+      display: block;
+
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-all;
+        overflow: visible;
+      }
+
+      code {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      .code-line {
+        height: auto;
+        min-height: 26px;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .context-summary-sql-toggle {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 20px;
   }
 
   .context-summary-item-value.is-missing {
