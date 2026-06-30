@@ -20,17 +20,8 @@ import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BlacklistResV1RuleScopeModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlManagementExceptionMatchTypeDirection } from '../index.data';
-import { formatMatchMode, formatRuleScope } from '../../RuleException/utils';
+import { formatMatchMode } from '../../RuleException/utils';
 import { blacklistRecordToExtended } from '../../RuleException/index.data';
-import useRuleTips from '../../../hooks/useRuleTips';
-import useAuditTaskSelectOptions from '../hooks/useAuditTaskSelectOptions';
-import {
-  buildAuditTaskNavigatePath,
-  extractAuditTaskMatchInfo,
-  findInstanceAuditPlanById,
-  formatAuditTaskDisplayLabel,
-  isAuditTaskIdMatchType
-} from '../utils';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import {
@@ -147,7 +138,18 @@ const MatchModeSqlValue: React.FC<{ sql?: string }> = ({ sql }) => {
   );
 };
 
-const renderMatchContent = (type?: string, content?: string) => {
+const renderMatchContent = (
+  type?: string,
+  content?: string,
+  navigatePath?: string
+) => {
+  if (navigatePath) {
+    return (
+      <Link target="_blank" to={navigatePath}>
+        {content || '-'}
+      </Link>
+    );
+  }
   if (
     type === BlacklistResV1TypeEnum.sql ||
     type === BlacklistResV1TypeEnum.fp_sql
@@ -162,12 +164,9 @@ const SqlManagementExceptionDetailDrawer: React.FC<
 > = ({ open, blacklistId, onClose, onEdit, onDeleted }) => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { projectName, projectID, projectArchive } = useCurrentProject();
+  const { projectName, projectArchive } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
   const canWrite = isAdmin || isProjectManager(projectName);
-  const { ruleNameDescMap, updateRuleTips } = useRuleTips();
-  const { getAuditTaskIdOptions, instanceAuditPlans } =
-    useAuditTaskSelectOptions(projectName);
 
   const {
     data: detail,
@@ -193,67 +192,33 @@ const SqlManagementExceptionDetailDrawer: React.FC<
   useEffect(() => {
     if (open && blacklistId) {
       run(`${blacklistId}`);
-      updateRuleTips(projectName);
     }
     if (!open) {
       mutate(undefined);
     }
-  }, [blacklistId, mutate, open, projectName, run, updateRuleTips]);
+  }, [blacklistId, mutate, open, run]);
 
   const extendedDetail = detail ? blacklistRecordToExtended(detail) : undefined;
-
-  const auditTaskMatchInfo = useMemo(
-    () => (detail ? extractAuditTaskMatchInfo(detail) : undefined),
-    [detail]
-  );
-
-  const auditTaskPlanOptions = useMemo(
-    () => getAuditTaskIdOptions(auditTaskMatchInfo?.auditTaskType) ?? [],
-    [auditTaskMatchInfo?.auditTaskType, getAuditTaskIdOptions]
-  );
-
-  const auditTaskDisplayName = useMemo(() => {
-    if (!auditTaskMatchInfo?.auditTaskId) {
-      return undefined;
-    }
-    const matchedOption = auditTaskPlanOptions.find(
-      (option) => `${option?.value ?? ''}` === auditTaskMatchInfo.auditTaskId
-    );
-    if (matchedOption?.label && typeof matchedOption.label === 'string') {
-      return matchedOption.label;
-    }
-    const plan = findInstanceAuditPlanById(
-      instanceAuditPlans,
-      auditTaskMatchInfo.auditTaskId
-    );
-    return formatAuditTaskDisplayLabel(plan, auditTaskMatchInfo.auditTaskId, t);
-  }, [auditTaskMatchInfo, auditTaskPlanOptions, instanceAuditPlans, t]);
-
-  const auditTaskNavigatePath = useMemo(
-    () =>
-      buildAuditTaskNavigatePath(
-        projectID,
-        auditTaskMatchInfo?.auditTaskType,
-        auditTaskMatchInfo?.auditTaskId
-      ),
-    [auditTaskMatchInfo, projectID]
-  );
 
   const matchModeItems = useMemo(() => {
     if (!detail) {
       return [];
     }
-    return formatMatchMode(detail, getMatchTypeLabel).filter(
-      (row) => !isAuditTaskIdMatchType(row.type)
-    );
+    return formatMatchMode(detail, getMatchTypeLabel);
   }, [detail]);
 
   const formattedRuleScope = useMemo(() => {
     if (!detail) {
       return undefined;
     }
-    return formatRuleScope(detail, ruleNameDescMap);
-  }, [detail, ruleNameDescMap]);
+    return {
+      mode:
+        detail.rule_scope_mode ?? BlacklistResV1RuleScopeModeEnum.all,
+      ruleLabels: (detail.rule_scope_display ?? []).map(
+        (rule) => rule.rule_desc ?? '-'
+      )
+    };
+  }, [detail]);
 
   const onDelete = useCallback(() => {
     if (!blacklistId) {
@@ -364,7 +329,7 @@ const SqlManagementExceptionDetailDrawer: React.FC<
                 />
               </DetailMetaInfoCardStyleWrapper>
               <DetailFieldCard label={t('ruleException.table.matchMode')}>
-                {matchModeItems.length || auditTaskMatchInfo?.auditTaskId ? (
+                {matchModeItems.length ? (
                   <div className="detail-internal-list">
                     {matchModeItems.map((row, index) => (
                       <div
@@ -375,28 +340,14 @@ const SqlManagementExceptionDetailDrawer: React.FC<
                           {row.typeLabel}
                         </div>
                         <div className="match-mode-item-value">
-                          {renderMatchContent(row.type, row.content)}
-                        </div>
-                      </div>
-                    ))}
-                    {auditTaskMatchInfo?.auditTaskId ? (
-                      <div className="detail-internal-list-item match-mode-item">
-                        <div className="match-mode-item-label">
-                          {t('sqlManagementException.detail.auditTaskName')}
-                        </div>
-                        <div className="match-mode-item-value">
-                          {auditTaskNavigatePath ? (
-                            <Link target="_blank" to={auditTaskNavigatePath}>
-                              {auditTaskDisplayName}
-                            </Link>
-                          ) : (
-                            <Typography.Text>
-                              {auditTaskDisplayName}
-                            </Typography.Text>
+                          {renderMatchContent(
+                            row.type,
+                            row.content,
+                            row.navigatePath
                           )}
                         </div>
                       </div>
-                    ) : null}
+                    ))}
                   </div>
                 ) : (
                   '-'

@@ -440,9 +440,13 @@ export interface IBlacklistResV1 {
 
   match_conditions?: IMatchConditionReqV1[];
 
+  match_conditions_display?: IMatchConditionDisplayV1[];
+
   matched_count?: number;
 
   rule_scope?: undefined;
+
+  rule_scope_display?: IRuleScopeDisplayV1[];
 
   rule_scope_mode?: BlacklistResV1RuleScopeModeEnum;
 
@@ -1861,6 +1865,16 @@ export interface IMaintenanceTimeResV1 {
   maintenance_stop_time?: ITimeResV1;
 }
 
+export interface IMatchConditionDisplayV1 {
+  content?: string;
+
+  content_display?: string;
+
+  navigate_path?: string;
+
+  type?: string;
+}
+
 export interface IMatchConditionReqV1 {
   content?: string;
 
@@ -2223,6 +2237,16 @@ export interface IRuleResV1 {
 
 export interface IRuleRespV1 {
   desc?: string;
+
+  rule_name?: string;
+}
+
+export interface IRuleScopeDisplayV1 {
+  db_type?: string;
+
+  level?: string;
+
+  rule_desc?: string;
 
   rule_name?: string;
 }

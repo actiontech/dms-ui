@@ -252,6 +252,14 @@ export type FormattedMatchModeItem = {
   type?: string;
   typeLabel: string;
   content?: string;
+  navigatePath?: string;
+};
+
+const isAuditTaskIdDisplayType = (type?: string): boolean => {
+  return (
+    type === MatchConditionReqV1TypeEnum.audit_task_id ||
+    type === MATCH_CONDITION_READ_TYPE_SOURCE_ID
+  );
 };
 
 export type FormattedRuleScope = {
@@ -279,10 +287,13 @@ export const formatMatchMode = (
   item: IBlacklistResV1,
   getTypeLabel: (type?: string) => string
 ): FormattedMatchModeItem[] => {
-  return formatMatchModeItems(item).map((row) => ({
+  return (item.match_conditions_display ?? []).map((row) => ({
     type: row.type,
     typeLabel: getTypeLabel(row.type),
-    content: row.content
+    content: row.content_display,
+    navigatePath: isAuditTaskIdDisplayType(row.type)
+      ? row.navigate_path
+      : undefined
   }));
 };
 
@@ -291,7 +302,11 @@ export const formatMatchModeDisplayText = (
   getTypeLabel: (type?: string) => string
 ): string => {
   return formatMatchMode(item, getTypeLabel)
-    .map((row) => `${row.typeLabel}：${row.content ?? '-'}`)
+    .map((row) =>
+      row.content !== undefined
+        ? `${row.typeLabel}：${row.content ?? '-'}`
+        : row.typeLabel
+    )
     .join('；');
 };
 
