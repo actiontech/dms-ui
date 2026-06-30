@@ -5,7 +5,6 @@ import { PlusOutlined } from '@actiontech/icons';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IAuditResultWithExemption } from '../../../page/RuleException/index.type';
 import { ISqlManageRuleExceptionContext } from '../../../page/RuleException/index.data';
-import { resolveRuleExceptionDbType } from '../../../page/RuleException/utils';
 import QuickAddRuleExceptionModal from '../QuickAddRuleExceptionModal';
 import useRuleExceptionActions from '../useRuleExceptionActions';
 
@@ -25,17 +24,6 @@ const AddRuleExceptionButton: React.FC<AddRuleExceptionButtonProps> = ({
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const { canWrite } = useRuleExceptionActions({ sqlManageContext });
-
-  const mergedSqlManageContext = useMemo(() => {
-    if (!sqlManageContext?.sql_fingerprint) {
-      return undefined;
-    }
-    const db_type = resolveRuleExceptionDbType(sqlManageContext, auditResult);
-    return {
-      ...sqlManageContext,
-      db_type
-    };
-  }, [auditResult, sqlManageContext]);
 
   const hidden = useMemo(() => {
     if (!canWrite) {
@@ -70,8 +58,7 @@ const AddRuleExceptionButton: React.FC<AddRuleExceptionButtonProps> = ({
       <QuickAddRuleExceptionModal
         open={open}
         ruleName={auditResult?.rule_name}
-        auditResult={auditResult}
-        sqlManageContext={mergedSqlManageContext}
+        sqlManageContext={sqlManageContext}
         onClose={() => setOpen(false)}
         onSuccess={onSuccess}
       />

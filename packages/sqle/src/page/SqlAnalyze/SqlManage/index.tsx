@@ -15,7 +15,6 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ISqlManageRuleExceptionContext } from '../../RuleException/index.data';
-import { resolveDbTypeFromAuditResults } from '../../RuleException/utils';
 
 import SqlAnalyze from '../SqlAnalyze';
 
@@ -137,16 +136,10 @@ const SQLManageAnalyze = () => {
       return undefined;
     }
     const record = sqlManageRecord as ISqlManageWithInstanceId | undefined;
-    const db_type =
-      resolveDbTypeFromAuditResults(sqlManageRecord?.audit_result) ??
-      resolveDbTypeFromAuditResults(sqlManageRecord?.first_audit_result) ??
-      resolveDbTypeFromAuditResults(remediationCompare?.latest_audit_result) ??
-      resolveDbTypeFromAuditResults(remediationCompare?.first_audit_result);
     return {
       sql_fingerprint,
       instance_id: record?.instance_id,
-      source: sqlManageRecord?.source,
-      db_type
+      source: sqlManageRecord?.source
     };
   }, [remediationCompare, sqlManageRecord]);
 

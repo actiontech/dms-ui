@@ -12,8 +12,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   buildRuleExceptionFromSqlManage,
   parseConflictBlacklistId,
-  buildRuleExceptionDetailPath,
-  resolveRuleExceptionDbType
+  buildRuleExceptionDetailPath
 } from '../../page/RuleException/utils';
 import type { ISqlManageRuleExceptionContext } from '../../page/RuleException/utils';
 import { RULE_EXCEPTION_CONFLICT_CODE } from '../../page/RuleException/index.type';
@@ -61,30 +60,16 @@ const useRuleExceptionActions = (options?: {
   );
 
   const addRuleException = useCallback(
-    async (ruleName: string, desc?: string, dbType?: string) => {
+    async (ruleName: string, desc?: string) => {
       if (!canWrite || !sqlManageContext?.sql_fingerprint) {
-        return false;
-      }
-      const resolvedDbType = resolveRuleExceptionDbType(
-        sqlManageContext,
-        undefined,
-        undefined
-      );
-      const effectiveDbType = dbType ?? resolvedDbType;
-      if (!effectiveDbType) {
-        message.error(t('ruleException.quickAdd.missingDbType'));
         return false;
       }
       startSubmit();
       try {
         const payload = buildRuleExceptionFromSqlManage(
-          {
-            ...sqlManageContext,
-            db_type: effectiveDbType
-          },
+          sqlManageContext,
           ruleName,
-          desc,
-          effectiveDbType
+          desc
         );
         const res = await blacklist.createBlacklistV1({
           type: payload.type,

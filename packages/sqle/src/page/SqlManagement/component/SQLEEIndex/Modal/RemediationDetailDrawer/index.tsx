@@ -3,7 +3,6 @@ import { ModalName } from '../../../../../../data/ModalName';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 import { useMemo } from 'react';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { resolveDbTypeFromAuditResults } from '../../../../../../page/RuleException/utils';
 
 type ISqlManageWithInstanceId = ISqlManage & {
   instance_id?: string;
@@ -22,19 +21,13 @@ const RemediationDetailDrawerModal = () => {
       return undefined;
     }
     const record = selectedData as ISqlManageWithInstanceId;
-    const db_type =
-      resolveDbTypeFromAuditResults(selectedData.audit_result) ??
-      resolveDbTypeFromAuditResults(selectedData.first_audit_result);
     return {
       sql_fingerprint: selectedData.sql_fingerprint,
       instance_id: record.instance_id,
-      source: selectedData.source,
-      db_type
+      source: selectedData.source
     };
   }, [
     (selectedData as ISqlManageWithInstanceId | null)?.instance_id,
-    selectedData?.audit_result,
-    selectedData?.first_audit_result,
     selectedData?.source,
     selectedData?.sql_fingerprint
   ]);

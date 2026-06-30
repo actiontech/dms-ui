@@ -12,11 +12,9 @@ import {
   ISqlManage,
   ISqlManageRemediation,
   ISQLExplain,
-  ITableMetas,
-  IInstanceAuditPlanDetailResV1
+  ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ISqlManageRuleExceptionContext } from '../../RuleException/index.data';
-import { resolveDbTypeFromAuditResults } from '../../RuleException/utils';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 
 type ISqlManageWithInstanceId = ISqlManage & {
@@ -35,8 +33,6 @@ const ManagementConfAnalyze = () => {
   const [remediationCompare, setRemediationCompare] =
     useState<ISqlManageRemediation>();
   const [sqlManageRecord, setSqlManageRecord] = useState<ISqlManage>();
-  const [instanceAuditPlanDetail, setInstanceAuditPlanDetail] =
-    useState<IInstanceAuditPlanDetailResV1>();
   const [remediationLoadFailed, setRemediationLoadFailed] =
     useState<boolean>(false);
   const [
@@ -49,7 +45,7 @@ const ManagementConfAnalyze = () => {
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
-      const [analysisResult, remediationResult, listResult, auditPlanResult] =
+      const [analysisResult, remediationResult, listResult] =
         await Promise.allSettled([
           instance_audit_plan.getAuditPlanSqlAnalysisDataV1({
             project_name: projectName,
@@ -64,10 +60,6 @@ const ManagementConfAnalyze = () => {
             project_name: projectName,
             page_index: 1,
             page_size: 100
-          }),
-          instance_audit_plan.getInstanceAuditPlanDetailV1({
-            project_name: projectName,
-            instance_audit_plan_id: urlParams.instanceAuditPlanId ?? ''
           })
         ]);
 
@@ -122,15 +114,6 @@ const ManagementConfAnalyze = () => {
       } else {
         setSqlManageRecord(undefined);
       }
-
-      if (
-        auditPlanResult.status === 'fulfilled' &&
-        auditPlanResult.value.data.code === ResponseCode.SUCCESS
-      ) {
-        setInstanceAuditPlanDetail(auditPlanResult.value.data.data);
-      } else {
-        setInstanceAuditPlanDetail(undefined);
-      }
     } finally {
       getSqlAnalyzeFinish();
     }
@@ -155,23 +138,12 @@ const ManagementConfAnalyze = () => {
       return undefined;
     }
     const record = sqlManageRecord as ISqlManageWithInstanceId | undefined;
-    const db_type =
-      resolveDbTypeFromAuditResults(sqlManageRecord?.audit_result) ??
-      resolveDbTypeFromAuditResults(sqlManageRecord?.first_audit_result) ??
-      resolveDbTypeFromAuditResults(remediationCompare?.latest_audit_result) ??
-      resolveDbTypeFromAuditResults(remediationCompare?.first_audit_result) ??
-      instanceAuditPlanDetail?.instance_type?.trim();
     return {
       sql_fingerprint,
       instance_id: record?.instance_id,
-      source: sqlManageRecord?.source,
-      db_type
+      source: sqlManageRecord?.source
     };
-  }, [
-    instanceAuditPlanDetail?.instance_type,
-    remediationCompare,
-    sqlManageRecord
-  ]);
+  }, [remediationCompare, sqlManageRecord]);
 
   return (
     <SqlAnalyze

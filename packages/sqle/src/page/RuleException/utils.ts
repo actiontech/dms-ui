@@ -210,10 +210,9 @@ export const buildQuickAddRuleExceptionSummaryItems = (options: {
   sqlManageContext?: ISqlManageRuleExceptionContext;
   ruleName?: string;
   ruleLabel?: string;
-  dbType?: string;
   getLabel: (key: string) => string;
 }): QuickAddRuleExceptionSummaryItem[] => {
-  const { sqlManageContext, ruleName, ruleLabel, dbType, getLabel } = options;
+  const { sqlManageContext, ruleName, ruleLabel, getLabel } = options;
   const source = sqlManageContext?.source;
   const auditTaskName =
     source?.sql_source_desc?.trim() ||
@@ -221,11 +220,6 @@ export const buildQuickAddRuleExceptionSummaryItems = (options: {
     undefined;
 
   return [
-    {
-      key: 'db_type',
-      label: getLabel('db_type'),
-      value: dbType
-    },
     {
       key: 'audit_task_type',
       label: getLabel('audit_task_type'),

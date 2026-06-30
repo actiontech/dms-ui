@@ -138,14 +138,13 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     }
     return {
       sql_fingerprint,
-      db_type: instanceType || undefined,
       instance_id: remediationDrawerRecord['instance_id'],
       source: {
         sql_source_type: auditPlanType,
         sql_source_ids: auditPlanId ? [auditPlanId] : undefined
       }
     };
-  }, [auditPlanId, auditPlanType, instanceType, remediationDrawerRecord]);
+  }, [auditPlanId, auditPlanType, remediationDrawerRecord]);
 
   const {
     data: tableMetas,

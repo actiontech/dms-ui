@@ -13,12 +13,11 @@ type QuickAddRuleExceptionContextSummaryProps = {
   sqlManageContext?: ISqlManageRuleExceptionContext;
   ruleName?: string;
   ruleLabel?: string;
-  dbType?: string;
 };
 
 const QuickAddRuleExceptionContextSummary: React.FC<
   QuickAddRuleExceptionContextSummaryProps
-> = ({ sqlManageContext, ruleName, ruleLabel, dbType }) => {
+> = ({ sqlManageContext, ruleName, ruleLabel }) => {
   const { t } = useTranslation();
 
   const summaryItems = useMemo(
@@ -27,10 +26,9 @@ const QuickAddRuleExceptionContextSummary: React.FC<
         sqlManageContext,
         ruleName,
         ruleLabel,
-        dbType,
         getLabel: (key) => t(`ruleException.quickAdd.context.${key}`)
       }),
-    [dbType, ruleLabel, ruleName, sqlManageContext, t]
+    [ruleLabel, ruleName, sqlManageContext, t]
   );
 
   return (

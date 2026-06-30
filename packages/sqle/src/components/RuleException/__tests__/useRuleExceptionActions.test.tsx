@@ -40,7 +40,6 @@ const renderUseRuleExceptionActions = (
 describe('sqle/components/RuleException/useRuleExceptionActions', () => {
   const sqlManageContext = {
     sql_fingerprint: 'select * from orders where id = ?',
-    db_type: 'MySQL',
     source: {
       sql_source_type: 'mysql_slow_log',
       sql_source_ids: ['100']
@@ -86,10 +85,6 @@ describe('sqle/components/RuleException/useRuleExceptionActions', () => {
         {
           type: MatchConditionReqV1TypeEnum.audit_task_id,
           content: '100'
-        },
-        {
-          type: MatchConditionReqV1TypeEnum.db_type,
-          content: 'MySQL'
         }
       ],
       rule_scope: ['dml_check_where_is_invalid'],

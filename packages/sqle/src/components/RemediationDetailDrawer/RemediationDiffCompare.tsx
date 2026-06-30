@@ -11,7 +11,6 @@ import {
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IAuditResultWithExemption } from '../../page/RuleException/index.type';
 import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
-import { resolveRuleExceptionDbType } from '../../page/RuleException/utils';
 import { AuditResultWithRuleException } from '../RuleException';
 import { RemediationDiffCompareStyleWrapper } from './style';
 
@@ -227,24 +226,14 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
   const { t } = useTranslation();
 
   const resolvedSqlManageContext = useMemo(() => {
-    const baseContext = sqlManageContext?.sql_fingerprint
-      ? sqlManageContext
-      : data?.sql_fingerprint
-      ? { sql_fingerprint: data.sql_fingerprint }
-      : undefined;
-    if (!baseContext) {
-      return undefined;
+    if (sqlManageContext?.sql_fingerprint) {
+      return sqlManageContext;
     }
-    const db_type = resolveRuleExceptionDbType(
-      baseContext,
-      undefined,
-      data?.latest_audit_result as IAuditResult[] | undefined
-    );
-    if (!db_type) {
-      return baseContext;
+    if (data?.sql_fingerprint) {
+      return { sql_fingerprint: data.sql_fingerprint };
     }
-    return { ...baseContext, db_type };
-  }, [data?.latest_audit_result, data?.sql_fingerprint, sqlManageContext]);
+    return undefined;
+  }, [data?.sql_fingerprint, sqlManageContext]);
 
   const { removedRuleNames, addedRuleNames } = useMemo(
     () => ({
