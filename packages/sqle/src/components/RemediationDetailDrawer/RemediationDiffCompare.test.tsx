@@ -4,6 +4,14 @@ import RemediationDiffCompare from './RemediationDiffCompare';
 import { IAuditResultWithExemption } from '../../page/RuleException/index.type';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
+jest.mock('../RuleException', () => ({
+  AuditResultWithRuleException: ({
+    auditResult
+  }: {
+    auditResult?: { message?: string };
+  }) => <span>{auditResult?.message}</span>
+}));
+
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: () => jest.fn()
@@ -89,7 +97,7 @@ describe('sqle/components/RemediationDetailDrawer/RemediationDiffCompare', () =>
     expect(screen.queryByText('新发现')).not.toBeInTheDocument();
   });
 
-  it('excludes is_exempted audit results from diff section counts', () => {
+  it('groups is_exempted audit results into a separate collapsible section', () => {
     renderWithTheme(
       <RemediationDiffCompare
         data={{
@@ -119,8 +127,18 @@ describe('sqle/components/RemediationDetailDrawer/RemediationDiffCompare', () =>
     const unchangedSection = screen
       .getByText('未变动')
       .closest('.diff-section') as HTMLElement;
+    const exemptedSection = screen
+      .getByText('已例外')
+      .closest('.diff-section') as HTMLElement;
 
     expect(within(unchangedSection).getByText('1')).toBeInTheDocument();
-    expect(within(unchangedSection).getByText('exempted')).toBeInTheDocument();
+    expect(within(unchangedSection).getByText('active')).toBeInTheDocument();
+    expect(
+      within(unchangedSection).queryByText('exempted')
+    ).not.toBeInTheDocument();
+    expect(exemptedSection).toHaveClass('diff-section-exempted');
+    expect(within(exemptedSection).getByText('1')).toBeInTheDocument();
+    expect(within(exemptedSection).getByText('exempted')).toBeInTheDocument();
+    expect(document.querySelector('.ant-tag')).not.toBeInTheDocument();
   });
 });

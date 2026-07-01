@@ -14,4 +14,22 @@ export const SqlManagementExceptionFormStyleWrapper = styled('div')`
     resize: none;
     overflow: hidden;
   }
+
+  .match-row-sql-snippet {
+    .actiontech-sql-snippet-renderer-wrapper {
+      .ant-typography {
+        height: auto;
+        min-height: 26px;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .match-row-sql-toggle {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 20px;
+  }
 `;

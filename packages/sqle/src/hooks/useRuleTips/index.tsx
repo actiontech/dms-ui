@@ -1,4 +1,3 @@
-import { useBoolean } from 'ahooks';
 import React, { useMemo } from 'react';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -27,33 +26,86 @@ export const extractDbTypeFromRuleSelectValue = (
   return dbType || undefined;
 };
 
+type RuleTipsStore = {
+  data: Map<string, IRuleTips[]>;
+  inflight: Map<string, Promise<IRuleTips[]>>;
+  listeners: Set<() => void>;
+};
+
+const ruleTipsStore: RuleTipsStore = {
+  data: new Map(),
+  inflight: new Map(),
+  listeners: new Set()
+};
+
+const notifyRuleTipsListeners = () => {
+  ruleTipsStore.listeners.forEach((listener) => listener());
+};
+
+export const resetRuleTipsCacheForTests = () => {
+  ruleTipsStore.data.clear();
+  ruleTipsStore.inflight.clear();
+};
+
+const fetchRuleTips = (projectName: string): Promise<IRuleTips[]> => {
+  if (ruleTipsStore.data.has(projectName)) {
+    return Promise.resolve(ruleTipsStore.data.get(projectName)!);
+  }
+
+  const inflightRequest = ruleTipsStore.inflight.get(projectName);
+  if (inflightRequest) {
+    return inflightRequest;
+  }
+
+  const request = SqlManage.GetSqlManageRuleTips({
+    project_name: projectName
+  })
+    .then((res) => {
+      const data =
+        res.data.code === ResponseCode.SUCCESS ? res.data?.data ?? [] : [];
+      ruleTipsStore.data.set(projectName, data);
+      return data;
+    })
+    .catch(() => {
+      ruleTipsStore.data.set(projectName, []);
+      return [] as IRuleTips[];
+    })
+    .finally(() => {
+      ruleTipsStore.inflight.delete(projectName);
+      notifyRuleTipsListeners();
+    });
+
+  ruleTipsStore.inflight.set(projectName, request);
+  notifyRuleTipsListeners();
+  return request;
+};
+
 const useRuleTips = () => {
-  const [ruleTips, setRuleTips] = React.useState<IRuleTips[]>([]);
-  const [loading, { setTrue, setFalse }] = useBoolean();
+  const [subscribedProjectName, setSubscribedProjectName] = React.useState<
+    string | undefined
+  >();
+  const [, forceUpdate] = React.useReducer((value: number) => value + 1, 0);
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
-  const updateRuleTips = React.useCallback(
-    (projectName: string) => {
-      setTrue();
-      SqlManage.GetSqlManageRuleTips({
-        project_name: projectName
-      })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            setRuleTips(res.data?.data ?? []);
-          } else {
-            setRuleTips([]);
-          }
-        })
-        .catch(() => {
-          setRuleTips([]);
-        })
-        .finally(() => {
-          setFalse();
-        });
-    },
-    [setFalse, setTrue]
-  );
+  React.useEffect(() => {
+    const listener = () => forceUpdate();
+    ruleTipsStore.listeners.add(listener);
+    return () => {
+      ruleTipsStore.listeners.delete(listener);
+    };
+  }, []);
+
+  const updateRuleTips = React.useCallback((projectName: string) => {
+    setSubscribedProjectName(projectName);
+    void fetchRuleTips(projectName);
+  }, []);
+
+  const ruleTips = subscribedProjectName
+    ? ruleTipsStore.data.get(subscribedProjectName) ?? []
+    : [];
+  const loading = subscribedProjectName
+    ? ruleTipsStore.inflight.has(subscribedProjectName)
+    : false;
 
   const generateRuleTipsSelectOptions = useMemo(() => {
     return ruleTips.map((value) => {

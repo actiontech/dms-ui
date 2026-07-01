@@ -1,4 +1,5 @@
 import { FormInstance } from 'antd';
+import React from 'react';
 import {
   BlacklistResV1RuleScopeModeEnum,
   MatchConditionReqV1TypeEnum,
@@ -20,6 +21,12 @@ export type SqlManagementExceptionFormProps = {
   isUpdate?: boolean;
   /** Create-from-SQL-manage row: limit rule_scope to triggered audit results */
   triggeredRuleScopeDisplay?: IRuleScopeDisplayV1[];
+  ruleTipsLoading?: boolean;
+  dbTypeOptions?: Array<{ label: string; value: string }>;
+  generateFlatRuleOptionsByDbType?: (
+    dbType?: string
+  ) => Array<{ label: React.ReactNode; value: string }>;
+  ruleNameDescMap?: Map<string, string>;
 };
 
 export type MatchRowFormType = MatchRow;

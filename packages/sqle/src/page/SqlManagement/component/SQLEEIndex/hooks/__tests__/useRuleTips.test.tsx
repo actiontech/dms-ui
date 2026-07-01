@@ -1,4 +1,6 @@
-import useRuleTips from '../../../../../../hooks/useRuleTips';
+import useRuleTips, {
+  resetRuleTipsCacheForTests
+} from '../../../../../../hooks/useRuleTips';
 import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -16,6 +18,7 @@ jest.mock('react-redux', () => {
 
 describe('SqlManagement/useRuleTips', () => {
   beforeEach(() => {
+    resetRuleTipsCacheForTests();
     sqlManage.mockAllApi();
     jest.useFakeTimers();
     (useSelector as jest.Mock).mockImplementation((selector) => {
@@ -87,5 +90,22 @@ describe('SqlManagement/useRuleTips', () => {
     });
     expect(result.current.ruleTips).toStrictEqual([]);
     expect(result.current.generateRuleTipsSelectOptions.length).toBe(0);
+  });
+
+  it('dedupes parallel requests for the same project', async () => {
+    const request = sqlManage.getSqlManageRuleTips();
+    const hookA = renderHooksWithRedux(() => useRuleTips());
+    const hookB = renderHooksWithRedux(() => useRuleTips());
+
+    await act(async () => {
+      hookA.result.current.updateRuleTips(mockProjectInfo.projectName);
+      hookB.result.current.updateRuleTips(mockProjectInfo.projectName);
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(request).toHaveBeenCalledTimes(1);
+    expect(hookA.result.current.ruleTips).toStrictEqual(ruleTipsData);
+    expect(hookB.result.current.ruleTips).toStrictEqual(ruleTipsData);
   });
 });

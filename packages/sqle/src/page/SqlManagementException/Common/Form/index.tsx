@@ -1,4 +1,4 @@
-import { Alert, Form, Radio, Space, FormInstance } from 'antd';
+import { Alert, Form, Radio, Space, Typography, FormInstance } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   SqlManagementExceptionFormFieldType,
@@ -14,7 +14,8 @@ import {
   BasicInput,
   EmptyBox,
   BasicSelect,
-  BasicButton
+  BasicButton,
+  SQLRenderer
 } from '@actiontech/shared';
 import {
   SqlManagementExceptionExtendedMatchTypeOptions,
@@ -22,7 +23,7 @@ import {
   SqlManagementExceptionRuleScopeModeOptions
 } from '../../index.data';
 import useInstance from '../../../../hooks/useInstance';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import {
   WarningFilled,
@@ -32,7 +33,7 @@ import {
   InfoHexagonFilled,
   CloseCircleFilled
 } from '@actiontech/icons';
-import useRuleTips, {
+import {
   DB_TYPE_RULE_NAME_SEPARATOR,
   splitRuleTipSelectValue
 } from '../../../../hooks/useRuleTips';
@@ -62,6 +63,7 @@ type MatchRowContentFieldProps = {
 };
 
 const MATCH_ROW_CONTENT_WIDTH = 320;
+const SQL_SNIPPET_COLLAPSED_ROWS = 1;
 
 const TriggeredRuleLevelIcon: React.FC<{ level?: string }> = ({ level }) => {
   if (
@@ -106,28 +108,99 @@ const MatchRowSqlContentInput: React.FC<{
     Form.useWatch(['match_rows', fieldName, 'content'], form) ?? '';
   const hasNewlines = content.includes('\n');
   const lineCount = content.split('\n').length;
+  const [expanded, setExpanded] = useState(false);
+  const [isUserEditing, setIsUserEditing] = useState(false);
+
+  useEffect(() => {
+    if (!content) {
+      setExpanded(false);
+      setIsUserEditing(false);
+      return;
+    }
+    const isEditingSqlField = document.activeElement?.closest(
+      '.match-row-sql-editor'
+    );
+    if (!isEditingSqlField) {
+      setExpanded(false);
+      setIsUserEditing(false);
+    }
+  }, [content]);
+
+  const showSnippet = !!content && !expanded && !isUserEditing;
+
+  if (showSnippet) {
+    return (
+      <>
+        <Form.Item
+          name={[fieldName, 'content']}
+          rules={[{ required: true }]}
+          hidden
+        >
+          <BasicInput />
+        </Form.Item>
+        <div
+          className="match-row-sql-snippet"
+          style={{ width: MATCH_ROW_CONTENT_WIDTH }}
+        >
+          <SQLRenderer.Snippet
+            sql={content}
+            rows={SQL_SNIPPET_COLLAPSED_ROWS}
+            showCopyIcon={false}
+            tooltip={false}
+            highlightSyntax={false}
+            paragraph={{
+              ellipsis: {
+                expandable: true,
+                rows: SQL_SNIPPET_COLLAPSED_ROWS,
+                symbol: t('common.expansion'),
+                tooltip: false,
+                onExpand: () => setExpanded(true)
+              }
+            }}
+          />
+        </div>
+      </>
+    );
+  }
 
   return (
-    <Form.Item
-      name={[fieldName, 'content']}
-      rules={[{ required: true }]}
-      noStyle
+    <div
+      className="match-row-sql-editor"
+      style={{ width: MATCH_ROW_CONTENT_WIDTH }}
     >
-      <BasicInput.TextArea
-        aria-label={t('sqlManagementException.modal.sql')}
-        className={
-          hasNewlines
-            ? undefined
-            : 'match-row-content-single-line textarea-no-resize'
-        }
-        style={{
-          width: MATCH_ROW_CONTENT_WIDTH,
-          ...(hasNewlines ? { resize: 'vertical' } : undefined)
-        }}
-        rows={hasNewlines ? Math.max(lineCount, 2) : 1}
-        placeholder={t('common.form.placeholder.input')}
-      />
-    </Form.Item>
+      <Form.Item
+        name={[fieldName, 'content']}
+        rules={[{ required: true }]}
+        noStyle
+      >
+        <BasicInput.TextArea
+          aria-label={t('sqlManagementException.modal.sql')}
+          className={
+            hasNewlines
+              ? undefined
+              : 'match-row-content-single-line textarea-no-resize'
+          }
+          style={{
+            width: MATCH_ROW_CONTENT_WIDTH,
+            ...(hasNewlines ? { resize: 'vertical' } : undefined)
+          }}
+          rows={hasNewlines ? Math.min(Math.max(lineCount, 3), 18) : 1}
+          placeholder={t('common.form.placeholder.input')}
+          onFocus={() => setIsUserEditing(true)}
+        />
+      </Form.Item>
+      {content && !showSnippet ? (
+        <Typography.Link
+          className="match-row-sql-toggle"
+          onClick={() => {
+            setExpanded(false);
+            setIsUserEditing(false);
+          }}
+        >
+          {t('common.collapse')}
+        </Typography.Link>
+      ) : null}
+    </div>
   );
 };
 
@@ -239,7 +312,11 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
 const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
   form,
   isUpdate,
-  triggeredRuleScopeDisplay
+  triggeredRuleScopeDisplay,
+  ruleTipsLoading = false,
+  dbTypeOptions = [],
+  generateFlatRuleOptionsByDbType = () => [],
+  ruleNameDescMap = new Map()
 }) => {
   const { t } = useTranslation();
 
@@ -247,13 +324,6 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
   const ruleScopeDbType = Form.useWatch('rule_scope_db_type', form);
 
   const { updateInstanceList, instanceIDOptions, loading } = useInstance();
-  const {
-    updateRuleTips,
-    generateFlatRuleOptionsByDbType,
-    dbTypeOptions,
-    ruleNameDescMap,
-    loading: ruleTipsLoading
-  } = useRuleTips();
 
   const { projectName } = useCurrentProject();
 
@@ -397,8 +467,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
       project_name: projectName,
       functional_module: getInstanceTipListV1FunctionalModuleEnum.sql_manage
     });
-    updateRuleTips(projectName);
-  }, [updateInstanceList, updateRuleTips, projectName]);
+  }, [updateInstanceList, projectName]);
 
   useEffect(() => {
     if (ruleScopeMode !== BlacklistResV1RuleScopeModeEnum.specific) {

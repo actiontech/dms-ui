@@ -26,7 +26,7 @@ type RemediationDiffCompareProps = {
   ) => void;
 };
 
-type DiffSectionVariant = 'optimized' | 'new' | 'unchanged';
+type DiffSectionVariant = 'optimized' | 'new' | 'unchanged' | 'exempted';
 
 type DiffAuditResultListProps = {
   auditResult: IAuditResultWithExemption[];
@@ -85,10 +85,11 @@ const groupAuditResults = (
 ) => {
   const highlighted: IAuditResultWithExemption[] = [];
   const unchanged: IAuditResultWithExemption[] = [];
+  const exempted: IAuditResultWithExemption[] = [];
 
   for (const item of auditResult ?? []) {
     if (isExemptedAuditResult(item)) {
-      unchanged.push(item);
+      exempted.push(item);
       continue;
     }
     const ruleName = item.rule_name ?? '';
@@ -99,7 +100,7 @@ const groupAuditResults = (
     }
   }
 
-  return { highlighted, unchanged };
+  return { highlighted, unchanged, exempted };
 };
 
 const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
@@ -211,7 +212,7 @@ const DiffSection: React.FC<DiffSectionProps> = ({
           </Typography.Text>
         </div>
         <Typography.Text type="secondary" className="diff-section-count">
-          {auditResult.filter((item) => !isExemptedAuditResult(item)).length}
+          {auditResult.length}
         </Typography.Text>
       </div>
       {expanded && (
@@ -258,26 +259,28 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
     [data?.rule_diff?.new, data?.rule_diff?.resolved]
   );
 
-  const { optimizedResults, latestNew, latestUnchanged } = useMemo(() => {
-    const latestGrouped = groupAuditResults(
-      data?.latest_audit_result as IAuditResultWithExemption[],
-      addedRuleNames
-    );
+  const { optimizedResults, latestNew, latestUnchanged, latestExempted } =
+    useMemo(() => {
+      const latestGrouped = groupAuditResults(
+        data?.latest_audit_result as IAuditResultWithExemption[],
+        addedRuleNames
+      );
 
-    return {
-      optimizedResults: filterAuditResultsByRuleNames(
-        data?.first_audit_result as IAuditResultWithExemption[],
-        removedRuleNames
-      ),
-      latestNew: latestGrouped.highlighted,
-      latestUnchanged: latestGrouped.unchanged
-    };
-  }, [
-    addedRuleNames,
-    data?.first_audit_result,
-    data?.latest_audit_result,
-    removedRuleNames
-  ]);
+      return {
+        optimizedResults: filterAuditResultsByRuleNames(
+          data?.first_audit_result as IAuditResultWithExemption[],
+          removedRuleNames
+        ),
+        latestNew: latestGrouped.highlighted,
+        latestUnchanged: latestGrouped.unchanged,
+        latestExempted: latestGrouped.exempted
+      };
+    }, [
+      addedRuleNames,
+      data?.first_audit_result,
+      data?.latest_audit_result,
+      removedRuleNames
+    ]);
 
   const firstAuditResults =
     (data?.first_audit_result as IAuditResultWithExemption[]) ?? [];
@@ -289,7 +292,8 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
   const hasLatestSections =
     optimizedResults.length > 0 ||
     latestNew.length > 0 ||
-    latestUnchanged.length > 0;
+    latestUnchanged.length > 0 ||
+    latestExempted.length > 0;
 
   const firstAuditMissing =
     !data.first_audit_time && firstAuditResults.length === 0;
@@ -371,6 +375,13 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
                 onRefresh={onRefresh}
                 showRuleExceptionActions
                 onOpenCreateException={onOpenCreateException}
+              />
+              <DiffSection
+                title={t(
+                  'sqlManagement.remediationCompare.diffSectionExempted'
+                )}
+                variant="exempted"
+                auditResult={latestExempted}
               />
             </Space>
           ) : (

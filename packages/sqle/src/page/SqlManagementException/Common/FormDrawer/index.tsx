@@ -42,7 +42,14 @@ const SqlManagementExceptionFormDrawer: React.FC<
 > = ({ mode, open, record, onClose, onSuccess }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { updateRuleTips, ruleTips, loading: ruleTipsLoading } = useRuleTips();
+  const {
+    updateRuleTips,
+    ruleTips,
+    loading: ruleTipsLoading,
+    dbTypeOptions,
+    generateFlatRuleOptionsByDbType,
+    ruleNameDescMap
+  } = useRuleTips();
   const [messageApi, messageContextHolder] = message.useMessage();
   const [form] = Form.useForm<SqlManagementExceptionFormFieldType>();
   const { projectName, projectID } = useCurrentProject();
@@ -249,6 +256,10 @@ const SqlManagementExceptionFormDrawer: React.FC<
             form={form}
             isUpdate={isUpdate}
             triggeredRuleScopeDisplay={triggeredRuleScopeDisplay}
+            ruleTipsLoading={ruleTipsLoading}
+            dbTypeOptions={dbTypeOptions}
+            generateFlatRuleOptionsByDbType={generateFlatRuleOptionsByDbType}
+            ruleNameDescMap={ruleNameDescMap}
           />
         </Spin>
       </BasicDrawer>

@@ -5,7 +5,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
   <div />
   <div>
     <div
-      class="css-amwc6x"
+      class="css-4qia3e"
     >
       <form
         class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
@@ -138,15 +138,20 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                           class="ant-space-item"
                           style="margin-right: 8px;"
                         >
-                          <textarea
-                            aria-label="SQL语句"
-                            aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper match-row-content-single-line textarea-no-resize css-1pd1cd5"
-                            id="match_rows_0_content"
-                            placeholder="请输入{{name}}"
-                            rows="1"
+                          <div
+                            class="match-row-sql-editor"
                             style="width: 320px;"
-                          />
+                          >
+                            <textarea
+                              aria-label="SQL语句"
+                              aria-required="true"
+                              class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper match-row-content-single-line textarea-no-resize css-1pd1cd5"
+                              id="match_rows_0_content"
+                              placeholder="请输入{{name}}"
+                              rows="1"
+                              style="width: 320px;"
+                            />
+                          </div>
                         </div>
                         <div
                           class="ant-space-item"

@@ -131,6 +131,7 @@ export default {
     auditTime: 'Audit time: {{time}}',
     diffSectionOptimized: 'Optimized',
     diffSectionUnchanged: 'Unchanged',
-    diffSectionNew: 'New'
+    diffSectionNew: 'New',
+    diffSectionExempted: 'Exempted'
   }
 };

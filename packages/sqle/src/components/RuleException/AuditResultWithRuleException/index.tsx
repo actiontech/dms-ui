@@ -1,4 +1,3 @@
-import { Space } from 'antd';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IAuditResultWithExemption } from '../../../page/RuleException/index.type';
 import { ISqlManageRuleExceptionContext } from '../../../page/RuleException/index.data';
@@ -6,7 +5,6 @@ import AuditResultMessage from '../../AuditResultMessage';
 import AddRuleExceptionButton, {
   OpenCreateSqlManagementExceptionParams
 } from '../AddRuleExceptionButton';
-import ExemptedRuleTag from '../ExemptedRuleTag';
 import { AuditResultWithRuleExceptionStyleWrapper } from './style';
 
 type AuditResultWithRuleExceptionProps = {
@@ -30,15 +28,6 @@ const AuditResultWithRuleException: React.FC<
 }) => {
   if (!auditResult) {
     return <AuditResultMessage />;
-  }
-
-  if (auditResult.is_exempted) {
-    return (
-      <Space align="start" size={8}>
-        <AuditResultMessage auditResult={auditResult} />
-        <ExemptedRuleTag exceptionId={auditResult.exception_id} />
-      </Space>
-    );
   }
 
   return (

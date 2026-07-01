@@ -20,6 +20,16 @@ const mockGenerateFlatRuleOptionsByDbType = jest.fn(
     }>
 );
 
+const defaultRuleTipsFormProps = {
+  dbTypeOptions: [{ label: 'MySQL', value: 'MySQL' }],
+  generateFlatRuleOptionsByDbType: mockGenerateFlatRuleOptionsByDbType,
+  ruleNameDescMap: new Map([
+    ['rule_a', 'Rule A desc'],
+    ['rule_b', 'Rule B desc']
+  ]),
+  ruleTipsLoading: false
+};
+
 jest.mock('../../../../../hooks/useInstance', () => ({
   __esModule: true,
   default: () => ({
@@ -27,32 +37,6 @@ jest.mock('../../../../../hooks/useInstance', () => ({
     instanceIDOptions: [],
     loading: false
   })
-}));
-
-jest.mock('../../../../../hooks/useRuleTips', () => ({
-  __esModule: true,
-  default: () => ({
-    updateRuleTips: jest.fn(),
-    ruleTips: [],
-    generateRuleTipsSelectOptions: [],
-    generateFlatRuleOptionsByDbType: mockGenerateFlatRuleOptionsByDbType,
-    dbTypeOptions: [{ label: 'MySQL', value: 'MySQL' }],
-    ruleNameDescMap: new Map([
-      ['rule_a', 'Rule A desc'],
-      ['rule_b', 'Rule B desc']
-    ]),
-    mapRuleNamesToSelectValues: jest.fn((values: string[]) => values),
-    loading: false
-  }),
-  DB_TYPE_RULE_NAME_SEPARATOR: '_DB_TYPE_RULE_NAME_SEPARATOR_',
-  splitRuleTipSelectValue: (value: string) => {
-    const separator = '_DB_TYPE_RULE_NAME_SEPARATOR_';
-    const separatorIndex = value.indexOf(separator);
-    if (separatorIndex === -1) {
-      return value;
-    }
-    return value.slice(separatorIndex + separator.length);
-  }
 }));
 
 jest.mock('../../../hooks/useAuditTaskSelectOptions', () => ({
@@ -87,7 +71,11 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
       Form.useForm<SqlManagementExceptionFormFieldType>()
     );
     return renderWithReduxAndTheme(
-      <SqlManagementExceptionForm form={result.current[0]} {...props} />
+      <SqlManagementExceptionForm
+        form={result.current[0]}
+        {...defaultRuleTipsFormProps}
+        {...props}
+      />
     );
   };
 
@@ -129,6 +117,8 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
     renderWithReduxAndTheme(
       <SqlManagementExceptionForm
         form={form}
+        {...defaultRuleTipsFormProps}
+        generateFlatRuleOptionsByDbType={mockGenerateFlatRuleOptionsByDbType}
         triggeredRuleScopeDisplay={[
           {
             rule_name: 'rule_a',

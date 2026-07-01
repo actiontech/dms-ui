@@ -62,6 +62,13 @@ export const RemediationDiffCompareStyleWrapper = styled('div')`
     border-color: transparent;
   }
 
+  .diff-section-exempted {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.gray.backgroundColor};
+    border-color: ${({ theme }) =>
+      `${theme.sharedTheme.uiToken.colorTextSecondary}26`};
+  }
+
   .diff-section-header {
     display: flex;
     align-items: center;

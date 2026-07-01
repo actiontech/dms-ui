@@ -133,6 +133,7 @@ export default {
     auditTime: '审核时间：{{time}}',
     diffSectionOptimized: '已优化',
     diffSectionUnchanged: '未变动',
-    diffSectionNew: '新增'
+    diffSectionNew: '新增',
+    diffSectionExempted: '已例外'
   }
 };
