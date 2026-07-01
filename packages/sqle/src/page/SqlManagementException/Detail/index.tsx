@@ -1,7 +1,7 @@
 import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Space, Spin, Typography, message } from 'antd';
+import { Popconfirm, Space, Spin, Typography, message } from 'antd';
 import {
   BasicButton,
   BasicDrawer,
@@ -328,9 +328,19 @@ const SqlManagementExceptionDetailDrawer: React.FC<
               >
                 {t('common.edit')}
               </BasicButton>
-              <BasicButton danger onClick={onDelete}>
-                {t('common.delete')}
-              </BasicButton>
+              <Popconfirm
+                title={t('sqlManagementException.operate.confirmDelete')}
+                description={t(
+                  'sqlManagementException.operate.confirmDeleteDesc'
+                )}
+                okButtonProps={{ danger: true }}
+                onConfirm={onDelete}
+                disabled={!blacklistId}
+              >
+                <BasicButton danger disabled={!blacklistId}>
+                  {t('common.delete')}
+                </BasicButton>
+              </Popconfirm>
             </Space>
           ) : (
             <BasicButton onClick={onClose}>{t('common.close')}</BasicButton>

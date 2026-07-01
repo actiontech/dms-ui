@@ -32,7 +32,8 @@ export default {
     deleting: 'Deleting SQL management whitelist item...',
     deleteSuccess: 'Successfully added SQL management whitelist item',
     confirmDelete:
-      'Are you sure you want to delete this SQL management whitelist item?'
+      'Are you sure you want to delete this SQL management whitelist item?',
+    confirmDeleteDesc: 'This action cannot be undone.'
   },
 
   detail: {

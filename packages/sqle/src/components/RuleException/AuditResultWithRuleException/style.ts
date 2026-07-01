@@ -23,10 +23,6 @@ export const AuditResultWithRuleExceptionStyleWrapper = styled('div')`
     .icon-view-detail {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
     }
-
-    .icon-cancel-exception {
-      color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
-    }
   }
 
   &:hover .audit-result-action {

@@ -14,8 +14,7 @@ jest.mock('../RuleException', () => {
         'span',
         null,
         auditResult?.message,
-        React.createElement('button', { type: 'button' }, '查看例外详情'),
-        React.createElement('button', { type: 'button' }, '取消例外')
+        React.createElement('button', { type: 'button' }, '查看例外详情')
       )
   };
 });
@@ -151,6 +150,8 @@ describe('sqle/components/RemediationDetailDrawer/RemediationDiffCompare', () =>
     expect(
       within(exemptedSection).getByText('查看例外详情')
     ).toBeInTheDocument();
-    expect(within(exemptedSection).getByText('取消例外')).toBeInTheDocument();
+    expect(
+      within(exemptedSection).queryByText('取消例外')
+    ).not.toBeInTheDocument();
   });
 });

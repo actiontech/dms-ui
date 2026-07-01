@@ -147,6 +147,8 @@ export const SqlManagementExceptionActions: (
         buttonProps: () => ({ danger: true }),
         confirm: (record) => ({
           title: t('sqlManagementException.operate.confirmDelete'),
+          description: t('sqlManagementException.operate.confirmDeleteDesc'),
+          okButtonProps: { danger: true },
           onConfirm: () => onDelete(record?.blacklist_id)
         })
       }

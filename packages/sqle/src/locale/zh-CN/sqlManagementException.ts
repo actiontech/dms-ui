@@ -32,7 +32,8 @@ export default {
 
     deleting: '正在删除管控SQL例外语句...',
     deleteSuccess: '删除管控SQL例外语句成功',
-    confirmDelete: '确认删除这条管控SQL例外么？'
+    confirmDelete: '确定删除该管控 SQL 例外？',
+    confirmDeleteDesc: '删除后不可恢复，请谨慎操作。'
   },
 
   detail: {
