@@ -9,7 +9,18 @@ jest.mock('../RuleException', () => ({
     auditResult
   }: {
     auditResult?: { message?: string };
-  }) => <span>{auditResult?.message}</span>
+  }) => <span>{auditResult?.message}</span>,
+  ExemptedAuditResultWithActions: ({
+    auditResult
+  }: {
+    auditResult?: { message?: string; exception_id?: number };
+  }) => (
+    <span>
+      {auditResult?.message}
+      <button type="button">查看例外详情</button>
+      <button type="button">取消例外</button>
+    </span>
+  )
 }));
 
 jest.mock('react-router-dom', () => ({
@@ -140,5 +151,9 @@ describe('sqle/components/RemediationDetailDrawer/RemediationDiffCompare', () =>
     expect(within(exemptedSection).getByText('1')).toBeInTheDocument();
     expect(within(exemptedSection).getByText('exempted')).toBeInTheDocument();
     expect(document.querySelector('.ant-tag')).not.toBeInTheDocument();
+    expect(
+      within(exemptedSection).getByText('查看例外详情')
+    ).toBeInTheDocument();
+    expect(within(exemptedSection).getByText('取消例外')).toBeInTheDocument();
   });
 });

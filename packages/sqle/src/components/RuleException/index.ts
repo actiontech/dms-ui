@@ -8,3 +8,4 @@ export { default as MatchModeDisplay } from './MatchModeDisplay';
 export { default as RuleScopeDisplay } from './RuleScopeDisplay';
 export { default as RuleScopeTag } from './RuleScopeTag';
 export { default as AuditResultWithRuleException } from './AuditResultWithRuleException';
+export { default as ExemptedAuditResultWithActions } from './ExemptedAuditResultWithActions';

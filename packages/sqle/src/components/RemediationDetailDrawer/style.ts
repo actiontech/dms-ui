@@ -64,9 +64,9 @@ export const RemediationDiffCompareStyleWrapper = styled('div')`
 
   .diff-section-exempted {
     background-color: ${({ theme }) =>
-      theme.sharedTheme.components.basicTag.gray.backgroundColor};
+      theme.sharedTheme.basic.colorPrimaryBgActive};
     border-color: ${({ theme }) =>
-      `${theme.sharedTheme.uiToken.colorTextSecondary}26`};
+      `${theme.sharedTheme.uiToken.colorPrimary}33`};
   }
 
   .diff-section-header {

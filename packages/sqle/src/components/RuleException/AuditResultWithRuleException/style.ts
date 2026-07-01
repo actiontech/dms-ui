@@ -19,6 +19,14 @@ export const AuditResultWithRuleExceptionStyleWrapper = styled('div')`
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease;
+
+    .icon-view-detail {
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+    }
+
+    .icon-cancel-exception {
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+    }
   }
 
   &:hover .audit-result-action {
