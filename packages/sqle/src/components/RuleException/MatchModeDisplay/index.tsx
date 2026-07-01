@@ -5,6 +5,9 @@ import {
   formatMatchModeTypeLabels
 } from '../../../page/RuleException/utils';
 import { SqlManagementExceptionMatchTypeDirection } from '../../../page/SqlManagementException/index.data';
+import useSourceTips, {
+  resolveAuditTaskTypeLabel
+} from '../../../page/SqlManagement/component/SQLEEIndex/hooks/useSourceTips';
 
 type MatchModeDisplayProps = {
   record: IBlacklistResV1;
@@ -30,9 +33,19 @@ const MatchModeDisplay: React.FC<MatchModeDisplayProps> = ({
   record,
   labelsOnly = false
 }) => {
+  const { generateSourceSelectOptions } = useSourceTips();
+  const formatMatchModeOptions = {
+    resolveAuditTaskTypeLabel: (content: string) =>
+      resolveAuditTaskTypeLabel(content, generateSourceSelectOptions)
+  };
+
   const displayText = labelsOnly
     ? formatMatchModeTypeLabels(record, getMatchTypeLabel).join('、')
-    : formatMatchModeDisplayText(record, getMatchTypeLabel);
+    : formatMatchModeDisplayText(
+        record,
+        getMatchTypeLabel,
+        formatMatchModeOptions
+      );
 
   if (!displayText) {
     return <Typography.Text type="secondary">-</Typography.Text>;

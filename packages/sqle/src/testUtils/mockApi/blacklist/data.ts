@@ -26,6 +26,13 @@ export const mockBlacklistData: IBlacklistResV1[] = [
     last_match_time: undefined,
     rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
     rule_scope: ['dml_check_where_is_invalid'] as unknown as undefined,
+    rule_scope_display: [
+      {
+        rule_name: 'dml_check_where_is_invalid',
+        rule_desc: 'DML 语句 WHERE 条件无效',
+        level: 'warn'
+      }
+    ],
     match_conditions: [
       {
         type: MatchConditionReqV1TypeEnum.audit_task_type,
@@ -34,6 +41,19 @@ export const mockBlacklistData: IBlacklistResV1[] = [
       {
         type: MatchConditionReqV1TypeEnum.audit_task_id,
         content: '100'
+      }
+    ],
+    match_conditions_display: [
+      {
+        type: MatchConditionReqV1TypeEnum.audit_task_type,
+        content: 'mysql_slow_log',
+        content_display: 'MySQL 慢日志'
+      },
+      {
+        type: MatchConditionReqV1TypeEnum.audit_task_id,
+        content: '100',
+        content_display: 'prod-mysql-01 (#100)',
+        navigate_path: '/sqle/project/project-uid/sql-management-conf/100'
       }
     ],
     created_by: 'zhangsan',

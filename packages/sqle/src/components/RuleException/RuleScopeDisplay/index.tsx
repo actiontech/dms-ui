@@ -7,17 +7,15 @@ import { formatRuleScope } from '../../../page/RuleException/utils';
 
 type RuleScopeDisplayProps = {
   record: IBlacklistResV1;
-  ruleNameDescMap?: Map<string, string>;
   modeOnly?: boolean;
 };
 
 const RuleScopeDisplay: React.FC<RuleScopeDisplayProps> = ({
   record,
-  ruleNameDescMap,
   modeOnly = false
 }) => {
   const { t } = useTranslation();
-  const { mode, ruleLabels } = formatRuleScope(record, ruleNameDescMap);
+  const { mode, ruleLabels } = formatRuleScope(record);
   const isAll = mode === BlacklistResV1RuleScopeModeEnum.all;
 
   if (modeOnly) {

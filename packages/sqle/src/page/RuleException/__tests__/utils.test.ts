@@ -2,7 +2,7 @@ import {
   CreateBlacklistReqV1TypeEnum,
   MatchConditionReqV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { buildRuleExceptionFromSqlManage } from '../utils';
+import { buildRuleExceptionFromSqlManage, formatMatchMode } from '../utils';
 
 describe('sqle/page/RuleException/utils', () => {
   it('buildRuleExceptionFromSqlManage omits empty match conditions', () => {
@@ -89,6 +89,61 @@ describe('sqle/page/RuleException/utils', () => {
       ],
       rule_scope: ['rule_c'],
       desc: undefined
+    });
+  });
+
+  it('formatMatchMode resolves audit_task_type from raw content when display is missing', () => {
+    const rows = formatMatchMode(
+      {
+        type: CreateBlacklistReqV1TypeEnum.fp_sql,
+        content: 'select 1',
+        match_conditions: [
+          {
+            type: MatchConditionReqV1TypeEnum.audit_task_type,
+            content: 'sql_audit_record'
+          }
+        ]
+      },
+      (type) => type ?? '-',
+      {
+        resolveAuditTaskTypeLabel: () => 'SQL审核'
+      }
+    );
+
+    expect(rows).toEqual([
+      {
+        type: CreateBlacklistReqV1TypeEnum.fp_sql,
+        typeLabel: CreateBlacklistReqV1TypeEnum.fp_sql,
+        content: 'select 1'
+      },
+      {
+        type: MatchConditionReqV1TypeEnum.audit_task_type,
+        typeLabel: MatchConditionReqV1TypeEnum.audit_task_type,
+        content: 'SQL审核'
+      }
+    ]);
+  });
+
+  it('formatMatchMode keeps backend content_display for audit_task_type', () => {
+    const rows = formatMatchMode(
+      {
+        type: CreateBlacklistReqV1TypeEnum.fp_sql,
+        content: 'select 1',
+        match_conditions_display: [
+          {
+            type: MatchConditionReqV1TypeEnum.audit_task_type,
+            content: 'mysql_slow_log',
+            content_display: 'MySQL 慢日志'
+          }
+        ]
+      },
+      (type) => type ?? '-'
+    );
+
+    expect(rows[1]).toEqual({
+      type: MatchConditionReqV1TypeEnum.audit_task_type,
+      typeLabel: MatchConditionReqV1TypeEnum.audit_task_type,
+      content: 'MySQL 慢日志'
     });
   });
 });

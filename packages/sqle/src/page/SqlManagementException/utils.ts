@@ -1,102 +1,22 @@
-import { TFunction } from 'i18next';
 import { SqlManagementExceptionFormFieldType } from './index.type';
 import {
   IBlacklistResV1,
-  IInstanceAuditPlanResV1,
   IRuleTips
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  blacklistToRows,
-  formatMatchModeItems,
-  rowsToBlacklistBody
-} from '../RuleException/utils';
+import { blacklistToRows, rowsToBlacklistBody } from '../RuleException/utils';
 import {
   blacklistRecordToExtended,
-  MATCH_CONDITION_READ_TYPE_SOURCE,
-  MATCH_CONDITION_READ_TYPE_SOURCE_ID,
   normalizeRuleScopeList
 } from '../RuleException/index.data';
 import {
   BlacklistResV1RuleScopeModeEnum,
   MatchConditionReqV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { SQLAuditRecordListUrlParamsKey } from '../SqlManagement/component/SQLEEIndex/index.data';
 import {
   DB_TYPE_RULE_NAME_SEPARATOR,
   extractDbTypeFromRuleSelectValue,
   splitRuleTipSelectValue
 } from '../../hooks/useRuleTips';
-
-export type AuditTaskMatchInfo = {
-  auditTaskType?: string;
-  auditTaskId?: string;
-};
-
-export const isAuditTaskIdMatchType = (type?: string): boolean => {
-  return (
-    type === MatchConditionReqV1TypeEnum.audit_task_id ||
-    type === MATCH_CONDITION_READ_TYPE_SOURCE_ID
-  );
-};
-
-export const extractAuditTaskMatchInfo = (
-  record: IBlacklistResV1
-): AuditTaskMatchInfo => {
-  const info: AuditTaskMatchInfo = {};
-  formatMatchModeItems(record).forEach((row) => {
-    if (
-      row.type === MatchConditionReqV1TypeEnum.audit_task_type ||
-      row.type === MATCH_CONDITION_READ_TYPE_SOURCE
-    ) {
-      info.auditTaskType = row.content;
-    }
-    if (isAuditTaskIdMatchType(row.type)) {
-      info.auditTaskId = row.content;
-    }
-  });
-  return info;
-};
-
-export const formatAuditTaskDisplayLabel = (
-  plan: IInstanceAuditPlanResV1 | undefined,
-  auditTaskId: string | undefined,
-  t: TFunction
-): string => {
-  if (plan) {
-    const instanceName =
-      plan.instance_name ||
-      t('managementConf.list.table.column.staticScanType');
-    return `${instanceName} (#${plan.instance_audit_plan_id ?? ''})`;
-  }
-  return auditTaskId ?? '-';
-};
-
-export const buildAuditTaskNavigatePath = (
-  projectID: string,
-  auditTaskType?: string,
-  auditTaskId?: string
-): string | undefined => {
-  if (!auditTaskId) {
-    return undefined;
-  }
-  if (auditTaskType === GetSqlManageListV2FilterSourceEnum.sql_audit_record) {
-    return `/sqle/project/${projectID}/sql-audit?${SQLAuditRecordListUrlParamsKey.SQLAuditRecordID}=${auditTaskId}`;
-  }
-  return `/sqle/project/${projectID}/sql-management-conf/${auditTaskId}`;
-};
-
-export const findInstanceAuditPlanById = (
-  plans: IInstanceAuditPlanResV1[] | undefined,
-  auditTaskId?: string
-): IInstanceAuditPlanResV1 | undefined => {
-  if (!auditTaskId || !plans?.length) {
-    return undefined;
-  }
-  return plans.find(
-    (plan) => `${plan.instance_audit_plan_id ?? ''}` === auditTaskId
-  );
-};
 
 const resolveDbTypeForPayload = (
   values: SqlManagementExceptionFormFieldType

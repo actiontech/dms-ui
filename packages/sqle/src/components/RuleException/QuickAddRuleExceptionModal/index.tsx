@@ -7,10 +7,13 @@ import useRuleExceptionActions from '../useRuleExceptionActions';
 import QuickAddRuleExceptionContextSummary from '../QuickAddRuleExceptionContextSummary';
 import useRuleTips from '../../../hooks/useRuleTips';
 import { ISqlManageRuleExceptionContext } from '../../../page/RuleException/index.data';
+import { IAuditResultWithExemption } from '../../../page/RuleException/index.type';
+import { getAuditResultDisplayText } from '../../AuditResultMessage/getAuditResultDisplayText';
 
 export type QuickAddRuleExceptionModalProps = {
   open: boolean;
   ruleName?: string;
+  auditResult?: IAuditResultWithExemption;
   sqlManageContext?: ISqlManageRuleExceptionContext;
   onClose: () => void;
   onSuccess?: () => void;
@@ -19,11 +22,12 @@ export type QuickAddRuleExceptionModalProps = {
 const QuickAddRuleExceptionModal: React.FC<QuickAddRuleExceptionModalProps> = ({
   open,
   ruleName,
+  auditResult,
   sqlManageContext,
   onClose,
   onSuccess
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { projectName } = useCurrentProject();
   const [form] = Form.useForm<{ desc?: string }>();
   const { ruleNameDescMap, updateRuleTips } = useRuleTips();
@@ -46,8 +50,18 @@ const QuickAddRuleExceptionModal: React.FC<QuickAddRuleExceptionModalProps> = ({
     if (!ruleName) {
       return undefined;
     }
-    return ruleNameDescMap.get(ruleName) ?? ruleName;
-  }, [ruleName, ruleNameDescMap]);
+    const ruleTipsLabel = ruleNameDescMap.get(ruleName);
+    if (ruleTipsLabel) {
+      return ruleTipsLabel;
+    }
+    const auditResultLabel = getAuditResultDisplayText(auditResult, t, {
+      i18nInstance: i18n
+    });
+    if (auditResultLabel) {
+      return auditResultLabel;
+    }
+    return ruleName;
+  }, [auditResult, i18n, ruleName, ruleNameDescMap, t]);
 
   const submit = async () => {
     if (!ruleName) {

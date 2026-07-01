@@ -2,6 +2,7 @@ import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import {
   IBlacklistResV1,
   IAuditResult,
+  IMatchConditionDisplayV1,
   IMatchConditionReqV1,
   IRuleTips,
   ISource
@@ -257,8 +258,52 @@ export type FormattedMatchModeItem = {
 
 const isAuditTaskIdDisplayType = (type?: string): boolean => {
   return (
-    type === MatchConditionReqV1TypeEnum.audit_task_id ||
-    type === MATCH_CONDITION_READ_TYPE_SOURCE_ID
+    normalizeMatchConditionTypeForRead(type) ===
+    MatchConditionReqV1TypeEnum.audit_task_id
+  );
+};
+
+const isAuditTaskTypeDisplayType = (type?: string): boolean => {
+  return (
+    normalizeMatchConditionTypeForRead(type) ===
+    MatchConditionReqV1TypeEnum.audit_task_type
+  );
+};
+
+export type FormatMatchModeOptions = {
+  resolveAuditTaskTypeLabel?: (content: string) => string | undefined;
+};
+
+const resolveMatchModeContent = (
+  type: string | undefined,
+  content: string | undefined,
+  contentDisplay: string | undefined,
+  resolveAuditTaskTypeLabel?: (content: string) => string | undefined
+): string | undefined => {
+  const rawContent = content?.trim();
+  const display = contentDisplay?.trim();
+
+  if (isAuditTaskTypeDisplayType(type) && rawContent) {
+    if (display && display !== rawContent) {
+      return display;
+    }
+    return resolveAuditTaskTypeLabel?.(rawContent) ?? display ?? rawContent;
+  }
+
+  return display ?? rawContent;
+};
+
+const buildMatchConditionsDisplayRows = (
+  item: IBlacklistResV1
+): IMatchConditionDisplayV1[] => {
+  if (item.match_conditions_display?.length) {
+    return item.match_conditions_display;
+  }
+  return normalizeMatchConditionsForRead(item.match_conditions).map(
+    (condition) => ({
+      type: condition.type,
+      content: condition.content
+    })
   );
 };
 
@@ -285,23 +330,46 @@ export const formatMatchModeItems = (
 
 export const formatMatchMode = (
   item: IBlacklistResV1,
-  getTypeLabel: (type?: string) => string
+  getTypeLabel: (type?: string) => string,
+  options?: FormatMatchModeOptions
 ): FormattedMatchModeItem[] => {
-  return (item.match_conditions_display ?? []).map((row) => ({
-    type: row.type,
-    typeLabel: getTypeLabel(row.type),
-    content: row.content_display,
-    navigatePath: isAuditTaskIdDisplayType(row.type)
-      ? row.navigate_path
-      : undefined
-  }));
+  const { resolveAuditTaskTypeLabel } = options ?? {};
+  const rows: FormattedMatchModeItem[] = [];
+
+  if (item.type) {
+    rows.push({
+      type: item.type,
+      typeLabel: getTypeLabel(item.type),
+      content: item.content
+    });
+  }
+
+  buildMatchConditionsDisplayRows(item).forEach((row) => {
+    const normalizedType = normalizeMatchConditionTypeForRead(row.type);
+    rows.push({
+      type: normalizedType,
+      typeLabel: getTypeLabel(normalizedType),
+      content: resolveMatchModeContent(
+        normalizedType,
+        row.content,
+        row.content_display,
+        resolveAuditTaskTypeLabel
+      ),
+      navigatePath: isAuditTaskIdDisplayType(normalizedType)
+        ? row.navigate_path
+        : undefined
+    });
+  });
+
+  return rows;
 };
 
 export const formatMatchModeDisplayText = (
   item: IBlacklistResV1,
-  getTypeLabel: (type?: string) => string
+  getTypeLabel: (type?: string) => string,
+  options?: FormatMatchModeOptions
 ): string => {
-  return formatMatchMode(item, getTypeLabel)
+  return formatMatchMode(item, getTypeLabel, options)
     .map((row) =>
       row.content !== undefined
         ? `${row.typeLabel}：${row.content ?? '-'}`
@@ -316,22 +384,23 @@ export const formatMatchModeTypeLabels = (
 ): string[] => {
   const seen = new Set<string>();
   const labels: string[] = [];
-  formatMatchModeItems(item).forEach((row) => {
-    if (!row.type || seen.has(row.type)) {
+  const addType = (type?: string) => {
+    if (!type || seen.has(type)) {
       return;
     }
-    seen.add(row.type);
-    labels.push(getTypeLabel(row.type));
-  });
+    seen.add(type);
+    labels.push(getTypeLabel(type));
+  };
+
+  addType(item.type);
+  (item.match_conditions_display ?? []).forEach((row) => addType(row.type));
+
   return labels;
 };
 
-export const formatRuleScope = (
-  item: IBlacklistResV1,
-  ruleNameDescMap?: Map<string, string>
-): FormattedRuleScope => {
+export const formatRuleScope = (item: IBlacklistResV1): FormattedRuleScope => {
   const ruleScope = item.rule_scope as RuleScopeWriteValue | undefined;
-  const mode = parseRuleScopeMode(ruleScope);
+  const mode = item.rule_scope_mode ?? parseRuleScopeMode(ruleScope);
   const ruleNames = normalizeRuleScopeList(ruleScope);
   const isAll =
     mode === BlacklistResV1RuleScopeModeEnum.all || ruleNames.length === 0;
@@ -339,8 +408,8 @@ export const formatRuleScope = (
   return {
     mode: isAll ? BlacklistResV1RuleScopeModeEnum.all : mode,
     ruleNames,
-    ruleLabels: ruleNames.map(
-      (ruleName) => ruleNameDescMap?.get(ruleName) ?? ruleName
+    ruleLabels: (item.rule_scope_display ?? []).map(
+      (rule) => rule.rule_desc ?? '-'
     )
   };
 };

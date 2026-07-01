@@ -14,15 +14,6 @@ import {
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
-jest.mock('../../../../hooks/useRuleTips', () => ({
-  __esModule: true,
-  default: () => ({
-    updateRuleTips: jest.fn(),
-    ruleNameDescMap: new Map(),
-    mapRuleNamesToSelectValues: jest.fn((values: string[]) => values)
-  })
-}));
-
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),

@@ -58,6 +58,7 @@ const AddRuleExceptionButton: React.FC<AddRuleExceptionButtonProps> = ({
       <QuickAddRuleExceptionModal
         open={open}
         ruleName={auditResult?.rule_name}
+        auditResult={auditResult}
         sqlManageContext={sqlManageContext}
         onClose={() => setOpen(false)}
         onSuccess={onSuccess}

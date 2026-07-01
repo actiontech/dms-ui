@@ -20,8 +20,11 @@ import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BlacklistResV1RuleScopeModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlManagementExceptionMatchTypeDirection } from '../index.data';
-import { formatMatchMode } from '../../RuleException/utils';
+import { formatMatchMode, formatRuleScope } from '../../RuleException/utils';
 import { blacklistRecordToExtended } from '../../RuleException/index.data';
+import useSourceTips, {
+  resolveAuditTaskTypeLabel
+} from '../../SqlManagement/component/SQLEEIndex/hooks/useSourceTips';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import {
@@ -166,6 +169,7 @@ const SqlManagementExceptionDetailDrawer: React.FC<
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName, projectArchive } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
+  const { generateSourceSelectOptions } = useSourceTips();
   const canWrite = isAdmin || isProjectManager(projectName);
 
   const {
@@ -204,20 +208,17 @@ const SqlManagementExceptionDetailDrawer: React.FC<
     if (!detail) {
       return [];
     }
-    return formatMatchMode(detail, getMatchTypeLabel);
-  }, [detail]);
+    return formatMatchMode(detail, getMatchTypeLabel, {
+      resolveAuditTaskTypeLabel: (content) =>
+        resolveAuditTaskTypeLabel(content, generateSourceSelectOptions)
+    });
+  }, [detail, generateSourceSelectOptions]);
 
   const formattedRuleScope = useMemo(() => {
     if (!detail) {
       return undefined;
     }
-    return {
-      mode:
-        detail.rule_scope_mode ?? BlacklistResV1RuleScopeModeEnum.all,
-      ruleLabels: (detail.rule_scope_display ?? []).map(
-        (rule) => rule.rule_desc ?? '-'
-      )
-    };
+    return formatRuleScope(detail);
   }, [detail]);
 
   const onDelete = useCallback(() => {
