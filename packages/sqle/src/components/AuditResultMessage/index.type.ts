@@ -24,11 +24,14 @@ export type IAuditResultWithExtra = IAuditResult &
   AuditResultExtra &
   IAuditResultWithExemption;
 
+export type AuditResultMessageMoreBtnPlacement = 'annotation' | 'descRow';
+
 export type AuditResultMessageProps = {
   auditResult?: IAuditResultWithExtra;
   styleClass?: string;
   showAnnotation?: boolean;
   moreBtnLink?: string;
+  moreBtnPlacement?: AuditResultMessageMoreBtnPlacement;
   isRuleDeleted?: boolean;
   auditStatus?: string;
   displayMode?: AuditResultDisplayMode;

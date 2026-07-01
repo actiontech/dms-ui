@@ -53,7 +53,10 @@ import { message } from 'antd';
 import { Link } from 'react-router-dom';
 import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { ISqlManageRuleExceptionContext } from '../../../../page/RuleException/index.data';
+import {
+  ISqlManageRuleExceptionContext,
+  buildSqlManageRuleExceptionContext
+} from '../../../../page/RuleException/index.data';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
@@ -133,18 +136,16 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     const sql_fingerprint =
       remediationDrawerRecord['sql_fingerprint'] ??
       remediationDrawerRecord['fingerprint'];
-    if (!sql_fingerprint) {
-      return undefined;
-    }
-    return {
+    return buildSqlManageRuleExceptionContext({
       sql_fingerprint,
       instance_id: remediationDrawerRecord['instance_id'],
+      db_type: instanceType,
       source: {
         sql_source_type: auditPlanType,
         sql_source_ids: auditPlanId ? [auditPlanId] : undefined
       }
-    };
-  }, [auditPlanId, auditPlanType, remediationDrawerRecord]);
+    });
+  }, [auditPlanId, auditPlanType, instanceType, remediationDrawerRecord]);
 
   const {
     data: tableMetas,

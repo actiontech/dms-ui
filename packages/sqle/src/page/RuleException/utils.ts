@@ -13,6 +13,10 @@ import {
   MatchConditionReqV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { RuleScopeMode } from './index.type';
+import {
+  getAuditResultLevel,
+  PASS_AUDIT_LEVELS
+} from '../../components/AuditResultMessage/auditLevelUtils';
 
 const BLACKLIST_ID_PATTERN = /blacklist_id=(\d+)/;
 const GENERIC_ID_PATTERN = /id=(\d+)/;
@@ -147,6 +151,37 @@ export type ISqlManageRuleExceptionContext = {
   >;
 };
 
+export type SqlManageRuleExceptionRecord = {
+  sql_fingerprint?: string;
+  sql?: string;
+  instance_id?: string;
+  db_type?: string;
+  source?: ISqlManageRuleExceptionContext['source'];
+  audit_result?: IAuditResult[] | null;
+};
+
+export const extractTriggeredAuditResults = (
+  auditResults?: IAuditResult[] | null
+): IAuditResult[] => {
+  if (!auditResults?.length) {
+    return [];
+  }
+
+  return auditResults.filter((item) => {
+    if (!item.rule_name?.trim()) {
+      return false;
+    }
+    const level = getAuditResultLevel(item);
+    if (
+      !level ||
+      PASS_AUDIT_LEVELS.includes(level as (typeof PASS_AUDIT_LEVELS)[number])
+    ) {
+      return false;
+    }
+    return true;
+  });
+};
+
 export const resolveDbTypeFromAuditResults = (
   auditResults?: Array<{ db_type?: string }> | null
 ): string | undefined => {
@@ -199,6 +234,88 @@ export const resolveQuickAddRuleExceptionDbType = (
       fallbackDbType
     ) || resolveDbTypeFromRuleTips(ruleName, ruleTips)
   );
+};
+
+export const buildSqlManageRuleExceptionContext = (
+  record?: SqlManageRuleExceptionRecord | null
+): ISqlManageRuleExceptionContext | undefined => {
+  if (!record) {
+    return undefined;
+  }
+  const sql_fingerprint = record.sql_fingerprint?.trim() || record.sql?.trim();
+  if (!sql_fingerprint) {
+    return undefined;
+  }
+
+  return {
+    sql_fingerprint,
+    instance_id: record.instance_id,
+    db_type: resolveRuleExceptionDbType(
+      undefined,
+      undefined,
+      record.audit_result,
+      record.db_type
+    ),
+    source: record.source
+  };
+};
+
+export const buildBlacklistPrefillFromSqlManage = (
+  record?: SqlManageRuleExceptionRecord | null
+): IBlacklistResV1 | null => {
+  const context = buildSqlManageRuleExceptionContext(record);
+  if (!context) {
+    return null;
+  }
+
+  const match_conditions: IMatchConditionReqV1[] = [];
+
+  if (context.instance_id) {
+    match_conditions.push({
+      type: MatchConditionReqV1TypeEnum.instance,
+      content: context.instance_id
+    });
+  }
+  if (context.source?.sql_source_type) {
+    match_conditions.push({
+      type: MatchConditionReqV1TypeEnum.audit_task_type,
+      content: context.source.sql_source_type
+    });
+  }
+  if (context.source?.sql_source_ids?.[0]) {
+    match_conditions.push({
+      type: MatchConditionReqV1TypeEnum.audit_task_id,
+      content: context.source.sql_source_ids[0]
+    });
+  }
+
+  const basePrefill: IBlacklistResV1 = {
+    type: CreateBlacklistReqV1TypeEnum.fp_sql as unknown as IBlacklistResV1['type'],
+    content: context.sql_fingerprint,
+    match_conditions: match_conditions.length ? match_conditions : undefined
+  };
+
+  const triggeredResults = extractTriggeredAuditResults(record?.audit_result);
+  if (!triggeredResults.length) {
+    return basePrefill;
+  }
+
+  const dbType =
+    context.db_type ?? resolveDbTypeFromAuditResults(triggeredResults);
+
+  return {
+    ...basePrefill,
+    rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
+    rule_scope: triggeredResults.map(
+      (item) => item.rule_name as string
+    ) as unknown as IBlacklistResV1['rule_scope'],
+    rule_scope_display: triggeredResults.map((item) => ({
+      rule_name: item.rule_name,
+      level: getAuditResultLevel(item),
+      db_type: dbType ?? item.db_type,
+      rule_desc: item.message
+    }))
+  };
 };
 
 export type QuickAddRuleExceptionSummaryItem = {
@@ -307,10 +424,51 @@ const buildMatchConditionsDisplayRows = (
   );
 };
 
+export type FormattedRuleScopeItem = {
+  ruleName?: string;
+  label: string;
+  navigatePath?: string;
+  level?: string;
+  dbType?: string;
+  annotation?: string;
+};
+
 export type FormattedRuleScope = {
   mode: RuleScopeMode;
   ruleNames: string[];
   ruleLabels: string[];
+  rules: FormattedRuleScopeItem[];
+};
+
+export const buildRuleKnowledgePath = (
+  ruleName?: string,
+  dbType?: string
+): string | undefined => {
+  const normalizedRuleName = ruleName?.trim();
+  const normalizedDbType = dbType?.trim();
+  if (!normalizedRuleName || !normalizedDbType) {
+    return undefined;
+  }
+  return `/sqle/rule/knowledge/${encodeRuleNameForPath(
+    normalizedRuleName
+  )}/${encodeURIComponent(normalizedDbType)}`;
+};
+
+const resolveBlacklistDbType = (item: IBlacklistResV1): string | undefined => {
+  for (const row of item.match_conditions_display ?? []) {
+    if (
+      normalizeMatchConditionTypeForRead(row.type) ===
+      MatchConditionReqV1TypeEnum.db_type
+    ) {
+      return row.content?.trim();
+    }
+  }
+  for (const row of normalizeMatchConditionsForRead(item.match_conditions)) {
+    if (row.type === MatchConditionReqV1TypeEnum.db_type) {
+      return row.content?.trim();
+    }
+  }
+  return undefined;
 };
 
 export const formatMatchModeItems = (
@@ -405,12 +563,26 @@ export const formatRuleScope = (item: IBlacklistResV1): FormattedRuleScope => {
   const isAll =
     mode === BlacklistResV1RuleScopeModeEnum.all || ruleNames.length === 0;
 
+  const fallbackDbType = resolveBlacklistDbType(item);
+  const rules: FormattedRuleScopeItem[] = (item.rule_scope_display ?? []).map(
+    (rule) => {
+      const dbType = rule.db_type ?? fallbackDbType;
+      return {
+        ruleName: rule.rule_name,
+        label: rule.rule_desc ?? '-',
+        navigatePath: buildRuleKnowledgePath(rule.rule_name, dbType),
+        level: rule.level,
+        dbType,
+        annotation: (rule as { annotation?: string }).annotation
+      };
+    }
+  );
+
   return {
     mode: isAll ? BlacklistResV1RuleScopeModeEnum.all : mode,
     ruleNames,
-    ruleLabels: (item.rule_scope_display ?? []).map(
-      (rule) => rule.rule_desc ?? '-'
-    )
+    ruleLabels: rules.map((rule) => rule.label),
+    rules
   };
 };
 
@@ -513,11 +685,9 @@ export const validateMatchRows = (rows?: MatchRow[]) => {
 export const buildRuleExceptionFromSqlManage = (
   record: ISqlManageRuleExceptionContext,
   ruleName: string,
-  desc?: string,
-  dbType?: string
+  desc?: string
 ) => {
   const match_conditions: IMatchConditionReqV1[] = [];
-  const resolvedDbType = dbType ?? record.db_type;
 
   if (record.instance_id) {
     match_conditions.push({
@@ -535,12 +705,6 @@ export const buildRuleExceptionFromSqlManage = (
     match_conditions.push({
       type: MatchConditionReqV1TypeEnum.audit_task_id,
       content: record.source.sql_source_ids[0]
-    });
-  }
-  if (resolvedDbType) {
-    match_conditions.push({
-      type: MatchConditionReqV1TypeEnum.db_type,
-      content: resolvedDbType
     });
   }
 

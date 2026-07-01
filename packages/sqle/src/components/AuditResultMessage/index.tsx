@@ -52,6 +52,7 @@ const AuditResultMessage = ({
   styleClass,
   showAnnotation,
   moreBtnLink,
+  moreBtnPlacement = 'annotation',
   isRuleDeleted,
   auditStatus,
   displayMode = 'ruleDesc'
@@ -123,6 +124,10 @@ const AuditResultMessage = ({
     );
   }
 
+  const showMoreInDescRow = moreBtnPlacement === 'descRow' && !!moreBtnLink;
+  const showMoreInAnnotation =
+    moreBtnPlacement === 'annotation' && !!moreBtnLink;
+
   return (
     <AuditResultMessageWithAnnotationStyleWrapper
       className={classNames(styleClass, {
@@ -138,18 +143,30 @@ const AuditResultMessage = ({
       <AuditResultMessageStyleWrapper onClick={() => set(!visible)}>
         <span className="icon-wrapper">{renderIcon}</span>
         <span className="text-wrapper">{renderMessage}</span>
+        {/* #if [ee] */}
+        <EmptyBox if={showMoreInDescRow}>
+          <Typography.Link
+            className="desc-row-more-link"
+            target="_blank"
+            href={moreBtnLink}
+            onClick={(event) => event.stopPropagation()}
+          >
+            {t('common.showMore')}
+          </Typography.Link>
+        </EmptyBox>
+        {/* #endif */}
       </AuditResultMessageStyleWrapper>
       <EmptyBox
         if={
           showAnnotation &&
           visible &&
-          (!!auditResult?.annotation || !!moreBtnLink)
+          (!!auditResult?.annotation || showMoreInAnnotation)
         }
       >
         <div className="annotation-wrapper">
           {auditResult?.annotation}
           {/* #if [ee] */}
-          <EmptyBox if={!!moreBtnLink}>
+          <EmptyBox if={showMoreInAnnotation}>
             <Typography.Link target="_blank" href={moreBtnLink}>
               {t('common.showMore')}
             </Typography.Link>

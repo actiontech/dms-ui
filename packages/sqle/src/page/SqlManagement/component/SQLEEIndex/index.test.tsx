@@ -461,7 +461,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       type: 'sqlManagementException/updateModalStatus'
     });
     expect(mockDispatch).toHaveBeenNthCalledWith(5, {
-      payload: { selectRow: { content: undefined } },
+      payload: { selectRow: null },
       type: 'sqlManagementException/updateSelectSqlManagementException'
     });
   });

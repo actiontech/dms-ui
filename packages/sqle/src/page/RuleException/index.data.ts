@@ -124,7 +124,9 @@ export const isBaseMatchAuditTaskType = (type?: string) => {
 };
 
 export {
+  buildBlacklistPrefillFromSqlManage,
   buildRuleExceptionFromSqlManage,
+  buildSqlManageRuleExceptionContext,
   blacklistToRows,
   formatMatchMode,
   formatMatchModeDisplayText,
@@ -146,9 +148,11 @@ export {
 export type {
   FormattedMatchModeItem,
   FormattedRuleScope,
+  FormattedRuleScopeItem,
   ISqlManageRuleExceptionContext,
   MatchRow,
-  QuickAddRuleExceptionSummaryItem
+  QuickAddRuleExceptionSummaryItem,
+  SqlManageRuleExceptionRecord
 } from './utils';
 
 /** @deprecated use normalizeRuleScopeForWrite */

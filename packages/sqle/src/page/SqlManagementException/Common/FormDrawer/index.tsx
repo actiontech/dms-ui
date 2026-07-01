@@ -7,7 +7,6 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
 import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
-import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IUpdateBlacklistReqV1 } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -16,6 +15,7 @@ import useRuleTips from '../../../../hooks/useRuleTips';
 import SqlManagementExceptionForm from '../Form';
 import { SqlManagementExceptionFormFieldType } from '../../index.type';
 import {
+  blacklistRecordToFormValues,
   buildUpdateFormValuesFromRecord,
   formValuesToBlacklistPayload
 } from '../../utils';
@@ -24,6 +24,8 @@ import {
   buildRuleExceptionDetailPath,
   parseRuleExceptionConflictId
 } from '../../../RuleException/utils';
+import { BlacklistResV1RuleScopeModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { normalizeRuleScopeList } from '../../../RuleException/index.data';
 
 export type SqlManagementExceptionFormDrawerMode = 'create' | 'update';
 
@@ -175,16 +177,24 @@ const SqlManagementExceptionFormDrawer: React.FC<
       return;
     }
 
+    if (ruleTipsLoading) {
+      return;
+    }
+
     form.resetFields();
-    if (record?.content) {
-      form.setFieldsValue({
-        match_rows: [
-          {
-            type: CreateBlacklistReqV1TypeEnum.fp_sql,
-            content: record.content
-          }
-        ]
-      });
+    if (record) {
+      const prefilledRuleNames = normalizeRuleScopeList(
+        record.rule_scope as string[] | 'ALL' | undefined
+      );
+      const hasRuleScopePrefill =
+        record.rule_scope_mode === BlacklistResV1RuleScopeModeEnum.specific &&
+        prefilledRuleNames.length > 0;
+      const formValues = hasRuleScopePrefill
+        ? buildUpdateFormValuesFromRecord(record, ruleTips)
+        : blacklistRecordToFormValues(record);
+      if (formValues.match_rows?.length || hasRuleScopePrefill) {
+        form.setFieldsValue(formValues);
+      }
     }
   }, [
     detailLoading,
@@ -196,6 +206,11 @@ const SqlManagementExceptionFormDrawer: React.FC<
     ruleTips,
     ruleTipsLoading
   ]);
+
+  const triggeredRuleScopeDisplay =
+    !isUpdate && record?.rule_scope_display?.length
+      ? record.rule_scope_display
+      : undefined;
 
   return (
     <>
@@ -225,7 +240,11 @@ const SqlManagementExceptionFormDrawer: React.FC<
         }
       >
         <Spin spinning={isUpdate && (ruleTipsLoading || detailLoading)}>
-          <SqlManagementExceptionForm form={form} isUpdate={isUpdate} />
+          <SqlManagementExceptionForm
+            form={form}
+            isUpdate={isUpdate}
+            triggeredRuleScopeDisplay={triggeredRuleScopeDisplay}
+          />
         </Spin>
       </BasicDrawer>
     </>

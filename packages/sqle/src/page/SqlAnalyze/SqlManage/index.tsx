@@ -14,12 +14,13 @@ import {
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { ISqlManageRuleExceptionContext } from '../../RuleException/index.data';
+import { ISqlManageRuleExceptionContext, buildSqlManageRuleExceptionContext } from '../../RuleException/index.data';
 
 import SqlAnalyze from '../SqlAnalyze';
 
 type ISqlManageWithInstanceId = ISqlManage & {
   instance_id?: string;
+  db_type?: string;
 };
 
 const SQLManageAnalyze = () => {
@@ -132,15 +133,14 @@ const SQLManageAnalyze = () => {
   >(() => {
     const sql_fingerprint =
       sqlManageRecord?.sql_fingerprint ?? remediationCompare?.sql_fingerprint;
-    if (!sql_fingerprint) {
-      return undefined;
-    }
     const record = sqlManageRecord as ISqlManageWithInstanceId | undefined;
-    return {
+    return buildSqlManageRuleExceptionContext({
       sql_fingerprint,
       instance_id: record?.instance_id,
-      source: sqlManageRecord?.source
-    };
+      db_type: record?.db_type,
+      source: sqlManageRecord?.source,
+      audit_result: sqlManageRecord?.audit_result
+    });
   }, [remediationCompare, sqlManageRecord]);
 
   return (

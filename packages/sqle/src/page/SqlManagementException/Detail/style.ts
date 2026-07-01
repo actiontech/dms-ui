@@ -152,9 +152,14 @@ export const DetailFieldCardStyleWrapper = styled('section')`
     line-height: 20px;
   }
 
-  .rule-scope-list-item {
-    color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
-    font-size: 13px;
-    line-height: 20px;
+  .rule-scope-result-list {
+    .result-item {
+      border-radius: 6px;
+      border: 1px solid
+        ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorFillTertiary};
+      padding: 10px 12px;
+    }
   }
 `;

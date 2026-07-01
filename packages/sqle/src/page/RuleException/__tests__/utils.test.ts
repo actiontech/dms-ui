@@ -1,8 +1,15 @@
 import {
+  BlacklistResV1RuleScopeModeEnum,
   CreateBlacklistReqV1TypeEnum,
   MatchConditionReqV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { buildRuleExceptionFromSqlManage, formatMatchMode } from '../utils';
+import {
+  buildQuickAddRuleExceptionSummaryItems,
+  buildBlacklistPrefillFromSqlManage,
+  buildRuleExceptionFromSqlManage,
+  buildSqlManageRuleExceptionContext,
+  formatMatchMode
+} from '../utils';
 
 describe('sqle/page/RuleException/utils', () => {
   it('buildRuleExceptionFromSqlManage omits empty match conditions', () => {
@@ -10,24 +17,18 @@ describe('sqle/page/RuleException/utils', () => {
       buildRuleExceptionFromSqlManage(
         { sql_fingerprint: 'select 1' },
         'rule_a',
-        'remark',
-        'MySQL'
+        'remark'
       )
     ).toEqual({
       type: CreateBlacklistReqV1TypeEnum.fp_sql,
       content: 'select 1',
-      match_conditions: [
-        {
-          type: MatchConditionReqV1TypeEnum.db_type,
-          content: 'MySQL'
-        }
-      ],
+      match_conditions: undefined,
       rule_scope: ['rule_a'],
       desc: 'remark'
     });
   });
 
-  it('buildRuleExceptionFromSqlManage maps instance, source and db_type fields', () => {
+  it('buildRuleExceptionFromSqlManage maps instance and source fields', () => {
     expect(
       buildRuleExceptionFromSqlManage(
         {
@@ -56,10 +57,6 @@ describe('sqle/page/RuleException/utils', () => {
         {
           type: MatchConditionReqV1TypeEnum.audit_task_id,
           content: '100'
-        },
-        {
-          type: MatchConditionReqV1TypeEnum.db_type,
-          content: 'MySQL'
         }
       ],
       rule_scope: ['rule_b'],
@@ -67,29 +64,159 @@ describe('sqle/page/RuleException/utils', () => {
     });
   });
 
-  it('buildRuleExceptionFromSqlManage prefers explicit dbType over record db_type', () => {
+  it('buildRuleExceptionFromSqlManage does not add db_type to match_conditions', () => {
     expect(
       buildRuleExceptionFromSqlManage(
         {
           sql_fingerprint: 'select 1',
           db_type: 'PostgreSQL'
         },
-        'rule_c',
-        undefined,
-        'MySQL'
+        'rule_c'
       )
     ).toEqual({
       type: CreateBlacklistReqV1TypeEnum.fp_sql,
       content: 'select 1',
-      match_conditions: [
-        {
-          type: MatchConditionReqV1TypeEnum.db_type,
-          content: 'MySQL'
-        }
-      ],
+      match_conditions: undefined,
       rule_scope: ['rule_c'],
       desc: undefined
     });
+  });
+
+  it('buildSqlManageRuleExceptionContext resolves db_type from record and audit_result', () => {
+    expect(
+      buildSqlManageRuleExceptionContext({
+        sql_fingerprint: 'select 1',
+        db_type: 'MySQL'
+      })
+    ).toEqual({
+      sql_fingerprint: 'select 1',
+      db_type: 'MySQL'
+    });
+
+    expect(
+      buildSqlManageRuleExceptionContext({
+        sql_fingerprint: 'select 1',
+        audit_result: [{ db_type: 'PostgreSQL', rule_name: 'rule_a' }]
+      })
+    ).toEqual({
+      sql_fingerprint: 'select 1',
+      db_type: 'PostgreSQL'
+    });
+
+    expect(
+      buildSqlManageRuleExceptionContext({
+        sql: 'select 2'
+      })
+    ).toEqual({
+      sql_fingerprint: 'select 2'
+    });
+  });
+
+  it('buildBlacklistPrefillFromSqlManage maps sql manage fields to blacklist prefill', () => {
+    expect(
+      buildBlacklistPrefillFromSqlManage({
+        sql_fingerprint: 'select * from t',
+        instance_id: '123',
+        db_type: 'MySQL',
+        source: {
+          sql_source_type: 'mysql_slow_log',
+          sql_source_ids: ['100']
+        }
+      })
+    ).toEqual({
+      type: CreateBlacklistReqV1TypeEnum.fp_sql,
+      content: 'select * from t',
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.instance,
+          content: '123'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_type,
+          content: 'mysql_slow_log'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_id,
+          content: '100'
+        }
+      ]
+    });
+  });
+
+  it('buildBlacklistPrefillFromSqlManage prefills triggered audit rules as rule scope', () => {
+    expect(
+      buildBlacklistPrefillFromSqlManage({
+        sql_fingerprint: 'select * from t',
+        db_type: 'MySQL',
+        audit_result: [
+          {
+            level: 'error',
+            rule_name: 'ddl_check_table_without_if_not_exists',
+            message: 'table without if not exists'
+          },
+          {
+            level: 'normal',
+            rule_name: 'ignored_rule'
+          }
+        ]
+      })
+    ).toEqual({
+      type: CreateBlacklistReqV1TypeEnum.fp_sql,
+      content: 'select * from t',
+      rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
+      rule_scope: ['ddl_check_table_without_if_not_exists'],
+      rule_scope_display: [
+        {
+          rule_name: 'ddl_check_table_without_if_not_exists',
+          level: 'error',
+          db_type: 'MySQL',
+          rule_desc: 'table without if not exists'
+        }
+      ]
+    });
+  });
+
+  it('buildBlacklistPrefillFromSqlManage returns null without fingerprint or sql', () => {
+    expect(buildBlacklistPrefillFromSqlManage(undefined)).toBeNull();
+    expect(buildBlacklistPrefillFromSqlManage({})).toBeNull();
+  });
+
+  it('buildQuickAddRuleExceptionSummaryItems omits db_type row', () => {
+    expect(
+      buildQuickAddRuleExceptionSummaryItems({
+        sqlManageContext: {
+          sql_fingerprint: 'select 1',
+          db_type: 'MySQL',
+          source: {
+            sql_source_type: 'mysql_slow_log',
+            sql_source_desc: 'slow log'
+          }
+        },
+        ruleName: 'rule_a',
+        getLabel: (key) => key
+      })
+    ).toEqual([
+      {
+        key: 'audit_task_type',
+        label: 'audit_task_type',
+        value: 'mysql_slow_log'
+      },
+      {
+        key: 'audit_task_name',
+        label: 'audit_task_name',
+        value: 'slow log'
+      },
+      {
+        key: 'fingerPrint',
+        label: 'fingerPrint',
+        value: 'select 1'
+      },
+      {
+        key: 'rule_scope',
+        label: 'rule_scope',
+        value: 'rule_a'
+      }
+    ]);
   });
 
   it('formatMatchMode resolves audit_task_type from raw content when display is missing', () => {

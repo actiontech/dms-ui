@@ -94,6 +94,41 @@ describe('sqle/components/RuleException/useRuleExceptionActions', () => {
     expect(onSuccess).toHaveBeenCalledTimes(1);
   });
 
+  it('does not add db_type to match_conditions when context has db_type', async () => {
+    const createSpy = blacklist.createBlacklist();
+    const { result } = renderUseRuleExceptionActions({
+      sqlManageContext: {
+        ...sqlManageContext,
+        db_type: 'PostgreSQL'
+      }
+    });
+
+    await act(async () => {
+      await result.current.addRuleException(
+        'dml_check_where_is_invalid',
+        'note'
+      );
+    });
+
+    expect(createSpy).toHaveBeenCalledWith({
+      type: CreateBlacklistReqV1TypeEnum.fp_sql,
+      content: sqlManageContext.sql_fingerprint,
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_type,
+          content: 'mysql_slow_log'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_id,
+          content: '100'
+        }
+      ],
+      rule_scope: ['dml_check_where_is_invalid'],
+      desc: 'note',
+      project_name: mockProjectInfo.projectName
+    });
+  });
+
   it('navigates to exception detail when create returns conflict code 4012', async () => {
     const createSpy = blacklist.createBlacklist();
     createSpy.mockImplementation(() =>

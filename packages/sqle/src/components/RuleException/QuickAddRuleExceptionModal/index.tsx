@@ -6,7 +6,10 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useRuleExceptionActions from '../useRuleExceptionActions';
 import QuickAddRuleExceptionContextSummary from '../QuickAddRuleExceptionContextSummary';
 import useRuleTips from '../../../hooks/useRuleTips';
-import { ISqlManageRuleExceptionContext } from '../../../page/RuleException/index.data';
+import {
+  ISqlManageRuleExceptionContext,
+  resolveQuickAddRuleExceptionDbType
+} from '../../../page/RuleException/index.data';
 import { IAuditResultWithExemption } from '../../../page/RuleException/index.type';
 import { getAuditResultDisplayText } from '../../AuditResultMessage/getAuditResultDisplayText';
 
@@ -30,7 +33,7 @@ const QuickAddRuleExceptionModal: React.FC<QuickAddRuleExceptionModalProps> = ({
   const { t, i18n } = useTranslation();
   const { projectName } = useCurrentProject();
   const [form] = Form.useForm<{ desc?: string }>();
-  const { ruleNameDescMap, updateRuleTips } = useRuleTips();
+  const { ruleNameDescMap, ruleTips, updateRuleTips } = useRuleTips();
   const { addRuleException, submitting } = useRuleExceptionActions({
     sqlManageContext,
     onSuccess: () => {
@@ -63,6 +66,18 @@ const QuickAddRuleExceptionModal: React.FC<QuickAddRuleExceptionModalProps> = ({
     return ruleName;
   }, [auditResult, i18n, ruleName, ruleNameDescMap, t]);
 
+  const ruleScopeDbType = useMemo(
+    () =>
+      resolveQuickAddRuleExceptionDbType(
+        sqlManageContext,
+        auditResult,
+        undefined,
+        ruleName,
+        ruleTips
+      ),
+    [auditResult, ruleName, ruleTips, sqlManageContext]
+  );
+
   const submit = async () => {
     if (!ruleName) {
       return;
@@ -93,6 +108,8 @@ const QuickAddRuleExceptionModal: React.FC<QuickAddRuleExceptionModalProps> = ({
         sqlManageContext={sqlManageContext}
         ruleName={ruleName}
         ruleLabel={ruleLabel}
+        auditResult={auditResult}
+        ruleScopeDbType={ruleScopeDbType}
       />
       <Form form={form} layout="vertical">
         <Form.Item label={t('ruleException.quickAdd.reason')} name="desc">

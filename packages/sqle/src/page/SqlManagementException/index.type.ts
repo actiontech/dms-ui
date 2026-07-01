@@ -4,6 +4,7 @@ import {
   MatchConditionReqV1TypeEnum,
   CreateBlacklistReqV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IRuleScopeDisplayV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { MatchRow } from '../RuleException/utils';
 
 export type SqlManagementExceptionFormFieldType = {
@@ -17,6 +18,8 @@ export type SqlManagementExceptionFormFieldType = {
 export type SqlManagementExceptionFormProps = {
   form: FormInstance<SqlManagementExceptionFormFieldType>;
   isUpdate?: boolean;
+  /** Create-from-SQL-manage row: limit rule_scope to triggered audit results */
+  triggeredRuleScopeDisplay?: IRuleScopeDisplayV1[];
 };
 
 export type MatchRowFormType = MatchRow;

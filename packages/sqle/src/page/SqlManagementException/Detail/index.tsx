@@ -27,6 +27,7 @@ import useSourceTips, {
 } from '../../SqlManagement/component/SQLEEIndex/hooks/useSourceTips';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import AuditResultMessage from '../../../components/AuditResultMessage';
 import {
   DetailFieldCardStyleWrapper,
   DetailMetaInfoCardStyleWrapper,
@@ -221,6 +222,19 @@ const SqlManagementExceptionDetailDrawer: React.FC<
     return formatRuleScope(detail);
   }, [detail]);
 
+  const ruleScopeDbTypes = useMemo(() => {
+    if (
+      !formattedRuleScope ||
+      formattedRuleScope.mode === BlacklistResV1RuleScopeModeEnum.all
+    ) {
+      return [];
+    }
+    const dbTypes = formattedRuleScope.rules
+      .map((rule) => rule.dbType?.trim())
+      .filter((dbType): dbType is string => !!dbType);
+    return [...new Set(dbTypes)];
+  }, [formattedRuleScope]);
+
   const onDelete = useCallback(() => {
     if (!blacklistId) {
       return;
@@ -251,11 +265,18 @@ const SqlManagementExceptionDetailDrawer: React.FC<
     const isAll =
       formattedRuleScope.mode === BlacklistResV1RuleScopeModeEnum.all;
     return (
-      <BasicTag size="small">
-        {isAll
-          ? t('ruleException.ruleScope.all')
-          : t('sqlManagementException.table.ruleScopePartial')}
-      </BasicTag>
+      <Space size={8}>
+        <BasicTag size="small">
+          {isAll
+            ? t('ruleException.ruleScope.all')
+            : t('sqlManagementException.table.ruleScopePartial')}
+        </BasicTag>
+        {ruleScopeDbTypes.map((dbType) => (
+          <BasicTag key={dbType} size="small">
+            {dbType}
+          </BasicTag>
+        ))}
+      </Space>
     );
   };
 
@@ -268,14 +289,22 @@ const SqlManagementExceptionDetailDrawer: React.FC<
       return null;
     }
     return (
-      <div className="detail-internal-list">
-        {formattedRuleScope.ruleLabels.map((ruleLabel) => (
-          <div
-            key={ruleLabel}
-            className="detail-internal-list-item rule-scope-list-item"
-          >
-            {ruleLabel}
-          </div>
+      <div className="detail-internal-list rule-scope-result-list">
+        {formattedRuleScope.rules.map((rule, index) => (
+          <AuditResultMessage
+            key={`${rule.ruleName ?? rule.label}-${index}`}
+            styleClass="result-item"
+            auditResult={{
+              level: rule.level ?? '',
+              rule_name: rule.ruleName ?? '',
+              desc: rule.label,
+              annotation: rule.annotation ?? ''
+            }}
+            displayMode="ruleDesc"
+            showAnnotation={!!rule.annotation}
+            moreBtnLink={rule.navigatePath ?? ''}
+            moreBtnPlacement="descRow"
+          />
         ))}
       </div>
     );

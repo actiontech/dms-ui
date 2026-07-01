@@ -27,13 +27,20 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import {
   WarningFilled,
   MinusCircleOutlined,
-  PlusOutlined
+  PlusOutlined,
+  CheckCircleFilled,
+  InfoHexagonFilled,
+  CloseCircleFilled
 } from '@actiontech/icons';
-import useRuleTips from '../../../../hooks/useRuleTips';
+import useRuleTips, {
+  DB_TYPE_RULE_NAME_SEPARATOR
+} from '../../../../hooks/useRuleTips';
 import { MatchRow, validateMatchRows } from '../../../RuleException/utils';
 import useAuditTaskSelectOptions from '../../hooks/useAuditTaskSelectOptions';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { SqlManagementExceptionFormStyleWrapper } from './style';
+import { IRuleScopeDisplayV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { PASS_AUDIT_LEVELS } from '../../../../components/AuditResultMessage/auditLevelUtils';
 
 type MatchRowContentFieldProps = {
   form: FormInstance<SqlManagementExceptionFormFieldType>;
@@ -54,6 +61,40 @@ type MatchRowContentFieldProps = {
 };
 
 const MATCH_ROW_CONTENT_WIDTH = 320;
+
+const TriggeredRuleLevelIcon: React.FC<{ level?: string }> = ({ level }) => {
+  if (
+    !level ||
+    PASS_AUDIT_LEVELS.includes(level as (typeof PASS_AUDIT_LEVELS)[number])
+  ) {
+    return <CheckCircleFilled width={16} height={16} />;
+  }
+  if (level === 'notice') {
+    return <InfoHexagonFilled width={16} height={16} />;
+  }
+  if (level === 'warn') {
+    return <WarningFilled width={16} height={16} />;
+  }
+  if (level === 'error') {
+    return <CloseCircleFilled width={16} height={16} />;
+  }
+  return null;
+};
+
+const TriggeredRuleScopeOptionLabel: React.FC<{
+  item: IRuleScopeDisplayV1;
+  fallbackLabel?: string;
+}> = ({ item, fallbackLabel }) => {
+  const label =
+    item.rule_desc?.trim() || fallbackLabel?.trim() || item.rule_name || '';
+
+  return (
+    <Space size={8}>
+      <TriggeredRuleLevelIcon level={item.level} />
+      <span>{label}</span>
+    </Space>
+  );
+};
 
 const MatchRowSqlContentInput: React.FC<{
   form: FormInstance<SqlManagementExceptionFormFieldType>;
@@ -196,7 +237,8 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
 
 const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
   form,
-  isUpdate
+  isUpdate,
+  triggeredRuleScopeDisplay
 }) => {
   const { t } = useTranslation();
 
@@ -208,6 +250,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
     updateRuleTips,
     generateFlatRuleOptionsByDbType,
     dbTypeOptions,
+    ruleNameDescMap,
     loading: ruleTipsLoading
   } = useRuleTips();
 
@@ -229,10 +272,42 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
     )?.content;
   }, [matchRows]);
 
-  const filteredRuleOptions = useMemo(
-    () => generateFlatRuleOptionsByDbType(ruleScopeDbType),
-    [generateFlatRuleOptionsByDbType, ruleScopeDbType]
-  );
+  const useTriggeredRuleOptions = !!triggeredRuleScopeDisplay?.length;
+
+  const triggeredRuleOptions = useMemo(() => {
+    if (!triggeredRuleScopeDisplay?.length) {
+      return [];
+    }
+
+    return triggeredRuleScopeDisplay
+      .filter((item) => item.rule_name?.trim())
+      .map((item) => {
+        const dbType = item.db_type?.trim() || ruleScopeDbType?.trim() || '';
+        const ruleName = item.rule_name?.trim() ?? '';
+
+        return {
+          label: (
+            <TriggeredRuleScopeOptionLabel
+              item={item}
+              fallbackLabel={ruleNameDescMap.get(ruleName)}
+            />
+          ),
+          value: `${dbType}${DB_TYPE_RULE_NAME_SEPARATOR}${ruleName}`
+        };
+      });
+  }, [ruleNameDescMap, ruleScopeDbType, triggeredRuleScopeDisplay]);
+
+  const filteredRuleOptions = useMemo(() => {
+    if (useTriggeredRuleOptions) {
+      return triggeredRuleOptions;
+    }
+    return generateFlatRuleOptionsByDbType(ruleScopeDbType);
+  }, [
+    generateFlatRuleOptionsByDbType,
+    ruleScopeDbType,
+    triggeredRuleOptions,
+    useTriggeredRuleOptions
+  ]);
 
   const clearAuditTaskIdRows = useCallback(() => {
     const rows: MatchRow[] = form.getFieldValue('match_rows') ?? [];
@@ -407,6 +482,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
           >
             <BasicSelect
               loading={ruleTipsLoading}
+              disabled={useTriggeredRuleOptions}
               options={dbTypeOptions}
               placeholder={t('common.form.placeholder.select')}
               onChange={handleRuleScopeDbTypeChange}
@@ -420,7 +496,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
             <BasicSelect
               mode="multiple"
               loading={ruleTipsLoading}
-              disabled={!ruleScopeDbType}
+              disabled={!useTriggeredRuleOptions && !ruleScopeDbType}
               options={filteredRuleOptions}
               placeholder={t('common.form.placeholder.select')}
             />

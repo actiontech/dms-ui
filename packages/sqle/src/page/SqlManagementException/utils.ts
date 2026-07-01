@@ -131,6 +131,22 @@ export const buildUpdateFormValuesFromRecord = (
     });
   });
 
+  if (!ruleScopeDbType && record.rule_scope_display?.[0]?.db_type?.trim()) {
+    ruleScopeDbType = record.rule_scope_display[0].db_type.trim();
+  }
+
+  if (mappedRuleScope.length === 0 && record.rule_scope_display?.length) {
+    record.rule_scope_display.forEach((item) => {
+      if (!item.rule_name?.trim()) {
+        return;
+      }
+      const dbType = item.db_type?.trim() ?? ruleScopeDbType ?? '';
+      mappedRuleScope.push(
+        `${dbType}${DB_TYPE_RULE_NAME_SEPARATOR}${item.rule_name}`
+      );
+    });
+  }
+
   return {
     ...baseValues,
     rule_scope_db_type: ruleScopeDbType,

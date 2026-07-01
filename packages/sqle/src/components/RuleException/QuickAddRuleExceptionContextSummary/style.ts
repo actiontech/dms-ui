@@ -94,4 +94,33 @@ export const QuickAddRuleExceptionContextSummaryStyleWrapper = styled('div')`
   .context-summary-item-value.is-missing {
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextQuaternary};
   }
+
+  .context-summary-item-rule-scope {
+    flex-direction: column;
+    gap: 8px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .context-summary-item-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .context-summary-item-rule-scope .context-summary-item-value {
+    width: 100%;
+  }
+
+  .context-summary-item-rule-scope .result-item {
+    border-radius: 6px;
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.uiToken.colorFillTertiary};
+    padding: 10px 12px;
+  }
 `;
