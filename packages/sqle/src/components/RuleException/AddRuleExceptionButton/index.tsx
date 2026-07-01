@@ -8,18 +8,27 @@ import { ISqlManageRuleExceptionContext } from '../../../page/RuleException/inde
 import QuickAddRuleExceptionModal from '../QuickAddRuleExceptionModal';
 import useRuleExceptionActions from '../useRuleExceptionActions';
 
+export type OpenCreateSqlManagementExceptionParams = {
+  auditResult?: IAuditResultWithExemption;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+};
+
 type AddRuleExceptionButtonProps = {
   auditResult?: IAuditResultWithExemption;
   sqlManageContext?: ISqlManageRuleExceptionContext;
   status?: SqlManageStatusEnum | string;
   onSuccess?: () => void;
+  onOpenCreateException?: (
+    params: OpenCreateSqlManagementExceptionParams
+  ) => void;
 };
 
 const AddRuleExceptionButton: React.FC<AddRuleExceptionButtonProps> = ({
   auditResult,
   sqlManageContext,
   status,
-  onSuccess
+  onSuccess,
+  onOpenCreateException
 }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
@@ -42,6 +51,15 @@ const AddRuleExceptionButton: React.FC<AddRuleExceptionButtonProps> = ({
     return null;
   }
 
+  const handleClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    if (onOpenCreateException) {
+      onOpenCreateException({ auditResult, sqlManageContext });
+      return;
+    }
+    setOpen(true);
+  };
+
   return (
     <>
       <BasicToolTips title={t('ruleException.button.add')}>
@@ -49,20 +67,19 @@ const AddRuleExceptionButton: React.FC<AddRuleExceptionButtonProps> = ({
           width={16}
           height={16}
           className="pointer"
-          onClick={(event) => {
-            event.stopPropagation();
-            setOpen(true);
-          }}
+          onClick={handleClick}
         />
       </BasicToolTips>
-      <QuickAddRuleExceptionModal
-        open={open}
-        ruleName={auditResult?.rule_name}
-        auditResult={auditResult}
-        sqlManageContext={sqlManageContext}
-        onClose={() => setOpen(false)}
-        onSuccess={onSuccess}
-      />
+      {!onOpenCreateException ? (
+        <QuickAddRuleExceptionModal
+          open={open}
+          ruleName={auditResult?.rule_name}
+          auditResult={auditResult}
+          sqlManageContext={sqlManageContext}
+          onClose={() => setOpen(false)}
+          onSuccess={onSuccess}
+        />
+      ) : null}
     </>
   );
 };

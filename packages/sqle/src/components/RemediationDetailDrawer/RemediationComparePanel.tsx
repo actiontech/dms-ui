@@ -4,6 +4,7 @@ import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/com
 import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
 import RemediationDiffCompare from './RemediationDiffCompare';
 import { SkippedRuleExceptionTable } from '../RuleException';
+import { OpenCreateSqlManagementExceptionParams } from '../RuleException/AddRuleExceptionButton';
 
 export type RemediationComparePanelProps = {
   data?: ISqlManageRemediation;
@@ -11,6 +12,9 @@ export type RemediationComparePanelProps = {
   sqlManageContext?: ISqlManageRuleExceptionContext;
   status?: SqlManageStatusEnum | string;
   onRefresh?: () => void;
+  onOpenCreateException?: (
+    params: OpenCreateSqlManagementExceptionParams
+  ) => void;
 };
 
 const RemediationComparePanel: React.FC<RemediationComparePanelProps> = ({
@@ -18,7 +22,8 @@ const RemediationComparePanel: React.FC<RemediationComparePanelProps> = ({
   sqlManageId,
   sqlManageContext,
   status,
-  onRefresh
+  onRefresh,
+  onOpenCreateException
 }) => {
   return (
     <Space direction="vertical" size={24} className="full-width-element">
@@ -28,6 +33,7 @@ const RemediationComparePanel: React.FC<RemediationComparePanelProps> = ({
         sqlManageContext={sqlManageContext}
         status={status}
         onRefresh={onRefresh}
+        onOpenCreateException={onOpenCreateException}
       />
       <SkippedRuleExceptionTable
         dataSource={data?.skipped_by_rule_exception}

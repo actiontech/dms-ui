@@ -142,10 +142,12 @@ export {
   resolveRuleExceptionDbType,
   buildQuickAddRuleExceptionSummaryItems,
   rowsToBlacklistBody,
+  toSqlManageRuleExceptionRecord,
   validateMatchRows
 } from './utils';
 
 export type {
+  BuildBlacklistPrefillFromSqlManageOptions,
   FormattedMatchModeItem,
   FormattedRuleScope,
   FormattedRuleScopeItem,

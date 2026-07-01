@@ -12,6 +12,7 @@ import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/com
 import { IAuditResultWithExemption } from '../../page/RuleException/index.type';
 import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
 import { AuditResultWithRuleException } from '../RuleException';
+import { OpenCreateSqlManagementExceptionParams } from '../RuleException/AddRuleExceptionButton';
 import { RemediationDiffCompareStyleWrapper } from './style';
 
 type RemediationDiffCompareProps = {
@@ -20,6 +21,9 @@ type RemediationDiffCompareProps = {
   sqlManageContext?: ISqlManageRuleExceptionContext;
   status?: SqlManageStatusEnum | string;
   onRefresh?: () => void;
+  onOpenCreateException?: (
+    params: OpenCreateSqlManagementExceptionParams
+  ) => void;
 };
 
 type DiffSectionVariant = 'optimized' | 'new' | 'unchanged';
@@ -32,6 +36,9 @@ type DiffAuditResultListProps = {
   status?: SqlManageStatusEnum | string;
   onRefresh?: () => void;
   showRuleExceptionActions?: boolean;
+  onOpenCreateException?: (
+    params: OpenCreateSqlManagementExceptionParams
+  ) => void;
 };
 
 type DiffSectionProps = {
@@ -43,6 +50,9 @@ type DiffSectionProps = {
   status?: SqlManageStatusEnum | string;
   onRefresh?: () => void;
   showRuleExceptionActions?: boolean;
+  onOpenCreateException?: (
+    params: OpenCreateSqlManagementExceptionParams
+  ) => void;
 };
 
 const isExemptedAuditResult = (item: IAuditResultWithExemption) =>
@@ -98,7 +108,8 @@ const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
   sqlManageContext,
   status,
   onRefresh,
-  showRuleExceptionActions
+  showRuleExceptionActions,
+  onOpenCreateException
 }) => {
   return (
     <Space direction="vertical" size={8} className="full-width-element">
@@ -119,6 +130,7 @@ const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
                 sqlManageContext={sqlManageContext}
                 status={status}
                 onRefresh={onRefresh}
+                onOpenCreateException={onOpenCreateException}
               />
             ) : (
               <AuditResultMessage auditResult={item} />
@@ -157,7 +169,8 @@ const DiffSection: React.FC<DiffSectionProps> = ({
   sqlManageContext,
   status,
   onRefresh,
-  showRuleExceptionActions
+  showRuleExceptionActions,
+  onOpenCreateException
 }) => {
   const [expanded, setExpanded] = useState(true);
 
@@ -209,6 +222,7 @@ const DiffSection: React.FC<DiffSectionProps> = ({
             status={status}
             onRefresh={onRefresh}
             showRuleExceptionActions={showRuleExceptionActions}
+            onOpenCreateException={onOpenCreateException}
           />
         </div>
       )}
@@ -221,7 +235,8 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
   sqlManageId,
   sqlManageContext,
   status,
-  onRefresh
+  onRefresh,
+  onOpenCreateException
 }) => {
   const { t } = useTranslation();
 
@@ -336,6 +351,7 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
                 status={status}
                 onRefresh={onRefresh}
                 showRuleExceptionActions
+                onOpenCreateException={onOpenCreateException}
               />
               <DiffSection
                 title={t(
@@ -354,6 +370,7 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
                 status={status}
                 onRefresh={onRefresh}
                 showRuleExceptionActions
+                onOpenCreateException={onOpenCreateException}
               />
             </Space>
           ) : (

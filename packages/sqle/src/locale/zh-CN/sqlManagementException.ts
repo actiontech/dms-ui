@@ -24,7 +24,7 @@ export default {
     db_user: '数据库用户',
     db_type: '数据源类型',
     audit_task_type: '审核任务类型',
-    audit_task_id: '审核任务ID'
+    audit_task_id: '审核任务'
   },
 
   operate: {

@@ -77,6 +77,8 @@ export default {
     ruleScopeSpecific: 'Specific rules',
     selectDbType: 'Database type',
     selectRules: 'Select rules',
+    triggeredRules: 'Triggered rules',
+    otherRules: 'Other rules',
     reason: 'Remark',
     validation: {
       atLeastOneRow: 'Add at least one match condition',

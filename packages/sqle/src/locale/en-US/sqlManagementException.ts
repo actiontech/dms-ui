@@ -24,7 +24,7 @@ export default {
     db_user: 'DB user',
     db_type: 'DB type',
     audit_task_type: 'Audit task type',
-    audit_task_id: 'Audit task ID'
+    audit_task_id: 'Audit task'
   },
 
   operate: {

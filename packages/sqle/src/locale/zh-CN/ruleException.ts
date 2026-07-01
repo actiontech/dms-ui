@@ -76,6 +76,8 @@ export default {
     ruleScopeSpecific: '指定规则',
     selectDbType: '数据源类型',
     selectRules: '选择规则',
+    triggeredRules: '已触发规则',
+    otherRules: '其他规则',
     reason: '添加备注',
     validation: {
       atLeastOneRow: '请至少添加一条匹配条件',

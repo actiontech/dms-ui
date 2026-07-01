@@ -416,7 +416,7 @@ exports[`slqe/Whitelist/SqlManagementExceptionList should render sqlManagementEx
                         <span
                           class="ant-typography css-dev-only-do-not-override-bj9uhl"
                         >
-                          SQL指纹、审核任务类型、审核任务ID
+                          SQL指纹、审核任务类型、审核任务
                         </span>
                       </td>
                       <td

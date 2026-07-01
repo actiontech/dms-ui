@@ -5,7 +5,8 @@ import {
   IMatchConditionDisplayV1,
   IMatchConditionReqV1,
   IRuleTips,
-  ISource
+  ISource,
+  ISqlManage
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   BlacklistResV1RuleScopeModeEnum,
@@ -160,6 +161,32 @@ export type SqlManageRuleExceptionRecord = {
   audit_result?: IAuditResult[] | null;
 };
 
+type ISqlManageWithInstanceId = ISqlManage & {
+  instance_id?: string;
+  db_type?: string;
+};
+
+export const toSqlManageRuleExceptionRecord = (
+  record?: ISqlManage
+): SqlManageRuleExceptionRecord | undefined => {
+  if (!record) {
+    return undefined;
+  }
+  const recordWithExtra = record as ISqlManageWithInstanceId;
+  return {
+    sql_fingerprint: record.sql_fingerprint,
+    sql: record.sql,
+    instance_id: recordWithExtra.instance_id,
+    db_type: recordWithExtra.db_type,
+    source: record.source,
+    audit_result: record.audit_result
+  };
+};
+
+export type BuildBlacklistPrefillFromSqlManageOptions = {
+  ruleName?: string;
+};
+
 export const extractTriggeredAuditResults = (
   auditResults?: IAuditResult[] | null
 ): IAuditResult[] => {
@@ -261,7 +288,8 @@ export const buildSqlManageRuleExceptionContext = (
 };
 
 export const buildBlacklistPrefillFromSqlManage = (
-  record?: SqlManageRuleExceptionRecord | null
+  record?: SqlManageRuleExceptionRecord | null,
+  options?: BuildBlacklistPrefillFromSqlManageOptions
 ): IBlacklistResV1 | null => {
   const context = buildSqlManageRuleExceptionContext(record);
   if (!context) {
@@ -295,7 +323,18 @@ export const buildBlacklistPrefillFromSqlManage = (
     match_conditions: match_conditions.length ? match_conditions : undefined
   };
 
-  const triggeredResults = extractTriggeredAuditResults(record?.audit_result);
+  let triggeredResults = extractTriggeredAuditResults(record?.audit_result);
+
+  if (options?.ruleName?.trim()) {
+    const ruleName = options.ruleName.trim();
+    const matchedResult = (record?.audit_result ?? []).find(
+      (item) => item.rule_name?.trim() === ruleName
+    );
+    triggeredResults = matchedResult
+      ? [matchedResult]
+      : [{ rule_name: ruleName }];
+  }
+
   if (!triggeredResults.length) {
     return basePrefill;
   }

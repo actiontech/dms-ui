@@ -3,7 +3,9 @@ import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/com
 import { IAuditResultWithExemption } from '../../../page/RuleException/index.type';
 import { ISqlManageRuleExceptionContext } from '../../../page/RuleException/index.data';
 import AuditResultMessage from '../../AuditResultMessage';
-import AddRuleExceptionButton from '../AddRuleExceptionButton';
+import AddRuleExceptionButton, {
+  OpenCreateSqlManagementExceptionParams
+} from '../AddRuleExceptionButton';
 import ExemptedRuleTag from '../ExemptedRuleTag';
 import { AuditResultWithRuleExceptionStyleWrapper } from './style';
 
@@ -12,11 +14,20 @@ type AuditResultWithRuleExceptionProps = {
   sqlManageContext?: ISqlManageRuleExceptionContext;
   status?: SqlManageStatusEnum | string;
   onRefresh?: () => void;
+  onOpenCreateException?: (
+    params: OpenCreateSqlManagementExceptionParams
+  ) => void;
 };
 
 const AuditResultWithRuleException: React.FC<
   AuditResultWithRuleExceptionProps
-> = ({ auditResult, sqlManageContext, status, onRefresh }) => {
+> = ({
+  auditResult,
+  sqlManageContext,
+  status,
+  onRefresh,
+  onOpenCreateException
+}) => {
   if (!auditResult) {
     return <AuditResultMessage />;
   }
@@ -41,6 +52,7 @@ const AuditResultWithRuleException: React.FC<
           sqlManageContext={sqlManageContext}
           status={status}
           onSuccess={onRefresh}
+          onOpenCreateException={onOpenCreateException}
         />
       </div>
     </AuditResultWithRuleExceptionStyleWrapper>

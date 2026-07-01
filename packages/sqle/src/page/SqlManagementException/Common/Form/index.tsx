@@ -33,7 +33,8 @@ import {
   CloseCircleFilled
 } from '@actiontech/icons';
 import useRuleTips, {
-  DB_TYPE_RULE_NAME_SEPARATOR
+  DB_TYPE_RULE_NAME_SEPARATOR,
+  splitRuleTipSelectValue
 } from '../../../../hooks/useRuleTips';
 import { MatchRow, validateMatchRows } from '../../../RuleException/utils';
 import useAuditTaskSelectOptions from '../../hooks/useAuditTaskSelectOptions';
@@ -272,41 +273,102 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
     )?.content;
   }, [matchRows]);
 
-  const useTriggeredRuleOptions = !!triggeredRuleScopeDisplay?.length;
+  const hasTriggeredRuleContext = !!triggeredRuleScopeDisplay?.length;
 
-  const triggeredRuleOptions = useMemo(() => {
-    if (!triggeredRuleScopeDisplay?.length) {
+  const triggeredRuleByName = useMemo(() => {
+    const map = new Map<string, IRuleScopeDisplayV1>();
+    triggeredRuleScopeDisplay?.forEach((item) => {
+      const ruleName = item.rule_name?.trim();
+      if (ruleName) {
+        map.set(ruleName, item);
+      }
+    });
+    return map;
+  }, [triggeredRuleScopeDisplay]);
+
+  const filteredRuleOptions = useMemo(() => {
+    if (!ruleScopeDbType?.trim()) {
       return [];
     }
 
-    return triggeredRuleScopeDisplay
-      .filter((item) => item.rule_name?.trim())
-      .map((item) => {
-        const dbType = item.db_type?.trim() || ruleScopeDbType?.trim() || '';
-        const ruleName = item.rule_name?.trim() ?? '';
+    const flatOptions = generateFlatRuleOptionsByDbType(ruleScopeDbType);
 
-        return {
-          label: (
-            <TriggeredRuleScopeOptionLabel
-              item={item}
-              fallbackLabel={ruleNameDescMap.get(ruleName)}
-            />
-          ),
-          value: `${dbType}${DB_TYPE_RULE_NAME_SEPARATOR}${ruleName}`
-        };
-      });
-  }, [ruleNameDescMap, ruleScopeDbType, triggeredRuleScopeDisplay]);
-
-  const filteredRuleOptions = useMemo(() => {
-    if (useTriggeredRuleOptions) {
-      return triggeredRuleOptions;
+    if (!hasTriggeredRuleContext) {
+      return flatOptions;
     }
-    return generateFlatRuleOptionsByDbType(ruleScopeDbType);
+
+    const dbType = ruleScopeDbType.trim();
+    const triggeredOptions: Array<{ label: React.ReactNode; value: string }> =
+      [];
+    const otherOptions: Array<{ label: React.ReactNode; value: string }> = [];
+    const seenRuleNames = new Set<string>();
+
+    flatOptions.forEach((option) => {
+      const value = String(option.value);
+      const ruleName = splitRuleTipSelectValue(value);
+      seenRuleNames.add(ruleName);
+      const triggeredItem = triggeredRuleByName.get(ruleName);
+
+      const label = triggeredItem ? (
+        <TriggeredRuleScopeOptionLabel
+          item={triggeredItem}
+          fallbackLabel={ruleNameDescMap.get(ruleName)}
+        />
+      ) : (
+        option.label
+      );
+
+      if (triggeredItem) {
+        triggeredOptions.push({ label, value });
+      } else {
+        otherOptions.push({ label, value });
+      }
+    });
+
+    triggeredRuleScopeDisplay?.forEach((item) => {
+      const ruleName = item.rule_name?.trim();
+      if (!ruleName || seenRuleNames.has(ruleName)) {
+        return;
+      }
+      seenRuleNames.add(ruleName);
+      triggeredOptions.push({
+        label: (
+          <TriggeredRuleScopeOptionLabel
+            item={item}
+            fallbackLabel={ruleNameDescMap.get(ruleName)}
+          />
+        ),
+        value: `${dbType}${DB_TYPE_RULE_NAME_SEPARATOR}${ruleName}`
+      });
+    });
+
+    const groups: Array<{
+      label: string;
+      options: Array<{ label: React.ReactNode; value: string }>;
+    }> = [];
+
+    if (triggeredOptions.length) {
+      groups.push({
+        label: t('ruleException.form.triggeredRules'),
+        options: triggeredOptions
+      });
+    }
+    if (otherOptions.length) {
+      groups.push({
+        label: t('ruleException.form.otherRules'),
+        options: otherOptions
+      });
+    }
+
+    return groups;
   }, [
     generateFlatRuleOptionsByDbType,
+    hasTriggeredRuleContext,
+    ruleNameDescMap,
     ruleScopeDbType,
-    triggeredRuleOptions,
-    useTriggeredRuleOptions
+    t,
+    triggeredRuleByName,
+    triggeredRuleScopeDisplay
   ]);
 
   const clearAuditTaskIdRows = useCallback(() => {
@@ -482,7 +544,6 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
           >
             <BasicSelect
               loading={ruleTipsLoading}
-              disabled={useTriggeredRuleOptions}
               options={dbTypeOptions}
               placeholder={t('common.form.placeholder.select')}
               onChange={handleRuleScopeDbTypeChange}
@@ -496,7 +557,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
             <BasicSelect
               mode="multiple"
               loading={ruleTipsLoading}
-              disabled={!useTriggeredRuleOptions && !ruleScopeDbType}
+              disabled={!ruleScopeDbType}
               options={filteredRuleOptions}
               placeholder={t('common.form.placeholder.select')}
             />

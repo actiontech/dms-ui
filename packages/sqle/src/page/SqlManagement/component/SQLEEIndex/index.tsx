@@ -53,29 +53,10 @@ import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
-import { buildBlacklistPrefillFromSqlManage } from '../../../RuleException/index.data';
-
-type ISqlManageWithInstanceId = ISqlManage & {
-  instance_id?: string;
-  db_type?: string;
-};
-
-const toSqlManageRuleExceptionRecord = (
-  record?: ISqlManage
-): Parameters<typeof buildBlacklistPrefillFromSqlManage>[0] => {
-  if (!record) {
-    return undefined;
-  }
-  const recordWithExtra = record as ISqlManageWithInstanceId;
-  return {
-    sql_fingerprint: record.sql_fingerprint,
-    sql: record.sql,
-    instance_id: recordWithExtra.instance_id,
-    db_type: recordWithExtra.db_type,
-    source: record.source,
-    audit_result: record.audit_result
-  };
-};
+import {
+  buildBlacklistPrefillFromSqlManage,
+  toSqlManageRuleExceptionRecord
+} from '../../../RuleException/index.data';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();

@@ -176,6 +176,43 @@ describe('sqle/page/RuleException/utils', () => {
     });
   });
 
+  it('buildBlacklistPrefillFromSqlManage prefills a single rule when ruleName is provided', () => {
+    expect(
+      buildBlacklistPrefillFromSqlManage(
+        {
+          sql_fingerprint: 'select * from t',
+          db_type: 'MySQL',
+          audit_result: [
+            {
+              level: 'error',
+              rule_name: 'rule_a',
+              message: 'rule a message'
+            },
+            {
+              level: 'warn',
+              rule_name: 'rule_b',
+              message: 'rule b message'
+            }
+          ]
+        },
+        { ruleName: 'rule_b' }
+      )
+    ).toEqual({
+      type: CreateBlacklistReqV1TypeEnum.fp_sql,
+      content: 'select * from t',
+      rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
+      rule_scope: ['rule_b'],
+      rule_scope_display: [
+        {
+          rule_name: 'rule_b',
+          level: 'warn',
+          db_type: 'MySQL',
+          rule_desc: 'rule b message'
+        }
+      ]
+    });
+  });
+
   it('buildBlacklistPrefillFromSqlManage returns null without fingerprint or sql', () => {
     expect(buildBlacklistPrefillFromSqlManage(undefined)).toBeNull();
     expect(buildBlacklistPrefillFromSqlManage({})).toBeNull();

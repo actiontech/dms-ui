@@ -9,6 +9,7 @@ import { useRequest } from 'ahooks';
 import RemediationComparePanel from './RemediationComparePanel';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
+import { OpenCreateSqlManagementExceptionParams } from '../RuleException/AddRuleExceptionButton';
 
 export const REMEDIATION_DETAIL_DRAWER_WIDTH = 960;
 
@@ -20,6 +21,9 @@ export type RemediationDetailDrawerProps = {
   status?: SqlManageStatusEnum | string;
   title?: ReactNode;
   width?: number;
+  onOpenCreateException?: (
+    params: OpenCreateSqlManagementExceptionParams
+  ) => void;
 };
 
 const RemediationDetailDrawer = ({
@@ -29,7 +33,8 @@ const RemediationDetailDrawer = ({
   sqlManageContext,
   status,
   title = null,
-  width = REMEDIATION_DETAIL_DRAWER_WIDTH
+  width = REMEDIATION_DETAIL_DRAWER_WIDTH,
+  onOpenCreateException
 }: RemediationDetailDrawerProps) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
@@ -92,6 +97,7 @@ const RemediationDetailDrawer = ({
             sqlManageContext={sqlManageContext}
             status={status}
             onRefresh={refresh}
+            onOpenCreateException={onOpenCreateException}
           />
         ) : (
           <Empty />
