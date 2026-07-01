@@ -64,6 +64,20 @@ export const SqlManagementExceptionExtendedMatchTypeOptions = [
   value
 }));
 
+/** All match types shown in every match-row dropdown (primary + extended). */
+export const SqlManagementExceptionAllMatchTypeOptions = [
+  ...BASE_MATCH_TYPE_VALUES,
+  MatchConditionReqV1TypeEnum.audit_task_type,
+  MatchConditionReqV1TypeEnum.audit_task_id,
+  MatchConditionReqV1TypeEnum.db_type
+].map((value) => ({
+  label:
+    SqlManagementExceptionMatchTypeDirection[
+      value as unknown as keyof typeof SqlManagementExceptionMatchTypeDirection
+    ],
+  value
+}));
+
 /** @deprecated use SqlManagementExceptionBaseMatchTypeOptions */
 export const SqlManagementExceptionMatchTypeOptions =
   SqlManagementExceptionBaseMatchTypeOptions;

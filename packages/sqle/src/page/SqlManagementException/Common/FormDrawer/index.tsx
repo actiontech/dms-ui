@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState, type Key } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { Space, message, Form, Spin } from 'antd';
@@ -12,6 +12,7 @@ import { IUpdateBlacklistReqV1 } from '@actiontech/shared/lib/api/sqle/service/c
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import useRuleTips from '../../../../hooks/useRuleTips';
+import useDatabaseType from '../../../../hooks/useDatabaseType';
 import SqlManagementExceptionForm from '../Form';
 import { SqlManagementExceptionFormFieldType } from '../../index.type';
 import {
@@ -46,10 +47,14 @@ const SqlManagementExceptionFormDrawer: React.FC<
     updateRuleTips,
     ruleTips,
     loading: ruleTipsLoading,
-    dbTypeOptions,
     generateFlatRuleOptionsByDbType,
     ruleNameDescMap
   } = useRuleTips();
+  const {
+    updateDriverNameList,
+    dbTypeOptions,
+    loading: dbTypeLoading
+  } = useDatabaseType();
   const [messageApi, messageContextHolder] = message.useMessage();
   const [form] = Form.useForm<SqlManagementExceptionFormFieldType>();
   const { projectName, projectID } = useCurrentProject();
@@ -57,6 +62,14 @@ const SqlManagementExceptionFormDrawer: React.FC<
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
+
+  const [submitErrorFields, setSubmitErrorFields] = useState<
+    Array<{ name: Key[]; errors: string[] }>
+  >([]);
+
+  const clearSubmitError = useCallback(() => {
+    setSubmitErrorFields((prev) => (prev.length ? [] : prev));
+  }, []);
 
   const {
     data: detailRecord,
@@ -82,6 +95,7 @@ const SqlManagementExceptionFormDrawer: React.FC<
   const handleClose = useCallback(() => {
     form.resetFields();
     mutateDetail(undefined);
+    setSubmitErrorFields([]);
     onClose();
   }, [form, mutateDetail, onClose]);
 
@@ -89,7 +103,12 @@ const SqlManagementExceptionFormDrawer: React.FC<
     let values: SqlManagementExceptionFormFieldType;
     try {
       values = await form.validateFields();
-    } catch {
+      setSubmitErrorFields([]);
+    } catch (err) {
+      const errorInfo = err as {
+        errorFields?: Array<{ name: Key[]; errors: string[] }>;
+      };
+      setSubmitErrorFields(errorInfo?.errorFields ?? []);
       return;
     }
     startSubmit();
@@ -151,25 +170,23 @@ const SqlManagementExceptionFormDrawer: React.FC<
   ]);
 
   useEffect(() => {
+    if (!projectName) {
+      return;
+    }
+    updateRuleTips(projectName);
+    updateDriverNameList();
+  }, [projectName, updateRuleTips, updateDriverNameList]);
+
+  useEffect(() => {
     if (!open) {
       mutateDetail(undefined);
       return;
     }
 
-    updateRuleTips(projectName);
-
     if (isUpdate && record?.blacklist_id) {
       fetchDetail(`${record.blacklist_id}`);
     }
-  }, [
-    fetchDetail,
-    isUpdate,
-    mutateDetail,
-    open,
-    projectName,
-    record?.blacklist_id,
-    updateRuleTips
-  ]);
+  }, [fetchDetail, isUpdate, mutateDetail, open, record?.blacklist_id]);
 
   useEffect(() => {
     if (!open) {
@@ -256,15 +273,23 @@ const SqlManagementExceptionFormDrawer: React.FC<
           </Space>
         }
       >
-        <Spin spinning={isUpdate && (ruleTipsLoading || detailLoading)}>
+        <Spin
+          spinning={
+            open &&
+            (ruleTipsLoading || dbTypeLoading || (isUpdate && detailLoading))
+          }
+        >
           <SqlManagementExceptionForm
             form={form}
             isUpdate={isUpdate}
             triggeredRuleScopeDisplay={triggeredRuleScopeDisplay}
             ruleTipsLoading={ruleTipsLoading}
             dbTypeOptions={dbTypeOptions}
+            dbTypeLoading={dbTypeLoading}
             generateFlatRuleOptionsByDbType={generateFlatRuleOptionsByDbType}
             ruleNameDescMap={ruleNameDescMap}
+            submitErrorFields={submitErrorFields}
+            onValuesChangeClearError={clearSubmitError}
           />
         </Spin>
       </BasicDrawer>

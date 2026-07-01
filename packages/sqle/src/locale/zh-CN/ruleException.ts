@@ -79,12 +79,14 @@ export default {
     triggeredRules: '已触发规则',
     otherRules: '其他规则',
     reason: '添加备注',
+    matchRowErrorPrefix: '第 {{index}} 行匹配条件：',
     validation: {
       atLeastOneRow: '请至少添加一条匹配条件',
-      invalidFirstRowType:
-        '首行匹配类型不能为扫描任务类型、扫描任务 ID 或数据源类型',
+      missingPrimaryType:
+        '匹配条件中至少需要一个主匹配类型（SQL/SQL 指纹/IP/网段/主机名/数据源/数据库用户）',
       duplicateRow: '存在重复的匹配类型与内容',
-      incompleteRow: '请完整填写每条匹配条件的类型与内容'
+      incompleteRow: '请完整填写每条匹配条件的类型与内容',
+      summaryTitle: '请检查以下问题后重新提交'
     }
   },
   table: {

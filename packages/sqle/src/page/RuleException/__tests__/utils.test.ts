@@ -375,7 +375,7 @@ describe('sqle/page/RuleException/utils', () => {
           content: 'mysql_schema_meta'
         }
       ])
-    ).toBe('invalidFirstType');
+    ).toBe('missingPrimaryType');
   });
 
   it('rowsToBlacklistBody uses primary row as type and audit task as match_conditions', () => {

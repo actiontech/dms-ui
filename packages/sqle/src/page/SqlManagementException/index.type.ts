@@ -1,5 +1,6 @@
 import { FormInstance } from 'antd';
 import React from 'react';
+import { SelectProps } from 'antd';
 import {
   BlacklistResV1RuleScopeModeEnum,
   MatchConditionReqV1TypeEnum,
@@ -22,7 +23,10 @@ export type SqlManagementExceptionFormProps = {
   /** Create-from-SQL-manage row: limit rule_scope to triggered audit results */
   triggeredRuleScopeDisplay?: IRuleScopeDisplayV1[];
   ruleTipsLoading?: boolean;
-  dbTypeOptions?: Array<{ label: string; value: string }>;
+  dbTypeOptions?: SelectProps['options'];
+  dbTypeLoading?: boolean;
+  submitErrorFields?: Array<{ name: React.Key[]; errors: string[] }>;
+  onValuesChangeClearError?: () => void;
   generateFlatRuleOptionsByDbType?: (
     dbType?: string
   ) => Array<{ label: React.ReactNode; value: string }>;

@@ -1,4 +1,12 @@
-import { Alert, Form, Radio, Space, Typography, FormInstance } from 'antd';
+import {
+  Alert,
+  Form,
+  Radio,
+  Space,
+  Typography,
+  FormInstance,
+  SelectProps
+} from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   SqlManagementExceptionFormFieldType,
@@ -18,8 +26,7 @@ import {
   SQLRenderer
 } from '@actiontech/shared';
 import {
-  SqlManagementExceptionExtendedMatchTypeOptions,
-  SqlManagementExceptionBaseMatchTypeOptions,
+  SqlManagementExceptionAllMatchTypeOptions,
   SqlManagementExceptionRuleScopeModeOptions
 } from '../../index.data';
 import useInstance from '../../../../hooks/useInstance';
@@ -59,7 +66,8 @@ type MatchRowContentFieldProps = {
   auditTaskIdLoading: boolean;
   selectedAuditTaskType?: string;
   clearAuditTaskIdRows: () => void;
-  dbTypeOptions: Array<{ label: string; value: string }>;
+  dbTypeOptions: SelectProps['options'];
+  dbTypeLoading?: boolean;
 };
 
 const MATCH_ROW_CONTENT_WIDTH = 320;
@@ -212,14 +220,12 @@ const useMatchRowSqlContentInput = (
 
 type MatchRowItemProps = MatchRowContentFieldProps & {
   field: { key: React.Key; name: number };
-  index: number;
   fieldsLength: number;
   onRemove: (name: number) => void;
 };
 
 const MatchRowItem: React.FC<MatchRowItemProps> = ({
   field,
-  index,
   fieldsLength,
   onRemove,
   form,
@@ -244,11 +250,7 @@ const MatchRowItem: React.FC<MatchRowItemProps> = ({
       >
         <BasicSelect
           style={{ width: 180 }}
-          options={
-            index === 0
-              ? SqlManagementExceptionBaseMatchTypeOptions
-              : SqlManagementExceptionExtendedMatchTypeOptions
-          }
+          options={SqlManagementExceptionAllMatchTypeOptions}
         />
       </Form.Item>
       {isSqlType ? (
@@ -280,7 +282,8 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
   auditTaskIdLoading,
   selectedAuditTaskType,
   clearAuditTaskIdRows,
-  dbTypeOptions
+  dbTypeOptions,
+  dbTypeLoading = false
 }) => {
   const { t } = useTranslation();
   const type = Form.useWatch(['match_rows', fieldName, 'type'], form);
@@ -346,6 +349,7 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
       >
         <BasicSelect
           style={{ width: MATCH_ROW_CONTENT_WIDTH }}
+          loading={dbTypeLoading}
           options={dbTypeOptions}
           placeholder={t('common.form.placeholder.select')}
         />
@@ -373,8 +377,11 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
   triggeredRuleScopeDisplay,
   ruleTipsLoading = false,
   dbTypeOptions = [],
+  dbTypeLoading = false,
   generateFlatRuleOptionsByDbType = () => [],
-  ruleNameDescMap = new Map()
+  ruleNameDescMap = new Map(),
+  submitErrorFields = [],
+  onValuesChangeClearError
 }) => {
   const { t } = useTranslation();
 
@@ -533,17 +540,77 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
     }
   }, [clearRuleScopeFields, ruleScopeMode]);
 
+  const summaryMessages = useMemo(() => {
+    if (!submitErrorFields?.length) {
+      return [] as string[];
+    }
+    const messages: string[] = [];
+    submitErrorFields.forEach((field) => {
+      if (!field.errors?.length) {
+        return;
+      }
+      const [rootName, secondName] = field.name ?? [];
+      if (rootName === 'match_rows') {
+        if (typeof secondName === 'number') {
+          const rowLabel = t('ruleException.form.matchRowErrorPrefix', {
+            index: secondName + 1
+          });
+          messages.push(`${rowLabel}${field.errors[0]}`);
+        } else {
+          messages.push(field.errors[0]);
+        }
+        return;
+      }
+      if (rootName === 'rule_scope_db_type') {
+        messages.push(
+          `${t('ruleException.form.selectDbType')}: ${field.errors[0]}`
+        );
+        return;
+      }
+      if (rootName === 'rule_scope') {
+        messages.push(
+          `${t('ruleException.form.selectRules')}: ${field.errors[0]}`
+        );
+        return;
+      }
+      messages.push(field.errors[0]);
+    });
+    return messages;
+  }, [submitErrorFields, t]);
+
+  const handleValuesChange = useCallback(() => {
+    onValuesChangeClearError?.();
+  }, [onValuesChangeClearError]);
+
   return (
     <SqlManagementExceptionFormStyleWrapper>
       <Form
         form={form}
         layout="vertical"
         {...DrawerFormLayout}
+        onValuesChange={handleValuesChange}
         initialValues={{
           rule_scope_mode: BlacklistResV1RuleScopeModeEnum.all,
           match_rows: [{ type: CreateBlacklistReqV1TypeEnum.sql, content: '' }]
         }}
       >
+        <EmptyBox if={summaryMessages.length > 0}>
+          <Alert
+            className="sql-management-exception-error-summary"
+            type="error"
+            showIcon
+            closable={false}
+            message={t('ruleException.form.validation.summaryTitle')}
+            description={
+              <ul style={{ margin: 0, paddingInlineStart: 20 }}>
+                {summaryMessages.map((msg, idx) => (
+                  <li key={`${idx}-${msg}`}>{msg}</li>
+                ))}
+              </ul>
+            }
+            style={{ marginBottom: 16 }}
+          />
+        </EmptyBox>
         <Form.Item label={t('ruleException.table.matchMode')} required>
           <Form.List
             name="match_rows"
@@ -558,10 +625,10 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
                       )
                     );
                   }
-                  if (errorCode === 'invalidFirstType') {
+                  if (errorCode === 'missingPrimaryType') {
                     return Promise.reject(
                       new Error(
-                        t('ruleException.form.validation.invalidFirstRowType')
+                        t('ruleException.form.validation.missingPrimaryType')
                       )
                     );
                   }
@@ -588,11 +655,10 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
                 size={12}
                 className="full-width-element"
               >
-                {fields.map((field, index) => (
+                {fields.map((field) => (
                   <MatchRowItem
                     key={field.key}
                     field={field}
-                    index={index}
                     fieldsLength={fields.length}
                     onRemove={remove}
                     form={form}
@@ -606,6 +672,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
                     selectedAuditTaskType={selectedAuditTaskType}
                     clearAuditTaskIdRows={clearAuditTaskIdRows}
                     dbTypeOptions={dbTypeOptions}
+                    dbTypeLoading={dbTypeLoading}
                   />
                 ))}
                 <Form.ErrorList errors={errors} />

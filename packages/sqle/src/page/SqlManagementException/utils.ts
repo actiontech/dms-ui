@@ -6,7 +6,9 @@ import {
 import {
   blacklistToRows,
   rowsToBlacklistBody,
-  normalizeMatchRowsOrder
+  normalizeMatchRowsOrder,
+  resolveDbTypeFromAuditResults,
+  resolveDbTypeFromRuleTips
 } from '../RuleException/utils';
 import {
   blacklistRecordToExtended,
@@ -135,8 +137,25 @@ export const buildUpdateFormValuesFromRecord = (
     });
   });
 
-  if (!ruleScopeDbType && record.rule_scope_display?.[0]?.db_type?.trim()) {
-    ruleScopeDbType = record.rule_scope_display[0].db_type.trim();
+  if (!ruleScopeDbType && record.rule_scope_display?.length) {
+    ruleScopeDbType = resolveDbTypeFromAuditResults(record.rule_scope_display);
+  }
+
+  if (
+    !ruleScopeDbType &&
+    record.rule_scope_display?.length &&
+    ruleTips.length
+  ) {
+    for (const item of record.rule_scope_display) {
+      const dbTypeFromRuleTips = resolveDbTypeFromRuleTips(
+        item.rule_name,
+        ruleTips
+      );
+      if (dbTypeFromRuleTips) {
+        ruleScopeDbType = dbTypeFromRuleTips;
+        break;
+      }
+    }
   }
 
   if (

@@ -80,12 +80,14 @@ export default {
     triggeredRules: 'Triggered rules',
     otherRules: 'Other rules',
     reason: 'Remark',
+    matchRowErrorPrefix: 'Row {{index}}: ',
     validation: {
       atLeastOneRow: 'Add at least one match condition',
-      invalidFirstRowType:
-        'The first match row cannot use scan task type, scan task ID, or DB type',
+      missingPrimaryType:
+        'Match conditions must include at least one primary type (SQL/SQL fingerprint/IP/CIDR/host/instance/DB user)',
       duplicateRow: 'Duplicate match type and content',
-      incompleteRow: 'Complete the type and content for each match row'
+      incompleteRow: 'Complete the type and content for each match row',
+      summaryTitle: 'Please fix the following issues before submitting'
     }
   },
   table: {

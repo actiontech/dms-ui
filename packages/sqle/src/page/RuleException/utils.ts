@@ -776,13 +776,11 @@ export const validateMatchRows = (rows?: MatchRow[]) => {
     return 'empty' as const;
   }
   const normalizedRows = normalizeMatchRowsOrder(rows);
-  const firstType = normalizedRows[0].type;
-  if (
-    firstType === MatchConditionReqV1TypeEnum.audit_task_type ||
-    firstType === MatchConditionReqV1TypeEnum.audit_task_id ||
-    firstType === MatchConditionReqV1TypeEnum.db_type
-  ) {
-    return 'invalidFirstType' as const;
+  const hasPrimaryType = normalizedRows.some((row) =>
+    isPrimaryBlacklistMatchType(row.type as string)
+  );
+  if (!hasPrimaryType) {
+    return 'missingPrimaryType' as const;
   }
   const seen = new Set<string>();
   for (const row of normalizedRows) {
