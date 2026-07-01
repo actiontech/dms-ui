@@ -99,10 +99,11 @@ const TriggeredRuleScopeOptionLabel: React.FC<{
   );
 };
 
-const MatchRowSqlContentInput: React.FC<{
-  form: FormInstance<SqlManagementExceptionFormFieldType>;
-  fieldName: number;
-}> = ({ form, fieldName }) => {
+const useMatchRowSqlContentInput = (
+  form: FormInstance<SqlManagementExceptionFormFieldType>,
+  fieldName: number,
+  enabled: boolean
+) => {
   const { t } = useTranslation();
   const content =
     Form.useWatch(['match_rows', fieldName, 'content'], form) ?? '';
@@ -112,6 +113,11 @@ const MatchRowSqlContentInput: React.FC<{
   const [isUserEditing, setIsUserEditing] = useState(false);
 
   useEffect(() => {
+    if (!enabled) {
+      setExpanded(false);
+      setIsUserEditing(false);
+      return;
+    }
     if (!content) {
       setExpanded(false);
       setIsUserEditing(false);
@@ -124,46 +130,55 @@ const MatchRowSqlContentInput: React.FC<{
       setExpanded(false);
       setIsUserEditing(false);
     }
-  }, [content]);
+  }, [content, enabled]);
 
-  const showSnippet = !!content && !expanded && !isUserEditing;
+  const showSnippet = enabled && !!content && !expanded && !isUserEditing;
 
-  if (showSnippet) {
-    return (
-      <>
-        <Form.Item
-          name={[fieldName, 'content']}
-          rules={[{ required: true }]}
-          hidden
+  const expandToggle =
+    enabled && content ? (
+      showSnippet ? (
+        <Typography.Link
+          className="match-row-sql-expand"
+          onClick={() => setExpanded(true)}
         >
-          <BasicInput />
-        </Form.Item>
-        <div
-          className="match-row-sql-snippet"
-          style={{ width: MATCH_ROW_CONTENT_WIDTH }}
+          {t('common.expansion')}
+        </Typography.Link>
+      ) : (
+        <Typography.Link
+          className="match-row-sql-toggle"
+          onClick={() => {
+            setExpanded(false);
+            setIsUserEditing(false);
+          }}
         >
-          <SQLRenderer.Snippet
-            sql={content}
-            rows={SQL_SNIPPET_COLLAPSED_ROWS}
-            showCopyIcon={false}
-            tooltip={false}
-            highlightSyntax={false}
-            paragraph={{
-              ellipsis: {
-                expandable: true,
-                rows: SQL_SNIPPET_COLLAPSED_ROWS,
-                symbol: t('common.expansion'),
-                tooltip: false,
-                onExpand: () => setExpanded(true)
-              }
-            }}
-          />
-        </div>
-      </>
-    );
-  }
+          {t('common.collapse')}
+        </Typography.Link>
+      )
+    ) : null;
 
-  return (
+  const contentNode = !enabled ? null : showSnippet ? (
+    <>
+      <Form.Item
+        name={[fieldName, 'content']}
+        rules={[{ required: true }]}
+        hidden
+      >
+        <BasicInput />
+      </Form.Item>
+      <div
+        className="match-row-sql-snippet"
+        style={{ width: MATCH_ROW_CONTENT_WIDTH }}
+      >
+        <SQLRenderer.Snippet
+          sql={content}
+          rows={SQL_SNIPPET_COLLAPSED_ROWS}
+          showCopyIcon={false}
+          tooltip={false}
+          highlightSyntax={false}
+        />
+      </div>
+    </>
+  ) : (
     <div
       className="match-row-sql-editor"
       style={{ width: MATCH_ROW_CONTENT_WIDTH }}
@@ -189,18 +204,72 @@ const MatchRowSqlContentInput: React.FC<{
           onFocus={() => setIsUserEditing(true)}
         />
       </Form.Item>
-      {content && !showSnippet ? (
-        <Typography.Link
-          className="match-row-sql-toggle"
-          onClick={() => {
-            setExpanded(false);
-            setIsUserEditing(false);
-          }}
-        >
-          {t('common.collapse')}
-        </Typography.Link>
-      ) : null}
     </div>
+  );
+
+  return { contentNode, expandToggle };
+};
+
+type MatchRowItemProps = MatchRowContentFieldProps & {
+  field: { key: React.Key; name: number };
+  index: number;
+  fieldsLength: number;
+  onRemove: (name: number) => void;
+};
+
+const MatchRowItem: React.FC<MatchRowItemProps> = ({
+  field,
+  index,
+  fieldsLength,
+  onRemove,
+  form,
+  ...contentFieldProps
+}) => {
+  const type = Form.useWatch(['match_rows', field.name, 'type'], form);
+  const isSqlType =
+    type === CreateBlacklistReqV1TypeEnum.sql ||
+    type === CreateBlacklistReqV1TypeEnum.fp_sql;
+  const { contentNode, expandToggle } = useMatchRowSqlContentInput(
+    form,
+    field.name,
+    isSqlType
+  );
+
+  return (
+    <Space align="center" className="match-row">
+      <Form.Item
+        {...field}
+        name={[field.name, 'type']}
+        rules={[{ required: true }]}
+      >
+        <BasicSelect
+          style={{ width: 180 }}
+          options={
+            index === 0
+              ? SqlManagementExceptionBaseMatchTypeOptions
+              : SqlManagementExceptionExtendedMatchTypeOptions
+          }
+        />
+      </Form.Item>
+      {isSqlType ? (
+        contentNode
+      ) : (
+        <MatchRowContentField
+          form={form}
+          fieldName={field.name}
+          {...contentFieldProps}
+        />
+      )}
+      <Space align="center" size={8} className="match-row-actions">
+        <EmptyBox if={fieldsLength > 1}>
+          <MinusCircleOutlined
+            className="pointer"
+            onClick={() => onRemove(field.name)}
+          />
+        </EmptyBox>
+        {expandToggle}
+      </Space>
+    </Space>
   );
 };
 
@@ -286,13 +355,6 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
         />
       </Form.Item>
     );
-  }
-
-  if (
-    type === CreateBlacklistReqV1TypeEnum.sql ||
-    type === CreateBlacklistReqV1TypeEnum.fp_sql
-  ) {
-    return <MatchRowSqlContentInput form={form} fieldName={fieldName} />;
   }
 
   return (
@@ -531,41 +593,24 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
                 className="full-width-element"
               >
                 {fields.map((field, index) => (
-                  <Space key={field.key} align="start" className="match-row">
-                    <Form.Item
-                      {...field}
-                      name={[field.name, 'type']}
-                      rules={[{ required: true }]}
-                    >
-                      <BasicSelect
-                        style={{ width: 180 }}
-                        options={
-                          index === 0
-                            ? SqlManagementExceptionBaseMatchTypeOptions
-                            : SqlManagementExceptionExtendedMatchTypeOptions
-                        }
-                      />
-                    </Form.Item>
-                    <MatchRowContentField
-                      form={form}
-                      fieldName={field.name}
-                      loading={loading}
-                      instanceIDOptions={instanceIDOptions}
-                      auditTaskTypeOptions={auditTaskTypeOptions}
-                      getAuditTaskIdOptions={getAuditTaskIdOptions}
-                      auditTaskTypeLoading={auditTaskTypeLoading}
-                      auditTaskIdLoading={auditTaskIdLoading}
-                      selectedAuditTaskType={selectedAuditTaskType}
-                      clearAuditTaskIdRows={clearAuditTaskIdRows}
-                      dbTypeOptions={dbTypeOptions}
-                    />
-                    <EmptyBox if={fields.length > 1}>
-                      <MinusCircleOutlined
-                        className="pointer"
-                        onClick={() => remove(field.name)}
-                      />
-                    </EmptyBox>
-                  </Space>
+                  <MatchRowItem
+                    key={field.key}
+                    field={field}
+                    index={index}
+                    fieldsLength={fields.length}
+                    onRemove={remove}
+                    form={form}
+                    fieldName={field.name}
+                    loading={loading}
+                    instanceIDOptions={instanceIDOptions}
+                    auditTaskTypeOptions={auditTaskTypeOptions}
+                    getAuditTaskIdOptions={getAuditTaskIdOptions}
+                    auditTaskTypeLoading={auditTaskTypeLoading}
+                    auditTaskIdLoading={auditTaskIdLoading}
+                    selectedAuditTaskType={selectedAuditTaskType}
+                    clearAuditTaskIdRows={clearAuditTaskIdRows}
+                    dbTypeOptions={dbTypeOptions}
+                  />
                 ))}
                 <BasicButton
                   type="dashed"
@@ -584,17 +629,6 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
               </Space>
             )}
           </Form.List>
-        </Form.Item>
-
-        <Form.Item label={t('ruleException.form.reason')} name="desc">
-          <BasicInput.TextArea
-            className="textarea-no-resize"
-            autoSize={{
-              minRows: 3,
-              maxRows: 10
-            }}
-            placeholder={t('common.form.placeholder.input')}
-          />
         </Form.Item>
 
         <Form.Item
@@ -632,6 +666,18 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
             />
           </Form.Item>
         </EmptyBox>
+
+        <Form.Item label={t('ruleException.form.reason')} name="desc">
+          <BasicInput.TextArea
+            className="textarea-no-resize"
+            autoSize={{
+              minRows: 3,
+              maxRows: 10
+            }}
+            placeholder={t('common.form.placeholder.input')}
+          />
+        </Form.Item>
+
         <EmptyBox if={isUpdate}>
           <Alert
             showIcon

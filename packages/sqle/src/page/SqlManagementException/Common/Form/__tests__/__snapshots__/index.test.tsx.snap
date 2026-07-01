@@ -5,7 +5,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
   <div />
   <div>
     <div
-      class="css-4qia3e"
+      class="css-1ati1jk"
     >
       <form
         class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
@@ -43,7 +43,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                       style="margin-bottom: 12px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start match-row"
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center match-row"
                       >
                         <div
                           class="ant-space-item"
@@ -155,7 +155,15 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                         </div>
                         <div
                           class="ant-space-item"
-                        />
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center match-row-actions"
+                          >
+                            <div
+                              class="ant-space-item"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -190,43 +198,6 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="ant-form-item css-dev-only-do-not-override-txh9fw"
-        >
-          <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-          >
-            <div
-              class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
-            >
-              <label
-                class=""
-                for="desc"
-                title="添加备注"
-              >
-                添加备注
-              </label>
-            </div>
-            <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-            >
-              <div
-                class="ant-form-item-control-input"
-              >
-                <div
-                  class="ant-form-item-control-input-content"
-                >
-                  <textarea
-                    class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
-                    id="desc"
-                    placeholder="请输入{{name}}"
-                    style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
-                  />
                 </div>
               </div>
             </div>
@@ -302,6 +273,43 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                       </span>
                     </label>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class=""
+                for="desc"
+                title="添加备注"
+              >
+                添加备注
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <textarea
+                    class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                    id="desc"
+                    placeholder="请输入{{name}}"
+                    style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
+                  />
                 </div>
               </div>
             </div>

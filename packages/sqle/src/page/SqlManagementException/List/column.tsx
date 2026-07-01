@@ -7,6 +7,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { t } from '../../../locale';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
@@ -88,6 +89,15 @@ export const SqlManagementExceptionListColumns = (): ActiontechTableColumn<
     dataIndex: 'rule_scope_mode',
     title: () => t('ruleException.table.ruleScope'),
     render: (_, record) => <RuleScopeDisplay record={record} modeOnly />
+  },
+  {
+    dataIndex: 'desc',
+    title: () => t('ruleException.table.reason'),
+    className: 'ellipsis-column-width',
+    render: (desc) => {
+      if (!desc) return '-';
+      return <BasicTypographyEllipsis textCont={desc} />;
+    }
   },
   {
     dataIndex: 'created_by',

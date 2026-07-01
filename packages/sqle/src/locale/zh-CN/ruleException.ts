@@ -90,6 +90,7 @@ export default {
   table: {
     matchMode: '匹配方式',
     ruleScope: '生效范围',
+    reason: '备注',
     createdBy: '添加人',
     createdAt: '添加时间'
   },

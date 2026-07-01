@@ -2,19 +2,41 @@ import { useCallback, useMemo } from 'react';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { SelectProps } from 'antd';
-import useSourceTips from '../../SqlManagement/component/SQLEEIndex/hooks/useSourceTips';
+import useSourceTips, {
+  resolveAuditTaskTypeLabel
+} from '../../SqlManagement/component/SQLEEIndex/hooks/useSourceTips';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TFunction } from 'i18next';
 
-const formatAuditTaskLabel = (
+export const formatAuditTaskLabel = (
   plan: IInstanceAuditPlanResV1,
+  auditTaskType: string | undefined,
+  sourceSelectOptions: SelectProps['options'],
   t: TFunction
 ): string => {
   const instanceName =
     plan.instance_name || t('managementConf.list.table.column.staticScanType');
-  return `${instanceName} (#${plan.instance_audit_plan_id ?? ''})`;
+  const planId = plan.instance_audit_plan_id ?? '';
+  const effectiveAuditTaskType =
+    auditTaskType ?? plan.audit_plan_types?.[0]?.type;
+  const typeDesc = effectiveAuditTaskType
+    ? plan.audit_plan_types?.find(
+        (item) => item.type === effectiveAuditTaskType
+      )?.desc ??
+      resolveAuditTaskTypeLabel(
+        effectiveAuditTaskType,
+        sourceSelectOptions
+      ) ??
+      effectiveAuditTaskType
+    : undefined;
+
+  if (!typeDesc) {
+    return `${instanceName} (#${planId})`;
+  }
+
+  return `${instanceName}-${typeDesc} (#${planId})`;
 };
 
 const useAuditTaskSelectOptions = (projectName: string) => {
@@ -56,11 +78,16 @@ const useAuditTaskSelectOptions = (projectName: string) => {
         : plans;
 
       return filteredPlans.map((plan) => ({
-        label: formatAuditTaskLabel(plan, t),
+        label: formatAuditTaskLabel(
+          plan,
+          auditTaskType,
+          generateSourceSelectOptions,
+          t
+        ),
         value: `${plan.instance_audit_plan_id ?? ''}`
       }));
     },
-    [instanceAuditPlans, t]
+    [generateSourceSelectOptions, instanceAuditPlans, t]
   );
 
   return {

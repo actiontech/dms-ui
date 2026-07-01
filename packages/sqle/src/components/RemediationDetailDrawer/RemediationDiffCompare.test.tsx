@@ -4,24 +4,21 @@ import RemediationDiffCompare from './RemediationDiffCompare';
 import { IAuditResultWithExemption } from '../../page/RuleException/index.type';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
-jest.mock('../RuleException', () => ({
-  AuditResultWithRuleException: ({
-    auditResult
-  }: {
-    auditResult?: { message?: string };
-  }) => <span>{auditResult?.message}</span>,
-  ExemptedAuditResultWithActions: ({
-    auditResult
-  }: {
-    auditResult?: { message?: string; exception_id?: number };
-  }) => (
-    <span>
-      {auditResult?.message}
-      <button type="button">查看例外详情</button>
-      <button type="button">取消例外</button>
-    </span>
-  )
-}));
+jest.mock('../RuleException', () => {
+  const React = require('react');
+  return {
+    AuditResultWithRuleException: ({ auditResult }) =>
+      React.createElement('span', null, auditResult?.message),
+    ExemptedAuditResultWithActions: ({ auditResult }) =>
+      React.createElement(
+        'span',
+        null,
+        auditResult?.message,
+        React.createElement('button', { type: 'button' }, '查看例外详情'),
+        React.createElement('button', { type: 'button' }, '取消例外')
+      )
+  };
+});
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

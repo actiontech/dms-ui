@@ -91,6 +91,7 @@ export default {
   table: {
     matchMode: 'Match mode',
     ruleScope: 'Rule scope',
+    reason: 'Remark',
     createdBy: 'Added by',
     createdAt: 'Added at'
   },

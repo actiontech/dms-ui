@@ -32,7 +32,8 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
     getBlacklistSpy = blacklist.getBlacklist();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        sqlManagementException: { modalStatus: {} }
+        sqlManagementException: { modalStatus: {} },
+        database: { driverMeta: [] }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
