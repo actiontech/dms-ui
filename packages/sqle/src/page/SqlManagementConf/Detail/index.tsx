@@ -36,6 +36,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import CreateSqlManagementException from '../../SqlManagementException/Modal/Create';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -171,6 +172,8 @@ const ConfDetail: React.FC = () => {
           instanceAuditPlanId={id ?? ''}
           auditPlanId={v.audit_plan_type?.audit_plan_id?.toString() ?? ''}
           auditPlanType={v.audit_plan_type?.type ?? ''}
+          auditPlanDesc={v.audit_plan_type?.desc}
+          instanceId={data.instance_id}
           activeTabKey={activeKey}
           instanceType={data.instance_type ?? ''}
           exportPending={exportPending}
@@ -259,6 +262,13 @@ const ConfDetail: React.FC = () => {
   return (
     <>
       {contextMessageHolder}
+      <CreateSqlManagementException
+        onCreated={() => {
+          eventEmitter.emit(
+            EmitterKey.Refresh_Sql_Management_Conf_Detail_Sql_List
+          );
+        }}
+      />
       <PageHeader
         title={t('managementConf.detail.title', {
           instanceName:

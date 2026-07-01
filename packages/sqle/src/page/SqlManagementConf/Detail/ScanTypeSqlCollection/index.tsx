@@ -9,6 +9,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import ReportDrawer from '../../../../components/ReportDrawer';
 import RemediationDetailDrawer from '../../../../components/RemediationDetailDrawer';
+import { OpenCreateSqlManagementExceptionParams } from '../../../../components/RuleException/AddRuleExceptionButton';
+import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { ScanTypeSqlCollectionStyleWrapper } from './style';
@@ -55,13 +57,18 @@ import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/
 import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import {
   ISqlManageRuleExceptionContext,
-  buildSqlManageRuleExceptionContext
+  ScanTaskRuleExceptionSourceContext,
+  buildBlacklistPrefillFromSqlManage,
+  buildSqlManageRuleExceptionContext,
+  toScanTaskRuleExceptionRecord
 } from '../../../../page/RuleException/index.data';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
   auditPlanId,
   auditPlanType,
+  auditPlanDesc,
+  instanceId,
   activeTabKey,
   instanceType,
   exportDone,
@@ -70,6 +77,10 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   remediationExportDone
 }) => {
   const { t } = useTranslation();
+  const {
+    openCreateSqlManagementExceptionModal,
+    updateSelectSqlManagementExceptionRecord
+  } = useSqlManagementExceptionRedux();
   const { sortableTableColumnFactory, tableFilterMetaFactory } =
     useBackendTable();
 
@@ -127,25 +138,66 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     [openRemediationDrawer]
   );
 
+  const scanTaskSourceContext = useMemo<ScanTaskRuleExceptionSourceContext>(
+    () => ({
+      auditPlanType,
+      auditPlanId,
+      auditPlanDesc,
+      instanceType,
+      instanceId
+    }),
+    [auditPlanDesc, auditPlanId, auditPlanType, instanceId, instanceType]
+  );
+
+  const toScanTaskRecord = useCallback(
+    (record?: ScanTypeSqlTableDataSourceItem) => {
+      if (!record) {
+        return undefined;
+      }
+      return toScanTaskRuleExceptionRecord(
+        {
+          sql_fingerprint: record['sql_fingerprint'],
+          fingerprint: record['fingerprint'],
+          sql: record['sql'],
+          instance_id: record['instance_id'],
+          audit_result: parseAuditResult(record['audit_results'])
+        },
+        scanTaskSourceContext
+      );
+    },
+    [scanTaskSourceContext]
+  );
+
   const remediationSqlManageContext = useMemo<
     ISqlManageRuleExceptionContext | undefined
   >(() => {
-    if (!remediationDrawerRecord) {
-      return undefined;
-    }
-    const sql_fingerprint =
-      remediationDrawerRecord['sql_fingerprint'] ??
-      remediationDrawerRecord['fingerprint'];
-    return buildSqlManageRuleExceptionContext({
-      sql_fingerprint,
-      instance_id: remediationDrawerRecord['instance_id'],
-      db_type: instanceType,
-      source: {
-        sql_source_type: auditPlanType,
-        sql_source_ids: auditPlanId ? [auditPlanId] : undefined
-      }
-    });
-  }, [auditPlanId, auditPlanType, instanceType, remediationDrawerRecord]);
+    return buildSqlManageRuleExceptionContext(
+      toScanTaskRecord(remediationDrawerRecord)
+    );
+  }, [remediationDrawerRecord, toScanTaskRecord]);
+
+  const handleOpenCreateException = useCallback(
+    (params: OpenCreateSqlManagementExceptionParams) => {
+      const prefill =
+        buildBlacklistPrefillFromSqlManage(
+          toScanTaskRecord(remediationDrawerRecord),
+          {
+            ruleName: params.auditResult?.rule_name
+          }
+        ) ?? undefined;
+      closeRemediationDrawer();
+      setRemediationDrawerRecord(undefined);
+      openCreateSqlManagementExceptionModal();
+      updateSelectSqlManagementExceptionRecord(prefill);
+    },
+    [
+      closeRemediationDrawer,
+      openCreateSqlManagementExceptionModal,
+      remediationDrawerRecord,
+      toScanTaskRecord,
+      updateSelectSqlManagementExceptionRecord
+    ]
+  );
 
   const {
     data: tableMetas,
@@ -558,6 +610,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         sqlManageContext={remediationSqlManageContext}
         status={remediationDrawerRecord?.['status']}
         title={t('sqlManagement.remediationCompare.drawerTitle')}
+        onOpenCreateException={handleOpenCreateException}
       />
     </ScanTypeSqlCollectionStyleWrapper>
   );

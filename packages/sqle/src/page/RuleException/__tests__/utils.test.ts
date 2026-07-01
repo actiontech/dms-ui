@@ -8,7 +8,10 @@ import {
   buildBlacklistPrefillFromSqlManage,
   buildRuleExceptionFromSqlManage,
   buildSqlManageRuleExceptionContext,
-  formatMatchMode
+  formatMatchMode,
+  normalizeMatchRowsOrder,
+  rowsToBlacklistBody,
+  validateMatchRows
 } from '../utils';
 
 describe('sqle/page/RuleException/utils', () => {
@@ -314,6 +317,102 @@ describe('sqle/page/RuleException/utils', () => {
       type: MatchConditionReqV1TypeEnum.audit_task_type,
       typeLabel: MatchConditionReqV1TypeEnum.audit_task_type,
       content: 'MySQL 慢日志'
+    });
+  });
+
+  it('normalizeMatchRowsOrder promotes primary type before audit task conditions', () => {
+    expect(
+      normalizeMatchRowsOrder([
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_type,
+          content: 'mysql_schema_meta'
+        },
+        {
+          type: CreateBlacklistReqV1TypeEnum.fp_sql,
+          content: 'select 1'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_id,
+          content: '7'
+        }
+      ])
+    ).toEqual([
+      {
+        type: CreateBlacklistReqV1TypeEnum.fp_sql,
+        content: 'select 1'
+      },
+      {
+        type: MatchConditionReqV1TypeEnum.audit_task_type,
+        content: 'mysql_schema_meta'
+      },
+      {
+        type: MatchConditionReqV1TypeEnum.audit_task_id,
+        content: '7'
+      }
+    ]);
+  });
+
+  it('validateMatchRows accepts audit task rows when a primary type row exists', () => {
+    expect(
+      validateMatchRows([
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_type,
+          content: 'mysql_schema_meta'
+        },
+        {
+          type: CreateBlacklistReqV1TypeEnum.fp_sql,
+          content: 'select 1'
+        }
+      ])
+    ).toBeNull();
+  });
+
+  it('validateMatchRows rejects audit task type as the only row', () => {
+    expect(
+      validateMatchRows([
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_type,
+          content: 'mysql_schema_meta'
+        }
+      ])
+    ).toBe('invalidFirstType');
+  });
+
+  it('rowsToBlacklistBody uses primary row as type and audit task as match_conditions', () => {
+    expect(
+      rowsToBlacklistBody(
+        [
+          {
+            type: MatchConditionReqV1TypeEnum.audit_task_type,
+            content: 'mysql_schema_meta'
+          },
+          {
+            type: CreateBlacklistReqV1TypeEnum.fp_sql,
+            content: 'select 1'
+          },
+          {
+            type: MatchConditionReqV1TypeEnum.audit_task_id,
+            content: '7'
+          }
+        ],
+        BlacklistResV1RuleScopeModeEnum.all,
+        []
+      )
+    ).toEqual({
+      type: CreateBlacklistReqV1TypeEnum.fp_sql,
+      content: 'select 1',
+      desc: undefined,
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_type,
+          content: 'mysql_schema_meta'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_id,
+          content: '7'
+        }
+      ],
+      rule_scope: 'ALL'
     });
   });
 });

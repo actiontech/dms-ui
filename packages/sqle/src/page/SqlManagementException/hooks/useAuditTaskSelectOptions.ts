@@ -25,10 +25,7 @@ export const formatAuditTaskLabel = (
     ? plan.audit_plan_types?.find(
         (item) => item.type === effectiveAuditTaskType
       )?.desc ??
-      resolveAuditTaskTypeLabel(
-        effectiveAuditTaskType,
-        sourceSelectOptions
-      ) ??
+      resolveAuditTaskTypeLabel(effectiveAuditTaskType, sourceSelectOptions) ??
       effectiveAuditTaskType
     : undefined;
 

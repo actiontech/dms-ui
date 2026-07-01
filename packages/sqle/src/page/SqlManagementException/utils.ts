@@ -3,7 +3,11 @@ import {
   IBlacklistResV1,
   IRuleTips
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { blacklistToRows, rowsToBlacklistBody } from '../RuleException/utils';
+import {
+  blacklistToRows,
+  rowsToBlacklistBody,
+  normalizeMatchRowsOrder
+} from '../RuleException/utils';
 import {
   blacklistRecordToExtended,
   normalizeRuleScopeList
@@ -95,7 +99,7 @@ export const blacklistRecordToFormValues = (
   }
 
   return {
-    match_rows: matchRows,
+    match_rows: normalizeMatchRowsOrder(matchRows),
     desc: extended.desc,
     rule_scope_mode: ruleScopeMode,
     rule_scope_db_type: ruleScopeDbType,

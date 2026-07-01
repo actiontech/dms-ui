@@ -142,6 +142,7 @@ export {
   resolveRuleExceptionDbType,
   buildQuickAddRuleExceptionSummaryItems,
   rowsToBlacklistBody,
+  toScanTaskRuleExceptionRecord,
   toSqlManageRuleExceptionRecord,
   validateMatchRows
 } from './utils';
@@ -154,6 +155,8 @@ export type {
   ISqlManageRuleExceptionContext,
   MatchRow,
   QuickAddRuleExceptionSummaryItem,
+  ScanTaskRuleExceptionRecordInput,
+  ScanTaskRuleExceptionSourceContext,
   SqlManageRuleExceptionRecord
 } from './utils';
 

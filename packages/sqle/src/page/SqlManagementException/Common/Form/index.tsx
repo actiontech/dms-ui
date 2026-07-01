@@ -254,11 +254,7 @@ const MatchRowItem: React.FC<MatchRowItemProps> = ({
       {isSqlType ? (
         contentNode
       ) : (
-        <MatchRowContentField
-          form={form}
-          fieldName={field.name}
-          {...contentFieldProps}
-        />
+        <MatchRowContentField form={form} {...contentFieldProps} />
       )}
       <Space align="center" size={8} className="match-row-actions">
         <EmptyBox if={fieldsLength > 1}>
@@ -586,7 +582,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
               }
             ]}
           >
-            {(fields, { add, remove }) => (
+            {(fields, { add, remove }, { errors }) => (
               <Space
                 direction="vertical"
                 size={12}
@@ -612,6 +608,7 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
                     dbTypeOptions={dbTypeOptions}
                   />
                 ))}
+                <Form.ErrorList errors={errors} />
                 <BasicButton
                   type="dashed"
                   icon={

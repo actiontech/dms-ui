@@ -183,6 +183,54 @@ export const toSqlManageRuleExceptionRecord = (
   };
 };
 
+export type ScanTaskRuleExceptionRecordInput = {
+  sql_fingerprint?: string;
+  fingerprint?: string;
+  sql?: string;
+  instance_id?: string;
+  audit_result?: IAuditResult[] | null;
+};
+
+export type ScanTaskRuleExceptionSourceContext = {
+  auditPlanType?: string;
+  auditPlanId?: string;
+  auditPlanDesc?: string;
+  instanceType?: string;
+  instanceId?: string;
+};
+
+export const toScanTaskRuleExceptionRecord = (
+  record?: ScanTaskRuleExceptionRecordInput | null,
+  sourceContext?: ScanTaskRuleExceptionSourceContext
+): SqlManageRuleExceptionRecord | undefined => {
+  if (!record) {
+    return undefined;
+  }
+
+  const sql_fingerprint =
+    record.sql_fingerprint?.trim() || record.fingerprint?.trim();
+  const sql = record.sql?.trim();
+
+  if (!sql_fingerprint && !sql) {
+    return undefined;
+  }
+
+  return {
+    sql_fingerprint: sql_fingerprint || sql,
+    sql,
+    instance_id: record.instance_id?.trim() || sourceContext?.instanceId,
+    db_type: sourceContext?.instanceType,
+    source: {
+      sql_source_type: sourceContext?.auditPlanType,
+      sql_source_ids: sourceContext?.auditPlanId
+        ? [sourceContext.auditPlanId]
+        : undefined,
+      sql_source_desc: sourceContext?.auditPlanDesc
+    },
+    audit_result: record.audit_result
+  };
+};
+
 export type BuildBlacklistPrefillFromSqlManageOptions = {
   ruleName?: string;
 };
@@ -400,6 +448,37 @@ export const buildQuickAddRuleExceptionSummaryItems = (options: {
 export type MatchRow = {
   type: CreateBlacklistReqV1TypeEnum | MatchConditionReqV1TypeEnum;
   content: string;
+};
+
+const PRIMARY_BLACKLIST_MATCH_TYPES = new Set<string>(
+  Object.values(CreateBlacklistReqV1TypeEnum)
+);
+
+export const isPrimaryBlacklistMatchType = (
+  type?: string
+): type is CreateBlacklistReqV1TypeEnum => {
+  if (!type) {
+    return false;
+  }
+  return PRIMARY_BLACKLIST_MATCH_TYPES.has(type);
+};
+
+/** Move the first primary blacklist type row to index 0 for API payload shape. */
+export const normalizeMatchRowsOrder = (rows: MatchRow[]): MatchRow[] => {
+  if (rows.length <= 1) {
+    return rows;
+  }
+  const firstPrimaryIndex = rows.findIndex((row) =>
+    isPrimaryBlacklistMatchType(row.type as string)
+  );
+  if (firstPrimaryIndex <= 0) {
+    return rows;
+  }
+  return [
+    rows[firstPrimaryIndex],
+    ...rows.slice(0, firstPrimaryIndex),
+    ...rows.slice(firstPrimaryIndex + 1)
+  ];
 };
 
 export type FormattedMatchModeItem = {
@@ -673,7 +752,7 @@ export const rowsToBlacklistBody = (
   desc?: string,
   dbType?: string
 ) => {
-  const [firstRow, ...restRows] = rows;
+  const [firstRow, ...restRows] = normalizeMatchRowsOrder(rows);
   let matchConditions = normalizeMatchConditionsForWrite(
     restRows.map((row) => ({
       type: row.type as MatchConditionReqV1TypeEnum,
@@ -696,7 +775,8 @@ export const validateMatchRows = (rows?: MatchRow[]) => {
   if (!rows?.length) {
     return 'empty' as const;
   }
-  const firstType = rows[0].type;
+  const normalizedRows = normalizeMatchRowsOrder(rows);
+  const firstType = normalizedRows[0].type;
   if (
     firstType === MatchConditionReqV1TypeEnum.audit_task_type ||
     firstType === MatchConditionReqV1TypeEnum.audit_task_id ||
@@ -705,7 +785,7 @@ export const validateMatchRows = (rows?: MatchRow[]) => {
     return 'invalidFirstType' as const;
   }
   const seen = new Set<string>();
-  for (const row of rows) {
+  for (const row of normalizedRows) {
     if (!row.type || !row.content?.trim()) {
       return 'incomplete' as const;
     }

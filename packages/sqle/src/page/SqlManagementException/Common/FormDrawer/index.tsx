@@ -86,7 +86,12 @@ const SqlManagementExceptionFormDrawer: React.FC<
   }, [form, mutateDetail, onClose]);
 
   const submit = useCallback(async () => {
-    const values = await form.validateFields();
+    let values: SqlManagementExceptionFormFieldType;
+    try {
+      values = await form.validateFields();
+    } catch {
+      return;
+    }
     startSubmit();
     const payload = formValuesToBlacklistPayload(values);
 
