@@ -186,13 +186,18 @@ const SqlManagementExceptionFormDrawer: React.FC<
       const prefilledRuleNames = normalizeRuleScopeList(
         record.rule_scope as string[] | 'ALL' | undefined
       );
+      const hasTriggeredRuleScopeDisplay = !!record.rule_scope_display?.length;
       const hasRuleScopePrefill =
         record.rule_scope_mode === BlacklistResV1RuleScopeModeEnum.specific &&
-        prefilledRuleNames.length > 0;
+        (prefilledRuleNames.length > 0 || hasTriggeredRuleScopeDisplay);
       const formValues = hasRuleScopePrefill
         ? buildUpdateFormValuesFromRecord(record, ruleTips)
         : blacklistRecordToFormValues(record);
-      if (formValues.match_rows?.length || hasRuleScopePrefill) {
+      if (
+        formValues.match_rows?.length ||
+        hasRuleScopePrefill ||
+        hasTriggeredRuleScopeDisplay
+      ) {
         form.setFieldsValue(formValues);
       }
     }

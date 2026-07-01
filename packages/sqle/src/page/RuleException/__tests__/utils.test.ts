@@ -143,7 +143,7 @@ describe('sqle/page/RuleException/utils', () => {
     });
   });
 
-  it('buildBlacklistPrefillFromSqlManage prefills triggered audit rules as rule scope', () => {
+  it('buildBlacklistPrefillFromSqlManage exposes triggered rules without pre-selecting rule scope', () => {
     expect(
       buildBlacklistPrefillFromSqlManage({
         sql_fingerprint: 'select * from t',
@@ -164,7 +164,7 @@ describe('sqle/page/RuleException/utils', () => {
       type: CreateBlacklistReqV1TypeEnum.fp_sql,
       content: 'select * from t',
       rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
-      rule_scope: ['ddl_check_table_without_if_not_exists'],
+      rule_scope: [],
       rule_scope_display: [
         {
           rule_name: 'ddl_check_table_without_if_not_exists',
@@ -176,7 +176,7 @@ describe('sqle/page/RuleException/utils', () => {
     });
   });
 
-  it('buildBlacklistPrefillFromSqlManage prefills a single rule when ruleName is provided', () => {
+  it('buildBlacklistPrefillFromSqlManage pre-selects clicked rule and keeps all triggered rules in display', () => {
     expect(
       buildBlacklistPrefillFromSqlManage(
         {
@@ -203,6 +203,12 @@ describe('sqle/page/RuleException/utils', () => {
       rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
       rule_scope: ['rule_b'],
       rule_scope_display: [
+        {
+          rule_name: 'rule_a',
+          level: 'error',
+          db_type: 'MySQL',
+          rule_desc: 'rule a message'
+        },
         {
           rule_name: 'rule_b',
           level: 'warn',

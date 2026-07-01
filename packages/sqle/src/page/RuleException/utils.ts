@@ -323,37 +323,34 @@ export const buildBlacklistPrefillFromSqlManage = (
     match_conditions: match_conditions.length ? match_conditions : undefined
   };
 
-  let triggeredResults = extractTriggeredAuditResults(record?.audit_result);
+  const allTriggeredResults = extractTriggeredAuditResults(
+    record?.audit_result
+  );
 
-  if (options?.ruleName?.trim()) {
-    const ruleName = options.ruleName.trim();
-    const matchedResult = (record?.audit_result ?? []).find(
-      (item) => item.rule_name?.trim() === ruleName
-    );
-    triggeredResults = matchedResult
-      ? [matchedResult]
-      : [{ rule_name: ruleName }];
-  }
-
-  if (!triggeredResults.length) {
+  if (!allTriggeredResults.length) {
     return basePrefill;
   }
 
   const dbType =
-    context.db_type ?? resolveDbTypeFromAuditResults(triggeredResults);
+    context.db_type ?? resolveDbTypeFromAuditResults(allTriggeredResults);
+
+  const ruleScopeDisplay = allTriggeredResults.map((item) => ({
+    rule_name: item.rule_name,
+    level: getAuditResultLevel(item),
+    db_type: dbType ?? item.db_type,
+    rule_desc: item.message
+  }));
+
+  const selectedRuleNames: string[] = [];
+  if (options?.ruleName?.trim()) {
+    selectedRuleNames.push(options.ruleName.trim());
+  }
 
   return {
     ...basePrefill,
     rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
-    rule_scope: triggeredResults.map(
-      (item) => item.rule_name as string
-    ) as unknown as IBlacklistResV1['rule_scope'],
-    rule_scope_display: triggeredResults.map((item) => ({
-      rule_name: item.rule_name,
-      level: getAuditResultLevel(item),
-      db_type: dbType ?? item.db_type,
-      rule_desc: item.message
-    }))
+    rule_scope: selectedRuleNames as unknown as IBlacklistResV1['rule_scope'],
+    rule_scope_display: ruleScopeDisplay
   };
 };
 

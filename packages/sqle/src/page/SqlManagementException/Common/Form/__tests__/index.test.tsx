@@ -10,11 +10,15 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from '../../../../../hooks/useRuleTips';
+import { BlacklistResV1RuleScopeModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-const mockGenerateFlatRuleOptionsByDbType = jest.fn(() => [] as Array<{
-  label: string;
-  value: string;
-}>);
+const mockGenerateFlatRuleOptionsByDbType = jest.fn(
+  () =>
+    [] as Array<{
+      label: string;
+      value: string;
+    }>
+);
 
 jest.mock('../../../../../hooks/useInstance', () => ({
   __esModule: true,
@@ -117,27 +121,33 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
       }
     ]);
 
-    customRender({
-      triggeredRuleScopeDisplay: [
-        {
-          rule_name: 'rule_a',
-          level: 'warn',
-          db_type: 'MySQL',
-          rule_desc: 'Triggered rule A'
-        }
-      ]
+    const { result } = renderHooksWithTheme(() =>
+      Form.useForm<SqlManagementExceptionFormFieldType>()
+    );
+    const [form] = result.current;
+
+    renderWithReduxAndTheme(
+      <SqlManagementExceptionForm
+        form={form}
+        triggeredRuleScopeDisplay={[
+          {
+            rule_name: 'rule_a',
+            level: 'warn',
+            db_type: 'MySQL',
+            rule_desc: 'Triggered rule A'
+          }
+        ]}
+      />
+    );
+
+    await act(async () => {
+      form.setFieldsValue({
+        rule_scope_mode: BlacklistResV1RuleScopeModeEnum.specific,
+        rule_scope_db_type: 'MySQL',
+        rule_scope: []
+      });
+      jest.advanceTimersByTime(3000);
     });
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    fireEvent.click(screen.getByText('指定规则'));
-    await act(async () => jest.advanceTimersByTime(0));
-
-    fireEvent.mouseDown(getBySelector('#rule_scope_db_type'));
-    fireEvent.click(screen.getByTitle('MySQL'));
-    await act(async () => jest.advanceTimersByTime(0));
-
-    expect(mockGenerateFlatRuleOptionsByDbType).toHaveBeenCalledWith('MySQL');
 
     fireEvent.mouseDown(getBySelector('#rule_scope'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -145,5 +155,6 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
     expect(screen.getByText('其他规则')).toBeInTheDocument();
     expect(screen.getByText('Triggered rule A')).toBeInTheDocument();
     expect(screen.getByText('Rule B desc')).toBeInTheDocument();
+    expect(form.getFieldValue('rule_scope')).toEqual([]);
   });
 });

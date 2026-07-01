@@ -135,7 +135,11 @@ export const buildUpdateFormValuesFromRecord = (
     ruleScopeDbType = record.rule_scope_display[0].db_type.trim();
   }
 
-  if (mappedRuleScope.length === 0 && record.rule_scope_display?.length) {
+  if (
+    mappedRuleScope.length === 0 &&
+    ruleNames.length > 0 &&
+    record.rule_scope_display?.length
+  ) {
     record.rule_scope_display.forEach((item) => {
       if (!item.rule_name?.trim()) {
         return;
