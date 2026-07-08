@@ -153,6 +153,25 @@ export default {
       'Skip the verification of the request sending source, which may put your account at risk. it is recommended to enable this option only in a trusted environment. after enabling, SQLE will no longer verify the state parameter in the callback.'
   },
 
+  loginBasic: {
+    passwordLoginDisabled: 'Disable password login',
+    passwordLoginDisabledTips:
+      'Prevent non-admin users from logging in with username and password',
+    disableMultipleLogin: 'Disable simultaneous multi-device login',
+    disableMultipleLoginTips:
+      'When enabled, only the latest login session is kept per account; logging in on a new device will force logout on other devices',
+    loginButtonText: 'Login button text',
+    loginButtonTextTips: 'Login page button text',
+    enableOAuthFirst: 'Enable OAuth2.0 login first',
+    confirmDisable: 'Are you sure you want to disable this setting?',
+    confirmEnableWithLDAP:
+      'LDAP relies on password login and will be disabled together. Continue?',
+    confirmEnable: 'Are you sure you want to enable this setting?',
+    confirmDisableMultipleLogin:
+      'When enabled, only the latest login session is kept per account. Continue?',
+    confirmEnableMultipleLogin: 'Are you sure you want to disable this setting?'
+  },
+
   dingTalk: {
     titleTips:
       "The approval information will be sent to the corresponding dingtalk account according to the auditor'S mobile number",

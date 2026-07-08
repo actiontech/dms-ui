@@ -183,13 +183,19 @@ export default {
   loginBasic: {
     passwordLoginDisabled: '是否禁用账密登录',
     passwordLoginDisabledTips: '禁止除管理员外的普通用户通过账号和密码登录',
+    disableMultipleLogin: '禁止同一账号多设备同时登录',
+    disableMultipleLoginTips:
+      '开启后，同一账号仅保留最近一次登录会话；新设备登录后，旧设备将被强制退出',
     loginButtonText: '登录按钮文字',
     loginButtonTextTips: 'login页面登录按钮文字',
     enableOAuthFirst: '需先启用OAuth2.0登录',
     confirmDisable: '是否确认关闭当前配置？',
     confirmEnableWithLDAP:
       'LDAP服务基于账密登录，会同时被禁用，是否确认开启禁用？',
-    confirmEnable: '是否确认开启当前配置？'
+    confirmEnable: '是否确认开启当前配置？',
+    confirmDisableMultipleLogin:
+      '开启后，同一账号仅保留最近一次登录会话，是否确认开启？',
+    confirmEnableMultipleLogin: '是否确认关闭当前配置？'
   },
 
   dingTalk: {
