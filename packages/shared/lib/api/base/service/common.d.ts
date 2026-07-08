@@ -2315,12 +2315,14 @@ export interface IListUserReply {
 
 export interface ILoginConfiguration {
   disable_user_pwd_login?: boolean;
+  disable_multiple_login?: boolean;
 
   login_button_text?: string;
 }
 
 export interface ILoginTipsResData {
   disable_user_pwd_login?: boolean;
+  disable_multiple_login?: boolean;
 
   login_button_text?: string;
 }

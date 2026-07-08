@@ -12,6 +12,7 @@ const LoginBasicSetting: React.FC = () => {
   const { t } = useTranslation();
   const { isLDAPEnabled, isOAuthEnabled } = useLoginConnectionContext();
   const [isPasswordLoginDisabled, setIsPasswordLoginDisabled] = useState(false);
+  const [isMultipleLoginDisabled, setIsMultipleLoginDisabled] = useState(false);
   const [loginButtonText, setLoginButtonText] = useState<string>();
   const [
     isLoginButtonEditing,
@@ -38,6 +39,7 @@ const LoginBasicSetting: React.FC = () => {
       if (res.data.code === ResponseCode.SUCCESS) {
         setLoginButtonText(res.data.data?.login_button_text);
         setIsPasswordLoginDisabled(!!res.data.data?.disable_user_pwd_login);
+        setIsMultipleLoginDisabled(!!res.data.data?.disable_multiple_login);
       }
     })
   );
@@ -75,6 +77,28 @@ const LoginBasicSetting: React.FC = () => {
       </Popconfirm>
     );
   };
+  const renderMultipleLoginSwitch = () => {
+    const confirmTitle = isMultipleLoginDisabled
+      ? t('dmsSystem.loginBasic.confirmEnableMultipleLogin')
+      : t('dmsSystem.loginBasic.confirmDisableMultipleLogin');
+    return (
+      <Popconfirm
+        title={confirmTitle}
+        okText={t('common.ok')}
+        cancelText={t('common.cancel')}
+        onConfirm={() => {
+          const newValue = !isMultipleLoginDisabled;
+          setIsMultipleLoginDisabled(newValue);
+          updateLoginConfig(newValue, 'disable_multiple_login');
+        }}
+      >
+        <BasicSwitch
+          data-testid="multiple-login-disabled-switch"
+          checked={isMultipleLoginDisabled}
+        />
+      </Popconfirm>
+    );
+  };
   return (
     <Spin spinning={loading} delay={300}>
       <ConfigItem
@@ -106,6 +130,16 @@ const LoginBasicSetting: React.FC = () => {
           </LabelContent>
         }
         inputNode={renderPasswordLoginSwitch()}
+      />
+      <ConfigItem
+        label={
+          <LabelContent
+            tips={t('dmsSystem.loginBasic.disableMultipleLoginTips')}
+          >
+            {t('dmsSystem.loginBasic.disableMultipleLogin')}
+          </LabelContent>
+        }
+        inputNode={renderMultipleLoginSwitch()}
       />
     </Spin>
   );

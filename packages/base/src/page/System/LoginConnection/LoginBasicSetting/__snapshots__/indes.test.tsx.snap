@@ -126,6 +126,57 @@ exports[`LoginBasicSetting updateLoginConfig should match snapshot 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
+        >
+          <div
+            class="ant-col ant-col-11 config-item-label"
+          >
+            <div
+              class="config-item-label"
+            >
+              <div
+                class="title"
+              >
+                禁止同一账号多设备同时登录
+              </div>
+              <div
+                class="tips"
+              >
+                开启后，同一账号仅保留最近一次登录会话；新设备登录后，旧设备将被强制退出
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <button
+                aria-checked="false"
+                class="ant-switch basic-switch-wrapper css-g6dhbn"
+                data-testid="multiple-login-disabled-switch"
+                role="switch"
+                type="button"
+              >
+                <div
+                  class="ant-switch-handle"
+                />
+                <span
+                  class="ant-switch-inner"
+                >
+                  <span
+                    class="ant-switch-inner-checked"
+                  />
+                  <span
+                    class="ant-switch-inner-unchecked"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
