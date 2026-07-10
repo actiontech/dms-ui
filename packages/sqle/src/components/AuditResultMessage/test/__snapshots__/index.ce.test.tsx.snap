@@ -109,7 +109,7 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
 <body>
   <div>
     <div
-      class="has-delete-rule-wrapper css-1v03opz"
+      class="has-delete-rule-wrapper css-1737itt"
     >
       <span
         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -388,7 +388,7 @@ exports[`sqle/components/AuditResultMessage render snap when showAnnotation 1`] 
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class=" css-1737itt"
     >
       <div
         class="css-9paak3"

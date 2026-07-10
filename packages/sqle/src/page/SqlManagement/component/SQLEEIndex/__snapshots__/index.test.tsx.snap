@@ -1145,9 +1145,11 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      style="flex-wrap: wrap; margin-bottom: -12px;"
                                     >
                                       <div
                                         class="ant-space-item"
+                                        style="padding-bottom: 12px;"
                                       >
                                         <span
                                           class="audit-level-summary-item"
@@ -3257,9 +3259,11 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      style="flex-wrap: wrap; margin-bottom: -12px;"
                                     >
                                       <div
                                         class="ant-space-item"
+                                        style="padding-bottom: 12px;"
                                       >
                                         <span
                                           class="audit-level-summary-item"
@@ -4011,9 +4015,11 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      style="flex-wrap: wrap; margin-bottom: -12px;"
                                     >
                                       <div
                                         class="ant-space-item"
+                                        style="padding-bottom: 12px;"
                                       >
                                         <span
                                           class="audit-level-summary-item"
@@ -4390,9 +4396,11 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      style="flex-wrap: wrap; margin-bottom: -12px;"
                                     >
                                       <div
                                         class="ant-space-item"
+                                        style="padding-bottom: 12px;"
                                       >
                                         <span
                                           class="audit-level-summary-item"
@@ -5042,22 +5050,6 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
 
 exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.6153846153846154;padding-top:4.5px;padding-bottom:4.5px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:13px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -5799,9 +5791,11 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      style="flex-wrap: wrap; margin-bottom: -12px;"
                                     >
                                       <div
                                         class="ant-space-item"
+                                        style="padding-bottom: 12px;"
                                       >
                                         <span
                                           class="audit-level-summary-item"

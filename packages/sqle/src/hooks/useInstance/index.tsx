@@ -7,39 +7,16 @@ import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/commo
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import useDatabaseType from '../useDatabaseType';
+import {
+  getInstanceTipsCacheKey,
+  instanceTipsStore,
+  notifyInstanceTipsListeners
+} from './instanceTipsCache';
 
-type InstanceTipsStore = {
-  data: Map<string, IInstanceTipResV1[]>;
-  inflight: Map<string, Promise<IInstanceTipResV1[]>>;
-  listeners: Set<() => void>;
-};
-
-const instanceTipsStore: InstanceTipsStore = {
-  data: new Map(),
-  inflight: new Map(),
-  listeners: new Set()
-};
-
-export const getInstanceTipsCacheKey = (
-  params: IGetInstanceTipListV1Params
-): string => {
-  return JSON.stringify({
-    project_name: params.project_name,
-    filter_db_type: params.filter_db_type ?? '',
-    filter_by_business: params.filter_by_business ?? '',
-    filter_workflow_template_id: params.filter_workflow_template_id ?? '',
-    functional_module: params.functional_module ?? ''
-  });
-};
-
-export const resetInstanceTipsCacheForTests = () => {
-  instanceTipsStore.data.clear();
-  instanceTipsStore.inflight.clear();
-};
-
-const notifyInstanceTipsListeners = () => {
-  instanceTipsStore.listeners.forEach((listener) => listener());
-};
+export {
+  getInstanceTipsCacheKey,
+  resetInstanceTipsCacheForTests
+} from './instanceTipsCache';
 
 const fetchInstanceTips = (
   params: IGetInstanceTipListV1Params
@@ -47,12 +24,14 @@ const fetchInstanceTips = (
   const cacheKey = getInstanceTipsCacheKey(params);
 
   if (instanceTipsStore.data.has(cacheKey)) {
-    return Promise.resolve(instanceTipsStore.data.get(cacheKey)!);
+    return Promise.resolve(
+      instanceTipsStore.data.get(cacheKey)! as IInstanceTipResV1[]
+    );
   }
 
   const inflightRequest = instanceTipsStore.inflight.get(cacheKey);
   if (inflightRequest) {
-    return inflightRequest;
+    return inflightRequest as Promise<IInstanceTipResV1[]>;
   }
 
   const request = instance
@@ -106,9 +85,11 @@ const useInstance = () => {
     []
   );
 
-  const instanceList = subscribedCacheKey
-    ? instanceTipsStore.data.get(subscribedCacheKey) ?? []
-    : [];
+  const instanceList = (
+    subscribedCacheKey
+      ? instanceTipsStore.data.get(subscribedCacheKey) ?? []
+      : []
+  ) as IInstanceTipResV1[];
   const loading = subscribedCacheKey
     ? instanceTipsStore.inflight.has(subscribedCacheKey)
     : false;
