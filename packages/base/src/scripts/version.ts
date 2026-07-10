@@ -1,1 +1,1 @@
-export const UI_VERSION = 'feature/add-make-command   ba9c9c5';
+export const UI_VERSION = 'feat-sql-manage-except   7c64b93f1';

@@ -416,6 +416,14 @@ exports[`sqle/components/AuditResultMessage render snap when has more link 1`] =
         class="annotation-wrapper"
       >
         annotation text
+        <a
+          class="ant-typography css-dev-only-do-not-override-txh9fw"
+          href="this is a link"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          查看更多
+        </a>
       </div>
     </div>
   </div>

@@ -51,6 +51,8 @@ describe('sqle/hooks/useAuditResultRuleInfo', () => {
         db_type: 'mysql',
         level: '',
         message: 'mes str',
+        desc: '',
+        annotation: '',
         isRuleDeleted: false
       }
     ]);
@@ -73,6 +75,8 @@ describe('sqle/hooks/useAuditResultRuleInfo', () => {
         level: '',
         message: 'mes str',
         rule_name: 'rule name',
+        desc: '',
+        annotation: '',
         isRuleDeleted: true
       }
     ]);
