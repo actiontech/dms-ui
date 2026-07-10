@@ -32,29 +32,34 @@ const FullSqlExemptedResultItem: React.FC<FullSqlExemptedResultItemProps> = ({
 
   return (
     <AuditResultWithRuleExceptionStyleWrapper className="full-sql-exempted-result-item">
-      <AuditResultMessage
-        styleClass="result-item"
-        auditResult={displayAuditResult}
-      />
+      <div className="audit-result-content">
+        <AuditResultMessage auditResult={displayAuditResult} />
+      </div>
       {showViewDetailAction ? (
-        <BasicToolTips
-          title={
-            viewDetailDisabled
-              ? undefined
-              : t('ruleException.skippedSection.viewDetail')
-          }
-        >
-          <ExceptionFileOutlined
-            width={16}
-            height={16}
-            className={viewDetailDisabled ? undefined : 'pointer'}
-            onClick={
+        <div className="audit-result-action">
+          <BasicToolTips
+            title={
               viewDetailDisabled
                 ? undefined
-                : () => navigateToExceptionDetail(exceptionId)
+                : t('ruleException.skippedSection.viewDetail')
             }
-          />
-        </BasicToolTips>
+          >
+            <ExceptionFileOutlined
+              width={16}
+              height={16}
+              color={viewDetailDisabled ? undefined : 'currentColor'}
+              className={
+                viewDetailDisabled ? undefined : 'pointer icon-view-detail'
+              }
+              onClick={(event) => {
+                event.stopPropagation();
+                if (!viewDetailDisabled) {
+                  navigateToExceptionDetail(exceptionId);
+                }
+              }}
+            />
+          </BasicToolTips>
+        </div>
       ) : null}
     </AuditResultWithRuleExceptionStyleWrapper>
   );
