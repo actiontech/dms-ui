@@ -1436,7 +1436,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                                 class=" css-1v03opz"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="css-9paak3"
                                 >
                                   <span
                                     class="icon-wrapper"
@@ -2892,7 +2892,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                                 class=" css-1v03opz"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="css-9paak3"
                                 >
                                   <span
                                     class="icon-wrapper"

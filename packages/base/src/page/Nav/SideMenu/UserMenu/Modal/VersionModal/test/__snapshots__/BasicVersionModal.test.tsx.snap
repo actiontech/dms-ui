@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            feature/add-make-command   ba9c9c5
+                            feat-sql-manage-except   499429a43
                           </article>
                         </div>
                         <div
@@ -345,7 +345,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            feature/add-make-command   ba9c9c5
+                            feat-sql-manage-except   499429a43
                           </article>
                         </div>
                         <div

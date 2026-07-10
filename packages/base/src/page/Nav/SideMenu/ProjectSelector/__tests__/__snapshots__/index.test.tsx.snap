@@ -5,7 +5,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when clicked more pr
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"
@@ -255,7 +254,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when closed select d
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"
@@ -505,7 +503,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 1`] = 
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"
@@ -581,7 +578,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = 
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-open"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"
@@ -891,7 +887,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = 
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"
@@ -1201,7 +1196,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = 
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"
@@ -1511,7 +1505,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 5`] = 
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-show-arrow ant-select-open"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"
@@ -1780,7 +1773,6 @@ exports[`base/page/Nav/SideMenu/ProjectSelector render snap when no data 1`] = `
   <div>
     <div
       class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
-      searchinputref="[object Object]"
     >
       <div
         class="ant-select-selector"

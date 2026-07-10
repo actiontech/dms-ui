@@ -894,7 +894,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                                   class=" css-1v03opz"
                                 >
                                   <div
-                                    class="css-1avyf41"
+                                    class="css-9paak3"
                                   >
                                     <span
                                       class="icon-wrapper"
@@ -2331,7 +2331,7 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                                   class=" css-1v03opz"
                                 >
                                   <div
-                                    class="css-1avyf41"
+                                    class="css-9paak3"
                                   >
                                     <span
                                       class="icon-wrapper"

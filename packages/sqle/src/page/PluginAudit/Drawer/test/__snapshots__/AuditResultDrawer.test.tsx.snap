@@ -97,7 +97,7 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                             该规则已删除
                           </span>
                           <div
-                            class="css-1avyf41"
+                            class="css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -130,7 +130,7 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                             该规则已删除
                           </span>
                           <div
-                            class="css-1avyf41"
+                            class="css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
