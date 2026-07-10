@@ -217,7 +217,11 @@ describe('sqle/PluginAudit/List', () => {
       type: 'whitelist/updateModalStatus'
     });
     expect(mockDispatch).toHaveBeenNthCalledWith(4, {
-      payload: { selectRow: { value: 'SELECT 1;' } },
+      payload: {
+        selectRow: {
+          match_conditions: [{ type: 'sql', content: 'SELECT 1;' }]
+        }
+      },
       type: 'whitelist/updateSelectWhitelist'
     });
   });

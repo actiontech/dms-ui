@@ -279,7 +279,11 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       type: 'whitelist/updateModalStatus'
     });
     expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
-      payload: { selectRow: { value: 'SELECT * ' } },
+      payload: {
+        selectRow: {
+          match_conditions: [{ type: 'sql', content: 'SELECT * ' }]
+        }
+      },
       type: 'whitelist/updateSelectWhitelist'
     });
   });
