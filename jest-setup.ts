@@ -7,8 +7,15 @@ import commonZhCN from './packages/shared/lib/locale/zh-CN';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 import * as Enzyme from 'enzyme';
 import 'jest-canvas-mock';
+import { resetInstanceTipsCacheForTests } from './packages/sqle/src/hooks/useInstance';
+import { resetRuleTipsCacheForTests } from './packages/sqle/src/hooks/useRuleTips';
 
 Enzyme.configure({ adapter: new Adapter() });
+
+afterEach(() => {
+  resetInstanceTipsCacheForTests();
+  resetRuleTipsCacheForTests();
+});
 
 Object.defineProperty(global, 'matchMedia', {
   writable: true,
