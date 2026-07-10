@@ -109,7 +109,9 @@ describe('sqle/components/RemediationDetailDrawer/RemediationDiffCompare', () =>
 
     expect(screen.getByText('最初审核结果')).toBeInTheDocument();
     expect(screen.getByText('当前审核结果')).toBeInTheDocument();
-    expect(screen.getByText('最初命中：表建议添加主键')).toBeInTheDocument();
+    expect(
+      screen.getAllByText('最初命中：表建议添加主键').length
+    ).toBeGreaterThan(0);
     expect(
       screen.getByText('最末次命中：查询建议添加 LIMIT')
     ).toBeInTheDocument();

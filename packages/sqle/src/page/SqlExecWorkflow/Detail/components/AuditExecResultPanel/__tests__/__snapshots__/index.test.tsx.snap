@@ -1274,7 +1274,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                             >
                               <div
                                 aria-grabbed="false"
-                                class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                                class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                                 draggable="false"
                               >
                                 <span
@@ -1282,7 +1282,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                   class="ant-tree-indent"
                                 />
                                 <span
-                                  class="ant-tree-switcher ant-tree-switcher_close"
+                                  class="ant-tree-switcher ant-tree-switcher_open"
                                 >
                                   <span
                                     class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -1301,7 +1301,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                   </span>
                                 </span>
                                 <span
-                                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                                   title=""
                                 >
                                   <span
@@ -1312,6 +1312,64 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                     >
                                       审核结果
                                     </span>
+                                  </span>
+                                </span>
+                              </div>
+                              <div
+                                aria-grabbed="false"
+                                class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                                draggable="false"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  class="ant-tree-indent"
+                                >
+                                  <span
+                                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                                  />
+                                </span>
+                                <span
+                                  class="ant-tree-switcher ant-tree-switcher-noop"
+                                >
+                                  <span
+                                    class="ant-tree-switcher-leaf-line"
+                                  />
+                                </span>
+                                <span
+                                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                                  title=""
+                                >
+                                  <span
+                                    class="ant-tree-title"
+                                  >
+                                    <div
+                                      class="result-item css-1737itt"
+                                    >
+                                      <div
+                                        class="css-9paak3"
+                                      >
+                                        <span
+                                          class="icon-wrapper"
+                                        >
+                                          <svg
+                                            height="20"
+                                            viewBox="0 0 20 20"
+                                            width="20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span
+                                          class="text-wrapper"
+                                        >
+                                          test message
+                                        </span>
+                                      </div>
+                                    </div>
                                   </span>
                                 </span>
                               </div>
@@ -3034,7 +3092,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                 >
                                   <div
                                     aria-grabbed="false"
-                                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                                     draggable="false"
                                   >
                                     <span
@@ -3042,7 +3100,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                       class="ant-tree-indent"
                                     />
                                     <span
-                                      class="ant-tree-switcher ant-tree-switcher_close"
+                                      class="ant-tree-switcher ant-tree-switcher_open"
                                     >
                                       <span
                                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -3061,7 +3119,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                       </span>
                                     </span>
                                     <span
-                                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                                       title=""
                                     >
                                       <span
@@ -3072,6 +3130,64 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                         >
                                           审核结果
                                         </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <div
+                                    aria-grabbed="false"
+                                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                                    draggable="false"
+                                  >
+                                    <span
+                                      aria-hidden="true"
+                                      class="ant-tree-indent"
+                                    >
+                                      <span
+                                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                                      />
+                                    </span>
+                                    <span
+                                      class="ant-tree-switcher ant-tree-switcher-noop"
+                                    >
+                                      <span
+                                        class="ant-tree-switcher-leaf-line"
+                                      />
+                                    </span>
+                                    <span
+                                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                                      title=""
+                                    >
+                                      <span
+                                        class="ant-tree-title"
+                                      >
+                                        <div
+                                          class="result-item css-1737itt"
+                                        >
+                                          <div
+                                            class="css-9paak3"
+                                          >
+                                            <span
+                                              class="icon-wrapper"
+                                            >
+                                              <svg
+                                                height="20"
+                                                viewBox="0 0 20 20"
+                                                width="20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                                  fill="#41BF9A"
+                                                />
+                                              </svg>
+                                            </span>
+                                            <span
+                                              class="text-wrapper"
+                                            >
+                                              test message
+                                            </span>
+                                          </div>
+                                        </div>
                                       </span>
                                     </span>
                                   </div>
