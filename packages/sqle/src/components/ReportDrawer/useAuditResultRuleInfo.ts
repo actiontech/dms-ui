@@ -1,15 +1,25 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useRequest } from 'ahooks';
-import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IAuditResult,
+  ISkippedByRuleExceptionItem
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template/index';
+import {
+  collectAuditResultRuleNames,
+  enrichAuditResultItemWithRuleInfo,
+  enrichSkippedRuleExceptionItem
+} from '../AuditResultMessage/auditResultDisplay';
+import { IAuditResultItem } from './index.type';
 
 const useAuditResultRuleInfo = (
   auditResult: IAuditResult[],
-  dbType?: string
+  dbType?: string,
+  skippedByRuleException?: ISkippedByRuleExceptionItem[]
 ) => {
   const filterRuleNames = useMemo(
-    () => (auditResult?.map((v) => v.rule_name ?? '') ?? []).filter((v) => !!v),
-    [auditResult]
+    () => collectAuditResultRuleNames(auditResult, skippedByRuleException),
+    [auditResult, skippedByRuleException]
   );
 
   const { data: ruleInfo, loading } = useRequest(
@@ -22,28 +32,43 @@ const useAuditResultRuleInfo = (
         .then((res) => res.data.data),
     {
       ready: !!filterRuleNames.length,
-      refreshDeps: [filterRuleNames]
+      refreshDeps: [filterRuleNames, dbType]
     }
   );
 
-  const auditResultRuleInfo = useMemo(() => {
-    return (
-      auditResult?.map((item) => {
-        const findData =
-          ruleInfo?.find((i) => i.rule_name === item.rule_name) ?? {};
-        return {
-          ...findData,
-          ...item,
-          isRuleDeleted:
-            item.rule_name && !loading
-              ? JSON.stringify(findData) === '{}'
-              : false
-        };
-      }) ?? []
-    );
-  }, [ruleInfo, auditResult, loading]);
+  const ruleInfoFetched =
+    filterRuleNames.length > 0 && !loading && ruleInfo !== undefined;
 
-  return { ruleInfo, loading, auditResultRuleInfo };
+  const enrichAuditResultItem = useCallback(
+    (item: IAuditResultItem) =>
+      enrichAuditResultItemWithRuleInfo(item, ruleInfo, {
+        loading,
+        ruleInfoFetched
+      }),
+    [loading, ruleInfo, ruleInfoFetched]
+  );
+
+  const enrichSkippedItem = useCallback(
+    (item: ISkippedByRuleExceptionItem) =>
+      enrichSkippedRuleExceptionItem(item, ruleInfo, {
+        loading,
+        ruleInfoFetched,
+        fallbackDbType: dbType
+      }),
+    [dbType, loading, ruleInfo, ruleInfoFetched]
+  );
+
+  const auditResultRuleInfo = useMemo(() => {
+    return auditResult?.map((item) => enrichAuditResultItem(item)) ?? [];
+  }, [auditResult, enrichAuditResultItem]);
+
+  return {
+    ruleInfo,
+    loading,
+    auditResultRuleInfo,
+    enrichAuditResultItem,
+    enrichSkippedItem
+  };
 };
 
 export default useAuditResultRuleInfo;

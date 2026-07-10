@@ -7,6 +7,11 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useRequest } from 'ahooks';
 import RemediationDiffCompare from './RemediationDiffCompare';
+import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
+import { OpenCreateAuditWhitelistExceptionParams } from '../RuleException/AddRuleExceptionButton';
+import EventEmitter from '../../utils/EventEmitter';
+import EmitterKey from '../../data/EmitterKey';
 
 export const REMEDIATION_DETAIL_DRAWER_WIDTH = 960;
 
@@ -14,16 +19,24 @@ export type RemediationDetailDrawerProps = {
   open: boolean;
   onClose: () => void;
   sqlManageId?: string | number;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
   title?: ReactNode;
   width?: number;
+  onOpenCreateException?: (
+    params: OpenCreateAuditWhitelistExceptionParams
+  ) => void;
 };
 
 const RemediationDetailDrawer = ({
   open,
   onClose,
   sqlManageId,
+  sqlManageContext,
+  status,
   title = null,
-  width = REMEDIATION_DETAIL_DRAWER_WIDTH
+  width = REMEDIATION_DETAIL_DRAWER_WIDTH,
+  onOpenCreateException
 }: RemediationDetailDrawerProps) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
@@ -33,7 +46,8 @@ const RemediationDetailDrawer = ({
     loading,
     error,
     run,
-    mutate
+    mutate,
+    refresh
   } = useRequest(
     (id: string) =>
       SqlManage.GetSqlManageRemediationV1({
@@ -61,6 +75,17 @@ const RemediationDetailDrawer = ({
     }
   }, [mutate, open, run, sqlManageId]);
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Refresh_SQL_Management,
+      refresh
+    );
+    return unsubscribe;
+  }, [open, refresh]);
+
   return (
     <BasicDrawer
       open={open}
@@ -79,7 +104,14 @@ const RemediationDetailDrawer = ({
             message={t('sqlManagement.remediationCompare.loadFailed')}
           />
         ) : remediationDetail ? (
-          <RemediationDiffCompare data={remediationDetail} />
+          <RemediationDiffCompare
+            data={remediationDetail}
+            sqlManageId={sqlManageId ?? remediationDetail.id}
+            sqlManageContext={sqlManageContext}
+            status={status}
+            onRefresh={refresh}
+            onOpenCreateException={onOpenCreateException}
+          />
         ) : (
           <Empty />
         )}

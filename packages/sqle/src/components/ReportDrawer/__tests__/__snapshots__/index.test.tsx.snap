@@ -69,7 +69,7 @@ exports[`sqle/components/ReportDrawer render snap is empty 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -113,7 +113,7 @@ exports[`sqle/components/ReportDrawer render snap is empty 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1avyf41"
+                          class="result-item css-9paak3"
                         >
                           <span
                             class="icon-wrapper"
@@ -256,7 +256,7 @@ exports[`sqle/components/ReportDrawer render snap when has data 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -300,32 +300,36 @@ exports[`sqle/components/ReportDrawer render snap when has data 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1v03opz"
+                          class="css-1jf7ho2"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
-                            />
-                            <span
-                              class="text-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
-                              message
-                            </span>
-                          </div>
-                          <div
-                            class="annotation-wrapper"
-                          >
-                            annotation
-                            <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
-                              href="/sqle/rule/knowledge/rule a/mysql"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              查看更多
-                            </a>
+                              <div
+                                class="result-item css-1v03opz"
+                              >
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  />
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    message
+                                  </span>
+                                </div>
+                                <div
+                                  class="annotation-wrapper"
+                                >
+                                  annotation
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -442,7 +446,7 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -486,53 +490,67 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item has-delete-rule-wrapper css-1v03opz"
-                        >
-                          <span
-                            class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
-                          >
-                            该规则已删除
-                          </span>
-                          <div
-                            class="css-1avyf41"
-                          >
-                            <span
-                              class="icon-wrapper"
-                            />
-                            <span
-                              class="text-wrapper"
-                            >
-                              message1
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class="result-item css-1v03opz"
+                          class="css-1jf7ho2"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
-                            />
-                            <span
-                              class="text-wrapper"
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
                             >
-                              message2
-                            </span>
-                          </div>
-                          <div
-                            class="annotation-wrapper"
-                          >
-                            annotation
-                            <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
-                              href="/sqle/rule/knowledge/rule b/mysql"
-                              rel="noopener noreferrer"
-                              target="_blank"
+                              <div
+                                class="result-item has-delete-rule-wrapper css-1v03opz"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+                                >
+                                  该规则已删除
+                                </span>
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  />
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    message1
+                                  </span>
+                                </div>
+                                <div
+                                  class="annotation-wrapper"
+                                >
+                                  annotation
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
                             >
-                              查看更多
-                            </a>
+                              <div
+                                class="result-item css-1v03opz"
+                              >
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  />
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    message2
+                                  </span>
+                                </div>
+                                <div
+                                  class="annotation-wrapper"
+                                >
+                                  annotation
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -720,7 +738,7 @@ exports[`sqle/components/ReportDrawer render snap when has extra 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -764,32 +782,36 @@ exports[`sqle/components/ReportDrawer render snap when has extra 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1v03opz"
+                          class="css-1jf7ho2"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
-                            />
-                            <span
-                              class="text-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
-                              message
-                            </span>
-                          </div>
-                          <div
-                            class="annotation-wrapper"
-                          >
-                            annotation
-                            <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
-                              href="/sqle/rule/knowledge/rule a/mysql"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              查看更多
-                            </a>
+                              <div
+                                class="result-item css-1v03opz"
+                              >
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  />
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    message
+                                  </span>
+                                </div>
+                                <div
+                                  class="annotation-wrapper"
+                                >
+                                  annotation
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -906,7 +928,7 @@ exports[`sqle/components/ReportDrawer render snap when loading is true 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -950,32 +972,36 @@ exports[`sqle/components/ReportDrawer render snap when loading is true 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1v03opz"
+                          class="css-1jf7ho2"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
-                            />
-                            <span
-                              class="text-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
-                              message
-                            </span>
-                          </div>
-                          <div
-                            class="annotation-wrapper"
-                          >
-                            annotation
-                            <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
-                              href="/sqle/rule/knowledge/rule a/mysql"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              查看更多
-                            </a>
+                              <div
+                                class="result-item css-1v03opz"
+                              >
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  />
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    message
+                                  </span>
+                                </div>
+                                <div
+                                  class="annotation-wrapper"
+                                >
+                                  annotation
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1156,7 +1182,7 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -1200,32 +1226,36 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1v03opz"
+                          class="css-1jf7ho2"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
-                            />
-                            <span
-                              class="text-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
-                              message
-                            </span>
-                          </div>
-                          <div
-                            class="annotation-wrapper"
-                          >
-                            annotation
-                            <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
-                              href="/sqle/rule/knowledge/rule a/mysql"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              查看更多
-                            </a>
+                              <div
+                                class="result-item css-1v03opz"
+                              >
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  />
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    message
+                                  </span>
+                                </div>
+                                <div
+                                  class="annotation-wrapper"
+                                >
+                                  annotation
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

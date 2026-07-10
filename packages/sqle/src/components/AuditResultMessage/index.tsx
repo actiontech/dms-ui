@@ -51,13 +51,22 @@ const AuditResultMessage = ({
   auditResult,
   styleClass,
   showAnnotation,
+  defaultAnnotationExpanded = true,
   moreBtnLink,
+  moreBtnPlacement = 'annotation',
   isRuleDeleted,
   auditStatus,
   displayMode = 'ruleDesc'
 }: AuditResultMessageProps) => {
   const { t, i18n } = useTranslation();
-  const [visible, { set }] = useBoolean(true);
+
+  const showMoreInDescRow = moreBtnPlacement === 'descRow' && !!moreBtnLink;
+  const showMoreInAnnotation =
+    moreBtnPlacement === 'annotation' && !!moreBtnLink;
+  const hasExpandableAnnotation =
+    showAnnotation && (!!auditResult?.annotation || showMoreInAnnotation);
+
+  const [visible, { toggle }] = useBoolean(defaultAnnotationExpanded);
 
   const renderIcon = useMemo(() => {
     const { level } = auditResult || {};
@@ -128,28 +137,42 @@ const AuditResultMessage = ({
       className={classNames(styleClass, {
         'has-delete-rule-wrapper': isRuleDeleted
       })}
-      showAnnotation={showAnnotation}
+      expandable={hasExpandableAnnotation}
     >
       <EmptyBox if={isRuleDeleted}>
         <Tag color="volcano" className="message-rule-disabled">
           {t('components.auditResultMessage.ruleDeleted')}
         </Tag>
       </EmptyBox>
-      <AuditResultMessageStyleWrapper onClick={() => set(!visible)}>
+      <AuditResultMessageStyleWrapper
+        onClick={hasExpandableAnnotation ? toggle : undefined}
+      >
         <span className="icon-wrapper">{renderIcon}</span>
         <span className="text-wrapper">{renderMessage}</span>
+        {/* #if [ee] */}
+        <EmptyBox if={showMoreInDescRow}>
+          <Typography.Link
+            className="desc-row-more-link"
+            target="_blank"
+            href={moreBtnLink}
+            onClick={(event) => event.stopPropagation()}
+          >
+            {t('common.showMore')}
+          </Typography.Link>
+        </EmptyBox>
+        {/* #endif */}
       </AuditResultMessageStyleWrapper>
       <EmptyBox
         if={
           showAnnotation &&
           visible &&
-          (!!auditResult?.annotation || !!moreBtnLink)
+          (!!auditResult?.annotation || showMoreInAnnotation)
         }
       >
         <div className="annotation-wrapper">
           {auditResult?.annotation}
           {/* #if [ee] */}
-          <EmptyBox if={!!moreBtnLink}>
+          <EmptyBox if={showMoreInAnnotation}>
             <Typography.Link target="_blank" href={moreBtnLink}>
               {t('common.showMore')}
             </Typography.Link>

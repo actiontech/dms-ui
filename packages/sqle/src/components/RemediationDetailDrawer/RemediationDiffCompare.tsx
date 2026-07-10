@@ -4,27 +4,85 @@ import { useTranslation } from 'react-i18next';
 import { DownOutlined, RightOutlined } from '@actiontech/icons';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import AuditResultMessage from '../AuditResultMessage';
+import useAuditResultRuleInfo from '../ReportDrawer/useAuditResultRuleInfo';
+import {
+  buildAuditResultDisplayPayload,
+  enrichSkippedRuleExceptionItem,
+  mergeAuditResultsForRuleLookup,
+  resolveAuditResultExpandProps
+} from '../AuditResultMessage/auditResultDisplay';
 import {
   IAuditResult,
+  ISkippedByRuleExceptionItem,
   ISqlManageRemediation
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IAuditResultItem } from '../ReportDrawer/index.type';
+import {
+  isFullSqlExemption,
+  resolveDbTypeFromAuditResults
+} from '../../page/RuleException/index.data';
+import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
+import AuditResultWithRuleException from '../RuleException/AuditResultWithRuleException';
+import ExemptedAuditResultWithActions from '../RuleException/ExemptedAuditResultWithActions';
+import CollapsibleExemptedSection from '../RuleException/AuditResultExemptionPanel/CollapsibleExemptedSection';
+import { OpenCreateAuditWhitelistExceptionParams } from '../RuleException/AddRuleExceptionButton';
 import { RemediationDiffCompareStyleWrapper } from './style';
 
 type RemediationDiffCompareProps = {
   data?: ISqlManageRemediation;
+  sqlManageId?: number | string;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
+  onRefresh?: () => void;
+  onOpenCreateException?: (
+    params: OpenCreateAuditWhitelistExceptionParams
+  ) => void;
 };
 
-type DiffSectionVariant = 'optimized' | 'new' | 'unchanged';
+type DiffSectionVariant = 'optimized' | 'new' | 'unchanged' | 'exempted';
 
 type DiffAuditResultListProps = {
   auditResult: IAuditResult[];
   optimizedRuleNames?: Set<string>;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
+  onRefresh?: () => void;
+  showRuleExceptionActions?: boolean;
+  enrichAuditResultItem?: ReturnType<
+    typeof useAuditResultRuleInfo
+  >['enrichAuditResultItem'];
+  fallbackDbType?: string;
+  onOpenCreateException?: (
+    params: OpenCreateAuditWhitelistExceptionParams
+  ) => void;
+};
+
+type DiffExemptedResultListProps = {
+  skippedByRuleException: ISkippedByRuleExceptionItem[];
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  onRefresh?: () => void;
+  fallbackDbType?: string;
+  enrichSkippedItem?: ReturnType<
+    typeof useAuditResultRuleInfo
+  >['enrichSkippedItem'];
 };
 
 type DiffSectionProps = {
   title: string;
   variant: DiffSectionVariant;
   auditResult: IAuditResult[];
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  status?: SqlManageStatusEnum | string;
+  onRefresh?: () => void;
+  showRuleExceptionActions?: boolean;
+  enrichAuditResultItem?: ReturnType<
+    typeof useAuditResultRuleInfo
+  >['enrichAuditResultItem'];
+  fallbackDbType?: string;
+  onOpenCreateException?: (
+    params: OpenCreateAuditWhitelistExceptionParams
+  ) => void;
 };
 
 const ruleNameSet = (rules?: IAuditResult[]) =>
@@ -65,13 +123,25 @@ const groupAuditResults = (
 
 const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
   auditResult,
-  optimizedRuleNames
+  optimizedRuleNames,
+  sqlManageContext,
+  status,
+  onRefresh,
+  showRuleExceptionActions,
+  enrichAuditResultItem,
+  fallbackDbType,
+  onOpenCreateException
 }) => {
   return (
     <Space direction="vertical" size={8} className="full-width-element">
       {auditResult.map((item, index) => {
         const ruleName = item.rule_name ?? '';
         const isOptimized = ruleName && optimizedRuleNames?.has(ruleName);
+        const displayItem = (enrichAuditResultItem?.(item) ??
+          item) as IAuditResultItem;
+        const auditResultPayload = buildAuditResultDisplayPayload(displayItem);
+        const { showAnnotation: itemShowAnnotation, moreBtnLink } =
+          resolveAuditResultExpandProps(displayItem, fallbackDbType, true);
 
         return (
           <div
@@ -80,7 +150,67 @@ const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
               isOptimized ? 'diff-item diff-item-optimized' : 'diff-item'
             }
           >
-            <AuditResultMessage auditResult={item} />
+            {showRuleExceptionActions ? (
+              <AuditResultWithRuleException
+                auditResult={auditResultPayload}
+                sqlManageContext={sqlManageContext}
+                status={status}
+                onRefresh={onRefresh}
+                onOpenCreateException={onOpenCreateException}
+                displayMode="ruleDesc"
+                showAnnotation={itemShowAnnotation}
+                isRuleDeleted={displayItem.isRuleDeleted}
+                moreBtnLink={moreBtnLink}
+                defaultAnnotationExpanded={false}
+              />
+            ) : (
+              <AuditResultMessage
+                auditResult={auditResultPayload}
+                displayMode="ruleDesc"
+                showAnnotation={itemShowAnnotation}
+                isRuleDeleted={displayItem.isRuleDeleted}
+                moreBtnLink={moreBtnLink}
+                defaultAnnotationExpanded={false}
+              />
+            )}
+          </div>
+        );
+      })}
+    </Space>
+  );
+};
+
+const DiffExemptedResultList: React.FC<DiffExemptedResultListProps> = ({
+  skippedByRuleException,
+  sqlManageContext,
+  onRefresh,
+  fallbackDbType,
+  enrichSkippedItem
+}) => {
+  return (
+    <Space direction="vertical" size={8} className="full-width-element">
+      {skippedByRuleException.map((item, index) => {
+        const enriched =
+          enrichSkippedItem?.(item) ??
+          enrichSkippedRuleExceptionItem(item, undefined, {
+            fallbackDbType
+          });
+        const { showAnnotation: itemShowAnnotation, moreBtnLink } =
+          resolveAuditResultExpandProps(enriched, fallbackDbType, true);
+
+        return (
+          <div
+            key={`${item.rule_name ?? ''}${item.message ?? ''}-${index}`}
+            className="diff-item"
+          >
+            <ExemptedAuditResultWithActions
+              skippedItem={enriched}
+              displayMode="ruleDesc"
+              showAnnotation={itemShowAnnotation}
+              isRuleDeleted={enriched.isRuleDeleted}
+              moreBtnLink={moreBtnLink}
+              defaultAnnotationExpanded={false}
+            />
           </div>
         );
       })}
@@ -91,7 +221,16 @@ const DiffAuditResultList: React.FC<DiffAuditResultListProps> = ({
 const DiffFirstAuditPanel: React.FC<{
   auditResult: IAuditResult[];
   optimizedRuleNames: Set<string>;
-}> = ({ auditResult, optimizedRuleNames }) => {
+  enrichAuditResultItem?: ReturnType<
+    typeof useAuditResultRuleInfo
+  >['enrichAuditResultItem'];
+  fallbackDbType?: string;
+}> = ({
+  auditResult,
+  optimizedRuleNames,
+  enrichAuditResultItem,
+  fallbackDbType
+}) => {
   if (!auditResult.length) {
     return <AuditResultMessage />;
   }
@@ -102,6 +241,8 @@ const DiffFirstAuditPanel: React.FC<{
         <DiffAuditResultList
           auditResult={auditResult}
           optimizedRuleNames={optimizedRuleNames}
+          enrichAuditResultItem={enrichAuditResultItem}
+          fallbackDbType={fallbackDbType}
         />
       </div>
     </div>
@@ -111,7 +252,14 @@ const DiffFirstAuditPanel: React.FC<{
 const DiffSection: React.FC<DiffSectionProps> = ({
   title,
   variant,
-  auditResult
+  auditResult,
+  sqlManageContext,
+  status,
+  onRefresh,
+  showRuleExceptionActions,
+  enrichAuditResultItem,
+  fallbackDbType,
+  onOpenCreateException
 }) => {
   const [expanded, setExpanded] = useState(true);
 
@@ -157,7 +305,16 @@ const DiffSection: React.FC<DiffSectionProps> = ({
       </div>
       {expanded && (
         <div className="diff-section-body">
-          <DiffAuditResultList auditResult={auditResult} />
+          <DiffAuditResultList
+            auditResult={auditResult}
+            sqlManageContext={sqlManageContext}
+            status={status}
+            onRefresh={onRefresh}
+            showRuleExceptionActions={showRuleExceptionActions}
+            enrichAuditResultItem={enrichAuditResultItem}
+            fallbackDbType={fallbackDbType}
+            onOpenCreateException={onOpenCreateException}
+          />
         </div>
       )}
     </div>
@@ -165,9 +322,64 @@ const DiffSection: React.FC<DiffSectionProps> = ({
 };
 
 const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
-  data
+  data,
+  sqlManageId,
+  sqlManageContext,
+  status,
+  onRefresh,
+  onOpenCreateException
 }) => {
   const { t } = useTranslation();
+
+  const resolvedSqlManageContext = useMemo(() => {
+    if (sqlManageContext?.sql_fingerprint) {
+      return sqlManageContext;
+    }
+    if (data?.sql_fingerprint) {
+      return { sql_fingerprint: data.sql_fingerprint };
+    }
+    return undefined;
+  }, [data?.sql_fingerprint, sqlManageContext]);
+
+  const fallbackDbType = useMemo(
+    () =>
+      resolveDbTypeFromAuditResults(
+        mergeAuditResultsForRuleLookup(
+          data?.latest_audit_result,
+          data?.first_audit_result
+        )
+      ) ?? resolvedSqlManageContext?.db_type,
+    [
+      data?.first_audit_result,
+      data?.latest_audit_result,
+      resolvedSqlManageContext?.db_type
+    ]
+  );
+
+  const auditResultsForRuleLookup = useMemo(
+    () =>
+      mergeAuditResultsForRuleLookup(
+        data?.first_audit_result,
+        data?.latest_audit_result
+      ),
+    [data?.first_audit_result, data?.latest_audit_result]
+  );
+
+  const { enrichAuditResultItem, enrichSkippedItem } = useAuditResultRuleInfo(
+    auditResultsForRuleLookup,
+    fallbackDbType,
+    data?.skipped_by_rule_exception
+  );
+
+  const fullSqlExemption = useMemo(() => {
+    const skipped = data?.skipped_by_rule_exception ?? [];
+    const latest = data?.latest_audit_result ?? [];
+
+    return isFullSqlExemption({
+      audit_result: latest,
+      skipped_by_rule_exception: skipped
+    });
+  }, [data?.latest_audit_result, data?.skipped_by_rule_exception]);
 
   const { removedRuleNames, addedRuleNames } = useMemo(
     () => ({
@@ -177,26 +389,30 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
     [data?.rule_diff?.new, data?.rule_diff?.resolved]
   );
 
-  const { optimizedResults, latestNew, latestUnchanged } = useMemo(() => {
-    const latestGrouped = groupAuditResults(
-      data?.latest_audit_result,
-      addedRuleNames
-    );
+  const { optimizedResults, latestNew, latestUnchanged, latestExempted } =
+    useMemo(() => {
+      const latestGrouped = groupAuditResults(
+        data?.latest_audit_result,
+        addedRuleNames
+      );
 
-    return {
-      optimizedResults: filterAuditResultsByRuleNames(
-        data?.first_audit_result,
-        removedRuleNames
-      ),
-      latestNew: latestGrouped.highlighted,
-      latestUnchanged: latestGrouped.unchanged
-    };
-  }, [
-    addedRuleNames,
-    data?.first_audit_result,
-    data?.latest_audit_result,
-    removedRuleNames
-  ]);
+      return {
+        optimizedResults: filterAuditResultsByRuleNames(
+          data?.first_audit_result,
+          removedRuleNames
+        ),
+        latestNew: latestGrouped.highlighted,
+        latestUnchanged: fullSqlExemption ? [] : latestGrouped.unchanged,
+        latestExempted: data?.skipped_by_rule_exception ?? []
+      };
+    }, [
+      addedRuleNames,
+      data?.first_audit_result,
+      data?.latest_audit_result,
+      data?.skipped_by_rule_exception,
+      fullSqlExemption,
+      removedRuleNames
+    ]);
 
   const firstAuditResults = data?.first_audit_result ?? [];
 
@@ -207,11 +423,15 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
   const hasLatestSections =
     optimizedResults.length > 0 ||
     latestNew.length > 0 ||
-    latestUnchanged.length > 0;
+    latestUnchanged.length > 0 ||
+    latestExempted.length > 0;
+
+  const firstAuditMissing =
+    !data.first_audit_time && firstAuditResults.length === 0;
 
   return (
     <RemediationDiffCompareStyleWrapper>
-      {data.first_audit_missing && (
+      {firstAuditMissing && (
         <Alert
           type="warning"
           showIcon
@@ -236,6 +456,8 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
           <DiffFirstAuditPanel
             auditResult={firstAuditResults}
             optimizedRuleNames={removedRuleNames}
+            enrichAuditResultItem={enrichAuditResultItem}
+            fallbackDbType={fallbackDbType}
           />
         </section>
         <section className="diff-column">
@@ -262,6 +484,13 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
                 title={t('sqlManagement.remediationCompare.diffSectionNew')}
                 variant="new"
                 auditResult={latestNew}
+                sqlManageContext={resolvedSqlManageContext}
+                status={status}
+                onRefresh={onRefresh}
+                showRuleExceptionActions
+                enrichAuditResultItem={enrichAuditResultItem}
+                fallbackDbType={fallbackDbType}
+                onOpenCreateException={onOpenCreateException}
               />
               <DiffSection
                 title={t(
@@ -276,7 +505,29 @@ const RemediationDiffCompare: React.FC<RemediationDiffCompareProps> = ({
                 )}
                 variant="unchanged"
                 auditResult={latestUnchanged}
+                sqlManageContext={resolvedSqlManageContext}
+                status={status}
+                onRefresh={onRefresh}
+                showRuleExceptionActions
+                enrichAuditResultItem={enrichAuditResultItem}
+                fallbackDbType={fallbackDbType}
+                onOpenCreateException={onOpenCreateException}
               />
+              <CollapsibleExemptedSection
+                layout="diff"
+                title={t(
+                  'sqlManagement.remediationCompare.diffSectionExempted'
+                )}
+                count={latestExempted.length}
+              >
+                <DiffExemptedResultList
+                  skippedByRuleException={latestExempted}
+                  sqlManageContext={resolvedSqlManageContext}
+                  onRefresh={onRefresh}
+                  fallbackDbType={fallbackDbType}
+                  enrichSkippedItem={enrichSkippedItem}
+                />
+              </CollapsibleExemptedSection>
             </Space>
           ) : (
             <AuditResultMessage />

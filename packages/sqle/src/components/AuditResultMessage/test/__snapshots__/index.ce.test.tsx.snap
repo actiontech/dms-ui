@@ -4,7 +4,7 @@ exports[`sqle/components/AuditResultMessage render snap when auditResult is {} 1
 <body>
   <div>
     <div
-      class="custom-class-name css-1avyf41"
+      class="custom-class-name css-9paak3"
     >
       <span
         class="icon-wrapper"
@@ -35,7 +35,7 @@ exports[`sqle/components/AuditResultMessage render snap when auditResult is empt
 <body>
   <div>
     <div
-      class=" css-1avyf41"
+      class=" css-9paak3"
     >
       <span
         class="icon-wrapper"
@@ -79,7 +79,7 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
         该规则已删除
       </span>
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -117,7 +117,7 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
         该规则已删除
       </span>
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -155,7 +155,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
       class=" css-1v03opz"
     >
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -190,7 +190,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
       class=" css-1v03opz"
     >
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -222,7 +222,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1avyf41"
+      class=" css-9paak3"
     >
       <span
         class="icon-wrapper"
@@ -256,7 +256,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
       class=" css-1v03opz"
     >
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -289,7 +289,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
       class=" css-1v03opz"
     >
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -324,7 +324,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
       class=" css-1v03opz"
     >
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -357,7 +357,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
       class=" css-1v03opz"
     >
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"
@@ -391,7 +391,7 @@ exports[`sqle/components/AuditResultMessage render snap when showAnnotation 1`] 
       class=" css-1v03opz"
     >
       <div
-        class="css-1avyf41"
+        class="css-9paak3"
       >
         <span
           class="icon-wrapper"

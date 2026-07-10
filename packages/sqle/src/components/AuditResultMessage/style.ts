@@ -20,18 +20,27 @@ export const AuditResultMessageStyleWrapper = styled('div')`
 
   > .text-wrapper {
     flex: 1;
+    min-width: 0;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
     font-size: 13px;
     font-weight: 400;
     line-height: 20px;
     word-break: break-all;
   }
+
+  > .desc-row-more-link {
+    flex-shrink: 0;
+    margin-left: 8px;
+    font-size: 13px;
+    line-height: 20px;
+    white-space: nowrap;
+  }
 `;
 
 export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
-  showAnnotation: AuditResultMessageProps['showAnnotation'];
+  expandable?: boolean;
 }>`
-  cursor: ${(showAnnotation) => (showAnnotation ? 'pointer' : 'default')};
+  cursor: ${({ expandable }) => (expandable ? 'pointer' : 'default')};
 
   .annotation-wrapper {
     width: 100%;

@@ -8,9 +8,10 @@ import {
   SQLRenderer,
   BasicTypographyEllipsis
 } from '@actiontech/shared';
-import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
+import { DetailReportDrawerProps } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
+import { AuditResultExemptionPanel } from '../RuleException';
 import { Typography, Space } from 'antd';
 import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
@@ -24,7 +25,13 @@ const ReportDrawer = ({
   showAnnotation,
   showSourceFile,
   loading,
-  extra
+  extra,
+  sqlManageContext,
+  onOpenCreateException,
+  onRefresh,
+  status,
+  enrichAuditResultItem,
+  enrichSkippedItem
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
 
@@ -35,11 +42,12 @@ const ReportDrawer = ({
   };
 
   const resultDataIsEmpty = useMemo(() => {
-    return (
-      (Array.isArray(data?.auditResult) && !data?.auditResult.length) ||
-      !data?.auditResult
-    );
-  }, [data?.auditResult]);
+    const hasAuditResults =
+      Array.isArray(data?.auditResult) && (data?.auditResult.length ?? 0) > 0;
+    const hasSkippedExceptions =
+      (data?.skippedByRuleException?.length ?? 0) > 0;
+    return !hasAuditResults && !hasSkippedExceptions;
+  }, [data?.auditResult, data?.skippedByRuleException]);
 
   return (
     <>
@@ -66,53 +74,22 @@ const ReportDrawer = ({
                     auditStatus={data?.auditStatus}
                   />
                 ) : (
-                  (data?.auditResult ?? [])?.map(
-                    (item: IAuditResultItem, index: number) => {
-                      if (!showAnnotation || item.isRuleDeleted) {
-                        return (
-                          <AuditResultMessage
-                            styleClass="result-item"
-                            key={`${item.rule_name ?? ''}${
-                              item.message ?? ''
-                            }-${index}`}
-                            auditResult={{
-                              level: item?.level ?? '',
-                              message: item?.message ?? '',
-                              rule_name: item?.rule_name ?? '',
-                              desc: item?.desc ?? '',
-                              i18n_audit_result_info:
-                                item?.i18n_audit_result_info
-                            }}
-                            displayMode="ruleDesc"
-                            isRuleDeleted={item.isRuleDeleted}
-                          />
-                        );
-                      }
-                      return (
-                        <AuditResultMessage
-                          styleClass="result-item"
-                          key={`${item.rule_name ?? ''}${
-                            item.message ?? ''
-                          }-${index}`}
-                          auditResult={{
-                            level: item?.level ?? '',
-                            message: item?.message ?? '',
-                            rule_name: item?.rule_name ?? '',
-                            desc: item?.desc ?? '',
-                            annotation: item.annotation ?? '',
-                            i18n_audit_result_info: item?.i18n_audit_result_info
-                          }}
-                          displayMode="ruleDesc"
-                          showAnnotation
-                          moreBtnLink={
-                            item?.rule_name && item?.db_type
-                              ? `/sqle/rule/knowledge/${item?.rule_name}/${item?.db_type}`
-                              : ''
-                          }
-                        />
-                      );
-                    }
-                  )
+                  <AuditResultExemptionPanel
+                    auditResult={data?.auditResult}
+                    skippedByRuleException={data?.skippedByRuleException}
+                    auditLevel={data?.auditLevel}
+                    sqlManageContext={sqlManageContext}
+                    onOpenCreateException={onOpenCreateException}
+                    onRefresh={onRefresh}
+                    layout="report"
+                    showAnnotation={showAnnotation}
+                    auditStatus={data?.auditStatus}
+                    status={status}
+                    showRuleExceptionActions={!!sqlManageContext}
+                    showExemptedActions={!!sqlManageContext}
+                    enrichAuditResultItem={enrichAuditResultItem}
+                    enrichSkippedItem={enrichSkippedItem}
+                  />
                 )}
               </div>
             </section>

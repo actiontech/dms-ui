@@ -2,7 +2,8 @@ import {
   AUDIT_LEVEL_DISPLAY_ORDER,
   countAuditResultsByLevel,
   getAuditResultLevel,
-  hasAuditViolations
+  hasAuditViolations,
+  resolveSkippedRuleExceptionDisplayLevel
 } from '../auditLevelUtils';
 
 describe('sqle/components/AuditResultMessage/auditLevelUtils', () => {
@@ -39,5 +40,46 @@ describe('sqle/components/AuditResultMessage/auditLevelUtils', () => {
     expect(hasAuditViolations([])).toBe(false);
     expect(hasAuditViolations([{ level: 'normal' }])).toBe(false);
     expect(hasAuditViolations([{ level: 'error' }])).toBe(true);
+  });
+
+  it('should resolve skipped rule exception display level from item or rule template', () => {
+    expect(
+      resolveSkippedRuleExceptionDisplayLevel(
+        {
+          level: 'normal',
+          rule_name: 'rule_a',
+          exception_id: 1
+        },
+        {
+          ruleTemplateLevel: 'warn'
+        }
+      )
+    ).toBe('warn');
+
+    expect(
+      resolveSkippedRuleExceptionDisplayLevel(
+        {
+          level: 'normal',
+          rule_name: 'rule_a'
+        },
+        {
+          ruleTemplateLevel: 'error'
+        }
+      )
+    ).toBe('error');
+
+    expect(
+      resolveSkippedRuleExceptionDisplayLevel({
+        level: 'warn',
+        rule_name: 'rule_a'
+      })
+    ).toBe('warn');
+
+    expect(
+      resolveSkippedRuleExceptionDisplayLevel({
+        level: 'normal',
+        rule_name: 'rule_a'
+      })
+    ).toBe('normal');
   });
 });
