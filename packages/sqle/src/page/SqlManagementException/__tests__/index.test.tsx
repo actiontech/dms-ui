@@ -1,5 +1,5 @@
 import { screen, cleanup, act } from '@testing-library/react';
-import SqlManagementExceptionList from '../';
+import SqlManagementExceptionList from '../List';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import blacklist from '../../../testUtils/mockApi/blacklist';
 import { mockBlacklistData } from '../../../testUtils/mockApi/blacklist/data';

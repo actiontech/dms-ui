@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: '管控SQL例外',
+  pageTitleTips: '管控SQL例外匹配到的SQL将不会被SQL管控纳管',
   ceTips:
     '用户现在可以利用平台的管控SQL例外功能，自定义设置以忽略特定的SQL语句或数据源，避免它们出现在管控面板中。一旦SQL语句被识别为例外，它将自动排除在SQL管控列表之外，减少不必要的关注和干扰，提升管控效率和准确性。',
   allWhitelist: '所有管控SQL例外语句',
