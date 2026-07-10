@@ -14,7 +14,7 @@
     "build:demo": "pnpm --filter base build:demo",
     "prettier:w": "prettier -w packages/*/src/ packages/*/lib/",
     "prettier:c": "prettier -c packages/*/src/ packages/*/lib/",
-    "eslint": "eslint  packages/*/src/ packages/*/lib/",
+    "eslint": "eslint --no-error-on-unmatched-pattern packages/*/src/ packages/*/lib/",
     "stylelint": "stylelint packages/*/{src,lib}/**/{*.less,style.ts,element.ts}",
     "ts-check": "tsc --noEmit",
     "checker": "pnpm ts-check && pnpm eslint && pnpm stylelint && pnpm prettier:c",
@@ -26,7 +26,8 @@
     "icon:docs:g": "pnpm --filter @actiontech/icons docs:g",
     "icon:docs": "pnpm --filter @actiontech/icons start",
     "icon:docs:build": "pnpm --filter @actiontech/icons docs:build",
-    "icon:build": "pnpm --filter @actiontech/icons build"
+    "icon:build": "pnpm --filter @actiontech/icons build",
+    "api_client:g": "cross-env npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-client -y"
   },
   "keywords": [],
   "author": "",

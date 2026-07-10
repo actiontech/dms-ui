@@ -21,12 +21,11 @@ import {
 
 import {
   IGetSqlManageListResp,
-  IGetSqlManageListV1Resp,
   IBatchUpdateSqlManageReq,
   IBaseRes,
   IGetSqlManageRuleTipsResp,
-  IGetSqlManageSqlAnalysisResp,
-  IGetSqlManageRemediationResp
+  IGetSqlManageRemediationResp,
+  IGetSqlManageSqlAnalysisResp
 } from '../common.d';
 
 export interface IGetSqlManageListParams {
@@ -65,7 +64,7 @@ export interface IGetSqlManageListParams {
   page_size: number;
 }
 
-export interface IGetSqlManageListReturn extends IGetSqlManageListV1Resp {}
+export interface IGetSqlManageListReturn extends IGetSqlManageListResp {}
 
 export interface IBatchUpdateSqlManageParams extends IBatchUpdateSqlManageReq {
   project_name: string;
@@ -109,8 +108,6 @@ export interface IExportSqlManageV1Params {
   sort_order?: exportSqlManageV1SortOrderEnum;
 }
 
-export interface IExportGlobalSqlManageRemediationV1Params {}
-
 export interface IExportSqlManageRemediationV1Params {
   project_name: string;
 
@@ -127,8 +124,15 @@ export interface IGetSqlManageRuleTipsParams {
   project_name: string;
 }
 
-export interface IGetSqlManageRuleTipsReturn
-  extends IGetSqlManageRuleTipsResp {}
+export interface IGetSqlManageRuleTipsReturn extends IGetSqlManageRuleTipsResp {}
+
+export interface IGetSqlManageRemediationV1Params {
+  project_name: string;
+
+  sql_manage_id: string;
+}
+
+export interface IGetSqlManageRemediationV1Return extends IGetSqlManageRemediationResp {}
 
 export interface IGetSqlManageSqlAnalysisV1Params {
   project_name: string;
@@ -136,8 +140,7 @@ export interface IGetSqlManageSqlAnalysisV1Params {
   sql_manage_id: string;
 }
 
-export interface IGetSqlManageSqlAnalysisV1Return
-  extends IGetSqlManageSqlAnalysisResp {}
+export interface IGetSqlManageSqlAnalysisV1Return extends IGetSqlManageSqlAnalysisResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;
@@ -180,12 +183,3 @@ export interface IGetSqlManageListV2Params {
 }
 
 export interface IGetSqlManageListV2Return extends IGetSqlManageListResp {}
-
-export interface IGetSqlManageRemediationV1Params {
-  project_name: string;
-
-  sql_manage_id: string;
-}
-
-export interface IGetSqlManageRemediationV1Return
-  extends IGetSqlManageRemediationResp {}

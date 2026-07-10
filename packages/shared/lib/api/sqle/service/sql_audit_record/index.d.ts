@@ -55,15 +55,13 @@ export interface ICreateSQLAuditRecordV1Params {
   git_user_password?: string;
 }
 
-export interface ICreateSQLAuditRecordV1Return
-  extends ICreateSQLAuditRecordResV1 {}
+export interface ICreateSQLAuditRecordV1Return extends ICreateSQLAuditRecordResV1 {}
 
 export interface IGetSQLAuditRecordTagTipsV1Params {
   project_name: string;
 }
 
-export interface IGetSQLAuditRecordTagTipsV1Return
-  extends IGetSQLAuditRecordTagTipsResV1 {}
+export interface IGetSQLAuditRecordTagTipsV1Return extends IGetSQLAuditRecordTagTipsResV1 {}
 
 export interface IGetSQLAuditRecordV1Params {
   project_name: string;
@@ -73,8 +71,7 @@ export interface IGetSQLAuditRecordV1Params {
 
 export interface IGetSQLAuditRecordV1Return extends IGetSQLAuditRecordResV1 {}
 
-export interface IUpdateSQLAuditRecordV1Params
-  extends IUpdateSQLAuditRecordReqV1 {
+export interface IUpdateSQLAuditRecordV1Params extends IUpdateSQLAuditRecordReqV1 {
   project_name: string;
 
   sql_audit_record_id: string;

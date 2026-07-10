@@ -26,13 +26,11 @@ export interface IGetInstanceTipListV1Params {
 
 export interface IGetInstanceTipListV1Return extends IGetInstanceTipsResV1 {}
 
-export interface IBatchCheckInstanceIsConnectableByNameParams
-  extends IBatchCheckInstanceConnectionsReqV1 {
+export interface IBatchCheckInstanceIsConnectableByNameParams extends IBatchCheckInstanceConnectionsReqV1 {
   project_name: string;
 }
 
-export interface IBatchCheckInstanceIsConnectableByNameReturn
-  extends IBatchGetInstanceConnectionsResV1 {}
+export interface IBatchCheckInstanceIsConnectableByNameReturn extends IBatchGetInstanceConnectionsResV1 {}
 
 export interface ICheckInstanceIsConnectableByNameV1Params {
   project_name: string;
@@ -40,8 +38,7 @@ export interface ICheckInstanceIsConnectableByNameV1Params {
   instance_name: string;
 }
 
-export interface ICheckInstanceIsConnectableByNameV1Return
-  extends IGetInstanceConnectableResV1 {}
+export interface ICheckInstanceIsConnectableByNameV1Return extends IGetInstanceConnectableResV1 {}
 
 export interface IGetInstanceRuleListV1Params {
   project_name: string;
