@@ -88,6 +88,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        database: { driverMeta: [] },
         sqlExecWorkflow: {
           clonedExecWorkflowSqlAuditInfo: {
             isSameSqlForAll: false,
