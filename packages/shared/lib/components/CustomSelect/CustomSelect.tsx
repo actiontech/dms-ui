@@ -21,10 +21,12 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   onDropdownVisibleChange,
   searchValue,
   onSearch,
+  searchInputRef: searchInputRefFromProps,
   ...props
 }) => {
   const { t } = useTranslation();
-  const searchInputRef = useRef<InputRef>(null);
+  const innerSearchInputRef = useRef<InputRef>(null);
+  const searchInputRef = searchInputRefFromProps ?? innerSearchInputRef;
   const [innerSearchValue, setInnerSearchValue] = useControllableValue<string>(
     typeof searchValue !== 'undefined' && onSearch
       ? {
@@ -85,7 +87,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
           onChange={(val) => {
             setInnerSearchValue(val);
           }}
-          ref={props.searchInputRef ?? searchInputRef}
+          ref={searchInputRef}
         />
         <CustomSelectPopupMenuStyleWrapper>
           {menu}
@@ -104,7 +106,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
     onDropdownVisibleChange?.(open);
     if (open) {
       setTimeout(() => {
-        (props.searchInputRef ?? searchInputRef).current?.focus();
+        searchInputRef.current?.focus();
       }, 200);
     } else {
       setInnerSearchValue('');

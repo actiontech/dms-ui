@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
-import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
-import useSourceTips from '../useSourceTips';
+import { mockUseAuditPlanTypes } from '../../../testUtils/mockRequest';
+import useSourceTips from '..';
 
 describe('test useSourceTips', () => {
   beforeEach(() => {

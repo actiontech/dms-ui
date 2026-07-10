@@ -7,7 +7,7 @@ import {
   cleanup,
   waitFor
 } from '@testing-library/react';
-import useInstance from '.';
+import useInstance, { resetInstanceTipsCacheForTests } from '.';
 import {
   rejectThreeSecond,
   resolveErrorThreeSecond,
@@ -31,6 +31,7 @@ const projectName = 'default';
 describe('useInstance', () => {
   const mockDispatch = jest.fn();
   beforeEach(() => {
+    resetInstanceTipsCacheForTests();
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
     (useSelector as jest.Mock).mockImplementation((selector) => {
@@ -156,6 +157,7 @@ describe('useInstance', () => {
       }
     ]);
     requestSpy.mockClear();
+    resetInstanceTipsCacheForTests();
     requestSpy.mockImplementation(() =>
       resolveErrorThreeSecond([
         { instance_name: 'instance_test_name', instance_type: 'mysql' }
@@ -170,13 +172,7 @@ describe('useInstance', () => {
     expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
-    expect(result.current.instanceList).toEqual([
-      {
-        instance_name: 'instance_test_name',
-        instance_type: 'mysql',
-        host: '127.0.0.1'
-      }
-    ]);
+    expect(result.current.instanceList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
@@ -218,6 +214,7 @@ describe('useInstance', () => {
       { instance_name: 'instance_test_name' }
     ]);
     requestSpy.mockClear();
+    resetInstanceTipsCacheForTests();
     requestSpy.mockImplementation(() =>
       rejectThreeSecond([{ instance_name: 'instance_test_name' }])
     );
@@ -230,11 +227,7 @@ describe('useInstance', () => {
     expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
-    expect(result.current.instanceList).toEqual([
-      {
-        instance_name: 'instance_test_name'
-      }
-    ]);
+    expect(result.current.instanceList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
@@ -245,6 +238,44 @@ describe('useInstance', () => {
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([]);
+  });
+
+  test('dedupes parallel requests for the same params', async () => {
+    const requestSpy = mockRequest();
+    requestSpy.mockImplementation(() =>
+      resolveThreeSecond([
+        {
+          instance_name: 'instance_test_name',
+          instance_type: 'mysql',
+          host: '127.0.0.1',
+          port: '8081'
+        }
+      ])
+    );
+    const hookA = renderHook(() => useInstance());
+    const hookB = renderHook(() => useInstance());
+
+    await act(async () => {
+      hookA.result.current.updateInstanceList({ project_name: projectName });
+      hookB.result.current.updateInstanceList({ project_name: projectName });
+    });
+
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+    });
+
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(hookA.result.current.instanceList).toEqual([
+      {
+        instance_name: 'instance_test_name',
+        instance_type: 'mysql',
+        host: '127.0.0.1',
+        port: '8081'
+      }
+    ]);
+    expect(hookB.result.current.instanceList).toEqual(
+      hookA.result.current.instanceList
+    );
   });
 
   test('should show one database type which your choose', async () => {

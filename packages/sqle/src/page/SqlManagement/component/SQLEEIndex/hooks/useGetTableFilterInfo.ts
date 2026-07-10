@@ -6,7 +6,7 @@ import {
   useProjectBusinessTips
 } from '@actiontech/shared/lib/global';
 import useInstance from '../../../../../hooks/useInstance';
-import useRuleTips from './useRuleTips';
+import useRuleTips from '../../../../../hooks/useRuleTips';
 import { ExtraFilterMetaType } from '../column';
 import useSourceTips from './useSourceTips';
 

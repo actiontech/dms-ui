@@ -1,6 +1,5 @@
-import { useBoolean } from 'ahooks';
+import React, { useMemo, useCallback } from 'react';
 import { Select } from 'antd';
-import { useMemo, useState, useCallback } from 'react';
 import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';
 import { IGetInstanceTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
@@ -9,36 +8,110 @@ import { DatabaseTypeLogo } from '@actiontech/shared';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import useDatabaseType from '../useDatabaseType';
 
+type InstanceTipsStore = {
+  data: Map<string, IInstanceTipResV1[]>;
+  inflight: Map<string, Promise<IInstanceTipResV1[]>>;
+  listeners: Set<() => void>;
+};
+
+const instanceTipsStore: InstanceTipsStore = {
+  data: new Map(),
+  inflight: new Map(),
+  listeners: new Set()
+};
+
+export const getInstanceTipsCacheKey = (
+  params: IGetInstanceTipListV1Params
+): string => {
+  return JSON.stringify({
+    project_name: params.project_name,
+    filter_db_type: params.filter_db_type ?? '',
+    filter_by_business: params.filter_by_business ?? '',
+    filter_workflow_template_id: params.filter_workflow_template_id ?? '',
+    functional_module: params.functional_module ?? ''
+  });
+};
+
+export const resetInstanceTipsCacheForTests = () => {
+  instanceTipsStore.data.clear();
+  instanceTipsStore.inflight.clear();
+};
+
+const notifyInstanceTipsListeners = () => {
+  instanceTipsStore.listeners.forEach((listener) => listener());
+};
+
+const fetchInstanceTips = (
+  params: IGetInstanceTipListV1Params
+): Promise<IInstanceTipResV1[]> => {
+  const cacheKey = getInstanceTipsCacheKey(params);
+
+  if (instanceTipsStore.data.has(cacheKey)) {
+    return Promise.resolve(instanceTipsStore.data.get(cacheKey)!);
+  }
+
+  const inflightRequest = instanceTipsStore.inflight.get(cacheKey);
+  if (inflightRequest) {
+    return inflightRequest;
+  }
+
+  const request = instance
+    .getInstanceTipListV1(params)
+    .then((res) => {
+      const data =
+        res.data.code === ResponseCode.SUCCESS ? res.data?.data ?? [] : [];
+      instanceTipsStore.data.set(cacheKey, data);
+      return data;
+    })
+    .catch(() => {
+      instanceTipsStore.data.set(cacheKey, []);
+      return [] as IInstanceTipResV1[];
+    })
+    .finally(() => {
+      instanceTipsStore.inflight.delete(cacheKey);
+      notifyInstanceTipsListeners();
+    });
+
+  instanceTipsStore.inflight.set(cacheKey, request);
+  notifyInstanceTipsListeners();
+  return request;
+};
+
 const useInstance = () => {
-  const [instanceList, setInstanceList] = useState<IInstanceTipResV1[]>([]);
-  const [loading, { setTrue, setFalse }] = useBoolean();
+  const [subscribedCacheKey, setSubscribedCacheKey] = React.useState<
+    string | undefined
+  >();
+  const [, forceUpdate] = React.useReducer((value: number) => value + 1, 0);
   const { getLogoUrlByDbType } = useDatabaseType();
+
+  React.useEffect(() => {
+    const listener = () => forceUpdate();
+    instanceTipsStore.listeners.add(listener);
+    return () => {
+      instanceTipsStore.listeners.delete(listener);
+    };
+  }, []);
 
   const updateInstanceList = useCallback(
     (
       params: IGetInstanceTipListV1Params,
       options?: { onSuccess?: (data: IInstanceTipResV1[]) => void }
     ) => {
-      setTrue();
-      instance
-        .getInstanceTipListV1(params)
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            options?.onSuccess?.(res.data.data ?? []);
-            setInstanceList(res.data?.data ?? []);
-          } else {
-            setInstanceList([]);
-          }
-        })
-        .catch(() => {
-          setInstanceList([]);
-        })
-        .finally(() => {
-          setFalse();
-        });
+      const cacheKey = getInstanceTipsCacheKey(params);
+      setSubscribedCacheKey(cacheKey);
+      void fetchInstanceTips(params).then((data) => {
+        options?.onSuccess?.(data);
+      });
     },
-    [setFalse, setTrue]
+    []
   );
+
+  const instanceList = subscribedCacheKey
+    ? instanceTipsStore.data.get(subscribedCacheKey) ?? []
+    : [];
+  const loading = subscribedCacheKey
+    ? instanceTipsStore.inflight.has(subscribedCacheKey)
+    : false;
 
   const generateInstanceSelectOption = useCallback(
     (instance_type: string = instanceListDefaultKey) => {

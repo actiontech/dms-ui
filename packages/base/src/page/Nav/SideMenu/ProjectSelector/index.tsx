@@ -21,11 +21,13 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   onChange,
   options,
   bindProjects,
+  searchInputRef: searchInputRefFromProps,
   ...props
 }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const searchInputRef = useRef<InputRef>(null);
+  const innerSearchInputRef = useRef<InputRef>(null);
+  const searchInputRef = searchInputRefFromProps ?? innerSearchInputRef;
   const [searchValue, setSearchValue] = useState('');
   const [lastActiveMenuItem, setLastActiveMenuItem] = useState<
     Element | undefined
