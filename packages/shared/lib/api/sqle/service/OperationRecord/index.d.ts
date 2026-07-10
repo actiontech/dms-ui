@@ -22,7 +22,8 @@ export interface IGetOperationRecordListV1Params {
   page_size: number;
 }
 
-export interface IGetOperationRecordListV1Return extends IGetOperationRecordListResV1 {}
+export interface IGetOperationRecordListV1Return
+  extends IGetOperationRecordListResV1 {}
 
 export interface IGetExportOperationRecordListV1Params {
   filter_operate_time_from?: string;
@@ -38,6 +39,8 @@ export interface IGetExportOperationRecordListV1Params {
   filter_operate_action?: string;
 }
 
-export interface IGetOperationActionListReturn extends IGetOperationActionListResV1 {}
+export interface IGetOperationActionListReturn
+  extends IGetOperationActionListResV1 {}
 
-export interface IGetOperationTypeNameListReturn extends IGetOperationTypeNamesListResV1 {}
+export interface IGetOperationTypeNameListReturn
+  extends IGetOperationTypeNamesListResV1 {}

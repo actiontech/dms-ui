@@ -399,7 +399,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item has-delete-rule-wrapper css-1v03opz"
+                      class="result-item has-delete-rule-wrapper css-1737itt"
                     >
                       <span
                         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -429,18 +429,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                         >
                           除了自增列及大字段列之外，每个列都必须添加默认值
                         </span>
-                      </div>
-                      <div
-                        class="annotation-wrapper"
-                      >
-                        <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
-                          href="/sqle/rule/knowledge/ddl_check_column_without_default/MySQL"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          查看更多
-                        </a>
                       </div>
                     </div>
                   </span>
@@ -474,7 +462,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item has-delete-rule-wrapper css-1v03opz"
+                      class="result-item has-delete-rule-wrapper css-1737itt"
                     >
                       <span
                         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -504,18 +492,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                         >
                           主键建议使用 BIGINT 无符号类型，即 BIGINT UNSIGNED
                         </span>
-                      </div>
-                      <div
-                        class="annotation-wrapper"
-                      >
-                        <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
-                          href="/sqle/rule/knowledge/ddl_check_pk_without_bigint_unsigned/MySQL"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          查看更多
-                        </a>
                       </div>
                     </div>
                   </span>
@@ -549,7 +525,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item has-delete-rule-wrapper css-1v03opz"
+                      class="result-item has-delete-rule-wrapper css-1737itt"
                     >
                       <span
                         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -579,18 +555,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                         >
                           新建表建议加入 IF NOT EXISTS，保证重复执行不报错
                         </span>
-                      </div>
-                      <div
-                        class="annotation-wrapper"
-                      >
-                        <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
-                          href="/sqle/rule/knowledge/ddl_check_table_without_if_not_exists/MySQL"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          查看更多
-                        </a>
                       </div>
                     </div>
                   </span>
@@ -716,7 +680,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item css-1v03opz"
+                      class="result-item css-1737itt"
                     >
                       <div
                         class="css-9paak3"
@@ -866,7 +830,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item css-1v03opz"
+                      class="result-item css-1737itt"
                     >
                       <div
                         class="css-9paak3"
@@ -1016,7 +980,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item css-1v03opz"
+                      class="result-item css-1737itt"
                     >
                       <div
                         class="css-9paak3"
@@ -1454,7 +1418,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item css-1v03opz"
+                      class="result-item css-1737itt"
                     >
                       <div
                         class="css-9paak3"
@@ -1512,7 +1476,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item has-delete-rule-wrapper css-1v03opz"
+                      class="result-item has-delete-rule-wrapper css-1737itt"
                     >
                       <span
                         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -1542,18 +1506,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                         >
                           主键建议使用 BIGINT 无符号类型，即 BIGINT UNSIGNED
                         </span>
-                      </div>
-                      <div
-                        class="annotation-wrapper"
-                      >
-                        <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
-                          href="/sqle/rule/knowledge/ddl_check_pk_without_bigint_unsigned/MySQL"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          查看更多
-                        </a>
                       </div>
                     </div>
                   </span>
@@ -1587,7 +1539,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                     class="ant-tree-title"
                   >
                     <div
-                      class="result-item has-delete-rule-wrapper css-1v03opz"
+                      class="result-item has-delete-rule-wrapper css-1737itt"
                     >
                       <span
                         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -1617,18 +1569,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                         >
                           新建表建议加入 IF NOT EXISTS，保证重复执行不报错
                         </span>
-                      </div>
-                      <div
-                        class="annotation-wrapper"
-                      >
-                        <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
-                          href="/sqle/rule/knowledge/ddl_check_table_without_if_not_exists/MySQL"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          查看更多
-                        </a>
                       </div>
                     </div>
                   </span>

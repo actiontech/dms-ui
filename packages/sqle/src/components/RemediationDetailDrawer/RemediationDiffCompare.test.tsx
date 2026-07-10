@@ -1,13 +1,28 @@
 import { screen, within } from '@testing-library/react';
+import type { ReactNode } from 'react';
 import { renderWithTheme } from '../../testUtils/customRender';
 import RemediationDiffCompare from './RemediationDiffCompare';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+
+type MockAuditResultProps = {
+  auditResult?: { message?: string };
+};
+
+type MockExemptedAuditResultProps = {
+  skippedItem?: { message?: string };
+};
+
+type MockCollapsibleExemptedSectionProps = {
+  title: string;
+  count: number;
+  children?: ReactNode;
+};
 
 jest.mock('../RuleException/AuditResultWithRuleException', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: ({ auditResult }) =>
+    default: ({ auditResult }: MockAuditResultProps) =>
       React.createElement('span', null, auditResult?.message)
   };
 });
@@ -16,7 +31,7 @@ jest.mock('../RuleException/ExemptedAuditResultWithActions', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: ({ skippedItem }) =>
+    default: ({ skippedItem }: MockExemptedAuditResultProps) =>
       React.createElement(
         'span',
         null,
@@ -32,7 +47,11 @@ jest.mock(
     const React = require('react');
     return {
       __esModule: true,
-      default: ({ title, count, children }) =>
+      default: ({
+        title,
+        count,
+        children
+      }: MockCollapsibleExemptedSectionProps) =>
         React.createElement(
           'div',
           { className: 'diff-section diff-section-exempted' },

@@ -3,11 +3,24 @@ import AuditResultExemptionPanel from '.';
 import { renderWithTheme } from '../../../testUtils/customRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
+type MockAuditResultProps = {
+  auditResult?: { message?: string };
+};
+
+type MockExemptedAuditResultProps = {
+  skippedItem?: { message?: string };
+};
+
+type MockFullSqlExemptedResultItemProps = {
+  showViewDetailAction?: boolean;
+  message?: string;
+};
+
 jest.mock('../AuditResultWithRuleException', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: ({ auditResult }) =>
+    default: ({ auditResult }: MockAuditResultProps) =>
       React.createElement(
         'div',
         { 'data-testid': 'audit-result-with-rule-exception' },
@@ -21,7 +34,7 @@ jest.mock('../ExemptedAuditResultWithActions', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: ({ skippedItem }) =>
+    default: ({ skippedItem }: MockExemptedAuditResultProps) =>
       React.createElement(
         'div',
         { 'data-testid': 'exempted-audit-result-with-actions' },
@@ -35,7 +48,10 @@ jest.mock('../FullSqlExemptedResultItem', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: ({ showViewDetailAction, message }) =>
+    default: ({
+      showViewDetailAction,
+      message
+    }: MockFullSqlExemptedResultItemProps) =>
       React.createElement(
         'div',
         { 'data-testid': 'full-sql-exempted-result-item' },

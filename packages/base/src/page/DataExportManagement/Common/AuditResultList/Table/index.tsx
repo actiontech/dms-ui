@@ -15,6 +15,7 @@ import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTa
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
+import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   taskID,
@@ -69,7 +70,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const onCreateWhitelist = (record?: IListDataExportTaskSQL) => {
     openCreateWhitelistModal();
     updateSelectWhitelistRecord({
-      value: record?.sql
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.sql,
+          content: record?.sql
+        }
+      ]
     });
   };
 

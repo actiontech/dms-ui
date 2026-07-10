@@ -19,7 +19,8 @@ export default {
     ip: 'IP',
     cidr: '网段',
     host: '主机名',
-    instance: '数据源'
+    instance: '数据源',
+    databaseUser: '数据库用户'
   },
 
   operate: {

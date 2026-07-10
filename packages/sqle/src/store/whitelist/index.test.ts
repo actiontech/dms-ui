@@ -36,7 +36,8 @@ describe('store/user', () => {
 
   const state: IReduxState['whitelist'] = {
     selectWhitelist: null,
-    modalStatus: {}
+    modalStatus: {},
+    detailDrawerOpen: false
   };
 
   test('should update selectUser when dispatch updateUser action', () => {
@@ -67,7 +68,8 @@ describe('store/user', () => {
           }
         ]
       },
-      modalStatus: {}
+      modalStatus: {},
+      detailDrawerOpen: false
     });
   });
 });

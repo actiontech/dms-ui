@@ -8,6 +8,7 @@ import database from '../../../base/src/store/database';
 import system from '../../../base/src/store/system';
 import nav from '../../../base/src/store/nav';
 import sqlManagementException from '../../../sqle/src/store/sqlManagementException';
+import whitelist from '../../../sqle/src/store/whitelist';
 
 const reducers = combineReducers({
   user,
@@ -17,7 +18,8 @@ const reducers = combineReducers({
   database,
   system,
   nav,
-  sqlManagementException
+  sqlManagementException,
+  whitelist
 });
 
 export const storeFactory = (initStore: Dictionary = {}) => {

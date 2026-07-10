@@ -20,8 +20,8 @@ const AuditWhitelistDetailDrawerContainer = () => {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const { actionPermission } = useWhitelistRedux();
-  const { detailDrawerOpen, detailDrawerWhitelistId } = useSelector(
-    (state: IReduxState) => state.whitelist
+  const { detailDrawerOpen = false, detailDrawerWhitelistId } = useSelector(
+    (state: IReduxState) => state.whitelist ?? {}
   );
 
   const handleClose = useCallback(() => {

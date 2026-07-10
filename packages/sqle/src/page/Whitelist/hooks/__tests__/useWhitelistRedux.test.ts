@@ -9,6 +9,7 @@ import {
   mockProjectInfo,
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -55,7 +56,12 @@ describe('sqle/Whitelist/hooks/useWhitelistRedux', () => {
 
     act(() => {
       result.current.updateSelectWhitelistRecord({
-        value: 'test sql'
+        match_conditions: [
+          {
+            type: MatchConditionReqV1TypeEnum.sql,
+            content: 'test sql'
+          }
+        ]
       });
     });
 
@@ -64,7 +70,12 @@ describe('sqle/Whitelist/hooks/useWhitelistRedux', () => {
       type: 'whitelist/updateSelectWhitelist',
       payload: {
         selectRow: {
-          value: 'test sql'
+          match_conditions: [
+            {
+              type: MatchConditionReqV1TypeEnum.sql,
+              content: 'test sql'
+            }
+          ]
         }
       }
     });

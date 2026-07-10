@@ -45,11 +45,13 @@ export interface IGetAuditWhitelistV1Params {
 
 export interface IGetAuditWhitelistV1Return extends IGetAuditWhitelistResV1 {}
 
-export interface ICreateAuditWhitelistV1Params extends ICreateAuditWhitelistReqV1 {
+export interface ICreateAuditWhitelistV1Params
+  extends ICreateAuditWhitelistReqV1 {
   project_name: string;
 }
 
-export interface ICreateAuditWhitelistV1Return extends ICreateAuditWhitelistResV1 {}
+export interface ICreateAuditWhitelistV1Return
+  extends ICreateAuditWhitelistResV1 {}
 
 export interface IGetAuditWhitelistByIDV1Params {
   project_name: string;
@@ -57,7 +59,8 @@ export interface IGetAuditWhitelistByIDV1Params {
   audit_whitelist_id: string;
 }
 
-export interface IGetAuditWhitelistByIDV1Return extends IGetAuditWhitelistDetailResV1 {}
+export interface IGetAuditWhitelistByIDV1Return
+  extends IGetAuditWhitelistDetailResV1 {}
 
 export interface IDeleteAuditWhitelistByIdV1Params {
   project_name: string;
@@ -67,7 +70,8 @@ export interface IDeleteAuditWhitelistByIdV1Params {
 
 export interface IDeleteAuditWhitelistByIdV1Return extends IBaseRes {}
 
-export interface IUpdateAuditWhitelistByIdV1Params extends IUpdateAuditWhitelistReqV1 {
+export interface IUpdateAuditWhitelistByIdV1Params
+  extends IUpdateAuditWhitelistReqV1 {
   project_name: string;
 
   audit_whitelist_id: string;

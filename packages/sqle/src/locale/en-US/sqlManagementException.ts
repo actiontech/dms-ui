@@ -20,7 +20,8 @@ export default {
     ip: 'IP',
     cidr: 'Subnet(CIRD)',
     host: 'Host',
-    instance: 'Name of DB instance'
+    instance: 'Name of DB instance',
+    databaseUser: 'Database user'
   },
 
   operate: {

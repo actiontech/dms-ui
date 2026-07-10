@@ -6,7 +6,7 @@ import rule_template from '../../../../../../../../../../testUtils/mockApi/rule_
 const mockNavigateToExceptionDetail = jest.fn();
 
 jest.mock(
-  '../../../../../../../../../../../components/RuleException/useRuleExceptionActions',
+  '../../../../../../../../../../components/RuleException/useRuleExceptionActions',
   () => ({
     __esModule: true,
     default: () => ({
@@ -187,7 +187,7 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
   });
 
   it('should show view detail action for full sql exemption', () => {
-    customRender({
+    const { container } = customRender({
       auditResult: [],
       skippedByRuleException: [
         {
@@ -203,6 +203,26 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
     expect(screen.getByText('审核通过')).toBeInTheDocument();
     expect(screen.getByText('审核SQL例外')).toBeInTheDocument();
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
-    expect(document.querySelector('.icon-view-detail')).not.toBeNull();
+    expect(container.querySelector('.audit-result-content')).not.toBeNull();
+    expect(container.querySelector('.audit-result-action')).not.toBeNull();
+    expect(container.querySelector('.icon-view-detail')).not.toBeNull();
+  });
+
+  it('should navigate to exception detail when clicking full sql exemption action', () => {
+    const { container } = customRender({
+      auditResult: [],
+      skippedByRuleException: [
+        {
+          level: 'normal',
+          message: '审核SQL例外',
+          exception_id: 99
+        }
+      ]
+    });
+
+    const viewDetailIcon = container.querySelector('.icon-view-detail');
+    expect(viewDetailIcon).not.toBeNull();
+    fireEvent.click(viewDetailIcon!);
+    expect(mockNavigateToExceptionDetail).toHaveBeenCalledWith(99);
   });
 });

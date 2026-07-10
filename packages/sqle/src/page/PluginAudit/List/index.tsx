@@ -35,6 +35,7 @@ import {
 import { ResponseCode } from '../../../data/common';
 import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
+import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const PluginAuditList = () => {
   const dispatch = useDispatch();
@@ -110,7 +111,12 @@ const PluginAuditList = () => {
   const onCreateWhitelist = (record?: ISqlDEVRecord) => {
     openCreateWhitelistModal();
     updateSelectWhitelistRecord({
-      value: record?.sql
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.sql,
+          content: record?.sql
+        }
+      ]
     });
   };
 

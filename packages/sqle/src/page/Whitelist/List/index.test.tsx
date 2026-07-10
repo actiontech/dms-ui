@@ -26,15 +26,18 @@ jest.mock('../../../hooks/useInstance', () => ({
   })
 }));
 
-jest.mock('../../../components/RuleExceptionMatchConditions/hooks/useAuditTaskSelectOptions', () => ({
-  __esModule: true,
-  default: () => ({
-    auditTaskTypeOptions: [],
-    getAuditTaskIdOptions: () => [],
-    auditTaskTypeLoading: false,
-    auditTaskIdLoading: false
+jest.mock(
+  '../../../components/RuleExceptionMatchConditions/hooks/useAuditTaskSelectOptions',
+  () => ({
+    __esModule: true,
+    default: () => ({
+      auditTaskTypeOptions: [],
+      getAuditTaskIdOptions: () => [],
+      auditTaskTypeLoading: false,
+      auditTaskIdLoading: false
+    })
   })
-}));
+);
 
 jest.mock('react-redux', () => {
   return {

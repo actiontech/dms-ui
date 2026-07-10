@@ -124,7 +124,8 @@ export interface IGetSqlManageRuleTipsParams {
   project_name: string;
 }
 
-export interface IGetSqlManageRuleTipsReturn extends IGetSqlManageRuleTipsResp {}
+export interface IGetSqlManageRuleTipsReturn
+  extends IGetSqlManageRuleTipsResp {}
 
 export interface IGetSqlManageRemediationV1Params {
   project_name: string;
@@ -132,7 +133,8 @@ export interface IGetSqlManageRemediationV1Params {
   sql_manage_id: string;
 }
 
-export interface IGetSqlManageRemediationV1Return extends IGetSqlManageRemediationResp {}
+export interface IGetSqlManageRemediationV1Return
+  extends IGetSqlManageRemediationResp {}
 
 export interface IGetSqlManageSqlAnalysisV1Params {
   project_name: string;
@@ -140,7 +142,8 @@ export interface IGetSqlManageSqlAnalysisV1Params {
   sql_manage_id: string;
 }
 
-export interface IGetSqlManageSqlAnalysisV1Return extends IGetSqlManageSqlAnalysisResp {}
+export interface IGetSqlManageSqlAnalysisV1Return
+  extends IGetSqlManageSqlAnalysisResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;
