@@ -5,11 +5,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { Dictionary } from '@actiontech/shared/lib/types/common.type';
 import sqlManagement from '../store/sqlManagement';
 import sqlManagementException from '../store/sqlManagementException';
+import database from '../../../base/src/store/database';
 
 const reducers = combineReducers({
   whitelist,
   sqlManagement,
-  sqlManagementException
+  sqlManagementException,
+  database
 });
 
 export const storeFactory = (initStore: Dictionary = {}) => {

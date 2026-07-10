@@ -16,6 +16,7 @@ import {
 import AuditResultDrawer from './AuditResultDrawer';
 import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
+import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   noDuplicate,
@@ -23,7 +24,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   auditLevelFilterValue,
   projectID,
   updateTaskRecordCount,
-  dbType
+  dbType,
+  ruleExceptionSourceContext
 }) => {
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IAuditTaskSQLResV2>();
@@ -113,7 +115,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const onCreateWhitelist = (record?: IAuditTaskSQLResV2) => {
     openCreateWhitelistModal();
     updateSelectWhitelistRecord({
-      value: record?.exec_sql
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.sql,
+          content: record?.exec_sql
+        }
+      ]
     });
   };
 
@@ -145,6 +152,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         auditResultRecord={currentAuditResultRecord}
         dbType={dbType}
         clickAnalyze={handleClickAnalyze}
+        ruleExceptionSourceContext={ruleExceptionSourceContext}
       />
       <AddWhitelistModal onCreated={refresh} />
     </>

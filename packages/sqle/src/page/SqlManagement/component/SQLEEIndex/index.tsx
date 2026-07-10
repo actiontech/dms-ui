@@ -45,7 +45,7 @@ import type { MenuProps } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
+import { DB_TYPE_RULE_NAME_SEPARATOR } from '../../../../hooks/useRuleTips';
 import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
 import { actionsButtonData, defaultActionButton } from './index.data';
@@ -53,6 +53,8 @@ import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
+import { toSqlManageRuleExceptionRecord } from '../../../RuleException/index.data';
+import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -74,8 +76,7 @@ const SQLEEIndex = () => {
     updateSelectSqlManagementExceptionRecord
   } = useSqlManagementExceptionRedux();
 
-  const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
-    useWhitelistRedux();
+  const { openAuditWhitelistCreateWithPrefill } = useWhitelistRedux();
 
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
   const [isHighPriority, setIsHighPriority] = useState(false);
@@ -184,10 +185,17 @@ const SQLEEIndex = () => {
 
   const onCreateSqlManagementException = useCallback(
     (record?: ISqlManage) => {
+      const fingerprint =
+        toSqlManageRuleExceptionRecord(record)?.sql_fingerprint?.trim();
       openCreateSqlManagementExceptionModal();
-      updateSelectSqlManagementExceptionRecord({
-        content: record?.sql
-      });
+      updateSelectSqlManagementExceptionRecord(
+        fingerprint
+          ? {
+              type: BlacklistResV1TypeEnum.fp_sql,
+              content: fingerprint
+            }
+          : undefined
+      );
     },
     [
       openCreateSqlManagementExceptionModal,
@@ -197,12 +205,12 @@ const SQLEEIndex = () => {
 
   const onCreateWhitelist = useCallback(
     (record?: ISqlManage) => {
-      openCreateWhitelistModal();
-      updateSelectWhitelistRecord({
-        value: record?.sql
-      });
+      openAuditWhitelistCreateWithPrefill(
+        toSqlManageRuleExceptionRecord(record),
+        { specificRuleScopeWithoutPreselect: true }
+      );
     },
-    [openCreateWhitelistModal, updateSelectWhitelistRecord]
+    [openAuditWhitelistCreateWithPrefill]
   );
 
   const actions = useMemo(() => {
@@ -371,10 +379,9 @@ const SQLEEIndex = () => {
             },
             { responseType: 'blob' }
           )
-        : SqlManage.exportGlobalSqlManageRemediationV1(
-            {},
-            { responseType: 'blob' }
-          );
+        : SqlManage.exportGlobalSqlManageRemediationV1({
+            responseType: 'blob'
+          });
 
     exportPromise
       .then((res) => {

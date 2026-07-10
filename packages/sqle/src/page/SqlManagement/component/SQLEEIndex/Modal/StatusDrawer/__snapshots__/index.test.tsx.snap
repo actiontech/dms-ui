@@ -107,7 +107,7 @@ exports[`page/SqlManagement/StatusDrawer close modal by click close button 1`] =
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -127,69 +127,86 @@ exports[`page/SqlManagement/StatusDrawer close modal by click close button 1`] =
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item has-delete-rule-wrapper css-1v03opz"
+                          class="css-1jf7ho2"
                         >
-                          <span
-                            class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
-                          >
-                            该规则已删除
-                          </span>
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="result-item has-delete-rule-wrapper css-1737itt"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
+                                <span
+                                  class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+                                >
+                                  该规则已删除
+                                </span>
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 16 16"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                        fill="#F66074"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    新建表建议加入 IF NOT EXISTS，保证重复执行不报错
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
                             >
-                              新建表建议加入 IF NOT EXISTS，保证重复执行不报错
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class="result-item has-delete-rule-wrapper css-1v03opz"
-                        >
-                          <span
-                            class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
-                          >
-                            该规则已删除
-                          </span>
-                          <div
-                            class="css-1avyf41"
-                          >
-                            <span
-                              class="icon-wrapper"
-                            >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="result-item has-delete-rule-wrapper css-1737itt"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              主键建议使用自增
-                            </span>
+                                <span
+                                  class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+                                >
+                                  该规则已删除
+                                </span>
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 16 16"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                        fill="#F66074"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    主键建议使用自增
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -344,13 +361,37 @@ exports[`page/SqlManagement/StatusDrawer render empty status drawer info 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                 >
+                  <div>
+                    <div
+                      aria-busy="true"
+                      aria-live="polite"
+                      class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    >
+                      <span
+                        class="ant-spin-dot ant-spin-dot-spin"
+                      >
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                      </span>
+                    </div>
+                  </div>
                   <div
-                    class="ant-spin-container"
+                    class="ant-spin-container ant-spin-blur"
                   >
                     <section
                       class="wrapper-item"
@@ -364,7 +405,7 @@ exports[`page/SqlManagement/StatusDrawer render empty status drawer info 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1avyf41"
+                          class="result-item css-9paak3"
                         >
                           <span
                             class="icon-wrapper"
@@ -545,13 +586,37 @@ exports[`page/SqlManagement/StatusDrawer render status drawer info 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                 >
+                  <div>
+                    <div
+                      aria-busy="true"
+                      aria-live="polite"
+                      class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    >
+                      <span
+                        class="ant-spin-dot ant-spin-dot-spin"
+                      >
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                      </span>
+                    </div>
+                  </div>
                   <div
-                    class="ant-spin-container"
+                    class="ant-spin-container ant-spin-blur"
                   >
                     <section
                       class="wrapper-item"
@@ -565,69 +630,86 @@ exports[`page/SqlManagement/StatusDrawer render status drawer info 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item has-delete-rule-wrapper css-1v03opz"
+                          class="css-1jf7ho2"
                         >
-                          <span
-                            class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
-                          >
-                            该规则已删除
-                          </span>
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="result-item has-delete-rule-wrapper css-1737itt"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
+                                <span
+                                  class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+                                >
+                                  该规则已删除
+                                </span>
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 16 16"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                        fill="#F66074"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    新建表建议加入 IF NOT EXISTS，保证重复执行不报错
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
                             >
-                              新建表建议加入 IF NOT EXISTS，保证重复执行不报错
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class="result-item has-delete-rule-wrapper css-1v03opz"
-                        >
-                          <span
-                            class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
-                          >
-                            该规则已删除
-                          </span>
-                          <div
-                            class="css-1avyf41"
-                          >
-                            <span
-                              class="icon-wrapper"
-                            >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="result-item has-delete-rule-wrapper css-1737itt"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              主键建议使用自增
-                            </span>
+                                <span
+                                  class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+                                >
+                                  该规则已删除
+                                </span>
+                                <div
+                                  class="css-9paak3"
+                                >
+                                  <span
+                                    class="icon-wrapper"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 16 16"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                        fill="#F66074"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <span
+                                    class="text-wrapper"
+                                  >
+                                    主键建议使用自增
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

@@ -1,5 +1,8 @@
 import { ReactNode } from 'react';
+import { ISkippedByRuleExceptionItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IAuditResultWithExtra } from '../AuditResultMessage/index.type';
+import { ISqlManageRuleExceptionContext } from '../../page/RuleException/index.data';
+import { OpenCreateAuditWhitelistExceptionParams } from '../RuleException/AddRuleExceptionButton';
 
 export type IAuditResultItem = IAuditResultWithExtra & {
   isRuleDeleted?: boolean;
@@ -11,6 +14,8 @@ export type TypeData = {
   sqlSourceFile?: string;
   sqlStartLine?: number;
   auditStatus?: string;
+  skippedByRuleException?: ISkippedByRuleExceptionItem[];
+  auditLevel?: string;
 };
 
 export interface DetailReportDrawerProps {
@@ -22,4 +27,18 @@ export interface DetailReportDrawerProps {
   showSourceFile?: boolean;
   loading?: boolean;
   extra?: ReactNode;
+  sqlManageContext?: ISqlManageRuleExceptionContext;
+  onOpenCreateException?: (
+    params: OpenCreateAuditWhitelistExceptionParams
+  ) => void;
+  onRefresh?: () => void;
+  status?: string;
+  enrichAuditResultItem?: (item: IAuditResultItem) => IAuditResultItem;
+  enrichSkippedItem?: (
+    item: ISkippedByRuleExceptionItem
+  ) => ISkippedByRuleExceptionItem & {
+    annotation?: string;
+    db_type?: string;
+    isRuleDeleted?: boolean;
+  };
 }

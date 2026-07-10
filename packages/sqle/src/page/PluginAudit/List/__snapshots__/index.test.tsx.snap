@@ -408,7 +408,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                             class=" css-1v03opz"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1535,7 +1535,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             class=" css-1v03opz"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1852,7 +1852,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                           class="audit-result-wrapper"
                         >
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"

@@ -77,4 +77,44 @@ describe('sqle/hooks/useAuditResultRuleInfo', () => {
       }
     ]);
   });
+
+  it('should keep original rule level for active audit results', async () => {
+    const { result } = renderHook(() =>
+      useAuditResultRuleInfo([
+        {
+          db_type: 'mysql',
+          level: 'error',
+          message: 'mes str',
+          rule_name: 'all_check_prepare_statement_placeholders'
+        }
+      ])
+    );
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(result.current.auditResultRuleInfo[0]?.level).toBe('error');
+  });
+
+  it('should collect skipped rule names for rule lookup', async () => {
+    const { result } = renderHook(() =>
+      useAuditResultRuleInfo(
+        [
+          {
+            db_type: 'mysql',
+            level: 'warn',
+            message: 'mes str',
+            rule_name: 'active_rule'
+          }
+        ],
+        'mysql',
+        [
+          {
+            rule_name: 'unknown_rule',
+            level: 'warn',
+            exception_id: 42
+          }
+        ]
+      )
+    );
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(result.current.auditResultRuleInfo[0]?.level).toBe('warn');
+  });
 });

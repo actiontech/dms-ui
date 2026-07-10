@@ -121,7 +121,11 @@ describe('test DataExport/Common/AuditResultList', () => {
       type: 'whitelist/updateModalStatus'
     });
     expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
-      payload: { selectRow: { value: 'SELECT 1;' } },
+      payload: {
+        selectRow: {
+          match_conditions: [{ type: 'sql', content: 'SELECT 1;' }]
+        }
+      },
       type: 'whitelist/updateSelectWhitelist'
     });
   });

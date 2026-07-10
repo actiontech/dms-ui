@@ -15,15 +15,21 @@ export type AuditResultExtra = {
       error_info?: string;
     }
   >;
+  /** Only for skipped-by-exception display payloads (not on audit_result). */
+  exception_id?: number | null;
 };
 
 export type IAuditResultWithExtra = IAuditResult & AuditResultExtra;
+
+export type AuditResultMessageMoreBtnPlacement = 'annotation' | 'descRow';
 
 export type AuditResultMessageProps = {
   auditResult?: IAuditResultWithExtra;
   styleClass?: string;
   showAnnotation?: boolean;
+  defaultAnnotationExpanded?: boolean;
   moreBtnLink?: string;
+  moreBtnPlacement?: AuditResultMessageMoreBtnPlacement;
   isRuleDeleted?: boolean;
   auditStatus?: string;
   displayMode?: AuditResultDisplayMode;

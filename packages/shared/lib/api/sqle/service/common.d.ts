@@ -7,12 +7,12 @@ import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
+  AuditWhitelistResV1RuleScopeModeEnum,
   BatchUpdateSqlManageReqPriorityEnum,
   BatchUpdateSqlManageReqStatusEnum,
   BlacklistResV1TypeEnum,
   CreateAuditTaskReqV1ExecModeEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum,
-  CreateAuditWhitelistReqV1MatchTypeEnum,
   CreateBlacklistReqV1TypeEnum,
   CreateCustomRuleReqV1LevelEnum,
   CustomRuleResV1LevelEnum,
@@ -25,6 +25,7 @@ import {
   HighPriorityConditionReqOperatorEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
+  MatchConditionReqV1TypeEnum,
   OperationRecordListStatusEnum,
   RecordSourceNameEnum,
   ReportPushConfigListPushUserTypeEnum,
@@ -37,7 +38,6 @@ import {
   TestFeishuConfigurationReqV1AccountTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
   UpdateAuditPlanStatusReqV1ActiveEnum,
-  UpdateAuditWhitelistReqV1MatchTypeEnum,
   UpdateBlacklistReqV1TypeEnum,
   UpdateCustomRuleReqV1LevelEnum,
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
@@ -58,9 +58,9 @@ import {
   pipelineNodeDetailAuditMethodEnum,
   pipelineNodeDetailObjectTypeEnum,
   pipelineNodeDetailTypeEnum,
-  pipelineNodeToBeUpdatedAuditMethodEnum,
-  pipelineNodeToBeUpdatedObjectTypeEnum,
-  pipelineNodeToBeUpdatedTypeEnum,
+  updatePipelineNodeAuditMethodEnum,
+  updatePipelineNodeObjectTypeEnum,
+  updatePipelineNodeTypeEnum,
   AuditResDataV2AuditLevelEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -374,15 +374,25 @@ export interface IAuditTasksGroupResV1 {
 export interface IAuditWhitelistResV1 {
   audit_whitelist_id?: number;
 
+  created_at?: string;
+
+  created_by?: string;
+
   desc?: string;
 
   last_match_time?: string;
 
-  match_type?: string;
+  match_conditions?: IMatchConditionReqV1[];
+
+  match_conditions_display?: IMatchConditionDisplayV1[];
 
   matched_count?: number;
 
-  value?: string;
+  rule_scope?: undefined;
+
+  rule_scope_display?: IRuleScopeDisplayV1[];
+
+  rule_scope_mode?: AuditWhitelistResV1RuleScopeModeEnum;
 }
 
 export interface IAuditedSQLCount {
@@ -427,6 +437,8 @@ export interface IBlacklistResV1 {
   blacklist_id?: number;
 
   content?: string;
+
+  created_at?: string;
 
   desc?: string;
 
@@ -521,12 +533,28 @@ export interface ICreateAuditTasksGroupResV1 {
   message?: string;
 }
 
+export interface ICreateAuditWhitelistDataV1 {
+  audit_whitelist_id?: number;
+}
+
 export interface ICreateAuditWhitelistReqV1 {
   desc?: string;
 
-  match_type?: CreateAuditWhitelistReqV1MatchTypeEnum;
+  match_conditions?: IMatchConditionReqV1[];
 
-  value?: string;
+  rule_scope?: string;
+}
+
+export interface ICreateAuditWhitelistResV1 {
+  code?: number;
+
+  data?: ICreateAuditWhitelistDataV1;
+
+  message?: string;
+}
+
+export interface ICreateBlacklistDataV1 {
+  blacklist_id?: number;
 }
 
 export interface ICreateBlacklistReqV1 {
@@ -535,6 +563,14 @@ export interface ICreateBlacklistReqV1 {
   desc?: string;
 
   type?: CreateBlacklistReqV1TypeEnum;
+}
+
+export interface ICreateBlacklistResV1 {
+  code?: number;
+
+  data?: ICreateBlacklistDataV1;
+
+  message?: string;
 }
 
 export interface ICreateCustomRuleReqV1 {
@@ -941,6 +977,14 @@ export interface IGetAuditTaskSQLsResV1 {
   total_nums?: number;
 }
 
+export interface IGetAuditWhitelistDetailResV1 {
+  code?: number;
+
+  data?: IAuditWhitelistResV1;
+
+  message?: string;
+}
+
 export interface IGetAuditWhitelistResV1 {
   code?: number;
 
@@ -949,6 +993,14 @@ export interface IGetAuditWhitelistResV1 {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IGetBlacklistDetailResV1 {
+  code?: number;
+
+  data?: IBlacklistResV1;
+
+  message?: string;
 }
 
 export interface IGetBlacklistResV1 {
@@ -1415,6 +1467,14 @@ export interface IGetSqlManageListResp {
   sql_manage_total_num?: number;
 }
 
+export interface IGetSqlManageRemediationResp {
+  code?: number;
+
+  data?: ISqlManageRemediation;
+
+  message?: string;
+}
+
 export interface IGetSqlManageRuleTipsResp {
   code?: number;
 
@@ -1817,6 +1877,22 @@ export interface IMaintenanceTimeResV1 {
   maintenance_stop_time?: ITimeResV1;
 }
 
+export interface IMatchConditionDisplayV1 {
+  content?: string;
+
+  content_display?: string;
+
+  navigate_path?: string;
+
+  type?: string;
+}
+
+export interface IMatchConditionReqV1 {
+  content?: string;
+
+  type?: MatchConditionReqV1TypeEnum;
+}
+
 export interface IModuleStatusRes {
   is_supported?: boolean;
 }
@@ -2093,6 +2169,14 @@ export interface IRoleUserCount {
   role?: string;
 }
 
+export interface IRuleDiff {
+  new?: IAuditResult[];
+
+  resolved?: IAuditResult[];
+
+  unchanged?: IAuditResult[];
+}
+
 export interface IRuleInfo {
   annotation?: string;
 
@@ -2165,6 +2249,16 @@ export interface IRuleResV1 {
 
 export interface IRuleRespV1 {
   desc?: string;
+
+  rule_name?: string;
+}
+
+export interface IRuleScopeDisplayV1 {
+  db_type?: string;
+
+  level?: string;
+
+  rule_desc?: string;
 
   rule_name?: string;
 }
@@ -2267,6 +2361,22 @@ export interface IScheduledTaskDefaultOptionV1Rsp {
   message?: string;
 }
 
+export interface ISkippedByRuleExceptionItem {
+  created_at?: string;
+
+  created_by?: string;
+
+  desc?: string;
+
+  exception_id?: number;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
+}
+
 export interface ISource {
   sql_source_desc?: string;
 
@@ -2348,6 +2458,10 @@ export interface ISqlManage {
 
   first_appear_timestamp?: string;
 
+  first_audit_result?: IAuditResult[];
+
+  first_audit_time?: string;
+
   fp_count?: number;
 
   id?: number;
@@ -2360,16 +2474,11 @@ export interface ISqlManage {
 
   remark?: string;
 
-  // TODO: 后端已移除/变更，待 codegen 重新生成
-  first_audit_missing?: boolean;
-
-  first_audit_result?: IAuditResult[];
-
-  first_audit_time?: string;
-
   rule_diff?: IRuleDiff;
 
   schema_name?: string;
+
+  skipped_by_rule_exception?: ISkippedByRuleExceptionItem[];
 
   source?: ISource;
 
@@ -2380,55 +2489,24 @@ export interface ISqlManage {
   status?: SqlManageStatusEnum;
 }
 
-// TODO: 后端 v1.SqlManage 与 v2.SqlManage 字段不同，单独建模 v1（v1 接口已 deprecated）
-export interface ISqlManageV1 {
-  appear_num?: number;
-
-  assignees?: string[];
-
-  audit_result?: IAuditResult[];
-
-  endpoint?: string;
-
-  first_appear_time?: string;
-
+export interface ISqlManageRemediation {
   first_audit_result?: IAuditResult[];
 
   first_audit_time?: string;
 
   id?: number;
 
-  instance_name?: string;
+  latest_audit_result?: IAuditResult[];
 
-  last_appear_time?: string;
-
-  remark?: string;
+  latest_audit_time?: string;
 
   rule_diff?: IRuleDiff;
 
-  schema_name?: string;
-
-  source?: ISource;
+  skipped_by_rule_exception?: ISkippedByRuleExceptionItem[];
 
   sql?: string;
 
   sql_fingerprint?: string;
-
-  status?: SqlManageStatusEnum;
-}
-
-export interface IGetSqlManageListV1Resp {
-  code?: number;
-
-  data?: ISqlManageV1[];
-
-  message?: string;
-
-  sql_manage_bad_num?: number;
-
-  sql_manage_optimized_num?: number;
-
-  sql_manage_total_num?: number;
 }
 
 export interface IStatisticAuditPlanResV1 {
@@ -2630,9 +2708,9 @@ export interface IUpdateAuditTaskSQLsReqV1 {
 export interface IUpdateAuditWhitelistReqV1 {
   desc?: string;
 
-  match_type?: UpdateAuditWhitelistReqV1MatchTypeEnum;
+  match_conditions?: IMatchConditionReqV1[];
 
-  value?: string;
+  rule_scope?: string;
 }
 
 export interface IUpdateBlacklistReqV1 {
@@ -2690,7 +2768,7 @@ export interface IUpdatePipelineReqV1 {
 
   name?: string;
 
-  nodes?: IPipelineNodeToBeUpdated[];
+  nodes?: IUpdatePipelineNode[];
 }
 
 export interface IUpdateProjectRuleTemplateReqV1 {
@@ -3049,8 +3127,8 @@ export interface IPipelineNodeDetail {
   type?: pipelineNodeDetailTypeEnum;
 }
 
-export interface IPipelineNodeToBeUpdated {
-  audit_method?: pipelineNodeToBeUpdatedAuditMethodEnum;
+export interface IUpdatePipelineNode {
+  audit_method?: updatePipelineNodeAuditMethodEnum;
 
   id?: number;
 
@@ -3062,11 +3140,11 @@ export interface IPipelineNodeToBeUpdated {
 
   object_path?: string;
 
-  object_type?: pipelineNodeToBeUpdatedObjectTypeEnum;
+  object_type?: updatePipelineNodeObjectTypeEnum;
 
   rule_template_name?: string;
 
-  type?: pipelineNodeToBeUpdatedTypeEnum;
+  type?: updatePipelineNodeTypeEnum;
 }
 
 export interface IAuditFileExecStatistic {
@@ -3169,6 +3247,8 @@ export interface IAuditSQLResV2 {
   exec_sql?: string;
 
   number?: number;
+
+  skipped_by_rule_exception?: ISkippedByRuleExceptionItem[];
 }
 
 export interface IAuditTaskSQLResV2 {
@@ -3189,6 +3269,8 @@ export interface IAuditTaskSQLResV2 {
   number?: number;
 
   rollback_sql?: string;
+
+  skipped_by_rule_exception?: ISkippedByRuleExceptionItem[];
 
   sql_source_file?: string;
 
@@ -3517,41 +3599,4 @@ export interface IWorkflowStepResV2 {
   type?: WorkflowStepResV2TypeEnum;
 
   workflow_step_id?: number;
-}
-
-export interface IRuleDiff {
-  new?: IAuditResult[];
-
-  resolved?: IAuditResult[];
-
-  unchanged?: IAuditResult[];
-}
-
-export interface ISqlManageRemediation {
-  // TODO: 后端已移除/变更，待 codegen 重新生成
-  first_audit_missing?: boolean;
-
-  first_audit_result?: IAuditResult[];
-
-  first_audit_time?: string;
-
-  id?: number;
-
-  latest_audit_result?: IAuditResult[];
-
-  latest_audit_time?: string;
-
-  rule_diff?: IRuleDiff;
-
-  sql?: string;
-
-  sql_fingerprint?: string;
-}
-
-export interface IGetSqlManageRemediationResp {
-  code?: number;
-
-  data?: ISqlManageRemediation;
-
-  message?: string;
 }

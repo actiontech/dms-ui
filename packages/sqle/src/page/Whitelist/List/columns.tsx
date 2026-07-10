@@ -1,78 +1,84 @@
 import { t } from '../../../locale';
-import {
-  ActiontechTableColumn,
-  PageInfoWithoutIndexAndSize
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { WhitelistMatchTypeLabel } from '../index.data';
-import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
-import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
+import {
+  MatchModeDisplay,
+  RuleScopeDisplay
+} from '../../../components/RuleException';
+import { auditWhitelistRecordToDisplayRecord } from '../utils';
 
-export type WhitelistTableFilterParamType = PageInfoWithoutIndexAndSize<
-  IGetAuditWhitelistV1Params & {
-    page_index: number;
-    page_size: number;
-  },
-  'project_name'
->;
+/** Extended row type for audit whitelist list rows */
+export type AuditWhitelistTableRow = IAuditWhitelistResV1 &
+  Record<string, unknown>;
+
+export type WhitelistTableFilterParamType = Record<string, never>;
 
 export const WhitelistColumn = (): ActiontechTableColumn<
-  IAuditWhitelistResV1,
-  WhitelistTableFilterParamType
-> => {
-  return [
-    {
-      dataIndex: 'value',
-      title: () => t('whitelist.table.sql'),
-      className: 'ellipsis-column-width',
-      render: (sql) => {
-        if (!!sql) {
-          return (
-            <SQLRenderer.Snippet
-              sql={sql}
-              rows={2}
-              showCopyIcon
-              cuttingLength={200}
-            />
-          );
-        }
-        return null;
-      }
-    },
-    {
-      dataIndex: 'desc',
-      title: () => t('whitelist.table.desc'),
-      className: 'ellipsis-column-width',
-      render: (desc) => {
-        if (!desc) return '-';
-        return <BasicTypographyEllipsis textCont={desc} />;
-      }
-    },
-    {
-      dataIndex: 'match_type',
-      title: () => t('whitelist.table.matchType'),
-      render: (matchType) => {
-        return matchType
-          ? WhitelistMatchTypeLabel[
-              matchType as CreateAuditWhitelistReqV1MatchTypeEnum
-            ]
-          : null;
-      },
-      filterCustomType: 'select',
-      filterKey: 'filter_match_type'
-    },
-    {
-      dataIndex: 'matched_count',
-      title: () => t('whitelist.table.matchCount')
-    },
-    {
-      dataIndex: 'last_match_time',
-      title: () => t('sqlManagementException.table.lastMatchedTime'),
-      render: (value) => {
-        return formatTime(value, '-');
-      }
+  AuditWhitelistTableRow,
+  IGetAuditWhitelistV1Params
+> => [
+  {
+    dataIndex: 'type',
+    title: () => t('ruleException.table.matchMode'),
+    className: 'ellipsis-column-width',
+    render: (_value, record) => (
+      <MatchModeDisplay
+        record={auditWhitelistRecordToDisplayRecord(
+          record as IAuditWhitelistResV1
+        )}
+      />
+    )
+  },
+  {
+    dataIndex: 'rule_scope_mode',
+    title: () => t('ruleException.table.ruleScope'),
+    render: (_value, record) => (
+      <RuleScopeDisplay
+        record={auditWhitelistRecordToDisplayRecord(
+          record as IAuditWhitelistResV1
+        )}
+        modeOnly
+      />
+    )
+  },
+  {
+    dataIndex: 'desc',
+    title: () => t('ruleException.table.reason'),
+    className: 'ellipsis-column-width',
+    render: (_value, record) => {
+      const desc = record.desc;
+      if (!desc) return '-';
+      return <BasicTypographyEllipsis textCont={String(desc)} />;
     }
-  ];
-};
+  },
+  {
+    dataIndex: 'created_by',
+    title: () => t('ruleException.table.createdBy'),
+    render: (_value, record) => {
+      const extended = record as AuditWhitelistTableRow;
+      return String(extended.created_by ?? '-');
+    }
+  },
+  {
+    dataIndex: 'created_at',
+    title: () => t('ruleException.table.createdAt'),
+    render: (_value, record) => {
+      const extended = record as AuditWhitelistTableRow;
+      return formatTime(extended.created_at as string | undefined, '-');
+    }
+  },
+  {
+    dataIndex: 'matched_count',
+    title: () => t('whitelist.table.matchCount')
+  },
+  {
+    dataIndex: 'last_match_time',
+    title: () => t('sqlManagementException.table.lastMatchedTime'),
+    render: (value) => {
+      return formatTime(value as string | undefined, '-');
+    }
+  }
+];

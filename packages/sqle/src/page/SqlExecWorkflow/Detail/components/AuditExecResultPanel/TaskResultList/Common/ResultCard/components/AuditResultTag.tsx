@@ -19,31 +19,36 @@ export interface AuditResultTagProps {
 const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
   const { t } = useTranslation();
 
+  const activeAuditResult = useMemo(() => auditResult ?? [], [auditResult]);
+
   const noticeResult = useMemo(() => {
     return (
-      auditResult?.filter((i) => i.level === RuleResV1LevelEnum.notice) || []
+      activeAuditResult.filter((i) => i.level === RuleResV1LevelEnum.notice) ||
+      []
     );
-  }, [auditResult]);
+  }, [activeAuditResult]);
 
   const errorResult = useMemo(() => {
     return (
-      auditResult?.filter((i) => i.level === RuleResV1LevelEnum.error) || []
+      activeAuditResult.filter((i) => i.level === RuleResV1LevelEnum.error) ||
+      []
     );
-  }, [auditResult]);
+  }, [activeAuditResult]);
 
   const warnResult = useMemo(() => {
     return (
-      auditResult?.filter((i) => i.level === RuleResV1LevelEnum.warn) || []
+      activeAuditResult.filter((i) => i.level === RuleResV1LevelEnum.warn) || []
     );
-  }, [auditResult]);
+  }, [activeAuditResult]);
 
   const normalResult = useMemo(() => {
     return (
-      auditResult?.filter((i) => i.level === RuleResV1LevelEnum.normal) || []
+      activeAuditResult.filter((i) => i.level === RuleResV1LevelEnum.normal) ||
+      []
     );
-  }, [auditResult]);
+  }, [activeAuditResult]);
 
-  if (!auditResult?.length) {
+  if (!activeAuditResult.length) {
     return (
       <BasicTag
         color="green"

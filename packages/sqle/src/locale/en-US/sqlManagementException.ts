@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: 'SQL management whitelist',
+  pageTitleTips:
+    'SQL matched by SQL management whitelist will not be managed in SQL management',
   ceTips:
     "Users can now use the platform's SQL management whitelist to customize which SQL statements or data sources to ignore, so they do not appear on the dashboard. Once identified as an exception, a SQL statement will automatically be removed from the SQL control list, reducing unnecessary attention and minimizing interference, thus improving control efficiency and accuracy.",
   allWhitelist: 'All SQL management whitelist',
@@ -18,7 +20,8 @@ export default {
     ip: 'IP',
     cidr: 'Subnet(CIRD)',
     host: 'Host',
-    instance: 'Name of DB instance'
+    instance: 'Name of DB instance',
+    databaseUser: 'Database user'
   },
 
   operate: {

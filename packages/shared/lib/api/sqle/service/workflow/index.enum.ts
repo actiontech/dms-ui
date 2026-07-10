@@ -1,49 +1,49 @@
 /* tslint:disable no-duplicate-string */
 
 export enum getWorkflowsV1FilterStatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum exportWorkflowV1FilterStatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum getGlobalWorkflowsV1FilterStatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }

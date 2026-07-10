@@ -38,6 +38,7 @@ import { CloudBeaverOperationLogsListStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
 import CreateWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
+import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
   const { t } = useTranslation();
@@ -173,7 +174,12 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
   const onCreateWhitelist = (record?: ICBOperationLog) => {
     openCreateWhitelistModal();
     updateSelectWhitelistRecord({
-      value: record?.operation?.operation_detail
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.sql,
+          content: record?.operation?.operation_detail
+        }
+      ]
     });
   };
 

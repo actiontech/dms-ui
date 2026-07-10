@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import AuditWhitelistDetailDrawerContainer from 'sqle/src/components/RuleException/AuditWhitelistDetailDrawerContainer';
 
 const CEIndexProjectDetail: React.FC = () => {
   const location = useLocation();
@@ -12,7 +13,12 @@ const CEIndexProjectDetail: React.FC = () => {
     }
   }, [location.pathname, navigate]);
 
-  return <Outlet />;
+  return (
+    <>
+      <Outlet />
+      <AuditWhitelistDetailDrawerContainer />
+    </>
+  );
 };
 
 export default CEIndexProjectDetail;

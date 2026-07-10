@@ -25,6 +25,11 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     performanceStatistics,
     remediationCompare,
     remediationLoadFailed = false,
+    sqlManageId,
+    sqlManageContext,
+    status,
+    onRemediationRefresh,
+    onOpenCreateException,
     errorType = 'error'
   } = props;
 
@@ -112,7 +117,14 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
                         )}
                       />
                     ) : (
-                      <RemediationDiffCompare data={remediationCompare} />
+                      <RemediationDiffCompare
+                        data={remediationCompare}
+                        sqlManageId={sqlManageId ?? remediationCompare?.id}
+                        sqlManageContext={sqlManageContext}
+                        status={status}
+                        onRefresh={onRemediationRefresh}
+                        onOpenCreateException={onOpenCreateException}
+                      />
                     )}
                   </Card>
                 )}

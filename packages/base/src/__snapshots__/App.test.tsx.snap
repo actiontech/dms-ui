@@ -39,7 +39,6 @@ exports[`App render App when token is existed 1`] = `
           >
             <div
               class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
-              searchinputref="[object Object]"
             >
               <div
                 class="ant-select-selector"
@@ -1205,7 +1204,6 @@ exports[`App render App when user role is not admin 1`] = `
           >
             <div
               class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
-              searchinputref="[object Object]"
             >
               <div
                 class="ant-select-selector"

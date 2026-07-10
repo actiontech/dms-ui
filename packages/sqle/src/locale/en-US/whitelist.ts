@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: 'Audit whitelist',
+  pageTitleTips:
+    'For SQL matched by the audit whitelist, audit results will skip partial or all rule checks based on the effective scope',
   pageDesc:
     'You can add some SQL statements here, which will not trigger any audit rules during auditing.',
 

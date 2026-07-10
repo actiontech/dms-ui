@@ -595,7 +595,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -714,7 +714,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -833,7 +833,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -952,7 +952,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1071,7 +1071,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1190,7 +1190,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1639,7 +1639,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1758,7 +1758,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1877,7 +1877,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1996,7 +1996,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -2115,7 +2115,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -2234,7 +2234,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         >
                           <div>
                             <div
-                              class=" css-1avyf41"
+                              class=" css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -2519,7 +2519,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -2539,7 +2539,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1avyf41"
+                          class="result-item css-9paak3"
                         >
                           <span
                             class="icon-wrapper"
@@ -2805,10 +2805,10 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                       >
                         <div>
                           <div
-                            class=" css-1v03opz"
+                            class=" css-1737itt"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -3394,7 +3394,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -3513,7 +3513,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -3632,7 +3632,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -3751,7 +3751,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -3870,7 +3870,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -3989,7 +3989,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"

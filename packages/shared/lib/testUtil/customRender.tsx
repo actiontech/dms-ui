@@ -37,7 +37,14 @@ export const renderWithServerRouter = (
 export const renderWithMemoryRouter = (
   ...[ui, option, props]: [...RenderParams, MemoryRouterProps?]
 ) => {
-  return render(<MemoryRouter {...props}>{ui}</MemoryRouter>, option);
+  return render(
+    <Provider store={storeFactory()}>
+      <ThemeProvider theme={lightTheme}>
+        <MemoryRouter {...props}>{ui}</MemoryRouter>
+      </ThemeProvider>
+    </Provider>,
+    option
+  );
 };
 
 export const renderWithRedux = (

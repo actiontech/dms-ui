@@ -33,7 +33,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -190,7 +190,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -261,6 +261,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -268,6 +269,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -486,7 +499,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -643,7 +656,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -714,6 +727,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -721,6 +735,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -939,7 +965,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when data is empty
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1091,7 +1117,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when get table err
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

@@ -7,6 +7,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import {
   resolveErrorThreeSecond,
   resolveThreeSecond
@@ -19,7 +20,8 @@ import SQLManageAnalyze from '.';
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useParams: jest.fn()
+    useParams: jest.fn(),
+    useNavigate: () => jest.fn()
   };
 });
 
@@ -31,6 +33,7 @@ describe('SqlAnalyze/SQLManage', () => {
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   beforeEach(() => {
+    mockUseDbServiceDriver();
     jest.useFakeTimers();
     useParamsMock.mockReturnValue({
       sqlManageId: 'sqlManageId1',
@@ -51,6 +54,9 @@ describe('SqlAnalyze/SQLManage', () => {
     jest
       .spyOn(SqlManage, 'GetSqlManageRemediationV1')
       .mockImplementation(() => resolveThreeSecond({}));
+    jest
+      .spyOn(SqlManage, 'GetSqlManageListV2')
+      .mockImplementation(() => resolveThreeSecond([]));
     return spy;
   };
 

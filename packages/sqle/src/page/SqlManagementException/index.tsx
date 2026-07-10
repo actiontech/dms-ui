@@ -1,5 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
+import {
+  BasicToolTips,
+  EnterpriseFeatureDisplay,
+  PageHeader
+} from '@actiontech/shared';
 import { Typography } from 'antd';
 import SqlManagementExceptionList from './List';
 
@@ -9,7 +13,16 @@ const SqlManagementException = () => {
   return (
     <>
       {/* #if [ce] */}
-      <PageHeader title={t('sqlManagementException.pageTitle')} />
+      <PageHeader
+        title={
+          <BasicToolTips
+            title={t('sqlManagementException.pageTitleTips')}
+            suffixIcon
+          >
+            {t('sqlManagementException.pageTitle')}
+          </BasicToolTips>
+        }
+      />
       {/* #endif */}
 
       <EnterpriseFeatureDisplay

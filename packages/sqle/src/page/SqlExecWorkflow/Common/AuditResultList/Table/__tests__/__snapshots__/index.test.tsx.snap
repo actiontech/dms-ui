@@ -190,7 +190,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -656,7 +656,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -1450,7 +1450,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -2046,31 +2046,38 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class=" css-1v03opz"
+                            class="css-yzky0k"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              style="flex-wrap: wrap; margin-bottom: -12px;"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="ant-space-item"
+                                style="padding-bottom: 12px;"
                               >
-                                <svg
-                                  height="20"
-                                  viewBox="0 0 16 16"
-                                  width="20"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                <span
+                                  class="audit-level-summary-item"
                                 >
-                                  <path
-                                    d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                    fill="#F66074"
-                                  />
-                                </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                除了自增列及大字段列之外，每个列都必须添加默认值
-                              </span>
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                      fill="#F66074"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="audit-level-summary-count"
+                                  >
+                                    × 
+                                    1
+                                  </span>
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2189,22 +2196,38 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="css-yzky0k"
                           >
                             <div
-                              class="ant-space-item"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              style="flex-wrap: wrap; margin-bottom: -12px;"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="ant-space-item"
+                                style="padding-bottom: 12px;"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
+                                <span
+                                  class="audit-level-summary-item"
+                                >
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                      fill="#F66074"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="audit-level-summary-count"
+                                  >
+                                    × 
+                                    1
+                                  </span>
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2628,31 +2651,38 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class=" css-1v03opz"
+                            class="css-yzky0k"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              style="flex-wrap: wrap; margin-bottom: -12px;"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <div
+                                class="ant-space-item"
+                                style="padding-bottom: 12px;"
                               >
-                                <svg
-                                  height="20"
-                                  viewBox="0 0 16 16"
-                                  width="20"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                <span
+                                  class="audit-level-summary-item"
                                 >
-                                  <path
-                                    d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                    fill="#F66074"
-                                  />
-                                </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                除了自增列及大字段列之外，每个列都必须添加默认值
-                              </span>
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                      fill="#F66074"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="audit-level-summary-count"
+                                  >
+                                    × 
+                                    1
+                                  </span>
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2771,22 +2801,38 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="css-yzky0k"
                           >
                             <div
-                              class="ant-space-item"
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              style="flex-wrap: wrap; margin-bottom: -12px;"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="ant-space-item"
+                                style="padding-bottom: 12px;"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
+                                <span
+                                  class="audit-level-summary-item"
+                                >
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                      fill="#F66074"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="audit-level-summary-count"
+                                  >
+                                    × 
+                                    1
+                                  </span>
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3087,7 +3133,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-6mmopt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -3107,31 +3153,82 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-1v03opz"
+                          class="css-1jf7ho2"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                class="result-item"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              除了自增列及大字段列之外，每个列都必须添加默认值
-                            </span>
+                                <div
+                                  class="css-1dorv4y"
+                                >
+                                  <div
+                                    class="audit-result-content"
+                                  >
+                                    <div
+                                      class=" css-1737itt"
+                                    >
+                                      <div
+                                        class="css-9paak3"
+                                      >
+                                        <span
+                                          class="icon-wrapper"
+                                        >
+                                          <svg
+                                            height="20"
+                                            viewBox="0 0 16 16"
+                                            width="20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                              fill="#F66074"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span
+                                          class="text-wrapper"
+                                        >
+                                          除了自增列及大字段列之外，每个列都必须添加默认值
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="audit-result-action"
+                                  >
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <svg
+                                          class="pointer"
+                                          fill="none"
+                                          height="16"
+                                          viewBox="0 0 10 10"
+                                          width="16"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="m5.02.5-.012 9M.5 5h9"
+                                            stroke="#1CB889"
+                                            stroke-linejoin="round"
+                                            stroke-width="1.5"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

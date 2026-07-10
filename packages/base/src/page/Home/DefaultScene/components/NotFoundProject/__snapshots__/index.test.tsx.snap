@@ -73,7 +73,6 @@ exports[`test base/home/NotFoundProject should match snapshot 1`] = `
                 </span>
                 <div
                   class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-open"
-                  searchinputref="[object Object]"
                 >
                   <div
                     class="ant-select-selector"
@@ -415,7 +414,6 @@ exports[`test base/home/NotFoundProject should match snapshot when clicked cance
                 </span>
                 <div
                   class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
-                  searchinputref="[object Object]"
                 >
                   <div
                     class="ant-select-selector"

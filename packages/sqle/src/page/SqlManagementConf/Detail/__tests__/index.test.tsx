@@ -11,6 +11,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockUseUserOperationPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserOperationPermission';
 import {
   mockProjectInfo,
@@ -46,6 +47,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUseDbServiceDriver();
     mockUseUserOperationPermission();
     instanceAuditPlan.mockAllApi();
     getInstanceAuditPlanDetailSpy =

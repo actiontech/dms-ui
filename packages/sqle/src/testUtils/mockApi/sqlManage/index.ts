@@ -3,13 +3,14 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { ruleTipsData, sqlManageListData } from './data';
+import { ruleTipsData, sqlManageListData, remediationMockData } from './data';
 
 class MockSqlManageApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getSqlManageRuleTips();
     this.batchUpdateSqlManage();
     this.getSqlManageList();
+    this.getSqlManageRemediation();
     this.exportSqlManage();
     this.exportSqlManageRemediation();
     this.exportGlobalSqlManageRemediation();
@@ -56,7 +57,7 @@ class MockSqlManageApi implements MockSpyApy {
     const spy = jest.spyOn(SqlManage, 'GetSqlManageRemediationV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: {}
+        data: remediationMockData
       })
     );
     return spy;

@@ -173,7 +173,12 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
           </Space>
         </div>
         <SQLRenderer sql={sqlTemplate} showLineNumbers />
-        <AuditResultTree auditResult={props.audit_result} />
+        <AuditResultTree
+          auditResult={props.audit_result}
+          skippedByRuleException={props.skipped_by_rule_exception}
+          auditLevel={props.audit_level}
+          dbType={props.audit_result?.[0]?.db_type}
+        />
         <TaskAuditResultTreeStyleWrapper
           treeData={[
             {

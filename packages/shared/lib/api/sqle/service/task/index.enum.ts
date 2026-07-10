@@ -1,67 +1,67 @@
 /* tslint:disable no-duplicate-string */
 
 export enum getAuditTaskSQLsV1FilterExecStatusEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'doing' = 'doing',
+  doing = 'doing',
 
-  'succeeded' = 'succeeded',
+  succeeded = 'succeeded',
 
-  'failed' = 'failed',
+  failed = 'failed',
 
-  'manually_executed' = 'manually_executed'
+  manually_executed = 'manually_executed'
 }
 
 export enum getAuditTaskSQLsV1FilterAuditStatusEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'doing' = 'doing',
+  doing = 'doing',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum getAuditTaskSQLsV1FilterAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }
 
 export enum getAuditTaskSQLsV2FilterExecStatusEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'doing' = 'doing',
+  doing = 'doing',
 
-  'succeeded' = 'succeeded',
+  succeeded = 'succeeded',
 
-  'failed' = 'failed',
+  failed = 'failed',
 
-  'manually_executed' = 'manually_executed',
+  manually_executed = 'manually_executed',
 
-  'terminating' = 'terminating',
+  terminating = 'terminating',
 
-  'terminate_succeeded' = 'terminate_succeeded',
+  terminate_succeeded = 'terminate_succeeded',
 
-  'terminate_failed' = 'terminate_failed'
+  terminate_failed = 'terminate_failed'
 }
 
 export enum getAuditTaskSQLsV2FilterAuditStatusEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'doing' = 'doing',
+  doing = 'doing',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum getAuditTaskSQLsV2FilterAuditLevelEnum {
-  'normal' = 'normal',
+  normal = 'normal',
 
-  'notice' = 'notice',
+  notice = 'notice',
 
-  'warn' = 'warn',
+  warn = 'warn',
 
-  'error' = 'error'
+  error = 'error'
 }

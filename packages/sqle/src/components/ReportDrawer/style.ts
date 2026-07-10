@@ -21,6 +21,11 @@ export const AuditReportStyleWrapper = styled('div')`
         padding: 0 24px;
         overflow-y: auto;
 
+        h3 {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
         .result-item {
           background: #f7f6f4;
           border: 1px solid #f2f1f0;

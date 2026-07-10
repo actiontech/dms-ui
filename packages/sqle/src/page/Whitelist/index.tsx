@@ -1,5 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
+import {
+  BasicToolTips,
+  EnterpriseFeatureDisplay,
+  PageHeader
+} from '@actiontech/shared';
 import { Typography } from 'antd';
 import WhitelistList from './List';
 
@@ -9,7 +13,13 @@ const Whitelist = () => {
   return (
     <>
       {/* #if [ce] */}
-      <PageHeader title={t('whitelist.pageTitle')} />
+      <PageHeader
+        title={
+          <BasicToolTips title={t('whitelist.pageTitleTips')} suffixIcon>
+            {t('whitelist.pageTitle')}
+          </BasicToolTips>
+        }
+      />
       {/* #endif */}
 
       <EnterpriseFeatureDisplay

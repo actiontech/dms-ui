@@ -9,6 +9,9 @@ import {
 import { useTranslation } from 'react-i18next';
 import ReportDrawer from '../../../../components/ReportDrawer';
 import RemediationDetailDrawer from '../../../../components/RemediationDetailDrawer';
+import { OpenCreateAuditWhitelistExceptionParams } from '../../../../components/RuleException/AddRuleExceptionButton';
+import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
+import AddWhitelist from '../../../Whitelist/Drawer/AddWhitelist';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { ScanTypeSqlCollectionStyleWrapper } from './style';
@@ -26,21 +29,21 @@ import useBackendTable from '../../../../hooks/useBackendTable';
 import { BasicButton, SQLRenderer, BasicToolTips } from '@actiontech/shared';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import {
-  IAuditResult,
-  IFilter
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IFilter } from '@actiontech/shared/lib/api/sqle/service/common';
 import useAuditResultRuleInfo from '../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import {
   formatTime,
   getErrorMessage
 } from '@actiontech/shared/lib/utils/Common';
 import AuditLevelSummary from '../../../../components/AuditResultMessage/AuditLevelSummary';
+import AuditResultExemptionSummary from '../../../../components/AuditResultMessage/AuditResultExemptionSummary';
 import AuditStatusTag from './AuditStatusTag';
 import {
   BEING_AUDITED,
   buildTableHeadWithAuditStatus,
-  parseAuditResult
+  parseAuditResult,
+  parseScanAuditResult,
+  splitScanAuditResultsByExemption
 } from './utils';
 import {
   IGetInstanceAuditPlanSQLDataV1Params,
@@ -51,11 +54,19 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { Link } from 'react-router-dom';
 import { exportSqlManageRemediationV1ExportScopeEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import {
+  ISqlManageRuleExceptionContext,
+  ScanTaskRuleExceptionSourceContext,
+  buildSqlManageRuleExceptionContext,
+  toScanTaskRuleExceptionRecord
+} from '../../../../page/RuleException/index.data';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
   auditPlanId,
   auditPlanType,
+  auditPlanDesc,
+  instanceId,
   activeTabKey,
   instanceType,
   exportDone,
@@ -64,6 +75,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   remediationExportDone
 }) => {
   const { t } = useTranslation();
+  const { openAuditWhitelistCreateWithPrefill } = useWhitelistRedux();
   const { sortableTableColumnFactory, tableFilterMetaFactory } =
     useBackendTable();
 
@@ -119,6 +131,90 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       openRemediationDrawer();
     },
     [openRemediationDrawer]
+  );
+
+  const scanTaskSourceContext = useMemo<ScanTaskRuleExceptionSourceContext>(
+    () => ({
+      auditPlanType,
+      auditPlanId,
+      auditPlanDesc,
+      instanceType,
+      instanceId
+    }),
+    [auditPlanDesc, auditPlanId, auditPlanType, instanceId, instanceType]
+  );
+
+  const toScanTaskRecord = useCallback(
+    (record?: ScanTypeSqlTableDataSourceItem) => {
+      if (!record) {
+        return undefined;
+      }
+      // 智能扫描特例：例外在 audit_results.is_exempted，创建例外时只带活跃命中。
+      const { active } = splitScanAuditResultsByExemption(
+        parseScanAuditResult(record['audit_results'])
+      );
+      return toScanTaskRuleExceptionRecord(
+        {
+          sql_fingerprint: record['sql_fingerprint'],
+          fingerprint: record['fingerprint'],
+          sql: record['sql'],
+          instance_id: record['instance_id'],
+          audit_result: active
+        },
+        scanTaskSourceContext
+      );
+    },
+    [scanTaskSourceContext]
+  );
+
+  const remediationSqlManageContext = useMemo<
+    ISqlManageRuleExceptionContext | undefined
+  >(() => {
+    return buildSqlManageRuleExceptionContext(
+      toScanTaskRecord(remediationDrawerRecord)
+    );
+  }, [remediationDrawerRecord, toScanTaskRecord]);
+
+  // SQL 审核结果抽屉（点击 SQL 语句打开）同样需要快捷添加例外入口。
+  const reportSqlManageContext = useMemo<
+    ISqlManageRuleExceptionContext | undefined
+  >(() => {
+    return buildSqlManageRuleExceptionContext(
+      toScanTaskRecord(currentAuditResultRecord)
+    );
+  }, [currentAuditResultRecord, toScanTaskRecord]);
+
+  const handleOpenCreateExceptionFromRemediation = useCallback(
+    (params: OpenCreateAuditWhitelistExceptionParams) => {
+      closeRemediationDrawer();
+      setRemediationDrawerRecord(undefined);
+      openAuditWhitelistCreateWithPrefill(
+        toScanTaskRecord(remediationDrawerRecord),
+        { ruleName: params.auditResult?.rule_name }
+      );
+    },
+    [
+      closeRemediationDrawer,
+      openAuditWhitelistCreateWithPrefill,
+      remediationDrawerRecord,
+      toScanTaskRecord
+    ]
+  );
+
+  const handleOpenCreateExceptionFromReport = useCallback(
+    (params: OpenCreateAuditWhitelistExceptionParams) => {
+      closeReportDrawer();
+      openAuditWhitelistCreateWithPrefill(
+        toScanTaskRecord(currentAuditResultRecord),
+        { ruleName: params.auditResult?.rule_name }
+      );
+    },
+    [
+      closeReportDrawer,
+      currentAuditResultRecord,
+      openAuditWhitelistCreateWithPrefill,
+      toScanTaskRecord
+    ]
   );
 
   const {
@@ -235,12 +331,24 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     }
   );
 
-  const recordAuditResult = useMemo<IAuditResult[]>(() => {
-    return parseAuditResult(currentAuditResultRecord?.['audit_results']);
-  }, [currentAuditResultRecord]);
+  // 智能扫描特例：从 audit_results 按 is_exempted 拆分，供 ReportDrawer 展示例外区。
+  const currentScanAuditBuckets = useMemo(
+    () =>
+      splitScanAuditResultsByExemption(
+        parseScanAuditResult(currentAuditResultRecord?.['audit_results'])
+      ),
+    [currentAuditResultRecord]
+  );
 
-  const { auditResultRuleInfo, loading: auditResultInfoLoading } =
-    useAuditResultRuleInfo(recordAuditResult, instanceType);
+  const {
+    auditResultRuleInfo,
+    loading: auditResultInfoLoading,
+    enrichSkippedItem
+  } = useAuditResultRuleInfo(
+    currentScanAuditBuckets.active,
+    instanceType,
+    currentScanAuditBuckets.exempted
+  );
 
   useEffect(() => {
     const refresh = () => {
@@ -382,6 +490,38 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       record: ScanTypeSqlTableDataSourceItem,
       fieldName: 'first_audit_results' | 'audit_results'
     ) => {
+      // 「审核中」只在 audit_status 列展示（AuditStatusTag），审核结果列不重复显示。
+      // 审核进行中时仍渲染已有结果；无结果则显示 "-"。
+
+      // 智能扫描详情特例：例外留在 audit_results，用 is_exempted 标记，
+      // 不拆到 skipped_by_rule_exception（与 SQL 管控 / 工单不同）。
+      if (fieldName === 'audit_results') {
+        const scanResults = parseScanAuditResult(record[fieldName]);
+        const { active, exempted } =
+          splitScanAuditResultsByExemption(scanResults);
+
+        if (!active.length && !exempted.length) {
+          return '-';
+        }
+
+        return (
+          <BasicToolTips
+            title={t('sqlManagement.table.column.viewAuditResultCompare')}
+          >
+            <div
+              data-testid="trigger-open-remediation-drawer"
+              className="audit-result-wrapper"
+              onClick={() => onClickAuditResult(record)}
+            >
+              <AuditResultExemptionSummary
+                auditResults={active}
+                skippedByRuleException={exempted}
+              />
+            </div>
+          </BasicToolTips>
+        );
+      }
+
       const results = parseAuditResult(record[fieldName]);
 
       if (!results.length) {
@@ -495,12 +635,21 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         )}
         data={{
           auditResult: auditResultRuleInfo,
+          // 来自 audit_results.is_exempted，非 skipped_by_rule_exception 字段
+          skippedByRuleException: currentScanAuditBuckets.exempted,
           sql: currentAuditResultRecord?.['sql'] ?? ''
         }}
         open={reportDrawerVisible}
         onClose={closeReportDrawer}
         showAnnotation
         loading={auditResultInfoLoading}
+        enrichSkippedItem={enrichSkippedItem}
+        sqlManageContext={reportSqlManageContext}
+        onOpenCreateException={
+          reportSqlManageContext
+            ? handleOpenCreateExceptionFromReport
+            : undefined
+        }
         extra={
           <Link
             to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}/analyze/${currentAuditResultRecord?.['id']}`}
@@ -518,7 +667,12 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         open={remediationDrawerVisible}
         onClose={closeRemediationDrawer}
         sqlManageId={remediationDrawerRecord?.id}
+        sqlManageContext={remediationSqlManageContext}
+        status={remediationDrawerRecord?.['status']}
+        title={t('sqlManagement.remediationCompare.drawerTitle')}
+        onOpenCreateException={handleOpenCreateExceptionFromRemediation}
       />
+      <AddWhitelist />
     </ScanTypeSqlCollectionStyleWrapper>
   );
 };

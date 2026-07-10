@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundRecentlyProject from './NotFoundRecentlyProject';
+import AuditWhitelistDetailDrawerContainer from 'sqle/src/components/RuleException/AuditWhitelistDetailDrawerContainer';
 
 const EEIndexProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
@@ -30,7 +31,12 @@ const EEIndexProjectDetail: React.FC = () => {
     }
   }, [currentProjectID, nextProjectID, nextProjectName, updateRecentlyProject]);
 
-  return <>{renderProjectDetail()}</>;
+  return (
+    <>
+      {renderProjectDetail()}
+      <AuditWhitelistDetailDrawerContainer />
+    </>
+  );
 };
 
 export default EEIndexProjectDetail;

@@ -1,8 +1,19 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import AuditResultTree, { AuditResultTreeProps } from '../AuditResultTree';
 import { superRender } from '../../../../../../../../../../testUtils/customRender';
 import rule_template from '../../../../../../../../../../testUtils/mockApi/rule_template';
+
+const mockNavigateToExceptionDetail = jest.fn();
+
+jest.mock(
+  '../../../../../../../../../../components/RuleException/useRuleExceptionActions',
+  () => ({
+    __esModule: true,
+    default: () => ({
+      navigateToExceptionDetail: mockNavigateToExceptionDetail
+    })
+  })
+);
 
 describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
   let requestRuleList: jest.SpyInstance;
@@ -14,6 +25,7 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     requestRuleList = rule_template.getRuleList();
+    mockNavigateToExceptionDetail.mockClear();
   });
 
   afterEach(() => {
@@ -42,8 +54,6 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
     });
     expect(baseElement).toMatchSnapshot();
 
-    const iconArrow = getBySelector('.custom-icon-arrow-down', baseElement);
-    fireEvent.click(iconArrow);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2300));
@@ -77,8 +87,6 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
     });
     expect(baseElement).toMatchSnapshot();
 
-    const iconArrow = getBySelector('.custom-icon-arrow-down', baseElement);
-    fireEvent.click(iconArrow);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2300));
@@ -115,8 +123,6 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
     });
     expect(baseElement).toMatchSnapshot();
 
-    const iconArrow = getBySelector('.custom-icon-arrow-down', baseElement);
-    fireEvent.click(iconArrow);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2300));
@@ -127,5 +133,96 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('schema test 已存在')).toBeInTheDocument();
+  });
+
+  it('should partition exempted audit results into sibling tree sections', async () => {
+    customRender({
+      auditResult: [
+        {
+          level: 'warn',
+          message: 'active audit result',
+          rule_name: 'rule_active',
+          db_type: 'MySQL'
+        }
+      ],
+      skippedByRuleException: [
+        {
+          rule_name: 'rule_exempted',
+          level: 'warn',
+          message: 'exempted audit result',
+          exception_id: 42
+        }
+      ]
+    });
+
+    expect(screen.getByText('审核结果')).toBeInTheDocument();
+    expect(screen.getByText('已例外')).toBeInTheDocument();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(await screen.findByText('active audit result')).toBeInTheDocument();
+    expect(screen.getByText('exempted audit result')).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
+  it('should navigate to exception detail when clicking exempted rule action', async () => {
+    const { container } = customRender({
+      auditResult: [],
+      skippedByRuleException: [
+        {
+          rule_name: 'rule_exempted',
+          level: 'warn',
+          message: 'exempted audit result',
+          exception_id: 42
+        }
+      ]
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const viewDetailIcon = container.querySelector('.icon-view-detail');
+    expect(viewDetailIcon).not.toBeNull();
+    fireEvent.click(viewDetailIcon!);
+    expect(mockNavigateToExceptionDetail).toHaveBeenCalledWith(42);
+  });
+
+  it('should show view detail action for full sql exemption', () => {
+    const { container } = customRender({
+      auditResult: [],
+      skippedByRuleException: [
+        {
+          level: 'normal',
+          message: '审核SQL例外',
+          exception_id: 99
+        }
+      ]
+    });
+
+    expect(screen.getByText('审核结果')).toBeInTheDocument();
+    expect(screen.getByText('已例外')).toBeInTheDocument();
+    expect(screen.getByText('审核通过')).toBeInTheDocument();
+    expect(screen.getByText('审核SQL例外')).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(container.querySelector('.audit-result-content')).not.toBeNull();
+    expect(container.querySelector('.audit-result-action')).not.toBeNull();
+    expect(container.querySelector('.icon-view-detail')).not.toBeNull();
+  });
+
+  it('should navigate to exception detail when clicking full sql exemption action', () => {
+    const { container } = customRender({
+      auditResult: [],
+      skippedByRuleException: [
+        {
+          level: 'normal',
+          message: '审核SQL例外',
+          exception_id: 99
+        }
+      ]
+    });
+
+    const viewDetailIcon = container.querySelector('.icon-view-detail');
+    expect(viewDetailIcon).not.toBeNull();
+    fireEvent.click(viewDetailIcon!);
+    expect(mockNavigateToExceptionDetail).toHaveBeenCalledWith(99);
   });
 });
