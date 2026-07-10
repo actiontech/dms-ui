@@ -10,6 +10,7 @@ import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import AuditLevelSummary from '../../../../components/AuditResultMessage/AuditLevelSummary';
+import AuditResultExemptionSummary from '../../../../components/AuditResultMessage/AuditResultExemptionSummary';
 import { Link } from 'react-router-dom';
 import {
   AvatarCom,
@@ -293,7 +294,10 @@ const SqlManagementColumn: (
       width: 200,
       title: () => t('sqlManagement.table.column.currentAuditResult'),
       render: (result = [], record) => {
-        if (!result || result.length === 0) {
+        const hasSkippedByRuleException =
+          (record.skipped_by_rule_exception?.length ?? 0) > 0;
+        // Full SQL exemption only appears in skipped_by_rule_exception (empty rule_name).
+        if ((!result || result.length === 0) && !hasSkippedByRuleException) {
           return '-';
         }
         return (
@@ -306,7 +310,10 @@ const SqlManagementColumn: (
               }
               className="audit-result-wrapper"
             >
-              <AuditLevelSummary auditResults={result} />
+              <AuditResultExemptionSummary
+                auditResults={result}
+                skippedByRuleException={record.skipped_by_rule_exception}
+              />
             </div>
           </BasicToolTips>
         );

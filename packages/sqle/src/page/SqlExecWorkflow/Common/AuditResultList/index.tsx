@@ -22,7 +22,8 @@ import {
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
-  showTaskTab = true
+  showTaskTab = true,
+  ruleExceptionSourceContext
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -39,6 +40,22 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     () => tasks.find((v) => `${v.task_id}` === currentTaskID),
     [currentTaskID, tasks]
   );
+
+  const resolvedRuleExceptionSourceContext = useMemo(() => {
+    if (ruleExceptionSourceContext) {
+      return ruleExceptionSourceContext;
+    }
+    if (!currentTask?.task_id) {
+      return undefined;
+    }
+    return {
+      task: {
+        task_id: currentTask.task_id,
+        instance_name: currentTask.instance_name,
+        instance_db_type: currentTask.instance_db_type
+      }
+    };
+  }, [currentTask, ruleExceptionSourceContext]);
 
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
@@ -125,6 +142,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         projectID={projectID}
         updateTaskRecordCount={updateTaskRecordCount}
         dbType={currentTask?.instance_db_type}
+        ruleExceptionSourceContext={resolvedRuleExceptionSourceContext}
       />
     </AuditResultForCreateWorkflowStyleWrapper>
   );

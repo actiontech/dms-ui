@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/lib/result';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ResponseCode } from '../../../data/common';
@@ -8,13 +8,27 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
+  ISqlManage,
   ISqlManageRemediation,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  ISqlManageRuleExceptionContext,
+  buildSqlManageRuleExceptionContext,
+  toSqlManageRuleExceptionRecord
+} from '../../RuleException/index.data';
+import { OpenCreateAuditWhitelistExceptionParams } from '../../../components/RuleException/AddRuleExceptionButton';
+import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
+import AddWhitelist from '../../Whitelist/Drawer/AddWhitelist';
 
 import SqlAnalyze from '../SqlAnalyze';
+
+type ISqlManageWithInstanceId = ISqlManage & {
+  instance_id?: string;
+  db_type?: string;
+};
 
 const SQLManageAnalyze = () => {
   const urlParams = useParams<SQLManageAnalyzeUrlParams>();
@@ -27,6 +41,7 @@ const SQLManageAnalyze = () => {
     useState<IPerformanceStatistics>();
   const [remediationCompare, setRemediationCompare] =
     useState<ISqlManageRemediation>();
+  const [sqlManageRecord, setSqlManageRecord] = useState<ISqlManage>();
   const [remediationLoadFailed, setRemediationLoadFailed] =
     useState<boolean>(false);
   const [
@@ -38,16 +53,22 @@ const SQLManageAnalyze = () => {
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
-      const [analysisResult, remediationResult] = await Promise.allSettled([
-        SqlManage.GetSqlManageSqlAnalysisV1({
-          sql_manage_id: urlParams.sqlManageId ?? '',
-          project_name: projectName
-        }),
-        SqlManage.GetSqlManageRemediationV1({
-          sql_manage_id: urlParams.sqlManageId ?? '',
-          project_name: projectName
-        })
-      ]);
+      const [analysisResult, remediationResult, listResult] =
+        await Promise.allSettled([
+          SqlManage.GetSqlManageSqlAnalysisV1({
+            sql_manage_id: urlParams.sqlManageId ?? '',
+            project_name: projectName
+          }),
+          SqlManage.GetSqlManageRemediationV1({
+            sql_manage_id: urlParams.sqlManageId ?? '',
+            project_name: projectName
+          }),
+          SqlManage.GetSqlManageListV2({
+            project_name: projectName,
+            page_index: 1,
+            page_size: 100
+          })
+        ]);
 
       if (
         analysisResult.status === 'fulfilled' &&
@@ -88,6 +109,18 @@ const SQLManageAnalyze = () => {
         setRemediationCompare(undefined);
         setRemediationLoadFailed(true);
       }
+
+      if (
+        listResult.status === 'fulfilled' &&
+        listResult.value.data.code === ResponseCode.SUCCESS
+      ) {
+        const matchedRecord = listResult.value.data.data?.find(
+          (item) => `${item.id}` === `${urlParams.sqlManageId ?? ''}`
+        );
+        setSqlManageRecord(matchedRecord);
+      } else {
+        setSqlManageRecord(undefined);
+      }
     } finally {
       getSqlAnalyzeFinish();
     }
@@ -102,17 +135,53 @@ const SQLManageAnalyze = () => {
     getSqlAnalyze();
   }, [getSqlAnalyze]);
 
+  const sqlManageContext = useMemo<
+    ISqlManageRuleExceptionContext | undefined
+  >(() => {
+    const sql_fingerprint =
+      sqlManageRecord?.sql_fingerprint ?? remediationCompare?.sql_fingerprint;
+    const record = sqlManageRecord as ISqlManageWithInstanceId | undefined;
+    return buildSqlManageRuleExceptionContext({
+      sql_fingerprint,
+      instance_id: record?.instance_id,
+      instance_name: sqlManageRecord?.instance_name,
+      db_type: record?.db_type,
+      source: sqlManageRecord?.source,
+      audit_result: sqlManageRecord?.audit_result
+    });
+  }, [remediationCompare, sqlManageRecord]);
+
+  const { openAuditWhitelistCreateWithPrefill } = useWhitelistRedux();
+
+  const handleOpenCreateException = useCallback(
+    (params: OpenCreateAuditWhitelistExceptionParams) => {
+      openAuditWhitelistCreateWithPrefill(
+        toSqlManageRuleExceptionRecord(sqlManageRecord),
+        { ruleName: params.auditResult?.rule_name }
+      );
+    },
+    [openAuditWhitelistCreateWithPrefill, sqlManageRecord]
+  );
+
   return (
-    <SqlAnalyze
-      errorType={errorType}
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      remediationCompare={remediationCompare}
-      remediationLoadFailed={remediationLoadFailed}
-      loading={loading}
-    />
+    <>
+      <SqlAnalyze
+        errorType={errorType}
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        remediationCompare={remediationCompare}
+        remediationLoadFailed={remediationLoadFailed}
+        sqlManageId={urlParams.sqlManageId}
+        sqlManageContext={sqlManageContext}
+        status={sqlManageRecord?.status}
+        onRemediationRefresh={getSqlAnalyze}
+        onOpenCreateException={handleOpenCreateException}
+        loading={loading}
+      />
+      <AddWhitelist onCreated={getSqlAnalyze} />
+    </>
   );
 };
 

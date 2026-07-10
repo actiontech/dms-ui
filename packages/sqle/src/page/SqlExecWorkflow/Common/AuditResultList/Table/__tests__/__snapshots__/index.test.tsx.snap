@@ -190,7 +190,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -656,7 +656,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -1450,7 +1450,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class=" css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -2049,7 +2049,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                             class=" css-1v03opz"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -2631,7 +2631,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                             class=" css-1v03opz"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="css-9paak3"
                             >
                               <span
                                 class="icon-wrapper"
@@ -3110,7 +3110,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                           class="result-item css-1v03opz"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="css-9paak3"
                           >
                             <span
                               class="icon-wrapper"

@@ -1,17 +1,33 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/es/result';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ResponseCode } from '../../../data/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import SqlAnalyze from '../SqlAnalyze';
 import { AuditPlanReportSqlAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
+  ISqlManage,
+  ISqlManageRemediation,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  ISqlManageRuleExceptionContext,
+  buildSqlManageRuleExceptionContext,
+  toSqlManageRuleExceptionRecord
+} from '../../RuleException/index.data';
+import { OpenCreateAuditWhitelistExceptionParams } from '../../../components/RuleException/AddRuleExceptionButton';
+import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
+import AddWhitelist from '../../Whitelist/Drawer/AddWhitelist';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+
+type ISqlManageWithInstanceId = ISqlManage & {
+  instance_id?: string;
+  db_type?: string;
+};
 
 const ManagementConfAnalyze = () => {
   const urlParams = useParams<AuditPlanReportSqlAnalyzeUrlParams>();
@@ -22,6 +38,11 @@ const ManagementConfAnalyze = () => {
   const [tableMetas, setTableMetas] = useState<ITableMetas>();
   const [performanceStatistics, setPerformancesStatistics] =
     useState<IPerformanceStatistics>();
+  const [remediationCompare, setRemediationCompare] =
+    useState<ISqlManageRemediation>();
+  const [sqlManageRecord, setSqlManageRecord] = useState<ISqlManage>();
+  const [remediationLoadFailed, setRemediationLoadFailed] =
+    useState<boolean>(false);
   const [
     loading,
     { setTrue: startGetSqlAnalyze, setFalse: getSqlAnalyzeFinish }
@@ -32,48 +53,137 @@ const ManagementConfAnalyze = () => {
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
-      const res = await instance_audit_plan.getAuditPlanSqlAnalysisDataV1({
-        project_name: projectName,
-        instance_audit_plan_id: urlParams.instanceAuditPlanId ?? '',
-        id: urlParams.id ?? ''
-      });
-      if (res.data.code === ResponseCode.SUCCESS) {
+      const [analysisResult, remediationResult, listResult] =
+        await Promise.allSettled([
+          instance_audit_plan.getAuditPlanSqlAnalysisDataV1({
+            project_name: projectName,
+            instance_audit_plan_id: urlParams.instanceAuditPlanId ?? '',
+            id: urlParams.id ?? ''
+          }),
+          SqlManage.GetSqlManageRemediationV1({
+            project_name: projectName,
+            sql_manage_id: urlParams.id ?? ''
+          }),
+          SqlManage.GetSqlManageListV2({
+            project_name: projectName,
+            page_index: 1,
+            page_size: 100
+          })
+        ]);
+
+      if (
+        analysisResult.status === 'fulfilled' &&
+        analysisResult.value.data.code === ResponseCode.SUCCESS
+      ) {
         setErrorMessage('');
-        setSqlExplain(res.data.data?.sql_explain);
-        setTableMetas(res.data.data?.table_metas);
-        setPerformancesStatistics(res.data.data?.performance_statistics);
+        setSqlExplain(analysisResult.value.data.data?.sql_explain);
+        setTableMetas(analysisResult.value.data.data?.table_metas);
+        setPerformancesStatistics(
+          analysisResult.value.data.data?.performance_statistics
+        );
       } else {
-        if (res.data.code === ResponseCode.NotSupportDML) {
-          setErrorType('info');
+        setSqlExplain(undefined);
+        setTableMetas(undefined);
+        setPerformancesStatistics(undefined);
+        if (analysisResult.status === 'fulfilled') {
+          if (analysisResult.value.data.code === ResponseCode.NotSupportDML) {
+            setErrorType('info');
+          } else {
+            setErrorType('error');
+          }
+          setErrorMessage(analysisResult.value.data.message ?? '');
         } else {
           setErrorType('error');
+          setErrorMessage(
+            (analysisResult.reason as { message?: string })?.message ?? ''
+          );
         }
-        setErrorMessage(res.data.message ?? '');
+      }
+
+      if (
+        remediationResult.status === 'fulfilled' &&
+        remediationResult.value.data.code === ResponseCode.SUCCESS
+      ) {
+        setRemediationCompare(remediationResult.value.data.data);
+        setRemediationLoadFailed(false);
+      } else {
+        setRemediationCompare(undefined);
+        setRemediationLoadFailed(true);
+      }
+
+      if (
+        listResult.status === 'fulfilled' &&
+        listResult.value.data.code === ResponseCode.SUCCESS
+      ) {
+        const matchedRecord = listResult.value.data.data?.find(
+          (item) => `${item.id}` === `${urlParams.id ?? ''}`
+        );
+        setSqlManageRecord(matchedRecord);
+      } else {
+        setSqlManageRecord(undefined);
       }
     } finally {
       getSqlAnalyzeFinish();
     }
   }, [
-    startGetSqlAnalyze,
+    getSqlAnalyzeFinish,
     projectName,
-    urlParams.instanceAuditPlanId,
+    startGetSqlAnalyze,
     urlParams.id,
-    getSqlAnalyzeFinish
+    urlParams.instanceAuditPlanId
   ]);
 
   useEffect(() => {
     getSqlAnalyze();
   }, [getSqlAnalyze]);
 
+  const sqlManageContext = useMemo<
+    ISqlManageRuleExceptionContext | undefined
+  >(() => {
+    const sql_fingerprint =
+      sqlManageRecord?.sql_fingerprint ?? remediationCompare?.sql_fingerprint;
+    const record = sqlManageRecord as ISqlManageWithInstanceId | undefined;
+    return buildSqlManageRuleExceptionContext({
+      sql_fingerprint,
+      instance_id: record?.instance_id,
+      instance_name: sqlManageRecord?.instance_name,
+      db_type: record?.db_type,
+      source: sqlManageRecord?.source,
+      audit_result: sqlManageRecord?.audit_result
+    });
+  }, [remediationCompare, sqlManageRecord]);
+
+  const { openAuditWhitelistCreateWithPrefill } = useWhitelistRedux();
+
+  const handleOpenCreateException = useCallback(
+    (params: OpenCreateAuditWhitelistExceptionParams) => {
+      openAuditWhitelistCreateWithPrefill(
+        toSqlManageRuleExceptionRecord(sqlManageRecord),
+        { ruleName: params.auditResult?.rule_name }
+      );
+    },
+    [openAuditWhitelistCreateWithPrefill, sqlManageRecord]
+  );
+
   return (
-    <SqlAnalyze
-      tableMetas={tableMetas}
-      sqlExplain={sqlExplain}
-      errorType={errorType}
-      errorMessage={errorMessage}
-      performanceStatistics={performanceStatistics}
-      loading={loading}
-    />
+    <>
+      <SqlAnalyze
+        tableMetas={tableMetas}
+        sqlExplain={sqlExplain}
+        errorType={errorType}
+        errorMessage={errorMessage}
+        performanceStatistics={performanceStatistics}
+        remediationCompare={remediationCompare}
+        remediationLoadFailed={remediationLoadFailed}
+        sqlManageId={urlParams.id}
+        sqlManageContext={sqlManageContext}
+        status={sqlManageRecord?.status}
+        onRemediationRefresh={getSqlAnalyze}
+        onOpenCreateException={handleOpenCreateException}
+        loading={loading}
+      />
+      <AddWhitelist onCreated={getSqlAnalyze} />
+    </>
   );
 };
 

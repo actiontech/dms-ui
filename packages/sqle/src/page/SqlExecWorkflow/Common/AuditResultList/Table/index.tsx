@@ -23,7 +23,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   auditLevelFilterValue,
   projectID,
   updateTaskRecordCount,
-  dbType
+  dbType,
+  ruleExceptionSourceContext
 }) => {
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IAuditTaskSQLResV2>();
@@ -145,6 +146,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         auditResultRecord={currentAuditResultRecord}
         dbType={dbType}
         clickAnalyze={handleClickAnalyze}
+        ruleExceptionSourceContext={ruleExceptionSourceContext}
       />
       <AddWhitelistModal onCreated={refresh} />
     </>

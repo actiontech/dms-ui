@@ -4,6 +4,7 @@ import { superRender } from '../../../../../testUtils/customRender';
 import { ModalName } from '../../../../../data/ModalName';
 import SqlManagementModal from './index';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 
 jest.mock('react-redux', () => {
   return {
@@ -18,6 +19,7 @@ describe('test init sql manage modal', () => {
 
   beforeEach(() => {
     mockUseCurrentUser();
+    mockUseDbServiceDriver();
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
     (useSelector as jest.Mock).mockImplementation((selector) => {

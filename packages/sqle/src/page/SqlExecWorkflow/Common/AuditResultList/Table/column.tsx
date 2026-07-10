@@ -6,8 +6,7 @@ import {
 import { EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { t } from '../../../../../locale';
-import ResultIconRender from '../../../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../../../components/AuditResultMessage';
+import AuditResultExemptionSummary from '../../../../../components/AuditResultMessage/AuditResultExemptionSummary';
 
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
@@ -43,20 +42,12 @@ export const AuditResultForCreateWorkflowColumn = (
       render: (result = [], record) => {
         return (
           <div onClick={() => onClickAuditResult(record)}>
-            {result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditStatus={record.audit_status}
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
+            <AuditResultExemptionSummary
+              auditResults={result}
+              skippedByRuleException={record.skipped_by_rule_exception}
+              auditLevel={record.audit_level}
+              auditStatus={record.audit_status}
+            />
           </div>
         );
       }

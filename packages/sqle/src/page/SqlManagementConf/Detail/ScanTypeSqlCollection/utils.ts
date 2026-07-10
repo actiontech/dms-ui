@@ -1,6 +1,7 @@
 import {
   IAuditResult,
-  IAuditPlanSQLHeadV1
+  IAuditPlanSQLHeadV1,
+  ISkippedByRuleExceptionItem
 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export const BEING_AUDITED = 'being_audited';
@@ -12,14 +13,14 @@ const FIRST_AUDIT_RESULTS_FIELD = 'first_audit_results';
 const PRIORITY_FIELD = 'priority';
 
 /**
- * 通用的审核结果解析函数：兼容字符串(JSON)、双重编码字符串、数组以及空值。
+ * 解析动态表行中的 JSON 数组字段：兼容字符串(JSON)、双重编码字符串、数组以及空值。
  */
-export const parseAuditResult = (raw?: unknown): IAuditResult[] => {
+export const parseJsonArrayField = <T>(raw?: unknown): T[] => {
   if (raw === undefined || raw === null || raw === '' || raw === 'null') {
     return [];
   }
   if (Array.isArray(raw)) {
-    return raw as IAuditResult[];
+    return raw as T[];
   }
   if (typeof raw !== 'string') {
     return [];
@@ -29,10 +30,79 @@ export const parseAuditResult = (raw?: unknown): IAuditResult[] => {
     if (typeof parsed === 'string') {
       parsed = JSON.parse(parsed);
     }
-    return Array.isArray(parsed) ? (parsed as IAuditResult[]) : [];
+    return Array.isArray(parsed) ? (parsed as T[]) : [];
   } catch {
     return [];
   }
+};
+
+export const parseAuditResult = (raw?: unknown): IAuditResult[] =>
+  parseJsonArrayField<IAuditResult>(raw);
+
+/**
+ * 智能扫描详情特例：例外规则仍留在 `audit_results` 中，用 `is_exempted` 标记，
+ * 不会拆到 `skipped_by_rule_exception`（与 SQL 管控 / 工单不同）。
+ *
+ * 真实返回示例（audit_results JSON）：
+ * [
+ *   { "level":"error", "message":"表已存在", "rule_name":"" },
+ *   { "level":"error", "message":"...", "rule_name":"ddl_check_table_without_if_not_exists" },
+ *   { "level":"error", "message":"...", "rule_name":"ddl_check_column_without_default",
+ *     "is_exempted":true, "exception_id":4 }
+ * ]
+ */
+export type ScanAuditResultItem = IAuditResult & {
+  is_exempted?: boolean;
+  desc?: string;
+  exception_id?: number;
+  created_by?: string;
+  created_at?: string;
+};
+
+export const parseScanAuditResult = (raw?: unknown): ScanAuditResultItem[] =>
+  parseJsonArrayField<ScanAuditResultItem>(raw);
+
+/**
+ * 将智能扫描 `audit_results` 按 `is_exempted === true` 拆成活跃命中与例外项。
+ * 例外项映射为 `ISkippedByRuleExceptionItem`，以便复用通用摘要 / ReportDrawer；
+ * 数据来源仍是 audit_results，不是 skipped_by_rule_exception。
+ *
+ * - 仅活跃命中 → 展示等级 icon 汇总
+ * - 仅例外项 → 展示「审核SQL例外」
+ * - 混合 → 汇总只统计活跃命中，例外在详情抽屉中单独展示
+ */
+export const splitScanAuditResultsByExemption = (
+  auditResults: ScanAuditResultItem[] = []
+): {
+  active: IAuditResult[];
+  exempted: ISkippedByRuleExceptionItem[];
+} => {
+  const active: IAuditResult[] = [];
+  const exempted: ISkippedByRuleExceptionItem[] = [];
+
+  auditResults.forEach((item) => {
+    if (item.is_exempted === true) {
+      exempted.push({
+        rule_name: item.rule_name,
+        level: item.level,
+        message: item.message,
+        desc: item.desc,
+        exception_id: item.exception_id,
+        created_by: item.created_by,
+        created_at: item.created_at
+      });
+      return;
+    }
+
+    active.push({
+      db_type: item.db_type,
+      level: item.level,
+      message: item.message,
+      rule_name: item.rule_name
+    });
+  });
+
+  return { active, exempted };
 };
 
 export type AuditColumnLabels = {

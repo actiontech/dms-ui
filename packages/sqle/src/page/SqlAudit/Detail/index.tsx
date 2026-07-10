@@ -39,6 +39,16 @@ const SqlAuditDetail = () => {
     return pluginAuditRecord?.task ? [pluginAuditRecord?.task] : [];
   }, [pluginAuditRecord]);
 
+  const ruleExceptionSourceContext = useMemo(() => {
+    if (!pluginAuditRecord?.task) {
+      return undefined;
+    }
+    return {
+      sqlAuditRecordId: pluginAuditRecord.sql_audit_record_id,
+      task: pluginAuditRecord.task
+    };
+  }, [pluginAuditRecord]);
+
   return (
     <>
       <Spin spinning={dataLoading}>
@@ -71,7 +81,11 @@ const SqlAuditDetail = () => {
           style={{ height: '60px' }}
         />
         <BasicInfoWrapper {...basicInfoData} />
-        <AuditResultList tasks={auditResultData} showTaskTab={false} />
+        <AuditResultList
+          tasks={auditResultData}
+          showTaskTab={false}
+          ruleExceptionSourceContext={ruleExceptionSourceContext}
+        />
       </Spin>
     </>
   );

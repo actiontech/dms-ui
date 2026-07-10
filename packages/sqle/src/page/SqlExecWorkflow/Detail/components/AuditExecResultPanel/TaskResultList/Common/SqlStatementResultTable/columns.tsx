@@ -7,8 +7,7 @@ import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/a
 import { SQLRenderer } from '@actiontech/shared';
 import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
 import { t } from '../../../../../../../../locale';
-import ResultIconRender from '../../../../../../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../../../../../../components/AuditResultMessage';
+import AuditResultExemptionSummary from '../../../../../../../../components/AuditResultMessage/AuditResultExemptionSummary';
 
 export const SQLStatementResultColumns = (
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void
@@ -45,20 +44,12 @@ export const SQLStatementResultColumns = (
             className="audit-result-wrapper"
             onClick={() => onClickAuditResult(record)}
           >
-            {result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditStatus={record.audit_status}
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
+            <AuditResultExemptionSummary
+              auditResults={result}
+              skippedByRuleException={record.skipped_by_rule_exception}
+              auditLevel={record.audit_level}
+              auditStatus={record.audit_status}
+            />
           </div>
         );
       }

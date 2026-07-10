@@ -706,7 +706,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                           class="result-item css-1v03opz"
                         >
                           <div
-                            class="css-1avyf41"
+                            class="css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -739,7 +739,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                             该规则已删除
                           </span>
                           <div
-                            class="css-1avyf41"
+                            class="css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -772,7 +772,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                             该规则已删除
                           </span>
                           <div
-                            class="css-1avyf41"
+                            class="css-9paak3"
                           >
                             <span
                               class="icon-wrapper"
@@ -805,7 +805,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                             该规则已删除
                           </span>
                           <div
-                            class="css-1avyf41"
+                            class="css-9paak3"
                           >
                             <span
                               class="icon-wrapper"

@@ -2636,7 +2636,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                               >
                                 <div>
                                   <div
-                                    class=" css-1avyf41"
+                                    class=" css-9paak3"
                                   >
                                     <span
                                       class="icon-wrapper"
@@ -3777,7 +3777,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               >
                                 <div>
                                   <div
-                                    class=" css-1avyf41"
+                                    class=" css-9paak3"
                                   >
                                     <span
                                       class="icon-wrapper"

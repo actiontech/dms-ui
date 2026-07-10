@@ -21,6 +21,7 @@ import {
 import instance from '../../../../testUtils/mockApi/instance';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseAuditPlanTypes } from '../../../../testUtils/mockRequest';
+import { resetRuleTipsCacheForTests } from '../../../../hooks/useRuleTips';
 import {
   GetSqlManageListV2FilterPriorityEnum,
   exportSqlManageV1FilterPriorityEnum,
@@ -58,6 +59,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   const mockDispatch = jest.fn();
 
   beforeEach(() => {
+    resetRuleTipsCacheForTests();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseProjectBusinessTips();
@@ -282,12 +284,9 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     await user.click(screen.getByText('导出报表'));
     await user.click(await screen.findByText('导出所有项目SQL整改报表'));
-    expect(exportRequest).toHaveBeenCalledWith(
-      {},
-      {
-        responseType: 'blob'
-      }
-    );
+    expect(exportRequest).toHaveBeenCalledWith({
+      responseType: 'blob'
+    });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('SQL 管控整改报表导出成功')).toBeInTheDocument();
   });
@@ -461,7 +460,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       type: 'sqlManagementException/updateModalStatus'
     });
     expect(mockDispatch).toHaveBeenNthCalledWith(5, {
-      payload: { selectRow: { content: undefined } },
+      payload: { selectRow: null },
       type: 'sqlManagementException/updateSelectSqlManagementException'
     });
   });
