@@ -1,5 +1,6 @@
 import reducers, { updateSelectWhitelist } from '.';
 import { IReduxState } from '..';
+import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('store/user', () => {
   test('should create action', () => {
@@ -8,8 +9,12 @@ describe('store/user', () => {
         selectRow: {
           audit_whitelist_id: 2,
           desc: 'desc',
-          match_type: 'aaaaa',
-          value: 'select a from b'
+          match_conditions: [
+            {
+              type: MatchConditionReqV1TypeEnum.sql,
+              content: 'select a from b'
+            }
+          ]
         }
       })
     ).toEqual({
@@ -17,8 +22,12 @@ describe('store/user', () => {
         selectRow: {
           audit_whitelist_id: 2,
           desc: 'desc',
-          match_type: 'aaaaa',
-          value: 'select a from b'
+          match_conditions: [
+            {
+              type: MatchConditionReqV1TypeEnum.sql,
+              content: 'select a from b'
+            }
+          ]
         }
       },
       type: 'whitelist/updateSelectWhitelist'
@@ -37,8 +46,12 @@ describe('store/user', () => {
         selectRow: {
           audit_whitelist_id: 2,
           desc: 'desc',
-          match_type: 'aaaaa',
-          value: 'select a from b'
+          match_conditions: [
+            {
+              type: MatchConditionReqV1TypeEnum.sql,
+              content: 'select a from b'
+            }
+          ]
         }
       })
     );
@@ -47,8 +60,12 @@ describe('store/user', () => {
       selectWhitelist: {
         audit_whitelist_id: 2,
         desc: 'desc',
-        match_type: 'aaaaa',
-        value: 'select a from b'
+        match_conditions: [
+          {
+            type: MatchConditionReqV1TypeEnum.sql,
+            content: 'select a from b'
+          }
+        ]
       },
       modalStatus: {}
     });

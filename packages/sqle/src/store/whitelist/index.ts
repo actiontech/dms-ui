@@ -6,11 +6,15 @@ import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 type WhitelistReduxState = {
   modalStatus: ModalStatus;
   selectWhitelist: IAuditWhitelistResV1 | null;
+  detailDrawerOpen: boolean;
+  detailDrawerWhitelistId?: number;
 };
 
 const initialState: WhitelistReduxState = {
   selectWhitelist: null,
-  modalStatus: {}
+  modalStatus: {},
+  detailDrawerOpen: false,
+  detailDrawerWhitelistId: undefined
 };
 
 const whitelist = createSlice({
@@ -25,12 +29,22 @@ const whitelist = createSlice({
     ) {
       state.selectWhitelist = selectRow;
     },
+    openWhitelistDetailDrawer(state, { payload }: PayloadAction<number>) {
+      state.detailDrawerOpen = true;
+      state.detailDrawerWhitelistId = payload;
+    },
+    closeWhitelistDetailDrawer(state) {
+      state.detailDrawerOpen = false;
+      state.detailDrawerWhitelistId = undefined;
+    },
     ...commonModalReducer()
   }
 });
 
 export const {
   updateSelectWhitelist,
+  openWhitelistDetailDrawer,
+  closeWhitelistDetailDrawer,
   initModalStatus: initWhitelistModalStatus,
   updateModalStatus: updateWhitelistModalStatus
 } = whitelist.actions;

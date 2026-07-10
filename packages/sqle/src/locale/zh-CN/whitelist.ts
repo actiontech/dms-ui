@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: '审核SQL例外',
+  pageTitleTips:
+    '审核SQL例外匹配到的SQL的审核结果将依据生效范围跳过部分或所有规则的审核',
   pageDesc:
     '您可以在这里添加一些SQL语句，这些SQL语句在进行审核的时候不会触发任何审核规则。',
 

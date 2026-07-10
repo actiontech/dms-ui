@@ -1,36 +1,56 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { WhitelistColumn, WhitelistTableFilterParamType } from './columns';
+import { WhitelistColumn, AuditWhitelistTableRow } from './columns';
 import { ModalName } from '../../../data/ModalName';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { updateWhitelistModalStatus } from '../../../store/whitelist';
+import {
+  openWhitelistDetailDrawer,
+  updateWhitelistModalStatus
+} from '../../../store/whitelist';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicToolTips,
+  EmptyBox,
+  PageHeader
+} from '@actiontech/shared';
 import WhitelistDrawer from '../Drawer';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
-import audit_whitelist from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
+import AuditWhitelistService from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
 import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams,
   TableToolbar,
-  TableFilterContainer,
-  useTableFilterContainer,
-  FilterCustomProps,
-  ActiontechTableActionMeta
+  TableFilterButton,
+  SearchInput
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { PlusOutlined } from '@actiontech/icons';
-import { whitelistMatchTypeOptions } from '../index.data';
 import useWhitelistRedux from '../hooks/useWhitelistRedux';
+import { useBoolean } from 'ahooks';
+import AuditWhitelistListFilter from './ListFilter';
+import {
+  AuditWhitelistListFilterValues,
+  buildAuditWhitelistListParams
+} from './buildAuditWhitelistListParams';
+import { AUDIT_WHITELIST_DETAIL_QUERY_KEY } from '../index.data';
+import { Space } from 'antd';
+import { ActiontechTableActionMeta } from '@actiontech/shared/lib/components/ActiontechTable';
+
+const EMPTY_FILTER_VALUES: AuditWhitelistListFilterValues = {};
 
 const WhitelistList = () => {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
   const [messageApi, messageContextHolder] = message.useMessage();
+  const [listFilters, setListFilters] =
+    useState<AuditWhitelistListFilterValues>(EMPTY_FILTER_VALUES);
+
   const { projectName } = useCurrentProject();
 
   const {
@@ -41,17 +61,17 @@ const WhitelistList = () => {
   } = useWhitelistRedux();
 
   const {
-    tableFilterInfo,
-    updateTableFilterInfo,
     tableChange,
     pagination,
     searchKeyword,
     setSearchKeyword,
     refreshBySearchKeyword
-  } = useTableRequestParams<
-    IAuditWhitelistResV1,
-    WhitelistTableFilterParamType
-  >();
+  } = useTableRequestParams<AuditWhitelistTableRow, Record<string, never>>();
+
+  const [
+    filterExpanded,
+    { setTrue: expandFilters, setFalse: collapseFilters }
+  ] = useBoolean(false);
 
   const columns = useMemo(() => WhitelistColumn(), []);
 
@@ -64,26 +84,36 @@ const WhitelistList = () => {
     refresh
   } = useRequest(
     () => {
-      const params: IGetAuditWhitelistV1Params = {
-        ...tableFilterInfo,
-        page_index: String(pagination.page_index),
-        page_size: String(pagination.page_size),
-        project_name: projectName,
-        fuzzy_search_value: searchKeyword
-      };
+      const params = buildAuditWhitelistListParams({
+        projectName,
+        pageIndex: pagination.page_index,
+        pageSize: pagination.page_size,
+        globalSearchKeyword: searchKeyword,
+        filters: listFilters
+      });
 
       return handleTableRequestError(
-        audit_whitelist.getAuditWhitelistV1(params)
+        AuditWhitelistService.getAuditWhitelistV1(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo]
+      refreshDeps: [pagination, searchKeyword, listFilters, projectName]
     }
   );
 
+  const openDetailDrawer = useCallback(
+    (whitelistId?: number) => {
+      if (!whitelistId) {
+        return;
+      }
+      dispatch(openWhitelistDetailDrawer(whitelistId));
+    },
+    [dispatch]
+  );
+
   const openUpdateWhitelistModal = useCallback(
-    (selectRow: IAuditWhitelistResV1) => {
-      updateSelectWhitelistRecord(selectRow);
+    (selectRow?: IAuditWhitelistResV1) => {
+      updateSelectWhitelistRecord(selectRow ?? {});
       dispatch(
         updateWhitelistModalStatus({
           modalName: ModalName.Update_Whitelist,
@@ -94,14 +124,20 @@ const WhitelistList = () => {
     [dispatch, updateSelectWhitelistRecord]
   );
 
+  const onView = useCallback(
+    (selectRow?: IAuditWhitelistResV1) => {
+      openDetailDrawer(selectRow?.audit_whitelist_id);
+    },
+    [openDetailDrawer]
+  );
+
   const removeWhitelist = useCallback(
     (whitelistId: number) => {
       const hide = messageApi.loading(t('whitelist.operate.deleting'));
-      audit_whitelist
-        .deleteAuditWhitelistByIdV1({
-          audit_whitelist_id: `${whitelistId}`,
-          project_name: projectName
-        })
+      AuditWhitelistService.deleteAuditWhitelistByIdV1({
+        audit_whitelist_id: `${whitelistId}`,
+        project_name: projectName
+      })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success(t('whitelist.operate.deleteSuccess'));
@@ -117,35 +153,68 @@ const WhitelistList = () => {
 
   const whitelistActionsInTable: {
     buttons: ActiontechTableActionMeta<IAuditWhitelistResV1>[];
-  } = {
-    buttons: [
-      {
-        key: 'edit-whitelist',
-        text: t('common.edit'),
-        buttonProps: (record) => ({
-          onClick: openUpdateWhitelistModal.bind(null, record ?? {})
-        })
-      },
-      {
-        key: 'remove-whitelist',
-        text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
-        confirm: (record) => ({
-          title: t('whitelist.operate.confirmDelete'),
-          onConfirm: removeWhitelist.bind(null, record?.audit_whitelist_id ?? 0)
-        })
+  } = useMemo(
+    () => ({
+      buttons: [
+        {
+          key: 'view-whitelist',
+          text: t('ruleException.skippedSection.viewDetail'),
+          buttonProps: (record) => ({
+            onClick: () => onView(record)
+          })
+        },
+        ...(actionPermission
+          ? [
+              {
+                key: 'edit-whitelist',
+                text: t('common.edit'),
+                buttonProps: (record?: IAuditWhitelistResV1) => ({
+                  onClick: () => openUpdateWhitelistModal(record)
+                })
+              },
+              {
+                key: 'remove-whitelist',
+                text: t('common.delete'),
+                buttonProps: () => ({ danger: true }),
+                confirm: (record?: IAuditWhitelistResV1) => ({
+                  title: t('whitelist.operate.confirmDelete'),
+                  onConfirm: () =>
+                    removeWhitelist(record?.audit_whitelist_id ?? 0)
+                })
+              }
+            ]
+          : [])
+      ]
+    }),
+    [actionPermission, onView, openUpdateWhitelistModal, removeWhitelist, t]
+  );
+
+  const updateAllSelectedFilterItem = useCallback(
+    (checked: boolean) => {
+      if (checked) {
+        expandFilters();
+        return;
       }
-    ]
-  };
+      collapseFilters();
+      setListFilters(EMPTY_FILTER_VALUES);
+    },
+    [collapseFilters, expandFilters]
+  );
 
-  const filterCustomProps = useMemo(() => {
-    return new Map<keyof IAuditWhitelistResV1, FilterCustomProps>([
-      ['match_type', { options: whitelistMatchTypeOptions }]
-    ]);
-  }, []);
-
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo);
+  const filterButtonMeta = useMemo(
+    () =>
+      new Map([
+        [
+          'filter',
+          {
+            checked: filterExpanded,
+            filterLabel: '',
+            filterCustomType: 'select' as const
+          }
+        ]
+      ]),
+    [filterExpanded]
+  );
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -155,11 +224,22 @@ const WhitelistList = () => {
     return unsubscribe;
   }, [refresh]);
 
+  useEffect(() => {
+    const whitelistId = searchParams.get(AUDIT_WHITELIST_DETAIL_QUERY_KEY);
+    if (whitelistId) {
+      openDetailDrawer(Number(whitelistId));
+    }
+  }, [openDetailDrawer, searchParams]);
+
   return (
     <>
       {messageContextHolder}
       <PageHeader
-        title={t('whitelist.pageTitle')}
+        title={
+          <BasicToolTips title={t('whitelist.pageTitleTips')} suffixIcon>
+            {t('whitelist.pageTitle')}
+          </BasicToolTips>
+        }
         extra={[
           <EmptyBox if={actionPermission} key="add-whitelist">
             <BasicButton
@@ -176,26 +256,34 @@ const WhitelistList = () => {
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
+        filterButton={false}
+        searchInput={false}
         loading={loading}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
+      >
+        <Space size={12} align="center" wrap>
+          <SearchInput
+            onChange={setSearchKeyword}
+            onSearch={() => {
+              refreshBySearchKeyword();
+            }}
+          />
+          <TableFilterButton
+            filterButtonMeta={filterButtonMeta}
+            updateAllSelectedFilterItem={updateAllSelectedFilterItem}
+            disabled={loading}
+          />
+          {filterExpanded ? (
+            <AuditWhitelistListFilter
+              projectName={projectName}
+              filters={listFilters}
+              onFiltersChange={setListFilters}
+              disabled={loading}
+            />
+          ) : null}
+        </Space>
+      </TableToolbar>
       <ActiontechTable
-        dataSource={whitelistList?.list}
+        dataSource={whitelistList?.list as AuditWhitelistTableRow[] | undefined}
         rowKey={(record: IAuditWhitelistResV1) => {
           return `${record?.audit_whitelist_id}`;
         }}
@@ -204,7 +292,7 @@ const WhitelistList = () => {
         }}
         loading={loading}
         columns={columns}
-        actions={actionPermission ? whitelistActionsInTable : undefined}
+        actions={whitelistActionsInTable}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         scroll={{}}

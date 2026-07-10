@@ -1,10 +1,11 @@
 import { cleanup, act } from '@testing-library/react';
 import WhitelistDrawer from '../index';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 
 jest.mock('react-redux', () => {
   return {
@@ -14,18 +15,39 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('../../../../hooks/useInstance', () => ({
+  __esModule: true,
+  default: () => ({
+    updateInstanceList: jest.fn(),
+    instanceIDOptions: [],
+    loading: false
+  })
+}));
+
+jest.mock('../../../../components/RuleExceptionMatchConditions/hooks/useAuditTaskSelectOptions', () => ({
+  __esModule: true,
+  default: () => ({
+    auditTaskTypeOptions: [],
+    getAuditTaskIdOptions: () => [],
+    auditTaskTypeLoading: false,
+    auditTaskIdLoading: false
+  })
+}));
+
 describe('slqe/Whitelist/Drawer', () => {
   const dispatchSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        database: { driverMeta: [] }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUseDbServiceDriver();
   });
 
   afterEach(() => {
@@ -34,7 +56,7 @@ describe('slqe/Whitelist/Drawer', () => {
   });
 
   test('should dispatch init modal status action', async () => {
-    renderWithReduxAndTheme(<WhitelistDrawer />);
+    superRender(<WhitelistDrawer />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/initModalStatus',
