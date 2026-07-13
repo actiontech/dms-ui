@@ -238,6 +238,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 246px;"
                     />
@@ -281,6 +282,12 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         scope="col"
                       >
                         匹配次数
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        最近一次匹配时间
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -410,6 +417,11 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         class="ant-table-cell"
                       >
                         1
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2024-08-22 11:04:29
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -581,6 +593,11 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         10
                       </td>
                       <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
+                      <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
@@ -750,6 +767,11 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         0
                       </td>
                       <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
+                      <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
@@ -916,6 +938,11 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                       <td
                         class="ant-table-cell"
                       />
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"

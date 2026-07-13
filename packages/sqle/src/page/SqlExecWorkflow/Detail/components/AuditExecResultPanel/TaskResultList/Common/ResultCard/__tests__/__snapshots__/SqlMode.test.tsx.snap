@@ -250,7 +250,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -258,7 +258,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
+                      class="ant-tree-switcher ant-tree-switcher_open"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -277,7 +277,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                       title=""
                     >
                       <span
@@ -288,6 +288,37 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         >
                           审核结果
                         </span>
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    >
+                      <span
+                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher-noop"
+                    >
+                      <span
+                        class="ant-tree-switcher-leaf-line"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                      title="-"
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        -
                       </span>
                     </span>
                   </div>
@@ -666,7 +697,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -674,7 +705,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
+                      class="ant-tree-switcher ant-tree-switcher_open"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -693,7 +724,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                       title=""
                     >
                       <span
@@ -704,6 +735,37 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         >
                           审核结果
                         </span>
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    >
+                      <span
+                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher-noop"
+                    >
+                      <span
+                        class="ant-tree-switcher-leaf-line"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                      title="-"
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        -
                       </span>
                     </span>
                   </div>
@@ -1082,7 +1144,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -1090,7 +1152,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
+                      class="ant-tree-switcher ant-tree-switcher_open"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -1109,7 +1171,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                       title=""
                     >
                       <span
@@ -1120,6 +1182,37 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         >
                           审核结果
                         </span>
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    >
+                      <span
+                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher-noop"
+                    >
+                      <span
+                        class="ant-tree-switcher-leaf-line"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                      title="-"
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        -
                       </span>
                     </span>
                   </div>
@@ -1489,7 +1582,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -1497,7 +1590,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
+                      class="ant-tree-switcher ant-tree-switcher_open"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -1516,7 +1609,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                       title=""
                     >
                       <span
@@ -1527,6 +1620,37 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                         >
                           审核结果
                         </span>
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    >
+                      <span
+                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher-noop"
+                    >
+                      <span
+                        class="ant-tree-switcher-leaf-line"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                      title="-"
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        -
                       </span>
                     </span>
                   </div>
@@ -1896,7 +2020,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -1904,7 +2028,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
+                      class="ant-tree-switcher ant-tree-switcher_open"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -1923,7 +2047,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                       title=""
                     >
                       <span
@@ -1934,6 +2058,37 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                         >
                           审核结果
                         </span>
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    >
+                      <span
+                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher-noop"
+                    >
+                      <span
+                        class="ant-tree-switcher-leaf-line"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                      title="-"
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        -
                       </span>
                     </span>
                   </div>
@@ -2312,7 +2467,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -2320,7 +2475,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
+                      class="ant-tree-switcher ant-tree-switcher_close"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -2339,7 +2494,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
                       title=""
                     >
                       <span
@@ -2350,58 +2505,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                         >
                           审核结果
                         </span>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher-noop"
-                    >
-                      <span
-                        class="ant-tree-switcher-leaf-line"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          aria-busy="true"
-                          aria-live="polite"
-                          class="ant-spin ant-spin-sm ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-                        >
-                          <span
-                            class="ant-spin-dot ant-spin-dot-spin"
-                          >
-                            <i
-                              class="ant-spin-dot-item"
-                            />
-                            <i
-                              class="ant-spin-dot-item"
-                            />
-                            <i
-                              class="ant-spin-dot-item"
-                            />
-                            <i
-                              class="ant-spin-dot-item"
-                            />
-                          </span>
-                        </div>
                       </span>
                     </span>
                   </div>
@@ -2798,7 +2901,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -2806,7 +2909,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
+                      class="ant-tree-switcher ant-tree-switcher_close"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -2825,7 +2928,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
                       title=""
                     >
                       <span
@@ -2836,37 +2939,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                         >
                           审核结果
                         </span>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher-noop"
-                    >
-                      <span
-                        class="ant-tree-switcher-leaf-line"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
-                      title="-"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        -
                       </span>
                     </span>
                   </div>
@@ -3263,7 +3335,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -3271,7 +3343,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
+                      class="ant-tree-switcher ant-tree-switcher_open"
                     >
                       <span
                         class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
@@ -3290,7 +3362,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                       </span>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
                       title=""
                     >
                       <span
@@ -3301,6 +3373,37 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                         >
                           审核结果
                         </span>
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    >
+                      <span
+                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher-noop"
+                    >
+                      <span
+                        class="ant-tree-switcher-leaf-line"
+                      />
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                      title="-"
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        -
                       </span>
                     </span>
                   </div>

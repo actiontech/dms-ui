@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
 import sqlDEVRecord from '../../../testUtils/mockApi/sqlDEVRecord';
 import { ModalName } from '../../../data/ModalName';
+import user from '../../../testUtils/mockApi/user';
+import instance from '../../../testUtils/mockApi/instance';
 
 jest.mock('react-redux', () => {
   return {
@@ -35,6 +37,8 @@ describe('sqle/PluginAudit', () => {
       });
     });
     getSqlDEVRecordListSpy = sqlDEVRecord.getSqlDEVRecordList();
+    user.getUserTipList();
+    instance.getInstanceTipList();
     jest.useFakeTimers();
   });
 

@@ -327,6 +327,14 @@ exports[`sqle/components/ReportDrawer render snap when has data 1`] = `
                                   class="annotation-wrapper"
                                 >
                                   annotation
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    href="/sqle/rule/knowledge/rule a/mysql"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    查看更多
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -523,6 +531,14 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                                   class="annotation-wrapper"
                                 >
                                   annotation
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    href="/sqle/rule/knowledge/rule a/mysql"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    查看更多
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -548,6 +564,14 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                                   class="annotation-wrapper"
                                 >
                                   annotation
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    href="/sqle/rule/knowledge/rule b/mysql"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    查看更多
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -809,6 +833,14 @@ exports[`sqle/components/ReportDrawer render snap when has extra 1`] = `
                                   class="annotation-wrapper"
                                 >
                                   annotation
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    href="/sqle/rule/knowledge/rule a/mysql"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    查看更多
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -999,6 +1031,14 @@ exports[`sqle/components/ReportDrawer render snap when loading is true 1`] = `
                                   class="annotation-wrapper"
                                 >
                                   annotation
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    href="/sqle/rule/knowledge/rule a/mysql"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    查看更多
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -1253,6 +1293,14 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                                   class="annotation-wrapper"
                                 >
                                   annotation
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    href="/sqle/rule/knowledge/rule a/mysql"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    查看更多
+                                  </a>
                                 </div>
                               </div>
                             </div>

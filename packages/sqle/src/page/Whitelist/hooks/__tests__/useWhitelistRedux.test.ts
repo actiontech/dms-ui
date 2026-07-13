@@ -18,6 +18,16 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('../../../../hooks/useInstance', () => ({
+  __esModule: true,
+  default: () => ({
+    updateInstanceList: jest.fn(),
+    instanceList: [],
+    instanceIDOptions: [],
+    loading: false
+  })
+}));
+
 describe('sqle/Whitelist/hooks/useWhitelistRedux', () => {
   let useCurrentUserSpy: jest.SpyInstance;
   let useCurrentProjectSpy: jest.SpyInstance;

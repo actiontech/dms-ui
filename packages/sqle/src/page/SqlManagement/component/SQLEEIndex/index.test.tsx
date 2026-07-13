@@ -467,6 +467,33 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('render create whitelist', async () => {
     const request = sqlManage.getSqlManageList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            id: 247,
+            sql_fingerprint:
+              'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
+            sql: 'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
+            source: {
+              sql_source_type: 'mysql_slow_log',
+              sql_source_desc: '慢日志',
+              sql_source_ids: ['123']
+            },
+            instance_name: 'mysql-1',
+            schema_name: 'dms',
+            audit_result: [
+              {
+                level: 'error',
+                message: '建议UNIQUE索引名使用 IDX_UK_表名_字段名',
+                rule_name: 'ddl_check_unique_index'
+              }
+            ],
+            status: 'unhandled'
+          }
+        ]
+      })
+    );
     superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -476,12 +503,52 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(mockDispatch).toHaveBeenCalledTimes(5);
     expect(mockDispatch).toHaveBeenNthCalledWith(4, {
-      payload: { modalName: ModalName.Add_Whitelist, status: true },
-      type: 'whitelist/updateModalStatus'
+      payload: {
+        selectRow: {
+          match_conditions: [
+            {
+              type: 'fp_sql',
+              content:
+                'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci'
+            },
+            {
+              type: 'instance',
+              content: '1739531854064652288'
+            },
+            {
+              type: 'audit_task_type',
+              content: 'mysql_slow_log'
+            },
+            {
+              type: 'audit_task_id',
+              content: '123'
+            },
+            {
+              type: 'sql_source',
+              content: 'audit_plan'
+            },
+            {
+              type: 'db_type',
+              content: 'MySQL'
+            }
+          ],
+          rule_scope_mode: 'specific',
+          rule_scope: [],
+          rule_scope_display: [
+            {
+              rule_name: 'ddl_check_unique_index',
+              level: 'error',
+              db_type: 'MySQL',
+              rule_desc: '建议UNIQUE索引名使用 IDX_UK_表名_字段名'
+            }
+          ]
+        }
+      },
+      type: 'whitelist/updateSelectWhitelist'
     });
     expect(mockDispatch).toHaveBeenNthCalledWith(5, {
-      payload: { selectRow: { value: undefined } },
-      type: 'whitelist/updateSelectWhitelist'
+      payload: { modalName: ModalName.Add_Whitelist, status: true },
+      type: 'whitelist/updateModalStatus'
     });
   });
 

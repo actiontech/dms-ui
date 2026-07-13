@@ -28,8 +28,10 @@ describe('page/SqlManagement/StatusDrawer', () => {
 
   beforeEach(() => {
     mockUseCurrentUser();
+    mockUseCurrentProject();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     rule_template.mockAllApi();
+    sqlManage.mockAllApi();
     jest.useFakeTimers();
   });
 

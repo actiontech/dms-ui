@@ -4,6 +4,9 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IRuleTips } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { notifyRuleTipsListeners, ruleTipsStore } from './ruleTipsCache';
+
+export { resetRuleTipsCacheForTests } from './ruleTipsCache';
 
 export const DB_TYPE_RULE_NAME_SEPARATOR = '_DB_TYPE_RULE_NAME_SEPARATOR_';
 
@@ -26,35 +29,14 @@ export const extractDbTypeFromRuleSelectValue = (
   return dbType || undefined;
 };
 
-type RuleTipsStore = {
-  data: Map<string, IRuleTips[]>;
-  inflight: Map<string, Promise<IRuleTips[]>>;
-  listeners: Set<() => void>;
-};
-
-const ruleTipsStore: RuleTipsStore = {
-  data: new Map(),
-  inflight: new Map(),
-  listeners: new Set()
-};
-
-const notifyRuleTipsListeners = () => {
-  ruleTipsStore.listeners.forEach((listener) => listener());
-};
-
-export const resetRuleTipsCacheForTests = () => {
-  ruleTipsStore.data.clear();
-  ruleTipsStore.inflight.clear();
-};
-
 const fetchRuleTips = (projectName: string): Promise<IRuleTips[]> => {
   if (ruleTipsStore.data.has(projectName)) {
-    return Promise.resolve(ruleTipsStore.data.get(projectName)!);
+    return Promise.resolve(ruleTipsStore.data.get(projectName)! as IRuleTips[]);
   }
 
   const inflightRequest = ruleTipsStore.inflight.get(projectName);
   if (inflightRequest) {
-    return inflightRequest;
+    return inflightRequest as Promise<IRuleTips[]>;
   }
 
   const request = SqlManage.GetSqlManageRuleTips({
@@ -100,9 +82,11 @@ const useRuleTips = () => {
     void fetchRuleTips(projectName);
   }, []);
 
-  const ruleTips = subscribedProjectName
-    ? ruleTipsStore.data.get(subscribedProjectName) ?? []
-    : [];
+  const ruleTips = (
+    subscribedProjectName
+      ? ruleTipsStore.data.get(subscribedProjectName) ?? []
+      : []
+  ) as IRuleTips[];
   const loading = subscribedProjectName
     ? ruleTipsStore.inflight.has(subscribedProjectName)
     : false;

@@ -3,10 +3,11 @@
  */
 
 import { cleanup, screen } from '@testing-library/react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { superRender } from '../../../../testUtils/customRender';
 import dms from '../../../../testUtils/mockApi/global';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import DataSourceList from '.';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
@@ -14,15 +15,13 @@ import dbServices from '../../../../testUtils/mockApi/dbServices';
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn(),
-    useParams: jest.fn()
+    useNavigate: jest.fn()
   };
 });
 
 describe('page/DataSource/DataSourceList', () => {
   const projectID = mockProjectInfo.projectID;
   const navigateSpy = jest.fn();
-  const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   const customRender = (params = {}) => {
     return superRender(<DataSourceList />, undefined, {
@@ -59,7 +58,7 @@ describe('page/DataSource/DataSourceList', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
-    useParamsMock.mockReturnValue({ projectID });
+    mockUseCurrentProject();
     dms.mockAllApi();
     dbServices.ListDBServicesTips();
   });

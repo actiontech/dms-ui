@@ -19,6 +19,7 @@ import { ModalName } from 'sqle/src/data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 
 jest.mock('react-redux', () => {
   return {
@@ -41,12 +42,14 @@ describe('test DataExport/Common/AuditResultList', () => {
     getTaskSQLsSpy = dataExport.ListDataExportTaskSQLs();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        database: { driverMeta: [] }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUseDbServiceDriver();
   });
   afterEach(() => {
     jest.useRealTimers();

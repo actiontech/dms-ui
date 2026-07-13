@@ -21,18 +21,19 @@ const useAuditResultRuleInfo = (
     () => collectAuditResultRuleNames(auditResult, skippedByRuleException),
     [auditResult, skippedByRuleException]
   );
+  const filterRuleNamesKey = filterRuleNames.join(',');
 
   const { data: ruleInfo, loading } = useRequest(
     () =>
       rule_template
         .getRuleListV1({
-          filter_rule_names: filterRuleNames.join(','),
+          filter_rule_names: filterRuleNamesKey,
           filter_db_type: dbType
         })
         .then((res) => res.data.data),
     {
-      ready: !!filterRuleNames.length,
-      refreshDeps: [filterRuleNames, dbType]
+      ready: !!filterRuleNamesKey,
+      refreshDeps: [filterRuleNamesKey, dbType]
     }
   );
 
