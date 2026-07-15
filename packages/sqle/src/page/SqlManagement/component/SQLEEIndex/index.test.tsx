@@ -185,21 +185,21 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     });
   });
 
-  // it('filter data with sort', async () => {
-  //   const request = sqlManage.getSqlManageList();
-  //   const { baseElement } = superRender(<SQLEEIndex />);
-  //   expect(request).toHaveBeenCalled();
-  //   expect(baseElement).toMatchSnapshot();
+  it('filter data with sort', async () => {
+    const request = sqlManage.getSqlManageList();
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    expect(baseElement).toMatchSnapshot();
 
-  //   const sortButtons = getAllBySelector('.ant-table-column-sorter');
-  //   expect(sortButtons.length).toBe(3);
-  //   fireEvent.click(sortButtons[sortButtons.length - 1]);
-  //   expect(request).toHaveBeenCalledWith({
-  //     ...requestParams,
-  //     sort_field: 'fp_count',
-  //     sort_order: 'desc'
-  //   });
-  // });
+    const sortButtons = getAllBySelector('.ant-table-column-sorter');
+    expect(sortButtons.length).toBe(3);
+    fireEvent.click(sortButtons[0]);
+    expect(request).toHaveBeenCalledWith({
+      ...requestParams,
+      sort_field: 'fp_count',
+      sort_order: 'desc'
+    });
+  });
 
   it('filter data with search', async () => {
     const request = sqlManage.getSqlManageList();
