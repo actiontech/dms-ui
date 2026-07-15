@@ -23,6 +23,7 @@ import { Avatar } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -347,31 +348,31 @@ const SqlManagementColumn: (
         return '-';
       }
     },
-    // {
-    //   dataIndex: 'first_appear_timestamp',
-    //   title: () => t('sqlManagement.table.column.firstOccurrence'),
-    //   render: (value) => {
-    //     return formatTime(value, '-');
-    //   },
-    //   sorter: true,
-    //   sortDirections: ['descend', 'ascend']
-    // },
-    // {
-    //   dataIndex: 'last_receive_timestamp',
-    //   title: () => t('sqlManagement.table.column.lastOccurrence'),
-    //   render: (value) => {
-    //     return formatTime(value, '-');
-    //   },
-    //   sorter: true,
-    //   sortDirections: ['descend', 'ascend']
-    // },
-    // {
-    //   dataIndex: 'fp_count',
-    //   align: 'right',
-    //   title: () => t('sqlManagement.table.column.occurrenceCount'),
-    //   sorter: true,
-    //   sortDirections: ['descend', 'ascend']
-    // },
+    {
+      dataIndex: 'fp_count',
+      align: 'right',
+      title: () => t('sqlManagement.table.column.occurrenceCount'),
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
+    },
+    {
+      dataIndex: 'first_appear_timestamp',
+      title: () => t('sqlManagement.table.column.firstOccurrence'),
+      render: (value) => {
+        return formatTime(value, '-');
+      },
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
+    },
+    {
+      dataIndex: 'last_receive_timestamp',
+      title: () => t('sqlManagement.table.column.lastOccurrence'),
+      render: (value) => {
+        return formatTime(value, '-');
+      },
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
+    },
     {
       dataIndex: 'assignees',
       title: () => t('sqlManagement.table.column.personInCharge'),
