@@ -28,7 +28,8 @@ import { SQLAuditRecordListUrlParamsKey } from './index.data';
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
->;
+> &
+  Record<string, string | [string, string] | undefined>;
 
 export type ExtraFilterMetaType = ISqlManage & {
   filter_business?: string;
@@ -38,6 +39,10 @@ export type ExtraFilterMetaType = ISqlManage & {
   filter_rule_name?: string;
   time?: string;
 };
+
+/** 静态 + source_extra 动态筛选项 meta 的 record 类型 */
+export type SqlManagementFilterMetaRecordType = ExtraFilterMetaType &
+  Record<string, unknown>;
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   ExtraFilterMetaType,

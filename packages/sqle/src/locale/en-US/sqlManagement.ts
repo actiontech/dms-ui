@@ -73,7 +73,8 @@ export default {
       status: 'Status',
       remediationStatus: 'Remediation status',
       comment: 'Comment',
-      endpoints: 'Endpoint info'
+      endpoints: 'Endpoint info',
+      sourceExtraTips: 'shown only when a source filter is applied'
     },
     remediationStatus: {
       resolved: 'Resolved',

@@ -5,7 +5,6 @@ import { BasicButton, PageHeader } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   ActiontechTable,
-  useTableFilterContainer,
   useTableRequestError,
   TableFilterContainer,
   TableToolbar,
@@ -26,20 +25,21 @@ import StatusFilter, { TypeStatus } from './StatusFilter';
 import {
   GetSqlManageListV2FilterPriorityEnum,
   GetSqlManageListV2FilterStatusEnum,
-  GetSqlManageListV2SortFieldEnum,
   GetSqlManageListV2SortOrderEnum,
   exportSqlManageV1FilterPriorityEnum,
   exportSqlManageV1FilterStatusEnum,
   exportSqlManageRemediationV1ExportScopeEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
-  ExtraFilterMeta,
   SqlManagementRowAction,
   type SqlManagementTableFilterParamType
 } from './column';
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
-import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  ISourceExtra,
+  ISqlManage
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import { Spin, message, Dropdown } from 'antd';
 import type { MenuProps } from 'antd';
 import SqlManagementModal from './Modal';
@@ -49,12 +49,14 @@ import { DB_TYPE_RULE_NAME_SEPARATOR } from '../../../../hooks/useRuleTips';
 import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
 import { actionsButtonData, defaultActionButton } from './index.data';
-import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
 import { toSqlManageRuleExceptionRecord } from '../../../RuleException/index.data';
 import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SqlManagementListStyleWrapper } from './style';
+import { pickStaticSqlManageFilters } from './sourceExtra.utils';
+import useSqlManageSourceExtra from './hooks/useSqlManageSourceExtra';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -96,74 +98,7 @@ const SQLEEIndex = () => {
     optimizedSQLNum: 0
   });
 
-  const getCurrentSortParams = (
-    sortData: SorterResult<ISqlManage> | SorterResult<ISqlManage>[]
-  ): Pick<IGetSqlManageListV2Params, 'sort_field' | 'sort_order'> => {
-    if (Array.isArray(sortData)) {
-      return {};
-    }
-    const orderDesc = {
-      descend: GetSqlManageListV2SortOrderEnum.desc,
-      ascend: GetSqlManageListV2SortOrderEnum.asc
-    };
-
-    return {
-      sort_field:
-        (sortData.field as unknown as GetSqlManageListV2SortFieldEnum) ??
-        undefined,
-      sort_order: sortData?.order
-        ? orderDesc[sortData?.order] ?? undefined
-        : undefined
-    };
-  };
-
-  const {
-    data: sqlList,
-    loading: getListLoading,
-    refresh,
-    error: getListError
-  } = useRequest(
-    () => {
-      const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
-      const params: IGetSqlManageListV2Params = {
-        ...otherTableFilterInfo,
-        ...pagination,
-        ...getCurrentSortParams(sortInfo),
-        filter_db_type: filter_rule_name?.split(
-          DB_TYPE_RULE_NAME_SEPARATOR
-        )?.[0],
-        filter_rule_name: filter_rule_name?.split(
-          DB_TYPE_RULE_NAME_SEPARATOR
-        )?.[1],
-        filter_status: filterStatus === 'all' ? undefined : filterStatus,
-        fuzzy_search_sql_fingerprint: searchKeyword,
-        project_name: projectName,
-        filter_assignee: isAssigneeSelf ? uid : undefined, // filter_assignee 需要用 id
-        filter_priority: isHighPriority
-          ? GetSqlManageListV2FilterPriorityEnum.high
-          : undefined
-      };
-      return handleTableRequestError(SqlManage.GetSqlManageListV2(params));
-    },
-    {
-      refreshDeps: [
-        pagination,
-        projectName,
-        filterStatus,
-        isAssigneeSelf,
-        isHighPriority,
-        tableFilterInfo,
-        sortInfo
-      ],
-      onFinally: (params, data) => {
-        setSQLNum({
-          SQLTotalNum: data?.otherData?.sql_manage_total_num ?? 0,
-          problemSQlNum: data?.otherData?.sql_manage_bad_num ?? 0,
-          optimizedSQLNum: data?.otherData?.sql_manage_optimized_num ?? 0
-        });
-      }
-    }
-  );
+  const filterSource = tableFilterInfo.filter_source;
 
   const openModal = useCallback((name: ModalName, row?: ISqlManage) => {
     if (row) {
@@ -213,32 +148,139 @@ const SQLEEIndex = () => {
     [openAuditWhitelistCreateWithPrefill]
   );
 
-  const actions = useMemo(() => {
-    return SqlManagementRowAction(
-      openModal,
-      jumpToAnalyze,
-      isAdmin || isProjectManager(projectName),
-      onCreateSqlManagementException,
-      onCreateWhitelist
-    );
-  }, [
-    isAdmin,
-    isProjectManager,
-    jumpToAnalyze,
-    openModal,
-    projectName,
-    onCreateSqlManagementException,
-    onCreateWhitelist
-  ]);
-
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
 
-  const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
-  const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
-
   const updateRemarkProtect = useRef(false);
+  const updateRemarkRef = useRef<(id: number, remark: string) => void>(
+    () => undefined
+  );
+
+  const baseColumns = useMemo(
+    () =>
+      SqlManagementColumn(
+        projectID,
+        actionPermission && !projectArchive,
+        (id, remark) => updateRemarkRef.current(id, remark),
+        openModal
+      ),
+    [projectID, actionPermission, projectArchive, openModal]
+  );
+
+  const {
+    columns,
+    filterButtonMeta,
+    filterContainerMeta,
+    filterCustomProps,
+    updateAllSelectedFilterItem,
+    handleSourceExtraFromResponse,
+    buildExtraFiltersForRequest,
+    resolveListSortField,
+    joinListData
+  } = useSqlManageSourceExtra({
+    baseColumns,
+    tableFilterInfo,
+    updateTableFilterInfo,
+    filterSource
+  });
+
+  const getCurrentSortParams = (
+    sortData: SorterResult<ISqlManage> | SorterResult<ISqlManage>[]
+  ): Pick<IGetSqlManageListV2Params, 'sort_field' | 'sort_order'> => {
+    if (Array.isArray(sortData)) {
+      return {};
+    }
+    const orderDesc = {
+      descend: GetSqlManageListV2SortOrderEnum.desc,
+      ascend: GetSqlManageListV2SortOrderEnum.asc
+    };
+    const rawSortField =
+      typeof sortData.field === 'string' ? sortData.field : undefined;
+    const sortField = resolveListSortField(rawSortField);
+
+    return {
+      sort_field: sortField,
+      sort_order: sortField
+        ? sortData?.order
+          ? orderDesc[sortData?.order] ?? undefined
+          : undefined
+        : undefined
+    };
+  };
+
+  const buildListRequestParams = useCallback((): IGetSqlManageListV2Params => {
+    const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
+    const staticFilters = pickStaticSqlManageFilters(
+      otherTableFilterInfo as Record<string, unknown>
+    );
+
+    return {
+      ...(staticFilters as Partial<IGetSqlManageListV2Params>),
+      ...pagination,
+      ...getCurrentSortParams(sortInfo),
+      filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
+      filter_rule_name: filter_rule_name?.split(
+        DB_TYPE_RULE_NAME_SEPARATOR
+      )?.[1],
+      filter_status: filterStatus === 'all' ? undefined : filterStatus,
+      fuzzy_search_sql_fingerprint: searchKeyword,
+      project_name: projectName,
+      filter_assignee: isAssigneeSelf ? uid : undefined,
+      filter_priority: isHighPriority
+        ? GetSqlManageListV2FilterPriorityEnum.high
+        : undefined,
+      extra_filters: buildExtraFiltersForRequest(tableFilterInfo)
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    tableFilterInfo,
+    buildExtraFiltersForRequest,
+    pagination,
+    sortInfo,
+    filterStatus,
+    searchKeyword,
+    projectName,
+    isAssigneeSelf,
+    uid,
+    isHighPriority,
+    resolveListSortField
+  ]);
+
+  const {
+    data: sqlList,
+    loading: getListLoading,
+    refresh,
+    error: getListError
+  } = useRequest(
+    () => {
+      return handleTableRequestError(
+        SqlManage.GetSqlManageListV2(buildListRequestParams())
+      );
+    },
+    {
+      refreshDeps: [
+        pagination,
+        projectName,
+        filterStatus,
+        isAssigneeSelf,
+        isHighPriority,
+        tableFilterInfo,
+        sortInfo
+      ],
+      onFinally: (_params, data) => {
+        setSQLNum({
+          SQLTotalNum: data?.otherData?.sql_manage_total_num ?? 0,
+          problemSQlNum: data?.otherData?.sql_manage_bad_num ?? 0,
+          optimizedSQLNum: data?.otherData?.sql_manage_optimized_num ?? 0
+        });
+        handleSourceExtraFromResponse(
+          data?.otherData?.source_extra as ISourceExtra | undefined
+        );
+      }
+    }
+  );
+
   const updateRemark = useCallback(
     (id: number, remark: string) => {
       if (
@@ -264,17 +306,28 @@ const SQLEEIndex = () => {
     },
     [actionPermission, projectName, refresh, projectArchive]
   );
+  updateRemarkRef.current = updateRemark;
 
-  const columns = useMemo(
-    () =>
-      SqlManagementColumn(
-        projectID,
-        actionPermission && !projectArchive,
-        updateRemark,
-        openModal
-      ),
-    [projectID, actionPermission, projectArchive, updateRemark, openModal]
-  );
+  const actions = useMemo(() => {
+    return SqlManagementRowAction(
+      openModal,
+      jumpToAnalyze,
+      isAdmin || isProjectManager(projectName),
+      onCreateSqlManagementException,
+      onCreateWhitelist
+    );
+  }, [
+    isAdmin,
+    isProjectManager,
+    jumpToAnalyze,
+    openModal,
+    projectName,
+    onCreateSqlManagementException,
+    onCreateWhitelist
+  ]);
+
+  const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
+  const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
@@ -283,10 +336,11 @@ const SQLEEIndex = () => {
     }),
     [username]
   );
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
 
-  const { filterCustomProps } = useGetTableFilterInfo();
+  const dataSource = useMemo(
+    () => joinListData(sqlList?.list),
+    [joinListData, sqlList?.list]
+  );
 
   const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,
@@ -320,24 +374,18 @@ const SQLEEIndex = () => {
     const hideLoading = messageApi.loading(
       t('sqlManagement.pageHeader.action.exporting')
     );
-    const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
-
+    const listParams = buildListRequestParams();
     const params = {
-      ...otherTableFilterInfo,
+      ...listParams,
       filter_status:
         filterStatus === 'all'
           ? undefined
           : (filterStatus as unknown as exportSqlManageV1FilterStatusEnum),
-      fuzzy_search_sql_fingerprint: searchKeyword,
-      project_name: projectName,
-      filter_assignee: isAssigneeSelf ? uid : undefined,
       filter_priority: isHighPriority
         ? exportSqlManageV1FilterPriorityEnum.high
         : undefined,
-      filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
-      filter_rule_name: filter_rule_name?.split(
-        DB_TYPE_RULE_NAME_SEPARATOR
-      )?.[1]
+      page_index: undefined,
+      page_size: undefined
     } as IExportSqlManageV1Params;
     SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
@@ -473,88 +521,87 @@ const SQLEEIndex = () => {
   };
 
   return (
-    <Spin spinning={getListLoading} delay={300}>
-      {messageContextHolder}
-      <PageHeader
-        title={t('sqlManagement.pageTitle')}
-        extra={
-          exportMenuItems.length <= 1 ? (
-            <BasicButton
-              icon={<DownArrowLineOutlined />}
-              disabled={exportButtonDisabled}
-              onClick={handleExport}
-            >
-              {t('sqlManagement.pageHeader.action.exportReport')}
-            </BasicButton>
-          ) : (
-            <Dropdown
-              menu={{
-                items: exportMenuItems,
-                onClick: onExportMenuClick
-              }}
-              disabled={exportButtonDisabled}
-            >
+    <SqlManagementListStyleWrapper>
+      <Spin spinning={getListLoading} delay={300}>
+        {messageContextHolder}
+        <PageHeader
+          title={t('sqlManagement.pageTitle')}
+          extra={
+            exportMenuItems.length <= 1 ? (
               <BasicButton
                 icon={<DownArrowLineOutlined />}
                 disabled={exportButtonDisabled}
+                onClick={handleExport}
               >
                 {t('sqlManagement.pageHeader.action.exportReport')}
               </BasicButton>
-            </Dropdown>
-          )
-        }
-      />
-      {/* page */}
-      {/* page - total */}
-      <SQLStatistics
-        data={SQLNum}
-        errorMessage={getListError}
-        loading={getListLoading}
-      />
-      {/* table  */}
-      <TableToolbar
-        refreshButton={{ refresh, disabled: getListLoading }}
-        setting={tableSetting}
-        actions={getTableActions()}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
+            ) : (
+              <Dropdown
+                menu={{
+                  items: exportMenuItems,
+                  onClick: onExportMenuClick
+                }}
+                disabled={exportButtonDisabled}
+              >
+                <BasicButton
+                  icon={<DownArrowLineOutlined />}
+                  disabled={exportButtonDisabled}
+                >
+                  {t('sqlManagement.pageHeader.action.exportReport')}
+                </BasicButton>
+              </Dropdown>
+            )
           }
-        }}
-      >
-        <StatusFilter status={filterStatus} onChange={setFilterStatus} />
-      </TableToolbar>
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={getListLoading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        className="table-row-cursor"
-        setting={tableSetting}
-        dataSource={sqlList?.list}
-        rowKey={(record: ISqlManage) => {
-          return `${record?.id}`;
-        }}
-        rowSelection={rowSelection as TableRowSelection<ISqlManage>}
-        pagination={{
-          total: SQLNum.SQLTotalNum,
-          current: pagination.page_index
-        }}
-        columns={columns}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        actions={projectArchive ? undefined : actions}
-      />
-      {/* modal & drawer */}
-      <SqlManagementModal />
-    </Spin>
+        />
+        <SQLStatistics
+          data={SQLNum}
+          errorMessage={getListError}
+          loading={getListLoading}
+        />
+        <TableToolbar
+          refreshButton={{ refresh, disabled: getListLoading }}
+          setting={tableSetting}
+          actions={getTableActions()}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
+        >
+          <StatusFilter status={filterStatus} onChange={setFilterStatus} />
+        </TableToolbar>
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={getListLoading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
+          className="table-row-cursor"
+          disableRowHover
+          setting={tableSetting}
+          dataSource={dataSource}
+          rowKey={(record: ISqlManage) => {
+            return `${record?.id}`;
+          }}
+          rowSelection={rowSelection as TableRowSelection<ISqlManage>}
+          pagination={{
+            total: SQLNum.SQLTotalNum,
+            current: pagination.page_index
+          }}
+          columns={columns}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          actions={projectArchive ? undefined : actions}
+        />
+        <SqlManagementModal />
+      </Spin>
+    </SqlManagementListStyleWrapper>
   );
 };
 

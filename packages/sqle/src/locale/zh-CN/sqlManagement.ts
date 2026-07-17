@@ -76,7 +76,8 @@ export default {
       status: '状态',
       remediationStatus: '整改状态',
       comment: '备注',
-      endpoints: '端点信息'
+      endpoints: '端点信息',
+      sourceExtraTips: '仅在筛选来源时展示'
     },
     remediationStatus: {
       resolved: '已整改',
