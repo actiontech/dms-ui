@@ -737,7 +737,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

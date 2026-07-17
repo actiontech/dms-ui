@@ -291,7 +291,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-1p8avck css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -933,7 +933,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-1p8avck css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1551,7 +1551,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-1p8avck css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2217,7 +2217,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-1p8avck css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

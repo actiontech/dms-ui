@@ -713,7 +713,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
             >
               <div
                 class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1584,7 +1584,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
             >
               <div
                 class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2450,7 +2450,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
             >
               <div
                 class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -3591,7 +3591,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
             >
               <div
                 class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

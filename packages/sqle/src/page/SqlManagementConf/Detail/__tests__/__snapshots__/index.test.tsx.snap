@@ -223,7 +223,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1p8avck css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -603,7 +603,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1p8avck css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
