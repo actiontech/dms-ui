@@ -13,9 +13,6 @@ export const SqlManagementExceptionMatchTypeDirection: {
   [BlacklistResV1TypeEnum.host]: t('sqlManagementException.matchType.host'),
   [BlacklistResV1TypeEnum.instance]: t(
     'sqlManagementException.matchType.instance'
-  ),
-  [BlacklistResV1TypeEnum.db_user]: t(
-    'sqlManagementException.matchType.databaseUser'
   )
 };
 

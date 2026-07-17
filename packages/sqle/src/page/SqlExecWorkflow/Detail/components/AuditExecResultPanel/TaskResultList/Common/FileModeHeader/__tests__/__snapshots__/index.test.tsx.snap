@@ -187,7 +187,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
                     style="max-height: 600px; overflow: auto;"
                   >
                     <div
-                      class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                      class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
                     >
                       <div
                         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

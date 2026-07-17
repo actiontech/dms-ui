@@ -70,6 +70,18 @@ export const ActiontechTableStyleWrapper = styled(Table)`
       }
     }
 
+    /* sticky 操作列使用不透明背景，避免横向滚动时左侧单元格内容透出 */
+    .ant-table-thead
+      > tr
+      > th.${ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS},
+      .ant-table-tbody
+      > tr
+      > td.${ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS} {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorBgBase} !important;
+      z-index: 2;
+    }
+
     .ant-checkbox-wrapper {
       .ant-checkbox {
         .ant-checkbox-inner {
@@ -180,5 +192,14 @@ export const ActiontechTableStyleWrapper = styled(Table)`
 
   &.ant-table-wrapper.actiontech-table-namespace.clear-padding-bottom {
     padding-bottom: 0;
+  }
+
+  /* opt-in：取消整行 hover 底色变化（含 sticky 操作列），避免 sticky 列透出 */
+  &.ant-table-wrapper.actiontech-table-namespace.disable-row-hover {
+    .ant-table-tbody > tr.ant-table-row:hover > td,
+    .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorBgBase} !important;
+    }
   }
 `;

@@ -459,7 +459,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1114,7 +1114,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2570,7 +2570,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

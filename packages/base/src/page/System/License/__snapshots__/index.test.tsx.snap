@@ -82,7 +82,7 @@ exports[`base/System/License click collect btn when request return blob data 1`]
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -289,7 +289,7 @@ exports[`base/System/License click collect btn when request return blob data 2`]
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -496,7 +496,7 @@ exports[`base/System/License click collect btn when request return error message
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -671,7 +671,7 @@ exports[`base/System/License render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -870,7 +870,7 @@ exports[`base/System/License render snap 2`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1045,7 +1045,7 @@ exports[`base/System/License render snap when click import btn 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1220,7 +1220,7 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

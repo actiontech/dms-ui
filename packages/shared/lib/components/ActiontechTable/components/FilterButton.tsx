@@ -2,6 +2,7 @@ import { TableFilterButtonProps } from '../index.type';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import BasicButton from '../../BasicButton';
+import BasicToolTips from '../../BasicToolTips';
 import { DownOutlined, UpOutlined } from '@actiontech/icons';
 import { ColumnsSettingStyleWrapper } from './style';
 
@@ -18,27 +19,35 @@ const FilterButton = <T extends Record<string, any>>({
   );
 
   return (
-    <BasicButton
-      disabled={disabled}
-      size="small"
-      className="actiontech-filter-button-namespace"
-      onClick={() => updateAllSelectedFilterItem(!hasSelectedFilter)}
-      style={{
-        padding: '0 6px 0 10px'
-      }}
+    <BasicToolTips
+      title={
+        hasSelectedFilter
+          ? t('common.actiontechTable.filterButton.clearFilterTips')
+          : undefined
+      }
     >
-      <ColumnsSettingStyleWrapper size={2} align="center">
-        {hasSelectedFilter
-          ? t('common.actiontechTable.filterButton.clearFilter')
-          : t('common.actiontechTable.filterButton.filter')}
+      <BasicButton
+        disabled={disabled}
+        size="small"
+        className="actiontech-filter-button-namespace"
+        onClick={() => updateAllSelectedFilterItem(!hasSelectedFilter)}
+        style={{
+          padding: '0 6px 0 10px'
+        }}
+      >
+        <ColumnsSettingStyleWrapper size={2} align="center">
+          {hasSelectedFilter
+            ? t('common.actiontechTable.filterButton.clearFilter')
+            : t('common.actiontechTable.filterButton.filter')}
 
-        {hasSelectedFilter ? (
-          <UpOutlined color="currrentColor" width={14} height={14} />
-        ) : (
-          <DownOutlined color="currrentColor" width={14} height={14} />
-        )}
-      </ColumnsSettingStyleWrapper>
-    </BasicButton>
+          {hasSelectedFilter ? (
+            <UpOutlined color="currrentColor" width={14} height={14} />
+          ) : (
+            <DownOutlined color="currrentColor" width={14} height={14} />
+          )}
+        </ColumnsSettingStyleWrapper>
+      </BasicButton>
+    </BasicToolTips>
   );
 };
 

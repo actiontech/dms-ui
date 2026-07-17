@@ -42,7 +42,7 @@ exports[`lib/ActiontechTable-ColumnsItems render column item left | right 1`] = 
           </span>
           <span>
             <div
-              style="width: 90px;"
+              style="width: 150px;"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -196,7 +196,7 @@ exports[`lib/ActiontechTable-ColumnsItems render column item left | right 2`] = 
           </span>
           <span>
             <div
-              style="width: 90px;"
+              style="width: 150px;"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -345,7 +345,7 @@ exports[`lib/ActiontechTable-ColumnsItems render column item left | right 2`] = 
           </span>
           <span>
             <div
-              style="width: 90px;"
+              style="width: 150px;"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -499,7 +499,7 @@ exports[`lib/ActiontechTable-ColumnsItems render column item no-fixed 1`] = `
           </span>
           <span>
             <div
-              style="width: 90px;"
+              style="width: 150px;"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -653,7 +653,7 @@ exports[`lib/ActiontechTable-ColumnsItems render type left fn click call back 1`
           </span>
           <span>
             <div
-              style="width: 90px;"
+              style="width: 150px;"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -807,7 +807,7 @@ exports[`lib/ActiontechTable-ColumnsItems render type no-fixed fn click call bac
           </span>
           <span>
             <div
-              style="width: 90px;"
+              style="width: 150px;"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -961,7 +961,7 @@ exports[`lib/ActiontechTable-ColumnsItems render type right fn click call back 1
           </span>
           <span>
             <div
-              style="width: 90px;"
+              style="width: 150px;"
             >
               <div
                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"

@@ -3,7 +3,7 @@
 exports[`test OverviewList matches the snapshot and displays loading state 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1p8avck css-dev-only-do-not-override-bj9uhl"
   >
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -494,7 +494,7 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
 exports[`test OverviewList matches the snapshot and shows error message in the overview table 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1p8avck css-dev-only-do-not-override-bj9uhl"
   >
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -724,7 +724,7 @@ exports[`test OverviewList matches the snapshot and shows error message in the o
 exports[`test OverviewList matches the snapshot for the default task result setup 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1p8avck css-dev-only-do-not-override-bj9uhl"
   >
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

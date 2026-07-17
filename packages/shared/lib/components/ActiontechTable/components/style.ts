@@ -30,7 +30,7 @@ export const SearchInputStyleWrapper = styled(BasicInput)`
 `;
 
 export const ColumnsSettingDropdownStyleWrapper = styled('div')`
-  width: 220px;
+  width: 280px;
   background-color: ${({ theme }) =>
     theme.sharedTheme.components.columnsSetting.dropdown.backgroundColor};
   border-radius: 8px;
@@ -91,6 +91,23 @@ export const ColumnsSettingDropdownStyleWrapper = styled('div')`
       .custom-icon-draggable {
         color: ${({ theme }) =>
           theme.sharedTheme.components.columnsSetting.dropdown.item.iconColor};
+      }
+
+      .actiontech-table-setting-extra-mark {
+        position: relative;
+        display: inline-block;
+        padding-right: 0.55em;
+        max-width: 100%;
+
+        &::after {
+          content: '*';
+          position: absolute;
+          top: 0.2em;
+          right: 0;
+          font-size: 12px;
+          line-height: 1;
+          color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+        }
       }
 
       &-label {

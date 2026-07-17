@@ -72,14 +72,6 @@ export enum exportSqlManageV1FilterStatusEnum {
   manual_audited = 'manual_audited'
 }
 
-export enum exportSqlManageV1SortFieldEnum {
-  first_appear_timestamp = 'first_appear_timestamp',
-
-  last_receive_timestamp = 'last_receive_timestamp',
-
-  fp_count = 'fp_count'
-}
-
 export enum exportSqlManageV1SortOrderEnum {
   asc = 'asc',
 
@@ -124,14 +116,6 @@ export enum GetSqlManageListV2FilterPriorityEnum {
   high = 'high',
 
   low = 'low'
-}
-
-export enum GetSqlManageListV2SortFieldEnum {
-  first_appear_timestamp = 'first_appear_timestamp',
-
-  last_receive_timestamp = 'last_receive_timestamp',
-
-  fp_count = 'fp_count'
 }
 
 export enum GetSqlManageListV2SortOrderEnum {

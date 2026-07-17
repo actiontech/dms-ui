@@ -7,7 +7,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 1`] =
       class="css-1r1dawj"
     >
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -323,7 +323,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
       class="css-1r1dawj"
     >
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1p8avck css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

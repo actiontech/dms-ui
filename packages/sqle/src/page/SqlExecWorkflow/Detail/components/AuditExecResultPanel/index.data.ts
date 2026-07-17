@@ -3,7 +3,7 @@ import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { t } from 'i18next';
+import { t } from '../../../../../locale';
 import { GetAuditTaskSQLsPrams } from './index.type';
 
 export const AuditTaskExtraFilterMeta: () => ActiontechTableFilterMeta<

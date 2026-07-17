@@ -11,7 +11,5 @@ export enum getBlacklistV1FilterTypeEnum {
 
   host = 'host',
 
-  instance = 'instance',
-
-  db_user = 'db_user'
+  instance = 'instance'
 }

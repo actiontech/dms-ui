@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -457,7 +457,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -910,7 +910,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when data is empty
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1062,7 +1062,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when get table err
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

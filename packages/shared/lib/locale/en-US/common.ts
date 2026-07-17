@@ -224,7 +224,8 @@ export default {
     },
     filterButton: {
       filter: 'Filter',
-      clearFilter: 'Close filter'
+      clearFilter: 'Close filter',
+      clearFilterTips: 'Click to collapse and clear filters'
     },
     setting: {
       buttonText: 'Table settings',

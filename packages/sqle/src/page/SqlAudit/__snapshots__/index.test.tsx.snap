@@ -284,7 +284,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-1p8avck css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -329,14 +329,80 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                 <table
                   style="min-width: 100%; table-layout: auto;"
                 >
-                  <colgroup />
+                  <colgroup>
+                    <col
+                      style="width: 200px;"
+                    />
+                    <col
+                      style="width: 200px;"
+                    />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 100px;"
+                    />
+                    <col
+                      style="width: 160px;"
+                    />
+                    <col />
+                    <col
+                      style="width: 200px;"
+                    />
+                  </colgroup>
                   <thead
                     class="ant-table-thead"
                   >
                     <tr>
-                      <td
+                      <th
                         class="ant-table-cell"
-                      />
+                        scope="col"
+                      >
+                        审核ID
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        数据源
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        审核状态
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        业务标签
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                        style="text-align: right;"
+                      >
+                        审核评分
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                        style="text-align: right;"
+                      >
+                        审核通过率（%）
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        创建人
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        审核时间
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -356,12 +422,76 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
+                        colspan="8"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"
