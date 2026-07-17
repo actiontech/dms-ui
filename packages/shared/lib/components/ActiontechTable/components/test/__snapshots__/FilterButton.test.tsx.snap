@@ -3,39 +3,47 @@
 exports[`lib/ActiontechTable-FilterButton render click filter btn 1`] = `
 <body>
   <div>
-    <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-      style="padding: 0px 6px 0px 10px;"
-      type="button"
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+        class="ant-space-item"
       >
-        <div
-          class="ant-space-item"
-          style="margin-right: 2px;"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+          style="padding: 0px 6px 0px 10px;"
+          type="button"
         >
-          收起筛选
-        </div>
-        <div
-          class="ant-space-item"
-        >
-          <svg
-            color="currrentColor"
-            fill="none"
-            height="14"
-            viewBox="0 0 16 16"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
           >
-            <path
-              d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
+            <div
+              class="ant-space-item"
+              style="margin-right: 2px;"
+            >
+              收起筛选
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <svg
+                color="currrentColor"
+                fill="none"
+                height="14"
+                viewBox="0 0 16 16"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
       </div>
-    </button>
+    </div>
   </div>
 </body>
 `;
@@ -43,39 +51,47 @@ exports[`lib/ActiontechTable-FilterButton render click filter btn 1`] = `
 exports[`lib/ActiontechTable-FilterButton render click filter btn 2`] = `
 <body>
   <div>
-    <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-      style="padding: 0px 6px 0px 10px;"
-      type="button"
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+        class="ant-space-item"
       >
-        <div
-          class="ant-space-item"
-          style="margin-right: 2px;"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+          style="padding: 0px 6px 0px 10px;"
+          type="button"
         >
-          收起筛选
-        </div>
-        <div
-          class="ant-space-item"
-        >
-          <svg
-            color="currrentColor"
-            fill="none"
-            height="14"
-            viewBox="0 0 16 16"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
           >
-            <path
-              d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
+            <div
+              class="ant-space-item"
+              style="margin-right: 2px;"
+            >
+              收起筛选
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <svg
+                color="currrentColor"
+                fill="none"
+                height="14"
+                viewBox="0 0 16 16"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
       </div>
-    </button>
+    </div>
   </div>
 </body>
 `;

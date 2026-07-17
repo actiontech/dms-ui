@@ -64,12 +64,18 @@ const ColumnsItems = <T extends Record<string, any>>({
       <DragOutlined />
       <div className="columns-setting-item">
         <Checkbox checked={data?.show} onChange={onShowChange}>
-          <div style={{ width: '90px' }}>
+          <div style={{ width: '150px' }}>
             <Typography.Paragraph
               ellipsis={{ tooltip: getColumnsLabel(data.title) }}
               className="columns-setting-item-label margin-bottom-0"
             >
-              {getColumnsLabel(data.title)}
+              {data.settingMarked ? (
+                <span className="actiontech-table-setting-extra-mark">
+                  {getColumnsLabel(data.title)}
+                </span>
+              ) : (
+                getColumnsLabel(data.title)
+              )}
             </Typography.Paragraph>
           </div>
         </Checkbox>

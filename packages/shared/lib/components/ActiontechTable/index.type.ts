@@ -148,9 +148,9 @@ export type ActiontechTableFilterMetaValue<
   filterKey?: keyof F | Array<keyof F>;
 
   /**
-   * 筛选项的 label
+   * 筛选项的 label（支持自定义节点，如动态筛选项标记）
    */
-  filterLabel?: string;
+  filterLabel?: ReactNode;
 };
 
 /**
@@ -225,6 +225,11 @@ export type CatchTableColumnValueType<
      * 表头名, 通 columns 中的 title, 如果 columns 中的 title 为 ReactNode, 会使用 utils 中的 getColumnsLabel 来获取中文
      */
     title: string;
+
+    /**
+     * 列设置中是否展示扩展标记（如蓝色 *），与表头扩展列标识对齐
+     */
+    settingMarked?: boolean;
   };
 };
 
@@ -338,6 +343,10 @@ export type ActiontechTableColumn<
     {
       [K in keyof Required<T>]: {
         show?: boolean;
+        /**
+         * 列设置面板中是否展示扩展标记（如蓝色 *）
+         */
+        settingMarked?: boolean;
         dataIndex: ExcludeSymbol<K | OtherColumnKeys>;
         render?: (
           value: K | OtherColumnKeys extends keyof T ? T[K] : never,
@@ -395,4 +404,9 @@ export interface ActiontechTableProps<
    * 控制表格的分页器是否固定于页面底部，默认为true，固定在页面底部，注意：只有在表格有pagination时，设置isPaginationFixed才有意义
    */
   isPaginationFixed?: boolean;
+
+  /**
+   * 禁用表格行 hover 时的背景色变化（sticky 操作列场景下避免左侧内容透出）
+   */
+  disableRowHover?: boolean;
 }

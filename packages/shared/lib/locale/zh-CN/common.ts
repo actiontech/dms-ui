@@ -215,7 +215,8 @@ export default {
     },
     filterButton: {
       filter: '筛选',
-      clearFilter: '收起筛选'
+      clearFilter: '收起筛选',
+      clearFilterTips: '点击收起并清空筛选'
     },
     setting: {
       buttonText: '表格设置',

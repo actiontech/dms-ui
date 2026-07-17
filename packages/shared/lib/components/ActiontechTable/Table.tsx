@@ -22,6 +22,7 @@ const ActiontechTable = <
   filterContainerProps,
   columns = [],
   isPaginationFixed = true,
+  disableRowHover = false,
   ...props
 }: ActiontechTableProps<T, F, OtherColumnKeys>) => {
   const { t } = useTranslation();
@@ -47,11 +48,14 @@ const ActiontechTable = <
       return mergerColumns;
     }
     return mergerColumns
-      .filter((v) => localColumns?.[v.dataIndex]?.show)
-      .map((v) => ({
+      .filter((v) => localColumns?.[v.dataIndex]?.show ?? true)
+      .map((v, index) => ({
         ...v,
-        fixed: localColumns?.[v.dataIndex]?.fixed,
-        order: localColumns?.[v.dataIndex]?.order
+        fixed: localColumns?.[v.dataIndex]
+          ? localColumns[v.dataIndex].fixed
+          : v.fixed,
+        // 尚未写入 localStorage 的动态列沿用 mergerColumns 下标，避免 order 为 0 被排到最前
+        order: localColumns?.[v.dataIndex]?.order ?? index + 1
       }))
       .sort((prev, current) => prev.order - current.order);
   }, [localColumns, mergerColumns, props.setting]);
@@ -73,7 +77,9 @@ const ActiontechTable = <
 
       <ConfigProvider theme={tableToken}>
         <ActiontechTableStyleWrapper
-          className={classnames('actiontech-table-namespace', className)}
+          className={classnames('actiontech-table-namespace', className, {
+            'disable-row-hover': disableRowHover
+          })}
           locale={{
             emptyText: errorMessage ? (
               <Result

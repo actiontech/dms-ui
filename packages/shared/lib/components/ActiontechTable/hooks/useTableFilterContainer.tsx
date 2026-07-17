@@ -48,10 +48,14 @@ export const mergeFilterButtonMeta = <
 
   // #if [DEV]
   if (
-    Array.from(map).some(
-      ([_, value]) =>
-        value.filterLabel === '' && value.filterCustomType !== 'search-input'
-    )
+    Array.from(map).some(([_, value]) => {
+      const label = value.filterLabel;
+      const isEmptyLabel =
+        label == null ||
+        label === '' ||
+        (typeof label === 'string' && label.trim() === '');
+      return isEmptyLabel && value.filterCustomType !== 'search-input';
+    })
   ) {
     throw new Error('Filter label cannot be empty');
   }

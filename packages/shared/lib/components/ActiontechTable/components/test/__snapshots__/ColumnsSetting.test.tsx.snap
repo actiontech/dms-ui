@@ -71,7 +71,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon popover ui snap when cli
             class="ant-popover-inner-content"
           >
             <div
-              class="css-45kc3h"
+              class="css-1n68o69"
             >
               <div
                 class="actiontech-table-setting-fixed-left"
@@ -120,7 +120,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon popover ui snap when cli
                       </span>
                       <span>
                         <div
-                          style="width: 90px;"
+                          style="width: 150px;"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -276,7 +276,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon popover ui snap when cli
                       </span>
                       <span>
                         <div
-                          style="width: 90px;"
+                          style="width: 150px;"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -432,7 +432,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon popover ui snap when cli
                       </span>
                       <span>
                         <div
-                          style="width: 90px;"
+                          style="width: 150px;"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -694,7 +694,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render icon setting snap when in dif
             class="ant-popover-inner-content"
           >
             <div
-              class="css-45kc3h"
+              class="css-1n68o69"
             >
               <div
                 class="actiontech-table-setting-fixed-left"
