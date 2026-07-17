@@ -8,14 +8,12 @@ import {
   exportSqlManageV1FilterSourceEnum,
   exportSqlManageV1FilterAuditLevelEnum,
   exportSqlManageV1FilterStatusEnum,
-  exportSqlManageV1SortFieldEnum,
   exportSqlManageV1SortOrderEnum,
   exportSqlManageRemediationV1ExportScopeEnum,
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterAuditLevelEnum,
   GetSqlManageListV2FilterStatusEnum,
   GetSqlManageListV2FilterPriorityEnum,
-  GetSqlManageListV2SortFieldEnum,
   GetSqlManageListV2SortOrderEnum
 } from './index.enum';
 
@@ -103,9 +101,11 @@ export interface IExportSqlManageV1Params {
 
   fuzzy_search_schema_name?: string;
 
-  sort_field?: exportSqlManageV1SortFieldEnum;
+  sort_field?: string;
 
   sort_order?: exportSqlManageV1SortOrderEnum;
+
+  extra_filters?: string;
 }
 
 export interface IExportSqlManageRemediationV1Params {
@@ -176,9 +176,11 @@ export interface IGetSqlManageListV2Params {
 
   fuzzy_search_schema_name?: string;
 
-  sort_field?: GetSqlManageListV2SortFieldEnum;
+  sort_field?: string;
 
   sort_order?: GetSqlManageListV2SortOrderEnum;
+
+  extra_filters?: string;
 
   page_index: number;
 

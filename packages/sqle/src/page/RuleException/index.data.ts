@@ -228,8 +228,7 @@ export const BASE_MATCH_TYPE_VALUES = [
   CreateBlacklistReqV1TypeEnum.ip,
   CreateBlacklistReqV1TypeEnum.cidr,
   CreateBlacklistReqV1TypeEnum.host,
-  CreateBlacklistReqV1TypeEnum.instance,
-  CreateBlacklistReqV1TypeEnum.db_user
+  CreateBlacklistReqV1TypeEnum.instance
 ] as const;
 
 export const EXTENDED_MATCH_CONDITION_TYPES = [

@@ -438,8 +438,6 @@ export interface IBlacklistResV1 {
 
   content?: string;
 
-  created_at?: string;
-
   desc?: string;
 
   last_match_time?: string;
@@ -553,24 +551,12 @@ export interface ICreateAuditWhitelistResV1 {
   message?: string;
 }
 
-export interface ICreateBlacklistDataV1 {
-  blacklist_id?: number;
-}
-
 export interface ICreateBlacklistReqV1 {
   content?: string;
 
   desc?: string;
 
   type?: CreateBlacklistReqV1TypeEnum;
-}
-
-export interface ICreateBlacklistResV1 {
-  code?: number;
-
-  data?: ICreateBlacklistDataV1;
-
-  message?: string;
 }
 
 export interface ICreateCustomRuleReqV1 {
@@ -993,14 +979,6 @@ export interface IGetAuditWhitelistResV1 {
   message?: string;
 
   total_nums?: number;
-}
-
-export interface IGetBlacklistDetailResV1 {
-  code?: number;
-
-  data?: IBlacklistResV1;
-
-  message?: string;
 }
 
 export interface IGetBlacklistResV1 {
@@ -1459,6 +1437,8 @@ export interface IGetSqlManageListResp {
   data?: ISqlManage[];
 
   message?: string;
+
+  source_extra?: ISourceExtra;
 
   sql_manage_bad_num?: number;
 
@@ -3525,6 +3505,38 @@ export interface IRuleTemplateV2 {
   is_global_rule_template?: boolean;
 
   name?: string;
+}
+
+export interface ISourceExtra {
+  enabled?: boolean;
+
+  filter_meta_list?: IFilterMeta[];
+
+  head?: ISourceExtraHead[];
+
+  rows?: ISourceExtraRow[];
+
+  source?: string;
+
+  source_desc?: string;
+}
+
+export interface ISourceExtraHead {
+  desc?: string;
+
+  name?: string;
+
+  sortable?: boolean;
+
+  type?: string;
+}
+
+export interface ISourceExtraRow {
+  id?: number;
+
+  values?: {
+    [key: string]: string;
+  };
 }
 
 export interface ITaskAnalysisDataV2 {

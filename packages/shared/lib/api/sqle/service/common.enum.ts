@@ -119,9 +119,7 @@ export enum BlacklistResV1TypeEnum {
 
   host = 'host',
 
-  instance = 'instance',
-
-  db_user = 'db_user'
+  instance = 'instance'
 }
 
 export enum CreateAuditTaskReqV1ExecModeEnum {
@@ -147,9 +145,7 @@ export enum CreateBlacklistReqV1TypeEnum {
 
   host = 'host',
 
-  instance = 'instance',
-
-  db_user = 'db_user'
+  instance = 'instance'
 }
 
 export enum CreateCustomRuleReqV1LevelEnum {
@@ -365,9 +361,7 @@ export enum UpdateBlacklistReqV1TypeEnum {
 
   host = 'host',
 
-  instance = 'instance',
-
-  db_user = 'db_user'
+  instance = 'instance'
 }
 
 export enum UpdateCustomRuleReqV1LevelEnum {
