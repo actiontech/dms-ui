@@ -24,6 +24,8 @@ import {
   GetSqlManageListV2FilterPriorityEnum,
   exportSqlManageV1FilterPriorityEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import LocalStorageWrapper from '@actiontech/shared/lib/utils/LocalStorageWrapper';
+import { SQL_MANAGEMENT_TABLE_NAME } from './exportColumnKeys';
 
 jest.mock('react-redux', () => {
   return {
@@ -83,6 +85,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     jest.clearAllMocks();
     jest.restoreAllMocks();
     jest.clearAllTimers();
+    localStorage.clear();
     cleanup();
   });
 
@@ -236,7 +239,9 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       {
         ...exportParams,
         filter_assignee: mockCurrentUserReturn.uid,
-        filter_priority: exportSqlManageV1FilterPriorityEnum.high
+        filter_priority: exportSqlManageV1FilterPriorityEnum.high,
+        export_column_keys:
+          'sql_fingerprint,sql,source,audit_result,instance_name,schema_name,priority,assignees,endpoints,status,remark'
       },
       {
         responseType: 'blob'
@@ -244,6 +249,93 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('导出文件成功')).toBeInTheDocument();
+  });
+
+  it('export data with current visible column settings order', async () => {
+    const request = sqlManage.getSqlManageList();
+    const exportRequest = sqlManage.exportSqlManage();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+
+    LocalStorageWrapper.set(
+      SQL_MANAGEMENT_TABLE_NAME,
+      JSON.stringify({
+        [mockCurrentUserReturn.username]: {
+          sql_fingerprint: { order: 2, show: true },
+          sql: { order: 1, show: true },
+          source: { order: 3, show: false },
+          audit_result: { order: 4, show: true },
+          instance_name: { order: 5, show: true },
+          schema_name: { order: 6, show: true },
+          priority: { order: 7, show: true },
+          assignees: { order: 8, show: false },
+          endpoints: { order: 9, show: true },
+          status: { order: 10, show: true },
+          remark: { order: 11, show: false },
+          selection: { order: 12, show: true }
+        }
+      })
+    );
+
+    const searchText = 'fingerprint keyword';
+    const inputEle = getBySelector('#actiontech-table-search-input');
+    fireEvent.change(inputEle, {
+      target: { value: searchText }
+    });
+
+    await act(async () => {
+      fireEvent.keyDown(inputEle, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('导出'));
+
+    expect(exportRequest).toHaveBeenCalledWith(
+      {
+        ...exportParams,
+        fuzzy_search_sql_fingerprint: searchText,
+        export_column_keys:
+          'sql,sql_fingerprint,audit_result,instance_name,schema_name,priority,endpoints,status'
+      },
+      {
+        responseType: 'blob'
+      }
+    );
+  });
+
+  it('show tips without export request when no visible export columns', async () => {
+    const request = sqlManage.getSqlManageList();
+    const exportRequest = sqlManage.exportSqlManage();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+
+    LocalStorageWrapper.set(
+      SQL_MANAGEMENT_TABLE_NAME,
+      JSON.stringify({
+        [mockCurrentUserReturn.username]: {
+          sql_fingerprint: { order: 1, show: false },
+          sql: { order: 2, show: false },
+          source: { order: 3, show: false },
+          audit_result: { order: 4, show: false },
+          instance_name: { order: 5, show: false },
+          schema_name: { order: 6, show: false },
+          priority: { order: 7, show: false },
+          assignees: { order: 8, show: false },
+          endpoints: { order: 9, show: false },
+          status: { order: 10, show: false },
+          remark: { order: 11, show: false }
+        }
+      })
+    );
+
+    fireEvent.click(screen.getByText('导出'));
+    expect(exportRequest).not.toHaveBeenCalled();
+    expect(screen.getByText('请至少选择一个导出列')).toBeInTheDocument();
   });
 
   it('batch assignment operation for sql', async () => {

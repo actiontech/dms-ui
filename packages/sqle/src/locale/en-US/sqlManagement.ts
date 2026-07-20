@@ -5,7 +5,8 @@ export default {
     action: {
       export: 'Export',
       exporting: 'Exporting file',
-      exportSuccessTips: 'Export file successfully'
+      exportSuccessTips: 'Export file successfully',
+      noExportColumnTips: 'Please select at least one export column'
     }
   },
   statistics: {

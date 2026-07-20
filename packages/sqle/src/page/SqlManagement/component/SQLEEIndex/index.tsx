@@ -51,6 +51,10 @@ import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
+import {
+  getSqlManagementExportColumnKeys,
+  SQL_MANAGEMENT_TABLE_NAME
+} from './exportColumnKeys';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -268,7 +272,7 @@ const SQLEEIndex = () => {
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
-      tableName: 'sql_management_list',
+      tableName: SQL_MANAGEMENT_TABLE_NAME,
       username: username
     }),
     [username]
@@ -306,6 +310,18 @@ const SQLEEIndex = () => {
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
   const handleExport = () => {
+    const exportColumnKeys = getSqlManagementExportColumnKeys(
+      columns,
+      username
+    );
+
+    if (!exportColumnKeys.length) {
+      messageApi.warning(
+        t('sqlManagement.pageHeader.action.noExportColumnTips')
+      );
+      return;
+    }
+
     startExport();
     const hideLoading = messageApi.loading(
       t('sqlManagement.pageHeader.action.exporting')
@@ -327,7 +343,8 @@ const SQLEEIndex = () => {
       filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
       filter_rule_name: filter_rule_name?.split(
         DB_TYPE_RULE_NAME_SEPARATOR
-      )?.[1]
+      )?.[1],
+      export_column_keys: exportColumnKeys.join(',')
     } as IExportSqlManageV1Params;
     SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {

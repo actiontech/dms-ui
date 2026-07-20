@@ -104,6 +104,8 @@ export interface IExportSqlManageV1Params {
   sort_field?: exportSqlManageV1SortFieldEnum;
 
   sort_order?: exportSqlManageV1SortOrderEnum;
+
+  export_column_keys?: string;
 }
 
 export interface IGetSqlManageRuleTipsParams {

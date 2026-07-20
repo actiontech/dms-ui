@@ -5,7 +5,8 @@ export default {
     action: {
       export: '导出',
       exporting: '正在导出文件',
-      exportSuccessTips: '导出文件成功'
+      exportSuccessTips: '导出文件成功',
+      noExportColumnTips: '请至少选择一个导出列'
     }
   },
   statistics: {
