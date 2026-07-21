@@ -27,6 +27,25 @@ exports[`test BaseInfoFormItem should match snapshot 1`] = `
     </FormItemNoLabel>
   </section>
   <FormItemLabel
+    label="审批流程模板"
+    name="workflow_template_id"
+    rules={
+      [
+        {
+          "message": "请选择审批流程模板",
+          "required": false,
+        },
+      ]
+    }
+    tooltip="多套审批模板时请选择本次工单使用的审批流程"
+  >
+    <BasicSelect
+      loading={false}
+      options={[]}
+      placeholder="请选择审批流程模板"
+    />
+  </FormItemLabel>
+  <FormItemLabel
     className="workflow-base-info-desc-form-item"
     label="工单描述"
     name="desc"
@@ -75,6 +94,25 @@ exports[`test BaseInfoFormItem should match snapshot with slot 1`] = `
   <div>
      slot 
   </div>
+  <FormItemLabel
+    label="审批流程模板"
+    name="workflow_template_id"
+    rules={
+      [
+        {
+          "message": "请选择审批流程模板",
+          "required": false,
+        },
+      ]
+    }
+    tooltip="多套审批模板时请选择本次工单使用的审批流程"
+  >
+    <BasicSelect
+      loading={false}
+      options={[]}
+      placeholder="请选择审批流程模板"
+    />
+  </FormItemLabel>
   <FormItemLabel
     className="workflow-base-info-desc-form-item"
     label="工单描述"
