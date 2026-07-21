@@ -155,6 +155,7 @@ const SqlWorkflowDetail: React.FC = () => {
         isSameSqlForAll={workflowInfo?.mode === WorkflowResV2ModeEnum.same_sqls}
         executeMode={workflowInfo?.exec_mode}
         workflowId={workflowInfo?.workflow_id ?? ''}
+        currentDesc={workflowInfo?.desc}
         modifiedTasks={modifiedTasks}
         submitWorkflowConfirmationMessage={submitWorkflowConfirmationMessage}
         isConfirmationRequiredForSubmission={

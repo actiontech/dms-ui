@@ -22,6 +22,7 @@ export interface ModifySqlStatementProps
   currentTasks?: IAuditTaskResV1[];
   isSameSqlForAll: boolean;
   modifiedTasks?: IAuditTaskResV1[];
+  currentDesc?: string;
   workflowId: string;
   refreshWorkflow?: () => void;
   refreshOverviewAction?: () => void;

@@ -123,7 +123,8 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     const { baseElement } = customRender({
       isAtRejectStep: true,
       currentTasks: [AuditTaskResData[0]],
-      modifiedTasks: [AuditTaskResData[1]]
+      modifiedTasks: [AuditTaskResData[1]],
+      currentDesc: 'current workflow desc'
     });
 
     expect(baseElement).toMatchSnapshot();
@@ -131,6 +132,8 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('修改审核语句')).toBeInTheDocument();
+    expect(screen.getByText('工单描述')).toBeInTheDocument();
+    expect(getBySelector('#workflowDesc')).toHaveValue('current workflow desc');
     expect(screen.getByText('输入SQL语句')).toBeInTheDocument();
     expect(screen.getByText('上传SQL文件')?.parentNode).toHaveClass(
       'actiontech-mode-switcher-item-disabled'
@@ -160,6 +163,52 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     expect(auditExecPanelTabChangeEventFn).toHaveBeenCalledWith(
       WORKFLOW_OVERVIEW_TAB_KEY
     );
+  });
+
+  it('submit modified workflow desc', async () => {
+    customRender({
+      isAtRejectStep: true,
+      currentTasks: [AuditTaskResData[0]],
+      modifiedTasks: [AuditTaskResData[1]],
+      currentDesc: 'current workflow desc'
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.change(getBySelector('#workflowDesc'), {
+      target: { value: 'updated workflow desc' }
+    });
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(requestUpdateWorkflow).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_id: workflowId,
+      task_ids: [2],
+      desc: 'updated workflow desc'
+    });
+  });
+
+  it('submit empty workflow desc when clear desc', async () => {
+    customRender({
+      isAtRejectStep: true,
+      currentTasks: [AuditTaskResData[0]],
+      modifiedTasks: [AuditTaskResData[1]],
+      currentDesc: 'current workflow desc'
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.change(getBySelector('#workflowDesc'), {
+      target: { value: '' }
+    });
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(requestUpdateWorkflow).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_id: workflowId,
+      task_ids: [2],
+      desc: ''
+    });
   });
 
   it('render snap when click sql audit btn', async () => {

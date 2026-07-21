@@ -17,7 +17,12 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { isSupportLanguage, ResponseCode } from '@actiontech/dms-kit';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/dms-kit';
+import {
+  BasicButton,
+  BasicInput,
+  EmptyBox,
+  PageHeader
+} from '@actiontech/dms-kit';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import {
   FormAreaBlockStyleWrapper,
@@ -38,6 +43,15 @@ import useInstance from '../../../../../hooks/useInstance';
 import useCheckTaskAuditRuleExceptionStatus from '../../../Create/hooks/useCheckTaskAuditRuleExceptionStatus';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 
+type ModifySqlStatementFormFields = Record<
+  string,
+  SqlStatementFields | string | undefined
+> & {
+  workflowDesc?: string;
+};
+
+const WORKFLOW_DESC_FIELD_NAME = 'workflowDesc';
+
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   currentTasks,
   modifiedTasks,
@@ -49,6 +63,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   submitWorkflowConfirmationMessage,
   isConfirmationRequiredForSubmission,
   workflowId,
+  currentDesc,
   refreshWorkflow,
   refreshOverviewAction,
   auditExecPanelTabChangeEvent,
@@ -59,7 +74,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   const { updateInstanceList, instanceList } = useInstance();
   const { hasExceptionAuditRule, updateTaskAuditRuleExceptionStatus } =
     useCheckTaskAuditRuleExceptionStatus();
-  const [form] = Form.useForm<{ [key in string]: SqlStatementFields }>();
+  const [form] = Form.useForm<ModifySqlStatementFormFields>();
+  const workflowDesc = Form.useWatch(WORKFLOW_DESC_FIELD_NAME, form);
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -75,6 +91,11 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     getAllSqlStatementLoading,
     { setTrue: startGetAllSqlStatement, setFalse: finishGetAllSqlStatement }
   ] = useBoolean(false);
+  const workflowDescDirty = useMemo(() => {
+    return (
+      workflowDesc !== undefined && (workflowDesc ?? '') !== (currentDesc ?? '')
+    );
+  }, [currentDesc, workflowDesc]);
   const modifySqlSubmit = async () => {
     if (!modifiedTasks?.length) {
       return;
@@ -86,12 +107,14 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       return;
     }
     startSubmit();
+    const updateParams = {
+      project_name: projectName,
+      task_ids: modifiedTasks.map((v) => v.task_id!),
+      workflow_id: workflowId,
+      ...(workflowDescDirty ? { desc: workflowDesc ?? '' } : {})
+    };
     workflow
-      .updateWorkflowV2({
-        project_name: projectName,
-        task_ids: modifiedTasks.map((v) => v.task_id!),
-        workflow_id: workflowId
-      })
+      .updateWorkflowV2(updateParams)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           refreshWorkflow?.();
@@ -216,6 +239,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       }
     };
     if (isAtRejectStep) {
+      form.setFieldValue(WORKFLOW_DESC_FIELD_NAME, currentDesc ?? '');
       getAllSqlStatement();
       if (isSameSqlForAll) {
         form.setFieldValue(SAME_SQL_MODE_DEFAULT_FIELD_KEY, {
@@ -243,6 +267,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     currentTasks,
+    currentDesc,
     finishGetAllSqlStatement,
     form,
     isAtRejectStep,
@@ -263,7 +288,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
 
   usePrompt(
     t('execWorkflow.create.auditResult.leaveTip'),
-    isAtRejectStep && !!modifiedTasks?.length
+    isAtRejectStep && (!!modifiedTasks?.length || workflowDescDirty)
   );
   return isAtRejectStep ? (
     <Spin
@@ -310,6 +335,24 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
                 <Icon component={BriefcaseFilled} className="title-icon" />
                 <span>{t('execWorkflow.detail.operator.modifySql')}</span>
               </FormItemBigTitle>
+
+              <Form.Item
+                name={WORKFLOW_DESC_FIELD_NAME}
+                label={t('execWorkflow.create.form.baseInfo.describe')}
+                className="workflow-desc-form-item"
+              >
+                <BasicInput.TextArea
+                  autoSize={{
+                    maxRows: 10,
+                    minRows: 6
+                  }}
+                  placeholder={t(
+                    'execWorkflow.create.form.baseInfo.describePlaceholder'
+                  )}
+                  maxLength={3000}
+                  showCount
+                />
+              </Form.Item>
 
               <SqlStatementFormController
                 isAuditing={isAuditing}

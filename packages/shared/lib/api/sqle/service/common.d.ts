@@ -5017,6 +5017,8 @@ export interface IUpdateOptimizedSQLFeedbackReq {
 }
 
 export interface IUpdateWorkflowReqV2 {
+  desc?: string;
+
   task_ids?: number[];
 }
 
