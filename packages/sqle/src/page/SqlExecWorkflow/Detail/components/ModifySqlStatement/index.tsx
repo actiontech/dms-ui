@@ -63,6 +63,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   submitWorkflowConfirmationMessage,
   isConfirmationRequiredForSubmission,
   workflowId,
+  enableWorkflowDescEdit = false,
   currentDesc,
   refreshWorkflow,
   refreshOverviewAction,
@@ -93,9 +94,11 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   ] = useBoolean(false);
   const workflowDescDirty = useMemo(() => {
     return (
-      workflowDesc !== undefined && (workflowDesc ?? '') !== (currentDesc ?? '')
+      enableWorkflowDescEdit &&
+      workflowDesc !== undefined &&
+      (workflowDesc ?? '') !== (currentDesc ?? '')
     );
-  }, [currentDesc, workflowDesc]);
+  }, [currentDesc, enableWorkflowDescEdit, workflowDesc]);
   const modifySqlSubmit = async () => {
     if (!modifiedTasks?.length) {
       return;
@@ -115,12 +118,16 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     };
     workflow
       .updateWorkflowV2(updateParams)
-      .then((res) => {
+      .then(async (res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          refreshWorkflow?.();
+          await refreshWorkflow?.(
+            enableWorkflowDescEdit
+              ? workflowDesc ?? currentDesc ?? ''
+              : undefined
+          );
           refreshOverviewAction?.();
-          backToDetail();
           auditExecPanelTabChangeEvent?.(WORKFLOW_OVERVIEW_TAB_KEY);
+          backToDetail();
         }
       })
       .finally(() => {
@@ -170,11 +177,13 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   }, [databaseInfo]);
 
   const innerAuditAction = async (values: SqlAuditInfoFormFields) => {
+    const auditValues: SqlAuditInfoFormFields = { ...values };
+    delete auditValues[WORKFLOW_DESC_FIELD_NAME];
     isAuditing.set(true);
     try {
       await auditAction(
         {
-          ...values,
+          ...auditValues,
           isSameSqlForAll: isSameSqlForAll,
           executeMode:
             executeMode as unknown as CreateAuditTasksGroupReqV1ExecModeEnum,
@@ -239,7 +248,9 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       }
     };
     if (isAtRejectStep) {
-      form.setFieldValue(WORKFLOW_DESC_FIELD_NAME, currentDesc ?? '');
+      if (enableWorkflowDescEdit) {
+        form.setFieldValue(WORKFLOW_DESC_FIELD_NAME, currentDesc ?? '');
+      }
       getAllSqlStatement();
       if (isSameSqlForAll) {
         form.setFieldValue(SAME_SQL_MODE_DEFAULT_FIELD_KEY, {
@@ -268,6 +279,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   }, [
     currentTasks,
     currentDesc,
+    enableWorkflowDescEdit,
     finishGetAllSqlStatement,
     form,
     isAtRejectStep,
@@ -336,23 +348,25 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
                 <span>{t('execWorkflow.detail.operator.modifySql')}</span>
               </FormItemBigTitle>
 
-              <Form.Item
-                name={WORKFLOW_DESC_FIELD_NAME}
-                label={t('execWorkflow.create.form.baseInfo.describe')}
-                className="workflow-desc-form-item"
-              >
-                <BasicInput.TextArea
-                  autoSize={{
-                    maxRows: 10,
-                    minRows: 6
-                  }}
-                  placeholder={t(
-                    'execWorkflow.create.form.baseInfo.describePlaceholder'
-                  )}
-                  maxLength={3000}
-                  showCount
-                />
-              </Form.Item>
+              <EmptyBox if={enableWorkflowDescEdit}>
+                <Form.Item
+                  name={WORKFLOW_DESC_FIELD_NAME}
+                  label={t('execWorkflow.create.form.baseInfo.describe')}
+                  className="workflow-desc-form-item"
+                >
+                  <BasicInput.TextArea
+                    autoSize={{
+                      maxRows: 10,
+                      minRows: 6
+                    }}
+                    placeholder={t(
+                      'execWorkflow.create.form.baseInfo.describePlaceholder'
+                    )}
+                    maxLength={3000}
+                    showCount
+                  />
+                </Form.Item>
+              </EmptyBox>
 
               <SqlStatementFormController
                 isAuditing={isAuditing}

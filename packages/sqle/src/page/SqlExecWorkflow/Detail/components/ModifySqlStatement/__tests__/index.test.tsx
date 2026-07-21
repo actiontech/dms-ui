@@ -1,4 +1,10 @@
-import { screen, cleanup, act, fireEvent } from '@testing-library/react';
+import {
+  screen,
+  cleanup,
+  act,
+  fireEvent,
+  waitFor
+} from '@testing-library/react';
 import { ModifySqlStatementProps } from '../index.type';
 import ModifySqlStatement from '..';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -30,7 +36,7 @@ const workflowId = 'workflow ID';
 
 describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
   const auditFn = jest.fn();
-  const refreshWorkflowFn = jest.fn();
+  const refreshWorkflowFn = jest.fn(() => Promise.resolve());
   const refreshOverviewActionFn = jest.fn();
   const cancelFn = jest.fn();
   const auditExecPanelTabChangeEventFn = jest.fn();
@@ -54,6 +60,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
       modifiedTasks: [],
       isSameSqlForAll: true,
       workflowId,
+      enableWorkflowDescEdit: true,
       auditExecPanelTabChangeEvent: auditExecPanelTabChangeEventFn
     };
     return sqleSuperRender(
@@ -163,6 +170,49 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     expect(auditExecPanelTabChangeEventFn).toHaveBeenCalledWith(
       WORKFLOW_OVERVIEW_TAB_KEY
     );
+    expect(refreshWorkflowFn).toHaveBeenCalledTimes(1);
+    expect(refreshOverviewActionFn).toHaveBeenCalledTimes(1);
+    expect(refreshWorkflowFn.mock.invocationCallOrder[0]).toBeLessThan(
+      cancelFn.mock.invocationCallOrder[1]
+    );
+  });
+
+  it('back to detail after workflow refresh success', async () => {
+    let resolveRefreshWorkflow: () => void = jest.fn();
+    const pendingRefreshWorkflow = new Promise<void>((resolve) => {
+      resolveRefreshWorkflow = resolve;
+    });
+    const refreshWorkflow = jest.fn(() => pendingRefreshWorkflow);
+
+    customRender({
+      isAtRejectStep: true,
+      currentTasks: [AuditTaskResData[0]],
+      modifiedTasks: [AuditTaskResData[1]],
+      currentDesc: 'current workflow desc',
+      refreshWorkflow
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.change(getBySelector('#workflowDesc'), {
+      target: { value: 'updated workflow desc' }
+    });
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await waitFor(() => expect(refreshWorkflow).toHaveBeenCalledTimes(1));
+    expect(cancelFn).not.toHaveBeenCalled();
+    expect(refreshOverviewActionFn).not.toHaveBeenCalled();
+    expect(auditExecPanelTabChangeEventFn).not.toHaveBeenCalled();
+
+    await act(async () => {
+      resolveRefreshWorkflow();
+      await pendingRefreshWorkflow;
+    });
+
+    expect(refreshOverviewActionFn).toHaveBeenCalledTimes(1);
+    expect(auditExecPanelTabChangeEventFn).toHaveBeenCalledWith(
+      WORKFLOW_OVERVIEW_TAB_KEY
+    );
+    expect(cancelFn).toHaveBeenCalledTimes(1);
   });
 
   it('submit modified workflow desc', async () => {
@@ -208,6 +258,28 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
       workflow_id: workflowId,
       task_ids: [2],
       desc: ''
+    });
+  });
+
+  it('does not render or submit workflow desc when desc edit is disabled', async () => {
+    customRender({
+      isAtRejectStep: true,
+      currentTasks: [AuditTaskResData[0]],
+      modifiedTasks: [AuditTaskResData[1]],
+      currentDesc: 'current workflow desc',
+      enableWorkflowDescEdit: false
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByLabelText('工单描述')).not.toBeInTheDocument();
+    expect(document.querySelector('#workflowDesc')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(requestUpdateWorkflow).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_id: workflowId,
+      task_ids: [2]
     });
   });
 

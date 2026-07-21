@@ -22,9 +22,10 @@ export interface ModifySqlStatementProps
   currentTasks?: IAuditTaskResV1[];
   isSameSqlForAll: boolean;
   modifiedTasks?: IAuditTaskResV1[];
+  enableWorkflowDescEdit?: boolean;
   currentDesc?: string;
   workflowId: string;
-  refreshWorkflow?: () => void;
+  refreshWorkflow?: (expectedDesc?: string) => void | Promise<unknown>;
   refreshOverviewAction?: () => void;
   executeMode?: WorkflowResV2ExecModeEnum;
   auditExecPanelTabChangeEvent?: (key: string) => void;
