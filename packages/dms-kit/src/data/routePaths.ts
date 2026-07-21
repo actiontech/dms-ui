@@ -120,19 +120,17 @@ export const ROUTE_PATHS = {
         query: OPEN_CLOUD_BEAVER_URL_PARAM_NAME
       }
     },
-    DATA_MASKING: {
-      index: {
-        prefix: '/project',
-        path: ':projectID/data-masking',
-        query: 'active&dbServiceUid&maskingStatus'
-      }
-    },
     RESOURCE_OVERVIEW: '/resource-overview',
     AVAILABILITY_ZONE: '/availability-zone'
   },
   SQLE: {
     PREFIX: '/sqle',
-    GLOBAL_DASHBOARD: '/sqle/global-dashboard',
+    GLOBAL_DASHBOARD: {
+      index: {
+        path: '/sqle/global-dashboard',
+        query: 'tab&card'
+      }
+    },
     REPORT_STATISTICS: {
       index: {
         path: '/sqle/report-statistics',
@@ -277,7 +275,8 @@ export const ROUTE_PATHS = {
       index: {
         prefix: '/sqle/project',
         path: ':projectID/sql-management',
-        query: 'instance_id&source'
+        query:
+          'instance_id&source&is_high_priority&is_assignee_self&status_filter'
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management',
@@ -423,43 +422,5 @@ export const ROUTE_PATHS = {
       }
     },
     KNOWLEDGE_GRAPH: { index: { path: '/sqle/knowledge-graph' } }
-  },
-  PROVISION: {
-    DATABASE_ROLE: {
-      index: {
-        prefix: '/provision/project',
-        path: ':projectID/database-role',
-        query: 'action'
-      },
-      create: {
-        prefix: '/provision/project/:projectID/database-role',
-        path: 'create/:db_service_id'
-      },
-      update: {
-        prefix: '/provision/project/:projectID/database-role',
-        path: 'update/:db_service_id/:role_id'
-      }
-    },
-    DATABASE_ACCOUNT: {
-      index: {
-        prefix: '/provision/project',
-        path: ':projectID/database-account',
-        query: 'user_uid&group_uid'
-      },
-      create: {
-        prefix: '/provision/project/:projectID/database-account',
-        path: 'create'
-      },
-      update: {
-        prefix: '/provision/project/:projectID/database-account',
-        path: 'update/:id'
-      }
-    },
-    DATABASE_ACCOUNT_PASSWORD: {
-      index: {
-        prefix: '/provision/project',
-        path: ':projectID/database-account-password'
-      }
-    }
   }
 } as const;

@@ -1,4 +1,8 @@
 import {
+  GlobalAccountListItemV2StatusEnum,
+  GlobalSqlManageTaskItemV2StatusEnum,
+  GlobalWorkflowListItemStatusEnum,
+  GlobalWorkflowListItemWorkflowTypeEnum,
   RuleCategoryStatisticCategoryEnum,
   AIHubExecutionRecordFunctionModuleEnum,
   AIHubExecutionRecordProcessStatusEnum,
@@ -84,6 +88,7 @@ import {
   UpdateSqlBackupStrategyReqStrategyEnum,
   UpdateTaskBackupStrategyReqStrategyEnum,
   UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
+  CreateWorkflowTemplateReqV1WorkflowTypeEnum,
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
   WorkflowDetailResV1StatusEnum,
@@ -95,7 +100,6 @@ import {
   WorkflowStepResV1TypeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
   WorkflowTemplateDetailResV1WorkflowTypeEnum,
-  CreateWorkflowTemplateReqV1WorkflowTypeEnum,
   pipelineNodeBaseAuditMethodEnum,
   pipelineNodeBaseObjectTypeEnum,
   pipelineNodeBaseTypeEnum,
@@ -129,6 +133,168 @@ export interface IBaseRes {
   code?: number;
 
   message?: string;
+}
+
+export interface IGlobalAccountListDataV2 {
+  accounts?: IGlobalAccountListItemV2[];
+
+  can_manage?: boolean;
+}
+
+export interface IGlobalAccountListItemV2 {
+  account_name?: string;
+
+  account_uid?: string;
+
+  expired_time?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  status?: GlobalAccountListItemV2StatusEnum;
+}
+
+export interface IGlobalAccountListResV2 {
+  code?: number;
+
+  data?: IGlobalAccountListDataV2;
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGlobalAccountStatisticsData {
+  active_account_count?: number;
+
+  expiring_soon_count?: number;
+}
+
+export interface IGlobalAccountStatisticsResV2 {
+  code?: number;
+
+  data?: IGlobalAccountStatisticsData;
+
+  message?: string;
+}
+
+export interface IGlobalSqlManageStatisticsResV2 {
+  code?: number;
+
+  data?: IGlobalSqlManageStatisticsV2;
+
+  message?: string;
+}
+
+export interface IGlobalSqlManageStatisticsV2 {
+  optimized_this_week_count?: number;
+
+  pending_sql_count?: number;
+}
+
+export interface IGlobalSqlManageTaskItemV2 {
+  avg_time?: number;
+
+  count?: number;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  last_seen_at?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sql_fingerprint?: string;
+
+  status?: GlobalSqlManageTaskItemV2StatusEnum;
+
+  suggestion?: string;
+}
+
+export interface IGlobalSqlManageTaskListResV2 {
+  code?: number;
+
+  data?: IGlobalSqlManageTaskItemV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGlobalWorkflowListData {
+  has_more?: boolean;
+
+  next_cursor?: string;
+
+  total_nums?: number;
+
+  workflows?: IGlobalWorkflowListItem[];
+}
+
+export interface IGlobalWorkflowListItem {
+  create_user_name?: string;
+
+  created_at?: string;
+
+  current_step_assignee_user_name_list?: string[];
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  priority?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  status?: GlobalWorkflowListItemStatusEnum;
+
+  updated_at?: string;
+
+  workflow_desc?: string;
+
+  workflow_id?: string;
+
+  workflow_name?: string;
+
+  workflow_type?: GlobalWorkflowListItemWorkflowTypeEnum;
+}
+
+export interface IGlobalWorkflowListResV2 {
+  code?: number;
+
+  data?: IGlobalWorkflowListData;
+
+  message?: string;
+}
+
+export interface IGlobalWorkflowStatisticsResV2 {
+  code?: number;
+
+  data?: IGlobalWorkflowStatisticsV2;
+
+  message?: string;
+}
+
+export interface IGlobalWorkflowStatisticsV2 {
+  archived_count?: number;
+
+  initiated_by_me_count?: number;
+
+  pending_for_me_count?: number;
+
+  view_all_count?: number;
 }
 
 export interface IAuditResultInfo {
@@ -2343,6 +2509,14 @@ export interface IGetWorkflowTasksResV1 {
   message?: string;
 }
 
+export interface IGetWorkflowTemplateListResV1 {
+  code?: number;
+
+  data?: IWorkflowTemplateDetailResV1[];
+
+  message?: string;
+}
+
 export interface IGetWorkflowTemplateResV1 {
   code?: number;
 
@@ -4229,14 +4403,6 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_type?: WorkflowTemplateDetailResV1WorkflowTypeEnum;
 }
 
-export interface IGetWorkflowTemplateListResV1 {
-  code?: number;
-
-  data?: IWorkflowTemplateDetailResV1[];
-
-  message?: string;
-}
-
 export interface ICreateWorkflowTemplateReqV1 {
   allow_submit_when_less_audit_level?: UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
 
@@ -4814,6 +4980,8 @@ export interface IInstanceTipResV2 {
 
   enable_backup?: boolean;
 
+  environment_tag_color?: string;
+
   environment_tag_name?: string;
 
   environment_tag_uid?: string;
@@ -4904,6 +5072,8 @@ export interface IUploadInstanceAuditPlanSQLsReqV2 {
 }
 
 export interface IWorkflowRecordResV2 {
+  assignee_user_name_list?: string[];
+
   current_step_number?: number;
 
   executable?: boolean;

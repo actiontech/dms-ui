@@ -177,15 +177,3 @@ export enum getWorkflowTemplatesV1FilterWorkflowTypeEnum {
 
   'data_export' = 'data_export'
 }
-
-export enum getWorkflowTemplateV1WorkflowTypeEnum {
-  'workflow' = 'workflow',
-
-  'data_export' = 'data_export'
-}
-
-export enum updateWorkflowTemplateV1WorkflowTypeEnum {
-  'workflow' = 'workflow',
-
-  'data_export' = 'data_export'
-}
