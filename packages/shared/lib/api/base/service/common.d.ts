@@ -743,6 +743,8 @@ export interface IDataExportWorkflow {
   name: string;
 
   tasks: ITask[];
+
+  workflow_template_id?: number;
 }
 
 export interface IDatabaseDriverAdditionalParam {
@@ -1771,6 +1773,10 @@ export interface IListDataExportWorkflow {
   status?: ListDataExportWorkflowStatusEnum;
 
   workflow_name?: string;
+
+  workflow_template_id?: number;
+
+  workflow_template_name?: string;
 
   workflow_uid?: string;
 }

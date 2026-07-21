@@ -54,6 +54,7 @@ const SubmitExportWorkflow: React.FC = () => {
       data_export_workflow: {
         name: formValues?.baseValues.workflow_subject ?? '',
         desc: formValues?.baseValues.desc,
+        workflow_template_id: formValues?.baseValues.workflow_template_id,
         tasks:
           taskIDs?.map((v) => ({
             task_uid: v ?? ''

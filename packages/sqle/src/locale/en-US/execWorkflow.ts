@@ -41,7 +41,8 @@ export default {
     passRate: 'Audit pass rate',
     taskScore: 'Audit score',
     id: 'Workflow id',
-    version: 'Version'
+    version: 'Version',
+    workflowTemplate: 'Approval template'
   },
   create: {
     backToList: 'Back to workflow list',
@@ -59,7 +60,10 @@ export default {
         workflowNameRule:
           'Can only contain letters, numbers, Chinese, hyphens and underscores',
         describe: 'Workflow description',
-        describePlaceholder: 'Click to add workflow description (optional)'
+        describePlaceholder: 'Click to add workflow description (optional)',
+        workflowTemplate: 'Approval workflow template',
+        workflowTemplateTips:
+          'When multiple templates exist, please select the approval flow for this workflow'
       },
 
       sqlInfo: {

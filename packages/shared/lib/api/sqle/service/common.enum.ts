@@ -1,51 +1,3 @@
-export enum GlobalAccountListItemV2StatusEnum {
-  'active' = 'active',
-
-  'expiring' = 'expiring',
-
-  'expired' = 'expired',
-
-  'locked' = 'locked'
-}
-
-export enum GlobalSqlManageTaskItemV2StatusEnum {
-  'unhandled' = 'unhandled',
-
-  'solved' = 'solved',
-
-  'ignored' = 'ignored',
-
-  'manual_audited' = 'manual_audited',
-
-  'sent' = 'sent'
-}
-
-export enum GlobalWorkflowListItemStatusEnum {
-  'pending_approval' = 'pending_approval',
-
-  'pending_action' = 'pending_action',
-
-  'in_progress' = 'in_progress',
-
-  'exporting' = 'exporting',
-
-  'rejected' = 'rejected',
-
-  'cancelled' = 'cancelled',
-
-  'failed' = 'failed',
-
-  'completed' = 'completed',
-
-  'unknown' = 'unknown'
-}
-
-export enum GlobalWorkflowListItemWorkflowTypeEnum {
-  'sql_release' = 'sql_release',
-
-  'data_export' = 'data_export'
-}
-
 export enum RuleCategoryStatisticCategoryEnum {
   'audit_accuracy' = 'audit_accuracy',
 
@@ -945,6 +897,12 @@ export enum WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum {
 }
 
 export enum WorkflowTemplateDetailResV1WorkflowTypeEnum {
+  'workflow' = 'workflow',
+
+  'data_export' = 'data_export'
+}
+
+export enum CreateWorkflowTemplateReqV1WorkflowTypeEnum {
   'workflow' = 'workflow',
 
   'data_export' = 'data_export'

@@ -38,6 +38,83 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info 1`] = `
               >
                 <label
                   class="ant-form-item-required"
+                  for="workflowTemplateName"
+                  title="审批流程模板名称"
+                >
+                  审批流程模板名称
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      aria-required="true"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
+                      id="workflowTemplateName"
+                      placeholder="请输入审批流程模板名称"
+                      type="text"
+                      value="700300-WorkflowTemplate"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row"
+            >
+              <div
+                class="ant-col ant-form-item-label"
+              >
+                <label
+                  class=""
+                  for="desc"
+                  title="审批流程模板描述"
+                >
+                  审批流程模板描述
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <textarea
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
+                      id="desc"
+                      placeholder="请输入审批流程模板描述"
+                    >
+                      700300 默认模板
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row"
+            >
+              <div
+                class="ant-col ant-form-item-label"
+              >
+                <label
+                  class="ant-form-item-required"
                   for="allowSubmitWhenLessAuditLevel"
                   title="允许创建工单的最高审核等级"
                 >
@@ -55,7 +132,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -167,7 +244,84 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
           class="ant-form ant-form-vertical ant-form-hide-required-mark"
         >
           <div
-            class="ant-form-item ant-form-item-has-success"
+            class="ant-form-item"
+          >
+            <div
+              class="ant-row ant-form-item-row"
+            >
+              <div
+                class="ant-col ant-form-item-label"
+              >
+                <label
+                  class="ant-form-item-required"
+                  for="workflowTemplateName"
+                  title="审批流程模板名称"
+                >
+                  审批流程模板名称
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      aria-required="true"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
+                      id="workflowTemplateName"
+                      placeholder="请输入审批流程模板名称"
+                      type="text"
+                      value="700300-WorkflowTemplate"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item"
+          >
+            <div
+              class="ant-row ant-form-item-row"
+            >
+              <div
+                class="ant-col ant-form-item-label"
+              >
+                <label
+                  class=""
+                  for="desc"
+                  title="审批流程模板描述"
+                >
+                  审批流程模板描述
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <textarea
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
+                      id="desc"
+                      placeholder="请输入审批流程模板描述"
+                    >
+                      700300 默认模板
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -194,7 +348,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-x5nat1 ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -260,51 +414,6 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
               </div>
             </div>
           </div>
-          <div
-            class="css-1uvv7g7"
-          >
-            <button
-              class="ant-btn ant-btn-primary basic-button-wrapper css-10ae2zl"
-              type="button"
-            >
-              <span>
-                下一步
-              </span>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`page/WorkflowTemplate/BasicInfo should hide AllowSubmitWhenLessAuditLevel when workflowType is data_export 1`] = `
-<body>
-  <div>
-    <div
-      class="css-u6p6f9"
-    >
-      <div
-        class="step-title-wrapper"
-      >
-        <div
-          class="step-title"
-        >
-          基本信息
-        </div>
-        <div
-          class="step-title-info"
-        >
-          设定模板的基本信息
-        </div>
-      </div>
-      <div
-        class="step-info-wrapper"
-      >
-        <form
-          class="ant-form ant-form-vertical ant-form-hide-required-mark"
-        >
           <div
             class="css-1uvv7g7"
           >

@@ -4,6 +4,7 @@ import { ExportMethodEnum } from './ExportMethodForm/index.enum';
 export type BaseFormFieldsType = {
   workflow_subject: string;
   desc?: string;
+  workflow_template_id?: number;
 };
 
 export type SourceFormFieldsType = {

@@ -26,7 +26,9 @@ export default {
         title: '创建导出工单',
         name: '数据导出工单名称',
         describe: '工单描述',
-        describePlaceholder: '点击添加数据导出描述'
+        describePlaceholder: '点击添加数据导出描述',
+        workflowTemplate: '审批流程模板',
+        workflowTemplateTips: '多套审批模板时请选择本次导出工单使用的审批流程'
       },
       source: {
         title: '选择导出对象',
@@ -97,6 +99,7 @@ export default {
       exportTime: '导出时间',
       status: '状态',
       assignee: '待操作人',
+      workflowTemplate: '审批模板',
       viewOrderDetail: '查看工单详情'
     },
     actions: {

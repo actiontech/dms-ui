@@ -1,17 +1,13 @@
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import WorkflowTemplateDetail from '.';
+import { workflowTemplateListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
-import {
-  workflowTemplateOutOfOrderData,
-  dataExportWorkflowTemplateOutOfOrderData,
-  dataExportWorkflowTemplateData
-} from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { cloneDeep } from 'lodash';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -26,9 +22,14 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
-    mockUsePermission(undefined, {
-      mockSelector: true
-    });
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn(() => true)
+      },
+      {
+        mockSelector: true
+      }
+    );
   });
 
   afterEach(() => {
@@ -40,94 +41,65 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     return sqleSuperRender(<WorkflowTemplateDetail />);
   };
 
-  it('render workflow template detail page with SegmentedTabs', async () => {
-    const getTemplateRequest = workflowTemplate.getWorkflowTemplate();
-    const { baseElement } = customRender();
+  it('should render workflow and data_export template lists', async () => {
+    const getListSpy = workflowTemplate.getWorkflowTemplates();
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getTemplateRequest).toHaveBeenCalled();
-    expect(baseElement).toMatchSnapshot();
+
+    expect(getListSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_type: getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow
+    });
     expect(screen.getByText('审批流程模板')).toBeInTheDocument();
-    expect(screen.queryByText('修改当前审批流程模板')).toBeInTheDocument();
-  });
-
-  it('render segmented tab labels correctly', async () => {
-    workflowTemplate.getWorkflowTemplate();
-    customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('上线工单')).toBeInTheDocument();
-    expect(screen.getByText('数据导出')).toBeInTheDocument();
-  });
-
-  it('should sort sql review steps by number ascending when API returns steps in wrong order', async () => {
-    const getTemplateRequest = workflowTemplate.getWorkflowTemplate();
-    getTemplateRequest.mockImplementation((params) => {
-      if (params.workflow_type === 'data_export') {
-        return createSpySuccessResponse({
-          data: cloneDeep(dataExportWorkflowTemplateData)
-        });
-      }
-      return createSpySuccessResponse({
-        data: cloneDeep(workflowTemplateOutOfOrderData)
-      });
-    });
-    customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    // workflowTemplateOutOfOrderData has steps in order: sql_execute(3), sql_review(2, desc='step desc'), sql_review(1, approved_by_authorized)
-    // After filter + sort by number: reviewSteps = [sql_review(1), sql_review(2)], execStep = sql_execute(3)
-    // Rendered order: create → review#1(approved_by_authorized) → review#2(desc='step desc') → exec
-    const reviewStep1Indicator =
-      screen.getByText('匹配拥有数据源审核权限的成员');
-    const reviewStep2Desc = screen.getByText('step desc');
-
-    // review#1 (number:1, approved_by_authorized) must appear before review#2 (number:2, desc='step desc')
+    expect(screen.getByText('SQL上线审批')).toBeInTheDocument();
+    expect(screen.getByText('数据导出审批')).toBeInTheDocument();
     expect(
-      reviewStep1Indicator.compareDocumentPosition(reviewStep2Desc) &
-        Node.DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy();
-
-    // exec step correctly identified as sql_execute (execute_by_authorized:true)
-    expect(
-      screen.getByText('匹配拥有数据源上线权限的成员')
+      screen.getByText(workflowTemplateListData[0].workflow_template_name!)
     ).toBeInTheDocument();
+    expect(screen.getByText('创建审批流程模板')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('数据导出审批'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getListSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_type: getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+    });
   });
 
-  it('should sort export review steps by number ascending when API returns steps in wrong order', async () => {
-    const getTemplateRequest = workflowTemplate.getWorkflowTemplate();
-    getTemplateRequest.mockImplementation((params) => {
-      if (params.workflow_type === 'data_export') {
-        return createSpySuccessResponse({
-          data: cloneDeep(dataExportWorkflowTemplateOutOfOrderData)
-        });
-      }
-      return createSpySuccessResponse({
-        data: cloneDeep(workflowTemplateOutOfOrderData)
-      });
-    });
+  it('should support set default and delete for non-default template', async () => {
+    const updateSpy = workflowTemplate.updateWorkflowTemplateById();
+    const deleteSpy = workflowTemplate.deleteWorkflowTemplate();
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.click(screen.getByText('数据导出'));
+    expect(screen.getAllByText('设为默认').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('删 除').length).toBeGreaterThan(0);
+
+    const setDefaultBtn = screen
+      .getAllByText('设为默认')
+      .map((node) => node.closest('button'))
+      .find((btn) => btn && !(btn as HTMLButtonElement).disabled);
+    expect(setDefaultBtn).toBeTruthy();
+    fireEvent.click(setDefaultBtn!);
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_template_id: workflowTemplateListData[1].workflow_template_id,
+      is_default: true
+    });
 
-    // dataExportWorkflowTemplateOutOfOrderData has steps: export_execute(2) first, export_review(1) second
-    // After filter + sort: reviewSteps = [export_review(1)], execStep = export_execute(2)
-    // exec step is correctly export_execute (execute_by_authorized:true, isDataExport=true)
-    // → shows "数据导出的执行人默认为工单创建者，不可修改。"
-    expect(
-      screen.getByText('数据导出的执行人默认为工单创建者，不可修改。')
-    ).toBeInTheDocument();
-
-    // review step is correctly export_review (approved_by_authorized:true)
-    // → shows "匹配拥有数据源审核权限的成员"
-    // exec step (执行导出) must appear after the review step
-    const reviewStep = screen.getAllByText('匹配拥有数据源审核权限的成员')[0];
-    const execStepUser = screen.getByText(
-      '数据导出的执行人默认为工单创建者，不可修改。'
-    );
-    expect(
-      reviewStep.compareDocumentPosition(execStepUser) &
-        Node.DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy();
+    const deleteBtn = screen
+      .getAllByText('删 除')
+      .map((node) => node.closest('button'))
+      .find((btn) => btn && !(btn as HTMLButtonElement).disabled);
+    expect(deleteBtn).toBeTruthy();
+    fireEvent.click(deleteBtn!);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(deleteSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_template_id: workflowTemplateListData[1].workflow_template_id
+    });
   });
 });

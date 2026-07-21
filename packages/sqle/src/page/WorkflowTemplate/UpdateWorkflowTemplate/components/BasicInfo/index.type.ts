@@ -1,19 +1,18 @@
 import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { getWorkflowTemplateV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { FormInstance } from 'antd';
 
 export type BaseFormProps = {
   form: FormInstance<BaseFormFields>;
   defaultData?: IWorkflowTemplateDetailResV1;
   nextStep: () => void;
-  updateBaseInfo: (
-    info: BaseFormFields['allowSubmitWhenLessAuditLevel']
-  ) => void;
+  updateBaseInfo: (info: BaseFormFields) => void;
   totalStep: number;
-  workflowType?: getWorkflowTemplateV1WorkflowTypeEnum;
+  isCreateMode?: boolean;
 };
 
 export type BaseFormFields = {
-  allowSubmitWhenLessAuditLevel?: WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum;
+  workflowTemplateName?: string;
+  desc?: string;
+  allowSubmitWhenLessAuditLevel?: UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
 };

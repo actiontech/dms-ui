@@ -8,21 +8,25 @@ export default {
       listTable: 'Approval workflow template list'
     },
 
+    type: {
+      workflow: 'SQL workflow approval',
+      dataExport: 'Data export approval'
+    },
+
     table: {
       workflowTemplateName: 'Approval workflow template name',
       desc: 'Approval workflow template description',
-      applicableType: 'Applicable Type',
-      approvalNodeDesc: 'Approval Node Description',
-      updateTime: 'Update Time'
-    },
-
-    type: {
-      workflow: 'SQL Exec Workflow',
-      dataExport: 'Data Export'
+      isDefault: 'Default',
+      updateTime: 'Updated at',
+      defaultTag: 'Default'
     },
 
     operator: {
-      create: 'Create approval workflow template'
+      create: 'Create approval workflow template',
+      setDefault: 'Set as default',
+      setDefaultConfirm:
+        'Confirm set approval workflow template {{name}} as default?',
+      setDefaultSuccess: 'Set as default successfully'
     }
   },
 
@@ -41,9 +45,7 @@ export default {
 
   update: {
     title: {
-      wrapper: 'Update approval workflow template',
-      workflow: 'Edit Approval Process - SQL Exec Workflow',
-      dataExport: 'Edit Approval Process - Data Export'
+      wrapper: 'Update approval workflow template'
     },
     result: {
       title: 'Update approval workflow template successfully',
@@ -76,9 +78,7 @@ export default {
       fourth:
         'Audit tickets: the auditor can execute “pass audit” or “reject” operations in this step;',
       fifth:
-        'Online tickets: the executor can execute “execute online” or “reject” operations in this step.',
-      fifthExport:
-        'Export tickets: the executor can execute “execute export” or “reject” operations in this step.'
+        'Online tickets: the executor can execute “execute online” or “reject” operations in this step.'
     }
   },
 
@@ -93,10 +93,6 @@ export default {
     execTitle: 'Execute online',
     execDesc:
       'Edit the audit process. The executor can execute “execute online” or “reject” operations in this step',
-
-    exportExecTitle: 'Execute export',
-    exportExecDesc:
-      'Edit the audit process. The executor can execute “execute export” or “reject” operations in this step',
 
     resultTitle: 'Result',
     resultDesc: 'Change result'
@@ -148,25 +144,6 @@ export default {
         matchExecute: 'Match members who have data source online permissions'
       }
     },
-    exportExec: {
-      title: 'Execute export',
-      subTitle:
-        'The executor can execute “execute export” or “reject” operations in this step',
-      creatorAsExecutor:
-        'The executor of data export is the workflow creator by default and cannot be modified.',
-      executeUserType: {
-        specifyExecute: 'Specify executor',
-        matchExecute: 'Match members who have data source export permissions'
-      }
-    },
-    exportReview: {
-      title: 'Export Review',
-      subTitle: 'Reviewer checks the legitimacy of the export request'
-    },
-    exportExecute: {
-      title: 'Export Execution Confirm',
-      subTitle: 'Confirm to execute the export operation'
-    },
     operator: {
       remove: 'Remove this step',
       moveUp: 'Move this step up',
@@ -182,10 +159,6 @@ export default {
         'The approval workflow template can set up to 4 audit steps, or no audit steps can be set;',
       rule3:
         'When specifying the executor for a single step, at least one specified person needs to be added, and a maximum of three specified persons can be added.'
-    },
-    exportRuler: {
-      rule1:
-        'The approval process starts from the initiation of the ticket, and ends with the execution of export after passing through the set audit steps;'
     }
   },
 

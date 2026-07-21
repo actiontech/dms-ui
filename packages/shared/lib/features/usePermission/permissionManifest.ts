@@ -1058,8 +1058,35 @@ export const PERMISSION_MANIFEST: Record<
   },
 
   // 审批流程模板
+  [PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true,
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_approval_template
+  },
   [PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true,
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_approval_template
+  },
+  [PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true,
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_approval_template
+  },
+  [PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.SET_DEFAULT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.SET_DEFAULT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,

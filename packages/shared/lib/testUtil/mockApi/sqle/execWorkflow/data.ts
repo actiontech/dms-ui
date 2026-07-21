@@ -35,7 +35,9 @@ export const WorkflowListData = [
     create_time: '2024-01-05T13:36:57+08:00',
     current_step_type: 'sql_execute',
     current_step_assignee_user_name_list: ['test', 'admin'],
-    status: 'wait_for_execution'
+    status: 'wait_for_execution',
+    workflow_template_id: 1,
+    workflow_template_name: '700300-WorkflowTemplate'
   },
   {
     project_name: '700300',

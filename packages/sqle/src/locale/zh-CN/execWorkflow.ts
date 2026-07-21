@@ -41,7 +41,8 @@ export default {
     passRate: '审核通过率',
     taskScore: '审核结果评分',
     id: '工单号',
-    version: '版本'
+    version: '版本',
+    workflowTemplate: '审批模板'
   },
   create: {
     backToList: '返回工单列表',
@@ -57,7 +58,9 @@ export default {
         name: '工单名称',
         workflowNameRule: '只能包含字母、数字、中文、中划线和下划线',
         describe: '工单描述',
-        describePlaceholder: '点此添加工单描述（选填）'
+        describePlaceholder: '点此添加工单描述（选填）',
+        workflowTemplate: '审批流程模板',
+        workflowTemplateTips: '多套审批模板时请选择本次工单使用的审批流程'
       },
 
       sqlInfo: {

@@ -394,6 +394,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       },
       // #if [ee]
       {
+        path: ROUTE_PATHS.SQLE.PROGRESS.create.path,
+        element: <UpdateWorkflowTemplate />,
+        key: 'progressCreate'
+      },
+      {
         path: ROUTE_PATHS.SQLE.PROGRESS.update.path,
         element: <UpdateWorkflowTemplate />,
         key: 'progressUpdate'

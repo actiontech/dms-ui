@@ -125,6 +125,13 @@ export const SqlExecWorkflowListColumn: (
         );
       }
     },
+    {
+      dataIndex: 'workflow_template_name',
+      title: () => t('execWorkflow.list.workflowTemplate'),
+      filterCustomType: 'select',
+      filterKey: 'filter_workflow_template_id',
+      render: (name) => name || '-'
+    },
     // #endif
     {
       dataIndex: 'create_time',
