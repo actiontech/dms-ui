@@ -171,3 +171,9 @@ export enum GetBackupSqlListV1FilterExecStatusEnum {
 
   'execute_rollback' = 'execute_rollback'
 }
+
+export enum getWorkflowTemplatesV1FilterWorkflowTypeEnum {
+  'workflow' = 'workflow',
+
+  'data_export' = 'data_export'
+}

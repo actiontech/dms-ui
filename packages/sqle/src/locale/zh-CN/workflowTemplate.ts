@@ -13,16 +13,21 @@ export default {
       desc: '审批流程模板描述',
       applicableType: '适用类型',
       approvalNodeDesc: '审批节点描述',
-      updateTime: '更新时间'
+      isDefault: '是否默认',
+      updateTime: '更新时间',
+      defaultTag: '默认'
     },
 
     type: {
-      workflow: '上线工单',
-      dataExport: '数据导出'
+      workflow: 'SQL上线审批',
+      dataExport: '数据导出审批'
     },
 
     operator: {
-      create: '创建审批流程模板'
+      create: '创建审批流程模板',
+      setDefault: '设为默认',
+      setDefaultConfirm: '确认将审批流程模板 {{name}} 设为默认？',
+      setDefaultSuccess: '设为默认成功'
     }
   },
 

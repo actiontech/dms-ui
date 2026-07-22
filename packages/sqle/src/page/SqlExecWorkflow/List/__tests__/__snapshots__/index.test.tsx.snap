@@ -521,6 +521,12 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                               class="ant-table-cell"
                               scope="col"
                             >
+                              审批模板
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
                               创建时间
                             </th>
                             <th
@@ -551,6 +557,15 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -795,6 +810,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                             <td
                               class="ant-table-cell"
                             >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
                               admin
                             </td>
                             <td
@@ -964,6 +984,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                                   </div>
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1159,6 +1184,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                             <td
                               class="ant-table-cell"
                             >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
                               test
                             </td>
                             <td
@@ -1325,6 +1355,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                                   </div>
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell"
@@ -2196,6 +2231,12 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                               class="ant-table-cell"
                               scope="col"
                             >
+                              审批模板
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
                               创建时间
                             </th>
                             <th
@@ -2226,6 +2267,15 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -2444,6 +2494,11 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                                   </div>
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell"

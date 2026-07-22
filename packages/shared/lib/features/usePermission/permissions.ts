@@ -222,7 +222,10 @@ export const PERMISSIONS = {
         DELETE: 'action:delete_white_list'
       },
       WORKFLOW_TEMPLATE: {
-        UPDATE: 'action:update_workflow_template'
+        CREATE: 'action:create_workflow_template',
+        UPDATE: 'action:update_workflow_template',
+        DELETE: 'action:delete_workflow_template',
+        SET_DEFAULT: 'action:set_default_workflow_template'
       },
       PROJECT_RULE_TEMPLATE: {
         CREATE: 'action:create_project_rule_template',

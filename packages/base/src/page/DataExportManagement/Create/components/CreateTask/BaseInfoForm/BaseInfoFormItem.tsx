@@ -1,16 +1,34 @@
-import { BasicInput } from '@actiontech/dms-kit';
+import { BasicInput, BasicSelect } from '@actiontech/dms-kit';
 import {
   FormInputBotBorder,
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/dms-kit';
 import { workflowNameRule } from '@actiontech/dms-kit';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-const BaseInfoFormItem: React.FC<{
-  slot?: ReactNode;
-}> = ({ slot }) => {
+import { Form } from 'antd';
+import useWorkflowTemplateTips from '../../../../../../hooks/useWorkflowTemplateTips';
+import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+
+const BaseInfoFormItem: React.FC<{ slot?: ReactNode }> = ({ slot }) => {
   const { t } = useTranslation();
+  const form = Form.useFormInstance();
+  const { templateOptions, defaultTemplateId, templateList, loading } =
+    useWorkflowTemplateTips(
+      getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+    );
+
+  useEffect(() => {
+    if (defaultTemplateId && !form?.getFieldValue('workflow_template_id')) {
+      form?.setFieldsValue({
+        workflow_template_id: defaultTemplateId
+      });
+    }
+  }, [defaultTemplateId, form]);
+
+  const templateRequired = templateList.length > 1;
+
   return (
     <>
       <FormItemNoLabel
@@ -39,6 +57,28 @@ const BaseInfoFormItem: React.FC<{
       </FormItemNoLabel>
 
       {slot}
+
+      <FormItemLabel
+        name="workflow_template_id"
+        label={t('dmsDataExport.create.form.base.workflowTemplate')}
+        rules={[
+          {
+            required: templateRequired,
+            message: t('common.form.placeholder.select', {
+              name: t('dmsDataExport.create.form.base.workflowTemplate')
+            })
+          }
+        ]}
+        tooltip={t('dmsDataExport.create.form.base.workflowTemplateTips')}
+      >
+        <BasicSelect
+          loading={loading}
+          options={templateOptions}
+          placeholder={t('common.form.placeholder.select', {
+            name: t('dmsDataExport.create.form.base.workflowTemplate')
+          })}
+        />
+      </FormItemLabel>
 
       <FormItemLabel
         className="workflow-base-info-desc-form-item"

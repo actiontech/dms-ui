@@ -250,6 +250,9 @@ exports[`usePermission should match snapshot 1`] = `
         "EDIT": "action:edit_white_list",
       },
       "WORKFLOW_TEMPLATE": {
+        "CREATE": "action:create_workflow_template",
+        "DELETE": "action:delete_workflow_template",
+        "SET_DEFAULT": "action:set_default_workflow_template",
         "UPDATE": "action:update_workflow_template",
       },
     },
@@ -706,6 +709,17 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:create_workflow_template": {
+    "id": "action:create_workflow_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "manage_approval_template",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
   "action:data_export_batch_close": {
     "businessWrite": true,
     "id": "action:data_export_batch_close",
@@ -866,6 +880,17 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "projectManager": true,
     "projectPermission": "manage_audit_sql_white_list",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:delete_workflow_template": {
+    "id": "action:delete_workflow_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "manage_approval_template",
     "role": [
       "admin",
       "systemAdministrator",
@@ -1471,6 +1496,17 @@ exports[`usePermission should match snapshot 2`] = `
     "businessWrite": true,
     "id": "action:schedule_time_exec_task",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:set_default_workflow_template": {
+    "id": "action:set_default_workflow_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "projectPermission": "manage_approval_template",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
     "type": "action",
   },
   "action:sms_service": {

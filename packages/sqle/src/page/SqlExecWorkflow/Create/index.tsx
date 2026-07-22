@@ -193,7 +193,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
       task_ids: taskInfos.map((v) => v.task_id!),
       desc: baseInfo?.desc,
       workflow_subject: baseInfo?.workflow_subject,
-      project_name: projectName
+      project_name: projectName,
+      workflow_template_id: baseInfo?.workflow_template_id
     };
     if (isRollbackMode) {
       const params: ICreateRollbackWorkflowParams = {

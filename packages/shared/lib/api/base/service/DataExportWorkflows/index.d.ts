@@ -36,6 +36,8 @@ export interface IListAllDataExportWorkflowsParams {
 
   filter_create_time_to?: string;
 
+  filter_workflow_template_id?: number;
+
   fuzzy_keyword?: string;
 }
 
@@ -60,6 +62,8 @@ export interface IListDataExportWorkflowsParams {
   filter_create_time_from?: string;
 
   filter_create_time_to?: string;
+
+  filter_workflow_template_id?: number;
 
   fuzzy_keyword?: string;
 }

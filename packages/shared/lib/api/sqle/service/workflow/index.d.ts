@@ -3,9 +3,11 @@ import {
   IGetWorkflowsResV1,
   IGlobalWorkflowStatisticsResV1,
   IGetWorkflowTemplateResV1,
-  IUpdateWorkflowTemplateReqV1,
-  IBaseRes,
   IGetWorkflowTemplateListResV1,
+  IUpdateWorkflowTemplateReqV1,
+  ICreateWorkflowTemplateReqV1,
+  IUpdateWorkflowTemplateByIdReqV1,
+  IBaseRes,
   ICreateWorkflowReqV1,
   IAutoCreateAndExecuteWorkflowResV1,
   IBatchCancelWorkflowsReqV1,
@@ -43,13 +45,14 @@ import {
   getGlobalWorkflowsV1FilterProjectPriorityEnum,
   GetGlobalWorkflowStatisticsFilterStatusListEnum,
   GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
-  getWorkflowTemplateV1WorkflowTypeEnum,
-  updateWorkflowTemplateV1WorkflowTypeEnum,
   getWorkflowsV1FilterStatusEnum,
   autoCreateAndExecuteWorkflowV1ExecModeEnum,
   exportWorkflowV1FilterStatusEnum,
   exportWorkflowV1ExportFormatEnum,
-  GetBackupSqlListV1FilterExecStatusEnum
+  GetBackupSqlListV1FilterExecStatusEnum,
+  getWorkflowTemplatesV1FilterWorkflowTypeEnum,
+  getWorkflowTemplateV1WorkflowTypeEnum,
+  updateWorkflowTemplateV1WorkflowTypeEnum
 } from './index.enum';
 
 export interface IGetScheduledTaskDefaultOptionV1Return
@@ -133,27 +136,65 @@ export interface IGetGlobalWorkflowStatisticsReturn
 export interface IGetWorkflowTemplateV1Params {
   project_name: string;
 
-  workflow_type: getWorkflowTemplateV1WorkflowTypeEnum;
+  workflow_type?: getWorkflowTemplateV1WorkflowTypeEnum;
+
+  workflow_template_id?: number;
 }
 
 export interface IGetWorkflowTemplateV1Return
   extends IGetWorkflowTemplateResV1 {}
 
+export interface IGetWorkflowTemplatesV1Params {
+  project_name: string;
+
+  workflow_type?: getWorkflowTemplatesV1FilterWorkflowTypeEnum;
+}
+
+export interface IGetWorkflowTemplatesV1Return
+  extends IGetWorkflowTemplateListResV1 {}
+
+export interface ICreateWorkflowTemplateV1Params
+  extends ICreateWorkflowTemplateReqV1 {
+  project_name: string;
+}
+
+export interface ICreateWorkflowTemplateV1Return
+  extends IGetWorkflowTemplateResV1 {}
+
+export interface IGetWorkflowTemplateByIdV1Params {
+  project_name: string;
+
+  workflow_template_id: number;
+}
+
+export interface IGetWorkflowTemplateByIdV1Return
+  extends IGetWorkflowTemplateResV1 {}
+
+export interface IUpdateWorkflowTemplateByIdV1Params
+  extends IUpdateWorkflowTemplateByIdReqV1 {
+  project_name: string;
+
+  workflow_template_id: number;
+}
+
+export interface IUpdateWorkflowTemplateByIdV1Return extends IBaseRes {}
+
+export interface IDeleteWorkflowTemplateV1Params {
+  project_name: string;
+
+  workflow_template_id: number;
+}
+
+export interface IDeleteWorkflowTemplateV1Return extends IBaseRes {}
+
 export interface IUpdateWorkflowTemplateV1Params
   extends IUpdateWorkflowTemplateReqV1 {
   project_name: string;
 
-  workflow_type: updateWorkflowTemplateV1WorkflowTypeEnum;
+  workflow_type?: updateWorkflowTemplateV1WorkflowTypeEnum;
 }
 
 export interface IUpdateWorkflowTemplateV1Return extends IBaseRes {}
-
-export interface IGetWorkflowTemplateListV1Params {
-  project_name: string;
-}
-
-export interface IGetWorkflowTemplateListV1Return
-  extends IGetWorkflowTemplateListResV1 {}
 
 export interface IGetWorkflowsV1Params {
   filter_subject?: string;
@@ -179,6 +220,8 @@ export interface IGetWorkflowsV1Params {
   filter_task_instance_id?: string;
 
   filter_sql_version_id?: string;
+
+  filter_workflow_template_id?: number;
 
   page_index: number;
 

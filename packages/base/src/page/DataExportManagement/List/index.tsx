@@ -35,6 +35,8 @@ import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service
 import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import useMemberTips from '../../../hooks/useMemberTips';
+import useWorkflowTemplateTips from '../../../hooks/useWorkflowTemplateTips';
+import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
@@ -59,6 +61,9 @@ const ExportWorkflowList: React.FC = () => {
     useTableRequestError();
   const { dbServiceIDOptions, updateDbServiceList } = useDbService();
   const { memberOptions, updateMemberTips } = useMemberTips();
+  const { templateOptions } = useWorkflowTemplateTips(
+    getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+  );
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -117,9 +122,15 @@ const ExportWorkflowList: React.FC = () => {
         {
           options: memberOptions
         }
+      ],
+      [
+        'workflow_template_name',
+        {
+          options: templateOptions
+        }
       ]
     ]);
-  }, [dbServiceIDOptions, memberOptions]);
+  }, [dbServiceIDOptions, memberOptions, templateOptions]);
   const rowSelection = {
     selectedRowKeys,
     onChange: (keys: string[]) => {

@@ -26,7 +26,10 @@ export default {
         title: 'Create export task',
         name: 'Data export task name',
         describe: 'Task description',
-        describePlaceholder: 'Click to add data export description'
+        describePlaceholder: 'Click to add data export description',
+        workflowTemplate: 'Approval workflow template',
+        workflowTemplateTips:
+          'When multiple templates exist, please select the approval flow for this export task'
       },
       source: {
         title: 'Select export target',
@@ -85,6 +88,7 @@ export default {
       exportTime: 'Export time',
       status: 'Status',
       assignee: 'Assignee',
+      workflowTemplate: 'Approval template',
       viewOrderDetail: 'View task detail'
     },
     actions: {

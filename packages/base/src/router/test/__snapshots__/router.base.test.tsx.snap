@@ -600,10 +600,17 @@ exports[`base/router-base-ee render base route data snap 1`] = `
               },
               {
                 "element": <div>
+                  progressCreate
+                </div>,
+                "key": "progressCreate",
+                "path": "create/:workflowType",
+              },
+              {
+                "element": <div>
                   progressUpdate
                 </div>,
                 "key": "progressUpdate",
-                "path": "update/:workflowName",
+                "path": "update/:workflowTemplateId",
               },
             ],
             "element": <div

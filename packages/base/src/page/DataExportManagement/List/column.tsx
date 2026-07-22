@@ -94,6 +94,13 @@ export const ExportWorkflowListColumn: (
         )
     },
     {
+      dataIndex: 'workflow_template_name',
+      title: () => t('dmsDataExport.list.column.workflowTemplate'),
+      filterCustomType: 'select',
+      filterKey: 'filter_workflow_template_id',
+      render: (name) => name || '-'
+    },
+    {
       dataIndex: 'created_at',
       title: () => t('dmsDataExport.list.column.createTime'),
       render: (time) => {

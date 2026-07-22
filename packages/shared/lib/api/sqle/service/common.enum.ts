@@ -950,6 +950,12 @@ export enum WorkflowTemplateDetailResV1WorkflowTypeEnum {
   'data_export' = 'data_export'
 }
 
+export enum CreateWorkflowTemplateReqV1WorkflowTypeEnum {
+  'workflow' = 'workflow',
+
+  'data_export' = 'data_export'
+}
+
 export enum pipelineNodeBaseAuditMethodEnum {
   'offline' = 'offline',
 

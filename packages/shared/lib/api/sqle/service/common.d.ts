@@ -88,6 +88,7 @@ import {
   UpdateSqlBackupStrategyReqStrategyEnum,
   UpdateTaskBackupStrategyReqStrategyEnum,
   UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
+  CreateWorkflowTemplateReqV1WorkflowTypeEnum,
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
   WorkflowDetailResV1StatusEnum,
@@ -4234,6 +4235,10 @@ export interface IWorkflowDetailResV1 {
   workflow_id?: string;
 
   workflow_name?: string;
+
+  workflow_template_id?: number;
+
+  workflow_template_name?: string;
 }
 
 export interface IWorkflowDetailWithInstance {
@@ -4385,13 +4390,43 @@ export interface IWorkflowTemplateDetailResV1 {
 
   desc?: string;
 
+  is_default?: boolean;
+
   update_time?: string;
 
   workflow_step_template_list?: IWorkFlowStepTemplateResV1[];
 
+  workflow_template_id?: number;
+
   workflow_template_name?: string;
 
   workflow_type?: WorkflowTemplateDetailResV1WorkflowTypeEnum;
+}
+
+export interface ICreateWorkflowTemplateReqV1 {
+  allow_submit_when_less_audit_level?: UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
+
+  desc?: string;
+
+  is_default?: boolean;
+
+  workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
+
+  workflow_template_name: string;
+
+  workflow_type: CreateWorkflowTemplateReqV1WorkflowTypeEnum;
+}
+
+export interface IUpdateWorkflowTemplateByIdReqV1 {
+  allow_submit_when_less_audit_level?: UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
+
+  desc?: string;
+
+  is_default?: boolean;
+
+  workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
+
+  workflow_template_name?: string;
 }
 
 export interface ICreatePipelineResData {
@@ -4666,6 +4701,8 @@ export interface ICreateWorkflowReqV2 {
   task_ids?: number[];
 
   workflow_subject?: string;
+
+  workflow_template_id?: number;
 }
 
 export interface ICreateWorkflowResV2 {

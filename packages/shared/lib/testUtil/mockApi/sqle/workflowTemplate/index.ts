@@ -1,17 +1,22 @@
 import workflow from '../../../../api/sqle/service/workflow';
 import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
+  dataExportWorkflowTemplateListData,
   workflowTemplateData,
-  dataExportWorkflowTemplateData,
   workflowTemplateListData
 } from './data';
 import { cloneDeep } from 'lodash';
+import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '../../../../api/sqle/service/workflow/index.enum';
 
 class MockWorkflowTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
     this.updateWorkflowTemplate();
     this.getWorkflowTemplate();
-    this.getWorkflowTemplateList();
+    this.getWorkflowTemplates();
+    this.createWorkflowTemplate();
+    this.getWorkflowTemplateById();
+    this.updateWorkflowTemplateById();
+    this.deleteWorkflowTemplate();
     this.cancelWorkflow();
   }
 
@@ -23,12 +28,7 @@ class MockWorkflowTemplateApi implements MockSpyApy {
 
   public getWorkflowTemplate() {
     const spy = jest.spyOn(workflow, 'getWorkflowTemplateV1');
-    spy.mockImplementation((params) => {
-      if (params.workflow_type === 'data_export') {
-        return createSpySuccessResponse({
-          data: cloneDeep(dataExportWorkflowTemplateData)
-        });
-      }
+    spy.mockImplementation(() => {
       return createSpySuccessResponse({
         data: cloneDeep(workflowTemplateData)
       });
@@ -36,13 +36,58 @@ class MockWorkflowTemplateApi implements MockSpyApy {
     return spy;
   }
 
-  public getWorkflowTemplateList() {
-    const spy = jest.spyOn(workflow, 'getWorkflowTemplateListV1');
-    spy.mockImplementation(() => {
+  public getWorkflowTemplates() {
+    const spy = jest.spyOn(workflow, 'getWorkflowTemplatesV1');
+    spy.mockImplementation((params) => {
+      const list =
+        params.workflow_type ===
+        getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+          ? dataExportWorkflowTemplateListData
+          : workflowTemplateListData;
       return createSpySuccessResponse({
-        data: cloneDeep(workflowTemplateListData)
+        data: cloneDeep(list)
       });
     });
+    return spy;
+  }
+
+  public createWorkflowTemplate() {
+    const spy = jest.spyOn(workflow, 'createWorkflowTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: cloneDeep(workflowTemplateData)
+      })
+    );
+    return spy;
+  }
+
+  public getWorkflowTemplateById() {
+    const spy = jest.spyOn(workflow, 'getWorkflowTemplateByIdV1');
+    spy.mockImplementation((params) => {
+      const all = [
+        ...workflowTemplateListData,
+        ...dataExportWorkflowTemplateListData
+      ];
+      const target =
+        all.find(
+          (item) => item.workflow_template_id === params.workflow_template_id
+        ) ?? workflowTemplateData;
+      return createSpySuccessResponse({
+        data: cloneDeep(target)
+      });
+    });
+    return spy;
+  }
+
+  public updateWorkflowTemplateById() {
+    const spy = jest.spyOn(workflow, 'updateWorkflowTemplateByIdV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public deleteWorkflowTemplate() {
+    const spy = jest.spyOn(workflow, 'deleteWorkflowTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 

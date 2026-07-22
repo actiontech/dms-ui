@@ -46,6 +46,8 @@ import {
   SqlExecWorkflowTableToolbarActions
 } from './action';
 import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
+import useWorkflowTemplateTips from '../../../hooks/useWorkflowTemplateTips';
+import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { WorkflowDetailResV1WithExtraParams } from './index.type';
 const SqlExecWorkflowList: React.FC = () => {
@@ -61,6 +63,9 @@ const SqlExecWorkflowList: React.FC = () => {
   const { parse2TableToolbarActionPermissions, checkActionPermission } =
     usePermission();
   const { sqlVersionOptions, updateSqlVersionList } = useSQLVersionTips();
+  const { templateOptions } = useWorkflowTemplateTips(
+    getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow
+  );
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -147,11 +152,17 @@ const SqlExecWorkflowList: React.FC = () => {
           {
             options: sqlVersionOptions
           }
+        ],
+        [
+          'workflow_template_name',
+          {
+            options: templateOptions
+          }
         ]
         // #endif
       ]
     );
-  }, [instanceIDOptions, usernameOptions, sqlVersionOptions]);
+  }, [instanceIDOptions, usernameOptions, sqlVersionOptions, templateOptions]);
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
