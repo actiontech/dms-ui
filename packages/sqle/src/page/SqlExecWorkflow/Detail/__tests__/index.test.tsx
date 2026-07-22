@@ -61,6 +61,11 @@ describe('sqle/ExecWorkflow/Detail', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
+    document
+      .querySelectorAll('textarea[aria-hidden="true"]')
+      .forEach((node) => {
+        node.remove();
+      });
     jest.useFakeTimers();
     mockUseCurrentUser();
     mockUseCurrentProject();
@@ -114,6 +119,12 @@ describe('sqle/ExecWorkflow/Detail', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     cleanup();
+    // Ant Design TextArea autoSize may leave measuring nodes on document.body
+    document
+      .querySelectorAll('textarea[aria-hidden="true"]')
+      .forEach((node) => {
+        node.remove();
+      });
   });
 
   const customRender = () => {
