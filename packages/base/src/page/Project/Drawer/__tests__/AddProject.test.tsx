@@ -121,6 +121,47 @@ describe('test base/page/project/drawer/add', () => {
     expect(screen.getByText('关 闭').closest('button')).not.toBeDisabled();
   });
 
+  it('should send create project request with chinese name', async () => {
+    baseSuperRender(<AddProject />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.input(screen.getByLabelText('项目名称'), {
+      target: { value: '测试项目_A-1' }
+    });
+    fireEvent.input(screen.getByLabelText('项目描述'), {
+      target: { value: '中文描述' }
+    });
+
+    fireEvent.mouseDown(getBySelector('#priority'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="高"]'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(getBySelector('.editable-select-trigger'));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(addProjectSpy).toHaveBeenCalledTimes(1);
+    expect(addProjectSpy).toHaveBeenCalledWith({
+      project: {
+        name: '测试项目_A-1',
+        desc: '中文描述',
+        business_tag: {
+          uid: '1'
+        },
+        project_priority: 'high'
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('创建项目测试项目_A-1成功')).toBeInTheDocument();
+  });
+
   it('should match snapshot when getPreferredLanguages return "en-us"', async () => {
     mockUseCurrentUser({ language: SupportLanguage.enUS });
     const { baseElement } = baseSuperRender(<AddProject />);

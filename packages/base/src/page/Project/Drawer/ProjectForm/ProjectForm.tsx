@@ -1,7 +1,7 @@
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ProjectFormFields, ProjectFormProps } from '.';
-import { nameRule } from '@actiontech/dms-kit';
+import { roleNameRule } from '@actiontech/dms-kit';
 import { BasicInput, BasicSelect } from '@actiontech/dms-kit';
 import { ProjectPriorityOptions } from 'sqle/src/page/GlobalDashboard/index.data';
 import BusinessField from './BusinessField';
@@ -20,7 +20,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           {
             required: true
           },
-          ...nameRule()
+          ...roleNameRule()
         ]}
       >
         <BasicInput disabled={isUpdate} />
