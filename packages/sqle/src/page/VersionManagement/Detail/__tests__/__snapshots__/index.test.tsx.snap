@@ -2413,7 +2413,7 @@ exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
                 />
               </div>
               <form
-                class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
+                class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-179g0n5"
               >
                 <section
                   class="has-border css-1114g56"
