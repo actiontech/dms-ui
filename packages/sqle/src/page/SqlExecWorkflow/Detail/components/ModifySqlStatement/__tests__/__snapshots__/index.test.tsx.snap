@@ -2,6 +2,22 @@
 
 exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click formatter sql 1`] = `
 <body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -56,7 +72,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-179g0n5"
           >
             <section
               class="has-border css-1114g56"
@@ -91,6 +107,57 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                     修改审核语句
                   </span>
                 </h3>
+                <div
+                  class="ant-form-item workflow-desc-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="workflowDesc"
+                        title="工单描述"
+                      >
+                        工单描述
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <span
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count ant-input-show-count"
+                            data-count="0 / 3000"
+                          >
+                            <textarea
+                              class="ant-input"
+                              id="workflowDesc"
+                              placeholder="点此添加工单描述（选填）"
+                              style="overflow-y: hidden; resize: none;"
+                            />
+                            <span
+                              class="ant-input-suffix"
+                            >
+                              <span
+                                class="ant-input-data-count"
+                              >
+                                0 / 3000
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div
                   class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
@@ -1026,7 +1093,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-179g0n5"
           >
             <section
               class="has-border css-1114g56"
@@ -1061,6 +1128,59 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                     修改审核语句
                   </span>
                 </h3>
+                <div
+                  class="ant-form-item workflow-desc-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="workflowDesc"
+                        title="工单描述"
+                      >
+                        工单描述
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <span
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count ant-input-show-count"
+                            data-count="21 / 3000"
+                          >
+                            <textarea
+                              class="ant-input"
+                              id="workflowDesc"
+                              placeholder="点此添加工单描述（选填）"
+                              style="overflow-y: hidden; resize: none;"
+                            >
+                              current workflow desc
+                            </textarea>
+                            <span
+                              class="ant-input-suffix"
+                            >
+                              <span
+                                class="ant-input-data-count"
+                              >
+                                21 / 3000
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div
                   class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
@@ -1931,6 +2051,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
       </div>
     </div>
   </div>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
 </body>
 `;
 
@@ -1990,7 +2126,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-179g0n5"
           >
             <section
               class="has-border css-1114g56"
@@ -2025,6 +2161,59 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                     修改审核语句
                   </span>
                 </h3>
+                <div
+                  class="ant-form-item workflow-desc-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="workflowDesc"
+                        title="工单描述"
+                      >
+                        工单描述
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <span
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count ant-input-show-count"
+                            data-count="21 / 3000"
+                          >
+                            <textarea
+                              class="ant-input"
+                              id="workflowDesc"
+                              placeholder="点此添加工单描述（选填）"
+                              style="overflow-y: hidden; resize: none;"
+                            >
+                              current workflow desc
+                            </textarea>
+                            <span
+                              class="ant-input-suffix"
+                            >
+                              <span
+                                class="ant-input-data-count"
+                              >
+                                21 / 3000
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div
                   class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
@@ -3409,6 +3598,22 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
       </div>
     </div>
   </div>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
 </body>
 `;
 
@@ -3468,7 +3673,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-179g0n5"
           >
             <section
               class="has-border css-1114g56"
@@ -3503,6 +3708,57 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                     修改审核语句
                   </span>
                 </h3>
+                <div
+                  class="ant-form-item workflow-desc-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="workflowDesc"
+                        title="工单描述"
+                      >
+                        工单描述
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <span
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count ant-input-show-count"
+                            data-count="0 / 3000"
+                          >
+                            <textarea
+                              class="ant-input"
+                              id="workflowDesc"
+                              placeholder="点此添加工单描述（选填）"
+                              style="overflow-y: hidden; resize: none;"
+                            />
+                            <span
+                              class="ant-input-suffix"
+                            >
+                              <span
+                                class="ant-input-data-count"
+                              >
+                                0 / 3000
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div
                   class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
@@ -4743,5 +4999,21 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
       </div>
     </div>
   </div>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
 </body>
 `;

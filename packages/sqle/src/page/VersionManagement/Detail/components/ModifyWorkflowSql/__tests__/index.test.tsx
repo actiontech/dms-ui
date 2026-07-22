@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import {
@@ -135,6 +136,8 @@ describe('sqle/VersionManagement/Detail/ModifyWorkflowSql', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLContentSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByLabelText('工单描述')).not.toBeInTheDocument();
+    expect(document.querySelector('#workflowDesc')).not.toBeInTheDocument();
     fireEvent.input(getBySelector('.custom-monaco-editor'), {
       target: { value: 'SELECT 1;' }
     });
@@ -153,6 +156,11 @@ describe('sqle/VersionManagement/Detail/ModifyWorkflowSql', () => {
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(updateWorkflowSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_id: WorkflowsOverviewListData.workflow_id,
+      task_ids: [2]
+    });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitSpy).toHaveBeenCalledWith(

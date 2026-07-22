@@ -53,7 +53,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render init snap shot 1
                 />
               </div>
               <form
-                class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
+                class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-179g0n5"
               >
                 <section
                   class="has-border css-1114g56"
@@ -714,7 +714,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                 </div>
               </div>
               <form
-                class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
+                class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-179g0n5"
               >
                 <section
                   class="has-border css-1114g56"

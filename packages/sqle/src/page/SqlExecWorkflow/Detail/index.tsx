@@ -30,8 +30,13 @@ const SqlWorkflowDetail: React.FC = () => {
   ] = useBoolean(false);
   const [isAtRollbackStep, { setTrue: startRollback, setFalse: stopRollback }] =
     useBoolean();
-  const { taskInfos, workflowInfo, refreshWorkflowInfo, initLoading } =
-    useInitDataWithRequest();
+  const {
+    taskInfos,
+    workflowInfo,
+    refreshWorkflowInfo,
+    refreshWorkflowInfoUntilUpdated,
+    initLoading
+  } = useInitDataWithRequest();
   const {
     maintenanceTimeInfo,
     canRejectWorkflow,
@@ -155,12 +160,14 @@ const SqlWorkflowDetail: React.FC = () => {
         isSameSqlForAll={workflowInfo?.mode === WorkflowResV2ModeEnum.same_sqls}
         executeMode={workflowInfo?.exec_mode}
         workflowId={workflowInfo?.workflow_id ?? ''}
+        enableWorkflowDescEdit
+        currentDesc={workflowInfo?.desc}
         modifiedTasks={modifiedTasks}
         submitWorkflowConfirmationMessage={submitWorkflowConfirmationMessage}
         isConfirmationRequiredForSubmission={
           isConfirmationRequiredForSubmission
         }
-        refreshWorkflow={refreshWorkflowInfo}
+        refreshWorkflow={refreshWorkflowInfoUntilUpdated}
         refreshOverviewAction={refreshOverviewAction}
         auditExecPanelTabChangeEvent={changeActiveTabKey}
       />
