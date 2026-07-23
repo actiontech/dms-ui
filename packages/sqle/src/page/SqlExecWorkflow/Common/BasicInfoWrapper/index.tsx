@@ -19,7 +19,8 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   className,
   status,
   gap = 12,
-  sqlVersion
+  sqlVersion,
+  failSummary
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -87,6 +88,10 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
             {status && t(execWorkflowStatusDictionary[status])}
           </span>
         </div>
+      </EmptyBox>
+
+      <EmptyBox if={!!failSummary}>
+        <div className="workflow-base-info-fail-summary">{failSummary}</div>
       </EmptyBox>
 
       <Space className="workflow-base-info-title">

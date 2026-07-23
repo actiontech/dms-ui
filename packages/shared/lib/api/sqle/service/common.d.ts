@@ -752,6 +752,18 @@ export interface IAuditTaskResV1 {
 
   exec_end_time?: string;
 
+  /** 任务级上线失败主导阶段（backend §5.2） */
+  exec_fail_stage?: string;
+
+  /** 任务级代表失败原因 */
+  exec_fail_reason?: string;
+
+  /** 同阶段失败 SQL 计数 */
+  exec_fail_sql_count?: number;
+
+  /** 可选摘要素材，如「SQL 备份失败」 */
+  exec_fail_summary?: string;
+
   exec_mode?: string;
 
   exec_start_time?: string;
@@ -4673,6 +4685,12 @@ export interface IAuditTaskSQLResV2 {
   exec_sql_id?: number;
 
   exec_status?: string;
+
+  /** 失败/未执行阶段（backend §5.1） */
+  fail_stage?: string;
+
+  /** 原因行优先字段；缺省回退 exec_result */
+  fail_reason?: string;
 
   number?: number;
 

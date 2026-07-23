@@ -142,6 +142,35 @@ export default {
   },
 
   detail: {
+    failDisplay: {
+      headerPrefix: 'Execution failed: ',
+      headerWithCount: 'Execution failed: {{count}} SQL(s) {{phrase}}',
+      statusLabel: 'Status',
+      stageLabel: 'Stage',
+      reasonLabel: 'Reason',
+      stage: {
+        sqlBackup: 'SQL backup',
+        sqlExecute: 'SQL execution',
+        datasourceConnect: 'Data source connection',
+        preCheck: 'Pre-check',
+        terminate: 'Task terminated',
+        unknown: 'Unknown'
+      },
+      phrase: {
+        sqlBackup: 'SQL backup failed',
+        sqlExecute: 'SQL execution failed',
+        datasourceConnect: 'Data source connection failed',
+        preCheck: 'Pre-check failed',
+        terminate: 'Task terminated',
+        unknown: 'Unknown'
+      },
+      status: {
+        backupFailed: 'Backup failed',
+        executeFailed: 'Execution failed',
+        connectFailed: 'Connection failed',
+        notExecuted: 'Not executed'
+      }
+    },
     operator: {
       buttonText: 'Workflow details',
       title: 'Workflow information',

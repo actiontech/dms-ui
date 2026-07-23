@@ -69,6 +69,26 @@ export const TasksResultCardStyleWrapper = styled('div')`
           width: max-content;
         }
       }
+
+      .exec-fail-result {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+        font-size: 14px;
+        line-height: 22px;
+        white-space: pre-wrap;
+        word-break: break-word;
+
+        .exec-fail-result-label {
+          color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+          margin-right: 4px;
+        }
+
+        .exec-fail-result-reason {
+          white-space: pre-wrap;
+        }
+      }
     }
 
     & .ant-collapse.result-record-collapse .ant-collapse-header {

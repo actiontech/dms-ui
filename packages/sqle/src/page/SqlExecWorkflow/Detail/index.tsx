@@ -18,11 +18,21 @@ import RejectReason from './components/RejectReason';
 import useModifySql from './hooks/useModifySql';
 import WorkflowRecordInfo from './components/RecordInfo';
 import ModifySqlStatement from './components/ModifySqlStatement';
-import useAuditExecResultPanelSetup from './hooks/useAuditExecResultPanelSetup';
+import useAuditExecResultPanelSetup, {
+  WORKFLOW_OVERVIEW_TAB_KEY
+} from './hooks/useAuditExecResultPanelSetup';
 import AuditExecResultPanel from './components/AuditExecResultPanel';
 import SqlRollback from './components/SqlRollback';
+import { useTranslation } from 'react-i18next';
+import {
+  failStagePhraseI18nKey,
+  ONLINE_FAIL_STAGE,
+  pickTaskForFailSummary,
+  resolveHeaderFailSummary
+} from './utils/failDisplay';
 
 const SqlWorkflowDetail: React.FC = () => {
+  const { t } = useTranslation();
   const { username } = useCurrentUser();
   const [
     workflowStepsVisibility,
@@ -77,6 +87,41 @@ const SqlWorkflowDetail: React.FC = () => {
       (v) => v.state === WorkflowStepResV2StateEnum.rejected
     );
   }, [workflowInfo?.record?.workflow_step_list]);
+
+  const failSummary = useMemo(() => {
+    const task = pickTaskForFailSummary(
+      taskInfos,
+      activeTabKey,
+      WORKFLOW_OVERVIEW_TAB_KEY
+    );
+    const plan = resolveHeaderFailSummary({
+      workflowStatus: workflowInfo?.record?.status,
+      taskStatus: task?.status,
+      execFailStage: task?.exec_fail_stage,
+      execFailSqlCount: task?.exec_fail_sql_count,
+      execFailSummary: task?.exec_fail_summary
+    });
+    if (!plan) {
+      return null;
+    }
+    if (plan.mode === 'backend_summary') {
+      return `${t('execWorkflow.detail.failDisplay.headerPrefix')}${
+        plan.summary
+      }`;
+    }
+    const phraseKey =
+      failStagePhraseI18nKey[plan.stage] ??
+      failStagePhraseI18nKey[ONLINE_FAIL_STAGE.unknown];
+    const phrase = t(phraseKey);
+    if (plan.mode === 'count') {
+      return t('execWorkflow.detail.failDisplay.headerWithCount', {
+        count: plan.count,
+        phrase
+      });
+    }
+    return `${t('execWorkflow.detail.failDisplay.headerPrefix')}${phrase}`;
+  }, [activeTabKey, t, taskInfos, workflowInfo?.record?.status]);
+
   return (
     <Spin spinning={initLoading} delay={400}>
       {messageContextHolder}
@@ -116,6 +161,7 @@ const SqlWorkflowDetail: React.FC = () => {
             className="clearPaddingTop"
             gap={24}
             sqlVersion={workflowInfo?.sql_version}
+            failSummary={failSummary}
           />
 
           <EmptyBox

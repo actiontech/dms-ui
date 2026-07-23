@@ -40,7 +40,8 @@ export default {
     terminate_fail: 'Termination failed',
     terminate_succ: 'Termination success',
     terminating: 'Terminating',
-    allStatus: 'All status'
+    allStatus: 'All status',
+    not_executed: 'Not executed'
   },
 
   auditStatus: {

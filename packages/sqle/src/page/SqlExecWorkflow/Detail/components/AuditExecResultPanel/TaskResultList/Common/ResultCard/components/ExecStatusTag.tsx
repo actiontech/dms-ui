@@ -3,6 +3,12 @@ import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/a
 import { BasicTagColor } from '@actiontech/dms-kit/es/theme/theme.type';
 import { useTranslation } from 'react-i18next';
 import { execStatusDictionary } from '../../../../../../../../../hooks/useStaticStatus/index.data';
+import {
+  failProductStatusI18nKey,
+  ONLINE_FAIL_STAGE,
+  resolveFailStage
+} from '../../../../../../utils/failDisplay';
+
 const execStatusMap: {
   [key in getAuditTaskSQLsV2FilterExecStatusEnum]?: BasicTagColor;
 } = {
@@ -14,16 +20,31 @@ const execStatusMap: {
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminate_failed]: 'red',
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminate_succeeded]: 'green',
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]: 'geekblue',
-  [getAuditTaskSQLsV2FilterExecStatusEnum.execute_rollback]: 'orange'
+  [getAuditTaskSQLsV2FilterExecStatusEnum.execute_rollback]: 'orange',
+  [getAuditTaskSQLsV2FilterExecStatusEnum.not_executed]: 'orange'
 };
 export interface ExecStatusTagProps {
   status: getAuditTaskSQLsV2FilterExecStatusEnum;
+  failStage?: string;
+  backupStatus?: string;
 }
-const ExecStatusTag: React.FC<ExecStatusTagProps> = ({ status }) => {
+const ExecStatusTag: React.FC<ExecStatusTagProps> = ({
+  status,
+  failStage,
+  backupStatus
+}) => {
   const { t } = useTranslation();
+  const productStatusKey =
+    status === getAuditTaskSQLsV2FilterExecStatusEnum.failed
+      ? failProductStatusI18nKey[resolveFailStage(failStage, backupStatus)] ??
+        failProductStatusI18nKey[ONLINE_FAIL_STAGE.unknown]
+      : null;
+  const label = productStatusKey
+    ? t(productStatusKey)
+    : t(execStatusDictionary[status]);
   return (
     <BasicTag color={execStatusMap[status]} size="large" bordered={false}>
-      {t(execStatusDictionary[status])}
+      {label}
     </BasicTag>
   );
 };
