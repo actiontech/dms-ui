@@ -35,7 +35,17 @@ import {
 import { nameRule } from '@actiontech/dms-kit';
 import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
-import { turnDataSourceAsyncFormToCommon } from '../../tool';
+import {
+  DEFAULT_REDIS_CONNECTION_MODE,
+  filterRedisConnectionModeParam,
+  getRedisConnectionModeFromParams,
+  isRedisDbType,
+  mergeRedisConnectionModeIntoParams,
+  MONGODB_SEED_HOSTS_PARAM,
+  normalizeMongoParams,
+  normalizeMongoRequestParams,
+  turnDataSourceAsyncFormToCommon
+} from '../../tool';
 import { useAsyncParams, BackendFormItemParams } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
@@ -79,6 +89,36 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { projectID } = useCurrentProject();
   const project = Form.useWatch('project', props.form);
   const enableBackup = Form.useWatch('enableBackup', props.form);
+  const changeAuditEnabled = useCallback(
+    (check: boolean) => {
+      if (!check) {
+        props.form.setFieldsValue({
+          needSqlAuditService: false,
+          ruleTemplateId: undefined,
+          ruleTemplateName: undefined,
+          dataExportRuleTemplateId: undefined,
+          dataExportRuleTemplateName: undefined,
+          needAuditForSqlQuery: false,
+          workbenchTemplateId: undefined,
+          workbenchTemplateName: undefined,
+          allowQueryWhenLessThanAuditLevel: undefined,
+          allowExecuteNonDqlInWorkflow: undefined
+        });
+      } else {
+        if (props.defaultData) {
+          props.form.setFieldsValue({
+            allowQueryWhenLessThanAuditLevel:
+              props.defaultData.sqle_config?.sql_query_config
+                ?.allow_query_when_less_than_audit_level,
+            allowExecuteNonDqlInWorkflow:
+              !!props.defaultData.sqle_config?.sql_query_config
+                ?.workflow_exec_enabled
+          });
+        }
+      }
+    },
+    [props.defaultData, props.form]
+  );
   const getBackupSupportStatus = useCallback((value: string) => {
     system
       .getSystemModuleStatus({
@@ -94,6 +134,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const databaseTypeChange = useCallback(
     (value: string) => {
       setDatabaseType(value);
+      props.form.setFieldValue(
+        'connectionMode',
+        isRedisDbType(value) ? DEFAULT_REDIS_CONNECTION_MODE : undefined
+      );
       // #if [sqle]
       props.form.resetFields([
         'ruleTemplateName',
@@ -105,12 +149,15 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         'allowExecuteNonDqlInWorkflow',
         'sqlWorkbenchMaintenanceTime'
       ]);
+      if (value.toLowerCase() === 'mongodb') {
+        changeAuditEnabled(false);
+      }
       // #endif
       // #if [sqle && ee]
       getBackupSupportStatus(value);
       // #endif
     },
-    [props.form, getBackupSupportStatus]
+    [props.form, getBackupSupportStatus, changeAuditEnabled]
   );
   const { generateFormValueByParams, mergeFromValueIntoParams } =
     useAsyncParams();
@@ -148,25 +195,11 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         };
       });
   }, [ruleTemplateList, globalRuleTemplateList, databaseType]);
-  const changeAuditEnabled = (check: boolean) => {
-    if (!check) {
-      props.form.setFieldsValue({
-        allowQueryWhenLessThanAuditLevel: undefined,
-        allowExecuteNonDqlInWorkflow: undefined
-      });
-    } else {
-      if (props.defaultData) {
-        props.form.setFieldsValue({
-          allowQueryWhenLessThanAuditLevel:
-            props.defaultData.sqle_config?.sql_query_config
-              ?.allow_query_when_less_than_audit_level,
-          allowExecuteNonDqlInWorkflow:
-            !!props.defaultData.sqle_config?.sql_query_config
-              ?.workflow_exec_enabled
-        });
-      }
+  useEffect(() => {
+    if (databaseType.toLowerCase() === 'mongodb') {
+      changeAuditEnabled(false);
     }
-  };
+  }, [databaseType, changeAuditEnabled]);
   // #endif
 
   const params = useMemo<BackendFormItemParams[]>(() => {
@@ -177,7 +210,24 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     if (!temp) {
       return [];
     }
-    return turnDataSourceAsyncFormToCommon(temp.params ?? []);
+    const driverParams = filterRedisConnectionModeParam(
+      turnDataSourceAsyncFormToCommon(temp.params ?? [])
+    );
+    if (
+      databaseType.toLowerCase() === 'mongodb' &&
+      !driverParams.some((item) => item.key === MONGODB_SEED_HOSTS_PARAM)
+    ) {
+      return [
+        ...driverParams,
+        {
+          desc: 'MongoDB seed hosts',
+          key: MONGODB_SEED_HOSTS_PARAM,
+          type: 'string',
+          value: ''
+        }
+      ];
+    }
+    return driverParams;
   }, [databaseType, driverMeta]);
   useEffect(() => {
     if (!!props.defaultData) {
@@ -185,12 +235,19 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         name: props.defaultData.name,
         describe: props.defaultData.desc,
         type: props.defaultData.db_type,
+        connectionMode: isRedisDbType(props.defaultData.db_type)
+          ? getRedisConnectionModeFromParams(
+              props.defaultData.additional_params
+            )
+          : undefined,
         ip: props.defaultData.host,
         port: Number.parseInt(props.defaultData.port ?? ''),
         user: props.defaultData.user,
         params: generateFormValueByParams(
-          turnDataSourceAsyncFormToCommon(
-            props.defaultData.additional_params ?? []
+          filterRedisConnectionModeParam(
+            turnDataSourceAsyncFormToCommon(
+              props.defaultData.additional_params ?? []
+            )
           )
         ),
         maintenanceTime: props.defaultData.maintenance_times?.map((item) => ({
@@ -262,15 +319,21 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [props.form]);
   const submit = useCallback(async () => {
     const values = props.form.getFieldsValue();
+    values.params = normalizeMongoParams(values.params);
     if (values.params) {
-      values.asyncParams = mergeFromValueIntoParams(values.params, params).map(
-        (v) => ({
+      values.asyncParams = normalizeMongoRequestParams(
+        mergeFromValueIntoParams(values.params, params).map((v) => ({
           name: v.key,
           value: v.value
-        })
+        }))
       );
       delete values.params;
     }
+    values.asyncParams = mergeRedisConnectionModeIntoParams(
+      values.asyncParams,
+      values.type,
+      values.connectionMode
+    );
     props.submit(values).then(() => {
       closeModal();
     });
@@ -398,6 +461,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             generateDriverSelectOptions={generateDriverSelectOptions}
             updateDriverListLoading={updateDriverListLoading}
             currentAsyncParams={params}
+            databaseType={databaseType}
             isExternalInstance={isExternalInstance}
           />
           <FormItemLabel
@@ -429,19 +493,21 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
       {/* #if [sqle] */}
-      <FormAreaLineStyleWrapper
-        className={classNames({
-          'has-border': hasBorder()
-        })}
-      >
-        <SqlAuditFields
-          getTemplateOptionsLoading={
-            ruleTemplateLoading || globalRuleTemplateLoading
-          }
-          ruleTemplateOptions={ruleTemplateOptions}
-          onNeedAuditForSqlQueryChange={changeAuditEnabled}
-        />
-      </FormAreaLineStyleWrapper>
+      {databaseType.toLowerCase() !== 'mongodb' && (
+        <FormAreaLineStyleWrapper
+          className={classNames({
+            'has-border': hasBorder()
+          })}
+        >
+          <SqlAuditFields
+            getTemplateOptionsLoading={
+              ruleTemplateLoading || globalRuleTemplateLoading
+            }
+            ruleTemplateOptions={ruleTemplateOptions}
+            onNeedAuditForSqlQueryChange={changeAuditEnabled}
+          />
+        </FormAreaLineStyleWrapper>
+      )}
       {/* #endif */}
 
       {/* #if [sqle && ee] */}

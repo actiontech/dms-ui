@@ -9,6 +9,11 @@ import {
   getDBServiceConnectableErrorMessage,
   getDbServiceIsConnectbale
 } from '../../../utils/common';
+import {
+  mergeRedisConnectionModeIntoParams,
+  normalizeMongoParams,
+  normalizeMongoRequestParams
+} from '../tool';
 
 const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
   const projectID = Form.useWatch('project', form);
@@ -28,16 +33,26 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
         'port',
         'user',
         'type',
-        'params'
+        'params',
+        'connectionMode'
       ]);
 
+      values.params = normalizeMongoParams(values.params);
+
       if (values.params && currentAsyncParams) {
-        values.asyncParams = mergeFromValueIntoParams(
-          values.params,
-          currentAsyncParams
-        ).map((v) => ({ name: v.key, value: v.value }));
+        values.asyncParams = normalizeMongoRequestParams(
+          mergeFromValueIntoParams(values.params, currentAsyncParams).map(
+            (v) => ({ name: v.key, value: v.value })
+          )
+        );
         delete values.params;
       }
+
+      values.asyncParams = mergeRedisConnectionModeIntoParams(
+        values.asyncParams,
+        values.type,
+        values.connectionMode
+      );
 
       setLoadingTrue();
       return DmsApi.DBServiceService.CheckDBServiceIsConnectable({

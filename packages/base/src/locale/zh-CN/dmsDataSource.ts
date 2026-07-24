@@ -50,6 +50,9 @@ export default {
     name: '数据源名称',
     describe: '数据源描述',
     type: '数据源类型',
+    connectionMode: '连接模式',
+    connectionModeStandalone: '单实例',
+    connectionModeCluster: 'Cluster',
     ip: '数据源地址',
     ipTips: '数据源IP或域名',
     port: '数据源端口',
@@ -104,6 +107,23 @@ export default {
     lineNumberLimit: '回滚行数限制',
     lineNumberLimitTips: '当预计影响行数超过指定值则不回滚',
     dataSourceConnectError: '数据源连通性测试失败',
+    mongoTopology: 'MongoDB 形态',
+    mongoTopologySingle: 'Single',
+    mongoTopologyReplicaSet: 'Replica Set',
+    mongoTopologyShard: 'Shard / mongos',
+    mongoSingleTips:
+      'Single 形态填写单实例地址和端口，副本集名称与 seed hosts 留空。',
+    mongoReplicaSetTips:
+      'Replica Set 形态在 seed hosts 中填写多个成员地址，基础地址和端口保留首个 seed。',
+    mongoShardTips:
+      'Shard / mongos 形态只填写单个 mongos 地址和端口，请勿填写 configsvr、shard 节点或 Replica Set 多成员地址。',
+    mongoSeedHosts: 'Replica Set 成员地址',
+    mongoSeedHostsTips:
+      '提交为 MongoDB 插件动态参数 seed_hosts，多个成员使用英文逗号或换行分隔。',
+    mongoSeedHostsPlaceholder:
+      '例如：10.186.16.126:37018,10.186.16.126:37019,10.186.16.126:37020',
+    mongoSeedHostsRule:
+      '请填写 host:port 格式的成员地址，多个成员用英文逗号或换行分隔',
     returnModify: '返回修改',
     continueSubmit: '继续提交'
   },

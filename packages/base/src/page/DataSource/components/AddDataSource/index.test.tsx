@@ -35,6 +35,45 @@ describe('page/DataSource/AddDataSource', () => {
     return baseSuperRender(<AddDataSource />);
   };
 
+  const mockMongoDriverOption = () => {
+    baseMockApi.global.getListDBServiceDriverOption().mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            db_type: 'MongoDB',
+            logo_path: 'logo_path_mock',
+            params: [
+              {
+                description: 'MongoDB authentication database',
+                name: 'auth_source',
+                type: 'string',
+                value: 'admin'
+              },
+              {
+                description: 'Replica set name',
+                name: 'replica_set',
+                type: 'string',
+                value: ''
+              },
+              {
+                description: 'Direct connection',
+                name: 'direct_connection',
+                type: 'bool',
+                value: 'false'
+              },
+              {
+                description: 'MongoDB seed hosts',
+                name: 'seed_hosts',
+                type: 'string',
+                value: ''
+              }
+            ]
+          }
+        ]
+      })
+    );
+  };
+
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -236,6 +275,153 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('添加数据源')).toBeInTheDocument();
   });
+
+  it.each([
+    {
+      topology: 'Single',
+      name: 'mongo-single-source',
+      host: '10.186.16.126',
+      port: '37017',
+      expectedParams: [
+        { name: 'auth_source', value: 'admin' },
+        { name: 'replica_set', value: '' },
+        { name: 'direct_connection', value: false }
+      ]
+    },
+    {
+      topology: 'Replica Set',
+      name: 'mongo-replica-source',
+      host: '10.186.16.126',
+      port: '37018',
+      replicaSet: 'rs0',
+      seedHosts: '10.186.16.126:37018,37019,37020',
+      expectedParams: [
+        { name: 'auth_source', value: 'admin' },
+        { name: 'replica_set', value: 'rs0' },
+        { name: 'direct_connection', value: false },
+        {
+          name: 'seed_hosts',
+          value: '10.186.16.126:37018,10.186.16.126:37019,10.186.16.126:37020'
+        }
+      ]
+    },
+    {
+      topology: 'Shard / mongos',
+      name: 'mongo-shard-source',
+      host: '10.186.16.126',
+      port: '37021',
+      expectedParams: [
+        { name: 'auth_source', value: 'admin' },
+        { name: 'replica_set', value: '' },
+        { name: 'direct_connection', value: false }
+      ]
+    }
+  ])(
+    'submits MongoDB $topology to v2 create API with expected params',
+    async ({
+      topology,
+      name,
+      host,
+      port,
+      replicaSet,
+      seedHosts,
+      expectedParams
+    }) => {
+      mockMongoDriverOption();
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(9300));
+
+      fireEvent.change(getBySelector('#name', baseElement), {
+        target: { value: name }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.mouseDown(getBySelector('#type', baseElement));
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.click(getBySelector('span[title="MongoDB"]', baseElement));
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      if (topology !== 'Single') {
+        fireEvent.click(screen.getByText(topology));
+        await act(async () => jest.advanceTimersByTime(300));
+      }
+
+      fireEvent.change(getBySelector('#ip', baseElement), {
+        target: { value: host }
+      });
+      fireEvent.change(getBySelector('#port', baseElement), {
+        target: { value: port }
+      });
+      fireEvent.change(getBySelector('#user', baseElement), {
+        target: { value: 'mongo' }
+      });
+      fireEvent.change(getBySelector('#password', baseElement), {
+        target: { value: 'Mongo@123' }
+      });
+      fireEvent.change(getBySelector('#params_auth_source', baseElement), {
+        target: { value: 'admin' }
+      });
+
+      if (replicaSet) {
+        fireEvent.change(getBySelector('#params_replica_set', baseElement), {
+          target: { value: replicaSet }
+        });
+      }
+      if (seedHosts) {
+        fireEvent.change(getBySelector('#params_seed_hosts', baseElement), {
+          target: { value: seedHosts }
+        });
+        fireEvent.blur(getBySelector('#params_seed_hosts', baseElement));
+      } else {
+        expect(
+          baseElement.querySelector('#params_seed_hosts')
+        ).not.toBeInTheDocument();
+      }
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(getAllBySelector('.ant-dropdown-menu-item')[0]);
+      await act(async () => jest.advanceTimersByTime(0));
+
+      await act(async () => {
+        fireEvent.click(screen.getByText('提 交'));
+      });
+      expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(requestAddDBServiceSpy).toHaveBeenCalledWith({
+        db_service: {
+          additional_params: expectedParams,
+          db_type: 'MongoDB',
+          desc: undefined,
+          environment_tag_uid: '1',
+          host,
+          maintenance_times: [],
+          name,
+          password: 'Mongo@123',
+          port,
+          sqle_config: {
+            audit_enabled: false,
+            data_export_rule_template_id: undefined,
+            data_export_rule_template_name: undefined,
+            rule_template_id: undefined,
+            rule_template_name: undefined,
+            sql_query_config: {
+              allow_query_when_less_than_audit_level: undefined,
+              audit_enabled: undefined,
+              maintenance_times: [],
+              workflow_exec_enabled: undefined
+            }
+          },
+          user: 'mongo',
+          enable_backup: false,
+          backup_max_rows: undefined
+        },
+        project_uid: projectID
+      });
+    }
+  );
 
   it('render conenctable modal when current service can not connect', async () => {
     checkDbServiceIsConnectableSpy.mockImplementation(() =>
