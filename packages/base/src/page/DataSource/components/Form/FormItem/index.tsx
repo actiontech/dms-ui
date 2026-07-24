@@ -1,13 +1,13 @@
 import { useBoolean } from 'ahooks';
-import { useEffect, useState, useContext, useMemo } from 'react';
+import { useEffect, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, FormInstance } from 'antd';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
 import {
+  BasicCollapseStyleWrapper,
   BasicInput,
-  BasicSegmented,
   BasicSelect,
   BasicSwitch,
   EmptyBox,
@@ -27,10 +27,19 @@ import { DataSourceFormContext } from '../../../context';
 import {
   DEFAULT_REDIS_CONNECTION_MODE,
   isRedisDbType,
+  MONGODB_ADVANCED_PARAMS,
+  MONGODB_AUTH_MECHANISM_PARAM,
+  MONGODB_AUTH_SOURCE_PARAM,
+  MONGODB_DIRECT_CONNECTION_PARAM,
+  MONGODB_MAIN_PARAMS,
+  MONGODB_REPLICA_SET_PARAM,
   MONGODB_SEED_HOSTS_PARAM,
+  MONGODB_TLS_PARAM,
+  MONGODB_TLS_SKIP_VERIFY_PARAM,
   normalizeMongoSeedHosts,
   validateMongoSeedHosts
 } from '../../../tool';
+
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
   isUpdate?: boolean;
@@ -52,6 +61,10 @@ const DatabaseFormItem: React.FC<{
   ] = useBoolean(true);
   const isMongoDB = props.databaseType?.toLowerCase() === 'mongodb';
   const mongoTopology = Form.useWatch('mongoTopology', props.form);
+  const mongoTlsEnabled = Form.useWatch(
+    ['params', MONGODB_TLS_PARAM],
+    props.form
+  );
   const mongodbAsyncParams = useMemo(() => {
     return props.currentAsyncParams ?? [];
   }, [props.currentAsyncParams]);
@@ -60,14 +73,101 @@ const DatabaseFormItem: React.FC<{
       (item) => item.key === MONGODB_SEED_HOSTS_PARAM
     );
   }, [mongodbAsyncParams]);
+  const replicaSetParam = useMemo(() => {
+    return mongodbAsyncParams.find(
+      (item) => item.key === MONGODB_REPLICA_SET_PARAM
+    );
+  }, [mongodbAsyncParams]);
+
+  const mongoParamDescMap = useMemo<Record<string, string>>(
+    () => ({
+      [MONGODB_AUTH_SOURCE_PARAM]: `${t(
+        'dmsDataSource.dataSourceForm.mongoAuthSource'
+      )}（${t('dmsDataSource.dataSourceForm.mongoAuthSourceTips')}）`,
+      [MONGODB_AUTH_MECHANISM_PARAM]: `${t(
+        'dmsDataSource.dataSourceForm.mongoAuthMechanism'
+      )}（${t('dmsDataSource.dataSourceForm.mongoAuthMechanismTips')}）`,
+      [MONGODB_REPLICA_SET_PARAM]: `${t(
+        'dmsDataSource.dataSourceForm.mongoReplicaSet'
+      )}（${t('dmsDataSource.dataSourceForm.mongoReplicaSetNameTips')}）`,
+      [MONGODB_TLS_PARAM]: `${t(
+        'dmsDataSource.dataSourceForm.mongoTlsEnabled'
+      )}（${t('dmsDataSource.dataSourceForm.mongoTlsEnabledTips')}）`,
+      [MONGODB_TLS_SKIP_VERIFY_PARAM]: `${t(
+        'dmsDataSource.dataSourceForm.mongoTlsSkipVerify'
+      )}（${t('dmsDataSource.dataSourceForm.mongoTlsSkipVerifyTips')}）`,
+      [MONGODB_DIRECT_CONNECTION_PARAM]: `${t(
+        'dmsDataSource.dataSourceForm.mongoDirectConnection'
+      )}（${t('dmsDataSource.dataSourceForm.mongoDirectConnectionTips')}）`
+    }),
+    [t]
+  );
+
+  const withMongoChineseDesc = (
+    items: BackendFormItemParams[]
+  ): BackendFormItemParams[] =>
+    items.map((item) => {
+      const key = item.key ?? '';
+      const desc = mongoParamDescMap[key];
+      return desc ? { ...item, desc } : item;
+    });
+
+  const mongoHandledKeys = useMemo(
+    () =>
+      new Set<string>([
+        ...MONGODB_MAIN_PARAMS,
+        ...MONGODB_ADVANCED_PARAMS,
+        MONGODB_REPLICA_SET_PARAM,
+        MONGODB_SEED_HOSTS_PARAM
+      ]),
+    []
+  );
+
+  const mongoMainParams = useMemo(() => {
+    if (!isMongoDB) {
+      return [];
+    }
+    return withMongoChineseDesc(
+      mongodbAsyncParams.filter((item) =>
+        (MONGODB_MAIN_PARAMS as readonly string[]).includes(item.key ?? '')
+      )
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMongoDB, mongodbAsyncParams, mongoParamDescMap]);
+
+  const mongoAdvancedParams = useMemo(() => {
+    if (!isMongoDB) {
+      return [];
+    }
+    return withMongoChineseDesc(
+      mongodbAsyncParams
+        .filter((item) =>
+          (MONGODB_ADVANCED_PARAMS as readonly string[]).includes(
+            item.key ?? ''
+          )
+        )
+        .map((item) => {
+          if (item.key === MONGODB_TLS_SKIP_VERIFY_PARAM) {
+            return {
+              ...item,
+              hidden: !mongoTlsEnabled
+            };
+          }
+          return item;
+        })
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMongoDB, mongodbAsyncParams, mongoParamDescMap, mongoTlsEnabled]);
+
   const autoCreatedAsyncParams = useMemo(() => {
     if (!isMongoDB) {
       return mongodbAsyncParams;
     }
     return mongodbAsyncParams.filter(
-      (item) => item.key !== MONGODB_SEED_HOSTS_PARAM
+      (item) => !mongoHandledKeys.has(item.key ?? '')
     );
-  }, [isMongoDB, mongodbAsyncParams]);
+  }, [isMongoDB, mongodbAsyncParams, mongoHandledKeys]);
+
   const mergeMongoTopologyParams = (
     topology: DataSourceFormField['mongoTopology'],
     paramsValue: Record<string, string | boolean | undefined>
@@ -168,6 +268,26 @@ const DatabaseFormItem: React.FC<{
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMongoDB, props.currentAsyncParams]);
+
+  useEffect(() => {
+    if (!isMongoDB || mongoTlsEnabled) {
+      return;
+    }
+    const paramsValue = (props.form.getFieldValue('params') ?? {}) as Record<
+      string,
+      string | boolean | undefined
+    >;
+    if (paramsValue[MONGODB_TLS_SKIP_VERIFY_PARAM]) {
+      props.form.setFieldsValue({
+        params: {
+          ...paramsValue,
+          [MONGODB_TLS_SKIP_VERIFY_PARAM]: false
+        }
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMongoDB, mongoTlsEnabled]);
+
   return (
     <>
       <FormItemLabel
@@ -324,11 +444,17 @@ const DatabaseFormItem: React.FC<{
 
       <EmptyBox if={isMongoDB}>
         <FormItemLabel
-          label={t('dmsDataSource.dataSourceForm.mongoTopology')}
+          className="has-label-tip"
+          label={
+            <CustomLabelContent
+              title={t('dmsDataSource.dataSourceForm.mongoTopology')}
+              tips={t('dmsDataSource.dataSourceForm.mongoTopologyTips')}
+            />
+          }
           name="mongoTopology"
           initialValue="single"
         >
-          <BasicSegmented
+          <BasicSelect
             options={[
               {
                 label: t('dmsDataSource.dataSourceForm.mongoTopologySingle'),
@@ -360,9 +486,20 @@ const DatabaseFormItem: React.FC<{
         </FormItemNoLabel>
       </EmptyBox>
 
-      <EmptyBox if={(autoCreatedAsyncParams?.length ?? 0) > 0}>
+      <EmptyBox if={isMongoDB && mongoMainParams.length > 0}>
         <AutoCreatedFormItemByApi
-          params={autoCreatedAsyncParams ?? []}
+          params={mongoMainParams}
+          disabled={props.isExternalInstance}
+        />
+      </EmptyBox>
+
+      <EmptyBox
+        if={isMongoDB && mongoTopology === 'replicaSet' && !!replicaSetParam}
+      >
+        <AutoCreatedFormItemByApi
+          params={withMongoChineseDesc(
+            replicaSetParam ? [replicaSetParam] : []
+          )}
           disabled={props.isExternalInstance}
         />
       </EmptyBox>
@@ -409,6 +546,48 @@ const DatabaseFormItem: React.FC<{
             autoSize={{ minRows: 2, maxRows: 4 }}
           />
         </FormItemLabel>
+      </EmptyBox>
+
+      <EmptyBox if={isMongoDB && mongoAdvancedParams.length > 0}>
+        <Form.Item
+          labelCol={{ span: 0 }}
+          wrapperCol={{ span: 24 }}
+          colon={false}
+        >
+          <BasicCollapseStyleWrapper
+            ghost
+            defaultActiveKey={[]}
+            items={[
+              {
+                key: 'mongo-advanced',
+                label: (
+                  <CustomLabelContent
+                    title={t(
+                      'dmsDataSource.dataSourceForm.mongoAdvancedOptions'
+                    )}
+                    tips={t(
+                      'dmsDataSource.dataSourceForm.mongoAdvancedOptionsTips'
+                    )}
+                  />
+                ),
+                children: (
+                  <AutoCreatedFormItemByApi
+                    params={mongoAdvancedParams}
+                    disabled={props.isExternalInstance}
+                    isFullLine
+                  />
+                )
+              }
+            ]}
+          />
+        </Form.Item>
+      </EmptyBox>
+
+      <EmptyBox if={(autoCreatedAsyncParams?.length ?? 0) > 0}>
+        <AutoCreatedFormItemByApi
+          params={autoCreatedAsyncParams ?? []}
+          disabled={props.isExternalInstance}
+        />
       </EmptyBox>
 
       <FormItemNoLabel>

@@ -107,6 +107,29 @@ export const mergeRedisConnectionModeIntoParams = <
 };
 
 export const MONGODB_SEED_HOSTS_PARAM = 'seed_hosts';
+export const MONGODB_AUTH_SOURCE_PARAM = 'auth_source';
+export const MONGODB_AUTH_MECHANISM_PARAM = 'auth_mechanism';
+export const MONGODB_REPLICA_SET_PARAM = 'replica_set';
+export const MONGODB_TLS_PARAM = 'tls';
+export const MONGODB_TLS_SKIP_VERIFY_PARAM = 'tls_skip_verify';
+export const MONGODB_DIRECT_CONNECTION_PARAM = 'direct_connection';
+
+/** Mongo 主表单常驻参数（不含拓扑条件字段） */
+export const MONGODB_MAIN_PARAMS = [MONGODB_AUTH_SOURCE_PARAM] as const;
+
+/** 仅副本集形态展示 */
+export const MONGODB_REPLICA_PARAMS = [
+  MONGODB_REPLICA_SET_PARAM,
+  MONGODB_SEED_HOSTS_PARAM
+] as const;
+
+/** 高级选项（默认折叠） */
+export const MONGODB_ADVANCED_PARAMS = [
+  MONGODB_AUTH_MECHANISM_PARAM,
+  MONGODB_TLS_PARAM,
+  MONGODB_TLS_SKIP_VERIFY_PARAM,
+  MONGODB_DIRECT_CONNECTION_PARAM
+] as const;
 
 const splitMongoSeedHosts = (value?: string) =>
   (value ?? '')

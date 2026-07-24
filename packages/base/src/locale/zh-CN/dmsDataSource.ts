@@ -108,22 +108,40 @@ export default {
     lineNumberLimitTips: '当预计影响行数超过指定值则不回滚',
     dataSourceConnectError: '数据源连通性测试失败',
     mongoTopology: 'MongoDB 形态',
-    mongoTopologySingle: 'Single',
-    mongoTopologyReplicaSet: 'Replica Set',
-    mongoTopologyShard: 'Shard / mongos',
-    mongoSingleTips:
-      'Single 形态填写单实例地址和端口，副本集名称与 seed hosts 留空。',
+    mongoTopologyTips:
+      '按 MongoDB 部署拓扑选择；选错会导致测连失败或行为异常。',
+    mongoTopologySingle: '单机',
+    mongoTopologyReplicaSet: '副本集',
+    mongoTopologyShard: '分片（mongos）',
+    mongoSingleTips: '填写单实例地址与端口；无需副本集名称与成员地址',
     mongoReplicaSetTips:
-      'Replica Set 形态在 seed hosts 中填写多个成员地址，基础地址和端口保留首个 seed。',
+      '在「副本集成员地址」中填写多个 host:port；基础地址取首个成员',
     mongoShardTips:
-      'Shard / mongos 形态只填写单个 mongos 地址和端口，请勿填写 configsvr、shard 节点或 Replica Set 多成员地址。',
-    mongoSeedHosts: 'Replica Set 成员地址',
+      '只填单个 mongos 地址与端口；勿填 configsvr、shard 节点或副本集多成员',
+    mongoAuthSource: '认证数据库',
+    mongoAuthSourceTips: 'MongoDB 认证库名，通常为 admin',
+    mongoReplicaSet: '副本集名称',
+    mongoReplicaSetNameTips:
+      '对应 MongoDB replicaSet 参数；仅副本集形态需要填写',
+    mongoSeedHosts: '副本集成员地址',
     mongoSeedHostsTips:
-      '提交为 MongoDB 插件动态参数 seed_hosts，多个成员使用英文逗号或换行分隔。',
+      '多个成员使用英文逗号或换行分隔；提交为插件参数 seed_hosts',
     mongoSeedHostsPlaceholder:
-      '例如：10.186.16.126:37018,10.186.16.126:37019,10.186.16.126:37020',
+      '例如：192.0.2.10:27017,192.0.2.11:27017,192.0.2.12:27017',
     mongoSeedHostsRule:
       '请填写 host:port 格式的成员地址，多个成员用英文逗号或换行分隔',
+    mongoAdvancedOptions: '高级选项',
+    mongoAdvancedOptionsTips: 'TLS、直连等，一般保持默认即可',
+    mongoAuthMechanism: '认证机制',
+    mongoAuthMechanismTips: '可选，留空用驱动默认',
+    mongoTlsEnabled: '启用 TLS/SSL',
+    mongoTlsEnabledTips: '开启后通过 TLS/SSL 连接 MongoDB',
+    mongoTlsSkipVerify: '跳过证书校验',
+    mongoTlsSkipVerifyTips:
+      '跳过服务端证书校验存在中间人攻击风险，仅建议在受控环境临时使用',
+    mongoDirectConnection: '直连模式',
+    mongoDirectConnectionTips:
+      '对应 directConnection；副本集形态下会自动关闭，一般保持默认即可',
     returnModify: '返回修改',
     continueSubmit: '继续提交'
   },
