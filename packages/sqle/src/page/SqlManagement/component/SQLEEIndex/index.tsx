@@ -174,6 +174,7 @@ const SQLEEIndex = () => {
 
   const {
     columns,
+    sourceExtraHeadList,
     filterButtonMeta,
     filterContainerMeta,
     filterCustomProps,
@@ -374,9 +375,15 @@ const SQLEEIndex = () => {
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
   const handleExport = () => {
+    const extraKeys = sourceExtraHeadList.length
+      ? sourceExtraHeadList
+          .map((head) => head.name)
+          .filter((name): name is string => !!name)
+      : undefined;
     const exportColumnKeys = getSqlManagementExportColumnKeys(
       columns,
-      username
+      username,
+      extraKeys
     );
 
     if (!exportColumnKeys.length) {

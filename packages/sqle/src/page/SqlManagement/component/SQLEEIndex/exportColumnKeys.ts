@@ -57,23 +57,35 @@ const readLocalColumnSettings = (
   }
 };
 
+const isExportableColumnKey = (
+  columnKey: string,
+  extraKeySet: Set<string> | undefined
+) => {
+  return (
+    exportColumnKeySet.has(columnKey as SqlManagementExportColumnKey) ||
+    !!extraKeySet?.has(columnKey)
+  );
+};
+
 export const getSqlManagementExportColumnKeys = (
   columns: ActiontechTableColumn<ISqlManage, SqlManagementTableFilterParamType>,
   username: string,
+  extraKeys?: readonly string[],
   tableName = SQL_MANAGEMENT_TABLE_NAME
-): SqlManagementExportColumnKey[] => {
+): string[] => {
   const localColumnSettings = readLocalColumnSettings(tableName, username);
+  const extraKeySet = extraKeys?.length ? new Set(extraKeys) : undefined;
 
   return columns
     .map((column, index) => {
       const columnKey = getColumnDataIndex(column.dataIndex);
-      if (!columnKey || !exportColumnKeySet.has(columnKey)) {
+      if (!columnKey || !isExportableColumnKey(columnKey, extraKeySet)) {
         return undefined;
       }
 
       const localSetting = localColumnSettings[columnKey];
       return {
-        key: columnKey as SqlManagementExportColumnKey,
+        key: columnKey,
         show: localSetting?.show ?? column.show ?? true,
         order: localSetting?.order ?? index + 1,
         defaultOrder: index + 1
