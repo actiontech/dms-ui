@@ -218,6 +218,7 @@ const useSqlManageSourceExtra = ({
 
   return {
     columns,
+    sourceExtraHeadList,
     filterButtonMeta,
     filterContainerMeta,
     filterCustomProps,
