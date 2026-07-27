@@ -6,7 +6,6 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
 import {
-  BasicCollapseStyleWrapper,
   BasicInput,
   BasicSelect,
   BasicSwitch,
@@ -26,16 +25,12 @@ import {
 import { DataSourceFormContext } from '../../../context';
 import {
   DEFAULT_REDIS_CONNECTION_MODE,
+  isMongoLegacyRemovedParam,
   isRedisDbType,
-  MONGODB_ADVANCED_PARAMS,
-  MONGODB_AUTH_MECHANISM_PARAM,
   MONGODB_AUTH_SOURCE_PARAM,
-  MONGODB_DIRECT_CONNECTION_PARAM,
   MONGODB_MAIN_PARAMS,
   MONGODB_REPLICA_SET_PARAM,
   MONGODB_SEED_HOSTS_PARAM,
-  MONGODB_TLS_PARAM,
-  MONGODB_TLS_SKIP_VERIFY_PARAM,
   normalizeMongoSeedHosts,
   validateMongoSeedHosts
 } from '../../../tool';
@@ -61,10 +56,6 @@ const DatabaseFormItem: React.FC<{
   ] = useBoolean(true);
   const isMongoDB = props.databaseType?.toLowerCase() === 'mongodb';
   const mongoTopology = Form.useWatch('mongoTopology', props.form);
-  const mongoTlsEnabled = Form.useWatch(
-    ['params', MONGODB_TLS_PARAM],
-    props.form
-  );
   const mongodbAsyncParams = useMemo(() => {
     return props.currentAsyncParams ?? [];
   }, [props.currentAsyncParams]);
@@ -84,21 +75,9 @@ const DatabaseFormItem: React.FC<{
       [MONGODB_AUTH_SOURCE_PARAM]: `${t(
         'dmsDataSource.dataSourceForm.mongoAuthSource'
       )}（${t('dmsDataSource.dataSourceForm.mongoAuthSourceTips')}）`,
-      [MONGODB_AUTH_MECHANISM_PARAM]: `${t(
-        'dmsDataSource.dataSourceForm.mongoAuthMechanism'
-      )}（${t('dmsDataSource.dataSourceForm.mongoAuthMechanismTips')}）`,
       [MONGODB_REPLICA_SET_PARAM]: `${t(
         'dmsDataSource.dataSourceForm.mongoReplicaSet'
-      )}（${t('dmsDataSource.dataSourceForm.mongoReplicaSetNameTips')}）`,
-      [MONGODB_TLS_PARAM]: `${t(
-        'dmsDataSource.dataSourceForm.mongoTlsEnabled'
-      )}（${t('dmsDataSource.dataSourceForm.mongoTlsEnabledTips')}）`,
-      [MONGODB_TLS_SKIP_VERIFY_PARAM]: `${t(
-        'dmsDataSource.dataSourceForm.mongoTlsSkipVerify'
-      )}（${t('dmsDataSource.dataSourceForm.mongoTlsSkipVerifyTips')}）`,
-      [MONGODB_DIRECT_CONNECTION_PARAM]: `${t(
-        'dmsDataSource.dataSourceForm.mongoDirectConnection'
-      )}（${t('dmsDataSource.dataSourceForm.mongoDirectConnectionTips')}）`
+      )}（${t('dmsDataSource.dataSourceForm.mongoReplicaSetNameTips')}）`
     }),
     [t]
   );
@@ -116,9 +95,12 @@ const DatabaseFormItem: React.FC<{
     () =>
       new Set<string>([
         ...MONGODB_MAIN_PARAMS,
-        ...MONGODB_ADVANCED_PARAMS,
         MONGODB_REPLICA_SET_PARAM,
-        MONGODB_SEED_HOSTS_PARAM
+        MONGODB_SEED_HOSTS_PARAM,
+        'auth_mechanism',
+        'tls',
+        'tls_skip_verify',
+        'direct_connection'
       ]),
     []
   );
@@ -135,36 +117,14 @@ const DatabaseFormItem: React.FC<{
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMongoDB, mongodbAsyncParams, mongoParamDescMap]);
 
-  const mongoAdvancedParams = useMemo(() => {
-    if (!isMongoDB) {
-      return [];
-    }
-    return withMongoChineseDesc(
-      mongodbAsyncParams
-        .filter((item) =>
-          (MONGODB_ADVANCED_PARAMS as readonly string[]).includes(
-            item.key ?? ''
-          )
-        )
-        .map((item) => {
-          if (item.key === MONGODB_TLS_SKIP_VERIFY_PARAM) {
-            return {
-              ...item,
-              hidden: !mongoTlsEnabled
-            };
-          }
-          return item;
-        })
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMongoDB, mongodbAsyncParams, mongoParamDescMap, mongoTlsEnabled]);
-
   const autoCreatedAsyncParams = useMemo(() => {
     if (!isMongoDB) {
       return mongodbAsyncParams;
     }
     return mongodbAsyncParams.filter(
-      (item) => !mongoHandledKeys.has(item.key ?? '')
+      (item) =>
+        !mongoHandledKeys.has(item.key ?? '') &&
+        !isMongoLegacyRemovedParam(item.key)
     );
   }, [isMongoDB, mongodbAsyncParams, mongoHandledKeys]);
 
@@ -178,16 +138,8 @@ const DatabaseFormItem: React.FC<{
         topology === 'replicaSet' ? paramsValue[MONGODB_SEED_HOSTS_PARAM] : ''
     };
 
-    if (topology === 'single') {
+    if (topology === 'single' || topology === 'shard') {
       nextParams.replica_set = '';
-      nextParams.direct_connection = false;
-    }
-    if (topology === 'replicaSet') {
-      nextParams.direct_connection = false;
-    }
-    if (topology === 'shard') {
-      nextParams.replica_set = '';
-      nextParams.direct_connection = false;
     }
 
     return nextParams;
@@ -268,25 +220,6 @@ const DatabaseFormItem: React.FC<{
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMongoDB, props.currentAsyncParams]);
-
-  useEffect(() => {
-    if (!isMongoDB || mongoTlsEnabled) {
-      return;
-    }
-    const paramsValue = (props.form.getFieldValue('params') ?? {}) as Record<
-      string,
-      string | boolean | undefined
-    >;
-    if (paramsValue[MONGODB_TLS_SKIP_VERIFY_PARAM]) {
-      props.form.setFieldsValue({
-        params: {
-          ...paramsValue,
-          [MONGODB_TLS_SKIP_VERIFY_PARAM]: false
-        }
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMongoDB, mongoTlsEnabled]);
 
   return (
     <>
@@ -546,41 +479,6 @@ const DatabaseFormItem: React.FC<{
             autoSize={{ minRows: 2, maxRows: 4 }}
           />
         </FormItemLabel>
-      </EmptyBox>
-
-      <EmptyBox if={isMongoDB && mongoAdvancedParams.length > 0}>
-        <Form.Item
-          labelCol={{ span: 0 }}
-          wrapperCol={{ span: 24 }}
-          colon={false}
-        >
-          <BasicCollapseStyleWrapper
-            ghost
-            defaultActiveKey={[]}
-            items={[
-              {
-                key: 'mongo-advanced',
-                label: (
-                  <CustomLabelContent
-                    title={t(
-                      'dmsDataSource.dataSourceForm.mongoAdvancedOptions'
-                    )}
-                    tips={t(
-                      'dmsDataSource.dataSourceForm.mongoAdvancedOptionsTips'
-                    )}
-                  />
-                ),
-                children: (
-                  <AutoCreatedFormItemByApi
-                    params={mongoAdvancedParams}
-                    disabled={props.isExternalInstance}
-                    isFullLine
-                  />
-                )
-              }
-            ]}
-          />
-        </Form.Item>
       </EmptyBox>
 
       <EmptyBox if={(autoCreatedAsyncParams?.length ?? 0) > 0}>

@@ -109,39 +109,26 @@ export default {
     dataSourceConnectError: '数据源连通性测试失败',
     mongoTopology: 'MongoDB 形态',
     mongoTopologyTips:
-      '按 MongoDB 部署拓扑选择；选错会导致测连失败或行为异常。',
+      '按 MongoDB 部署拓扑选择（Standalone / Replica set / Sharded cluster）；选错会导致测连失败。',
     mongoTopologySingle: '单机',
     mongoTopologyReplicaSet: '副本集',
-    mongoTopologyShard: '分片（mongos）',
-    mongoSingleTips: '填写单实例地址与端口；无需副本集名称与成员地址',
+    mongoTopologyShard: '分片集群',
+    mongoSingleTips:
+      '填写单个 standalone 实例地址与端口；无需副本集名称与成员地址',
     mongoReplicaSetTips:
-      '在「副本集成员地址」中填写多个 host:port；基础地址取首个成员',
+      '在「副本集成员地址」填写多个 host:port；基础地址取首个成员；需填副本集名称',
     mongoShardTips:
-      '只填单个 mongos 地址与端口；勿填 configsvr、shard 节点或副本集多成员',
+      '只填单个 mongos 地址与端口；勿填 configsvr、shard 数据节点或副本集多成员',
     mongoAuthSource: '认证数据库',
     mongoAuthSourceTips: 'MongoDB 认证库名，通常为 admin',
     mongoReplicaSet: '副本集名称',
-    mongoReplicaSetNameTips:
-      '对应 MongoDB replicaSet 参数；仅副本集形态需要填写',
+    mongoReplicaSetNameTips: '仅副本集形态需要填写',
     mongoSeedHosts: '副本集成员地址',
-    mongoSeedHostsTips:
-      '多个成员使用英文逗号或换行分隔；提交为插件参数 seed_hosts',
+    mongoSeedHostsTips: '多个成员使用英文逗号或换行分隔',
     mongoSeedHostsPlaceholder:
       '例如：192.0.2.10:27017,192.0.2.11:27017,192.0.2.12:27017',
     mongoSeedHostsRule:
       '请填写 host:port 格式的成员地址，多个成员用英文逗号或换行分隔',
-    mongoAdvancedOptions: '高级选项',
-    mongoAdvancedOptionsTips: 'TLS、直连等，一般保持默认即可',
-    mongoAuthMechanism: '认证机制',
-    mongoAuthMechanismTips: '可选，留空用驱动默认',
-    mongoTlsEnabled: '启用 TLS/SSL',
-    mongoTlsEnabledTips: '开启后通过 TLS/SSL 连接 MongoDB',
-    mongoTlsSkipVerify: '跳过证书校验',
-    mongoTlsSkipVerifyTips:
-      '跳过服务端证书校验存在中间人攻击风险，仅建议在受控环境临时使用',
-    mongoDirectConnection: '直连模式',
-    mongoDirectConnectionTips:
-      '对应 directConnection；副本集形态下会自动关闭，一般保持默认即可',
     returnModify: '返回修改',
     continueSubmit: '继续提交'
   },

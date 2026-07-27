@@ -45,26 +45,24 @@ describe('datasource tool', () => {
   });
 
   it('should normalize mongodb seed hosts dynamic param', () => {
-    expect(normalizeMongoSeedHosts('10.186.16.126:37018,37019,37020')).toBe(
-      '10.186.16.126:37018,10.186.16.126:37019,10.186.16.126:37020'
+    expect(normalizeMongoSeedHosts('192.0.2.10:27017,27018,27019')).toBe(
+      '192.0.2.10:27017,192.0.2.10:27018,192.0.2.10:27019'
     );
     expect(
       normalizeMongoParams({
-        seed_hosts: '10.186.16.126:37018\n10.186.16.126:37019',
+        seed_hosts: '192.0.2.10:27017\n192.0.2.11:27017',
         replica_set: 'rs0'
       })
     ).toEqual({
-      seed_hosts: '10.186.16.126:37018,10.186.16.126:37019',
+      seed_hosts: '192.0.2.10:27017,192.0.2.11:27017',
       replica_set: 'rs0'
     });
   });
 
   it('should validate mongodb seed hosts format', () => {
-    expect(
-      validateMongoSeedHosts('10.186.16.126:37018,37019,37020')
-    ).toBeTruthy();
-    expect(validateMongoSeedHosts('10.186.16.126')).toBeFalsy();
-    expect(validateMongoSeedHosts('10.186.16.126:70000')).toBeFalsy();
+    expect(validateMongoSeedHosts('192.0.2.10:27017,27018,27019')).toBeTruthy();
+    expect(validateMongoSeedHosts('192.0.2.10')).toBeFalsy();
+    expect(validateMongoSeedHosts('192.0.2.10:70000')).toBeFalsy();
   });
 
   it('should omit empty mongodb seed hosts from request params', () => {
@@ -72,12 +70,10 @@ describe('datasource tool', () => {
       normalizeMongoRequestParams([
         { name: 'auth_source', value: 'admin' },
         { name: 'seed_hosts', value: '' },
-        { name: 'direct_connection', value: 'false' }
+        { name: 'direct_connection', value: 'false' },
+        { name: 'tls', value: 'true' }
       ])
-    ).toEqual([
-      { name: 'auth_source', value: 'admin' },
-      { name: 'direct_connection', value: 'false' }
-    ]);
+    ).toEqual([{ name: 'auth_source', value: 'admin' }]);
     expect(
       normalizeMongoRequestParams([{ name: 'seed_hosts', value: 'h:27017' }])
     ).toEqual([{ name: 'seed_hosts', value: 'h:27017' }]);

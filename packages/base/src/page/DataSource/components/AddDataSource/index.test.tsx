@@ -56,12 +56,6 @@ describe('page/DataSource/AddDataSource', () => {
                 value: ''
               },
               {
-                description: 'Direct connection',
-                name: 'direct_connection',
-                type: 'bool',
-                value: 'false'
-              },
-              {
                 description: 'MongoDB seed hosts',
                 name: 'seed_hosts',
                 type: 'string',
@@ -278,42 +272,39 @@ describe('page/DataSource/AddDataSource', () => {
 
   it.each([
     {
-      topology: 'Single',
+      topology: '单机',
       name: 'mongo-single-source',
-      host: '10.186.16.126',
-      port: '37017',
+      host: '192.0.2.10',
+      port: '27017',
       expectedParams: [
         { name: 'auth_source', value: 'admin' },
-        { name: 'replica_set', value: '' },
-        { name: 'direct_connection', value: false }
+        { name: 'replica_set', value: '' }
       ]
     },
     {
-      topology: 'Replica Set',
+      topology: '副本集',
       name: 'mongo-replica-source',
-      host: '10.186.16.126',
-      port: '37018',
+      host: '192.0.2.10',
+      port: '27017',
       replicaSet: 'rs0',
-      seedHosts: '10.186.16.126:37018,37019,37020',
+      seedHosts: '192.0.2.10:27017,27018,27019',
       expectedParams: [
         { name: 'auth_source', value: 'admin' },
         { name: 'replica_set', value: 'rs0' },
-        { name: 'direct_connection', value: false },
         {
           name: 'seed_hosts',
-          value: '10.186.16.126:37018,10.186.16.126:37019,10.186.16.126:37020'
+          value: '192.0.2.10:27017,192.0.2.10:27018,192.0.2.10:27019'
         }
       ]
     },
     {
-      topology: 'Shard / mongos',
+      topology: '分片集群',
       name: 'mongo-shard-source',
-      host: '10.186.16.126',
-      port: '37021',
+      host: '192.0.2.20',
+      port: '27017',
       expectedParams: [
         { name: 'auth_source', value: 'admin' },
-        { name: 'replica_set', value: '' },
-        { name: 'direct_connection', value: false }
+        { name: 'replica_set', value: '' }
       ]
     }
   ])(
@@ -341,7 +332,9 @@ describe('page/DataSource/AddDataSource', () => {
       fireEvent.click(getBySelector('span[title="MongoDB"]', baseElement));
       await act(async () => jest.advanceTimersByTime(3000));
 
-      if (topology !== 'Single') {
+      if (topology !== '单机') {
+        fireEvent.mouseDown(getBySelector('#mongoTopology', baseElement));
+        await act(async () => jest.advanceTimersByTime(300));
         fireEvent.click(screen.getByText(topology));
         await act(async () => jest.advanceTimersByTime(300));
       }

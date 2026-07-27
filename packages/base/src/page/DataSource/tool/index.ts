@@ -108,11 +108,7 @@ export const mergeRedisConnectionModeIntoParams = <
 
 export const MONGODB_SEED_HOSTS_PARAM = 'seed_hosts';
 export const MONGODB_AUTH_SOURCE_PARAM = 'auth_source';
-export const MONGODB_AUTH_MECHANISM_PARAM = 'auth_mechanism';
 export const MONGODB_REPLICA_SET_PARAM = 'replica_set';
-export const MONGODB_TLS_PARAM = 'tls';
-export const MONGODB_TLS_SKIP_VERIFY_PARAM = 'tls_skip_verify';
-export const MONGODB_DIRECT_CONNECTION_PARAM = 'direct_connection';
 
 /** Mongo 主表单常驻参数（不含拓扑条件字段） */
 export const MONGODB_MAIN_PARAMS = [MONGODB_AUTH_SOURCE_PARAM] as const;
@@ -123,13 +119,19 @@ export const MONGODB_REPLICA_PARAMS = [
   MONGODB_SEED_HOSTS_PARAM
 ] as const;
 
-/** 高级选项（默认折叠） */
-export const MONGODB_ADVANCED_PARAMS = [
-  MONGODB_AUTH_MECHANISM_PARAM,
-  MONGODB_TLS_PARAM,
-  MONGODB_TLS_SKIP_VERIFY_PARAM,
-  MONGODB_DIRECT_CONNECTION_PARAM
-] as const;
+/**
+ * 后端已删除、UI 不再展示的遗留 additional_params。
+ * 编辑存量数据源时仍可能出现在表单初始值中，提交与自动表单项均剥离。
+ */
+const MONGODB_LEGACY_REMOVED_PARAMS = new Set([
+  'auth_mechanism',
+  'tls',
+  'tls_skip_verify',
+  'direct_connection'
+]);
+
+export const isMongoLegacyRemovedParam = (key?: string) =>
+  !!key && MONGODB_LEGACY_REMOVED_PARAMS.has(key);
 
 const splitMongoSeedHosts = (value?: string) =>
   (value ?? '')
@@ -207,7 +209,10 @@ export const normalizeMongoRequestParams = <
 >(
   params: T[]
 ) => {
-  return params.filter(
-    (item) => item.name !== MONGODB_SEED_HOSTS_PARAM || !!item.value
-  );
+  return params.filter((item) => {
+    if (isMongoLegacyRemovedParam(item.name)) {
+      return false;
+    }
+    return item.name !== MONGODB_SEED_HOSTS_PARAM || !!item.value;
+  });
 };
