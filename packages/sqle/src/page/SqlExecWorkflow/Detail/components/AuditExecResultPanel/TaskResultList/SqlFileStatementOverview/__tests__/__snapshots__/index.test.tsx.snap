@@ -116,7 +116,12 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
           <div
             class="custom-segmented-filter-item"
           >
-            执行回滚
+            已回滚
+          </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            未执行
           </div>
         </div>
       </div>
@@ -529,7 +534,12 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
           <div
             class="custom-segmented-filter-item"
           >
-            执行回滚
+            已回滚
+          </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            未执行
           </div>
         </div>
       </div>

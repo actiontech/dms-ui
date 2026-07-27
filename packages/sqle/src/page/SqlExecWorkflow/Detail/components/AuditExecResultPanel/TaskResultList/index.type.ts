@@ -24,4 +24,7 @@ export type TasksResultListBaseProps = {
   instanceName?: string;
   schema?: string;
   enableRetryExecute: boolean;
+  /** AC-010 定位主键 */
+  execFailSqlNumber?: number;
+  execFailSqlId?: number;
 };

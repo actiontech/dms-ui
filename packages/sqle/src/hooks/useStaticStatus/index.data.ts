@@ -39,7 +39,9 @@ export const execStatusDictionary: StaticEnumDictionary<getAuditTaskSQLsV2Filter
     [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]:
       'audit.execStatus.terminating',
     [getAuditTaskSQLsV2FilterExecStatusEnum.execute_rollback]:
-      'audit.execStatus.rollback'
+      'audit.execStatus.rollback',
+    [getAuditTaskSQLsV2FilterExecStatusEnum.not_executed]:
+      'audit.execStatus.not_executed'
   };
 
 export const auditStatusDictionary: StaticEnumDictionary<getAuditTaskSQLsV1FilterAuditStatusEnum> =

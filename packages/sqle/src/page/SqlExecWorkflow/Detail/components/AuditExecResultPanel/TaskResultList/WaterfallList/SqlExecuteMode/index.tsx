@@ -4,13 +4,17 @@ import { useInfiniteScroll } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import ResultCard from '../../Common/ResultCard';
-import { useCallback, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { cloneDeep } from 'lodash';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
+import {
+  isExecFailHighlightSql,
+  locateExecFailSql
+} from '../../../../../utils/failDisplay';
 
 const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   tableFilterInfo,
@@ -26,7 +30,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   taskStatus,
   instanceName,
   schema,
-  enableRetryExecute
+  enableRetryExecute,
+  execFailSqlNumber,
+  execFailSqlId
 }) => {
   const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
@@ -147,6 +153,15 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
     onRefreshScrollList(number, currentPage);
   };
 
+  const locatedExecFailSql = useMemo(
+    () =>
+      locateExecFailSql(currentAuditTaskInfiniteList?.list ?? [], {
+        execFailSqlNumber,
+        execFailSqlId
+      }),
+    [currentAuditTaskInfiniteList?.list, execFailSqlId, execFailSqlNumber]
+  );
+
   return (
     <InfiniteScroll
       hasMore={!noMore}
@@ -179,6 +194,10 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
                 instanceName={instanceName}
                 schema={schema}
                 enableRetryExecute={enableRetryExecute}
+                isExecFailHighlight={isExecFailHighlightSql(
+                  item,
+                  locatedExecFailSql
+                )}
               />
             </List.Item>
           );

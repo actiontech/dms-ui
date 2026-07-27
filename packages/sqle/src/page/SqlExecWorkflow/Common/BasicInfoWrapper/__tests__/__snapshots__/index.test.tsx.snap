@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has all params 1`] 
 <body>
   <div>
     <div
-      class="custom-class-name-a css-n0dig9"
+      class="custom-class-name-a css-kgsw91"
     >
       <div
         class="workflow-base-info-status"
@@ -118,7 +118,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has need params 1`]
 <body>
   <div>
     <div
-      class="css-rgmylz"
+      class="css-14tz7m1"
     >
       <div
         class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"

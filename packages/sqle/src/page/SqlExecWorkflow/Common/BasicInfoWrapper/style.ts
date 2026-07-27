@@ -51,6 +51,16 @@ export const BasicInfoStyleWrapper = styled('div')<{
     }
   }
 
+  .workflow-base-info-fail-summary {
+    color: ${({ theme }) =>
+      theme.sqleTheme.statistics.auditResultStatusColor.exec_failed};
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 12px;
+    max-width: 800px;
+  }
+
   .workflow-base-info-title {
     color: ${({ theme }) =>
       theme.sqleTheme.execWorkflow.common.basicInfo.titleColor};

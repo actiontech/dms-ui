@@ -60,6 +60,12 @@ export const SqlExecStatusOptions: Array<{
       execStatusDictionary[getAuditTaskSQLsV2FilterExecStatusEnum.terminating]
     ),
     value: getAuditTaskSQLsV2FilterExecStatusEnum.terminating
+  },
+  {
+    label: t(
+      execStatusDictionary[getAuditTaskSQLsV2FilterExecStatusEnum.not_executed]
+    ),
+    value: getAuditTaskSQLsV2FilterExecStatusEnum.not_executed
   }
 ];
 

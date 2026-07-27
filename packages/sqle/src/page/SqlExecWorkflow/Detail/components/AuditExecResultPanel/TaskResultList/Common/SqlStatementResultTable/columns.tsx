@@ -58,9 +58,11 @@ export const SQLStatementResultColumns = (
       className: 'exec-status-column',
       render: (status, record) => {
         return (
-          <BasicToolTip title={record.exec_result}>
+          <BasicToolTip title={record.fail_reason || record.exec_result}>
             <ExecStatusTag
               status={status as getAuditTaskSQLsV2FilterExecStatusEnum}
+              failStage={record.fail_stage}
+              backupStatus={record.backup_status}
             />
           </BasicToolTip>
         );

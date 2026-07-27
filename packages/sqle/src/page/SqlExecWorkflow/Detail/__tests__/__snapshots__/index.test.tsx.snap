@@ -200,7 +200,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
               </div>
             </div>
             <div
-              class="clearPaddingTop css-xcpaj5"
+              class="clearPaddingTop css-1h49nkl"
             >
               <div
                 class="workflow-base-info-status"
@@ -951,7 +951,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-ddk1y4"
+              class="clearPaddingTop css-1v892o2"
             >
               <div
                 class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
@@ -1522,7 +1522,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-1yb6xb6"
+              class="clearPaddingTop css-1vc47j"
             >
               <div
                 class="workflow-base-info-status"
@@ -2414,7 +2414,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-1yb6xb6"
+              class="clearPaddingTop css-1vc47j"
             >
               <div
                 class="workflow-base-info-status"
@@ -3338,7 +3338,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
               </div>
             </div>
             <div
-              class="clearPaddingTop css-fljemo"
+              class="clearPaddingTop css-1w6w5vt"
             >
               <div
                 class="workflow-base-info-status"

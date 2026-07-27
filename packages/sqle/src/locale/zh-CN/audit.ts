@@ -41,7 +41,8 @@ export default {
     terminate_succ: '中止成功',
     terminating: '正在中止',
     allStatus: '全部状态',
-    rollback: '执行回滚'
+    rollback: '已回滚',
+    not_executed: '未执行'
   },
 
   auditStatus: {

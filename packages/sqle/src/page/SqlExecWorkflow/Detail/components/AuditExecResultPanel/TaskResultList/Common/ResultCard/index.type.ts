@@ -25,6 +25,8 @@ export type SqlExecuteResultCardProps = BaseProps &
     instanceName?: string;
     schema?: string;
     pagination?: TablePagination;
+    /** AC-010：是否为定位命中的出错 SQL（唯一失败高亮） */
+    isExecFailHighlight?: boolean;
   };
 
 export type FileExecuteResultCardProps = BaseProps &

@@ -44,6 +44,7 @@ import {
   PermissionControl,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
+import { buildExecResultDisplay } from '../../../../../utils/failDisplay';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
@@ -51,6 +52,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   onUpdateDescription,
   pagination,
   enableRetryExecute,
+  isExecFailHighlight,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -157,8 +159,28 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       ? t('execWorkflow.audit.table.backupExecuteBeforeTips')
       : '';
   }, [props.taskStatus, props.backup_result, t]);
+  const execResultDisplay = useMemo(
+    () =>
+      buildExecResultDisplay({
+        execStatus: props.exec_status,
+        failStage: props.fail_stage,
+        failReason: props.fail_reason,
+        execResult: props.exec_result,
+        backupStatus: props.backup_status
+      }),
+    [
+      props.backup_status,
+      props.exec_result,
+      props.exec_status,
+      props.fail_reason,
+      props.fail_stage
+    ]
+  );
   return (
-    <TasksResultCardStyleWrapper>
+    <TasksResultCardStyleWrapper
+      className={isExecFailHighlight ? 'exec-fail-highlight' : undefined}
+      data-exec-fail-anchor={isExecFailHighlight ? 'true' : undefined}
+    >
       {contextHolder}
       <div className="result-card-header">
         <Space>
@@ -168,6 +190,8 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
               status={
                 props.exec_status as getAuditTaskSQLsV2FilterExecStatusEnum
               }
+              failStage={props.fail_stage}
+              backupStatus={props.backup_status}
             />
             <Divider type="vertical" className="result-card-status-divider" />
             <AuditResultTag
@@ -280,7 +304,42 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
               {
                 value: TaskResultContentTypeEnum.exec_result,
                 label: t('execWorkflow.audit.table.execResult'),
-                children: props.exec_result || '-'
+                children: execResultDisplay.structured ? (
+                  <div className="exec-fail-result">
+                    <div className="exec-fail-result-row">
+                      <span className="exec-fail-result-label">
+                        {t('execWorkflow.detail.failDisplay.statusLabel')}：
+                      </span>
+                      <span>
+                        {execResultDisplay.statusI18nKey
+                          ? t(execResultDisplay.statusI18nKey)
+                          : '-'}
+                      </span>
+                    </div>
+                    <EmptyBox if={!execResultDisplay.hideStage}>
+                      <div className="exec-fail-result-row">
+                        <span className="exec-fail-result-label">
+                          {t('execWorkflow.detail.failDisplay.stageLabel')}：
+                        </span>
+                        <span>
+                          {execResultDisplay.stageI18nKey
+                            ? t(execResultDisplay.stageI18nKey)
+                            : '-'}
+                        </span>
+                      </div>
+                    </EmptyBox>
+                    <div className="exec-fail-result-row">
+                      <span className="exec-fail-result-label">
+                        {t('execWorkflow.detail.failDisplay.reasonLabel')}：
+                      </span>
+                      <span className="exec-fail-result-reason">
+                        {execResultDisplay.reasonText}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  execResultDisplay.reasonText
+                )
               }
             ]}
             segmentedRowExtraContent={

@@ -8,6 +8,11 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 import ResultCard from '../../Common/ResultCard';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
+import { useMemo } from 'react';
+import {
+  isExecFailHighlightSql,
+  locateExecFailSql
+} from '../../../../../utils/failDisplay';
 
 const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   tableChange,
@@ -25,7 +30,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   taskStatus,
   instanceName,
   schema,
-  enableRetryExecute
+  enableRetryExecute,
+  execFailSqlNumber,
+  execFailSqlId
 }) => {
   const { t } = useTranslation();
 
@@ -70,6 +77,15 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
     }
   );
 
+  const locatedExecFailSql = useMemo(
+    () =>
+      locateExecFailSql(currentAuditTaskList?.list ?? [], {
+        execFailSqlNumber,
+        execFailSqlId
+      }),
+    [currentAuditTaskList?.list, execFailSqlId, execFailSqlNumber]
+  );
+
   return (
     <List
       bordered={false}
@@ -94,6 +110,10 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
               schema={schema}
               pagination={pagination}
               enableRetryExecute={enableRetryExecute}
+              isExecFailHighlight={isExecFailHighlightSql(
+                item,
+                locatedExecFailSql
+              )}
             />
           </List.Item>
         );

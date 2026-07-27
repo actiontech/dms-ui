@@ -49,7 +49,10 @@ export enum getAuditTaskSQLsV2FilterExecStatusEnum {
 
   'terminate_failed' = 'terminate_failed',
 
-  'execute_rollback' = 'execute_rollback'
+  'execute_rollback' = 'execute_rollback',
+
+  /** 前序失败导致本条未跑（backend / frontend §6.3） */
+  'not_executed' = 'not_executed'
 }
 
 export enum getAuditTaskSQLsV2FilterAuditStatusEnum {

@@ -8,4 +8,6 @@ export type BasicInfoWrapperProps = {
   className?: string;
   gap?: number;
   sqlVersion?: ISqlVersion;
+  /** 上线失败时的阶段摘要（如「上线失败：SQL 备份失败」） */
+  failSummary?: string | null;
 };
