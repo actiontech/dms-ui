@@ -99,6 +99,7 @@ const SqlWorkflowDetail: React.FC = () => {
       taskStatus: task?.status,
       execFailStage: task?.exec_fail_stage,
       execFailSqlCount: task?.exec_fail_sql_count,
+      execFailSqlNumber: task?.exec_fail_sql_number,
       execFailSummary: task?.exec_fail_summary
     });
     if (!plan) {
@@ -108,6 +109,11 @@ const SqlWorkflowDetail: React.FC = () => {
       return `${t('execWorkflow.detail.failDisplay.headerPrefix')}${
         plan.summary
       }`;
+    }
+    if (plan.mode === 'sql_number') {
+      return t('execWorkflow.detail.failDisplay.headerWithSqlNumber', {
+        number: plan.sqlNumber
+      });
     }
     const phraseKey =
       failStagePhraseI18nKey[plan.stage] ??

@@ -242,6 +242,8 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           instanceName={currentTask?.instance_name}
           schema={currentTask?.instance_schema}
           enableRetryExecute={enableRetryExecute}
+          execFailSqlNumber={currentTask?.exec_fail_sql_number}
+          execFailSqlId={currentTask?.exec_fail_sql_id}
         />
       </EmptyBox>
       <RetryExecuteModal />

@@ -105,6 +105,7 @@ export const resolveFailStage = (
 
 export type HeaderFailSummaryPlan =
   | { mode: 'backend_summary'; summary: string }
+  | { mode: 'sql_number'; stage: string; sqlNumber: number }
   | { mode: 'count'; stage: string; count: number }
   | { mode: 'phrase'; stage: string }
   | null;
@@ -114,8 +115,11 @@ export type HeaderFailSummaryInput = {
   taskStatus?: string;
   execFailStage?: string;
   execFailSqlCount?: number;
+  execFailSqlNumber?: number;
   execFailSummary?: string;
 };
+
+const HEADER_SQL_NUMBER_RE = /第\s*\d+\s*条/;
 
 export const resolveHeaderFailSummary = (
   input: HeaderFailSummaryInput
@@ -126,11 +130,21 @@ export const resolveHeaderFailSummary = (
   if (input.taskStatus !== 'exec_failed') {
     return null;
   }
+  const stage = resolveFailStage(input.execFailStage);
+  const sqlNumber = input.execFailSqlNumber ?? 0;
   const summary = input.execFailSummary?.trim();
+
+  // AC-010：sql_execute + 有效序号 →「第 N 条」；若 backend 摘要已含序号则沿用
+  if (stage === ONLINE_FAIL_STAGE.sql_execute && sqlNumber >= 1) {
+    if (summary && HEADER_SQL_NUMBER_RE.test(summary)) {
+      return { mode: 'backend_summary', summary };
+    }
+    return { mode: 'sql_number', stage, sqlNumber };
+  }
+
   if (summary) {
     return { mode: 'backend_summary', summary };
   }
-  const stage = resolveFailStage(input.execFailStage);
   const count = input.execFailSqlCount ?? 0;
   if (count >= 1) {
     return { mode: 'count', stage, count };
@@ -138,13 +152,73 @@ export const resolveHeaderFailSummary = (
   return { mode: 'phrase', stage };
 };
 
+export type ExecFailLocateInput = {
+  execFailSqlNumber?: number;
+  execFailSqlId?: number;
+};
+
+export type ExecFailLocateSql = {
+  number?: number;
+  exec_sql_id?: number;
+  exec_status?: string;
+  fail_stage?: string;
+};
+
+/** §17.1 定位出错 SQL：number → id → 唯一 failed+sql_execute */
+export const locateExecFailSql = <T extends ExecFailLocateSql>(
+  sqls: T[],
+  input: ExecFailLocateInput
+): T | null => {
+  const sqlNumber = input.execFailSqlNumber ?? 0;
+  if (sqlNumber > 0) {
+    const hits = sqls.filter((s) => s.number === sqlNumber);
+    if (hits.length === 1) {
+      return hits[0];
+    }
+  }
+  const sqlId = input.execFailSqlId ?? 0;
+  if (sqlId > 0) {
+    const hits = sqls.filter((s) => s.exec_sql_id === sqlId);
+    if (hits.length === 1) {
+      return hits[0];
+    }
+  }
+  const candidates = sqls.filter(
+    (s) =>
+      s.exec_status === 'failed' &&
+      s.fail_stage === ONLINE_FAIL_STAGE.sql_execute
+  );
+  if (candidates.length === 1) {
+    return candidates[0];
+  }
+  return null;
+};
+
+export const isExecFailHighlightSql = (
+  sql: ExecFailLocateSql,
+  located: ExecFailLocateSql | null
+): boolean => {
+  if (!located) {
+    return false;
+  }
+  if (located.number != null && sql.number != null) {
+    return located.number === sql.number;
+  }
+  if (located.exec_sql_id != null && sql.exec_sql_id != null) {
+    return located.exec_sql_id === sql.exec_sql_id;
+  }
+  return false;
+};
+
 export type ExecResultDisplayModel = {
   statusI18nKey: string | null;
   /** 使用既有 execStatusDictionary 时传 status 枚举值 */
   statusFromExecDict?: string;
-  stageI18nKey: string;
+  stageI18nKey: string | null;
   reasonText: string;
   structured: boolean;
+  /** rollback 等不展示失败阶段行 */
+  hideStage?: boolean;
 };
 
 export type BuildExecResultDisplayInput = {
@@ -160,6 +234,7 @@ export const buildExecResultDisplay = (
 ): ExecResultDisplayModel => {
   const isFailed = input.execStatus === 'failed';
   const isNotExecuted = input.execStatus === 'not_executed';
+  const isExecuteRollback = input.execStatus === 'execute_rollback';
   const stage = resolveFailStage(input.failStage, input.backupStatus);
   // AC-008：仅双空（fail_reason + exec_result）才兜底；非空业务错误原样展示，禁止替换/截断
   const reasonRaw = firstNonBlank(input.failReason, input.execResult);
@@ -193,6 +268,17 @@ export const buildExecResultDisplay = (
     };
   }
 
+  // AC-010：execute_rollback → 已回滚；禁止套用 sql_execute 失败态/阶段
+  if (isExecuteRollback) {
+    return {
+      structured: true,
+      statusI18nKey: 'execWorkflow.detail.failDisplay.status.rolledBack',
+      stageI18nKey: null,
+      hideStage: true,
+      reasonText: reasonRaw || '-'
+    };
+  }
+
   // 其它态：保持原「执行结果」纯文本；空则 '-'
   return {
     structured: false,
@@ -210,6 +296,8 @@ export const pickTaskForFailSummary = <
     status?: string;
     exec_fail_stage?: string;
     exec_fail_sql_count?: number;
+    exec_fail_sql_number?: number;
+    exec_fail_sql_id?: number;
     exec_fail_summary?: string;
     exec_fail_reason?: string;
   }

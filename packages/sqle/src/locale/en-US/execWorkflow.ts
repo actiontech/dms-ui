@@ -145,6 +145,7 @@ export default {
     failDisplay: {
       headerPrefix: 'Execution failed: ',
       headerWithCount: 'Execution failed: {{count}} SQL(s) {{phrase}}',
+      headerWithSqlNumber: 'Execution failed: SQL #{{number}} execution failed',
       statusLabel: 'Status',
       stageLabel: 'Stage',
       reasonLabel: 'Reason',
@@ -168,7 +169,8 @@ export default {
         backupFailed: 'Backup failed',
         executeFailed: 'Execution failed',
         connectFailed: 'Connection failed',
-        notExecuted: 'Not executed'
+        notExecuted: 'Not executed',
+        rolledBack: 'Rolled back'
       }
     },
     operator: {

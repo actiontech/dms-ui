@@ -162,6 +162,7 @@ export default {
     failDisplay: {
       headerPrefix: '上线失败：',
       headerWithCount: '上线失败：{{count}} 条 {{phrase}}',
+      headerWithSqlNumber: '上线失败：第 {{number}} 条 SQL 执行失败',
       statusLabel: '状态',
       stageLabel: '阶段',
       reasonLabel: '原因',
@@ -185,7 +186,8 @@ export default {
         backupFailed: '备份失败',
         executeFailed: '执行失败',
         connectFailed: '连接失败',
-        notExecuted: '未执行'
+        notExecuted: '未执行',
+        rolledBack: '已回滚'
       }
     },
     operator: {

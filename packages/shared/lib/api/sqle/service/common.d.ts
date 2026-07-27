@@ -761,6 +761,12 @@ export interface IAuditTaskResV1 {
   /** 同阶段失败 SQL 计数 */
   exec_fail_sql_count?: number;
 
+  /** 出错 SQL 的 number（AC-010 定位主键） */
+  exec_fail_sql_number?: number;
+
+  /** 出错 SQL 的 exec_sql_id（可选双保险） */
+  exec_fail_sql_id?: number;
+
   /** 可选摘要素材，如「SQL 备份失败」 */
   exec_fail_summary?: string;
 

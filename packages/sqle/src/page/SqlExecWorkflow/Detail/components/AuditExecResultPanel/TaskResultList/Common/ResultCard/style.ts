@@ -8,6 +8,12 @@ export const TasksResultCardStyleWrapper = styled('div')`
   background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
   margin-bottom: 20px;
 
+  &.exec-fail-highlight {
+    border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+    box-shadow: inset 0 0 0 1px
+      ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+  }
+
   & .result-card-header {
     height: 60px;
     padding: 16px 20px;

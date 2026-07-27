@@ -41,6 +41,7 @@ export default {
     terminate_succ: 'Termination success',
     terminating: 'Terminating',
     allStatus: 'All status',
+    rollback: 'Rolled back',
     not_executed: 'Not executed'
   },
 

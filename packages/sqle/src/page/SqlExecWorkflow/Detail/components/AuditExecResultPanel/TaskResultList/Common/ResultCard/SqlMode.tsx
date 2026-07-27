@@ -52,6 +52,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   onUpdateDescription,
   pagination,
   enableRetryExecute,
+  isExecFailHighlight,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -176,7 +177,10 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
     ]
   );
   return (
-    <TasksResultCardStyleWrapper>
+    <TasksResultCardStyleWrapper
+      className={isExecFailHighlight ? 'exec-fail-highlight' : undefined}
+      data-exec-fail-anchor={isExecFailHighlight ? 'true' : undefined}
+    >
       {contextHolder}
       <div className="result-card-header">
         <Space>
@@ -312,12 +316,18 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                           : '-'}
                       </span>
                     </div>
-                    <div className="exec-fail-result-row">
-                      <span className="exec-fail-result-label">
-                        {t('execWorkflow.detail.failDisplay.stageLabel')}：
-                      </span>
-                      <span>{t(execResultDisplay.stageI18nKey)}</span>
-                    </div>
+                    <EmptyBox if={!execResultDisplay.hideStage}>
+                      <div className="exec-fail-result-row">
+                        <span className="exec-fail-result-label">
+                          {t('execWorkflow.detail.failDisplay.stageLabel')}：
+                        </span>
+                        <span>
+                          {execResultDisplay.stageI18nKey
+                            ? t(execResultDisplay.stageI18nKey)
+                            : '-'}
+                        </span>
+                      </div>
+                    </EmptyBox>
                     <div className="exec-fail-result-row">
                       <span className="exec-fail-result-label">
                         {t('execWorkflow.detail.failDisplay.reasonLabel')}：
