@@ -25,7 +25,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1nbx0m0"
                 >
                   <div
                     class="result-card-header"
@@ -538,7 +538,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1nbx0m0"
                 >
                   <div
                     class="result-card-header"

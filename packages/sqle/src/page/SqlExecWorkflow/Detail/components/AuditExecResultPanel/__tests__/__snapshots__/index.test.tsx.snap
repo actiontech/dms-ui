@@ -335,7 +335,12 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
         <div
           class="custom-segmented-filter-item"
         >
-          执行回滚
+          已回滚
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          未执行
         </div>
       </div>
       <div
@@ -936,7 +941,12 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
         <div
           class="custom-segmented-filter-item"
         >
-          执行回滚
+          已回滚
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          未执行
         </div>
       </div>
       <div
@@ -1020,7 +1030,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1nbx0m0"
                 >
                   <div
                     class="result-card-header"
@@ -2759,7 +2769,12 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
         <div
           class="custom-segmented-filter-item"
         >
-          执行回滚
+          已回滚
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          未执行
         </div>
       </div>
       <div
@@ -2819,7 +2834,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1gxdwqg"
+                  class="css-1nbx0m0"
                 >
                   <div
                     class="result-card-header"
@@ -3743,7 +3758,12 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
         <div
           class="custom-segmented-filter-item"
         >
-          执行回滚
+          已回滚
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          未执行
         </div>
       </div>
       <div
@@ -3834,7 +3854,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                     class="ant-list-item ant-list-item-no-flex"
                   >
                     <div
-                      class="css-1gxdwqg"
+                      class="css-1nbx0m0"
                     >
                       <div
                         class="result-card-header"
