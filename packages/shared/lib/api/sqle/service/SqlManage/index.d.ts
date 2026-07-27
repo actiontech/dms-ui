@@ -106,6 +106,8 @@ export interface IExportSqlManageV1Params {
   sort_order?: exportSqlManageV1SortOrderEnum;
 
   extra_filters?: string;
+
+  export_column_keys?: string;
 }
 
 export interface IExportSqlManageRemediationV1Params {

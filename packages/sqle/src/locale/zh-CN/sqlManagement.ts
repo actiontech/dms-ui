@@ -8,6 +8,7 @@ export default {
       exporting: '正在导出文件',
       exportSuccessTips: '导出文件成功',
       exportFailedTips: '导出文件失败',
+      noExportColumnTips: '请至少选择一个导出列',
       remediationExportCurrentProject: '导出当前项目SQL整改报表',
       remediationExportAllProjects: '导出所有项目SQL整改报表',
       remediationExporting: '正在导出 SQL 管控整改报表',

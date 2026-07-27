@@ -8,6 +8,7 @@ export default {
       exporting: 'Exporting file',
       exportSuccessTips: 'Export file successfully',
       exportFailedTips: 'Export file failed',
+      noExportColumnTips: 'Please select at least one export column',
       remediationExportCurrentProject:
         'Export Current Project SQL Remediation Report',
       remediationExportAllProjects:

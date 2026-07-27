@@ -57,6 +57,10 @@ import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/
 import { SqlManagementListStyleWrapper } from './style';
 import { pickStaticSqlManageFilters } from './sourceExtra.utils';
 import useSqlManageSourceExtra from './hooks/useSqlManageSourceExtra';
+import {
+  getSqlManagementExportColumnKeys,
+  SQL_MANAGEMENT_TABLE_NAME
+} from './exportColumnKeys';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -331,7 +335,7 @@ const SQLEEIndex = () => {
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
-      tableName: 'sql_management_list',
+      tableName: SQL_MANAGEMENT_TABLE_NAME,
       username: username
     }),
     [username]
@@ -370,6 +374,18 @@ const SQLEEIndex = () => {
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
   const handleExport = () => {
+    const exportColumnKeys = getSqlManagementExportColumnKeys(
+      columns,
+      username
+    );
+
+    if (!exportColumnKeys.length) {
+      messageApi.warning(
+        t('sqlManagement.pageHeader.action.noExportColumnTips')
+      );
+      return;
+    }
+
     startExport();
     const hideLoading = messageApi.loading(
       t('sqlManagement.pageHeader.action.exporting')
@@ -385,7 +401,8 @@ const SQLEEIndex = () => {
         ? exportSqlManageV1FilterPriorityEnum.high
         : undefined,
       page_index: undefined,
-      page_size: undefined
+      page_size: undefined,
+      export_column_keys: exportColumnKeys.join(',')
     } as IExportSqlManageV1Params;
     SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
