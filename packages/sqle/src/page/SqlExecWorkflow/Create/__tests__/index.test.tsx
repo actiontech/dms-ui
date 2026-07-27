@@ -15,6 +15,7 @@ import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkf
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -60,6 +61,19 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     return sqleSuperRender(<CreateSqlExecWorkflow />);
   };
 
+  const clearTextAreaMeasuringNodes = () => {
+    document
+      .querySelectorAll('textarea[aria-hidden="true"]')
+      .forEach((node) => {
+        node.remove();
+      });
+  };
+
+  const expectBaseElementSnapshot = (baseElement: Element) => {
+    clearTextAreaMeasuringNodes();
+    expect(baseElement).toMatchSnapshot();
+  };
+
   ignoreConsoleErrors([
     UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED,
     UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE,
@@ -67,6 +81,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   ]);
 
   beforeEach(() => {
+    clearTextAreaMeasuringNodes();
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
 
@@ -74,6 +89,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     execWorkflow.mockAllApi();
+    workflowTemplate.mockAllApi();
     RequestCreateWorkflow = execWorkflow.createWorkflow();
     requestInstanceTip = instance.getInstanceTipList();
     requestInstanceSchemas = instance.getInstanceSchemas();
@@ -151,6 +167,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     jest.clearAllTimers();
     MockDate.reset();
     cleanup();
+    // Ant Design TextArea autoSize may leave measuring nodes on document.body
+    clearTextAreaMeasuringNodes();
   });
 
   it('should snapshot render initial workflow creation UI', async () => {
@@ -162,7 +180,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(screen.getByText('工单描述')).toBeInTheDocument();
     expect(screen.getByText('审核SQL语句信息')).toBeInTheDocument();
 
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
   });
 
   it('should snapshot render initial workflow creation UI when current is clone workflow mode', async () => {
@@ -191,7 +209,11 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(requestInstance).toHaveBeenCalledTimes(3);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(3);
     expect(getSqlFileOrderMethodV1Spy).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(
+      queryBySelector('.ant-select-loading', baseElement)
+    ).not.toBeInTheDocument();
+    expectBaseElementSnapshot(baseElement);
   });
 
   it('should reset form fields and snapshot UI after reset action', async () => {
@@ -273,7 +295,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       1
     );
 
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
   });
 
   it('should snapshot UI and perform SQL audit in the same mode', async () => {
@@ -316,7 +338,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector(`div[title="test123"]`));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
 
     // SQL美化
     const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
@@ -338,7 +360,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
 
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -359,7 +381,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
   });
 
   it('should handle form submission and audit action for different SQLs', async () => {
@@ -436,12 +458,12 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
 
     // 编辑工单信息
     fireEvent.click(screen.getByText('修改工单'));
     await act(async () => jest.advanceTimersByTime(400));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
 
     fireEvent.click(screen.getAllByText('上传SQL文件')[1]);
     await act(async () => jest.advanceTimersByTime(300));
@@ -483,9 +505,10 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       desc: 'workflow desc',
       project_name: projectName,
       task_ids: [18],
-      workflow_subject: 'workflow_name_2'
+      workflow_subject: 'workflow_name_2',
+      workflow_template_id: 1
     });
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
   });
 
   it('should prevent workflow creation when task SQL list is empty', async () => {
@@ -804,7 +827,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
 
     await act(async () => jest.advanceTimersByTime(0));
     expect(requestAuditTask).not.toHaveBeenCalled();
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
   });
 
   it('should clear exec_mode data when disabled execute mode selector', async () => {
@@ -918,7 +941,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector(`div[title="test123"]`));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
 
     // SQL美化
     const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
@@ -934,7 +957,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
 
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -955,7 +978,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(0));
 
@@ -967,7 +990,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       task_ids: [1, 2],
       workflow_subject: 'mysql-1_20231218120000',
       desc: undefined,
-      sql_version_id: 1
+      sql_version_id: 1,
+      workflow_template_id: 1
     });
   });
 
@@ -1059,7 +1083,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       project_name: 'default',
       sql_version_id: undefined,
       task_ids: [1, 2],
-      workflow_subject: 'workflow_name_2'
+      workflow_subject: 'workflow_name_2',
+      workflow_template_id: 1
     });
     expect(screen.getByText('提交工单').closest('button')).toHaveClass(
       'ant-btn-loading'
@@ -1138,10 +1163,10 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
+    expectBaseElementSnapshot(baseElement);
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(0));
 
@@ -1154,7 +1179,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       workflow_subject: 'workflow-name-Rollback',
       desc: 'test desc',
       rollback_sql_ids: [1, 2],
-      workflow_id: '1'
+      workflow_id: '1',
+      workflow_template_id: 1
     });
   });
 

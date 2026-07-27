@@ -2,22 +2,6 @@
 
 exports[`sqle/SqlExecWorkflow/Create render associated version when create workflow 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -154,7 +138,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -163,7 +147,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -203,7 +187,8 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -218,6 +203,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -230,9 +216,10 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -1862,22 +1849,6 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
 
 exports[`sqle/SqlExecWorkflow/Create render associated version when create workflow 2`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -2014,7 +1985,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -2023,7 +1994,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -2063,7 +2034,8 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -2078,6 +2050,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -2090,9 +2063,10 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -3726,22 +3700,6 @@ from
 
 exports[`sqle/SqlExecWorkflow/Create render associated version when create workflow 3`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -3878,7 +3836,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -3887,7 +3845,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -3927,7 +3885,8 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -3942,6 +3901,7 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -3954,9 +3914,10 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -6160,22 +6121,6 @@ from
 
 exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -6312,7 +6257,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -6321,7 +6266,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -6361,7 +6306,8 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -6376,6 +6322,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -6388,9 +6335,10 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -8291,22 +8239,6 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
 
 exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -8443,7 +8375,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -8452,7 +8384,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -8492,7 +8424,8 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -8507,6 +8440,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -8519,9 +8453,10 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -10796,22 +10731,6 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
 
 exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit action for different SQLs 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -10948,7 +10867,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -10957,7 +10876,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -10997,7 +10916,8 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -11012,6 +10932,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -11024,9 +10945,10 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -13556,22 +13478,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
 
 exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit action for different SQLs 2`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -13708,7 +13614,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -13717,7 +13623,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -13757,7 +13663,8 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -13772,6 +13679,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -13784,9 +13692,10 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -16513,7 +16422,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy"
+                      class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                     >
                       <div
                         class="ant-row ant-form-item-row"
@@ -16562,7 +16471,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-loading"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -16589,9 +16498,10 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     />
                                   </span>
                                   <span
-                                    class="ant-select-selection-placeholder"
+                                    class="ant-select-selection-item"
+                                    title="1"
                                   >
-                                    请选择审批流程模板
+                                    1
                                   </span>
                                 </div>
                                 <span
@@ -17756,22 +17666,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
 
 exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit action for different SQLs 3`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -17908,7 +17802,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -17917,7 +17811,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -17957,7 +17851,8 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -17972,6 +17867,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -17984,9 +17880,10 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -21181,7 +21078,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy"
+                      class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                     >
                       <div
                         class="ant-row ant-form-item-row"
@@ -21190,7 +21087,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           class="ant-col ant-form-item-label"
                         >
                           <label
-                            class=""
+                            class="ant-form-item-required"
                             for="workflow_template_id"
                             title="审批流程模板"
                           >
@@ -21230,7 +21127,8 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                                aria-required="true"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -21245,6 +21143,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                       aria-expanded="false"
                                       aria-haspopup="listbox"
                                       aria-owns="workflow_template_id_list"
+                                      aria-required="true"
                                       autocomplete="off"
                                       class="ant-select-selection-search-input"
                                       id="workflow_template_id"
@@ -21257,9 +21156,10 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     />
                                   </span>
                                   <span
-                                    class="ant-select-selection-placeholder"
+                                    class="ant-select-selection-item"
+                                    title="700300-WorkflowTemplate"
                                   >
-                                    请选择审批流程模板
+                                    700300-WorkflowTemplate
                                   </span>
                                 </div>
                                 <span
@@ -22752,22 +22652,6 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
 
 exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI after reset action 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -22913,7 +22797,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -22953,6 +22837,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                             class="ant-form-item-control-input-content"
                           >
                             <div
+                              aria-required="true"
                               class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
@@ -22968,6 +22853,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -24188,22 +24074,6 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
 
 exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in the same mode 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -24340,7 +24210,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -24349,7 +24219,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -24389,7 +24259,8 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -24404,6 +24275,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -24416,9 +24288,10 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -26220,22 +26093,6 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
 
 exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in the same mode 2`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -26372,7 +26229,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -26381,7 +26238,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -26421,7 +26278,8 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -26436,6 +26294,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -26448,9 +26307,10 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -28340,22 +28200,6 @@ from
 
 exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in the same mode 3`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -28492,7 +28336,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -28501,7 +28345,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -28541,7 +28385,8 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -28556,6 +28401,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -28568,9 +28414,10 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -32368,43 +32215,11 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
       </div>
     </div>
   </div>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
 </body>
 `;
 
 exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow creation UI when current is clone workflow mode 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -32541,7 +32356,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -32550,7 +32365,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -32590,7 +32405,8 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -32605,6 +32421,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -32617,9 +32434,10 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
@@ -36195,22 +36013,6 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
 
 exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prevent audit with invalid name 1`] = `
 <body>
-  <textarea
-    aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
-  min-height:0 !important;
-  max-height:none !important;
-  height:0 !important;
-  visibility:hidden !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  z-index:-1000 !important;
-  top:0 !important;
-  right:0 !important;
-  pointer-events: none !important;
-"
-    tab-index="-1"
-  />
   <div>
     <div
       class="ant-spin-nested-loading"
@@ -36371,7 +36173,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                     </div>
                   </section>
                   <div
-                    class="ant-form-item css-1jlm9cy"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -36380,7 +36182,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                         class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
-                          class="ant-form-item-no-colon"
+                          class="ant-form-item-required ant-form-item-no-colon"
                           for="workflow_template_id"
                           title="审批流程模板"
                         >
@@ -36420,7 +36222,8 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-select ant-select-in-form-item basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
+                              aria-required="true"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-16awv9j ant-select-single ant-select-show-arrow"
                             >
                               <div
                                 class="ant-select-selector"
@@ -36435,6 +36238,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-owns="workflow_template_id_list"
+                                    aria-required="true"
                                     autocomplete="off"
                                     class="ant-select-selection-search-input"
                                     id="workflow_template_id"
@@ -36447,9 +36251,10 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                                   />
                                 </span>
                                 <span
-                                  class="ant-select-selection-placeholder"
+                                  class="ant-select-selection-item"
+                                  title="700300-WorkflowTemplate"
                                 >
-                                  请选择审批流程模板
+                                  700300-WorkflowTemplate
                                 </span>
                               </div>
                               <span
