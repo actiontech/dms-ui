@@ -10,6 +10,7 @@ import {
   getDbServiceIsConnectbale
 } from '../../../utils/common';
 import {
+  mergeMongoTopologyIntoParams,
   mergeRedisConnectionModeIntoParams,
   normalizeMongoParams,
   normalizeMongoRequestParams
@@ -34,7 +35,8 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
         'user',
         'type',
         'params',
-        'connectionMode'
+        'connectionMode',
+        'mongoTopology'
       ]);
 
       values.params = normalizeMongoParams(values.params);
@@ -48,10 +50,14 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
         delete values.params;
       }
 
-      values.asyncParams = mergeRedisConnectionModeIntoParams(
-        values.asyncParams,
+      values.asyncParams = mergeMongoTopologyIntoParams(
+        mergeRedisConnectionModeIntoParams(
+          values.asyncParams,
+          values.type,
+          values.connectionMode
+        ),
         values.type,
-        values.connectionMode
+        values.mongoTopology
       );
 
       setLoadingTrue();

@@ -37,9 +37,13 @@ import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
 import {
   DEFAULT_REDIS_CONNECTION_MODE,
+  filterMongoTopologyParam,
   filterRedisConnectionModeParam,
+  getMongoTopologyFromParams,
   getRedisConnectionModeFromParams,
+  isMongoDbType,
   isRedisDbType,
+  mergeMongoTopologyIntoParams,
   mergeRedisConnectionModeIntoParams,
   MONGODB_SEED_HOSTS_PARAM,
   normalizeMongoParams,
@@ -210,8 +214,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     if (!temp) {
       return [];
     }
-    const driverParams = filterRedisConnectionModeParam(
-      turnDataSourceAsyncFormToCommon(temp.params ?? [])
+    const driverParams = filterMongoTopologyParam(
+      filterRedisConnectionModeParam(
+        turnDataSourceAsyncFormToCommon(temp.params ?? [])
+      )
     );
     if (
       databaseType.toLowerCase() === 'mongodb' &&
@@ -240,13 +246,18 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
               props.defaultData.additional_params
             )
           : undefined,
+        mongoTopology: isMongoDbType(props.defaultData.db_type)
+          ? getMongoTopologyFromParams(props.defaultData.additional_params)
+          : undefined,
         ip: props.defaultData.host,
         port: Number.parseInt(props.defaultData.port ?? ''),
         user: props.defaultData.user,
         params: generateFormValueByParams(
-          filterRedisConnectionModeParam(
-            turnDataSourceAsyncFormToCommon(
-              props.defaultData.additional_params ?? []
+          filterMongoTopologyParam(
+            filterRedisConnectionModeParam(
+              turnDataSourceAsyncFormToCommon(
+                props.defaultData.additional_params ?? []
+              )
             )
           )
         ),
@@ -329,10 +340,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       );
       delete values.params;
     }
-    values.asyncParams = mergeRedisConnectionModeIntoParams(
-      values.asyncParams,
+    values.asyncParams = mergeMongoTopologyIntoParams(
+      mergeRedisConnectionModeIntoParams(
+        values.asyncParams,
+        values.type,
+        values.connectionMode
+      ),
       values.type,
-      values.connectionMode
+      values.mongoTopology
     );
     props.submit(values).then(() => {
       closeModal();

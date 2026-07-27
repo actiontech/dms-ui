@@ -109,6 +109,105 @@ export const mergeRedisConnectionModeIntoParams = <
 export const MONGODB_SEED_HOSTS_PARAM = 'seed_hosts';
 export const MONGODB_AUTH_SOURCE_PARAM = 'auth_source';
 export const MONGODB_REPLICA_SET_PARAM = 'replica_set';
+export const MONGODB_TOPOLOGY_PARAM = 'topology';
+
+export type MongoTopology = 'single' | 'replicaSet' | 'shard';
+
+export const DEFAULT_MONGO_TOPOLOGY: MongoTopology = 'single';
+
+export const isMongoDbType = (dbType?: string): boolean => {
+  return dbType?.toLowerCase() === 'mongodb';
+};
+
+export const isMongoTopology = (value?: string): value is MongoTopology =>
+  value === 'single' || value === 'replicaSet' || value === 'shard';
+
+const getParamValueByNameOrKey = <
+  T extends {
+    name?: string;
+    key?: string;
+    value?: string;
+  }[]
+>(
+  params: T | undefined,
+  paramName: string
+) =>
+  params?.find((item) => item.name === paramName || item.key === paramName)
+    ?.value;
+
+/**
+ * 优先读 additional_params.topology；存量无键时：
+ * 有 seed_hosts 或非空 replica_set → replicaSet，否则 single。
+ * 旧分片无键无法识别，回落 single（需用户改选分片集群后保存补齐）。
+ */
+export const getMongoTopologyFromParams = <
+  T extends {
+    name?: string;
+    key?: string;
+    value?: string;
+  }[]
+>(
+  params?: T
+): MongoTopology => {
+  const topology = getParamValueByNameOrKey(params, MONGODB_TOPOLOGY_PARAM);
+  if (isMongoTopology(topology)) {
+    return topology;
+  }
+
+  const seedHosts = getParamValueByNameOrKey(params, MONGODB_SEED_HOSTS_PARAM);
+  const replicaSet = getParamValueByNameOrKey(
+    params,
+    MONGODB_REPLICA_SET_PARAM
+  );
+  if (
+    (typeof seedHosts === 'string' && !!seedHosts.trim()) ||
+    (typeof replicaSet === 'string' && !!replicaSet.trim())
+  ) {
+    return 'replicaSet';
+  }
+
+  return DEFAULT_MONGO_TOPOLOGY;
+};
+
+export const filterMongoTopologyParam = <
+  T extends {
+    name?: string;
+    key?: string;
+  }[]
+>(
+  params: T
+): T => {
+  return params.filter(
+    (item) =>
+      item.name !== MONGODB_TOPOLOGY_PARAM &&
+      item.key !== MONGODB_TOPOLOGY_PARAM
+  ) as T;
+};
+
+export const mergeMongoTopologyIntoParams = <
+  T extends {
+    name?: string;
+    value?: string;
+  }[]
+>(
+  params: T | undefined,
+  dbType?: string,
+  topology?: MongoTopology
+): T => {
+  const nextParams = filterMongoTopologyParam(params ?? []) as T;
+
+  if (!isMongoDbType(dbType)) {
+    return nextParams;
+  }
+
+  return [
+    ...nextParams,
+    {
+      name: MONGODB_TOPOLOGY_PARAM,
+      value: topology ?? DEFAULT_MONGO_TOPOLOGY
+    }
+  ] as T;
+};
 
 /** Mongo 主表单常驻参数（不含拓扑条件字段） */
 export const MONGODB_MAIN_PARAMS = [MONGODB_AUTH_SOURCE_PARAM] as const;

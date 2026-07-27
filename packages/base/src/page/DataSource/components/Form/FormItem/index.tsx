@@ -24,6 +24,7 @@ import {
 } from '@actiontech/shared';
 import { DataSourceFormContext } from '../../../context';
 import {
+  DEFAULT_MONGO_TOPOLOGY,
   DEFAULT_REDIS_CONNECTION_MODE,
   isMongoLegacyRemovedParam,
   isRedisDbType,
@@ -31,6 +32,7 @@ import {
   MONGODB_MAIN_PARAMS,
   MONGODB_REPLICA_SET_PARAM,
   MONGODB_SEED_HOSTS_PARAM,
+  MONGODB_TOPOLOGY_PARAM,
   normalizeMongoSeedHosts,
   validateMongoSeedHosts
 } from '../../../tool';
@@ -97,6 +99,7 @@ const DatabaseFormItem: React.FC<{
         ...MONGODB_MAIN_PARAMS,
         MONGODB_REPLICA_SET_PARAM,
         MONGODB_SEED_HOSTS_PARAM,
+        MONGODB_TOPOLOGY_PARAM,
         'auth_mechanism',
         'tls',
         'tls_skip_verify',
@@ -199,27 +202,6 @@ const DatabaseFormItem: React.FC<{
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  useEffect(() => {
-    if (!isMongoDB) {
-      return;
-    }
-
-    const currentTopology = props.form.getFieldValue('mongoTopology');
-    const paramsValue = (props.form.getFieldValue('params') ?? {}) as Record<
-      string,
-      string | boolean | undefined
-    >;
-    const seedHosts = paramsValue[MONGODB_SEED_HOSTS_PARAM];
-    const replicaSet = paramsValue.replica_set;
-    const nextTopology =
-      currentTopology ?? (seedHosts || replicaSet ? 'replicaSet' : 'single');
-
-    props.form.setFieldsValue({
-      mongoTopology: nextTopology,
-      params: mergeMongoTopologyParams(nextTopology, paramsValue)
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMongoDB, props.currentAsyncParams]);
 
   return (
     <>
@@ -385,7 +367,7 @@ const DatabaseFormItem: React.FC<{
             />
           }
           name="mongoTopology"
-          initialValue="single"
+          initialValue={DEFAULT_MONGO_TOPOLOGY}
         >
           <BasicSelect
             options={[
