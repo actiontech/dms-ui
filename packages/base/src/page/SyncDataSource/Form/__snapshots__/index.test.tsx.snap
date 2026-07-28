@@ -424,26 +424,30 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            aria-checked="true"
-                            class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
-                            role="switch"
-                            type="button"
+                          <span
+                            class="audit-confirm-switch-trigger"
                           >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
+                            <button
+                              aria-checked="true"
+                              class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
+                              role="switch"
+                              type="button"
                             >
-                              <span
-                                class="ant-switch-inner-checked"
+                              <div
+                                class="ant-switch-handle"
                               />
                               <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
+                                class="ant-switch-inner"
+                              >
+                                <span
+                                  class="ant-switch-inner-checked"
+                                />
+                                <span
+                                  class="ant-switch-inner-unchecked"
+                                />
+                              </span>
+                            </button>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -1288,26 +1292,30 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            aria-checked="true"
-                            class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
-                            role="switch"
-                            type="button"
+                          <span
+                            class="audit-confirm-switch-trigger"
                           >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
+                            <button
+                              aria-checked="true"
+                              class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
+                              role="switch"
+                              type="button"
                             >
-                              <span
-                                class="ant-switch-inner-checked"
+                              <div
+                                class="ant-switch-handle"
                               />
                               <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
+                                class="ant-switch-inner"
+                              >
+                                <span
+                                  class="ant-switch-inner-checked"
+                                />
+                                <span
+                                  class="ant-switch-inner-unchecked"
+                                />
+                              </span>
+                            </button>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2152,26 +2160,30 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            aria-checked="true"
-                            class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
-                            role="switch"
-                            type="button"
+                          <span
+                            class="audit-confirm-switch-trigger"
                           >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
+                            <button
+                              aria-checked="true"
+                              class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
+                              role="switch"
+                              type="button"
                             >
-                              <span
-                                class="ant-switch-inner-checked"
+                              <div
+                                class="ant-switch-handle"
                               />
                               <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
+                                class="ant-switch-inner"
+                              >
+                                <span
+                                  class="ant-switch-inner-checked"
+                                />
+                                <span
+                                  class="ant-switch-inner-unchecked"
+                                />
+                              </span>
+                            </button>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -3003,26 +3015,30 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            aria-checked="true"
-                            class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
-                            role="switch"
-                            type="button"
+                          <span
+                            class="audit-confirm-switch-trigger"
                           >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
+                            <button
+                              aria-checked="true"
+                              class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
+                              role="switch"
+                              type="button"
                             >
-                              <span
-                                class="ant-switch-inner-checked"
+                              <div
+                                class="ant-switch-handle"
                               />
                               <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
+                                class="ant-switch-inner"
+                              >
+                                <span
+                                  class="ant-switch-inner-checked"
+                                />
+                                <span
+                                  class="ant-switch-inner-unchecked"
+                                />
+                              </span>
+                            </button>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -3865,26 +3881,30 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            aria-checked="true"
-                            class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
-                            role="switch"
-                            type="button"
+                          <span
+                            class="audit-confirm-switch-trigger"
                           >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
+                            <button
+                              aria-checked="true"
+                              class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
+                              role="switch"
+                              type="button"
                             >
-                              <span
-                                class="ant-switch-inner-checked"
+                              <div
+                                class="ant-switch-handle"
                               />
                               <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
+                                class="ant-switch-inner"
+                              >
+                                <span
+                                  class="ant-switch-inner-checked"
+                                />
+                                <span
+                                  class="ant-switch-inner-unchecked"
+                                />
+                              </span>
+                            </button>
+                          </span>
                         </div>
                       </div>
                     </div>
