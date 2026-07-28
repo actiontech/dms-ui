@@ -218,20 +218,6 @@ export const MONGODB_REPLICA_PARAMS = [
   MONGODB_SEED_HOSTS_PARAM
 ] as const;
 
-/**
- * 后端已删除、UI 不再展示的遗留 additional_params。
- * 编辑存量数据源时仍可能出现在表单初始值中，提交与自动表单项均剥离。
- */
-const MONGODB_LEGACY_REMOVED_PARAMS = new Set([
-  'auth_mechanism',
-  'tls',
-  'tls_skip_verify',
-  'direct_connection'
-]);
-
-export const isMongoLegacyRemovedParam = (key?: string) =>
-  !!key && MONGODB_LEGACY_REMOVED_PARAMS.has(key);
-
 const splitMongoSeedHosts = (value?: string) =>
   (value ?? '')
     .split(/[\n,]/)
@@ -308,10 +294,7 @@ export const normalizeMongoRequestParams = <
 >(
   params: T[]
 ) => {
-  return params.filter((item) => {
-    if (isMongoLegacyRemovedParam(item.name)) {
-      return false;
-    }
-    return item.name !== MONGODB_SEED_HOSTS_PARAM || !!item.value;
-  });
+  return params.filter(
+    (item) => item.name !== MONGODB_SEED_HOSTS_PARAM || !!item.value
+  );
 };

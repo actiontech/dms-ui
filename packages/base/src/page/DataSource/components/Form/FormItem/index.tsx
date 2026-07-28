@@ -26,7 +26,6 @@ import { DataSourceFormContext } from '../../../context';
 import {
   DEFAULT_MONGO_TOPOLOGY,
   DEFAULT_REDIS_CONNECTION_MODE,
-  isMongoLegacyRemovedParam,
   isRedisDbType,
   MONGODB_AUTH_SOURCE_PARAM,
   MONGODB_MAIN_PARAMS,
@@ -99,11 +98,7 @@ const DatabaseFormItem: React.FC<{
         ...MONGODB_MAIN_PARAMS,
         MONGODB_REPLICA_SET_PARAM,
         MONGODB_SEED_HOSTS_PARAM,
-        MONGODB_TOPOLOGY_PARAM,
-        'auth_mechanism',
-        'tls',
-        'tls_skip_verify',
-        'direct_connection'
+        MONGODB_TOPOLOGY_PARAM
       ]),
     []
   );
@@ -125,9 +120,7 @@ const DatabaseFormItem: React.FC<{
       return mongodbAsyncParams;
     }
     return mongodbAsyncParams.filter(
-      (item) =>
-        !mongoHandledKeys.has(item.key ?? '') &&
-        !isMongoLegacyRemovedParam(item.key)
+      (item) => !mongoHandledKeys.has(item.key ?? '')
     );
   }, [isMongoDB, mongodbAsyncParams, mongoHandledKeys]);
 
