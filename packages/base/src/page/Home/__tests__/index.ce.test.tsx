@@ -5,8 +5,7 @@
 import { cleanup, screen } from '@testing-library/react';
 import {
   mockUseCurrentUser,
-  mockUsePermission,
-  sqleMockApi
+  mockUsePermission
 } from '@actiontech/shared/lib/testUtil';
 import Home from '..';
 import { baseSuperRender } from '../../../testUtils/superRender';
@@ -18,7 +17,6 @@ describe('test base/page/Home', () => {
       { checkActionPermission: jest.fn().mockReturnValue(true) },
       { useSpyOnMockHooks: true }
     );
-    sqleMockApi.globalDashboard.getGlobalWorkflowStatistics();
   });
 
   afterEach(() => {

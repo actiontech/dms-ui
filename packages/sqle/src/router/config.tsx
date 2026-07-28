@@ -214,7 +214,9 @@ const PipelineConfigurationUpdate = React.lazy(
 
 const VersionManagement = React.lazy(() => import('../page/VersionManagement'));
 
+// #if [ee]
 const GlobalDashboard = React.lazy(() => import('../page/GlobalDashboard'));
+// #endif
 const SqlInsights = React.lazy(() => import('../page/SqlInsights'));
 
 export const projectDetailRouterConfig: RouterConfigItem[] = [
@@ -583,12 +585,12 @@ export const globalRouterConfig: RouterConfigItem[] = [
     key: 'ruleKnowledge',
     element: <RuleKnowledge />
   },
-  // #endif
   {
     path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index.path,
     key: 'globalDashboard',
     element: <GlobalDashboard />
   },
+  // #endif
   {
     path: ROUTE_PATHS.SQLE.GLOBAL_OPERATION_LOG.index,
     key: 'globalOperationRecord',
