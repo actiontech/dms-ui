@@ -57,9 +57,9 @@ exports[`test RejectWorkflowModal should match snapshot 1`] = `
                       <label
                         class="ant-form-item-required"
                         for="reason"
-                        title="驳回原因"
+                        title="审批意见"
                       >
-                        驳回原因
+                        审批意见
                       </label>
                     </div>
                     <div

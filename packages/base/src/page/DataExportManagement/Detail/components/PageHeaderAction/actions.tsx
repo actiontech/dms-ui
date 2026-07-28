@@ -4,7 +4,7 @@ import {
   PermissionControl
 } from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
-import { ActionMeta } from './index.type';
+import { ActionMeta, ApproveActionMeta } from './index.type';
 import { Divider } from 'antd';
 export const CloseWorkflowAction = (closeWorkflowButtonMeta: ActionMeta) => {
   return (
@@ -41,7 +41,8 @@ export const RejectWorkflowAction = (rejectWorkflowButtonMeta: ActionMeta) => {
   );
 };
 export const ApproveWorkflowAction = (
-  approveWorkflowButtonMeta: ActionMeta
+  approveWorkflowButtonMeta: ApproveActionMeta,
+  openApproveModal: () => void
 ) => {
   return (
     <PermissionControl
@@ -52,7 +53,7 @@ export const ApproveWorkflowAction = (
         text={t('dmsDataExport.detail.action.approve.text')}
         hidden={approveWorkflowButtonMeta.hidden}
         disabled={approveWorkflowButtonMeta.disabled}
-        onClick={approveWorkflowButtonMeta.action}
+        onClick={openApproveModal}
         loading={approveWorkflowButtonMeta.loading}
         type="primary"
       />

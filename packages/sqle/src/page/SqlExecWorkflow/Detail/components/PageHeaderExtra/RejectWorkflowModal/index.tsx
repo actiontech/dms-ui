@@ -46,7 +46,7 @@ const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
       <>
         <Form form={form} onFinish={reject} layout="vertical">
           <Form.Item
-            label={t('execWorkflow.detail.operator.rejectReason')}
+            label={t('execWorkflow.detail.operator.approvalComment')}
             name="reason"
             rules={[
               {

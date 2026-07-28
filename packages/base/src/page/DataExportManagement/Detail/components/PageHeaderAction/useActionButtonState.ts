@@ -1,18 +1,22 @@
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import useExportDetailAction from '../../hooks/useExportDetailAction';
 import { useMemo } from 'react';
-import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import {
+  DataExportRelatedUnmaskingWorkflowApprovalStatusEnum,
+  WorkflowRecordStatusEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   useCurrentUser,
   usePermission,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import { MessageInstance } from 'antd/es/message/interface';
-import { ActionMeta } from './index.type';
+import { ActionMeta, ApproveActionMeta } from './index.type';
+import { getRelatedUnmaskingWorkflows } from '../../utils/unmaskingWorkflow';
 
 const useActionButtonState: (messageApi: MessageInstance) => {
   closeWorkflowButtonMeta: ActionMeta;
-  approveWorkflowButtonMeta: ActionMeta;
+  approveWorkflowButtonMeta: ApproveActionMeta;
   rejectWorkflowButtonMeta: ActionMeta;
   executeExportButtonMeta: ActionMeta;
 } = (messageApi) => {
@@ -94,11 +98,22 @@ const useActionButtonState: (messageApi: MessageInstance) => {
     if (!workflowStatus || !currentStep) {
       return false;
     }
+    const relatedUnmaskingWorkflows =
+      getRelatedUnmaskingWorkflows(workflowInfo);
+    const hasRelatedUnmaskingWorkflow = relatedUnmaskingWorkflows.length > 0;
+    const allUnmaskingApproved = relatedUnmaskingWorkflows.every(
+      (workflow) =>
+        workflow.approval_status ===
+        DataExportRelatedUnmaskingWorkflowApprovalStatusEnum.approved
+    );
+    const canExecuteWithMasking =
+      !hasRelatedUnmaskingWorkflow || allUnmaskingApproved;
     return (
       workflowStatus === WorkflowRecordStatusEnum.wait_for_export &&
-      workflowInfo.create_user?.uid === userId
+      workflowInfo.create_user?.uid === userId &&
+      canExecuteWithMasking
     );
-  }, [currentStep, userId, workflowInfo?.create_user?.uid, workflowStatus]);
+  }, [currentStep, userId, workflowInfo, workflowStatus]);
 
   return {
     closeWorkflowButtonMeta: {
@@ -107,7 +122,7 @@ const useActionButtonState: (messageApi: MessageInstance) => {
       loading: closeWorkflowLoading
     },
     approveWorkflowButtonMeta: {
-      action: () => approveWorkflow(workflowID),
+      action: (reason?: string) => approveWorkflow(workflowID, reason),
       hidden: !approveWorkflowButtonVisibility,
       loading: approveWorkflowLoading,
       disabled: isExportApproveBWPDisabled

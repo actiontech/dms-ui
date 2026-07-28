@@ -142,37 +142,6 @@ export default {
   },
 
   detail: {
-    failDisplay: {
-      headerPrefix: 'Execution failed: ',
-      headerWithCount: 'Execution failed: {{count}} SQL(s) {{phrase}}',
-      headerWithSqlNumber: 'Execution failed: SQL #{{number}} execution failed',
-      statusLabel: 'Status',
-      stageLabel: 'Stage',
-      reasonLabel: 'Reason',
-      stage: {
-        sqlBackup: 'SQL backup',
-        sqlExecute: 'SQL execution',
-        datasourceConnect: 'Data source connection',
-        preCheck: 'Pre-check',
-        terminate: 'Task terminated',
-        unknown: 'Unknown'
-      },
-      phrase: {
-        sqlBackup: 'SQL backup failed',
-        sqlExecute: 'SQL execution failed',
-        datasourceConnect: 'Data source connection failed',
-        preCheck: 'Pre-check failed',
-        terminate: 'Task terminated',
-        unknown: 'Unknown'
-      },
-      status: {
-        backupFailed: 'Backup failed',
-        executeFailed: 'Execution failed',
-        connectFailed: 'Connection failed',
-        notExecuted: 'Not executed',
-        rolledBack: 'Rolled back'
-      }
-    },
     operator: {
       buttonText: 'Workflow details',
       title: 'Workflow information',
@@ -211,6 +180,9 @@ export default {
       batchSqlExecuteConfirmTips:
         'This operation will immediately execute all SQL statements under the workflow, and the data sources that have been scheduled for timed execution will still be executed at the scheduled time and will not be executed immediately, do you confirm to execute immediately in batch?',
       sqlReview: 'Audit passed',
+      approvalComment: 'Approval comment',
+      notFilled: 'Not filled',
+      confirmApprove: 'Confirm approval',
       terminate: 'Terminate execution',
       terminateSuccessTips: 'Terminate execution successful',
       terminateConfirmTips:

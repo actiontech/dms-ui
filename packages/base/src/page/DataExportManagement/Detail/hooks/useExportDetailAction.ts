@@ -45,11 +45,12 @@ const useExportDetailAction = (messageApi: MessageInstance) => {
     { setFalse: finishApproveWorkflow, setTrue: startApproveWorkflow }
   ] = useBoolean();
 
-  const approveWorkflow = (workflowID: string) => {
+  const approveWorkflow = (workflowID: string, reason?: string) => {
     startApproveWorkflow();
-    DataExportWorkflows.ApproveDataExportWorkflow({
+    return DataExportWorkflows.ApproveDataExportWorkflow({
       data_export_workflow_uid: workflowID,
-      project_uid: projectID
+      project_uid: projectID,
+      ...(typeof reason === 'string' ? { payload: { reason } } : {})
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

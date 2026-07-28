@@ -5,6 +5,8 @@ export default {
     '当您没有某个数据源的查看权限，但需要导出其中的数据时，可以利用数据导出功能。通过进行审批流程，您可以获取相应的数据。这样，即使没有直接的查看权限，您仍然可以获得所需的数据。',
   status: {
     wait_for_audit: '待审核',
+    wait_for_masking_approve: '待脱敏审批',
+    partial_failed: '部分导出失败',
     wait_for_export: '待导出',
     finished: '导出成功',
     exporting: '正在导出',
@@ -52,7 +54,17 @@ export default {
       buttonText: '提交工单',
       onlySupportDDLSqls: '仅支持对DQL语句创建导出工单',
       hasExceptionRule: '当前存在审核规则未被校验，请排除问题后重新触发审核',
-      continueSubmission: '仍要创建'
+      continueSubmission: '仍要创建',
+      plaintextWarning: '已命中脱敏字段，可按 SQL 粒度选择“导出原文数据”。',
+      plaintextReasonPlaceholder: '请说明需要导出原文数据的业务原因',
+      plaintextReasonRequired: '请选择需导出原文的 SQL 并填写申请理由',
+      plaintextApplyCreateFailed:
+        '导出工单已创建，但原文申请创建失败，请稍后在审批中心确认状态',
+      plaintextApplyCreateFailedWithDetail:
+        '导出工单已创建，但原文申请创建失败（失败数据源 {{count}} 个）',
+      plaintextApplyCompensateGuide:
+        '可先进入已创建工单查看审批状态，并在审批中心补齐或重新发起原文申请。',
+      plaintextApplyCompensateAction: '查看已创建工单'
     },
     approvalProcess: {
       title: '审批流程',
@@ -100,6 +112,7 @@ export default {
       status: '状态',
       assignee: '待操作人',
       workflowTemplate: '审批模板',
+      plaintextExport: '原文导出',
       viewOrderDetail: '查看工单详情'
     },
     actions: {
@@ -109,13 +122,48 @@ export default {
   },
   detail: {
     reject: {
-      reason: '{{name}}驳回了当前工单，驳回原因为：',
+      reason: '{{name}}驳回了当前工单，审批意见为：',
       tips: '当工单被驳回时，工单创建者需要对其进行修改，然后重新提交审核。（目前暂不支持修改工单。）'
     },
     exportResult: {
       title: '导出结果',
       overview: {
         title: '概览',
+        plaintextNotice: {
+          pending: {
+            message: '原文导出申请审批中',
+            description:
+              '当前工单已提交原文导出申请，审批通过后方可下载原文数据。',
+            link: '前往审批页面'
+          },
+          approved: {
+            message: '原文导出申请已通过',
+            description:
+              '请在 {{deadline}} 前完成原文数据下载，剩余时间：{{remain}}。'
+          },
+          downloaded: {
+            message: '原文数据已下载',
+            description:
+              '当前下载凭证将于 {{deadline}} 失效（剩余 {{remain}}），窗口期内可重复下载。'
+          },
+          rejected: {
+            message: '原文导出申请已被驳回',
+            description: '请前往审批页面查看驳回详情，了解原因后重新提交申请。',
+            link: '查看审批详情'
+          },
+          postDownloadExpired: {
+            message: '原文数据已成功下载',
+            description:
+              '30 分钟重复下载窗口已关闭，如需再次下载请重新提交原文导出申请。'
+          },
+          expired: {
+            message: '原文数据下载申请已失效',
+            description:
+              '原文下载时限已过期，如需获取原文数据请重新提交原文导出申请。'
+          }
+        },
+        partialFailedNotice:
+          '当前工单存在“部分导出失败”：已成功任务可继续下载，失败任务请修复后重试。',
         column: {
           dbService: '数据源',
           status: '状态',
@@ -126,7 +174,10 @@ export default {
           exportFileType: '导出文件类型',
           action: {
             download: '下载数据',
-            downloadTips: '请在24小时内下载数据集，如超期，则需要重新提交工单。'
+            downloadOriginal: '下载原文数据',
+            downloadTips:
+              '请在24小时内下载数据集，如超期，则需要重新提交工单。',
+            downloadOriginalFailed: '下载原文数据失败，请稍后重试'
           }
         }
       },
@@ -145,7 +196,10 @@ export default {
         title: '基本信息',
         createUser: '创建人',
         createTime: '创建时间',
-        status: '状态'
+        status: '状态',
+        exportMode: '导出类型',
+        exportModePlaintext: '原文导出',
+        exportModeMasked: '脱敏导出'
       },
       steps: {
         title: '工单进度',
@@ -173,7 +227,7 @@ export default {
           title: '驳回',
           text: '驳回'
         },
-        reason: '驳回原因',
+        reason: '审批意见',
         text: '审核驳回',
         tips: '当前操作将驳回工单下所有导出任务，请谨慎操作！',
         successTips: '工单驳回成功！'
@@ -189,7 +243,10 @@ export default {
       unknown: '未知步骤',
       waitAudit: '等待审核人操作',
       alreadyRejected: '工单已被驳回',
-      alreadyClosed: '工单已被关闭'
+      alreadyClosed: '工单已被关闭',
+      approvalComment: '审批意见',
+      notFilled: '未填写',
+      confirmApprove: '确认通过'
     }
   },
   common: {
@@ -199,7 +256,15 @@ export default {
         execSql: '执行语句',
         sqlType: '语句类型',
         auditResult: '审核结果',
-        createWhitelist: '添加为审核SQL例外'
+        createWhitelist: '添加为审核SQL例外',
+        exportPlaintext: '导出原文',
+        exportPlaintextAction: '导出原文数据（需审批）',
+        snapshotInfo: '血缘/脱敏快照',
+        maskingSnapshotCount: '脱敏字段 {{count}} 个',
+        lineageSnapshotCount: '血缘来源 {{count}} 条',
+        snapshotDetail: '查看详情',
+        maskingFields: '脱敏字段与规则',
+        lineagePathPreview: '血缘路径预览'
       }
     }
   }

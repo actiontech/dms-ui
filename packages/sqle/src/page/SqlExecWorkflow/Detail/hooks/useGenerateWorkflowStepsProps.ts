@@ -35,12 +35,13 @@ const useGenerateWorkflowStepsProps = ({
   );
 
   const passAction = useCallback(
-    async (stepId: number) => {
+    async (stepId: number, reason?: string) => {
       return workflow
         .approveWorkflowV2({
           workflow_id: workflowId,
           workflow_step_id: `${stepId}`,
-          project_name: projectName
+          project_name: projectName,
+          ...(reason ? { reason } : {})
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {

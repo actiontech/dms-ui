@@ -35,7 +35,7 @@ describe('test RejectWorkflowModal', () => {
     const rejectSpy = dataExport.RejectDataExportWorkflow();
     baseSuperRender(<RejectWorkflowModal />);
 
-    fireEvent.change(screen.getByLabelText('驳回原因'), {
+    fireEvent.change(screen.getByLabelText('审批意见'), {
       target: { value: 'reject reason' }
     });
 
@@ -67,7 +67,7 @@ describe('test RejectWorkflowModal', () => {
     expect(emitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_Export_Data_Workflow
     );
-    expect(screen.getByLabelText('驳回原因')).toHaveValue('');
+    expect(screen.getByLabelText('审批意见')).toHaveValue('');
     expect(
       mockDataExportDetailRedux.updateWorkflowRejectOpen
     ).toHaveBeenCalledTimes(1);
@@ -79,13 +79,13 @@ describe('test RejectWorkflowModal', () => {
   it('should clear form and close modal', async () => {
     baseSuperRender(<RejectWorkflowModal />);
 
-    fireEvent.change(screen.getByLabelText('驳回原因'), {
+    fireEvent.change(screen.getByLabelText('审批意见'), {
       target: { value: 'reject reason' }
     });
     await act(async () => jest.advanceTimersByTime(0));
 
     fireEvent.click(screen.getByText('取 消'));
-    expect(screen.getByLabelText('驳回原因')).toHaveValue('');
+    expect(screen.getByLabelText('审批意见')).toHaveValue('');
     expect(
       mockDataExportDetailRedux.updateWorkflowRejectOpen
     ).toHaveBeenCalledTimes(1);

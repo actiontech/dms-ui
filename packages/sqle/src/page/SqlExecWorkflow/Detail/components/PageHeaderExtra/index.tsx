@@ -7,6 +7,7 @@ import { WorkflowDetailPageHeaderExtraProps } from './index.type';
 import useWorkflowDetailAction from './hooks/useWorkflowDetailAction';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import RejectWorkflowModal from './RejectWorkflowModal';
+import ApproveWorkflowModal from './ApproveWorkflowModal';
 import {
   ApproveWorkflowAction,
   BatchExecWorkflowAction,
@@ -29,6 +30,10 @@ const WorkflowDetailPageHeaderExtra: React.FC<
   const [
     rejectModalVisible,
     { setTrue: openRejectModal, setFalse: closeRejectModal }
+  ] = useBoolean();
+  const [
+    approveModalVisible,
+    { setTrue: openApproveModal, setFalse: closeApproveModal }
   ] = useBoolean();
   const {
     messageContextHolder,
@@ -63,7 +68,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       {/* #endif */}
       {CloneWorkflowAction(executeInOtherInstanceMeta)}
       {BatchRejectWorkflowAction(rejectWorkflowButtonMeta, openRejectModal)}
-      {ApproveWorkflowAction(auditPassWorkflowButtonMeta)}
+      {ApproveWorkflowAction(auditPassWorkflowButtonMeta, openApproveModal)}
       {BatchExecWorkflowAction(
         batchExecutingWorkflowButtonMeta,
         executable,
@@ -112,6 +117,13 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       >
         {t('execWorkflow.detail.operator.buttonText')}
       </div>
+
+      <ApproveWorkflowModal
+        open={approveModalVisible}
+        approve={(values) => auditPassWorkflowButtonMeta.action(values.reason)}
+        loading={auditPassWorkflowButtonMeta.loading}
+        close={closeApproveModal}
+      />
 
       <RejectWorkflowModal
         open={rejectModalVisible}

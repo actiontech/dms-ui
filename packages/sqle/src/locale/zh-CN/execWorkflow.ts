@@ -159,37 +159,6 @@ export default {
   },
 
   detail: {
-    failDisplay: {
-      headerPrefix: '上线失败：',
-      headerWithCount: '上线失败：{{count}} 条 {{phrase}}',
-      headerWithSqlNumber: '上线失败：第 {{number}} 条 SQL 执行失败',
-      statusLabel: '状态',
-      stageLabel: '阶段',
-      reasonLabel: '原因',
-      stage: {
-        sqlBackup: 'SQL 备份',
-        sqlExecute: 'SQL 执行',
-        datasourceConnect: '数据源连接',
-        preCheck: '前置校验',
-        terminate: '任务中止',
-        unknown: '未知'
-      },
-      phrase: {
-        sqlBackup: 'SQL 备份失败',
-        sqlExecute: 'SQL 执行失败',
-        datasourceConnect: '数据源连接失败',
-        preCheck: '前置校验失败',
-        terminate: '任务中止',
-        unknown: '未知'
-      },
-      status: {
-        backupFailed: '备份失败',
-        executeFailed: '执行失败',
-        connectFailed: '连接失败',
-        notExecuted: '未执行',
-        rolledBack: '已回滚'
-      }
-    },
     operator: {
       buttonText: '工单详情',
       title: '工单信息',
@@ -225,6 +194,9 @@ export default {
       batchSqlExecuteConfirmTips:
         '当前操作将立即执行工单下的所有SQL语句，且已经设置了定时上线的数据源仍然在定时时间上线，不会立即上线，是否确认立即批量上线?',
       sqlReview: '审核通过',
+      approvalComment: '审批意见',
+      notFilled: '未填写',
+      confirmApprove: '确认通过',
       terminate: '中止上线',
       terminateSuccessTips: '中止上线成功',
       terminateConfirmTips:

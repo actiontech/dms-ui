@@ -5,6 +5,8 @@ export default {
     'When you do not have permission to view a certain DB instance, but need to export data from it, you can use the data export function. by going through the approval process, you can get the corresponding data. this way, even without direct viewing permission, you can still get the data you need.',
   status: {
     wait_for_audit: 'Pending audit',
+    wait_for_masking_approve: 'Pending masking approval',
+    partial_failed: 'Partial export failed',
     wait_for_export: 'Pending export',
     finished: 'Export success',
     exporting: 'Exporting',
@@ -56,6 +58,27 @@ export default {
       submitAction: 'Submit task',
       submitTips: 'Only supports creating export tasks for dql statements'
     },
+    submit: {
+      buttonText: 'Submit task',
+      onlySupportDDLSqls:
+        'Only supports creating export tasks for DQL statements',
+      hasExceptionRule:
+        'There are unchecked audit exception rules. Please fix and re-audit first',
+      continueSubmission: 'Create anyway',
+      plaintextWarning:
+        'Sensitive fields detected. You can choose "Export plaintext data" per SQL.',
+      plaintextReasonPlaceholder:
+        'Please explain the business reason for exporting plaintext data',
+      plaintextReasonRequired:
+        'Please select plaintext SQL statements and fill in the apply reason',
+      plaintextApplyCreateFailed:
+        'Export workflow created, but plaintext apply creation failed. Please verify in approvals later.',
+      plaintextApplyCreateFailedWithDetail:
+        'Export workflow created, but plaintext apply creation failed ({{count}} datasource(s) failed).',
+      plaintextApplyCompensateGuide:
+        'You can open the created workflow first, then complete or re-initiate plaintext approvals from approvals.',
+      plaintextApplyCompensateAction: 'View created workflow'
+    },
     result: {
       success: 'Task created successfully',
       guide: 'View the newly created task'
@@ -89,6 +112,7 @@ export default {
       status: 'Status',
       assignee: 'Assignee',
       workflowTemplate: 'Approval template',
+      plaintextExport: 'Plaintext export',
       viewOrderDetail: 'View task detail'
     },
     actions: {
@@ -98,13 +122,49 @@ export default {
   },
   detail: {
     reject: {
-      reason: '{{name}} rejected the current task, the reason is:',
+      reason: '{{name}} rejected the current task, approval comment:',
       tips: 'When the task is rejected, the task creator needs to modify it and resubmit it for review. (currently, modifying the task is not supported.)'
     },
     exportResult: {
       title: 'Export result',
       overview: {
         title: 'Overview',
+        plaintextNotice: {
+          pending: {
+            message: 'Plaintext export pending approval',
+            description:
+              'A plaintext export request has been submitted. Plaintext data will be downloadable after approval.',
+            link: 'Go to approval page'
+          },
+          approved: {
+            message: 'Plaintext export approved',
+            description:
+              'Please complete the download before {{deadline}}. Time remaining: {{remain}}.'
+          },
+          downloaded: {
+            message: 'Plaintext data downloaded',
+            description:
+              'Current download credential expires at {{deadline}} ({{remain}} remaining). You can re-download within this window.'
+          },
+          rejected: {
+            message: 'Plaintext export request rejected',
+            description:
+              'Please review the rejection details on the approval page and resubmit if needed.',
+            link: 'View approval details'
+          },
+          postDownloadExpired: {
+            message: 'Plaintext data downloaded successfully',
+            description:
+              'The 30-minute re-download window has closed. Submit a new request to download again.'
+          },
+          expired: {
+            message: 'Plaintext export request expired',
+            description:
+              'The download window has expired. Submit a new plaintext export request to get the data.'
+          }
+        },
+        partialFailedNotice:
+          'This workflow is partially failed: successful tasks remain downloadable, failed tasks need retry after fixes.',
         column: {
           dbService: 'DB instance',
           status: 'Status',
@@ -115,8 +175,11 @@ export default {
           exportFileType: 'Export file type',
           action: {
             download: 'Download data',
+            downloadOriginal: 'Download plaintext data',
             downloadTips:
-              'Please download the dataset within 24 hours. if it expires, you will need to resubmit the task.'
+              'Please download the dataset within 24 hours. if it expires, you will need to resubmit the task.',
+            downloadOriginalFailed:
+              'Failed to download plaintext data. Please try again later.'
           }
         }
       },
@@ -135,7 +198,10 @@ export default {
         title: 'Basic info',
         createUser: 'Creator',
         createTime: 'Create time',
-        status: 'Status'
+        status: 'Status',
+        exportMode: 'Export type',
+        exportModePlaintext: 'Plaintext export',
+        exportModeMasked: 'Masked export'
       },
       steps: {
         title: 'Task progress',
@@ -163,7 +229,7 @@ export default {
           title: 'Reject',
           text: 'Reject'
         },
-        reason: 'Reject reason',
+        reason: 'Approval comment',
         text: 'Reject audit',
         tips: 'The current operation will reject all export tasks under the task. please operate with caution!',
         successTips: 'Task rejected successfully!'
@@ -179,7 +245,10 @@ export default {
       unknown: 'Unknown step',
       waitAudit: 'Waiting for auditor operation',
       alreadyRejected: 'Task has been rejected',
-      alreadyClosed: 'Task has been closed'
+      alreadyClosed: 'Task has been closed',
+      approvalComment: 'Approval comment',
+      notFilled: 'Not filled',
+      confirmApprove: 'Confirm approval'
     }
   },
   common: {
@@ -189,7 +258,15 @@ export default {
         execSql: 'Execute statement',
         sqlType: 'Statement type',
         auditResult: 'Audit result',
-        createWhitelist: 'Add to audit whitelist'
+        createWhitelist: 'Add to audit whitelist',
+        exportPlaintext: 'Plaintext Export',
+        exportPlaintextAction: 'Export plaintext data (requires approval)',
+        snapshotInfo: 'Lineage/Masking Snapshot',
+        maskingSnapshotCount: '{{count}} masked field(s)',
+        lineageSnapshotCount: '{{count}} lineage source(s)',
+        snapshotDetail: 'View details',
+        maskingFields: 'Masked fields and rules',
+        lineagePathPreview: 'Lineage path preview'
       }
     }
   }

@@ -11,7 +11,7 @@ export type MaintenanceTimeInfoType = Array<{
 export type WorkflowDetailPageHeaderExtraProps = {
   workflowInfo?: IWorkflowResV2;
   refreshWorkflow: () => void;
-  passAction: (stepId: number) => Promise<void>;
+  passAction: (stepId: number, reason?: string) => Promise<void>;
   rejectAction: (reason: string, stepId: number) => Promise<void>;
   executingAction: () => Promise<void>;
   completeAction: () => Promise<void>;
