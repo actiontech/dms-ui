@@ -121,7 +121,13 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
             }}
           />
           <EmptyBox if={!!currentTaskID}>
-            <DownloadRecord noDuplicate={noDuplicate} taskId={currentTaskID!} />
+            <DownloadRecord
+              noDuplicate={noDuplicate}
+              taskId={currentTaskID!}
+              auditStatusFinished={
+                currentTask?.status !== 'initialized'
+              }
+            />
           </EmptyBox>
         </Space>
       </SegmentedRowStyleWrapper>
