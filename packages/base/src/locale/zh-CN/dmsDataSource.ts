@@ -50,6 +50,9 @@ export default {
     name: '数据源名称',
     describe: '数据源描述',
     type: '数据源类型',
+    connectionMode: '连接模式',
+    connectionModeStandalone: '单实例',
+    connectionModeCluster: 'Cluster',
     ip: '数据源地址',
     ipTips: '数据源IP或域名',
     port: '数据源端口',
@@ -104,6 +107,28 @@ export default {
     lineNumberLimit: '回滚行数限制',
     lineNumberLimitTips: '当预计影响行数超过指定值则不回滚',
     dataSourceConnectError: '数据源连通性测试失败',
+    mongoTopology: 'MongoDB 形态',
+    mongoTopologyTips:
+      '按 MongoDB 部署拓扑选择（Standalone / Replica set / Sharded cluster）；选错会导致测连失败。',
+    mongoTopologySingle: '单机',
+    mongoTopologyReplicaSet: '副本集',
+    mongoTopologyShard: '分片集群',
+    mongoSingleTips:
+      '填写单个 standalone 实例地址与端口；无需副本集名称与成员地址',
+    mongoReplicaSetTips:
+      '在「副本集成员地址」填写多个 host:port；基础地址取首个成员；需填副本集名称',
+    mongoShardTips:
+      '只填单个 mongos 地址与端口；勿填 configsvr、shard 数据节点或副本集多成员',
+    mongoAuthSource: '认证数据库',
+    mongoAuthSourceTips: 'MongoDB 认证库名，通常为 admin',
+    mongoReplicaSet: '副本集名称',
+    mongoReplicaSetNameTips: '仅副本集形态需要填写',
+    mongoSeedHosts: '副本集成员地址',
+    mongoSeedHostsTips: '多个成员使用英文逗号或换行分隔',
+    mongoSeedHostsPlaceholder:
+      '例如：192.0.2.10:27017,192.0.2.11:27017,192.0.2.12:27017',
+    mongoSeedHostsRule:
+      '请填写 host:port 格式的成员地址，多个成员用英文逗号或换行分隔',
     returnModify: '返回修改',
     continueSubmit: '继续提交'
   },

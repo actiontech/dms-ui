@@ -26,6 +26,11 @@ const ConfirmSwitch: React.FC<ConfirmSwitchProps> = ({
       onChange?.(value);
     }
   };
+  const onTriggerClick = () => {
+    if (checked) {
+      setAuditRequiredPopupVisible(true);
+    }
+  };
   const onInnerConfirm = () => {
     onChange?.(false);
     onConfirm?.();
@@ -38,11 +43,16 @@ const ConfirmSwitch: React.FC<ConfirmSwitchProps> = ({
       onOpenChange={onOpenChange}
       onConfirm={onInnerConfirm}
     >
-      <BasicSwitch
-        className="audit-confirm-switch"
-        checked={checked}
-        onChange={onSwitchChange}
-      />
+      <span
+        className="audit-confirm-switch-trigger"
+        onClickCapture={onTriggerClick}
+      >
+        <BasicSwitch
+          className="audit-confirm-switch"
+          checked={checked}
+          onChange={onSwitchChange}
+        />
+      </span>
     </Popconfirm>
   );
 };

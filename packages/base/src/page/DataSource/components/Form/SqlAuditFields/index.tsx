@@ -45,8 +45,8 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance();
-  const needSqlAuditService = Form.useWatch('needSqlAuditService');
-  const needAuditForSqlQuery = Form.useWatch('needAuditForSqlQuery');
+  const needSqlAuditService = Form.useWatch('needSqlAuditService', form);
+  const needAuditForSqlQuery = Form.useWatch('needAuditForSqlQuery', form);
   const changeRuleTemplate = (
     value: string,
     option: BaseOptionType,
@@ -97,7 +97,7 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                 className="has-required-style has-label-tip"
                 rules={[
                   {
-                    required: true,
+                    required: !!needSqlAuditService,
                     message: t('common.form.placeholder.select', {
                       name: t('dmsDataSource.dataSourceForm.ruleTemplate')
                     })
@@ -136,7 +136,7 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                 className="has-required-style has-label-tip"
                 rules={[
                   {
-                    required: true,
+                    required: !!needSqlAuditService,
                     message: t('common.form.placeholder.select', {
                       name: t(
                         'dmsDataSource.dataSourceForm.dataExportAuditRuleTemplate'
@@ -196,7 +196,8 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                     name="workbenchTemplateName"
                     rules={[
                       {
-                        required: true
+                        required:
+                          !!needSqlAuditService && !!needAuditForSqlQuery
                       }
                     ]}
                     className="has-required-style"
@@ -230,7 +231,8 @@ const SqlAuditFields: React.FC<SqlAuditFieldsProps> = ({
                     name="allowQueryWhenLessThanAuditLevel"
                     rules={[
                       {
-                        required: true,
+                        required:
+                          !!needSqlAuditService && !!needAuditForSqlQuery,
                         message: t('common.form.placeholder.select', {
                           name: t(
                             'dmsDataSource.dataSourceForm.allowQueryWhenLessThanAuditLevel'
