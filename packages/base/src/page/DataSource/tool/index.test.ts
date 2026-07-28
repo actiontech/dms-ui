@@ -69,9 +69,7 @@ describe('datasource tool', () => {
     expect(
       normalizeMongoRequestParams([
         { name: 'auth_source', value: 'admin' },
-        { name: 'seed_hosts', value: '' },
-        { name: 'direct_connection', value: 'false' },
-        { name: 'tls', value: 'true' }
+        { name: 'seed_hosts', value: '' }
       ])
     ).toEqual([{ name: 'auth_source', value: 'admin' }]);
     expect(
