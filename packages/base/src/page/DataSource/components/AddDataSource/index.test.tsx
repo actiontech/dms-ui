@@ -278,7 +278,8 @@ describe('page/DataSource/AddDataSource', () => {
       port: '27017',
       expectedParams: [
         { name: 'auth_source', value: 'admin' },
-        { name: 'replica_set', value: '' }
+        { name: 'replica_set', value: '' },
+        { name: 'topology', value: 'single' }
       ]
     },
     {
@@ -294,7 +295,8 @@ describe('page/DataSource/AddDataSource', () => {
         {
           name: 'seed_hosts',
           value: '192.0.2.10:27017,192.0.2.10:27018,192.0.2.10:27019'
-        }
+        },
+        { name: 'topology', value: 'replicaSet' }
       ]
     },
     {
@@ -304,7 +306,8 @@ describe('page/DataSource/AddDataSource', () => {
       port: '27017',
       expectedParams: [
         { name: 'auth_source', value: 'admin' },
-        { name: 'replica_set', value: '' }
+        { name: 'replica_set', value: '' },
+        { name: 'topology', value: 'shard' }
       ]
     }
   ])(
@@ -395,7 +398,7 @@ describe('page/DataSource/AddDataSource', () => {
           password: 'Mongo@123',
           port,
           sqle_config: {
-            audit_enabled: false,
+            audit_enabled: undefined,
             data_export_rule_template_id: undefined,
             data_export_rule_template_name: undefined,
             rule_template_id: undefined,
@@ -404,11 +407,13 @@ describe('page/DataSource/AddDataSource', () => {
               allow_query_when_less_than_audit_level: undefined,
               audit_enabled: undefined,
               maintenance_times: [],
+              rule_template_id: undefined,
+              rule_template_name: undefined,
               workflow_exec_enabled: undefined
             }
           },
           user: 'mongo',
-          enable_backup: false,
+          enable_backup: undefined,
           backup_max_rows: undefined
         },
         project_uid: projectID

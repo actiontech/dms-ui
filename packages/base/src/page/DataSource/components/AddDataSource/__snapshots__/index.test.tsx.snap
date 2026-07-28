@@ -803,26 +803,30 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                       <div
                         class="ant-form-item-control-input-content"
                       >
-                        <button
-                          aria-checked="true"
-                          class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
-                          role="switch"
-                          type="button"
+                        <span
+                          class="audit-confirm-switch-trigger"
                         >
-                          <div
-                            class="ant-switch-handle"
-                          />
-                          <span
-                            class="ant-switch-inner"
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn ant-switch-checked"
+                            role="switch"
+                            type="button"
                           >
-                            <span
-                              class="ant-switch-inner-checked"
+                            <div
+                              class="ant-switch-handle"
                             />
                             <span
-                              class="ant-switch-inner-unchecked"
-                            />
-                          </span>
-                        </button>
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -1170,6 +1174,22 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
 
 exports[`page/DataSource/AddDataSource render conenctable modal when current service can not connect 1`] = `
 <body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
   <div>
     <section
       class="css-doq0dk"
@@ -2054,26 +2074,30 @@ exports[`page/DataSource/AddDataSource render conenctable modal when current ser
                       <div
                         class="ant-form-item-control-input-content"
                       >
-                        <button
-                          aria-checked="false"
-                          class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn"
-                          role="switch"
-                          type="button"
+                        <span
+                          class="audit-confirm-switch-trigger"
                         >
-                          <div
-                            class="ant-switch-handle"
-                          />
-                          <span
-                            class="ant-switch-inner"
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper audit-confirm-switch css-g6dhbn"
+                            role="switch"
+                            type="button"
                           >
-                            <span
-                              class="ant-switch-inner-checked"
+                            <div
+                              class="ant-switch-handle"
                             />
                             <span
-                              class="ant-switch-inner-unchecked"
-                            />
-                          </span>
-                        </button>
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </span>
                       </div>
                     </div>
                   </div>
