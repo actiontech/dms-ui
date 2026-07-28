@@ -1,5 +1,7 @@
 import {
+  // #if [ee]
   TodoListOutlined,
+  // #endif
   SignalFilled,
   ProfileSquareFilled,
   RingOutlined,
@@ -16,7 +18,9 @@ import system from '@actiontech/shared/lib/api/sqle/service/system';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { Space } from 'antd';
+// #if [ee]
 import { ModuleRedDotModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+// #endif
 import {
   PERMISSIONS,
   PermissionsConstantType,
@@ -62,6 +66,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
   );
   const actionItems: Array<QuickActionItemType> = useMemo(() => {
     const actionList: Array<QuickActionItemType> = [
+      // #if [ee]
       {
         key: 'global-dashboard',
         title: t('dmsMenu.quickActions.globalDashboard'),
@@ -73,6 +78,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
             i.has_red_dot
         )
       },
+      // #endif
       {
         key: 'report-statistics',
         title: t('dmsMenu.globalSettings.reportStatistics'),
