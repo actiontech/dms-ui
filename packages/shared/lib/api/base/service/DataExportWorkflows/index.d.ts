@@ -99,6 +99,10 @@ export interface IApproveDataExportWorkflowParams {
   project_uid: string;
 
   data_export_workflow_uid: string;
+
+  payload?: {
+    reason?: string;
+  };
 }
 
 export interface IApproveDataExportWorkflowReturn extends IGenericResp {}

@@ -22,7 +22,7 @@ exports[`test base/DataExport/Detail/RejectReason should match snapshot 1`] = `
       <div
         class="reject-workflow-reason-content-text"
       >
-        admin驳回了当前工单，驳回原因为：
+        admin驳回了当前工单，审批意见为：
         <span
           class="reject-workflow-reason-content-text-reason"
         />

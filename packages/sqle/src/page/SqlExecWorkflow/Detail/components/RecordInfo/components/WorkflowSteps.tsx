@@ -19,6 +19,13 @@ import {
   PlusCircleFilled,
   CheckCircleFilled
 } from '@actiontech/icons';
+import { formatApprovalComment } from './formatApprovalComment';
+
+const isCompletedReviewStep = (step: IWorkflowStepResV2) =>
+  step.type === WorkflowStepResV2TypeEnum.sql_review &&
+  (step.state === WorkflowStepResV2StateEnum.approved ||
+    step.state === WorkflowStepResV2StateEnum.rejected);
+
 const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   workflowSteps,
   currentStepNumber,
@@ -143,6 +150,18 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           >
             <div className="step-info-rejected">
               <span>{t('execWorkflow.detail.operator.alreadyClosed')}</span>
+            </div>
+          </EmptyBox>
+
+          <EmptyBox if={isCompletedReviewStep(step)}>
+            <div className="step-info-approval-comment">
+              <span>{t('execWorkflow.detail.operator.approvalComment')}：</span>
+              <span>
+                {formatApprovalComment(
+                  step.reason,
+                  t('execWorkflow.detail.operator.notFilled')
+                )}
+              </span>
             </div>
           </EmptyBox>
         </>

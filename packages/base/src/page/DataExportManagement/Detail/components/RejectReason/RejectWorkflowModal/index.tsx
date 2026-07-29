@@ -84,7 +84,7 @@ const RejectWorkflowModal: React.FC = () => {
       <>
         <Form form={form} layout="vertical">
           <Form.Item
-            label={t('dmsDataExport.detail.action.reject.reason')}
+            label={t('dmsDataExport.detail.operator.approvalComment')}
             name="reason"
             rules={[
               {

@@ -8,11 +8,11 @@ import {
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import { MessageInstance } from 'antd/es/message/interface';
-import { ActionMeta } from './index.type';
+import { ActionMeta, ApproveActionMeta } from './index.type';
 
 const useActionButtonState: (messageApi: MessageInstance) => {
   closeWorkflowButtonMeta: ActionMeta;
-  approveWorkflowButtonMeta: ActionMeta;
+  approveWorkflowButtonMeta: ApproveActionMeta;
   rejectWorkflowButtonMeta: ActionMeta;
   executeExportButtonMeta: ActionMeta;
 } = (messageApi) => {
@@ -107,7 +107,7 @@ const useActionButtonState: (messageApi: MessageInstance) => {
       loading: closeWorkflowLoading
     },
     approveWorkflowButtonMeta: {
-      action: () => approveWorkflow(workflowID),
+      action: (reason?: string) => approveWorkflow(workflowID, reason),
       hidden: !approveWorkflowButtonVisibility,
       loading: approveWorkflowLoading,
       disabled: isExportApproveBWPDisabled

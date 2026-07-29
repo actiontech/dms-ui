@@ -211,6 +211,9 @@ export default {
       batchSqlExecuteConfirmTips:
         'This operation will immediately execute all SQL statements under the workflow, and the data sources that have been scheduled for timed execution will still be executed at the scheduled time and will not be executed immediately, do you confirm to execute immediately in batch?',
       sqlReview: 'Audit passed',
+      approvalComment: 'Approval comment',
+      notFilled: 'Not filled',
+      confirmApprove: 'Confirm approval',
       terminate: 'Terminate execution',
       terminateSuccessTips: 'Terminate execution successful',
       terminateConfirmTips:

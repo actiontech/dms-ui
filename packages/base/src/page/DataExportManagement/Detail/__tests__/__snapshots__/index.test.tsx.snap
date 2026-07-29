@@ -848,6 +848,17 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
                                 </span>
                               </div>
                             </div>
+                            <div
+                              class="step-info-approval-comment"
+                            >
+                              <span>
+                                审批意见
+                                ：
+                              </span>
+                              <span>
+                                未填写
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -3453,6 +3464,17 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                                 </span>
                               </div>
                             </div>
+                            <div
+                              class="step-info-approval-comment"
+                            >
+                              <span>
+                                审批意见
+                                ：
+                              </span>
+                              <span>
+                                未填写
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -6033,6 +6055,17 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                                   2024-01-30 11:32:12
                                 </span>
                               </div>
+                            </div>
+                            <div
+                              class="step-info-approval-comment"
+                            >
+                              <span>
+                                审批意见
+                                ：
+                              </span>
+                              <span>
+                                未填写
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -8615,6 +8648,17 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                                 </span>
                               </div>
                             </div>
+                            <div
+                              class="step-info-approval-comment"
+                            >
+                              <span>
+                                审批意见
+                                ：
+                              </span>
+                              <span>
+                                未填写
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -8922,7 +8966,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                 <div
                   class="reject-workflow-reason-content-text"
                 >
-                  admin驳回了当前工单，驳回原因为：
+                  admin驳回了当前工单，审批意见为：
                   <span
                     class="reject-workflow-reason-content-text-reason"
                   />
@@ -11228,6 +11272,17 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                             >
                               <span>
                                 工单已被驳回
+                              </span>
+                            </div>
+                            <div
+                              class="step-info-approval-comment"
+                            >
+                              <span>
+                                审批意见
+                                ：
+                              </span>
+                              <span>
+                                未填写
                               </span>
                             </div>
                           </div>

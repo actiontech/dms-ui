@@ -98,7 +98,7 @@ export default {
   },
   detail: {
     reject: {
-      reason: '{{name}} rejected the current task, the reason is:',
+      reason: '{{name}} rejected the current task, approval comment:',
       tips: 'When the task is rejected, the task creator needs to modify it and resubmit it for review. (currently, modifying the task is not supported.)'
     },
     exportResult: {
@@ -163,7 +163,7 @@ export default {
           title: 'Reject',
           text: 'Reject'
         },
-        reason: 'Reject reason',
+        reason: 'Approval comment',
         text: 'Reject audit',
         tips: 'The current operation will reject all export tasks under the task. please operate with caution!',
         successTips: 'Task rejected successfully!'
@@ -179,7 +179,10 @@ export default {
       unknown: 'Unknown step',
       waitAudit: 'Waiting for auditor operation',
       alreadyRejected: 'Task has been rejected',
-      alreadyClosed: 'Task has been closed'
+      alreadyClosed: 'Task has been closed',
+      approvalComment: 'Approval comment',
+      notFilled: 'Not filled',
+      confirmApprove: 'Confirm approval'
     }
   },
   common: {

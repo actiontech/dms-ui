@@ -7,7 +7,10 @@ import { Space } from 'antd';
 import { formatTime } from '@actiontech/dms-kit';
 import { EmptyBox } from '@actiontech/dms-kit';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
-import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import {
+  WorkflowRecordStatusEnum,
+  WorkflowStepStateEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 import { IWorkflowStep } from '@actiontech/shared/lib/api/base/service/common';
 import classNames from 'classnames';
 import {
@@ -16,6 +19,14 @@ import {
   PlusCircleFilled,
   CheckCircleFilled
 } from '@actiontech/icons';
+import { formatApprovalComment } from './formatApprovalComment';
+
+const isCompletedApproveStep = (step: IWorkflowStep) =>
+  step.type !== 'execute' &&
+  step.type !== 'create' &&
+  (step.state === WorkflowStepStateEnum.finish ||
+    step.state === WorkflowStepStateEnum.rejected);
+
 const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   workflowSteps,
   currentStepNumber,
@@ -137,6 +148,20 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           <EmptyBox if={workflowStatus === WorkflowRecordStatusEnum.cancel}>
             <div className="step-info-rejected">
               <span>{t('dmsDataExport.detail.operator.alreadyClosed')}</span>
+            </div>
+          </EmptyBox>
+
+          <EmptyBox if={isCompletedApproveStep(step)}>
+            <div className="step-info-approval-comment">
+              <span>
+                {t('dmsDataExport.detail.operator.approvalComment')}：
+              </span>
+              <span>
+                {formatApprovalComment(
+                  step.reason,
+                  t('dmsDataExport.detail.operator.notFilled')
+                )}
+              </span>
             </div>
           </EmptyBox>
         </>

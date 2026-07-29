@@ -9,7 +9,7 @@ import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
 } from '../../../testUtils/mockUseDataExportDetailReduxManage';
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('test base/DataExport/Detail/PageHeaderAction', () => {
@@ -48,9 +48,16 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
     ).toHaveBeenCalledTimes(1);
   });
 
-  it('clicked approve workflow button', () => {
+  it('clicked approve workflow button', async () => {
     baseSuperRender(<ExportDetailPageHeaderAction />);
     fireEvent.click(screen.getByText('审核通过'));
+    expect(
+      mockActionButtonStateData.approveWorkflowButtonMeta.action
+    ).not.toHaveBeenCalled();
+    expect(screen.getByText('确认通过')).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(screen.getByText('确认通过'));
+    });
     expect(
       mockActionButtonStateData.approveWorkflowButtonMeta.action
     ).toHaveBeenCalledTimes(1);

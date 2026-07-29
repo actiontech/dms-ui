@@ -238,7 +238,8 @@ describe('test useActionButtonState', () => {
     result.current.approveWorkflowButtonMeta.action();
     expect(mockExportDetailActionData.approveWorkflow).toHaveBeenCalledTimes(1);
     expect(mockExportDetailActionData.approveWorkflow).toHaveBeenCalledWith(
-      workflowID
+      workflowID,
+      undefined
     );
 
     result.current.closeWorkflowButtonMeta.action();

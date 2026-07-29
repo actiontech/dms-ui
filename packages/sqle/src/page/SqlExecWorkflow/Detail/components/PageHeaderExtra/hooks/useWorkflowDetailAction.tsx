@@ -141,19 +141,24 @@ const useWorkflowDetailAction = ({
   const [passLoading, { setTrue: passStart, setFalse: passFinish }] =
     useBoolean();
 
-  const auditPassWorkflow = useCallback(() => {
-    if (!auditWorkflowButtonVisibility && currentStep) {
-      return;
-    }
-    passStart();
-    return passAction(currentStep?.workflow_step_id!).finally(passFinish);
-  }, [
-    auditWorkflowButtonVisibility,
-    currentStep,
-    passAction,
-    passFinish,
-    passStart
-  ]);
+  const auditPassWorkflow = useCallback(
+    (reason?: string) => {
+      if (!auditWorkflowButtonVisibility || !currentStep) {
+        return;
+      }
+      passStart();
+      return passAction(currentStep.workflow_step_id!, reason).finally(
+        passFinish
+      );
+    },
+    [
+      auditWorkflowButtonVisibility,
+      currentStep,
+      passAction,
+      passFinish,
+      passStart
+    ]
+  );
 
   const [rejectLoading, { setTrue: rejectStart, setFalse: rejectFinish }] =
     useBoolean();

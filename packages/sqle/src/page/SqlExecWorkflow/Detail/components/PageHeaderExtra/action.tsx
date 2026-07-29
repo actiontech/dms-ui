@@ -62,7 +62,8 @@ export const BatchRejectWorkflowAction = (
   );
 };
 export const ApproveWorkflowAction = (
-  approveWorkflowButtonMeta: WorkflowDetailActionMeta
+  approveWorkflowButtonMeta: WorkflowDetailActionMeta,
+  openApproveModal: () => void
 ) => {
   return (
     <PermissionControl
@@ -77,7 +78,7 @@ export const ApproveWorkflowAction = (
           approveWorkflowButtonMeta.disabled
         }
         loading={approveWorkflowButtonMeta.loading}
-        onClick={() => approveWorkflowButtonMeta.action()}
+        onClick={openApproveModal}
         type="primary"
       />
     </PermissionControl>

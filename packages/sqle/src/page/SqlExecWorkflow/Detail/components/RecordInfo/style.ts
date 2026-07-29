@@ -186,6 +186,17 @@ export const WorkflowStepsItemStyleWrapper = styled('div')`
       line-height: 20px;
       width: 100%;
     }
+
+    &-approval-comment {
+      margin-top: 8px;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 19px;
+      width: 100%;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
   }
 `;
 

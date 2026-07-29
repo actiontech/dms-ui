@@ -525,6 +525,8 @@ export interface IApproveWorkflowV2Params {
   workflow_step_id: string;
 
   project_name: string;
+
+  reason?: string;
 }
 
 export interface IApproveWorkflowV2Return extends IBaseRes {}

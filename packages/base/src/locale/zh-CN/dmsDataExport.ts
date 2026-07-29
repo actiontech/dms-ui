@@ -109,7 +109,7 @@ export default {
   },
   detail: {
     reject: {
-      reason: '{{name}}驳回了当前工单，驳回原因为：',
+      reason: '{{name}}驳回了当前工单，审批意见为：',
       tips: '当工单被驳回时，工单创建者需要对其进行修改，然后重新提交审核。（目前暂不支持修改工单。）'
     },
     exportResult: {
@@ -173,7 +173,7 @@ export default {
           title: '驳回',
           text: '驳回'
         },
-        reason: '驳回原因',
+        reason: '审批意见',
         text: '审核驳回',
         tips: '当前操作将驳回工单下所有导出任务，请谨慎操作！',
         successTips: '工单驳回成功！'
@@ -189,7 +189,10 @@ export default {
       unknown: '未知步骤',
       waitAudit: '等待审核人操作',
       alreadyRejected: '工单已被驳回',
-      alreadyClosed: '工单已被关闭'
+      alreadyClosed: '工单已被关闭',
+      approvalComment: '审批意见',
+      notFilled: '未填写',
+      confirmApprove: '确认通过'
     }
   },
   common: {
