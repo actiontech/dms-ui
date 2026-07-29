@@ -1,10 +1,7 @@
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import useExportDetailAction from '../../hooks/useExportDetailAction';
 import { useMemo } from 'react';
-import {
-  DataExportRelatedUnmaskingWorkflowApprovalStatusEnum,
-  WorkflowRecordStatusEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
+import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   useCurrentUser,
   usePermission,
@@ -12,7 +9,6 @@ import {
 } from '@actiontech/shared/lib/features';
 import { MessageInstance } from 'antd/es/message/interface';
 import { ActionMeta, ApproveActionMeta } from './index.type';
-import { getRelatedUnmaskingWorkflows } from '../../utils/unmaskingWorkflow';
 
 const useActionButtonState: (messageApi: MessageInstance) => {
   closeWorkflowButtonMeta: ActionMeta;
@@ -98,22 +94,11 @@ const useActionButtonState: (messageApi: MessageInstance) => {
     if (!workflowStatus || !currentStep) {
       return false;
     }
-    const relatedUnmaskingWorkflows =
-      getRelatedUnmaskingWorkflows(workflowInfo);
-    const hasRelatedUnmaskingWorkflow = relatedUnmaskingWorkflows.length > 0;
-    const allUnmaskingApproved = relatedUnmaskingWorkflows.every(
-      (workflow) =>
-        workflow.approval_status ===
-        DataExportRelatedUnmaskingWorkflowApprovalStatusEnum.approved
-    );
-    const canExecuteWithMasking =
-      !hasRelatedUnmaskingWorkflow || allUnmaskingApproved;
     return (
       workflowStatus === WorkflowRecordStatusEnum.wait_for_export &&
-      workflowInfo.create_user?.uid === userId &&
-      canExecuteWithMasking
+      workflowInfo.create_user?.uid === userId
     );
-  }, [currentStep, userId, workflowInfo, workflowStatus]);
+  }, [currentStep, userId, workflowInfo?.create_user?.uid, workflowStatus]);
 
   return {
     closeWorkflowButtonMeta: {

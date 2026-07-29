@@ -159,6 +159,37 @@ export default {
   },
 
   detail: {
+    failDisplay: {
+      headerPrefix: '上线失败：',
+      headerWithCount: '上线失败：{{count}} 条 {{phrase}}',
+      headerWithSqlNumber: '上线失败：第 {{number}} 条 SQL 执行失败',
+      statusLabel: '状态',
+      stageLabel: '阶段',
+      reasonLabel: '原因',
+      stage: {
+        sqlBackup: 'SQL 备份',
+        sqlExecute: 'SQL 执行',
+        datasourceConnect: '数据源连接',
+        preCheck: '前置校验',
+        terminate: '任务中止',
+        unknown: '未知'
+      },
+      phrase: {
+        sqlBackup: 'SQL 备份失败',
+        sqlExecute: 'SQL 执行失败',
+        datasourceConnect: '数据源连接失败',
+        preCheck: '前置校验失败',
+        terminate: '任务中止',
+        unknown: '未知'
+      },
+      status: {
+        backupFailed: '备份失败',
+        executeFailed: '执行失败',
+        connectFailed: '连接失败',
+        notExecuted: '未执行',
+        rolledBack: '已回滚'
+      }
+    },
     operator: {
       buttonText: '工单详情',
       title: '工单信息',
