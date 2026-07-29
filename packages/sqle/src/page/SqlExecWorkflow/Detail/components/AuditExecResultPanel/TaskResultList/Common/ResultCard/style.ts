@@ -124,6 +124,16 @@ export const TasksResultCardStyleWrapper = styled('div')`
         &-name {
           margin-left: 8px;
         }
+
+        &-schema {
+          margin-left: 12px;
+          color: ${({ theme }) =>
+            theme.sqleTheme.execWorkflow.common.auditResultFilter
+              .auditResultInfo.schemaValueColor};
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 22px;
+        }
       }
     }
   }

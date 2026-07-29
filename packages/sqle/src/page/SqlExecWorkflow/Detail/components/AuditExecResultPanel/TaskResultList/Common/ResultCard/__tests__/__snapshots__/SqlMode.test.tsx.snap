@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -408,7 +408,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -868,7 +868,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -1251,7 +1251,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -1696,7 +1696,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -2141,7 +2141,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -2591,7 +2591,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -2965,7 +2965,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -3363,7 +3363,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -3760,7 +3760,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -4165,7 +4165,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -4625,7 +4625,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -5118,7 +5118,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -5610,7 +5610,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -5984,7 +5984,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
 <body>
   <div>
     <div
-      class="css-1nbx0m0"
+      class="css-16kuzaq"
     >
       <div
         class="result-card-header"
@@ -6476,7 +6476,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
 exports[`sqle/ExecWorkflow/AuditDetail/SqlMode should render retry execute action when exec status is failed or initialized 1`] = `
 <div>
   <div
-    class="css-1nbx0m0"
+    class="css-16kuzaq"
   >
     <div
       class="result-card-header"

@@ -1030,7 +1030,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1nbx0m0"
+                  class="css-16kuzaq"
                 >
                   <div
                     class="result-card-header"
@@ -2834,7 +2834,7 @@ exports[`test AuditExecResultPanel sql retry execute permission should enable re
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-1nbx0m0"
+                  class="css-16kuzaq"
                 >
                   <div
                     class="result-card-header"
@@ -3854,7 +3854,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                     class="ant-list-item ant-list-item-no-flex"
                   >
                     <div
-                      class="css-1nbx0m0"
+                      class="css-16kuzaq"
                     >
                       <div
                         class="result-card-header"
