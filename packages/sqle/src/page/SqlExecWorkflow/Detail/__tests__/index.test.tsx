@@ -317,6 +317,8 @@ describe('sqle/ExecWorkflow/Detail', () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('审核通过'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('确认通过'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(approveWorkflowSpy).toHaveBeenCalledTimes(1);
     expect(approveWorkflowSpy).toHaveBeenCalledWith({

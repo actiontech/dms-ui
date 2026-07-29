@@ -4562,7 +4562,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                           class="ant-steps-item-title"
                         >
                           <div
-                            class="css-1jmll3s"
+                            class="css-1fq11aq"
                           >
                             <div
                               class="step-title"
@@ -4642,7 +4642,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                           class="ant-steps-item-title"
                         >
                           <div
-                            class="css-1jmll3s"
+                            class="css-1fq11aq"
                           >
                             <div
                               class="step-title"
@@ -4687,6 +4687,17 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                   工单已被驳回
                                 </span>
                               </div>
+                              <div
+                                class="step-info-approval-comment"
+                              >
+                                <span>
+                                  审批意见
+                                  ：
+                                </span>
+                                <span>
+                                  1
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -4728,7 +4739,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                           class="ant-steps-item-title"
                         >
                           <div
-                            class="css-1jmll3s"
+                            class="css-1fq11aq"
                           >
                             <div
                               class="step-title"

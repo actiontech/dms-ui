@@ -201,7 +201,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-steps-item-title"
                   >
                     <div
-                      class="css-1jmll3s"
+                      class="css-1fq11aq"
                     >
                       <div
                         class="step-title"
@@ -280,7 +280,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-steps-item-title"
                   >
                     <div
-                      class="css-1jmll3s"
+                      class="css-1fq11aq"
                     >
                       <div
                         class="step-title"
@@ -317,6 +317,17 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                               2024-01-17 11:36:25
                             </span>
                           </div>
+                        </div>
+                        <div
+                          class="step-info-approval-comment"
+                        >
+                          <span>
+                            审批意见
+                            ：
+                          </span>
+                          <span>
+                            未填写
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -361,7 +372,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-steps-item-title"
                   >
                     <div
-                      class="css-1jmll3s"
+                      class="css-1fq11aq"
                     >
                       <div
                         class="step-title"
