@@ -14,7 +14,7 @@ import { Trans } from 'react-i18next';
 import { TasksResultCardStyleWrapper } from './style';
 import { SqlFileOutlined } from '@actiontech/icons';
 import { TypedLink, useTypedParams } from '@actiontech/shared';
-import { ROUTE_PATHS } from '@actiontech/dms-kit';
+import { EmptyBox, ROUTE_PATHS } from '@actiontech/dms-kit';
 
 const FileMode: React.FC<FileExecuteResultCardProps> = ({
   taskId,
@@ -105,6 +105,9 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
                 >
                   {props.file_name}
                 </TypedLink>
+                <EmptyBox if={!!props.schema}>
+                  <span className="file-info-schema">{props.schema}</span>
+                </EmptyBox>
               </div>
             </Space>
             <div className="result-card-status-wrap">
