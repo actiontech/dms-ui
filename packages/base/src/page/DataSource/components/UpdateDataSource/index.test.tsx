@@ -189,7 +189,10 @@ describe('page/DataSource/UpdateDataSource', () => {
     expect(getBySelector('#needAuditForSqlQuery')).toBeChecked();
     fireEvent.click(getBySelector('#needAuditForSqlQuery', baseElement));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(getBySelector('#needAuditForSqlQuery')).not.toBeChecked();
+    // onNeedAuditForSqlQueryChange(false) clears needSqlAuditService; field unmounts
+    expect(
+      baseElement.querySelector('#needAuditForSqlQuery')
+    ).not.toBeInTheDocument();
 
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
