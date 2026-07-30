@@ -19,6 +19,7 @@ import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { DataSourceFormContextProvide } from '../../context';
 import useCheckConnectable from '../../hooks/useCheckConnectable';
+import useCheckPrivileges from '../../hooks/useCheckPrivileges';
 const UpdateDataSource = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
@@ -30,6 +31,13 @@ const UpdateDataSource = () => {
     useTypedParams<typeof ROUTE_PATHS.BASE.DATA_SOURCE.update>();
   const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
     useCheckConnectable(form);
+  const {
+    privilegeLoading,
+    privilegeResult,
+    privilegeChecked,
+    onCheckPrivileges,
+    resetPrivilegeResult
+  } = useCheckPrivileges(form);
   const [retryLoading, setRetryLoading] = useState(false);
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
@@ -152,6 +160,11 @@ const UpdateDataSource = () => {
           loading,
           connectAble,
           connectErrorMessage,
+          privilegeLoading,
+          privilegeResult,
+          privilegeChecked,
+          onCheckPrivileges,
+          resetPrivilegeResult,
           submitLoading
         }}
       >

@@ -304,6 +304,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return unsubscribeSubmit;
   }, [onCheckConnectableBeforeSubmit]);
   useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.DMS_Open_DataSource_Connect_Error_Modal,
+      openModal
+    );
+    return unsubscribe;
+  }, [openModal]);
+  useEffect(() => {
     updateDriverList();
     updateProjects();
   }, [updateDriverList, updateProjects]);

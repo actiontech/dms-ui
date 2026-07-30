@@ -79,7 +79,17 @@ export default {
     testConnectFail:
       'Test connectivity failed {{count}}, data source is {{name}}',
     requestAuditErrorMessage:
-      'The current import information has validation failures, please modify it according to the hints in the downloaded file, and import again'
+      'The current import information has validation failures, please modify it according to the hints in the downloaded file, and import again',
+    dataSourceConnectError: 'Data source connectivity test failed',
+    returnModify: 'Return to modify',
+    continueSubmit: 'Continue to submit',
+    checkResultTitle: 'Pre-import check result',
+    connectivityColumn: 'Connectivity result',
+    privilegeColumn: 'Feature privilege result',
+    connectivitySuccess: 'Connectivity test succeeded',
+    connectivityFailed: 'Connectivity test failed',
+    privilegeNotBlockImport:
+      'Insufficient feature privileges do not block import'
   },
   backToList: 'Back to project list',
   businessDescription: {

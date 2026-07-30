@@ -20,12 +20,20 @@ import { DataSourceFormField } from '../Form/index.type';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { DataSourceFormContextProvide } from '../../context';
 import useCheckConnectable from '../../hooks/useCheckConnectable';
+import useCheckPrivileges from '../../hooks/useCheckPrivileges';
 const AddDataSource = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
   const [form] = useForm<DataSourceFormField>();
   const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
     useCheckConnectable(form);
+  const {
+    privilegeLoading,
+    privilegeResult,
+    privilegeChecked,
+    onCheckPrivileges,
+    resetPrivilegeResult
+  } = useCheckPrivileges(form);
   const [resultVisible, { setTrue: showResult, setFalse: hideResult }] =
     useBoolean();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -94,8 +102,9 @@ const AddDataSource = () => {
   const resetAndHideResult = useCallback(() => {
     hideResult();
     form.resetFields();
+    resetPrivilegeResult();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [form]);
+  }, [form, resetPrivilegeResult]);
   const onReset = () => {
     EventEmitter.emit(EmitterKey.DMS_Reset_DataSource_Form);
   };
@@ -110,6 +119,11 @@ const AddDataSource = () => {
           connectAble,
           connectErrorMessage,
           onCheckConnectable,
+          privilegeLoading,
+          privilegeResult,
+          privilegeChecked,
+          onCheckPrivileges,
+          resetPrivilegeResult,
           submitLoading
         }}
       >

@@ -3,6 +3,7 @@ enum EmitterKey {
   Reset_Test_Data_Source_Connect = 'DMS_Reset_Test_Data_Source_Connect',
   DMS_Reset_DataSource_Form = 'DMS_Reset_DataSource_Form',
   DMS_Submit_DataSource_Form = 'DMS_Submit_DataSource_Form',
+  DMS_Open_DataSource_Connect_Error_Modal = 'DMS_Open_DataSource_Connect_Error_Modal',
   DMS_Refresh_Member_List = 'DMS_REFRESH_MEMBER_LIST',
   DMS_Refresh_Project_List = 'DMS_REFRESH_PROJECT_LIST',
   DMS_SYNC_TASK_RESET_FORM = 'DMS_SYNC_TASK_RESET_FORM',

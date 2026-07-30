@@ -202,6 +202,8 @@ const GlobalDataSourceList = () => {
         .then((res) => {
           hide();
           if (res.data.code === ResponseCode.SUCCESS) {
+            // AC-012：连通写回后刷新列表，使「上一次连接状态」只反映 last_connection_test_*
+            refresh();
             const connections = res.data.data ?? [];
             const isConnectable = getDbServiceIsConnectbale(connections);
             const connectErrorMessage =

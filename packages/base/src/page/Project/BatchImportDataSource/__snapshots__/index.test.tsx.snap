@@ -289,6 +289,209 @@ exports[`base/Project/BatchImportDataSource render connectable error modal 1`] =
         </div>
       </form>
     </section>
+    <div
+      class="css-n9dd9h"
+    >
+      <span
+        class="ant-typography"
+      >
+        <strong>
+          导入前校验结果
+        </strong>
+      </span>
+      <div
+        class="batch-import-check-column connectivity-column"
+      >
+        <span
+          class="ant-typography column-title"
+        >
+          连通结果
+        </span>
+        <div
+          class="column-row"
+        >
+          <div
+            class="ant-space ant-space-vertical"
+            style="width: 100%;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-bottom: 4px;"
+            >
+              <span
+                class="ant-typography"
+              >
+                mysql_1
+              </span>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="css-u3jcp4"
+                  >
+                    <svg
+                      class="custom-icon"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                        fill="#F66074"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-typography ant-typography-danger"
+                  >
+                    <pre>
+                      sqle: connection refused 
+                    </pre>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="column-row"
+        >
+          <div
+            class="ant-space ant-space-vertical"
+            style="width: 100%;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-bottom: 4px;"
+            >
+              <span
+                class="ant-typography"
+              >
+                oracle_1
+              </span>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="css-u3jcp4"
+                  >
+                    <svg
+                      class="custom-icon"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                        fill="#F66074"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-typography ant-typography-danger"
+                  >
+                    <pre>
+                      sqle: connection refused 
+                    </pre>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="batch-import-check-column privilege-column"
+      >
+        <span
+          class="ant-typography column-title"
+        >
+          功能权限结果
+        </span>
+        <div
+          class="column-row"
+        >
+          <span
+            class="ant-typography"
+          >
+            mysql_1
+          </span>
+          <div
+            class="css-1v4ez9p"
+          >
+            <span
+              class="ant-typography"
+            >
+              <strong>
+                功能权限检查结果
+              </strong>
+            </span>
+            <div
+              class="privilege-module-list"
+            />
+            <span
+              class="ant-typography ant-typography-secondary privilege-summary"
+            >
+              功能权限不足不影响创建/保存
+            </span>
+          </div>
+        </div>
+        <div
+          class="column-row"
+        >
+          <span
+            class="ant-typography"
+          >
+            oracle_1
+          </span>
+          <div
+            class="css-1v4ez9p"
+          >
+            <span
+              class="ant-typography"
+            >
+              <strong>
+                功能权限检查结果
+              </strong>
+            </span>
+            <div
+              class="privilege-module-list"
+            />
+            <span
+              class="ant-typography ant-typography-secondary privilege-summary"
+            >
+              功能权限不足不影响创建/保存
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div>
     <div
@@ -367,8 +570,48 @@ exports[`base/Project/BatchImportDataSource render connectable error modal 1`] =
                         class="ant-typography ant-typography-danger"
                       >
                         <pre>
-                          slqe: 权限不足 
-
+                          sqle: connection refused 
+                        </pre>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    oracle_1
+                  </div>
+                  <div
+                    class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <span
+                        class="css-u3jcp4"
+                      >
+                        <svg
+                          class="custom-icon"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                            fill="#F66074"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-danger"
+                      >
+                        <pre>
+                          sqle: connection refused 
                         </pre>
                       </span>
                     </div>
@@ -1068,6 +1311,209 @@ exports[`base/Project/BatchImportDataSource render upload file 1`] = `
         </div>
       </div>
     </section>
+    <div
+      class="css-n9dd9h"
+    >
+      <span
+        class="ant-typography"
+      >
+        <strong>
+          导入前校验结果
+        </strong>
+      </span>
+      <div
+        class="batch-import-check-column connectivity-column"
+      >
+        <span
+          class="ant-typography column-title"
+        >
+          连通结果
+        </span>
+        <div
+          class="column-row"
+        >
+          <div
+            class="ant-space ant-space-vertical"
+            style="width: 100%;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-bottom: 4px;"
+            >
+              <span
+                class="ant-typography"
+              >
+                mysql_1
+              </span>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="css-u3jcp4"
+                  >
+                    <svg
+                      class="custom-icon"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                        fill="#1CB889"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-typography ant-typography-success"
+                  >
+                    <pre>
+                      连通性测试成功
+                    </pre>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="column-row"
+        >
+          <div
+            class="ant-space ant-space-vertical"
+            style="width: 100%;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-bottom: 4px;"
+            >
+              <span
+                class="ant-typography"
+              >
+                oracle_1
+              </span>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="css-u3jcp4"
+                  >
+                    <svg
+                      class="custom-icon"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                        fill="#1CB889"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-typography ant-typography-success"
+                  >
+                    <pre>
+                      连通性测试成功
+                    </pre>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="batch-import-check-column privilege-column"
+      >
+        <span
+          class="ant-typography column-title"
+        >
+          功能权限结果
+        </span>
+        <div
+          class="column-row"
+        >
+          <span
+            class="ant-typography"
+          >
+            mysql_1
+          </span>
+          <div
+            class="css-1v4ez9p"
+          >
+            <span
+              class="ant-typography"
+            >
+              <strong>
+                功能权限检查结果
+              </strong>
+            </span>
+            <div
+              class="privilege-module-list"
+            />
+            <span
+              class="ant-typography ant-typography-secondary privilege-summary"
+            >
+              功能权限不足不影响创建/保存
+            </span>
+          </div>
+        </div>
+        <div
+          class="column-row"
+        >
+          <span
+            class="ant-typography"
+          >
+            oracle_1
+          </span>
+          <div
+            class="css-1v4ez9p"
+          >
+            <span
+              class="ant-typography"
+            >
+              <strong>
+                功能权限检查结果
+              </strong>
+            </span>
+            <div
+              class="privilege-module-list"
+            />
+            <span
+              class="ant-typography ant-typography-secondary privilege-summary"
+            >
+              功能权限不足不影响创建/保存
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 `;

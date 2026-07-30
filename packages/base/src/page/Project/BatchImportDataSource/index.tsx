@@ -16,6 +16,8 @@ import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import useBatchCheckConnectable from './hooks/useBatchCheckConnectable';
 import ConnectableErrorModal from './ConnectableErrorModal';
+import BatchImportCheckResult from './BatchImportCheckResult';
+
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
   const {
@@ -89,6 +91,15 @@ const BatchImportDataSource = () => {
     },
     [importServicesCheck, setDBservices, clearUploadCheckStatus]
   );
+
+  const checkResultNode = (
+    <BatchImportCheckResult
+      visible={!!connectableInfo}
+      connectResultList={connectableInfo?.connectResultList}
+      privilegeResultList={connectableInfo?.privilegeResultList}
+    />
+  );
+
   return (
     <>
       <PageHeader
@@ -115,19 +126,22 @@ const BatchImportDataSource = () => {
       <EmptyBox
         if={!resultVisible}
         defaultNode={
-          <BasicResult
-            status="success"
-            title={t('dmsProject.batchImportDataSource.successTitle')}
-            extra={[
-              <BasicButton
-                type="primary"
-                key="resetAndClose"
-                onClick={resetAndHideResult}
-              >
-                {t('common.resetAndClose')}
-              </BasicButton>
-            ]}
-          />
+          <>
+            <BasicResult
+              status="success"
+              title={t('dmsProject.batchImportDataSource.successTitle')}
+              extra={[
+                <BasicButton
+                  type="primary"
+                  key="resetAndClose"
+                  onClick={resetAndHideResult}
+                >
+                  {t('common.resetAndClose')}
+                </BasicButton>
+              ]}
+            />
+            {checkResultNode}
+          </>
         }
       >
         <BatchImportDataSourceForm
@@ -136,6 +150,7 @@ const BatchImportDataSource = () => {
           uploadCheckStatus={uploadCheckStatus}
           clearUploadCheckStatus={clearUploadCheckStatus}
         />
+        {checkResultNode}
       </EmptyBox>
       <ConnectableErrorModal
         modalOpen={connectErrorModalVisible}

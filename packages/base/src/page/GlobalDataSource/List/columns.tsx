@@ -59,6 +59,7 @@ export const GlobalDataSourceColumns = (
         return `${record.host}:${record.port}`;
       }
     },
+    // AC-012 / S1 §5.6：只读连通写回字段；权限检查结果不得驱动本列
     {
       dataIndex: 'last_connection_test_status',
       title: () => t('dmsGlobalDataSource.list.lastTestConnectionStatus'),

@@ -92,6 +92,7 @@ export const mockBatchImportDBCheckData: IImportDBServiceV2[] = [
     port: '3306',
     user: 'root',
     password: '123456',
+    project_uid: '700300',
     environment_tag_name: 'environment-1',
     maintenance_times: [
       {
@@ -123,6 +124,7 @@ export const mockBatchImportDBCheckData: IImportDBServiceV2[] = [
     port: '1521',
     user: 'system',
     password: '123456',
+    project_uid: '700300',
     environment_tag_name: 'environment-2',
     maintenance_times: [],
     desc: 'oracle_1',
