@@ -74,7 +74,7 @@ export default {
       status: 'Status',
       remediationStatus: 'Remediation status',
       comment: 'Comment',
-      endpoints: 'Endpoint info',
+      endpoints: 'Client IP',
       sourceExtraTips: 'shown only when a source filter is applied'
     },
     remediationStatus: {
