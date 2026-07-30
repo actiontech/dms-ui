@@ -105,7 +105,17 @@ export default {
     lineNumberLimitTips: '当预计影响行数超过指定值则不回滚',
     dataSourceConnectError: '数据源连通性测试失败',
     returnModify: '返回修改',
-    continueSubmit: '继续提交'
+    continueSubmit: '继续提交',
+    checkPrivileges: '检查功能权限',
+    privilegeResultTitle: '功能权限检查结果',
+    privilegeStatusAvailable: '可用',
+    privilegeStatusPartial: '部分可用',
+    privilegeStatusUnavailable: '不可用',
+    privilegeStatusUnsupported: '暂不支持自动检查',
+    privilegeUnsupportedAutoCheck: '暂不支持自动检查',
+    privilegeNotBlockSave: '功能权限不足不影响创建/保存',
+    privilegePrecheckFailed: '权限检查前置连接失败',
+    privilegePrecheckHint: '如需验证连通性，请使用「测试数据源连通性」'
   },
 
   testConnectModal: {

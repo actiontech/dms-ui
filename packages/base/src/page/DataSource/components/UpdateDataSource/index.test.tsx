@@ -321,13 +321,18 @@ describe('page/DataSource/UpdateDataSource', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('provision: 链接失败')).toBeInTheDocument();
+    expect(screen.queryAllByText('provision: 链接失败').length).toBeGreaterThan(
+      0
+    );
+    expect(screen.getByText('数据源连通性测试失败')).toBeInTheDocument();
     expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
+    // 关闭测试连通性失败 Modal，继续改表单
+    fireEvent.click(screen.getByText('返回修改'));
+    await act(async () => jest.advanceTimersByTime(300));
     await act(async () => {
       EventEmitter.emit(EmitterKey.Reset_Test_Data_Source_Connect);
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(screen.queryByText('provision: 链接失败')).not.toBeInTheDocument();
     // environment
     fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
     await act(async () => jest.advanceTimersByTime(0));
@@ -347,7 +352,7 @@ describe('page/DataSource/UpdateDataSource', () => {
       EmitterKey.DMS_Submit_DataSource_Form
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('provision: 链接失败')).toBeInTheDocument();
+    expect(screen.getByText('继续提交')).toBeInTheDocument();
     fireEvent.click(screen.getByText('继续提交'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);

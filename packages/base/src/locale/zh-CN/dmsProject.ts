@@ -80,7 +80,13 @@ export default {
       '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入',
     dataSourceConnectError: '数据源连通性测试失败',
     returnModify: '返回修改',
-    continueSubmit: '继续提交'
+    continueSubmit: '继续提交',
+    checkResultTitle: '导入前校验结果',
+    connectivityColumn: '连通结果',
+    privilegeColumn: '功能权限结果',
+    connectivitySuccess: '连通性测试成功',
+    connectivityFailed: '连通性测试失败',
+    privilegeNotBlockImport: '功能权限不足不影响导入'
   },
   backToList: '返回项目列表',
   businessDescription: {

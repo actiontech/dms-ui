@@ -15,6 +15,8 @@ import { LeftArrowOutlined } from '@actiontech/icons';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import ConnectableErrorModal from '../../Project/BatchImportDataSource/ConnectableErrorModal';
 import useBatchCheckConnectable from '../../Project/BatchImportDataSource/hooks/useBatchCheckConnectable';
+import BatchImportCheckResult from '../../Project/BatchImportDataSource/BatchImportCheckResult';
+
 const GlobalBatchImportDataSource = () => {
   const { t } = useTranslation();
   const {
@@ -88,6 +90,15 @@ const GlobalBatchImportDataSource = () => {
     },
     [importServicesCheck, setDBservices, clearUploadCheckStatus]
   );
+
+  const checkResultNode = (
+    <BatchImportCheckResult
+      visible={!!connectableInfo}
+      connectResultList={connectableInfo?.connectResultList}
+      privilegeResultList={connectableInfo?.privilegeResultList}
+    />
+  );
+
   return (
     <>
       <PageHeader
@@ -112,19 +123,24 @@ const GlobalBatchImportDataSource = () => {
       <EmptyBox
         if={!resultVisible}
         defaultNode={
-          <BasicResult
-            status="success"
-            title={t('dmsGlobalDataSource.batchImportDataSource.successTitle')}
-            extra={[
-              <BasicButton
-                type="primary"
-                key="resetAndClose"
-                onClick={resetAndHideResult}
-              >
-                {t('common.resetAndClose')}
-              </BasicButton>
-            ]}
-          />
+          <>
+            <BasicResult
+              status="success"
+              title={t(
+                'dmsGlobalDataSource.batchImportDataSource.successTitle'
+              )}
+              extra={[
+                <BasicButton
+                  type="primary"
+                  key="resetAndClose"
+                  onClick={resetAndHideResult}
+                >
+                  {t('common.resetAndClose')}
+                </BasicButton>
+              ]}
+            />
+            {checkResultNode}
+          </>
         }
       >
         <BatchImportDataSourceForm
@@ -133,6 +149,7 @@ const GlobalBatchImportDataSource = () => {
           uploadCheckStatus={uploadCheckStatus}
           clearUploadCheckStatus={clearUploadCheckStatus}
         />
+        {checkResultNode}
       </EmptyBox>
       <ConnectableErrorModal
         modalOpen={connectErrorModalVisible}

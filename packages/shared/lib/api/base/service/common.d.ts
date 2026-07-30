@@ -489,7 +489,44 @@ export interface ICheckDBServicesIsConnectableReq {
   db_services?: IDbServiceConnections[];
 }
 
+export interface ICheckDBServicePrivilegeMissingPrivilege {
+  privilege?: string;
+
+  object_scope?: string;
+
+  note?: string;
+}
+
+export interface ICheckDBServicePrivilegeModule {
+  module?: string;
+
+  module_name?: string;
+
+  status?: string;
+
+  missing_privileges?: ICheckDBServicePrivilegeMissingPrivilege[];
+
+  message?: string;
+}
+
+export interface ICheckDBServicePrivilegeConnectivityPrecheck {
+  ok?: boolean;
+
+  error_message?: string;
+}
+
 export interface ICheckDBServicesPrivilegesItem {
+  db_type?: string;
+
+  check_support?: string;
+
+  connectivity_precheck?: ICheckDBServicePrivilegeConnectivityPrecheck;
+
+  modules?: ICheckDBServicePrivilegeModule[];
+
+  summary_message?: string;
+
+  /** @deprecated P2 起权限 API 已改为 modules 结构；批量导入 P3 前兼容旧 mock */
   CheckDBServicesPrivileges?: ICheckDBServiceIsConnectableReplyItem[];
 }
 

@@ -76,7 +76,19 @@ export default {
       'Whether to enable data mask configuration for SQL workbench',
     dataMaskConfigTips:
       'After enabling, the query results of the SQL workbench will be masked',
-    checkDataMaskButton: 'View data mask rule'
+    checkDataMaskButton: 'View data mask rule',
+    checkPrivileges: 'Check feature privileges',
+    privilegeResultTitle: 'Feature privilege check result',
+    privilegeStatusAvailable: 'Available',
+    privilegeStatusPartial: 'Partially available',
+    privilegeStatusUnavailable: 'Unavailable',
+    privilegeStatusUnsupported: 'Auto check not supported',
+    privilegeUnsupportedAutoCheck: 'Auto check not supported',
+    privilegeNotBlockSave:
+      'Insufficient feature privileges do not block create/save',
+    privilegePrecheckFailed: 'Privilege check pre-connection failed',
+    privilegePrecheckHint:
+      'To verify connectivity, use "Test data source connectivity"'
   },
 
   testConnectModal: {

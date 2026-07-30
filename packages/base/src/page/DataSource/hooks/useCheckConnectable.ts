@@ -22,7 +22,9 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
 
   const onCheckConnectable = useCallback(
     async (currentAsyncParams?: BackendFormItemParams[]) => {
+      // 含 project：全局添加页无 currentProject，须先选「所属项目」再挂 project_uid
       const values = await form.validateFields([
+        'project',
         'ip',
         'password',
         'port',
@@ -49,7 +51,7 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
           password: values.password,
           additional_params: values.asyncParams ?? []
         },
-        project_uid: projectID
+        project_uid: values.project || projectID
       })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {

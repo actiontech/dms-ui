@@ -1,8 +1,6 @@
 import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
-import {
-  mockBatchImportDBCheckData,
-  mockCheckDBServicesPrivilegesIncludeErrorData
-} from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import { mockBatchImportDBCheckData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -17,11 +15,16 @@ import { AxiosResponse } from 'axios';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
+const connectableSuccessReply = [
+  { component: 'sqle', is_connectable: true },
+  { component: 'provision', is_connectable: true }
+];
+
 describe('base/DataSource/BatchImportDataSource', () => {
   let importDBServicesOfOneProjectSpy: jest.SpyInstance;
   let getImportDBServicesTemplateSpy: jest.SpyInstance;
   let importDBServicesOfOneProjectCheckSpy: jest.SpyInstance;
-  let dbServicesConnectionSpy: jest.SpyInstance;
+  let checkDbServiceIsConnectableSpy: jest.SpyInstance;
   let checkDBServicesPrivilegesSpy: jest.SpyInstance;
 
   beforeEach(() => {
@@ -30,7 +33,12 @@ describe('base/DataSource/BatchImportDataSource', () => {
     getImportDBServicesTemplateSpy = project.getImportDBServicesTemplate();
     importDBServicesOfOneProjectCheckSpy =
       project.importDBServicesOfOneProjectCheck();
-    dbServicesConnectionSpy = project.dbServicesConnection();
+    checkDbServiceIsConnectableSpy = dbServices.checkDbServiceIsConnectable();
+    checkDbServiceIsConnectableSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: connectableSuccessReply
+      })
+    );
     checkDBServicesPrivilegesSpy = project.checkDBServicesPrivileges();
     mockUseCurrentProject();
   });
@@ -136,14 +144,17 @@ describe('base/DataSource/BatchImportDataSource', () => {
     expect(screen.getByText('导 入').closest('button')).toHaveClass(
       'ant-btn-loading'
     );
+    // connect API then privilege API (each createSpySuccessResponse waits 3000ms)
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenCalled();
     expect(checkDBServicesPrivilegesSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(importDBServicesOfOneProjectSpy).toHaveBeenCalledTimes(1);
     expect(importDBServicesOfOneProjectSpy).toHaveBeenNthCalledWith(1, {
       db_services: mockBatchImportDBCheckData,
       project_uid: mockProjectInfo.projectID
     });
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(screen.getByText('批量导入数据源成功')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('关闭并重置表单'));
@@ -172,10 +183,11 @@ describe('base/DataSource/BatchImportDataSource', () => {
     expect(screen.getByText('导 入').closest('button')).toHaveClass(
       'ant-btn-loading'
     );
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(checkDBServicesPrivilegesSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(importDBServicesOfOneProjectSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(screen.getByText('导 入').closest('button')).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -183,9 +195,15 @@ describe('base/DataSource/BatchImportDataSource', () => {
   });
 
   it('render connectable error modal', async () => {
-    checkDBServicesPrivilegesSpy.mockImplementation(() =>
+    checkDbServiceIsConnectableSpy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: mockCheckDBServicesPrivilegesIncludeErrorData
+        data: [
+          {
+            component: 'sqle',
+            is_connectable: false,
+            connect_error_message: 'connection refused'
+          }
+        ]
       })
     );
     const { baseElement } = baseSuperRender(<ProjectImport />);
@@ -204,8 +222,9 @@ describe('base/DataSource/BatchImportDataSource', () => {
     expect(screen.getByText('导 入').closest('button')).toHaveClass(
       'ant-btn-loading'
     );
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(checkDBServicesPrivilegesSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(screen.getByText('数据源连通性测试失败')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('继续提交'));
@@ -214,7 +233,7 @@ describe('base/DataSource/BatchImportDataSource', () => {
       db_services: mockBatchImportDBCheckData,
       project_uid: mockProjectInfo.projectID
     });
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTimeAsync(3000));
     expect(screen.getByText('批量导入数据源成功')).toBeInTheDocument();
   });
 });

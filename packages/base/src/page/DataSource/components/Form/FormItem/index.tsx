@@ -1,11 +1,12 @@
 import { useBoolean } from 'ahooks';
 import { useEffect, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd';
+import { FormInstance, Space } from 'antd';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
 import {
+  BasicButton,
   BasicInput,
   BasicSelect,
   BasicSwitch,
@@ -19,6 +20,7 @@ import {
   BackendFormItemParams
 } from '@actiontech/shared';
 import { DataSourceFormContext } from '../../../context';
+import PrivilegeCheckResult from '../PrivilegeCheckResult';
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
   isUpdate?: boolean;
@@ -42,13 +44,25 @@ const DatabaseFormItem: React.FC<{
     });
   };
   const testDatabaseConnect = async () => {
-    formContext?.onCheckConnectable(props.currentAsyncParams).finally(() => {
+    try {
+      const isConnectable = await formContext?.onCheckConnectable(
+        props.currentAsyncParams
+      );
+      // S1 §5.2.3：连通 API 失败须打开「数据源连通性测试失败」Modal（返回修改 / 继续提交）
+      if (isConnectable === false) {
+        EventEmitter.emit(EmitterKey.DMS_Open_DataSource_Connect_Error_Modal);
+      }
+    } finally {
       setConnectionInfoShow();
-    });
+    }
+  };
+  const checkPrivileges = async () => {
+    await formContext?.onCheckPrivileges(props.currentAsyncParams);
   };
   useEffect(() => {
     const resetConnectAbleStatus = () => {
       setConnectionInfoHide();
+      formContext?.resetPrivilegeResult();
     };
     EventEmitter.subscribe(
       EmitterKey.Reset_Test_Data_Source_Connect,
@@ -193,13 +207,27 @@ const DatabaseFormItem: React.FC<{
       </EmptyBox>
 
       <FormItemNoLabel>
-        <TestDatabaseConnectButton
-          initHide={hideConnectionInfo}
-          onClickTestButton={testDatabaseConnect}
-          loading={formContext?.loading ?? false}
-          connectAble={formContext?.connectAble ?? false}
-          connectDisableReason={formContext?.connectErrorMessage}
-        />
+        <Space direction="vertical" size={12} style={{ width: '100%' }}>
+          <Space wrap align="start">
+            <TestDatabaseConnectButton
+              initHide={hideConnectionInfo}
+              onClickTestButton={testDatabaseConnect}
+              loading={formContext?.loading ?? false}
+              connectAble={formContext?.connectAble ?? false}
+              connectDisableReason={formContext?.connectErrorMessage}
+            />
+            <BasicButton
+              onClick={checkPrivileges}
+              loading={formContext?.privilegeLoading ?? false}
+            >
+              {t('dmsDataSource.dataSourceForm.checkPrivileges')}
+            </BasicButton>
+          </Space>
+          <PrivilegeCheckResult
+            visible={formContext?.privilegeChecked ?? false}
+            result={formContext?.privilegeResult ?? null}
+          />
+        </Space>
       </FormItemNoLabel>
     </>
   );
