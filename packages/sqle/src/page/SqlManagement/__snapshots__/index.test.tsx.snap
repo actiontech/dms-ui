@@ -770,7 +770,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
                                 class="ant-table-cell"
                                 scope="col"
                               >
-                                端点信息
+                                客户端 IP
                               </th>
                               <th
                                 class="ant-table-cell"
