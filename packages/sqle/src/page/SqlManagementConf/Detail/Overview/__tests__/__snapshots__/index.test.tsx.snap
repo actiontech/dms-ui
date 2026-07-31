@@ -40,6 +40,7 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 360px;"
                       />
@@ -89,6 +90,12 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                           scope="col"
                         >
                           采集到的SQL数
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          审核有问题的SQL数
                         </th>
                         <th
                           class="ant-table-cell"
@@ -209,13 +216,22 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="10"
+                          colspan="11"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"
@@ -276,6 +292,7 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 360px;"
                       />
@@ -325,6 +342,12 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                           scope="col"
                         >
                           采集到的SQL数
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          审核有问题的SQL数
                         </th>
                         <th
                           class="ant-table-cell"
@@ -445,13 +468,22 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="10"
+                          colspan="11"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"

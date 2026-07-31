@@ -110,8 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dev-zjrc-sql-manage-client-ip-monitor-slowlog   2b34f2a7
-                          </article>
+                            dev-zjrc-scan-immediate-collect   2b34f2a7                          </article>
                         </div>
                         <div
                           class="ant-space-item"
@@ -345,8 +344,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dev-zjrc-sql-manage-client-ip-monitor-slowlog   2b34f2a7
-                          </article>
+                            dev-zjrc-scan-immediate-collect   2b34f2a7                          </article>
                         </div>
                         <div
                           class="ant-space-item"
