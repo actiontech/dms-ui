@@ -41,7 +41,9 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
     enabledAction,
     enabledActionPending,
     deleteAction,
-    deleteActionPending
+    deleteActionPending,
+    triggerCollectAction,
+    triggerCollectActionPending
   } = useTableAction();
 
   const { data, loading, refresh } = useRequest(
@@ -121,9 +123,24 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
+          triggerCollectAction: (auditPlanId) => {
+            triggerCollectAction(instanceAuditPlanId, auditPlanId).then(
+              (res) => {
+                if (res.data.code === ResponseCode.SUCCESS) {
+                  messageApi.success(
+                    t(
+                      'managementConf.detail.overview.actions.triggerCollectSuccessTips'
+                    )
+                  );
+                  refresh();
+                }
+              }
+            );
+          },
           disabledActionPending,
           enabledActionPending,
           deleteActionPending,
+          triggerCollectActionPending,
           hasOpPermission
         })}
       />

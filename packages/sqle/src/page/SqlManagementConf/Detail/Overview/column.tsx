@@ -6,7 +6,11 @@ import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TokenCom } from '@actiontech/shared';
-import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  InstanceAuditPlanInfoActiveStatusEnum,
+  InstanceAuditPlanInfoNextCollectionModeEnum,
+  InstanceAuditPlanInfoPipelineStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
@@ -15,6 +19,63 @@ import {
   InfoHexagonOutlined
 } from '@actiontech/icons';
 import { Typography } from 'antd';
+import LastCollectResultCell from './LastCollectResultCell';
+
+const renderPipelineStatus = (status?: string) => {
+  switch (status) {
+    case InstanceAuditPlanInfoPipelineStatusEnum.collecting:
+      return t(
+        'managementConf.detail.overview.column.pipelineStatus.collecting'
+      );
+    case InstanceAuditPlanInfoPipelineStatusEnum.pending_audit:
+      return t(
+        'managementConf.detail.overview.column.pipelineStatus.pendingAudit'
+      );
+    case InstanceAuditPlanInfoPipelineStatusEnum.auditing:
+      return t('managementConf.detail.overview.column.pipelineStatus.auditing');
+    case InstanceAuditPlanInfoPipelineStatusEnum.idle:
+    case undefined:
+    case '':
+      return t('managementConf.detail.overview.column.pipelineStatus.idle');
+    default:
+      return t('managementConf.detail.overview.column.pipelineStatus.idle');
+  }
+};
+
+const renderNextCollectionTime = (record: IInstanceAuditPlanInfo) => {
+  const mode = record.next_collection_mode;
+  if (mode === InstanceAuditPlanInfoNextCollectionModeEnum.none) {
+    return t('managementConf.detail.overview.column.nextCollectionTime.none');
+  }
+  if (mode === InstanceAuditPlanInfoNextCollectionModeEnum.after_collect) {
+    return t(
+      'managementConf.detail.overview.column.nextCollectionTime.afterCollect'
+    );
+  }
+  if (mode === InstanceAuditPlanInfoNextCollectionModeEnum.schedule) {
+    return formatTime(
+      record.next_collection_time,
+      t('managementConf.detail.overview.column.nextCollectionTime.none')
+    );
+  }
+
+  // 旧后端未带 mode：按 active_status / pipeline_status 兜底
+  if (record.active_status === InstanceAuditPlanInfoActiveStatusEnum.disabled) {
+    return t('managementConf.detail.overview.column.nextCollectionTime.none');
+  }
+  if (
+    record.pipeline_status ===
+    InstanceAuditPlanInfoPipelineStatusEnum.collecting
+  ) {
+    return t(
+      'managementConf.detail.overview.column.nextCollectionTime.afterCollect'
+    );
+  }
+  return formatTime(
+    record.next_collection_time,
+    t('managementConf.detail.overview.column.nextCollectionTime.none')
+  );
+};
 
 export const ConfDetailOverviewColumns: (
   projectID: string
@@ -66,7 +127,9 @@ export const ConfDetailOverviewColumns: (
             <TableColumnWithIconStyleWrapper>
               <CloseHexagonOutlined />
               <span>
-                {t('managementConf.list.table.column.taskStatus.disabled')}
+                {t(
+                  'managementConf.detail.overview.column.enableStatus.disabled'
+                )}
               </span>
             </TableColumnWithIconStyleWrapper>
           );
@@ -76,7 +139,7 @@ export const ConfDetailOverviewColumns: (
             <TableColumnWithIconStyleWrapper>
               <CheckCircleOutlined />
               <span>
-                {t('managementConf.list.table.column.taskStatus.normal')}
+                {t('managementConf.detail.overview.column.enableStatus.normal')}
               </span>
             </TableColumnWithIconStyleWrapper>
           );
@@ -88,6 +151,18 @@ export const ConfDetailOverviewColumns: (
           </TableColumnWithIconStyleWrapper>
         );
       }
+    },
+    {
+      dataIndex: 'pipeline_status',
+      title: () =>
+        t('managementConf.detail.overview.column.pipelineStatus.title'),
+      render: (status) => renderPipelineStatus(status)
+    },
+    {
+      dataIndex: 'next_collection_time',
+      title: () =>
+        t('managementConf.detail.overview.column.nextCollectionTime.title'),
+      render: (_time, record) => renderNextCollectionTime(record)
     },
     {
       dataIndex: 'exec_cmd',
@@ -109,6 +184,12 @@ export const ConfDetailOverviewColumns: (
     },
     // #endif
     {
+      dataIndex: 'last_collect_status',
+      title: () =>
+        t('managementConf.detail.overview.column.lastCollectResult.title'),
+      render: (_status, record) => <LastCollectResultCell record={record} />
+    },
+    {
       dataIndex: 'last_collection_time',
       title: () =>
         t('managementConf.detail.overview.column.lastCollectionTime'),
@@ -121,21 +202,63 @@ export const ConfDetailOverviewColumnActions: (params: {
   enabledAction: (auditPlanId: string) => void;
   disabledAction: (auditPlanId: string) => void;
   deleteAction: (auditPlanId: string) => void;
+  triggerCollectAction: (auditPlanId: string) => void;
   disabledActionPending: boolean;
   enabledActionPending: boolean;
   deleteActionPending: boolean;
+  triggerCollectActionPending: boolean;
   hasOpPermission: boolean;
 }) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = ({
   enabledAction,
   disabledAction,
   deleteAction,
+  triggerCollectAction,
   disabledActionPending,
   enabledActionPending,
   deleteActionPending,
+  triggerCollectActionPending,
   hasOpPermission
 }) => {
   return {
+    width: 360,
     buttons: [
+      {
+        key: 'triggerCollect',
+        text: t('managementConf.detail.overview.actions.triggerCollect'),
+        permissions: () => hasOpPermission,
+        buttonProps: (record) => {
+          const isDisabled =
+            record?.active_status ===
+            InstanceAuditPlanInfoActiveStatusEnum.disabled;
+          const isCollecting =
+            record?.pipeline_status ===
+            InstanceAuditPlanInfoPipelineStatusEnum.collecting;
+          const cannotTrigger =
+            isDisabled || isCollecting || triggerCollectActionPending;
+
+          let title: string | undefined;
+          if (isDisabled) {
+            title = t(
+              'managementConf.detail.overview.actions.triggerCollectDisabledTips'
+            );
+          } else if (isCollecting) {
+            title = t(
+              'managementConf.detail.overview.actions.triggerCollectCollectingTips'
+            );
+          }
+
+          return {
+            disabled: cannotTrigger,
+            title,
+            onClick: () => {
+              if (cannotTrigger) return;
+              triggerCollectAction(
+                record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
+            }
+          };
+        }
+      },
       {
         key: 'enable',
         text: t('managementConf.detail.overview.actions.enabled'),

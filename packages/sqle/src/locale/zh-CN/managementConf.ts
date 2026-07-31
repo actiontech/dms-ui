@@ -119,11 +119,36 @@ export default {
       column: {
         auditPlanType: '智能扫描类型',
         auditRuleTemplate: '审核规则模板',
-        status: '任务状态',
+        status: '启用态',
+        enableStatus: {
+          normal: '运行中',
+          disabled: '已停用'
+        },
+        pipelineStatus: {
+          title: '流水线态',
+          idle: '空闲',
+          collecting: '采集中',
+          pendingAudit: '待审核',
+          auditing: '审核中'
+        },
+        nextCollectionTime: {
+          title: '下次采集时间',
+          afterCollect: '采集后展示',
+          none: '—'
+        },
         scanType: '采集方式',
         connectionInfo: '连接信息',
         collectedSqlCount: '采集到的SQL数',
         problematicSqlCount: '审核有问题的SQL数',
+        lastCollectResult: {
+          title: '最近一次采集结果',
+          none: '—',
+          success: '成功',
+          successEmpty: '成功无数据',
+          failed: '失败',
+          successCountTips: '本轮采集成功 {{n}} 条',
+          copy: '复制'
+        },
         lastCollectionTime: '最近一次采集时间'
       },
       actions: {
@@ -136,7 +161,11 @@ export default {
         delete: '删除',
         deleteSuccessTips: '删除成功！',
         deleteConfirmTips:
-          '删除后该类型智能扫描数据将不再被保留，是否确认删除？'
+          '删除后该类型智能扫描数据将不再被保留，是否确认删除？',
+        triggerCollect: '立即采集',
+        triggerCollectSuccessTips: '已触发采集',
+        triggerCollectDisabledTips: '请先启用',
+        triggerCollectCollectingTips: '正在采集中'
       }
     },
     scanTypeSqlCollection: {

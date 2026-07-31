@@ -123,6 +123,24 @@ export interface IAuditPlanTriggerSqlAuditV1Params {
 
 export interface IAuditPlanTriggerSqlAuditV1Return extends IBaseRes {}
 
+export interface ITriggerAuditPlanCollectV1Params {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_id: string;
+}
+
+export interface ITriggerAuditPlanCollectResData {
+  audit_plan_id?: number;
+
+  pipeline_status?: string;
+}
+
+export interface ITriggerAuditPlanCollectV1Return extends IBaseRes {
+  data?: ITriggerAuditPlanCollectResData;
+}
+
 export interface IGetInstanceAuditPlanSQLDataV1Params
   extends IGetAuditPlanSQLDataReqV1 {
   project_name: string;

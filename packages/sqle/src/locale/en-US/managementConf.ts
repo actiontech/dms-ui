@@ -124,11 +124,36 @@ export default {
       column: {
         auditPlanType: 'Intelligent scan type',
         auditRuleTemplate: 'Audit rule template',
-        status: 'Task status',
+        status: 'Enable status',
+        enableStatus: {
+          normal: 'Running',
+          disabled: 'Disabled'
+        },
+        pipelineStatus: {
+          title: 'Pipeline status',
+          idle: 'Idle',
+          collecting: 'Collecting',
+          pendingAudit: 'Pending audit',
+          auditing: 'Auditing'
+        },
+        nextCollectionTime: {
+          title: 'Next collection time',
+          afterCollect: 'Show after collection',
+          none: '—'
+        },
         scanType: 'Collection method',
         connectionInfo: 'Connection information',
         collectedSqlCount: 'Collected SQL count',
         problematicSqlCount: 'Problematic SQL count',
+        lastCollectResult: {
+          title: 'Last collection result',
+          none: '—',
+          success: 'Success',
+          successEmpty: 'Success with no data',
+          failed: 'Failed',
+          successCountTips: 'Collected {{n}} SQL(s) this round',
+          copy: 'Copy'
+        },
         lastCollectionTime: 'Last collection time'
       },
       actions: {
@@ -141,7 +166,11 @@ export default {
         delete: 'Delete',
         deleteSuccessTips: 'Deleted successfully!',
         deleteConfirmTips:
-          'After deleting, intelligent scan data of this type will no longer be retained, confirm delete?'
+          'After deleting, intelligent scan data of this type will no longer be retained, confirm delete?',
+        triggerCollect: 'Collect now',
+        triggerCollectSuccessTips: 'Collection triggered',
+        triggerCollectDisabledTips: 'Please enable first',
+        triggerCollectCollectingTips: 'Collecting in progress'
       }
     },
     scanTypeSqlCollection: {

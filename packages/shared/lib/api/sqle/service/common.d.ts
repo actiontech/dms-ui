@@ -24,6 +24,9 @@ import {
   HighPriorityConditionTypeEnum,
   HighPriorityConditionReqOperatorEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
+  InstanceAuditPlanInfoLastCollectStatusEnum,
+  InstanceAuditPlanInfoNextCollectionModeEnum,
+  InstanceAuditPlanInfoPipelineStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   MatchConditionReqV1TypeEnum,
   OperationRecordListStatusEnum,
@@ -1723,6 +1726,25 @@ export interface IInstanceAuditPlanInfo {
   id?: number;
 
   last_collection_time?: string;
+
+  last_collect_failure_msg?: string | null;
+
+  last_collect_status?:
+    | InstanceAuditPlanInfoLastCollectStatusEnum
+    | string
+    | null;
+
+  last_collect_success_count?: number;
+
+  last_collect_inserted_count?: number;
+
+  last_collect_updated_count?: number;
+
+  next_collection_mode?: InstanceAuditPlanInfoNextCollectionModeEnum | string;
+
+  next_collection_time?: string;
+
+  pipeline_status?: InstanceAuditPlanInfoPipelineStatusEnum | string;
 
   total_sql_nums?: number;
 
