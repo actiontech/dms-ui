@@ -120,6 +120,13 @@ export const ROUTE_PATHS = {
         query: OPEN_CLOUD_BEAVER_URL_PARAM_NAME
       }
     },
+    DATA_MASKING: {
+      index: {
+        prefix: '/project',
+        path: ':projectID/data-masking',
+        query: 'active&dbServiceUid&maskingStatus&workflowId'
+      }
+    },
     RESOURCE_OVERVIEW: '/resource-overview',
     USER_ACTIVITY: '/user-activity',
     AVAILABILITY_ZONE: '/availability-zone'
