@@ -199,7 +199,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         describe: props.defaultData.desc,
         type: props.defaultData.db_type,
         connectionMode: isRedisDbType(props.defaultData.db_type)
-          ? getRedisConnectionModeFromParams(props.defaultData.additional_params)
+          ? getRedisConnectionModeFromParams(
+              props.defaultData.additional_params
+            )
           : undefined,
         ip: props.defaultData.host,
         port: Number.parseInt(props.defaultData.port ?? ''),

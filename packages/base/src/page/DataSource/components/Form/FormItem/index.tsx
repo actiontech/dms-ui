@@ -109,7 +109,9 @@ const DatabaseFormItem: React.FC<{
           <BasicSelect
             options={[
               {
-                label: t('dmsDataSource.dataSourceForm.connectionModeStandalone'),
+                label: t(
+                  'dmsDataSource.dataSourceForm.connectionModeStandalone'
+                ),
                 value: 'standalone'
               },
               {
