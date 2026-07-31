@@ -52,7 +52,7 @@ export default {
     type: '数据源类型',
     connectionMode: '连接模式',
     connectionModeStandalone: '单实例',
-    connectionModeCluster: 'Cluster',
+    connectionModeCluster: '集群',
     ip: '数据源地址',
     ipTips: '数据源IP或域名',
     port: '数据源端口',
