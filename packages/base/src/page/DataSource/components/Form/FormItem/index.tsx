@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { useEffect, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd';
+import { Form, FormInstance } from 'antd';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
@@ -19,6 +19,7 @@ import {
   BackendFormItemParams
 } from '@actiontech/shared';
 import { DataSourceFormContext } from '../../../context';
+import { DEFAULT_REDIS_CONNECTION_MODE, isRedisDbType } from '../../../tool';
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
   isUpdate?: boolean;
@@ -30,6 +31,9 @@ const DatabaseFormItem: React.FC<{
 }> = (props) => {
   const { t } = useTranslation();
   const formContext = useContext(DataSourceFormContext);
+  const databaseType = Form.useWatch('type', props.form);
+  const connectionMode = Form.useWatch('connectionMode', props.form);
+  const isRedis = isRedisDbType(databaseType);
   const [
     hideConnectionInfo,
     { setFalse: setConnectionInfoShow, setTrue: setConnectionInfoHide }
@@ -87,6 +91,37 @@ const DatabaseFormItem: React.FC<{
           {props.generateDriverSelectOptions?.()}
         </BasicSelect>
       </FormItemLabel>
+      <EmptyBox if={isRedis}>
+        <FormItemLabel
+          className="has-required-style"
+          label={t('dmsDataSource.dataSourceForm.connectionMode')}
+          name="connectionMode"
+          initialValue={DEFAULT_REDIS_CONNECTION_MODE}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.rule.require', {
+                name: t('dmsDataSource.dataSourceForm.connectionMode')
+              })
+            }
+          ]}
+        >
+          <BasicSelect
+            options={[
+              {
+                label: t(
+                  'dmsDataSource.dataSourceForm.connectionModeStandalone'
+                ),
+                value: 'standalone'
+              },
+              {
+                label: t('dmsDataSource.dataSourceForm.connectionModeCluster'),
+                value: 'cluster'
+              }
+            ]}
+          />
+        </FormItemLabel>
+      </EmptyBox>
       <FormItemLabel
         className="has-required-style"
         label={t('dmsDataSource.dataSourceForm.ip')}
@@ -131,12 +166,12 @@ const DatabaseFormItem: React.FC<{
         />
       </FormItemLabel>
       <FormItemLabel
-        className="has-required-style"
+        className={connectionMode === 'cluster' ? '' : 'has-required-style'}
         label={t('dmsDataSource.dataSourceForm.user')}
         name="user"
         rules={[
           {
-            required: true,
+            required: connectionMode !== 'cluster',
             message: t('common.form.rule.require', {
               name: t('dmsDataSource.dataSourceForm.user')
             })

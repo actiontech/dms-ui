@@ -35,7 +35,14 @@ import {
 import { nameRule } from '@actiontech/dms-kit';
 import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
-import { turnDataSourceAsyncFormToCommon } from '../../tool';
+import {
+  DEFAULT_REDIS_CONNECTION_MODE,
+  filterRedisConnectionModeParam,
+  getRedisConnectionModeFromParams,
+  isRedisDbType,
+  mergeRedisConnectionModeIntoParams,
+  turnDataSourceAsyncFormToCommon
+} from '../../tool';
 import { useAsyncParams, BackendFormItemParams } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
@@ -94,6 +101,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const databaseTypeChange = useCallback(
     (value: string) => {
       setDatabaseType(value);
+      props.form.setFieldValue(
+        'connectionMode',
+        isRedisDbType(value) ? DEFAULT_REDIS_CONNECTION_MODE : undefined
+      );
       // #if [sqle]
       props.form.resetFields([
         'ruleTemplateName',
@@ -177,7 +188,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     if (!temp) {
       return [];
     }
-    return turnDataSourceAsyncFormToCommon(temp.params ?? []);
+    return filterRedisConnectionModeParam(
+      turnDataSourceAsyncFormToCommon(temp.params ?? [])
+    );
   }, [databaseType, driverMeta]);
   useEffect(() => {
     if (!!props.defaultData) {
@@ -185,12 +198,19 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         name: props.defaultData.name,
         describe: props.defaultData.desc,
         type: props.defaultData.db_type,
+        connectionMode: isRedisDbType(props.defaultData.db_type)
+          ? getRedisConnectionModeFromParams(
+              props.defaultData.additional_params
+            )
+          : undefined,
         ip: props.defaultData.host,
         port: Number.parseInt(props.defaultData.port ?? ''),
         user: props.defaultData.user,
         params: generateFormValueByParams(
-          turnDataSourceAsyncFormToCommon(
-            props.defaultData.additional_params ?? []
+          filterRedisConnectionModeParam(
+            turnDataSourceAsyncFormToCommon(
+              props.defaultData.additional_params ?? []
+            )
           )
         ),
         maintenanceTime: props.defaultData.maintenance_times?.map((item) => ({
@@ -271,6 +291,11 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       );
       delete values.params;
     }
+    values.asyncParams = mergeRedisConnectionModeIntoParams(
+      values.asyncParams,
+      values.type,
+      values.connectionMode
+    );
     props.submit(values).then(() => {
       closeModal();
     });

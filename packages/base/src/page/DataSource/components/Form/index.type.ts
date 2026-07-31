@@ -6,11 +6,13 @@ import {
 import { MaintenanceTimeValue } from './MaintenanceTimePicker';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
+import type { RedisConnectionMode } from '../../tool';
 
 export type DataSourceFormField = {
   name: string;
   describe?: string;
   type: string;
+  connectionMode?: RedisConnectionMode;
   ip: string;
   port: number;
   user: string;

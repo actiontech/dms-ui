@@ -9,6 +9,7 @@ import {
   getDBServiceConnectableErrorMessage,
   getDbServiceIsConnectbale
 } from '../../../utils/common';
+import { mergeRedisConnectionModeIntoParams } from '../tool';
 
 const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
   const projectID = Form.useWatch('project', form);
@@ -28,7 +29,8 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
         'port',
         'user',
         'type',
-        'params'
+        'params',
+        'connectionMode'
       ]);
 
       if (values.params && currentAsyncParams) {
@@ -38,6 +40,12 @@ const useCheckConnectable = (form: FormInstance<DataSourceFormField>) => {
         ).map((v) => ({ name: v.key, value: v.value }));
         delete values.params;
       }
+
+      values.asyncParams = mergeRedisConnectionModeIntoParams(
+        values.asyncParams,
+        values.type,
+        values.connectionMode
+      );
 
       setLoadingTrue();
       return DmsApi.DBServiceService.CheckDBServiceIsConnectable({
