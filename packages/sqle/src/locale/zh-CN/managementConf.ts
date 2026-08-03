@@ -119,13 +119,17 @@ export default {
       column: {
         auditPlanType: '智能扫描类型',
         auditRuleTemplate: '审核规则模板',
-        status: '启用态',
+        status: '启停状态',
+        statusHeaderTips:
+          '表示该扫描类型是否开启自动采集与调度。\n\n• 已启用：任务已开启，按周期采集；可点「立即采集」\n• 已停用：任务已关闭，不再采集；「立即采集」不可用',
         enableStatus: {
-          normal: '运行中',
+          normal: '已启用',
           disabled: '已停用'
         },
         pipelineStatus: {
-          title: '流水线态',
+          title: '当前环节',
+          headerTips:
+            '表示当前采集与审核进行到哪一步（与「启停状态」无关）。\n\n• 空闲：未在采集/审核，可立即采集或等待下次调度\n• 采集中：正在采集，不可再次立即采集；结束后进入空闲或待审核\n• 待审核：本轮已采到数据，等待审核；仍可立即采集\n• 审核中：正在审核；仍可立即采集',
           idle: '空闲',
           collecting: '采集中',
           pendingAudit: '待审核',

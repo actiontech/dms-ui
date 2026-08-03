@@ -12,5 +12,5 @@ const commitId = execSync('git rev-parse --short HEAD', {
 version = `${branch.split('\n')[0]}   ${commitId.split('\n')[0]}`;
 const filePath = resolve(process.cwd(), './src/scripts/version.ts');
 
-const command = `export const UI_VERSION =\n  '${version}';\n`;
+const command = `export const UI_VERSION = '${version}';\n`;
 writeFileSync(filePath, command);

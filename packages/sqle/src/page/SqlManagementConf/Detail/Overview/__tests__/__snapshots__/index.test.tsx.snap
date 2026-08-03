@@ -65,13 +65,33 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                           class="ant-table-cell"
                           scope="col"
                         >
-                          启用态
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                启停状态
+                              </span>
+                            </div>
+                          </div>
                         </th>
                         <th
                           class="ant-table-cell"
                           scope="col"
                         >
-                          流水线态
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                当前环节
+                              </span>
+                            </div>
+                          </div>
                         </th>
                         <th
                           class="ant-table-cell"
@@ -317,13 +337,33 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                           class="ant-table-cell"
                           scope="col"
                         >
-                          启用态
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                启停状态
+                              </span>
+                            </div>
+                          </div>
                         </th>
                         <th
                           class="ant-table-cell"
                           scope="col"
                         >
-                          流水线态
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                当前环节
+                              </span>
+                            </div>
+                          </div>
                         </th>
                         <th
                           class="ant-table-cell"

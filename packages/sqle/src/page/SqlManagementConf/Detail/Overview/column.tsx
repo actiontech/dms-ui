@@ -5,7 +5,7 @@ import {
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { TokenCom } from '@actiontech/shared';
+import { BasicToolTips, TokenCom } from '@actiontech/shared';
 import {
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanInfoNextCollectionModeEnum,
@@ -20,6 +20,16 @@ import {
 } from '@actiontech/icons';
 import { Typography } from 'antd';
 import LastCollectResultCell from './LastCollectResultCell';
+
+const renderColumnHeaderTip = (title: string, tip: string) => (
+  <BasicToolTips
+    placement="topLeft"
+    titleWidth={360}
+    title={<span style={{ whiteSpace: 'pre-line' }}>{tip}</span>}
+  >
+    <span>{title}</span>
+  </BasicToolTips>
+);
 
 const renderPipelineStatus = (status?: string) => {
   switch (status) {
@@ -120,7 +130,11 @@ export const ConfDetailOverviewColumns: (
     },
     {
       dataIndex: 'active_status',
-      title: () => t('managementConf.detail.overview.column.status'),
+      title: () =>
+        renderColumnHeaderTip(
+          t('managementConf.detail.overview.column.status'),
+          t('managementConf.detail.overview.column.statusHeaderTips')
+        ),
       render: (status) => {
         if (status === InstanceAuditPlanInfoActiveStatusEnum.disabled) {
           return (
@@ -155,7 +169,10 @@ export const ConfDetailOverviewColumns: (
     {
       dataIndex: 'pipeline_status',
       title: () =>
-        t('managementConf.detail.overview.column.pipelineStatus.title'),
+        renderColumnHeaderTip(
+          t('managementConf.detail.overview.column.pipelineStatus.title'),
+          t('managementConf.detail.overview.column.pipelineStatus.headerTips')
+        ),
       render: (status) => renderPipelineStatus(status)
     },
     {
