@@ -1309,7 +1309,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -1338,24 +1338,36 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -1590,7 +1602,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -1619,24 +1631,36 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -1871,7 +1895,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -1900,24 +1924,36 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -2152,7 +2188,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -2181,24 +2217,36 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -2433,7 +2481,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -2462,24 +2510,36 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -2714,7 +2774,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -2743,24 +2803,36 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -3901,7 +3973,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -3930,24 +4002,36 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -4182,7 +4266,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -4211,24 +4295,36 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -4463,7 +4559,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -4492,24 +4588,36 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -4744,7 +4852,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -4773,24 +4881,36 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -5025,7 +5145,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -5054,24 +5174,36 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -5306,7 +5438,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -5335,24 +5467,36 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -6493,7 +6637,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -6522,24 +6666,36 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -6774,7 +6930,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -6803,24 +6959,36 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -7055,7 +7223,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -7084,24 +7252,36 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -7336,7 +7516,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -7365,24 +7545,36 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -7617,7 +7809,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -7646,24 +7838,36 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -7898,7 +8102,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -7927,24 +8131,36 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -9117,7 +9333,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -9146,24 +9362,36 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -9398,7 +9626,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -9427,24 +9655,36 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -9679,7 +9919,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -9708,24 +9948,36 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -9960,7 +10212,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -9989,24 +10241,36 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -10241,7 +10505,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -10270,24 +10534,36 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -10522,7 +10798,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                           class="ant-list-item ant-list-item-no-flex"
                         >
                           <div
-                            class="css-1nwg602"
+                            class="css-13vmh2t"
                           >
                             <div
                               class="result-card-header"
@@ -10551,24 +10827,36 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                                       class="ant-divider ant-divider-vertical result-card-status-divider"
                                       role="separator"
                                     />
-                                    <span
-                                      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
-                                      <svg
-                                        height="16"
-                                        viewBox="0 0 20 20"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 4px;"
                                       >
-                                        <path
-                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                          fill="#41BF9A"
-                                        />
-                                      </svg>
-                                      <span>
-                                        审核通过
-                                      </span>
-                                    </span>
+                                        <span
+                                          class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-6zycqe"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 20 20"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                              fill="#41BF9A"
+                                            />
+                                          </svg>
+                                          <span>
+                                            审核通过
+                                          </span>
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>

@@ -106,4 +106,31 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
       data_export_workflow_uid: workflowID
     });
   });
+
+  it('should skip batch task query when workflow has no valid task_uid', async () => {
+    getWorkflowSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...GetDataExportWorkflowResponseData,
+          workflow_record: {
+            ...GetDataExportWorkflowResponseData.workflow_record,
+            tasks: [{ task_uid: '' }, { task_uid: '   ' }, {}]
+          }
+        }
+      })
+    );
+
+    renderHook(() => useInitDataWithRequest());
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(batchGetTaskSpy).not.toHaveBeenCalled();
+    expect(mockDataExportDetailRedux.updateTaskInfos).toHaveBeenCalledWith([]);
+    expect(
+      mockDataExportDetailRedux.updateTaskStatusNumber
+    ).toHaveBeenCalledWith({
+      failed: 0,
+      success: 0,
+      exporting: 0
+    });
+  });
 });
