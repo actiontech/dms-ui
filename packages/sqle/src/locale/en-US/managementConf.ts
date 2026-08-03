@@ -126,7 +126,7 @@ export default {
         auditRuleTemplate: 'Audit rule template',
         status: 'Enablement',
         statusHeaderTips:
-          'Whether this scan type is turned on for scheduled collection.\n\n• Enabled: on; periodic collect runs; Immediate collect is available\n• Disabled: off; no collect; Immediate collect is unavailable',
+          'Whether this scan type is turned on for scheduled collection.\n\n• Enabled: on; periodic collect runs; Collect now is available\n• Disabled: off; no collect; Collect now is unavailable',
         enableStatus: {
           normal: 'Enabled',
           disabled: 'Disabled'
@@ -134,7 +134,7 @@ export default {
         pipelineStatus: {
           title: 'Current stage',
           headerTips:
-            'Where this scan type is in the collect–audit flow (independent of enablement).\n\n• Idle: not collecting/auditing; can collect now or wait for schedule\n• Collecting: in progress; Immediate collect disabled until finished\n• Pending audit: data collected; awaiting audit; Immediate collect allowed\n• Auditing: audit in progress; Immediate collect allowed',
+            'Where this scan type is in the collect–audit flow.\n\n• Idle: not collecting/auditing; can Collect now or wait for schedule\n• Collecting: in progress; Collect now disabled until finished\n• Pending audit: data collected; awaiting audit; Collect now allowed\n• Auditing: audit in progress; Collect now allowed',
           idle: 'Idle',
           collecting: 'Collecting',
           pendingAudit: 'Pending audit',

@@ -45,52 +45,70 @@ const LastCollectResultCell: React.FC<{
   if (status === InstanceAuditPlanInfoLastCollectStatusEnum.success) {
     const count = record.last_collect_success_count ?? 0;
     return (
-      <Popover
-        trigger={['hover', 'click']}
-        content={
-          <span>
-            {t(
-              'managementConf.detail.overview.column.lastCollectResult.successCountTips',
-              { n: count }
-            )}
-          </span>
-        }
+      <span
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        onMouseDown={(e) => {
+          e.stopPropagation();
+        }}
       >
-        <span>{mainText}</span>
-      </Popover>
+        <Popover
+          trigger={['hover', 'click']}
+          content={
+            <span>
+              {t(
+                'managementConf.detail.overview.column.lastCollectResult.successCountTips',
+                { n: count }
+              )}
+            </span>
+          }
+        >
+          <span>{mainText}</span>
+        </Popover>
+      </span>
     );
   }
 
   if (status === InstanceAuditPlanInfoLastCollectStatusEnum.failed) {
     const failureMsg = record.last_collect_failure_msg ?? '';
     return (
-      <Popover
-        trigger={['hover', 'click']}
-        content={
-          <Space direction="vertical" size={8} style={{ maxWidth: 420 }}>
-            <Typography.Paragraph
-              style={{ marginBottom: 0, whiteSpace: 'pre-wrap' }}
-            >
-              {failureMsg}
-            </Typography.Paragraph>
-            <BasicButton
-              size="small"
-              disabled={!failureMsg}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (!failureMsg) return;
-                void copyFailureMsg(failureMsg);
-              }}
-            >
-              {t(
-                'managementConf.detail.overview.column.lastCollectResult.copy'
-              )}
-            </BasicButton>
-          </Space>
-        }
+      <span
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        onMouseDown={(e) => {
+          e.stopPropagation();
+        }}
       >
-        <span>{mainText}</span>
-      </Popover>
+        <Popover
+          trigger={['hover', 'click']}
+          content={
+            <Space direction="vertical" size={8} style={{ maxWidth: 420 }}>
+              <Typography.Paragraph
+                style={{ marginBottom: 0, whiteSpace: 'pre-wrap' }}
+              >
+                {failureMsg}
+              </Typography.Paragraph>
+              <BasicButton
+                size="small"
+                disabled={!failureMsg}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!failureMsg) return;
+                  void copyFailureMsg(failureMsg);
+                }}
+              >
+                {t(
+                  'managementConf.detail.overview.column.lastCollectResult.copy'
+                )}
+              </BasicButton>
+            </Space>
+          }
+        >
+          <span>{mainText}</span>
+        </Popover>
+      </span>
     );
   }
 
