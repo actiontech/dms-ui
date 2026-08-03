@@ -240,6 +240,32 @@ export enum InstanceAuditPlanInfoActiveStatusEnum {
   disabled = 'disabled'
 }
 
+export enum InstanceAuditPlanInfoPipelineStatusEnum {
+  idle = 'idle',
+
+  collecting = 'collecting',
+
+  pending_audit = 'pending_audit',
+
+  auditing = 'auditing'
+}
+
+export enum InstanceAuditPlanInfoNextCollectionModeEnum {
+  schedule = 'schedule',
+
+  after_collect = 'after_collect',
+
+  none = 'none'
+}
+
+export enum InstanceAuditPlanInfoLastCollectStatusEnum {
+  success = 'success',
+
+  success_empty = 'success_empty',
+
+  failed = 'failed'
+}
+
 export enum InstanceAuditPlanResV1ActiveStatusEnum {
   normal = 'normal',
 

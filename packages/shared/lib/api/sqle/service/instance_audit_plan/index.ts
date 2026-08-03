@@ -27,6 +27,8 @@ import {
   IUpdateAuditPlanStatusV1Return,
   IAuditPlanTriggerSqlAuditV1Params,
   IAuditPlanTriggerSqlAuditV1Return,
+  ITriggerAuditPlanCollectV1Params,
+  ITriggerAuditPlanCollectV1Return,
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLDataV1Return,
   IGetInstanceAuditPlanSQLExportV1Params,
@@ -219,6 +221,27 @@ class InstanceAuditPlanService extends ServiceBase {
 
     return this.post<IAuditPlanTriggerSqlAuditV1Return>(
       `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/audit`,
+      paramsData,
+      options
+    );
+  }
+
+  public triggerAuditPlanCollectV1(
+    params: ITriggerAuditPlanCollectV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
+
+    return this.post<ITriggerAuditPlanCollectV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/trigger_collect`,
       paramsData,
       options
     );

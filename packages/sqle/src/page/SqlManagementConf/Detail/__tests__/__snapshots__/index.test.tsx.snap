@@ -252,8 +252,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
+                          <col />
+                          <col />
                           <col
-                            style="width: 246px;"
+                            style="width: 360px;"
                           />
                         </colgroup>
                         <thead
@@ -276,7 +279,39 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              任务状态
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span>
+                                    启停状态
+                                  </span>
+                                </div>
+                              </div>
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span>
+                                    当前环节
+                                  </span>
+                                </div>
+                              </div>
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              下次采集时间
                             </th>
                             <th
                               class="ant-table-cell"
@@ -295,6 +330,12 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                               scope="col"
                             >
                               审核有问题的SQL数
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              最近一次采集结果
                             </th>
                             <th
                               class="ant-table-cell"
@@ -391,13 +432,40 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                                  
                               </div>
                             </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-placeholder"
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="8"
+                              colspan="11"
                             >
                               <div
                                 class="ant-table-expanded-row-fixed"
@@ -632,8 +700,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
+                          <col />
+                          <col />
                           <col
-                            style="width: 246px;"
+                            style="width: 360px;"
                           />
                         </colgroup>
                         <thead
@@ -656,7 +727,39 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              任务状态
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span>
+                                    启停状态
+                                  </span>
+                                </div>
+                              </div>
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span>
+                                    当前环节
+                                  </span>
+                                </div>
+                              </div>
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              下次采集时间
                             </th>
                             <th
                               class="ant-table-cell"
@@ -675,6 +778,12 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               scope="col"
                             >
                               审核有问题的SQL数
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              最近一次采集结果
                             </th>
                             <th
                               class="ant-table-cell"
@@ -699,6 +808,33 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -813,9 +949,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   />
                                 </svg>
                                 <span>
-                                  启用
+                                  已启用
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              空闲
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              —
                             </td>
                             <td
                               class="ant-table-cell"
@@ -835,6 +981,13 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
+                              <span>
+                                —
+                              </span>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
                               2024-08-06 11:30:43
                             </td>
                             <td
@@ -847,6 +1000,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 <div
                                   class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                 >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        立即采集
+                                      </span>
+                                    </button>
+                                  </div>
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
@@ -929,9 +1095,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   />
                                 </svg>
                                 <span>
-                                  停用
+                                  已停用
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              空闲
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              —
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1008,6 +1184,13 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
+                              <span>
+                                —
+                              </span>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
                               -
                             </td>
                             <td
@@ -1020,6 +1203,21 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 <div
                                   class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                 >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      title="请先启用"
+                                      type="button"
+                                    >
+                                      <span>
+                                        立即采集
+                                      </span>
+                                    </button>
+                                  </div>
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
@@ -1094,9 +1292,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   />
                                 </svg>
                                 <span>
-                                  启用
+                                  已启用
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              空闲
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              —
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1112,6 +1320,13 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               0
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <span>
+                                —
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1128,6 +1343,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 <div
                                   class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                 >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        立即采集
+                                      </span>
+                                    </button>
+                                  </div>
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
@@ -1202,9 +1430,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   />
                                 </svg>
                                 <span>
-                                  启用
+                                  已启用
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              空闲
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              —
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1220,6 +1458,13 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               0
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <span>
+                                —
+                              </span>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1236,6 +1481,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 <div
                                   class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                 >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        立即采集
+                                      </span>
+                                    </button>
+                                  </div>
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"

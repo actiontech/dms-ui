@@ -38,8 +38,11 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                       <col />
                       <col />
                       <col />
+                      <col />
+                      <col />
+                      <col />
                       <col
-                        style="width: 246px;"
+                        style="width: 360px;"
                       />
                     </colgroup>
                     <thead
@@ -62,7 +65,39 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                           class="ant-table-cell"
                           scope="col"
                         >
-                          任务状态
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                启停状态
+                              </span>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                当前环节
+                              </span>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          下次采集时间
                         </th>
                         <th
                           class="ant-table-cell"
@@ -81,6 +116,12 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                           scope="col"
                         >
                           审核有问题的SQL数
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          最近一次采集结果
                         </th>
                         <th
                           class="ant-table-cell"
@@ -177,13 +218,40 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="8"
+                          colspan="11"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"
@@ -242,8 +310,11 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                       <col />
                       <col />
                       <col />
+                      <col />
+                      <col />
+                      <col />
                       <col
-                        style="width: 246px;"
+                        style="width: 360px;"
                       />
                     </colgroup>
                     <thead
@@ -266,7 +337,39 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                           class="ant-table-cell"
                           scope="col"
                         >
-                          任务状态
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                启停状态
+                              </span>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                当前环节
+                              </span>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          下次采集时间
                         </th>
                         <th
                           class="ant-table-cell"
@@ -285,6 +388,12 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                           scope="col"
                         >
                           审核有问题的SQL数
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          最近一次采集结果
                         </th>
                         <th
                           class="ant-table-cell"
@@ -381,13 +490,40 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="8"
+                          colspan="11"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"
