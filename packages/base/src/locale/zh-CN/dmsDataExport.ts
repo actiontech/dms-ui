@@ -9,10 +9,25 @@ export default {
     finished: '导出成功',
     exporting: '正在导出',
     export_failed: '导出失败',
+    partial_failed: '部分导出失败',
     expired: '已过期',
     rejected: '已驳回',
     canceled: '已关闭',
     file_deleted: '已移除'
+  },
+  failStage: {
+    task_schedule: '任务调度',
+    connect: '数据源连接',
+    prepare: '导出准备',
+    sql_execute: 'SQL 执行',
+    file_generate: '文件生成',
+    unknown: '未知'
+  },
+  execStatus: {
+    success: '成功',
+    failed: '失败',
+    not_executed: '未执行',
+    notExecutedHint: '导出任务已失败，本条 SQL 未执行'
   },
   batchCancel: {
     messageWarn:
@@ -116,9 +131,13 @@ export default {
       title: '导出结果',
       overview: {
         title: '概览',
+        partialFailedNotice:
+          '当前工单存在“部分导出失败”：已成功任务可继续下载，失败任务请修复后重试。',
         column: {
           dbService: '数据源',
           status: '状态',
+          failStage: '失败阶段：',
+          failReason: '失败原因：',
           assigneeUser: '待操作人',
           exportStartTime: '导出开始时间',
           exportEndTime: '导出结束时间',
@@ -145,7 +164,10 @@ export default {
         title: '基本信息',
         createUser: '创建人',
         createTime: '创建时间',
-        status: '状态'
+        status: '状态',
+        exportFailSummaryLabel: '失败原因：',
+        exportFailSummaryFallback:
+          '导出失败，暂未获取到具体原因，请联系管理员查看服务日志'
       },
       steps: {
         title: '工单进度',

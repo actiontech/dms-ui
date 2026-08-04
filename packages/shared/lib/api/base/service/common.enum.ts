@@ -34,6 +34,14 @@ export enum GetDataExportTaskStatusEnum {
   'file_deleted' = 'file_deleted'
 }
 
+export enum ListDataExportTaskSQLExportStatusEnum {
+  'success' = 'success',
+
+  'failed' = 'failed',
+
+  'not_executed' = 'not_executed'
+}
+
 export enum GetUserAuthenticationTypeEnum {
   'ldap' = 'ldap',
 

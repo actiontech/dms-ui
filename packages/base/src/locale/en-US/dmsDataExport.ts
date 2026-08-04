@@ -9,10 +9,26 @@ export default {
     finished: 'Export success',
     exporting: 'Exporting',
     export_failed: 'Export failed',
+    partial_failed: 'Partial export failed',
     expired: 'Expired',
     rejected: 'Rejected',
     canceled: 'Closed',
     file_deleted: 'Removed'
+  },
+  failStage: {
+    task_schedule: 'Task scheduling',
+    connect: 'Data source connection',
+    prepare: 'Export preparation',
+    sql_execute: 'SQL execution',
+    file_generate: 'File generation',
+    unknown: 'Unknown'
+  },
+  execStatus: {
+    success: 'Success',
+    failed: 'Failed',
+    not_executed: 'Not executed',
+    notExecutedHint:
+      'The export task has failed; this SQL statement was not executed'
   },
   batchCancel: {
     messageWarn:
@@ -105,9 +121,13 @@ export default {
       title: 'Export result',
       overview: {
         title: 'Overview',
+        partialFailedNotice:
+          'This workflow has partial export failures: successful tasks can still be downloaded; please fix failed tasks and retry.',
         column: {
           dbService: 'DB instance',
           status: 'Status',
+          failStage: 'Failure stage:',
+          failReason: 'Failure reason:',
           assigneeUser: 'Assignee',
           exportStartTime: 'Export start time',
           exportEndTime: 'Export end time',
@@ -135,7 +155,10 @@ export default {
         title: 'Basic info',
         createUser: 'Creator',
         createTime: 'Create time',
-        status: 'Status'
+        status: 'Status',
+        exportFailSummaryLabel: 'Failure reason:',
+        exportFailSummaryFallback:
+          'Export failed. No specific reason is available yet; please contact the administrator to check service logs'
       },
       steps: {
         title: 'Task progress',

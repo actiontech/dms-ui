@@ -1,6 +1,6 @@
 import { BasicButton } from '@actiontech/dms-kit';
 import { Copy, HighlightCode } from '@actiontech/dms-kit';
-import { Divider, Space, message } from 'antd';
+import { Divider, Space, Tooltip, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ExportResultCardProp } from './index.type';
 import AuditResultTree from './AuditResultTree';
@@ -10,8 +10,14 @@ import {
   ExportResultTreeStyleWrapper
 } from '../../style';
 import AuditResultTag from './AuditResultTag';
+import ExportExecStatusTag from './ExportExecStatusTag';
 import { DownOutlined } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
+import { ListDataExportTaskSQLExportStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { resolveExportResultDisplayText } from '../../../../utils/exportFailDisplay';
+
+const EXPORT_RESULT_TOOLTIP_MIN_LEN = 48;
+
 const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
   const { t } = useTranslation();
   const [messageApi, contextHolder] = message.useMessage();
@@ -19,6 +25,41 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
     Copy.copyTextByTextarea(props.sql ?? '');
     messageApi.success(t('common.copied'));
   };
+
+  const exportStatus = props.export_status?.trim() ?? '';
+  const isFailed =
+    exportStatus === ListDataExportTaskSQLExportStatusEnum.failed;
+
+  const exportResultText = resolveExportResultDisplayText({
+    exportStatus: props.export_status,
+    exportResult: props.export_result,
+    failedFallback: t(
+      'dmsDataExport.detail.record.basicInfo.exportFailSummaryFallback'
+    ),
+    notExecutedHint: t('dmsDataExport.execStatus.notExecutedHint')
+  });
+
+  const exportResultTextNode = (
+    <span
+      className={
+        isFailed
+          ? 'export-result-text export-result-text-failed'
+          : 'export-result-text'
+      }
+      data-testid="export-result-text"
+      data-export-status={exportStatus || undefined}
+    >
+      {exportResultText}
+    </span>
+  );
+
+  const exportResultNode =
+    isFailed && exportResultText.length >= EXPORT_RESULT_TOOLTIP_MIN_LEN ? (
+      <Tooltip title={exportResultText}>{exportResultTextNode}</Tooltip>
+    ) : (
+      exportResultTextNode
+    );
+
   return (
     <ExportResultCardStyleWrapper>
       {contextHolder}
@@ -27,7 +68,10 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
           <span className="number">#{props.uid}</span>
           <div className="result-card-status-wrap">
             <Divider type="vertical" className="result-card-status-divider" />
-            <AuditResultTag auditResult={props.audit_sql_result} />
+            <Space size={4}>
+              <AuditResultTag auditResult={props.audit_sql_result} />
+              <ExportExecStatusTag status={props.export_status} />
+            </Space>
           </div>
         </Space>
         <Space>
@@ -69,7 +113,7 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
               key: 'export_result_wrap',
               children: [
                 {
-                  title: props.export_result || '-',
+                  title: exportResultNode,
                   key: 'export_result'
                 }
               ]

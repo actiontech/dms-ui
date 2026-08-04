@@ -904,6 +904,10 @@ export interface IGetDataExportTask {
 
   export_end_time?: string;
 
+  export_fail_reason?: string;
+
+  export_fail_stage?: string;
+
   export_file_type?: string;
 
   export_start_time?: string;
@@ -1733,6 +1737,9 @@ export interface IListDataExportTaskSQL {
   audit_sql_result?: IAuditSQLResult[];
 
   export_result?: string;
+
+  // 导出执行状态：success / failed / not_executed；未开始可为空（成败勿用 export_result==="ok"）
+  export_status?: string;
 
   export_sql_type?: string;
 
@@ -3579,6 +3586,9 @@ export interface IWebHooksMessage {
 
 export interface IWorkflowRecord {
   current_step_number?: number;
+
+  // 导出失败摘要（人类可读）；失败类状态时有值，成功/非导出失败为空
+  export_fail_summary?: string;
 
   status?: WorkflowRecordStatusEnum;
 

@@ -36,11 +36,22 @@ const useInitDataWithRequest = () => {
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS && res.data.data) {
           updateWorkflowInfo(res.data.data);
-          batchGetDataExportTask(
+          const taskIDs =
             res.data.data?.workflow_record?.tasks
-              ?.map((v) => v.task_uid ?? '')
-              ?.join(',') ?? ''
-          );
+              ?.map((v) => v.task_uid?.trim() ?? '')
+              .filter((uid) => !!uid)
+              .join(',') ?? '';
+          // 无有效 task_uid（调度失败无任务）时不发批量查询，避免 code 7001 校验弹错
+          if (taskIDs) {
+            batchGetDataExportTask(taskIDs);
+          } else {
+            updateTaskInfos([]);
+            updateTaskStatusNumber({
+              failed: 0,
+              success: 0,
+              exporting: 0
+            });
+          }
 
           // Stop polling when no longer in exporting status
           if (

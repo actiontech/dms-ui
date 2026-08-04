@@ -191,6 +191,10 @@ export const ExportResultCardStyleWrapper = styled('div')`
       }
     }
 
+    .export-result-text-failed {
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+    }
+
     & .ant-collapse.result-record-collapse .ant-collapse-header {
       padding: 8px 0;
 
