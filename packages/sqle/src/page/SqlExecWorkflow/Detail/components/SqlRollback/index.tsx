@@ -24,7 +24,7 @@ import TableTransfer from './TableTransfer';
 import { ExpandedBackupSqlType, TableTransferProps } from './index.type';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { SqlExecStatusOptions } from './index.data';
+import { getSqlExecStatusOptions } from './index.data';
 import useInstance from '../../../../../hooks/useInstance';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { groupBy } from 'lodash';
@@ -180,11 +180,11 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
       [
         'exec_status',
         {
-          options: SqlExecStatusOptions
+          options: getSqlExecStatusOptions()
         }
       ]
     ]);
-  }, [taskInstanceIdOptions]);
+  }, [taskInstanceIdOptions, t]);
   const onUpdateSqlRemake = (id: string, remark?: string) => {
     const clonedSelectedList = cloneDeep(selectedList);
     const editItemIndex = clonedSelectedList.findIndex((i) => i.id === id) ?? 0;

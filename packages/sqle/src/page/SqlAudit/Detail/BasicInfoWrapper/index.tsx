@@ -19,7 +19,7 @@ const BasicInfoWrapper = ({ id, tags, status }: IBasicInfoWrapper) => {
       </h3>
       <div className="tags-cont">
         <div className="custom-tag-item">
-          {t('sqlAudit.list.columns.auditStatus')}：
+          {t('sqlAudit.list.columns.auditStatus')}:{' '}
           {status ? (
             <SqlAuditStatusTag
               status={status as getSQLAuditRecordsV1FilterSqlAuditStatusEnum}
@@ -29,7 +29,7 @@ const BasicInfoWrapper = ({ id, tags, status }: IBasicInfoWrapper) => {
           )}
         </div>
         <div className="custom-tag-item">
-          {t('sqlAudit.list.columns.businessTag')}：
+          {t('sqlAudit.list.columns.businessTag')}:{' '}
           {Array.isArray(tags) && tags.length
             ? tags.map((tag: string) => {
                 return (

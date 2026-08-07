@@ -29,14 +29,13 @@ export default {
   pushRuleConfiguration: 'Notification',
   pipelineConfiguration: 'CI/CD pipeline',
   versionManagement: 'Version management',
-
+  dataSourceComparison: 'Schema Comparison',
   projectSelector: {
     recentlyOpenedProjects: 'Recently opened projects',
     showMoreProjects: 'Show more projects',
     belongProjects: 'Your projects',
     emptyDesc: 'No projects yet'
   },
-
   groupLabel: {
     SQLExecute: 'SQL execute',
     CICDIntegration: 'CI/CD pipeline',
@@ -45,7 +44,6 @@ export default {
     projectConfigure: 'Project configure',
     operateAndAudit: 'Operation history'
   },
-
   userNavigate: {
     account: 'Profile',
     viewVersion: 'Version',
@@ -58,7 +56,6 @@ export default {
       enUS: 'English'
     }
   },
-
   globalSettings: {
     title: 'Global settings',
     userCenter: 'User center',
@@ -66,9 +63,36 @@ export default {
     viewRule: 'View rule',
     ruleManage: 'Rule management',
     system: 'System settings',
+    globalOperationRecord: 'Global Operation Records',
     changeTheme: 'Theme switch',
-    instanceManager: 'DB instances'
+    instanceManager: 'DB instances',
+    knowledge: 'Knowledge Base'
   },
   copyRight:
-    '© {{year}} Shanghai Action Information Technology Co., Ltd. All rights reserved.'
+    '© {{year}} Shanghai Action Information Technology Co., Ltd. All rights reserved.',
+  quickActions: {
+    globalDashboard: 'Global Dashboard'
+  },
+  availabilityZone: {
+    switchAvailabilityZone:
+      'Switching availability zone will reload data. Continue?',
+    pleaseSelect: 'Please select'
+  },
+  sqlPerformanceInsights: 'Performance Insights',
+  userGuide: {
+    title: 'Select the default landing page',
+    description:
+      'You can change this setting anytime in "User Center" - "Login Settings".',
+    sqlWorkbench: {
+      label: 'SQL Workbench',
+      description:
+        'For data analysts and developers to query and operate on data.'
+    },
+    adminPanel: {
+      label: 'Admin Console',
+      description:
+        'For system administrators to manage user authorization and system configuration.'
+    },
+    confirmButton: 'Confirm and Enter'
+  }
 };

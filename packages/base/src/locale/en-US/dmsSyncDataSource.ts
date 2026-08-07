@@ -1,4 +1,4 @@
-/* eslint-disable import/no-anonymous-default-export */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: 'External DB instance sync',
   pageDesc:
@@ -25,7 +25,6 @@ export default {
         'Are you sure you want to delete the current sync task?'
     }
   },
-
   addSyncTask: {
     title: 'Add sync task',
     successTips: 'Add sync task success',

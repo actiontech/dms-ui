@@ -1,10 +1,13 @@
 import { BasicEmpty, BasicTable, EmptyBox } from '@actiontech/dms-kit';
 import { SQLRenderer } from '@actiontech/shared';
+import { useTranslation } from 'react-i18next';
 import { ProcessListComStyleWrapper } from './style';
+
 const ProcessListCom = () => {
+  const { t } = useTranslation();
   return (
     <ProcessListComStyleWrapper>
-      <h3 className="header-title">列信息</h3>
+      <h3 className="header-title">{t('sqlAnalyze.columnInfo')}</h3>
       <section className="basic-cont-wrapper">
         <EmptyBox if={true} defaultNode={<BasicEmpty />}>
           <BasicTable
@@ -18,7 +21,7 @@ const ProcessListCom = () => {
           />
         </EmptyBox>
       </section>
-      <h3 className="header-title">索引信息</h3>
+      <h3 className="header-title">{t('sqlAnalyze.indexInfo')}</h3>
       <section className="basic-cont-wrapper">
         <EmptyBox if={true} defaultNode={<BasicEmpty />}>
           <BasicTable
@@ -32,7 +35,7 @@ const ProcessListCom = () => {
           />
         </EmptyBox>
       </section>
-      <h3 className="header-title">SQL语句</h3>
+      <h3 className="header-title">{t('sqlAnalyze.sqlStatement')}</h3>
       <section className="basic-cont-wrapper sql-cont">
         <EmptyBox if={true} defaultNode={<BasicEmpty />}>
           <div className="pre-warp-break-all">
@@ -48,4 +51,5 @@ WHERE ID != connection_id() AND info != '' AND db NOT IN ('information_schema','
     </ProcessListComStyleWrapper>
   );
 };
+
 export default ProcessListCom;

@@ -4,7 +4,7 @@ import { Line, LineConfig, Tooltip } from '@ant-design/plots';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { SqlAnalyzeCostLineChartStyleWrapper } from '../style';
 import dayjs, { Dayjs } from 'dayjs';
-import { DateRangeOptions, DateRangeEnum } from './index.data';
+import { getDateRangeOptions, DateRangeEnum } from './index.data';
 import { ExecPlanCostChartProps } from '../index';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useState, useMemo } from 'react';
@@ -201,7 +201,7 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
         <Space>
           <BasicSegmented
             value={timePeriod}
-            options={DateRangeOptions}
+            options={getDateRangeOptions()}
             onChange={onSegmentedChange}
           />
           <BasicRangePicker

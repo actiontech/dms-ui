@@ -2,7 +2,6 @@
 export default {
   pageTitle: 'Personal center',
   accountTitle: 'Account basic info',
-
   emailErrorMessage: {
     type: 'Please enter a valid email address',
     match: 'The new email address cannot be the same as the old one'
@@ -11,7 +10,6 @@ export default {
     type: 'Please enter a valid phone number',
     match: 'The new phone number cannot be the same as the old one'
   },
-
   modifyPassword: {
     button: 'Modify password',
     title: 'Modify current user password',
@@ -19,7 +17,6 @@ export default {
     newPassword: 'New password',
     newPasswordConfirm: 'Confirm new password'
   },
-
   accessToken: {
     label: 'Access token',
     desc: 'You can use the access token on IDE tools for user authentication',
@@ -34,10 +31,19 @@ export default {
       expirationPlaceholder: 'Expiration time'
     }
   },
-
   updateEmailSuccess: 'Email address updated successfully',
   updateWechatSuccess: 'Wechat id updated successfully',
   updatePhoneSuccess: 'Phone number updated successfully',
   wechat: 'Enterprise wechat userid',
-  phone: 'Phone number'
+  phone: 'Phone number',
+  sms: {
+    title: 'Two-Factor Authentication',
+    verificationCode: 'Verification Code',
+    noPhoneNumbersTips:
+      'Bind a phone number before enabling two-factor authentication',
+    updateSuccessTips: 'Two-factor authentication updated successfully'
+  },
+  loginConfiguration: {
+    title: 'Login Settings'
+  }
 };

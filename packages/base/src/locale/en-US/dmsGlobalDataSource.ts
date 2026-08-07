@@ -3,11 +3,12 @@ export default {
   pageTitle: 'Global DB instances',
   ceTips:
     'When you need to manage DB instances conveniently across projects, you can use the global DB instance overview function to efficiently understand the distribution and configuration of instances on projects.',
-
   list: {
     instanceName: 'DB instance name',
     projectName: 'Project name',
     address: 'Address',
+    lastTestConnectionStatus: 'Last Connection Status',
+    testConnectionStatusFilterLabel: 'Data Source Connection Status',
     describe: 'Description',
     role: 'Role',
     type: 'DB instance type',
@@ -15,7 +16,7 @@ export default {
     workflow: 'Workflow',
     maintenanceTime: 'Maintenance time',
     source: 'Source',
-    business: 'Business',
+    environmentAttribute: 'Environment Attribute',
     dataMask: 'Data mask',
     unfinishedWorkflowNum: 'Unfinished workflow count',
     workbenchQueryAudit: 'Workbench query log'
@@ -28,8 +29,15 @@ export default {
     deletingDatabase: 'Deleting DB instance "{{name}}"...',
     deleteSuccessTips: 'Deleted DB instance "{{name}}" successfully'
   },
-
+  batchTestConnection: {
+    notFoundData: 'No data in the current list!',
+    connectFailed: 'Connection failed',
+    connectSucceed: 'Connection succeeded',
+    batchTestConnectionSuccessTips:
+      'Batch data source connectivity test succeeded!'
+  },
   addDatabase: 'Add DB instance',
+  batchTestDataSourceConnection: 'Batch Test Data Source Connectivity',
   backToList: 'Back to global DB instance list',
   batchImportDataSource: {
     buttonText: 'Batch import DB instances',

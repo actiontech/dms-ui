@@ -8,7 +8,7 @@ import ResultIconRender from '../../../../../components/AuditResultMessage/Resul
 import { BasicToolTip, BasicTag } from '@actiontech/dms-kit';
 import { AuditResultBackupPolicyColumnStyleWrapper } from './style';
 import { EditFilled } from '@actiontech/icons';
-import { BackupStrategyDictionary } from './index.data';
+import { getBackupStrategyDictionary } from './index.data';
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void,
@@ -73,7 +73,7 @@ export const AuditResultForCreateWorkflowColumn = (
         }
         return (
           <AuditResultBackupPolicyColumnStyleWrapper>
-            <BasicTag>{BackupStrategyDictionary[backupStrategy]}</BasicTag>
+            <BasicTag>{getBackupStrategyDictionary()[backupStrategy]}</BasicTag>
             <EditFilled
               className="backup-policy-editor"
               color="currentColor"

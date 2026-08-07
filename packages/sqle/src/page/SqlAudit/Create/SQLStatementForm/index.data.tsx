@@ -4,7 +4,7 @@ import { UploadTypeEnum } from '../SQLInfoForm/index.type';
 import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
 import { ModeSwitcherOptionsType } from '@actiontech/dms-kit/es/components/ModeSwitcher/ModeSwitcher.types';
 
-export const uploadTypeOptions: ModeSwitcherOptionsType = [
+export const getUploadTypeOptions = (): ModeSwitcherOptionsType => [
   {
     icon: <PanelCardOutlined width={18} height={18} />,
     label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sql'),

@@ -1,9 +1,9 @@
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { t } from '../../../../../locale/index';
 
-export const BackupStrategyDictionary: {
+export const getBackupStrategyDictionary = (): {
   [key in UpdateSqlBackupStrategyReqStrategyEnum]: string;
-} = {
+} => ({
   [UpdateSqlBackupStrategyReqStrategyEnum.reverse_sql]: t(
     'execWorkflow.create.backupStrategy.reverseSql'
   ),
@@ -16,34 +16,29 @@ export const BackupStrategyDictionary: {
   [UpdateSqlBackupStrategyReqStrategyEnum.none]: t(
     'execWorkflow.create.backupStrategy.none'
   )
-};
+});
 
-export const BackupStrategyOptions: Array<{
+export const getBackupStrategyOptions = (): Array<{
   label: string;
   value: UpdateSqlBackupStrategyReqStrategyEnum;
-}> = [
-  {
-    label:
-      BackupStrategyDictionary[
-        UpdateSqlBackupStrategyReqStrategyEnum.reverse_sql
-      ],
-    value: UpdateSqlBackupStrategyReqStrategyEnum.reverse_sql
-  },
-  {
-    label:
-      BackupStrategyDictionary[
-        UpdateSqlBackupStrategyReqStrategyEnum.original_row
-      ],
-    value: UpdateSqlBackupStrategyReqStrategyEnum.original_row
-  },
-  {
-    label:
-      BackupStrategyDictionary[UpdateSqlBackupStrategyReqStrategyEnum.manual],
-    value: UpdateSqlBackupStrategyReqStrategyEnum.manual
-  },
-  {
-    label:
-      BackupStrategyDictionary[UpdateSqlBackupStrategyReqStrategyEnum.none],
-    value: UpdateSqlBackupStrategyReqStrategyEnum.none
-  }
-];
+}> => {
+  const dict = getBackupStrategyDictionary();
+  return [
+    {
+      label: dict[UpdateSqlBackupStrategyReqStrategyEnum.reverse_sql],
+      value: UpdateSqlBackupStrategyReqStrategyEnum.reverse_sql
+    },
+    {
+      label: dict[UpdateSqlBackupStrategyReqStrategyEnum.original_row],
+      value: UpdateSqlBackupStrategyReqStrategyEnum.original_row
+    },
+    {
+      label: dict[UpdateSqlBackupStrategyReqStrategyEnum.manual],
+      value: UpdateSqlBackupStrategyReqStrategyEnum.manual
+    },
+    {
+      label: dict[UpdateSqlBackupStrategyReqStrategyEnum.none],
+      value: UpdateSqlBackupStrategyReqStrategyEnum.none
+    }
+  ];
+};

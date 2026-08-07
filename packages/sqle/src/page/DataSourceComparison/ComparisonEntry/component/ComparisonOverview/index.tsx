@@ -3,7 +3,7 @@ import { ObjectDiffResultComparisonResultEnum } from '@actiontech/shared/lib/api
 import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useMemo } from 'react';
 import { OverviewContainer, OverviewCardStyleWrapper } from './style';
-import { comparisonOverviewDict } from './index.data';
+import { getComparisonOverviewDict } from './index.data';
 import classNames from 'classnames';
 
 type Props = {
@@ -17,6 +17,7 @@ const ComparisonOverview: React.FC<Props> = ({
   onCardClick,
   selectedType
 }) => {
+  const comparisonOverviewDict = getComparisonOverviewDict();
   const comparisonResultCount = useMemo<
     Record<ObjectDiffResultComparisonResultEnum, number>
   >(() => {

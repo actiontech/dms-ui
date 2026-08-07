@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { UpdateTaskBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BackupStrategyOptions } from '../../../../Common/AuditResultList/Table/index.data';
+import { getBackupStrategyOptions } from '../../../../Common/AuditResultList/Table/index.data';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -50,12 +50,12 @@ const BatchSwitchBackupStrategyModal: React.FC<
     onCancel();
   };
   const options = useMemo(() => {
-    return BackupStrategyOptions.filter((i) =>
+    return getBackupStrategyOptions().filter((i) =>
       currentTaskSupportedBackupPolicies?.includes(
         i.value as unknown as InstanceTipResV2SupportedBackupStrategyEnum
       )
     );
-  }, [currentTaskSupportedBackupPolicies]);
+  }, [currentTaskSupportedBackupPolicies, t]);
   return (
     <BasicModal
       open={open}

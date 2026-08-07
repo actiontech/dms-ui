@@ -15,9 +15,9 @@ export const ONLINE_FAIL_STAGE = {
 export type OnlineFailStage =
   (typeof ONLINE_FAIL_STAGE)[keyof typeof ONLINE_FAIL_STAGE];
 
-/** 空原因门禁常量（与 product / backend §5.5 / frontend §6.4 一致；AC-008） */
-export const ONLINE_FAIL_REASON_FALLBACK =
-  '上线失败，暂未获取到具体原因，请联系管理员查看服务日志';
+/** 空原因门禁 i18n key（与 product / backend §5.5 / frontend §6.4 一致；AC-008） */
+export const ONLINE_FAIL_REASON_FALLBACK_KEY =
+  'execWorkflow.detail.failDisplay.reasonFallback';
 
 export const failStageI18nKey: Record<string, string> = {
   [ONLINE_FAIL_STAGE.sql_backup]:
@@ -63,20 +63,31 @@ export const failProductStatusI18nKey: Record<string, string> = {
     'execWorkflow.detail.failDisplay.status.executeFailed'
 };
 
-/** 未执行原因前缀（展示用；不得改写后端业务失败原文） */
-export const NOT_EXECUTED_REASON_PREFIX = '未执行：';
+export const NOT_EXECUTED_REASON_PREFIX_KEY =
+  'execWorkflow.detail.failDisplay.notExecutedPrefix';
 
-export const DEFAULT_NOT_EXECUTED_REASON = '前序 SQL 上线失败，本条 SQL 未执行';
+export const DEFAULT_NOT_EXECUTED_REASON_KEY =
+  'execWorkflow.detail.failDisplay.defaultNotExecutedReason';
 
-export const formatNotExecutedReason = (reasonRaw: string): string => {
-  const base = reasonRaw.trim() || DEFAULT_NOT_EXECUTED_REASON;
+/** 后端可能仍返回中文前缀；展示层需同时识别 */
+const BACKEND_NOT_EXECUTED_PREFIXES = ['未执行：', '未执行', 'Not executed:'];
+
+type TranslateFn = (key: string) => string;
+
+export const formatNotExecutedReason = (
+  reasonRaw: string,
+  translate: TranslateFn
+): string => {
+  const prefix = translate(NOT_EXECUTED_REASON_PREFIX_KEY);
+  const defaultReason = translate(DEFAULT_NOT_EXECUTED_REASON_KEY);
+  const base = reasonRaw.trim() || defaultReason;
   if (
-    base.startsWith(NOT_EXECUTED_REASON_PREFIX) ||
-    base.startsWith('未执行')
+    base.startsWith(prefix) ||
+    BACKEND_NOT_EXECUTED_PREFIXES.some((p) => base.startsWith(p))
   ) {
     return base;
   }
-  return `${NOT_EXECUTED_REASON_PREFIX}${base}`;
+  return `${prefix}${base}`;
 };
 
 export const firstNonBlank = (
@@ -230,7 +241,8 @@ export type BuildExecResultDisplayInput = {
 };
 
 export const buildExecResultDisplay = (
-  input: BuildExecResultDisplayInput
+  input: BuildExecResultDisplayInput,
+  translate: TranslateFn
 ): ExecResultDisplayModel => {
   const isFailed = input.execStatus === 'failed';
   const isNotExecuted = input.execStatus === 'not_executed';
@@ -242,7 +254,7 @@ export const buildExecResultDisplay = (
     ? firstNonBlank(
         input.failReason,
         input.execResult,
-        ONLINE_FAIL_REASON_FALLBACK
+        translate(ONLINE_FAIL_REASON_FALLBACK_KEY)
       )
     : reasonRaw;
 
@@ -264,7 +276,7 @@ export const buildExecResultDisplay = (
       statusI18nKey: 'execWorkflow.detail.failDisplay.status.notExecuted',
       stageI18nKey:
         failStageI18nKey[stage] ?? failStageI18nKey[ONLINE_FAIL_STAGE.unknown],
-      reasonText: formatNotExecutedReason(reasonRaw)
+      reasonText: formatNotExecutedReason(reasonRaw, translate)
     };
   }
 

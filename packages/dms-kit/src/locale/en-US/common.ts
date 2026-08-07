@@ -2,21 +2,17 @@
 export default {
   username: 'Username',
   password: 'Password',
-
   unknownError: 'Unknown error...',
   unknownStatus: 'Unknown status...',
   unknown: 'Unknown',
   status: 'Status',
   color: 'Color',
-
   all: 'All',
   enabled: 'Enabled',
   notEnabled: 'Not enabled',
   disabled: 'Disabled',
-
   opened: 'Opened',
   notOpen: 'Not opened',
-
   copied: 'Copied successfully',
   true: 'Yes',
   false: 'No',
@@ -51,41 +47,34 @@ export default {
   userNumber: 'User number',
   generate: 'Generate',
   generatePasswordSuccess:
-    'Generated a 16-digit password and copied it to the clipboard',
+    'Generated a {{minLength}}-digit password and copied it to the clipboard',
   test: 'Test',
   download: 'Download',
   uploadAndUpdate: 'Upload and update',
-
   prevStep: 'Previous step',
   nextStep: 'Next step',
-
   expansion: 'Expand',
   collapse: 'Collapse',
-
   showAll: 'Show all',
   showDetail: 'View details',
   showMore: 'Show more',
-
   in: 'In',
   on: 'On',
   and: 'And',
   at: 'In',
   preview: 'Preview',
-
   success: 'Success',
   fail: 'Fail',
-
+  phone: 'Phone number',
   theme: {
     light: 'Light mode',
     dark: 'Dark mode'
   },
-
   logout: 'Log out',
   account: 'Personal center',
-
+  copy: 'Copy',
   copySuccess: 'Copied successfully',
   clickHere: 'Click here',
-
   request: {
     noticeFailTitle: 'Request error'
   },
@@ -95,7 +84,6 @@ export default {
     no_rule_data: 'No more rules',
     selectFile: 'Please select a file'
   },
-
   time: {
     hour: 'Hour',
     year: 'Year',
@@ -111,7 +99,6 @@ export default {
     oneWeek: 'One week',
     per: 'Per'
   },
-
   week: {
     monday: 'Monday',
     tuesday: 'Tuesday',
@@ -121,7 +108,6 @@ export default {
     saturday: 'Saturday',
     sunday: 'Sunday'
   },
-
   form: {
     placeholder: {
       input: 'Please enter {{name}}',
@@ -205,9 +191,7 @@ export default {
     testSuccess: 'Data source connectivity test successful',
     testFailed: 'Failed to connect to the data source'
   },
-
   sqlStatements: 'SQL statements',
-
   enterpriseFeatureDisplay: {
     featureDescription: 'Feature description',
     additionalAttention: 'More attention',
@@ -218,7 +202,6 @@ export default {
     userBook: 'User manual',
     linkUs: 'Actionstech official website'
   },
-
   actiontechTable: {
     searchInput: {
       placeholder: 'Enter keywords to search'
@@ -273,11 +256,16 @@ export default {
     sendCode: 'Send code',
     secondsLater: 'Retry in {{number}} seconds'
   },
-
   editableSelect: {
     tagName: 'Tag name',
     tagColor: 'Tag color',
     presetColors: 'Preset colors',
     select: 'Select'
-  }
+  },
+  deleteConfirmTitle: 'Are you sure you want to delete?',
+  somethingWentWrong: 'Something went wrong',
+  backToHome: 'Back to home',
+  pageUpdating: 'System updated',
+  pageUpdatingDesc:
+    'A new version of the system has been detected. Please click the button below to refresh the page and load the latest content.'
 };

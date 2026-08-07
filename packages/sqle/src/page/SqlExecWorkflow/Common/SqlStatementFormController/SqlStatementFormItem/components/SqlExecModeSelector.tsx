@@ -6,14 +6,14 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BasicSelect, EmptyBox, ModeSwitcher } from '@actiontech/dms-kit';
 import { basicTooltipCommonProps } from '@actiontech/dms-kit';
-import { sqlExecModeOptions } from '../index.data';
+import { getSqlExecModeOptions } from '../index.data';
 import { useTranslation } from 'react-i18next';
 import { Form, Tooltip } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/dms-kit';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { RingPieFilled } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
@@ -24,6 +24,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
+  const sqlExecModeOptions = useMemo(() => getSqlExecModeOptions(), [t]);
   const currentExecuteMode = Form.useWatch(
     [fieldPrefixPath, 'exec_mode'],
     form

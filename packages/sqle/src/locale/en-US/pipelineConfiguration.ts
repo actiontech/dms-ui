@@ -2,31 +2,34 @@
 export default {
   pageTitle: 'CI/CD pipeline configuration',
   createPipeline: 'Create pipeline',
-
   defaultPrompt: {
     promptTitle: 'No pipeline configured',
     promptDesc:
-      'By configuring the pipeline, you can integrate the platform’s review and execution capabilities into the CI/CD process, achieving automated SQL quality supervision.',
+      'By configuring the pipeline, you can integrate the platform’s audit and go-live capabilities into the CI/CD process, achieving automated SQL quality supervision.',
     promptStep:
       'Create Pipeline\nGet Pipeline Integration Instructions\nConfigure and Execute in CI/CD\nReceive Execution Results and Review'
   },
-
   table: {
     name: 'Pipeline name',
     desc: 'Pipeline description',
     address: 'Associated pipeline URL',
     nodeCount: 'Number of nodes',
+    dataSources: 'Data sources',
+    viewAll: 'View all',
     confirmDelete: 'Confirm delete this pipeline?',
     deleting: 'Deleting pipeline...',
-    deleteSuccess: 'Pipeline deleted successfully'
+    deleteSuccess: 'Pipeline deleted successfully',
+    resetToken: 'Reset token',
+    resetTokenSuccessTips: 'Token reset successfully!',
+    resetTokenConfirmTitle:
+      'A new token will be generated after reset, valid for 365 days. The old token will be invalidated immediately. Continue?'
   },
-
   create: {
     backToPipelineList: 'Back to pipeline list',
     title: 'Create pipeline',
     successTips: 'Pipeline created successfully',
     successSubTips:
-      'Now you can configure the CI/CD pipeline according to the integration instructions to obtain review/deployment results.',
+      'Now you can configure the CI/CD pipeline according to the integration instructions to obtain audit/deployment results.',
     successButtonText: 'Get pipeline integration instructions'
   },
   update: {
@@ -85,7 +88,6 @@ export default {
       }
     }
   },
-
   modal: {
     title: 'Pipeline details',
     pipelineNode: 'Pipeline node',

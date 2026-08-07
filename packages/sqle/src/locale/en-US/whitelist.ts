@@ -3,7 +3,6 @@ export default {
   pageTitle: 'Audit whitelist',
   pageDesc:
     'You can add some SQL statements here, which will not trigger any audit rules during auditing.',
-
   ceTips:
     "If a user enables a rule but wants to temporarily bypass the triggering of certain rules in actual use, they can enable the platform'S audit whitelist feature.\nCurrently, it supports string matching or SQL fingerprint matching. Statements added to the SQL audit whitelist will not be subject to audit rules when creating a workflow request.",
   allWhitelist: 'All audit whitelist statements',
@@ -14,20 +13,16 @@ export default {
     matchCount: 'Matched count',
     lastMatchedTime: 'The last matching time'
   },
-
   matchType: {
     exact: 'String matching',
     fingerPrint: 'SQL fingerprint matching'
   },
-
   operate: {
     addWhitelist: 'Add audit whitelist',
-
     deleting: 'Deleting audit whitelist item...',
     deleteSuccess: 'Successfully deleted audit whitelist item',
     confirmDelete: 'Confirm deleting this audit whitelist item?'
   },
-
   modal: {
     add: {
       title: 'Add audit whitelist',

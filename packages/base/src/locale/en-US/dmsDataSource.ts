@@ -3,13 +3,17 @@ export default {
   pageTitle: 'DB instance',
   pageDesc:
     'You can register DB instances that need sql audit here, and choose whether to enable various functions for the DB instance.',
-
   databaseListTitle: 'DB instances list',
-
   databaseList: {
     instanceName: 'DB instance name',
     address: 'Address',
     describe: 'Describe',
+    lastTestConnectionStatus: 'Last Connection Status',
+    lastTestConnectionTime: 'Last Connectivity Test Time',
+    lastTestConnectionErrorMessage: 'Test Failure Reason',
+    connectSucceed: 'Connectivity test succeeded',
+    connectFailed: 'Connectivity test failed',
+    testConnectionStatusFilterLabel: 'Data Source Connection Status',
     role: 'Role',
     type: 'DB instance type',
     enabledScanTypes: 'Enabled scan types',
@@ -18,25 +22,27 @@ export default {
     maintenanceTime: 'Maintenance time',
     source: 'Source',
     business: 'Business',
-    dataMask: 'Data mask'
+    environmentAttribute: 'Environment Attribute',
+    dataMask: 'Data mask',
+    backup: 'SQL Backup'
   },
-
   backDesc: 'Back to DB instances list',
   addDatabase: 'Add DB instance',
   addDatabaseSuccess: 'Add DB instance successfully',
   addDatabaseSuccessGuide:
     'Go to DB instances list to view the newly added DB instance',
-
+  batchTestDataSourceConnection: 'Batch Test Data Source Connectivity',
   updateDatabase: {
     title: 'Edit DB instance',
     getDatabaseInfoError: 'Failed to get DB instance information',
     updateDatabase: 'Update DB instance',
     updateDatabaseSuccess: 'DB instance "{{name}}" updated successfully'
   },
-
   dataSourceForm: {
     baseConfig: 'Base configuration',
     sqlConfig: 'SQL audit configuration',
+    sqlConfigTips:
+      'Manage audit rules for SQL execution across business scenarios to enable fine-grained control',
     name: 'DB instance name',
     describe: 'DB instance describe',
     type: 'DB instance type',
@@ -50,8 +56,20 @@ export default {
     password: 'Password',
     role: 'Accessible roles',
     project: 'Project',
-    business: 'Business',
+    environmentAttribute: 'Environment Attribute',
+    addEnvironmentAttribute: 'Add Environment Attribute',
+    deleteEnvironmentAttributeConfirm:
+      'Are you sure you want to delete this environment attribute?',
+    updateEnvironmentAttributeSuccess:
+      'Environment attribute updated successfully',
+    deleteEnvironmentAttributeSuccess:
+      'Environment attribute deleted successfully',
+    addEnvironmentAttributeSuccess: 'Environment attribute added successfully',
+    deleteEnvironmentAttributeError:
+      'This environment is bound to: {{name}}. It cannot be deleted at this time.',
     ruleTemplate: 'Audit rule template',
+    ruleTemplateTips:
+      'Audit is mandatory for this feature. Please select a rule template for the release workflow.',
     workflow: 'Applied workflow',
     maxPreQueryRows: 'SQL query return rows',
     queryTimeoutSecond: 'SQL timeout limit(s)',
@@ -62,14 +80,24 @@ export default {
     sqlWorkbenchMaintenanceTimeTips:
       'Non-DQL statements in the SQL workbench can only run during these windows (independent from DB instance maintenance time)',
     needAuditSqlService: 'Enable SQL audit service',
+    needAuditSqlServiceTips:
+      'Disabling this will disable SQL audit for all applicable scenarios',
     closeAuditSqlServiceTips:
       'If you do not enable the SQL audit service, the DB instance cannot be used in SQL audit related services, are you sure to close it?',
     needAuditForSqlQuery: 'Whether SQL query needs audit',
+    needAuditForSqlQueryTips:
+      'Used for real-time queries in SQL Workbench; enable as needed',
+    workbenchAuditRuleTemplate: 'Workbench Query Audit Rule Template',
     allowQueryWhenLessThanAuditLevel: 'Highest audit level for running queries',
+    allowQueryWhenLessThanAuditLevelTips:
+      'Audit results at or below this level will be automatically allowed',
     allowExecuteNonDqlInWorkflow:
       'Allow executing non-DQL SQL via workflow in SQL workbench',
     allowExecuteNonDqlInWorkflowTips:
       'When enabled, allows executing non-DQL SQL statements via workflow in SQL workbench',
+    dataExportAuditRuleTemplate: 'Data Export Audit Rule Template',
+    dataExportAuditRuleTemplateTips:
+      'Audit is mandatory for this feature. Please select a rule template for data export.',
     passwordTips:
       'The current DB instance password you have configured will not be displayed here. if you do not fill in the password when submitting, the DB instance password will not be changed.',
     needUpdatePassword: 'Update password',
@@ -79,25 +107,37 @@ export default {
       'Whether to enable data mask configuration for SQL workbench',
     dataMaskConfigTips:
       'After enabling, the query results of the SQL workbench will be masked',
-    checkDataMaskButton: 'View data mask rule'
+    checkDataMaskButton: 'View data mask rule',
+    sqlBackupConfiguration: 'SQL Backup Configuration',
+    enableDataSourceBackup: 'Enable SQL backup on this data source',
+    enableDataSourceBackupTips:
+      'When enabled, workflows created on this data source will have backup enabled by default',
+    lineNumberLimit: 'Rollback Row Limit',
+    lineNumberLimitTips:
+      'Rollback will not be performed when the estimated affected rows exceed the specified value',
+    dataSourceConnectError: 'Data source connectivity test failed',
+    returnModify: 'Back to Edit',
+    continueSubmit: 'Continue Submit'
   },
-
   testConnectModal: {
     errorTitle: 'DB instance {{instanceName}} connectivity test failed'
   },
-
+  batchTestConnection: {
+    notFoundData: 'No data in the current list!',
+    connectFailed: 'Connection failed',
+    connectSucceed: 'Connection succeeded',
+    batchTestConnectionSuccessTips:
+      'Batch data source connectivity test succeeded!'
+  },
   deleteDatabase: {
     confirmMessage: 'Confirm to delete DB instance "{{name}}"?',
     deletingDatabase: 'Deleting DB instance "{{name}}"...',
     deleteSuccessTips: 'DB instance "{{name}}" deleted successfully'
   },
-
   enabledAuditPlan: {
     text: 'Enable scan task for DB instance'
   },
-
   enableMaskingTask: 'Enable data masking task',
-
   batchImportDataSource: {
     buttonText: 'Batch import DB instances',
     title: 'Batch import DB instances',

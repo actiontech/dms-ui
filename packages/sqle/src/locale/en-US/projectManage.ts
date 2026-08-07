@@ -3,7 +3,6 @@ export default {
   pageTitle: 'Project management',
   pageDescribe:
     'Organize and manage resources and functions of sqle platform from project perspective. support various audit functions with project as entry point. resources are isolated between different projects.',
-
   projectList: {
     title: 'Project list',
     deleteSuccessTips: 'Delete project "{{name}}" successfully',
@@ -27,7 +26,6 @@ export default {
         'Are you sure you want to unarchive project "{{name}}"?'
     },
     allProject: 'View all projects',
-
     searchProject: {
       placeholder: 'Search your project',
       recentlyOpenedProjects: 'Recently opened projects',
@@ -43,25 +41,21 @@ export default {
     modalTitle: 'Edit project',
     updateSuccessTips: 'Update project "{{name}}" successfully'
   },
-
   projectForm: {
     projectName: 'Project name',
     projectDesc: 'Project description'
   },
-
   projectInfoBox: {
     name: 'Project name: {{name}}',
     desc: 'Project description: {{desc}}',
     createTime: 'Create time: {{time}}',
     createUser: 'Creator: {{user}}'
   },
-
   projectDetail: {
     notice: 'Notice',
     unboundProjectTips:
       'The current user is not bound to any project. please contact the project administrator.'
   },
-
   projectOverview: {
     pageTitle: 'Project overview',
     projectScore: {
@@ -90,7 +84,7 @@ export default {
       healthNum: 'Healthy instances {{num}}'
     },
     orderClassification: {
-      title: 'Order',
+      title: 'Workflow',
       button: 'Create workflow',
       total: 'Total workflows',
       closed: 'Closed',
@@ -104,7 +98,7 @@ export default {
     orderRisk: {
       title: 'Potential risk of workflow',
       tableColumn: {
-        name: 'Order',
+        name: 'Workflow',
         status: 'Status',
         time: 'Time',
         createUser: 'Creator'
@@ -134,9 +128,9 @@ export default {
     approvalProcess: {
       title: 'Approval process',
       action: 'Edit current approval process template',
-      createStep: 'Order initiation',
-      review: 'Order approval',
-      exec: 'Order online',
+      createStep: 'Workflow initiation',
+      review: 'Workflow approval',
+      exec: 'Workflow go-live',
       match: 'Match permissions'
     },
     optimizationDistribution: {

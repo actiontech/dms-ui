@@ -8,7 +8,7 @@ import { ModeSwitcherOptionsType } from '@actiontech/dms-kit/es/components/ModeS
 
 export const SAME_SQL_MODE_DEFAULT_FIELD_KEY = '0';
 
-export const defaultUploadTypeOptions: ModeSwitcherOptionsType = [
+export const getDefaultUploadTypeOptions = (): ModeSwitcherOptionsType => [
   {
     icon: <PanelCardOutlined />,
     label: t('execWorkflow.create.form.sqlInfo.manualInput'),
@@ -35,7 +35,7 @@ export const defaultUploadTypeOptions: ModeSwitcherOptionsType = [
   }
 ];
 
-export const sqlExecModeOptions: ModeSwitcherOptionsType = [
+export const getSqlExecModeOptions = (): ModeSwitcherOptionsType => [
   {
     label: t('execWorkflow.create.form.sqlInfo.executeSqlMode'),
     icon: <FileUploadFilled />,

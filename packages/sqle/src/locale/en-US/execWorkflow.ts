@@ -3,7 +3,6 @@ export default {
   list: {
     pageTitle: 'Workflow list',
     pageDesc: 'The workflow list only displays workflows related to you.',
-
     allWorkflowAboutMe: 'All workflows related to me',
     workflowStatus: {
       review: 'Pending audit',
@@ -15,15 +14,12 @@ export default {
       messageWarn:
         'The workflows you selected contain workflows that cannot be closed! (only workflows with status “{{process}}” and “{{reject}}” can be closed.)'
     },
-
     exportWorkflow: {
       buttonText: 'Export workflows',
       exporting: 'Exporting historical workflows',
       exportSuccessTips: 'Historical workflows export successful'
     },
-
     createButtonText: 'Create workflow',
-
     name: 'Workflow name',
     dataSource: 'DB instance',
     schema: 'Database',
@@ -51,11 +47,9 @@ export default {
     mustAuditTips: 'You must audit your SQL before creating a workflow',
     mustHaveAuditResultTips:
       'You cannot create a workflow for SQL with empty audit results',
-
     form: {
       baseInfo: {
         title: 'Basic workflow information',
-
         name: 'Workflow name',
         workflowNameRule:
           'Can only contain letters, numbers, Chinese, hyphens and underscores',
@@ -65,23 +59,18 @@ export default {
         workflowTemplateTips:
           'When multiple templates exist, please select the approval flow for this workflow'
       },
-
       sqlInfo: {
         title: 'Audit SQL statement information',
-
         isSameSqlForAll: 'Select the same SQL',
         tipsDataSourceTypeForSameSql:
           'You can only use the same SQL mode when the data source types are the same',
         sameSql: 'Same SQL',
         differenceSql: 'Different SQL',
-
         instanceName: 'DB instance',
-
         instanceNameTips:
           'The data source workflow template added later is the same as the current data source',
         instanceSchema: 'Database',
         schemaPlaceholder: 'Select database (optional)',
-
         sql: 'SQL statement',
         sqlFile: 'SQL file',
         sqlFileTips: 'Click to select a SQL file or drag the file to this area',
@@ -91,7 +80,6 @@ export default {
         zipFile: 'Zip file',
         zipFileTips:
           'Click to select a zip file or drag the file to this area, currently only supports SQL auditing of .xml and .sql files in the ZIP file',
-
         addInstanceTips: 'Please add DB instance',
         addInstance: 'Add DB instance',
         uploadType: 'Select SQL statement upload method',
@@ -99,13 +87,11 @@ export default {
         uploadFile: 'Upload SQL file',
         updateMybatisFile: 'Upload Mybatis XML file',
         uploadZipFile: 'Upload ZIP file',
-
         audit: 'Audit',
         analyze: 'SQL analysis',
         format: 'SQL format',
         formatTips:
           'Currently, the supported database types for SQL formatting are {{supportType}}. if you have not selected a data source or the selected data source type is not yet supported, SQL formatting may result in SQL statement syntax errors.',
-
         selectExecuteMode: 'Select execution mode',
         selectExecuteModeTips:
           'When choosing file mode execution, audit results will be aggregated by file',
@@ -113,25 +99,55 @@ export default {
           'Currently supports MySQL, Oracle, PG type data sources to be executed in file mode',
         executeSqlMode: 'SQL mode',
         executeFileMode: 'File mode',
-        selectFileSortMethod: 'Select file sorting method'
+        selectFileSortMethod: 'Select file sorting method',
+        switchSqlBackup: 'Enable backup',
+        switchSqlBackupTips:
+          'When enabled, workflows created on the data source will have backup enabled by default',
+        backupMaxRowsLimit: 'Rollback row limit',
+        backupMaxRowsLimitTips:
+          'Rollback will be skipped when the estimated affected rows exceed the specified value',
+        backupMaxRowsLimitTooltips:
+          'Under the same SQL mode, the system automatically uses the minimum value across data source configurations as the unified limit. To set independent limits for different data sources, configure different SQL modes.',
+        cancelSwitchSqlBackupTips:
+          'Backup is already enabled for the applied data sources. Are you sure you want to disable backup?',
+        cancelSwitchSqlBackupTipsWithInstanceName:
+          'Backup is already enabled for {{instanceName}}. Are you sure you want to disable backup?',
+        unsupportedSqlFormatAlert:
+          'The current data source type does not support editing formatted SQL. To edit, please disable formatting first.'
       },
       tour: {
         modifyName: 'Modify workflow name',
         modifyDataSource: 'Modify DB instance'
       }
     },
-
     auditResult: {
       clearDuplicate: 'Data deduplication',
       allLevel: 'All levels',
       submit: 'Submit workflow',
+      submitTooltipTitle:
+        'Some audit rules have not been validated. Please resolve the issues and trigger audit again.',
       updateInfo: 'Update workflow',
+      continueSubmission: 'Create anyway',
       submitWorkflowConfirmationMessage:
         'Project {{currentProject}} can only allow a maximum of {{allowAuditLevel}} level audit errors when creating workflows, but the current audit results contain a maximum of {{currentAuditLevel}} level audit results.',
       mustHaveAuditResultTips:
         'You cannot create a workflow for SQL with empty audit results',
       leaveTip:
-        'Do you want to leave this page? the current workflow has not been submitted!'
+        'Do you want to leave this page? the current workflow has not been submitted!',
+      switchDatabaseBackupPolicy: 'Switch data source backup policy',
+      switchDatabaseBackupPolicyTips:
+        'Uniformly change the backup and rollback policy for SQL on the current data source to',
+      editBackupStrategy: 'Switch SQL backup and rollback policy',
+      editBackupStrategySuccessTips:
+        'SQL backup and rollback policy switched successfully',
+      switchDatabaseBackupPolicySuccessTips:
+        'Data source backup policy switched successfully'
+    },
+    backupStrategy: {
+      reverseSql: 'Rollback based on reverse SQL',
+      originRow: 'Rollback based on row-level backup',
+      manual: 'Manual backup and rollback',
+      none: 'None'
     },
     createResult: {
       success: 'Workflow created successfully',
@@ -140,15 +156,19 @@ export default {
       viewWorkflowDetail: 'View workflow details'
     }
   },
-
   detail: {
     failDisplay: {
       headerPrefix: 'Execution failed: ',
       headerWithCount: 'Execution failed: {{count}} SQL(s) {{phrase}}',
       headerWithSqlNumber: 'Execution failed: SQL #{{number}} execution failed',
-      statusLabel: 'Status',
-      stageLabel: 'Stage',
-      reasonLabel: 'Reason',
+      statusLabel: 'Status: ',
+      stageLabel: 'Stage: ',
+      reasonLabel: 'Reason: ',
+      reasonFallback:
+        'Execution failed. No specific reason was returned; contact the administrator to check service logs',
+      notExecutedPrefix: 'Not executed: ',
+      defaultNotExecutedReason:
+        'Previous SQL execution failed; this SQL was not executed',
       stage: {
         sqlBackup: 'SQL backup',
         sqlExecute: 'SQL execution',
@@ -221,7 +241,8 @@ export default {
       unknown: 'Unknown step',
       refreshWorkflow: 'Refresh workflow',
       backToDetail: 'Back to workflow details',
-
+      retry: 'Retry',
+      rollback: 'Rollback',
       maintenanceTime:
         'The scheduled execution time must be within the maintenance time, the current data source maintenance time is: \n',
       sqlExecuteDisableTips:
@@ -237,7 +258,6 @@ export default {
         'Currently only supports enterprise WeChat and Feishu, if you have not configured the corresponding process docking capability, please first go to <0>system settings-process docking</0> to enable it',
       confirmMethodWechat: 'Enterprise WeChat',
       confirmMethodFeishu: 'Feishu',
-
       approveSuccessTips: 'Approval passed',
       rejectSuccessTips: 'Rejected successfully',
       completeSuccessTips:
@@ -252,6 +272,7 @@ export default {
         'The scheduled execution time must be after the current time',
       execScheduleTips: 'Scheduled execution setting successful',
       status: 'Execution status',
+      batchExecutingTips: 'Batch immediate execution submitted',
       executingTips: 'Immediate execution setting successful',
       createWorkflowStep: 'Create workflow',
       updateWorkflowStep: 'Update workflow',
@@ -261,12 +282,12 @@ export default {
         'The step number of the current node is undefined!',
       closeWorkflow: 'Close workflow',
       closeConfirm:
-        'Once the work order is closed, no further actions can be taken on it. Are you sure you want to close the current work order?',
+        'Once the workflow is closed, no further actions can be taken on it. Are you sure you want to close the current workflow?',
       closeWorkflowSuccessTips: 'Workflow closed successfully',
       cloneExecWorkflow: 'Execute to another instance',
-      associatedWorkflowInfo: 'Associated workflows'
+      associatedWorkflowInfo: 'Associated workflows',
+      associatedRollbackWorkflowInfo: 'Associated rollback workflow information'
     },
-
     paginationDisplay: 'Pagination display',
     waterfallDisplay: 'Waterfall display',
     overview: {
@@ -287,12 +308,35 @@ export default {
         cancelExecScheduled: 'Cancel scheduled execution',
         cancelExecScheduledTips: 'Cancel scheduled execution successful',
         sqlExecuteConfirmTips:
-          'This operation will immediately execute the SQL statements on the data source, do you confirm to execute immediately?'
+          'This operation will immediately execute the SQL statements on the data source, do you confirm to execute immediately?',
+        retryExecute: 'Re-execute',
+        retryExecuteSuccess: 'Re-execution submitted',
+        pleaseSelectSql: 'Please select SQL to re-execute',
+        selectRetryExecuteSqlDesc:
+          'Successfully executed SQL cannot be re-executed',
+        selectRetryExecuteSql: 'Select SQL to re-execute'
       }
     },
-    taskResult: {}
+    taskResult: {},
+    rollback: {
+      allSql: 'All SQL',
+      selectedRollbackSql: 'Selected rollback SQL',
+      backupStrategy: 'Backup policy',
+      instance: 'Data source',
+      execStatus: 'Execution status',
+      remark: 'Remark',
+      addRemark: 'Add remark',
+      originSql: 'Original SQL',
+      rollbackOrder: 'Rollback order',
+      sourceOrder: 'Original order',
+      backupStatus: 'Backup status',
+      backupSucceeded: 'Backup succeeded',
+      backupFailed: 'Backup failed',
+      backupWaitingForExecution: 'Pending backup',
+      backupExecuting: 'Backing up'
+    },
+    associatedRollbackWorkflow: 'Associated rollback workflow'
   },
-
   audit: {
     result: 'Audit result',
     passRage: 'Audit pass rate',
@@ -300,6 +344,7 @@ export default {
     duplicate: 'Deduplication',
     downloadSql: 'Download SQL statement',
     downloadReport: 'Download audit report',
+    downloadRollbackSql: 'Download rollback SQL',
     table: {
       number: 'Serial number',
       auditLevel: 'Rule level',
@@ -313,19 +358,22 @@ export default {
       describe: 'Description',
       analyze: 'Analysis',
       addDescribe: 'Add description',
-      createWhitelist: 'Add to SQL management whitelist'
+      createWhitelist: 'Add to SQL management whitelist',
+      backupPolicy: 'Backup and rollback policy',
+      backupPolicyTips:
+        'The platform recommends a backup and rollback policy for each SQL statement after evaluating data loss risk and backup cost',
+      backupConflictTips: 'Backup is not enabled for this SQL as expected',
+      backupExecuteBeforeTips:
+        'Rollback SQL will be generated automatically during execution'
     },
-
     filterForm: {
       highestAuditLevel: 'Highest audit warning level'
     },
-
     sqlFileSource: {
       tips: 'Currently only supports viewing the SQL source in SQL/ZIP files',
       source: 'Source file',
       fileLine: 'Line number'
     },
-
     auditStatus: {
       initialized: 'Ready for audit',
       doing: 'Auditing',
@@ -333,12 +381,10 @@ export default {
     },
     copyExecSql: 'Copy execution statement',
     auditSuccess: 'Audit passed',
-
     fileModeExecute: {
       headerTitle: 'File information overview',
       sqlsTips: 'Only the first 5 data items are displayed, <0>view more<0>',
       extraButtonText: 'Edit execution workflow',
-
       sortableSQLFilesModal: {
         title: 'Edit execution workflow',
         tips: 'Please drag the rows in the table to reorder the execution workflow of the SQL files.',
@@ -352,18 +398,15 @@ export default {
         successTips: 'Sorting successful!'
       }
     },
-
     fileModeSqls: {
       backToDetail: 'Back to workflow details',
       title: 'File information details',
-
       statistics: {
         audit: 'Audit result information',
         execute: 'Execution result information'
       }
     }
   },
-
   common: {
     workflowStatus: {
       process: 'Processing',
@@ -389,7 +432,8 @@ export default {
       terminate_fail: 'Termination failed',
       terminate_succ: 'Termination successful',
       terminating: 'Terminating',
-      allStatus: 'All statuses'
+      allStatus: 'All statuses',
+      rollback: 'Rolling back'
     }
   }
 };

@@ -2,30 +2,31 @@
 export default {
   pageTitle: 'Approval workflow template',
   pageDesc: 'You can manage default approval workflow templates here.',
-
   list: {
     title: {
       listTable: 'Approval workflow template list'
     },
-
     table: {
       workflowTemplateName: 'Approval workflow template name',
       desc: 'Approval workflow template description',
       applicableType: 'Applicable Type',
       approvalNodeDesc: 'Approval Node Description',
-      updateTime: 'Update Time'
+      isDefault: 'Default',
+      updateTime: 'Update Time',
+      defaultTag: 'Default'
     },
-
     type: {
-      workflow: 'SQL Exec Workflow',
-      dataExport: 'Data Export'
+      workflow: 'SQL workflow approval',
+      dataExport: 'Data export approval'
     },
-
     operator: {
-      create: 'Create approval workflow template'
+      create: 'Create approval workflow template',
+      setDefault: 'Set as default',
+      setDefaultConfirm:
+        'Confirm set approval workflow template {{name}} as default?',
+      setDefaultSuccess: 'Set as default successfully'
     }
   },
-
   create: {
     title: {
       returnButton: 'Return approval workflow template',
@@ -38,7 +39,6 @@ export default {
         'Return to the list to view the newly created approval workflow template'
     }
   },
-
   update: {
     title: {
       wrapper: 'Update approval workflow template',
@@ -50,13 +50,11 @@ export default {
       showNow: 'View the newly updated approval workflow template'
     }
   },
-
   delete: {
     confirm: 'Confirm remove approval workflow template {{name}}?',
     deleting: 'Removing approval workflow template {{name}}...',
     successTips: 'Remove approval workflow template {{name}} successfully'
   },
-
   detail: {
     title: {
       wrapper: 'Approval workflow template details',
@@ -68,46 +66,40 @@ export default {
     updateTemplate: 'Modify current approval workflow template',
     authLevelInfo: {
       first:
-        'If the project administrator modifies the approval workflow template, it will not affect the tickets that are already in the approval process;',
+        'If the project administrator modifies the approval workflow template, it will not affect the workflows that are already in the approval process;',
       second:
-        'Rejected tickets need the creator to update the SQL statement and submit it again. The rejection record can be viewed in “ticket progress-ticket history operation”;',
+        'Rejected workflows need the creator to update the SQL statement and submit it again. The rejection record can be viewed in “workflow progress-workflow history operation”;',
       third:
-        'Tickets in the “audit node” can be closed by the creator at any time on the ticket details page;',
+        'Workflows in the “audit node” can be closed by the creator at any time on the workflow details page;',
       fourth:
-        'Audit tickets: the auditor can execute “pass audit” or “reject” operations in this step;',
+        'Audit workflows: the auditor can execute “pass audit” or “reject” operations in this step;',
       fifth:
-        'Online tickets: the executor can execute “execute online” or “reject” operations in this step.',
+        'Online workflows: the executor can execute “execute online” or “reject” operations in this step.',
       fifthExport:
-        'Export tickets: the executor can execute “execute export” or “reject” operations in this step.'
+        'Export workflows: the executor can execute “execute export” or “reject” operations in this step.'
     }
   },
-
   step: {
     baseFormTitle: 'Basic information',
     baseFormDesc: 'Set the basic information of the template',
-
     progressTitle: 'Audit node',
     progressDesc:
       'Edit the audit process, drag and drop to reorder the audit nodes. The auditor can execute “pass audit” or “reject” operations in this step',
-
     execTitle: 'Execute online',
     execDesc:
       'Edit the audit process. The executor can execute “execute online” or “reject” operations in this step',
-
     exportExecTitle: 'Execute export',
     exportExecDesc:
       'Edit the audit process. The executor can execute “execute export” or “reject” operations in this step',
-
     resultTitle: 'Result',
     resultDesc: 'Change result'
   },
-
   form: {
     label: {
       name: 'Approval workflow template name',
       desc: 'Approval workflow template description',
       allowSubmitWhenLessAuditLevel:
-        'Allow the highest audit level for creating tickets',
+        'Allow the highest audit level for creating workflows',
       instanceNameList: 'Application data source',
       reviewUser: 'Auditor',
       reviewUserType: 'Auditor type',
@@ -118,17 +110,16 @@ export default {
     rule: {
       descMessage: 'Step description cannot exceed 255 characters',
       userRequired: 'At least one specified person needs to be added',
-      userMessage: 'Only three specified persons can be added at most'
+      userMessage: 'At most {{max}} specified persons can be added'
     }
   },
-
   progressConfig: {
     levelStep: {
       desc: 'Highest level'
     },
     createStep: {
-      title: 'Ticket initiation/ticket update SQL statement',
-      desc: 'The ticket is created, or the ticket is rejected and waiting for the SQL statement to be modified'
+      title: 'Workflow initiation/workflow update SQL statement',
+      desc: 'The workflow is created, or the workflow is rejected and waiting for the SQL statement to be modified'
     },
     review: {
       title: 'Audit node',
@@ -160,8 +151,8 @@ export default {
       }
     },
     exportReview: {
-      title: 'Export Review',
-      subTitle: 'Reviewer checks the legitimacy of the export request'
+      title: 'Export Approval',
+      subTitle: 'Approver checks the legitimacy of the export request'
     },
     exportExecute: {
       title: 'Export Execution Confirm',
@@ -177,7 +168,7 @@ export default {
       title:
         'Please note the following when creating/updating the approval workflow:',
       rule1:
-        'The approval process starts from the initiation of the ticket, and ends with the execution online after passing through the set audit steps;',
+        'The approval process starts from the initiation of the workflow, and ends with the execution online after passing through the set audit steps;',
       rule2:
         'The approval workflow template can set up to 4 audit steps, or no audit steps can be set;',
       rule3:
@@ -185,10 +176,9 @@ export default {
     },
     exportRuler: {
       rule1:
-        'The approval process starts from the initiation of the ticket, and ends with the execution of export after passing through the set audit steps;'
+        'The approval process starts from the initiation of the workflow, and ends with the execution of export after passing through the set audit steps;'
     }
   },
-
   auditLevel: {
     normal: 'Normal',
     error: 'Error',

@@ -100,7 +100,8 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               class="custom-tag-item"
             >
               审核状态
-              ：
+              :
+               
               <span
                 class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-6zycqe"
               >
@@ -111,7 +112,8 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               class="custom-tag-item"
             >
               业务标签
-              ：
+              :
+               
               <span
                 class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-wneatz"
               >

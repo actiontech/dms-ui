@@ -13,13 +13,22 @@ export default {
   disableRules: 'Rules disabled for template {{name}}',
   globalRuleTemplate: 'Global rule template',
   projectRuleTemplate: 'Project rule template',
+  noDbType: 'No database type',
+  ruleCount: '{{count}} rules',
   form: {
     project: 'Project',
     ruleTemplate: 'Rule template',
     dbType: 'Db type',
     ruleTemplateTips:
       'When no project is selected, the current rule template is the global rule template, after selection it is the rule template under the project',
-    fuzzy_text_placeholder: 'Please enter the rule keyword to search'
+    fuzzy_text_placeholder: 'Please enter the rule keyword to search',
+    ruleVersion: 'Rule version'
+  },
+  filter: {
+    pleaseSelect: 'Please select',
+    reset: 'Reset',
+    search: 'Search',
+    filterCondition: 'Filter conditions'
   },
   ruleLevelIcon: {
     normal: 'Normal',
@@ -31,5 +40,49 @@ export default {
   ruleDetail: {
     title: 'View rule',
     knowledge: 'Rule knowledge base'
+  },
+  category: {
+    auditAccuracy: 'Audit accuracy',
+    auditPurpose: 'Audit purpose',
+    operand: 'Operand',
+    sql: 'SQL category',
+    performanceCost: 'Performance cost',
+    performanceLevelTips:
+      'High-cost rules may trigger extensive data scans or complex queries, which can significantly impact database performance. Use with caution in production environments.',
+    tag: {
+      online: 'Online',
+      offline: 'Offline',
+      database: 'Database',
+      tableSpace: 'Tablespace',
+      table: 'Table',
+      column: 'Column',
+      index: 'Index',
+      view: 'View',
+      procedure: 'Stored procedure',
+      function: 'Function',
+      trigger: 'Trigger',
+      event: 'Event',
+      user: 'User',
+      ddl: 'DDL',
+      dcl: 'DCL',
+      dml: 'DML',
+      integrity: 'Integrity constraint',
+      query: 'Query',
+      transaction: 'Transaction control',
+      privilege: 'Data privilege',
+      management: 'Database management',
+      complete: 'Completeness constraint',
+      join: 'Join',
+      table_space: 'Tablespace',
+      sequence: 'Sequence',
+      business: 'Business data',
+      correction: 'Correctness',
+      security: 'Security',
+      maintenance: 'Maintainability',
+      performance: 'Performance issue',
+      high: 'High cost',
+      medium: 'Medium cost',
+      low: 'Low cost'
+    }
   }
 };

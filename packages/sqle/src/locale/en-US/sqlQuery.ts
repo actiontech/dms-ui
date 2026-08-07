@@ -7,9 +7,7 @@ export default {
     'SQL query is not configured in this environment. Please configure it before use.',
   eeErrorTips2:
     'For configuration methods and usage instructions, please refer to the documentation.',
-
   jumpToCloudbeaver: 'Open SQL Console',
-
   databaseTables: {
     title: 'Database Tables',
     tabTitle: '{{tableName}} Structure',
@@ -27,10 +25,26 @@ export default {
   executePlan: {
     title: 'Execution Plan {{index}}',
     sql: 'SQL Statement',
+    planCost: 'SQL execution plan cost trend',
+    twentyFourHours: '24 hours',
+    sevenDays: '7 days',
+    thirtyDays: '30 days',
+    costValue: 'Cost value',
+    emptyText: 'No data. Select another time range to view',
+    compareDifference: 'Compare execution plans',
+    compareTips:
+      'Click a node to view the detailed execution plan. Click a selected node to deselect it',
+    compareCountLimitTips:
+      'Only two nodes can be compared. Please deselect one selected node before choosing another',
+    cost: 'Cost',
     sqlExplain: 'Execution Plan',
     performanceStatistics: 'Performance Statistics',
+    getPerformanceStatistics: 'Fetch',
+    getPerformanceStatisticsTips:
+      'This operation executes real SQL and may affect database performance. Use with caution in production. Confirm fetch?',
     affectRows: 'Affected Rows',
     affectRowTips:
-      'Different from the rows column in the execution plan, it shows the actual number of rows affected by the SQL.'
+      'Different from the rows column in the execution plan, it shows the actual number of rows affected by the SQL.',
+    optimize: 'AI Performance Tuning'
   }
 };
