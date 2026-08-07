@@ -61,6 +61,13 @@ export default {
     toolbar: {
       searchPlaceholder: 'Search by workflow title or ID'
     },
+    export: {
+      buttonText: 'Export workflows',
+      exporting: 'Exporting workflows',
+      successTips: 'Workflows exported successfully',
+      exceedLimitTips:
+        'Export exceeds the limit. Please narrow filters and try again'
+    },
     action: {
       goHandle: 'Handle',
       detail: 'Detail'

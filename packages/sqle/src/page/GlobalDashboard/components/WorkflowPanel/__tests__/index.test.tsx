@@ -1,4 +1,10 @@
-import { act, cleanup, fireEvent, screen } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  screen,
+  within
+} from '@testing-library/react';
 import WorkflowPanel from '..';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -14,6 +20,9 @@ import {
 import { GlobalWorkflowListItemWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockGlobalWorkflowStatisticsData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/globalDashboard/data';
 import { GetGlobalWorkflowListV2FilterCardEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import EventEmitter from '../../../../../utils/EventEmitter';
+import EmitterKey from '../../../../../data/EmitterKey';
 
 describe('GlobalDashboard/WorkflowPanel', () => {
   const openSpy = jest.spyOn(window, 'open').mockImplementation(jest.fn());
@@ -382,6 +391,92 @@ describe('GlobalDashboard/WorkflowPanel', () => {
         await action();
         assertion();
       });
+    });
+  });
+
+  describe('export workflows', () => {
+    let exportGlobalWorkflowsSpy: jest.SpyInstance;
+
+    beforeEach(() => {
+      exportGlobalWorkflowsSpy =
+        sqleMockApi.globalDashboard.exportGlobalWorkflows();
+    });
+
+    it('should not render export button in toolbar', async () => {
+      superRender(<WorkflowPanel />);
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.queryByText('导出工单')).not.toBeInTheDocument();
+    });
+
+    it('should export when workflow type is data_export', async () => {
+      superRender(<WorkflowPanel />);
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      const typeFilter = document.querySelector(
+        '.custom-segmented-filter-wrapper'
+      ) as HTMLElement;
+      fireEvent.click(within(typeFilter).getByText('数据导出工单'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      act(() => {
+        EventEmitter.emit(
+          EmitterKey.Export_Global_Dashboard_Workflow_List,
+          GetAuditPlanSQLExportReqV1ExportFormatEnum.csv
+        );
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(exportGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
+      expect(exportGlobalWorkflowsSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          workflow_type: 'data_export',
+          export_format: 'csv'
+        }),
+        expect.objectContaining({ responseType: 'blob' })
+      );
+    });
+
+    it('should export with current filters and without pagination', async () => {
+      superRender(
+        <WorkflowPanel projectId="project-1" instanceId="instance-1" />
+      );
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      const typeFilter = document.querySelector(
+        '.custom-segmented-filter-wrapper'
+      ) as HTMLElement;
+      fireEvent.click(within(typeFilter).getByText('SQL上线工单'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      act(() => {
+        EventEmitter.emit(
+          EmitterKey.Export_Global_Dashboard_Workflow_List,
+          GetAuditPlanSQLExportReqV1ExportFormatEnum.csv
+        );
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(exportGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
+      expect(exportGlobalWorkflowsSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          filter_card: 'pending_for_me',
+          filter_project_uid: 'project-1',
+          filter_instance_id: 'instance-1',
+          workflow_type: 'sql_release',
+          export_format: 'csv'
+        }),
+        expect.objectContaining({ responseType: 'blob' })
+      );
+      expect(exportGlobalWorkflowsSpy.mock.calls[0][0]).not.toHaveProperty(
+        'page_index'
+      );
+      expect(exportGlobalWorkflowsSpy.mock.calls[0][0]).not.toHaveProperty(
+        'page_size'
+      );
+      expect(exportGlobalWorkflowsSpy.mock.calls[0][0]).not.toHaveProperty(
+        'cursor'
+      );
     });
   });
 });

@@ -17,6 +17,7 @@ import {
   IGetGlobalSqlManageTaskListV2Return,
   IGetGlobalWorkflowListV2Params,
   IGetGlobalWorkflowListV2Return,
+  IExportGlobalWorkflowsV2Params,
   IGetGlobalWorkflowStatisticsV2Params,
   IGetGlobalWorkflowStatisticsV2Return
 } from './index.d';
@@ -77,6 +78,18 @@ class GlobalDashboardService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IGetGlobalWorkflowListV2Return>(
       '/v2/dashboard/workflows',
+      paramsData,
+      options
+    );
+  }
+
+  public ExportGlobalWorkflowsV2(
+    params: IExportGlobalWorkflowsV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<any>(
+      '/v2/dashboard/workflows/exports',
       paramsData,
       options
     );

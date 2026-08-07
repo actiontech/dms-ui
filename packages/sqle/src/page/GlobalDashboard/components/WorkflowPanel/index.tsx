@@ -39,19 +39,24 @@ import {
   workflowTypeLabelDictionary
 } from './data';
 import { UserService } from '@actiontech/shared/lib/api/base';
+// #if [ee]
+import ExportGlobalWorkflowButton from './ExportGlobalWorkflowButton';
+// #endif
 
 type WorkflowPanelProps = {
   projectId?: string;
   instanceId?: string;
   refreshSignal?: number;
   initialCard?: GetGlobalWorkflowListV2FilterCardEnum;
+  onExportFinished?: () => void;
 };
 
 const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
   projectId,
   instanceId,
   refreshSignal,
-  initialCard
+  initialCard,
+  onExportFinished
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
@@ -273,6 +278,17 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
   return (
     <>
       {messageContextHolder}
+      {/* #if [ee] */}
+      <ExportGlobalWorkflowButton
+        filterCard={workflowCard}
+        workflowType={workflowType}
+        projectId={projectId}
+        instanceId={instanceId}
+        tableFilterInfo={tableFilterInfo}
+        searchKeyword={searchKeyword}
+        onExportFinished={onExportFinished}
+      />
+      {/* #endif */}
       <StatCardsStyleWrapper>
         {cards.map((card) => (
           <StatCardItemStyleWrapper

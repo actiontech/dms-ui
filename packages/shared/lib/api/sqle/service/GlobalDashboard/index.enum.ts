@@ -1,49 +1,91 @@
 /* tslint:disable no-duplicate-string */
 
 export enum GetGlobalAccountListV2FilterCardEnum {
-  'expiring_soon' = 'expiring_soon',
+  expiring_soon = 'expiring_soon',
 
-  'active' = 'active'
+  active = 'active'
 }
 
 export enum GetGlobalSqlManageTaskListV2FilterCardEnum {
-  'pending' = 'pending',
+  pending = 'pending',
 
-  'optimized' = 'optimized'
+  optimized = 'optimized'
 }
 
 export enum GetGlobalWorkflowListV2FilterCardEnum {
-  'archived' = 'archived',
+  archived = 'archived',
 
-  'pending_for_me' = 'pending_for_me',
+  pending_for_me = 'pending_for_me',
 
-  'initiated_by_me' = 'initiated_by_me',
+  initiated_by_me = 'initiated_by_me',
 
-  'view_all' = 'view_all'
+  view_all = 'view_all'
 }
 
 export enum GetGlobalWorkflowListV2WorkflowTypeEnum {
-  'sql_release' = 'sql_release',
+  sql_release = 'sql_release',
 
-  'data_export' = 'data_export'
+  data_export = 'data_export'
 }
 
 export enum GetGlobalWorkflowListV2FilterStatusEnum {
-  'pending_approval' = 'pending_approval',
+  pending_approval = 'pending_approval',
 
-  'pending_action' = 'pending_action',
+  pending_action = 'pending_action',
 
-  'in_progress' = 'in_progress',
+  in_progress = 'in_progress',
 
-  'exporting' = 'exporting',
+  exporting = 'exporting',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'cancelled' = 'cancelled',
+  cancelled = 'cancelled',
 
-  'failed' = 'failed',
+  failed = 'failed',
 
-  'completed' = 'completed',
+  completed = 'completed',
 
-  'unknown' = 'unknown'
+  unknown = 'unknown'
+}
+
+export enum ExportGlobalWorkflowsV2FilterCardEnum {
+  archived = 'archived',
+
+  pending_for_me = 'pending_for_me',
+
+  initiated_by_me = 'initiated_by_me',
+
+  view_all = 'view_all'
+}
+
+export enum ExportGlobalWorkflowsV2WorkflowTypeEnum {
+  sql_release = 'sql_release',
+
+  data_export = 'data_export'
+}
+
+export enum ExportGlobalWorkflowsV2FilterStatusEnum {
+  pending_approval = 'pending_approval',
+
+  pending_action = 'pending_action',
+
+  in_progress = 'in_progress',
+
+  exporting = 'exporting',
+
+  rejected = 'rejected',
+
+  cancelled = 'cancelled',
+
+  failed = 'failed',
+
+  completed = 'completed',
+
+  unknown = 'unknown'
+}
+
+export enum ExportGlobalWorkflowsV2ExportFormatEnum {
+  csv = 'csv',
+
+  excel = 'excel'
 }
