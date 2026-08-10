@@ -26,7 +26,9 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
       'sql_fingerprint',
       'sql',
       'source',
-      'audit_result',
+      'audit_level',
+      'rule_desc',
+      'object_name',
       'instance_name',
       'schema_name',
       'priority',
@@ -56,7 +58,9 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
     expect(getSqlManagementExportColumnKeys(columns, 'admin')).toEqual([
       'sql',
       'sql_fingerprint',
-      'audit_result',
+      'audit_level',
+      'rule_desc',
+      'object_name',
       'instance_name',
       'schema_name',
       'priority',
@@ -93,5 +97,13 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
     );
 
     expect(getSqlManagementExportColumnKeys(columns, 'admin')).toEqual([]);
+  });
+
+  it('never includes deprecated audit_result export key', () => {
+    const keys = getSqlManagementExportColumnKeys(columns, 'admin');
+    expect(keys).not.toContain('audit_result');
+    expect(keys).toEqual(
+      expect.arrayContaining(['audit_level', 'rule_desc', 'object_name'])
+    );
   });
 });
