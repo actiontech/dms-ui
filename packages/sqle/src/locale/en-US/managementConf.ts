@@ -24,7 +24,7 @@ export default {
         staticScanType: 'Static scan',
         dbName: 'DB instance name',
         dbType: 'DB instance type',
-        business: 'Business',
+        environmentAttribute: 'Environment attribute',
         enabledScanTypes: 'Enabled scan types',
         dbTaskStatus: 'DB instance task status',
         taskStatus: {
@@ -34,7 +34,8 @@ export default {
         scanStatus: 'Collection status',
         notificationMethod: 'Notification method',
         createdAt: 'Created time',
-        creator: 'Creator'
+        creator: 'Creator',
+        abnormalTips: 'SQL collection exception detected'
       },
       action: {
         disabled: {
@@ -59,7 +60,7 @@ export default {
     title: 'Enable scan tasks for DB instance',
     dataSourceSelection: 'Select DB instance',
     dataSourceNeedsAudit: 'Is DB instance audit required',
-    businessScope: 'Business',
+    environmentAttribute: 'Environment attribute',
     instanceName: 'DB instance name',
     instanceNameTips: 'Select business to get corresponding DB instance',
     schema: 'Database',
@@ -71,11 +72,17 @@ export default {
     scanTypeTips: 'Select the SQL objects you need to scan',
     emptyScanTypeTips:
       'Select the DB instance type to get the corresponding scan task type',
-
+    performanceInsights: {
+      title: 'Performance monitoring',
+      lable: 'Enable performance metric collection',
+      tips: 'Performance metric collection may cause significant overhead. Use with caution. Once enabled, the system continuously collects performance data (such as QPS and connections) from the data source and generates performance trend charts.'
+    },
     scanTypeParams: {
       title: 'Edit scan details·{{typeName}}',
       hightPriorityConditions: {
         mark: 'Mark high-priority SQL',
+        markTips:
+          'Set filter conditions. SQL matching any enabled condition below will be marked as high priority.',
         standard: 'Standard',
         threshold: 'Threshold',
         operator: 'Operator'
@@ -87,14 +94,12 @@ export default {
         }
       }
     },
-
     defaultScanTypes: {
       sqlFile: 'SQL file',
       myBatisFile: 'MyBatis file',
       allAppExtract: 'Application SQL capture',
       default: 'Custom'
     },
-
     result: {
       title: 'Create SQL management configuration successfully',
       reset: 'Reset form',
@@ -115,13 +120,22 @@ export default {
       title: 'Overview',
       column: {
         auditPlanType: 'Intelligent scan type',
+        performanceCollectTips:
+          'Performance metric collection may cause significant overhead. Use with caution. Once enabled, the system continuously collects performance data (such as QPS and connections) from the data source and generates performance trend charts on the performance insights page.',
         auditRuleTemplate: 'Audit rule template',
         status: 'Task status',
         scanType: 'Collection method',
         connectionInfo: 'Connection information',
         collectedSqlCount: 'Collected SQL count',
         problematicSqlCount: 'Problematic SQL count',
-        lastCollectionTime: 'Last collection time'
+        lastCollectionTime: 'Last collection time',
+        taskStatus: {
+          disabled: 'Disabled',
+          normal: 'Running',
+          abnormal: 'Abnormal'
+        },
+        abnormalTips:
+          'Please search sqled.log for related information using the keyword "execute extract sql failed"'
       },
       actions: {
         enabled: 'Enable',
@@ -133,7 +147,11 @@ export default {
         delete: 'Delete',
         deleteSuccessTips: 'Deleted successfully!',
         deleteConfirmTips:
-          'After deleting, intelligent scan data of this type will no longer be retained, confirm delete?'
+          'After deleting, intelligent scan data of this type will no longer be retained, confirm delete?',
+        resetToken: 'Reset token',
+        resetTokenSuccessTips: 'Token reset successfully!',
+        resetTokenConfirmTitle:
+          'A new token will be generated after reset, valid for 365 days. The old token will be invalidated immediately. Continue?'
       }
     },
     scanTypeSqlCollection: {
@@ -144,7 +162,6 @@ export default {
         urgentAudit: 'Audit immediately',
         lastAuditTime: 'Last audit time: {{time}}'
       },
-
       column: {
         index: 'Index',
         sqlFingerprint: 'SQL fingerprint',

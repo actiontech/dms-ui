@@ -10,9 +10,9 @@ import { ExpandedBackupSqlType } from './index.type';
 import { IGetBackupSqlListV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import ExecStatusTag from '../AuditExecResultPanel/TaskResultList/Common/ResultCard/components/ExecStatusTag';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { BackupStrategyDictionary } from '../../../Common/AuditResultList/Table/index.data';
+import { getBackupStrategyDictionary } from '../../../Common/AuditResultList/Table/index.data';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { SqlBackupStatusDictionary } from './index.data';
+import { getSqlBackupStatusDictionary } from './index.data';
 export type WorkflowRollbackSqlTableFilterParamType =
   PageInfoWithoutIndexAndSize<
     IGetBackupSqlListV1Params & {
@@ -25,6 +25,8 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
   ExpandedBackupSqlType,
   WorkflowRollbackSqlTableFilterParamType
 > = () => {
+  const backupStrategyDictionary = getBackupStrategyDictionary();
+  const sqlBackupStatusDictionary = getSqlBackupStatusDictionary();
   return [
     {
       dataIndex: 'origin_sql',
@@ -46,13 +48,13 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
     },
     {
       dataIndex: 'backup_strategy',
-      title: t('execWorkflow.detail.rollback.backupStrategy'),
+      title: () => t('execWorkflow.detail.rollback.backupStrategy'),
       width: 150,
       render: (strategy) => {
         return strategy ? (
           <BasicTag>
             {
-              BackupStrategyDictionary[
+              backupStrategyDictionary[
                 strategy as unknown as UpdateSqlBackupStrategyReqStrategyEnum
               ]
             }
@@ -64,14 +66,14 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
     },
     {
       dataIndex: 'instance_name',
-      title: t('execWorkflow.detail.rollback.instance'),
+      title: () => t('execWorkflow.detail.rollback.instance'),
       filterCustomType: 'select',
       filterKey: 'filter_instance_id',
       width: 120
     },
     {
       dataIndex: 'exec_status',
-      title: t('execWorkflow.detail.rollback.execStatus'),
+      title: () => t('execWorkflow.detail.rollback.execStatus'),
       filterCustomType: 'select',
       filterKey: 'filter_exec_status',
       width: 100,
@@ -85,10 +87,10 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
     },
     {
       dataIndex: 'backup_status',
-      title: t('execWorkflow.detail.rollback.backupStatus'),
+      title: () => t('execWorkflow.detail.rollback.backupStatus'),
       width: 100,
       render: (status) => {
-        return status ? SqlBackupStatusDictionary[status] : '-';
+        return status ? sqlBackupStatusDictionary[status] : '-';
       }
     }
   ];
@@ -101,7 +103,7 @@ export const WorkflowRollbackSelectedSqlTableColumn: (
     ...baseColumns,
     {
       dataIndex: 'remark',
-      title: t('execWorkflow.detail.rollback.remark'),
+      title: () => t('execWorkflow.detail.rollback.remark'),
       width: 150,
       className: 'rollback-remark-column',
       render: (remark, record) => {

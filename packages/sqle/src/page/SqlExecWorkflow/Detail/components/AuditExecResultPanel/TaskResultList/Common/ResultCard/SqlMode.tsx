@@ -24,7 +24,7 @@ import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { TaskResultContentTypeEnum } from './index.data';
-import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultList/Table/index.data';
+import { getBackupStrategyDictionary } from '../../../../../../Common/AuditResultList/Table/index.data';
 import {
   UpdateSqlBackupStrategyReqStrategyEnum,
   AuditTaskResV1StatusEnum
@@ -161,19 +161,23 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   }, [props.taskStatus, props.backup_result, t]);
   const execResultDisplay = useMemo(
     () =>
-      buildExecResultDisplay({
-        execStatus: props.exec_status,
-        failStage: props.fail_stage,
-        failReason: props.fail_reason,
-        execResult: props.exec_result,
-        backupStatus: props.backup_status
-      }),
+      buildExecResultDisplay(
+        {
+          execStatus: props.exec_status,
+          failStage: props.fail_stage,
+          failReason: props.fail_reason,
+          execResult: props.exec_result,
+          backupStatus: props.backup_status
+        },
+        t
+      ),
     [
       props.backup_status,
       props.exec_result,
       props.exec_status,
       props.fail_reason,
-      props.fail_stage
+      props.fail_stage,
+      t
     ]
   );
   return (
@@ -271,7 +275,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                           <EmptyBox if={!!props.backup_strategy}>
                             <BasicTag>
                               {
-                                BackupStrategyDictionary[
+                                getBackupStrategyDictionary()[
                                   props.backup_strategy as unknown as UpdateSqlBackupStrategyReqStrategyEnum
                                 ]
                               }
@@ -308,7 +312,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                   <div className="exec-fail-result">
                     <div className="exec-fail-result-row">
                       <span className="exec-fail-result-label">
-                        {t('execWorkflow.detail.failDisplay.statusLabel')}：
+                        {t('execWorkflow.detail.failDisplay.statusLabel')}
                       </span>
                       <span>
                         {execResultDisplay.statusI18nKey
@@ -319,7 +323,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                     <EmptyBox if={!execResultDisplay.hideStage}>
                       <div className="exec-fail-result-row">
                         <span className="exec-fail-result-label">
-                          {t('execWorkflow.detail.failDisplay.stageLabel')}：
+                          {t('execWorkflow.detail.failDisplay.stageLabel')}
                         </span>
                         <span>
                           {execResultDisplay.stageI18nKey
@@ -330,7 +334,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                     </EmptyBox>
                     <div className="exec-fail-result-row">
                       <span className="exec-fail-result-label">
-                        {t('execWorkflow.detail.failDisplay.reasonLabel')}：
+                        {t('execWorkflow.detail.failDisplay.reasonLabel')}
                       </span>
                       <span className="exec-fail-result-reason">
                         {execResultDisplay.reasonText}

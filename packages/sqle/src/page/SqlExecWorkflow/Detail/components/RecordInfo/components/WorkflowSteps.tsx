@@ -155,7 +155,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
 
           <EmptyBox if={isCompletedReviewStep(step)}>
             <div className="step-info-approval-comment">
-              <span>{t('execWorkflow.detail.operator.approvalComment')}：</span>
+              <span>{t('execWorkflow.detail.operator.approvalComment')}: </span>
               <span>
                 {formatApprovalComment(
                   step.reason,

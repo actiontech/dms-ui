@@ -30,7 +30,7 @@ import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { ISQLAuditRecordExtraParams } from './index.type';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { sqlAuditStatusOptions } from './index.data';
+import { getSqlAuditStatusOptions } from './index.data';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
@@ -146,9 +146,9 @@ const SqlAuditList = () => {
           showTime: true
         }
       ],
-      ['sql_audit_status', { options: sqlAuditStatusOptions }]
+      ['sql_audit_status', { options: getSqlAuditStatusOptions() }]
     ]);
-  }, [instanceIDOptions]);
+  }, [instanceIDOptions, t]);
   useEffect(() => {
     updateInstanceList({
       project_name: projectName

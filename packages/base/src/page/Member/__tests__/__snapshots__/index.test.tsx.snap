@@ -1119,7 +1119,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               <span
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                               >
-                                test1、test2
+                                test1, test2
                               </span>
                             </td>
                             <td
@@ -1156,7 +1156,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               <span
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                               >
-                                test3、test4
+                                test3, test4
                               </span>
                             </td>
                             <td
@@ -1193,7 +1193,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               <span
                                 class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line whitespace-pre"
                               >
-                                test、test666
+                                test, test666
                               </span>
                             </td>
                             <td

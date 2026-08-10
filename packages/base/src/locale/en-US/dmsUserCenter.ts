@@ -5,18 +5,24 @@ export default {
     'You can manage platform users, user groups in user center, and configure platform role permissions.',
   tabTitleUser: 'User management',
   tabTitleRole: 'Role management',
-
   user: {
     userList: {
       title: 'User list',
       addUserButton: 'Add user',
       columns: {
         status: 'Status',
-        authenticationType: 'User authentication type'
-      }
+        authenticationType: 'User authentication type',
+        platformRoles: 'Platform Roles',
+        projects: 'Projects',
+        projectsCount: '+{{count}} projects'
+      },
+      normal: 'Active',
+      disabled: 'Disabled',
+      searchPlaceholder: 'Search by ID, username, email, or phone number'
     },
     userForm: {
       username: 'Username',
+      usernameNoSpaces: 'Username cannot have leading or trailing spaces',
       needUpdatePassWord: 'Need update password',
       passwordConfirm: 'Confirm password',
       passwordConfirmPlaceholder:
@@ -41,7 +47,8 @@ export default {
       updateSuccessTips: 'Edit user "{{name}}" successfully'
     },
     deleteUser: {
-      confirmTitle: 'Confirm to delete user: "{{username}}"?',
+      confirmTitle:
+        'User "{{username}}" exists in project(s) "{{projects}}". Confirm delete?',
       deleting: 'Deleting user: "{{username}}..."',
       deleteSuccess: 'Delete user "{{username}}" successfully'
     },
@@ -76,36 +83,45 @@ export default {
       title: 'Role list',
       columns: {
         opPermissions: 'Platform operation permissions'
-      }
+      },
+      normal: 'Active',
+      disabled: 'Disabled',
+      searchPlaceholder: 'Search by operation permission keyword'
     },
     roleForm: {
       name: 'Role name',
+      nameAlert: 'Cloning from role "{{name}}". Please change the role name.',
       desc: 'Description',
       opPermissions: 'Operation permissions',
-      isDisabled: 'Disabled'
+      isDisabled: 'Disabled',
+      viewAll: 'View All'
     },
     createRole: {
       button: 'Add role',
       modalTitle: 'Add role',
       createSuccessTips: 'Add role "{{name}}" successfully'
     },
-
     updateRole: {
       modalTitle: 'Edit role',
       updateSuccessTips: 'Edit role "{{name}}" successfully'
     },
-
     deleteRole: {
       deleteTips: 'Confirm to delete role "{{name}}"?',
       deleting: 'Deleting role "{{name}}"...',
       deleteSuccessTips: 'Delete role "{{name}}" successfully'
+    },
+    cloneRole: {
+      button: 'Clone',
+      modalTitle: 'Clone Role',
+      createSuccessTips: 'Role "{{name}}" cloned successfully'
     },
     opPermissionList: {
       title: 'Operation permission list',
       columns: {
         name: 'Operation permission name',
         range: 'Operation scope granularity',
-        desc: 'Description'
+        desc: 'Description',
+        module: 'Module'
       },
       rangeTypeDictionary: {
         global: 'Global',

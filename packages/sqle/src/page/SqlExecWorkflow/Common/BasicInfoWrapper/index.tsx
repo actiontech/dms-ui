@@ -107,7 +107,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
             }}
           >
             <BasicTag color="orange" size="large">
-              {t('execWorkflow.list.version')}：{sqlVersion?.sql_version_name}
+              {t('execWorkflow.list.version')}: {sqlVersion?.sql_version_name}
             </BasicTag>
           </TypedLink>
         </EmptyBox>

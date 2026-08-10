@@ -28,14 +28,15 @@ export const roleListColumns: () => ActiontechTableColumn<IListRole> = () => [
     dataIndex: 'stat',
     title: () => t('common.status'),
     render: (stat) => {
+      const isDisabled = stat === ListRoleStatEnum.被禁用;
       return (
         <TableColumnWithIconStyleWrapper>
-          {stat === ListRoleStatEnum.被禁用 ? (
-            <CloseHexagonOutlined />
-          ) : (
-            <CheckHexagonOutlined />
-          )}
-          <span>{stat}</span>
+          {isDisabled ? <CloseHexagonOutlined /> : <CheckHexagonOutlined />}
+          <span>
+            {isDisabled
+              ? t('dmsUserCenter.role.roleList.disabled')
+              : t('dmsUserCenter.role.roleList.normal')}
+          </span>
         </TableColumnWithIconStyleWrapper>
       );
     }

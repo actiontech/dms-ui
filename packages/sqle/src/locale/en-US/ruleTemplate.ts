@@ -3,25 +3,19 @@ export default {
   pageTitle: 'Audit rule template',
   pageDescribe:
     'Sql audit will apply the rule template bound to the DB instance',
-
   ruleTemplateListTitle: 'Project rule template list',
   globalRuleTemplateListTitle: 'Public rule template list',
   ruleTemplateTitle: {
     project: 'Project rule template',
     common: 'Public rule template'
   },
-
   backToList: 'Back to rule template list',
-
   ruleTemplateList: {
     descEmpty: 'None',
-
     instance: 'Applied database',
     instanceEmpty: 'No DB instance bound',
-
     clone: 'Clone',
     export: 'Export',
-
     table: {
       templateName: 'Template name',
       desc: 'Description',
@@ -29,7 +23,6 @@ export default {
       dataSource: 'Bound DB instance'
     }
   },
-
   detail: {
     project: 'Project',
     dbType: 'DB instance type',
@@ -37,30 +30,25 @@ export default {
     auditCapability: 'Audit capability',
     rewriteCapability: 'Rewrite capability'
   },
-
   deleteRuleTemplate: {
     tips: 'Confirm to delete rule template "{{name}}"?',
     deleting: 'Deleting template "{{name}}"...',
     deleteSuccessTips: 'Delete template "{{name}}" successfully'
   },
-
   ruleTemplateForm: {
     placeholder: {
       templateDesc: 'Click to add template description'
     },
     baseInfoTitle: 'Basic info',
     baseInfoDesc: 'Set basic information such as template name and description',
-
     ruleTitle: 'Rule',
     ruleDesc: 'Select rules to enable',
-
     result: 'Result',
     resultDesc: 'Change result',
-
     templateName: 'Template name',
     templateDesc: 'Template description',
     databaseType: 'Database type',
-
+    ruleVersion: 'Rule version',
     activeRuleTitle: 'Enabled rules',
     activeRule: 'Enable this rule',
     activeAllRules: 'Enable all rules',
@@ -68,22 +56,18 @@ export default {
     disableAllRules: 'Disable all rules',
     disableRule: 'Disable this rule',
     editRule: 'Edit this rule',
-
     emptyRule: 'No matching rule found',
     ruleValue: 'Rule value',
-
     activeAnchorTitle: 'Enabled',
     disableAnchorTitle: 'Disabled'
   },
-
   createRuleTemplate: {
     button: 'Create rule template',
     title: 'Create audit rule template',
     successTitle: 'Create audit rule template successfully',
-    createNew: 'Create another new audit rule template >', // DELETE
+    createNew: 'Create another new audit rule template >',
     reCreateNew: 'Create another new audit rule template'
   },
-
   importRuleTemplate: {
     button: 'Import rule template',
     title: 'Import audit rule template',
@@ -103,7 +87,6 @@ export default {
     downloading: 'Downloading template file...',
     checkSuccess: 'Validation Passed'
   },
-
   exportRuleTemplate: {
     button: 'Export rule template',
     exporting: 'Exporting template "{{name}}"...',
@@ -113,18 +96,15 @@ export default {
       exportFileType: 'Export File Type'
     }
   },
-
   updateRuleTemplate: {
     title: 'Update audit rule template',
     successTitle: 'Update audit rule template ({{name}}) successfully'
   },
-
   editModal: {
     title: 'Edit rule',
     ruleLevelLabel: 'Rule level',
     ruleLevelValue: 'Preset value',
     ruleLevelLabelPlace: 'Select the level corresponding to the rule',
-
     ruleLevelValuePlace: 'Please fill in the default value of the rule',
     ruleDescLabel: 'Rule description',
     ruleTypeLabel: 'Rule category',
@@ -134,7 +114,6 @@ export default {
     annotation: 'Description',
     ruleValueTypeOnlyNumber: 'The current rule value type can only be a number'
   },
-
   cloneRuleTemplate: {
     button: 'Clone rule template',
     title: 'Clone rule template',
@@ -143,7 +122,6 @@ export default {
     currentTemplateTips: 'Cloning audit rule template',
     successTips: 'Clone rule template "{{name}}" successfully'
   },
-
   ruleLevel: {
     normal: 'Normal',
     error: 'Error',

@@ -82,6 +82,8 @@ export default {
       columns: {
         opPermissions: '平台操作权限'
       },
+      normal: '正常',
+      disabled: '被禁用',
       searchPlaceholder: '输入操作权限关键词搜索'
     },
     roleForm: {
@@ -110,6 +112,7 @@ export default {
     },
 
     cloneRole: {
+      button: '克隆',
       modalTitle: '克隆角色',
       createSuccessTips: '克隆角色 "{{name}}" 成功'
     },

@@ -1,7 +1,10 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
+  pageTitle: 'Quick Diagnosis',
+  sqlAudit: 'SQL audit',
+  sqlOptimization: 'AI Performance Tuning',
+  createOptimization: 'Create AI Performance Tuning',
   list: {
-    pageTitle: 'SQL audit',
     action: {
       create: 'Create audit',
       updateTags: {
@@ -67,7 +70,10 @@ export default {
         instanceSchema: 'Database',
         staticAudit: 'Offline audit',
         dynamicAudit: 'Online audit',
-        uploadType: 'Select SQL statement upload method'
+        uploadType: 'Select SQL statement upload method',
+        ruleTemplate: 'Audit rule template',
+        ruleTemplateDesc:
+          'Specify the rule template for this audit. Available templates include global audit rule templates for this data source type and audit rule templates within the current project.'
       },
       uploadTypeEnum: {
         sql: 'Input SQL statement',
@@ -82,8 +88,20 @@ export default {
         mybatisFile: 'Mybatis XML file',
         zipFile: 'ZIP file',
         gitUrl: 'GIT address',
+        gitProtocol: 'Git protocol type',
         gitUrlTips:
-          'Please enter the HTTP(S) clone address of the git repository. if it is a private GIT repository, you must enter the account and password with read permission'
+          'Please enter the HTTP(S) clone address of the git repository. if it is a private GIT repository, you must enter the account and password with read permission',
+        gitBranch: 'Code branch',
+        verifyConnection: 'Verify connection',
+        connectSuccess: 'Connection successful',
+        pleaseVerifyConnection: 'Please verify repository connectivity first',
+        configureSsh: 'Configure SSH key',
+        protocolHttpDesc:
+          'Uses HTTPS protocol and requires username and password authentication',
+        protocolGitDesc: 'Uses Git protocol, suitable for public repositories',
+        protocolSshDesc: 'Uses SSH protocol with SSH key authentication',
+        sshAuthTips:
+          'When cloning a repository via SSH, you must configure an SSH key first.'
       },
       uploadFileTip: {
         sqlFile: 'Click to select a SQL file or drag the file to this area',

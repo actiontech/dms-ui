@@ -6,7 +6,7 @@ export enum DateRangeEnum {
   '30D' = '30D'
 }
 
-export const DateRangeOptions = [
+export const getDateRangeOptions = () => [
   {
     label: t('sqlQuery.executePlan.twentyFourHours'),
     value: DateRangeEnum['24H']

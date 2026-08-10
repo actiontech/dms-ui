@@ -2,7 +2,7 @@ import { ModeSwitcher } from '@actiontech/dms-kit';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
 import { useTranslation } from 'react-i18next';
-import { defaultUploadTypeOptions } from './index.data';
+import { getDefaultUploadTypeOptions } from './index.data';
 import { SqlStatementFormItemProps } from './index.type';
 import { useMemo } from 'react';
 import SqlUploadContent from './components/SqlUploadContent';
@@ -28,6 +28,10 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormProps>();
+  const defaultUploadTypeOptions = useMemo(
+    () => getDefaultUploadTypeOptions(),
+    [t]
+  );
   const currentUploadTypeFieldName = useMemo(() => {
     return [fieldPrefixPath, 'currentUploadType'];
   }, [fieldPrefixPath]);

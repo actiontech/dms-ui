@@ -323,7 +323,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                         >
                           <span>
                             审批意见
-                            ：
+                            : 
                           </span>
                           <span>
                             未填写

@@ -13,7 +13,7 @@ import ProjectOpPermissions from '../components/ProjectOpPermissions';
 export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'user',
-    title: t('common.username'),
+    title: () => t('common.username'),
     width: '10%',
     className: 'whitespace-pre',
     render: (user) => {
@@ -91,7 +91,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   },
   {
     dataIndex: 'is_project_admin',
-    title: t('dmsMember.memberList.columns.projectManagePermissions'),
+    title: () => t('dmsMember.memberList.columns.projectManagePermissions'),
     width: '20%',
     render: (isAdmin, record) => {
       return (
@@ -107,18 +107,18 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
 export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   {
     dataIndex: 'name',
-    title: t('dmsMember.memberGroupList.columns.userGroupName')
+    title: () => t('dmsMember.memberGroupList.columns.userGroupName')
   },
   {
     dataIndex: 'users',
-    title: t('dmsMember.memberGroupList.columns.users'),
+    title: () => t('dmsMember.memberGroupList.columns.users'),
     render(users) {
       if (!Array.isArray(users)) {
         return null;
       }
       return (
         <Typography.Text ellipsis={true} className="whitespace-pre">
-          {users.map((v) => v.name).join('、')}
+          {users.map((v) => v.name).join(', ')}
         </Typography.Text>
       );
     }
@@ -158,7 +158,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   },
   {
     dataIndex: 'is_project_admin',
-    title: t('dmsMember.memberList.columns.projectManagePermissions'),
+    title: () => t('dmsMember.memberList.columns.projectManagePermissions'),
     width: '30%',
     render: (isAdmin, record) => {
       return (

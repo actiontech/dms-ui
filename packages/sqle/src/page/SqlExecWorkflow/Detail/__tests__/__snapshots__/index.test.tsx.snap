@@ -1616,7 +1616,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                     >
                       版本
-                      ：
+                      : 
                       v1-test
                     </span>
                   </a>
@@ -2508,7 +2508,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-1h1nm3c"
                     >
                       版本
-                      ：
+                      : 
                       v1-test
                     </span>
                   </a>
@@ -4692,7 +4692,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                               >
                                 <span>
                                   审批意见
-                                  ：
+                                  : 
                                 </span>
                                 <span>
                                   1

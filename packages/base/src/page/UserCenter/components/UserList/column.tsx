@@ -46,14 +46,15 @@ export const userListColumns: () => ActiontechTableColumn<
     dataIndex: 'stat',
     title: () => t('dmsUserCenter.user.userList.columns.status'),
     render: (status) => {
+      const isDisabled = status === ListUserStatEnum.被禁用;
       return (
         <TableColumnWithIconStyleWrapper>
-          {status === ListUserStatEnum.被禁用 ? (
-            <CloseHexagonOutlined />
-          ) : (
-            <CheckHexagonOutlined />
-          )}
-          <span>{status}</span>
+          {isDisabled ? <CloseHexagonOutlined /> : <CheckHexagonOutlined />}
+          <span>
+            {isDisabled
+              ? t('dmsUserCenter.user.userList.disabled')
+              : t('dmsUserCenter.user.userList.normal')}
+          </span>
         </TableColumnWithIconStyleWrapper>
       );
     },

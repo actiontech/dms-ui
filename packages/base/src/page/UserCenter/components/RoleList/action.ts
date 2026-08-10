@@ -24,7 +24,7 @@ export const RoleListActions = (
       permissions: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.EDIT
     },
     {
-      text: '克隆',
+      text: t('dmsUserCenter.role.cloneRole.button'),
       key: 'roleClone',
       buttonProps: (record) => {
         return {

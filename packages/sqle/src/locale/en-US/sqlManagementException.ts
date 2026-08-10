@@ -11,7 +11,6 @@ export default {
     matchCount: 'Matched count',
     lastMatchedTime: 'The last matching time'
   },
-
   matchType: {
     sql: 'SQL keyword',
     fingerPrint: 'SQL fingerprint',
@@ -20,7 +19,6 @@ export default {
     host: 'Host',
     instance: 'Name of DB instance'
   },
-
   operate: {
     add: 'Add SQL management whitelist',
     deleting: 'Deleting SQL management whitelist item...',
@@ -28,7 +26,6 @@ export default {
     confirmDelete:
       'Are you sure you want to delete this SQL management whitelist item?'
   },
-
   modal: {
     add: {
       title: 'Add SQL management whitelist',

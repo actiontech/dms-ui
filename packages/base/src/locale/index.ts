@@ -47,8 +47,8 @@ const allZhCN = {
 
 const allEnUS = {
   translation: {
-    ...commonEnUS.translation,
     ...sqleEnUS.translation,
+    ...commonEnUS.translation,
     ...enUS.translation
   }
 };

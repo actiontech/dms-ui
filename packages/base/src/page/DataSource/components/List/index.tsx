@@ -131,7 +131,6 @@ const DataSourceList = () => {
       ready: !!projectID
     }
   );
-
   const navigateToUpdatePage = useCallback(
     (dbServiceUid: string) => {
       navigate(ROUTE_PATHS.BASE.DATA_SOURCE.update, {
@@ -278,7 +277,8 @@ const DataSourceList = () => {
         'name',
         {
           options: dbServiceOptions,
-          loading: getDbServiceOptionsLoading
+          loading: getDbServiceOptionsLoading,
+          value: tableFilterInfo.filter_by_name
         }
       ],
       [
@@ -305,7 +305,7 @@ const DataSourceList = () => {
       [
         'is_enable_masking',
         {
-          options: filterDataMaskOptions
+          options: filterDataMaskOptions()
         }
       ]
       // #endif
@@ -317,7 +317,8 @@ const DataSourceList = () => {
     getDbServiceOptionsLoading,
     getDriveOptionsLoading,
     environmentOptions,
-    getEnvironmentListLoading
+    getEnvironmentListLoading,
+    tableFilterInfo.filter_by_name
   ]);
   const tableActions = useMemo(() => {
     return parse2TableActionPermissions(

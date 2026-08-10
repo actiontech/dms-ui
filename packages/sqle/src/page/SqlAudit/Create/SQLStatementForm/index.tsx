@@ -9,13 +9,15 @@ import { EmptyBox, ModeSwitcher } from '@actiontech/dms-kit';
 import SqlUploadFileCont from './components/SqlUploadCont';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
-import { uploadTypeOptions } from './index.data';
+import { getUploadTypeOptions } from './index.data';
 import { RingPieFilled } from '@actiontech/icons';
 import RepositoryConfig from './components/RepositoryConfig';
+import { useMemo } from 'react';
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
   const uploadType = Form.useWatch('uploadType', form);
+  const uploadTypeOptions = useMemo(() => getUploadTypeOptions(), [t]);
   const handleChangeUploadType = () => {
     form.resetFields([
       'sql',

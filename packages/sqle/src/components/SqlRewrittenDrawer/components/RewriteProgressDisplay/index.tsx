@@ -29,7 +29,7 @@ import { BasicButton, CopyIcon } from '@actiontech/dms-kit';
 import { floatToPercent } from '@actiontech/dms-kit/es/utils/Math';
 import { SQLRenderer } from '@actiontech/shared';
 import classNames from 'classnames';
-import { MOCK_PROCESSING_STAGES } from './index.data';
+import { getMockProcessingStages } from './index.data';
 import { Button } from 'antd';
 import { DownOutlined, UpOutlined } from '@actiontech/icons';
 const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
@@ -42,7 +42,11 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
   onRetry,
   isRetryLoading
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const mockProcessingStages = useMemo(
+    () => getMockProcessingStages(),
+    [i18n.language]
+  );
 
   // 用户手动控制的展开/折叠状态
   const [isUserExpanded, setIsUserExpanded] = useState<boolean | null>(null);
@@ -180,10 +184,10 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       if (!stageData) {
         return t('sqlRewrite.ruleStatusWaiting');
       }
-      const currentStage = MOCK_PROCESSING_STAGES[stageData.currentStageIndex];
+      const currentStage = mockProcessingStages[stageData.currentStageIndex];
       return currentStage.label;
     },
-    [ruleProcessingStages, t]
+    [ruleProcessingStages, t, mockProcessingStages]
   );
 
   // 获取规则的当前阶段
@@ -192,10 +196,10 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       const stageData = ruleProcessingStages.get(rule.ruleId);
       if (!stageData) return null;
       return {
-        stage: MOCK_PROCESSING_STAGES[stageData.currentStageIndex]
+        stage: mockProcessingStages[stageData.currentStageIndex]
       };
     },
-    [ruleProcessingStages]
+    [ruleProcessingStages, mockProcessingStages]
   );
 
   // 获取规则项的状态类名
@@ -241,7 +245,7 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       clearRuleTimer(ruleId);
       let currentStageIndex = 0;
       const stageStep = () => {
-        const currentStage = MOCK_PROCESSING_STAGES[currentStageIndex];
+        const currentStage = mockProcessingStages[currentStageIndex];
         setRuleProcessingStages((prev) => {
           const newMap = new Map(prev);
           newMap.set(ruleId, {
@@ -252,7 +256,7 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
         });
 
         // 如果不是最后一个阶段，在延迟后移动到下一个阶段
-        if (currentStageIndex < MOCK_PROCESSING_STAGES.length - 1) {
+        if (currentStageIndex < mockProcessingStages.length - 1) {
           const randomDuration = getRandomDuration(currentStage.duration);
           const timer = setTimeout(() => {
             currentStageIndex++;
@@ -264,7 +268,7 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
       };
       stageStep();
     },
-    [clearRuleTimer, getRandomDuration]
+    [clearRuleTimer, getRandomDuration, mockProcessingStages]
   );
 
   // 监听规则状态变化，启动或停止阶段进度
@@ -472,11 +476,11 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
                           <div className="stage-indicator">
                             {getRuleCurrentStage(rule) && (
                               <div className="stage-dots">
-                                {MOCK_PROCESSING_STAGES.map((item, index) => {
+                                {mockProcessingStages.map((item, index) => {
                                   const currentStage =
                                     getRuleCurrentStage(rule);
                                   const currentStageIndex = currentStage
-                                    ? MOCK_PROCESSING_STAGES.findIndex(
+                                    ? mockProcessingStages.findIndex(
                                         (s) =>
                                           s.status === currentStage.stage.status
                                       )

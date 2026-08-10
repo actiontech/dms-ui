@@ -1,3 +1,5 @@
+import sqlInsights from './sqlInsights';
+
 import audit from './audit';
 import dashboard from './dashboard';
 import menu from './menu';
@@ -26,8 +28,10 @@ import pushRule from './pushRule';
 import sqlManagementException from './sqlManagementException';
 import pipelineConfiguration from './pipelineConfiguration';
 import versionManagement from './versionManagement';
-import sqlInsights from './sqlInsights';
 import globalDashboard from './globalDashboard';
+import dataSourceComparison from './dataSourceComparison';
+import sqlRewrite from './sqlRewrite';
+import knowledgeBase from './knowledgeBase';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -60,7 +64,10 @@ export default {
     sqlManagementException,
     pipelineConfiguration,
     versionManagement,
-    sqlInsights,
-    globalDashboard
+    globalDashboard,
+    dataSourceComparison,
+    sqlRewrite,
+    knowledgeBase,
+    sqlInsights
   }
 };

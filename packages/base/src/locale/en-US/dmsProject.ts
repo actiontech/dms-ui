@@ -27,14 +27,22 @@ export default {
   projectForm: {
     name: 'Project name',
     desc: 'Project description',
+    priority: 'Project Priority',
     business: 'Available business',
     addBusiness: 'Add business',
+    createBusinessSuccess: 'Business added successfully',
+    deleteBusinessConfirmTitle:
+      'Are you sure you want to delete this business?',
+    deleteBusinessSuccess: 'Business deleted successfully',
     deleteTip:
       'The current business is already associated with resources and cannot be deleted',
     fixedBusiness: 'Fix selectable business tags',
     fixedBusinessExtra:
       'If enabled, the business tags available in the project will be fixed and can only be managed by the administrator',
-    businessName: 'Business name'
+    businessName: 'Business name',
+    updateBusinessSuccess: 'Business updated successfully',
+    deleteBusinessError:
+      'This business is bound to: {{name}}. It cannot be deleted at this time.'
   },
   createProject: {
     modalTitle: 'Create project',
@@ -73,13 +81,11 @@ export default {
     title: 'Batch import data source',
     successTitle: 'Batch import data source successfully',
     checkSuccess: 'Validation passed',
-    testConnectLabel: 'Test data source connectivity',
-    testConnect: 'Batch test data source connectivity',
-    testConnectSuccess: 'Test connectivity success {{count}}',
-    testConnectFail:
-      'Test connectivity failed {{count}}, data source is {{name}}',
     requestAuditErrorMessage:
-      'The current import information has validation failures, please modify it according to the hints in the downloaded file, and import again'
+      'The current import information has validation failures, please modify it according to the hints in the downloaded file, and import again',
+    dataSourceConnectError: 'Data source connectivity test failed',
+    returnModify: 'Back to Edit',
+    continueSubmit: 'Continue Submit'
   },
   backToList: 'Back to project list',
   businessDescription: {
@@ -91,5 +97,7 @@ export default {
       'Business: based on the project, business acts as a sub-project or a tag for a specific business domain, helping you further organize and refine data resources. the business layer enables you to centrally manage and operate data for specific needs.',
     dataSource:
       'Data source: data source is the actual operation object built on the basis of business. you can perform specific data operations at the data source level, such as querying, updating, and managing data.'
-  }
+  },
+  resourceOverview: 'Resource Overview',
+  availabilityZone: 'Configure Availability Zone'
 };

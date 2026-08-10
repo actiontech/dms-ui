@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BackupStrategyOptions } from './index.data';
+import { getBackupStrategyOptions } from './index.data';
 import { SwitchSqlBackupStrategyModalProps } from './index.type';
 import { useMemo } from 'react';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -39,12 +39,12 @@ const SwitchSqlBackupStrategyModal: React.FC<
     onCancel();
   };
   const options = useMemo(() => {
-    return BackupStrategyOptions.filter((i) =>
+    return getBackupStrategyOptions().filter((i) =>
       supportedBackupPolicies?.includes(
         i.value as unknown as InstanceTipResV2SupportedBackupStrategyEnum
       )
     );
-  }, [supportedBackupPolicies]);
+  }, [supportedBackupPolicies, t]);
   return (
     <BasicModal
       open={open}

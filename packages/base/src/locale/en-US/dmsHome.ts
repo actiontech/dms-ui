@@ -89,12 +89,12 @@ export default {
           title_1: 'Data modification',
           content_1:
             'Submit SQL modification requests online, complete the online process through the approval process',
-          action_1_0: 'Submit SQL ticket',
-          action_1_1: 'Submit authorization ticket',
+          action_1_0: 'Submit SQL workflow',
+          action_1_1: 'Submit authorization workflow',
           title_2: 'Data export',
           content_2:
-            'Submit data export tickets, and get the data set after approval.',
-          action_2_0: 'Submit export ticket'
+            'Submit data export workflows, and get the data set after audit passed.',
+          action_2_0: 'Submit export workflow'
         }
       },
       devopsAndAudit: {

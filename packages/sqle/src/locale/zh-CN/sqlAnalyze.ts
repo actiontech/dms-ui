@@ -5,6 +5,9 @@ export default {
 
   sqlExplain: 'SQL解析',
   tableTitle: '{{tableName}}表',
+  columnInfo: '列信息',
+  indexInfo: '索引信息',
+  sqlStatement: 'SQL语句',
   optimize: 'AI性能调优',
   optimization: {
     confirmTitle: '是否启用高精度索引推荐？',

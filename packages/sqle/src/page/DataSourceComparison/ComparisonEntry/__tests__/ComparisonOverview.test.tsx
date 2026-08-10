@@ -1,9 +1,9 @@
-import { screen, fireEvent } from '@testing-library/react';
 import { ObjectDiffResultComparisonResultEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ComparisonOverview from '../component/ComparisonOverview';
-import { comparisonOverviewDict } from '../component/ComparisonOverview/index.data';
+import { getComparisonOverviewDict } from '../component/ComparisonOverview/index.data';
 import { executeDatabaseComparisonMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
+import { screen, fireEvent } from '@testing-library/react';
 
 describe('ComparisonOverview', () => {
   const mockOnCardClick = jest.fn();
@@ -32,7 +32,8 @@ describe('ComparisonOverview', () => {
 
     const sameCard = screen
       .getByText(
-        comparisonOverviewDict[ObjectDiffResultComparisonResultEnum.same].title
+        getComparisonOverviewDict()[ObjectDiffResultComparisonResultEnum.same]
+          .title
       )
       .closest('div');
     fireEvent.click(sameCard!);
@@ -53,7 +54,8 @@ describe('ComparisonOverview', () => {
 
     const selectedCard = screen
       .getByText(
-        comparisonOverviewDict[ObjectDiffResultComparisonResultEnum.same].title
+        getComparisonOverviewDict()[ObjectDiffResultComparisonResultEnum.same]
+          .title
       )
       .parentElement?.parentElement?.closest('div');
     expect(selectedCard).toHaveClass('selected');
@@ -68,7 +70,7 @@ describe('ComparisonOverview', () => {
     );
 
     expect(screen.getAllByText('0')).toHaveLength(
-      Object.keys(comparisonOverviewDict).length
+      Object.keys(getComparisonOverviewDict()).length
     );
   });
 
@@ -76,7 +78,7 @@ describe('ComparisonOverview', () => {
     sqleSuperRender(<ComparisonOverview onCardClick={mockOnCardClick} />);
 
     expect(screen.getAllByText('0')).toHaveLength(
-      Object.keys(comparisonOverviewDict).length
+      Object.keys(getComparisonOverviewDict()).length
     );
   });
 });

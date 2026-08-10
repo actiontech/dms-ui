@@ -46,8 +46,8 @@ export default {
     title: 'Workflow composition by database type',
     emptyText: 'No data yet, create an workflow then come back to this page',
     tooltip: {
-      number: 'Order quantity',
-      proportion: 'Order proportion'
+      number: 'Workflow count',
+      proportion: 'Workflow proportion'
     }
   },
   databaseSourceOrder: {
@@ -70,7 +70,7 @@ export default {
   },
   topList: {
     diffOrderReject: {
-      title: 'Order rejection rate of different users (Top10)',
+      title: 'Workflow rejection rate of different users (Top10)',
       noData: 'No data yet, create an workflow then come back to this page',
       column: {
         creator: 'Username',

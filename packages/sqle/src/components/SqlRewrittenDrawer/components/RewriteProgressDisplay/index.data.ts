@@ -1,7 +1,7 @@
 import { t } from '../../../../locale';
 import { MockProgressStatusEnum, IProcessingStage } from './index.type';
 
-export const MOCK_PROCESSING_STAGES: IProcessingStage[] = [
+export const getMockProcessingStages = (): IProcessingStage[] => [
   {
     status: MockProgressStatusEnum.waiting,
     label: t('sqlRewrite.ruleProcessingWaiting'),

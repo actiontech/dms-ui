@@ -20,7 +20,7 @@ export default {
       lockConfirm:
         'Once locked, changes cannot be made to the version content. Confirm lock?',
       deleteConfirm:
-        'Deleting the version record will remove the version tag from the work order. Confirm delete?',
+        'Deleting the version record will remove the version tag from the workflow. Confirm delete?',
       locking: 'Locking version...',
       lockSuccessTip: 'Version locked successfully',
       deleting: 'Deleting version...',
@@ -61,39 +61,39 @@ export default {
     execute: 'Execute'
   },
   release: {
-    title: 'Batch dispatch work orders',
+    title: 'Batch dispatch workflows',
     disableTips:
-      'Work orders need to be dispatched sequentially, and you must have the permission to create work orders for the next stage data source. Ensure that the current order of work orders is successfully online and check your permissions.',
+      'Workflows need to be dispatched sequentially, and you must have the permission to create workflows for the next stage data source. Ensure that the current order of workflows is successfully online and check your permissions.',
     currentAllowReleaseWorkflow:
-      'Work orders will be dispatched sequentially. The following work orders meet the dispatch conditions for the current stage',
+      'Workflows will be dispatched sequentially. The following workflows meet the dispatch conditions for the current stage',
     targetDataSource: 'Target data source',
     currentDataSource: 'Current data source',
     schemaPlaceholder: 'Please select a database (optional)',
-    successTips: 'Batch dispatch of work orders successful'
+    successTips: 'Batch dispatch of workflows successful'
   },
   execute: {
-    title: 'Batch execute work orders',
+    title: 'Batch execute workflows',
     disableTips:
-      'Work orders will be executed sequentially. Ensure the next work order meets the execution conditions before attempting the execution operation.',
+      'Workflows will be executed sequentially. Ensure the next workflow meets the execution conditions before attempting the execution operation.',
     currentAllowExecuteWorkflow:
-      'Work orders will be executed sequentially. The following work orders meet the execution conditions for the current stage. Confirm execution?',
-    successTips: 'Batch execution of work orders successful'
+      'Workflows will be executed sequentially. The following workflows meet the execution conditions for the current stage. Confirm execution?',
+    successTips: 'Batch execution of workflows successful'
   },
   stageNode: {
-    workflowDesc: 'Work order description',
+    workflowDesc: 'Workflow description',
     executeTime: 'Execution time',
-    retry: 'Retry',
+    updateInfo: 'Update workflow',
     offlineExecuted: 'Executed offline',
-    addExistingWorkflow: 'Add existing work order',
-    createWorkflow: 'Create new work order'
+    addExistingWorkflow: 'Add existing workflow',
+    createWorkflow: 'Create new workflow'
   },
   associateWorkflow: {
-    title: 'Associate existing work order',
-    workflow: 'Work order',
-    workflowName: 'Work order name',
-    workflowDesc: 'Work order description',
-    workflowStatus: 'Work order status',
-    successTips: 'Work order associated successfully'
+    title: 'Associate existing workflow',
+    workflow: 'Workflow',
+    workflowName: 'Workflow name',
+    workflowDesc: 'Workflow description',
+    workflowStatus: 'Workflow status',
+    successTips: 'Workflow associated successfully'
   },
   offlineExec: {
     title: 'Offline execution',

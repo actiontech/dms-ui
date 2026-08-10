@@ -2,7 +2,7 @@ import { sqlAuditStatusDictionary } from '../../../hooks/useStaticStatus/index.d
 import { t } from '../../../locale';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 
-export const sqlAuditStatusOptions = [
+export const getSqlAuditStatusOptions = () => [
   {
     label: t(
       sqlAuditStatusDictionary[

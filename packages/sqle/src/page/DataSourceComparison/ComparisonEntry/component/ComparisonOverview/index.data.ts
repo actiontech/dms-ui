@@ -6,10 +6,10 @@ type CardMeta = {
   suggestion: string;
 };
 
-export const comparisonOverviewDict: Record<
+export const getComparisonOverviewDict = (): Record<
   ObjectDiffResultComparisonResultEnum,
   CardMeta
-> = {
+> => ({
   [ObjectDiffResultComparisonResultEnum.comparison_not_exist]: {
     title: t('dataSourceComparison.overview.missingObjects'),
     suggestion: t('dataSourceComparison.overview.needsAction')
@@ -26,4 +26,4 @@ export const comparisonOverviewDict: Record<
     title: t('dataSourceComparison.overview.sameObjects'),
     suggestion: t('dataSourceComparison.overview.noActionNeeded')
   }
-};
+});

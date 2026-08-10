@@ -13,11 +13,6 @@ export default {
     missingProject: 'Missing project information. Cannot navigate.'
   },
   workflow: {
-    action: {
-      viewDetail: 'View',
-      goHandle: 'Handle',
-      detail: 'Detail'
-    },
     card: {
       pendingMine: 'Pending Mine',
       pendingMineSubtitle: 'Action required',
@@ -65,6 +60,10 @@ export default {
     },
     toolbar: {
       searchPlaceholder: 'Search by workflow title or ID'
+    },
+    action: {
+      goHandle: 'Handle',
+      detail: 'Detail'
     }
   },
   sql: {
@@ -90,7 +89,7 @@ export default {
       unhandled: 'Pending',
       solved: 'Optimized',
       ignored: 'Ignored',
-      manual_audited: 'Manual review',
+      manual_audited: 'Manual audit',
       sent: 'Assigned'
     },
     action: {
@@ -140,10 +139,10 @@ export default {
       wait_for_approve: 'Waiting For Approve'
     }
   },
-  pendingWorkOrder: 'Pending Work Order',
-  onlineWorkOrder: 'Online Work Order',
-  exportWorkOrder: 'Export Work Order',
-  initiatedWorkOrder: 'Initiated Work Order',
+  pendingWorkOrder: 'Pending Workflow',
+  onlineWorkOrder: 'Go-live Workflow',
+  exportWorkOrder: 'Export Workflow',
+  initiatedWorkOrder: 'Initiated Workflow',
   pendingMyAction: 'Pending My Action',
   account: {
     card: {

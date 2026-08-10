@@ -163,7 +163,7 @@ export enum DataMaskingFilterTypeEnum {
   'checked' = 'checked',
   'unchecked' = 'unchecked'
 }
-export const filterDataMaskOptions = [
+export const filterDataMaskOptions = () => [
   {
     value: DataMaskingFilterTypeEnum.checked,
     label: t('common.enabled')

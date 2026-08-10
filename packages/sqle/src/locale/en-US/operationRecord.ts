@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: 'Operation log list',
+  globalPageTitle: 'Global operation records',
   ceTips:
     'When problems or errors occur, you can analyze the operation log to view the steps or operations that caused the problem, so as to better solve and prevent similar problems and ensure the safety and compliance of operations.',
   list: {
@@ -13,7 +14,8 @@ export default {
       operator: 'Operator',
       operationType: 'Operation type',
       operationAction: 'Operation content',
-      platformOperation: '-- (platform operation)'
+      platformOperation: '-- (platform operation)',
+      globalOperation: 'Global operation'
     },
     column: {
       operatingTime: 'Operation time',
