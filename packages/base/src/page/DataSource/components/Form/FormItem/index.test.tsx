@@ -66,6 +66,17 @@ describe('page/DataSource/DatabaseFormItem', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('add mode password is not required', async () => {
+    const { baseElement } = customRender(false);
+    const passwordInput = getBySelector('#password', baseElement);
+    const passwordFormItem = passwordInput.closest('.ant-form-item');
+    expect(passwordInput).not.toHaveAttribute('aria-required', 'true');
+    expect(passwordFormItem).not.toHaveClass('has-required-style');
+    expect(
+      passwordFormItem?.querySelector('label.ant-form-item-required')
+    ).toBeNull();
+  });
+
   it('render form item snap when update', async () => {
     const { baseElement } = customRender(true);
     expect(baseElement).toMatchSnapshot();

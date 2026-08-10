@@ -197,7 +197,9 @@ const DatabaseFormItem: React.FC<{
         </FormItemLabel>
       </EmptyBox>
       <FormItemLabel
-        className="has-required-style"
+        className={
+          props.isUpdate && needUpdatePassword ? 'has-required-style' : ''
+        }
         label={
           props.isUpdate
             ? t('dmsDataSource.dataSourceForm.updatePassword')
@@ -206,7 +208,8 @@ const DatabaseFormItem: React.FC<{
         name="password"
         rules={[
           {
-            required: (props.isUpdate && needUpdatePassword) || !props.isUpdate,
+            // S1 §22.2: add-mode empty password must pass validation (gbase8a_local)
+            required: props.isUpdate && needUpdatePassword,
             message: t('common.form.rule.require', {
               name: t('dmsDataSource.dataSourceForm.password')
             })

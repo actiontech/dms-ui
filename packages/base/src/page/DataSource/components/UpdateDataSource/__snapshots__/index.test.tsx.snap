@@ -526,7 +526,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
                     class="ant-row ant-form-item-row"
@@ -2047,7 +2047,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+                  class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row"
@@ -3277,7 +3277,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
                     class="ant-row ant-form-item-row"
