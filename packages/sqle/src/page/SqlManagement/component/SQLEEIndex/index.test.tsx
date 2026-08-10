@@ -248,7 +248,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         filter_assignee: mockCurrentUserReturn.uid,
         filter_priority: exportSqlManageV1FilterPriorityEnum.high,
         export_column_keys:
-          'sql_fingerprint,sql,source,audit_result,instance_name,schema_name,priority,assignees,endpoints,status,remark'
+          'sql_fingerprint,sql,source,audit_level,rule_desc,object_name,instance_name,schema_name,priority,assignees,endpoints,status,remark'
       },
       {
         responseType: 'blob'
@@ -309,7 +309,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         ...exportParams,
         fuzzy_search_sql_fingerprint: searchText,
         export_column_keys:
-          'sql,sql_fingerprint,audit_result,instance_name,schema_name,priority,endpoints,status'
+          'sql,sql_fingerprint,audit_level,rule_desc,object_name,instance_name,schema_name,priority,endpoints,status'
       },
       {
         responseType: 'blob'

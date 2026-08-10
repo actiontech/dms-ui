@@ -1,3 +1,7 @@
+/**
+ * @test_version ee
+ */
+
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import ConfDetailOverview from '..';
 import { superRender } from '../../../../../testUtils/customRender';
