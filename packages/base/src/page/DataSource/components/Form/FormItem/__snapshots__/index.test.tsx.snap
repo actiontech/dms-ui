@@ -214,7 +214,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -223,7 +223,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             class="ant-col ant-form-item-label"
           >
             <label
-              class=""
+              class="ant-form-item-required"
               for="password"
               title="密码"
             >
@@ -243,6 +243,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
                   class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
+                    aria-required="true"
                     class="ant-input"
                     id="password"
                     placeholder="请输入密码"
@@ -611,7 +612,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -620,7 +621,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
             class="ant-col ant-form-item-label"
           >
             <label
-              class=""
+              class="ant-form-item-required"
               for="password"
               title="密码"
             >
@@ -640,6 +641,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
                   class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
+                    aria-required="true"
                     class="ant-input"
                     id="password"
                     placeholder="请输入密码"
@@ -999,7 +1001,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -1388,7 +1390,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -1735,7 +1737,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -1744,7 +1746,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
             class="ant-col ant-form-item-label"
           >
             <label
-              class=""
+              class="ant-form-item-required"
               for="password"
               title="密码"
             >
@@ -1764,6 +1766,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
                   class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
+                    aria-required="true"
                     class="ant-input"
                     id="password"
                     placeholder="请输入密码"
@@ -2082,7 +2085,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -2091,7 +2094,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
             class="ant-col ant-form-item-label"
           >
             <label
-              class=""
+              class="ant-form-item-required"
               for="password"
               title="密码"
             >
@@ -2111,6 +2114,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
                   class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
+                    aria-required="true"
                     class="ant-input"
                     id="password"
                     placeholder="请输入密码"
@@ -2429,7 +2433,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
           class="ant-row ant-form-item-row"
@@ -2438,7 +2442,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
             class="ant-col ant-form-item-label"
           >
             <label
-              class=""
+              class="ant-form-item-required"
               for="password"
               title="密码"
             >
@@ -2458,6 +2462,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
                   class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
+                    aria-required="true"
                     class="ant-input"
                     id="password"
                     placeholder="请输入密码"
