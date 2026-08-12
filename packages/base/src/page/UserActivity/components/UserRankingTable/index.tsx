@@ -5,13 +5,13 @@ import {
   ActiontechTable,
   ActiontechTableWrapper,
   useTableRequestError,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
+  useTableRequestParams,
+  formatTime
+} from '@actiontech/dms-kit';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
 import { IUserActivityUserItem } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
 import { IGetUserActivityUsersV1Params } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 type UserRankingTableProps = {
   filterDateFrom: string;

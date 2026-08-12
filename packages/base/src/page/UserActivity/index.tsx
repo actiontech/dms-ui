@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { RefreshOutlined } from '@actiontech/icons';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/dms-kit';
 import CardWrapper from 'sqle/src/components/CardWrapper';
 import { UserActivityStyleWrapper } from './style';
 import SummaryCards from './components/SummaryCards';
@@ -189,7 +189,10 @@ const UserActivity = () => {
         </Col>
         <Col span={24} xxl={12}>
           <div className="ranking-panel">
-            <UserRankingTable filterDateFrom={trendFrom} filterDateTo={trendTo} />
+            <UserRankingTable
+              filterDateFrom={trendFrom}
+              filterDateTo={trendTo}
+            />
           </div>
         </Col>
       </Row>

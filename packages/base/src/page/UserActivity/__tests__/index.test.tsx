@@ -7,7 +7,8 @@ import { act, cleanup } from '@testing-library/react';
 describe('base/page/UserActivity', () => {
   beforeEach(() => {
     userActivity.mockAllApi();
-    jest.useFakeTimers();
+    // 页面默认统计日期取当天，固定系统时间避免快照随运行日期漂移
+    jest.useFakeTimers().setSystemTime(new Date(2026, 5, 24, 10, 0, 0));
     mockUseCurrentUser();
   });
 

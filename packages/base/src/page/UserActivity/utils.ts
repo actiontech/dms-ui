@@ -1,6 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs';
-import { floatRound } from '@actiontech/shared/lib/utils/Math';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { floatRound, formatParamsBySeparator } from '@actiontech/dms-kit';
 
 export const DATE_FORMAT = 'YYYY-MM-DD';
 

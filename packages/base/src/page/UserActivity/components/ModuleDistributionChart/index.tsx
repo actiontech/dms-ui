@@ -5,7 +5,7 @@ import ChartWrapper from 'sqle/src/components/ChartCom/ChartWrapper';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { IUserActivityModuleDistributionItem } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
-import { floatRound } from '@actiontech/shared/lib/utils/Math';
+import { floatRound } from '@actiontech/dms-kit';
 import { USER_ACTIVITY_CHART_PADDING } from '../../utils';
 
 type ModuleDistributionChartProps = {
