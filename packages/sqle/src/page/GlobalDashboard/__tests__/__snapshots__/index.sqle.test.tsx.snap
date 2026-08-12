@@ -47,7 +47,31 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
       </div>
       <div
         class="extra"
-      />
+      >
+        <button
+          class="ant-btn ant-btn-default basic-button-wrapper css-10ae2zl"
+          type="button"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            导出工单
+          </span>
+        </button>
+      </div>
     </div>
     <div
       class="segmented-tabs-wrapper"

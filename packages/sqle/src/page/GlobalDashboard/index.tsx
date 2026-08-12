@@ -14,6 +14,16 @@ import SqlGovernancePanel from './components/SqlGovernancePanel';
 import AccountPanel from './components/AccountPanel';
 import { GetGlobalWorkflowListV2FilterCardEnum } from '@actiontech/shared/lib/api/sqle/service/GlobalDashboard/index.enum';
 import { useTypedNavigate, useTypedQuery } from '@actiontech/shared';
+// #if [ee]
+import { ActionButton } from '@actiontech/shared';
+import { DownArrowLineOutlined } from '@actiontech/icons';
+import { useBoolean } from 'ahooks';
+import { GetAuditPlanSQLExportReqV1ExportFormatEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useExportFormatModal } from '../../hooks/useExportFormatModal';
+import ExportFormatModal from '../../components/ExportFormatModal';
+import EmitterKey from '../../data/EmitterKey';
+import EventEmitter from '../../utils/EventEmitter';
+// #endif
 
 const GlobalDashBoard = () => {
   const { t } = useTranslation();
@@ -42,6 +52,29 @@ const GlobalDashBoard = () => {
     loading: getInstanceListLoading
   } = useInstance();
 
+  // #if [ee]
+  const [
+    exportButtonDisabled,
+    { setFalse: finishExport, setTrue: startExport }
+  ] = useBoolean(false);
+  const {
+    exportFormatModalVisible,
+    showExportFormatModal,
+    hideExportFormatModal,
+    selectedExportFormat,
+    setSelectedExportFormat
+  } = useExportFormatModal(GetAuditPlanSQLExportReqV1ExportFormatEnum.csv);
+
+  const handleExportFormatConfirm = () => {
+    hideExportFormatModal();
+    startExport();
+    EventEmitter.emit(
+      EmitterKey.Export_Global_Dashboard_Workflow_List,
+      selectedExportFormat
+    );
+  };
+  // #endif
+
   const projectOptions = useMemo(() => {
     return bindProjects.map((project) => ({
       label: project.project_name,
@@ -68,6 +101,9 @@ const GlobalDashBoard = () => {
             instanceId={instanceId}
             refreshSignal={refreshSignals[DashboardTabKey.Workflow]}
             initialCard={initialWorkflowCard}
+            // #if [ee]
+            onExportFinished={finishExport}
+            // #endif
           />
         )
       },
@@ -101,7 +137,17 @@ const GlobalDashBoard = () => {
     ];
 
     return items;
-  }, [t, projectId, instanceId, refreshSignals, isAdmin, initialWorkflowCard]);
+  }, [
+    t,
+    projectId,
+    instanceId,
+    refreshSignals,
+    isAdmin,
+    initialWorkflowCard,
+    // #if [ee]
+    finishExport
+    // #endif
+  ]);
 
   useEffect(() => {
     const searchParams = extractQuery(ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD.index);
@@ -135,6 +181,18 @@ const GlobalDashBoard = () => {
             <TableRefreshButton refresh={refreshCurrentTab} />
           </Space>
         }
+        // #if [ee]
+        extra={
+          activeTab === DashboardTabKey.Workflow ? (
+            <ActionButton
+              text={t('globalDashboard.workflow.export.buttonText')}
+              icon={<DownArrowLineOutlined />}
+              onClick={showExportFormatModal}
+              disabled={exportButtonDisabled}
+            />
+          ) : null
+        }
+        // #endif
       />
       <SegmentedTabs
         activeKey={activeTab}
@@ -165,6 +223,15 @@ const GlobalDashBoard = () => {
           />
         }
       />
+      {/* #if [ee] */}
+      <ExportFormatModal
+        open={exportFormatModalVisible}
+        selectedFormat={selectedExportFormat}
+        onFormatChange={setSelectedExportFormat}
+        onConfirm={handleExportFormatConfirm}
+        onCancel={hideExportFormatModal}
+      />
+      {/* #endif */}
     </>
   );
 };

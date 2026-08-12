@@ -61,6 +61,12 @@ export default {
     toolbar: {
       searchPlaceholder: '搜索标题或工单ID'
     },
+    export: {
+      buttonText: '导出工单',
+      exporting: '正在导出工单',
+      successTips: '工单导出成功',
+      exceedLimitTips: '导出工单数量超过上限，请收窄筛选条件后重试'
+    },
     action: {
       goHandle: '去处理',
       detail: '详情'

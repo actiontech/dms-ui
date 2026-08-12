@@ -3,7 +3,11 @@ import {
   GetGlobalSqlManageTaskListV2FilterCardEnum,
   GetGlobalWorkflowListV2FilterCardEnum,
   GetGlobalWorkflowListV2WorkflowTypeEnum,
-  GetGlobalWorkflowListV2FilterStatusEnum
+  GetGlobalWorkflowListV2FilterStatusEnum,
+  ExportGlobalWorkflowsV2FilterCardEnum,
+  ExportGlobalWorkflowsV2WorkflowTypeEnum,
+  ExportGlobalWorkflowsV2FilterStatusEnum,
+  ExportGlobalWorkflowsV2ExportFormatEnum
 } from './index.enum';
 
 import {
@@ -99,6 +103,32 @@ export interface IGetGlobalWorkflowListV2Params {
 
 export interface IGetGlobalWorkflowListV2Return
   extends IGlobalWorkflowListResV2 {}
+
+export interface IExportGlobalWorkflowsV2Params {
+  keyword?: string;
+
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_card?: ExportGlobalWorkflowsV2FilterCardEnum;
+
+  workflow_type?: ExportGlobalWorkflowsV2WorkflowTypeEnum;
+
+  filter_status?: ExportGlobalWorkflowsV2FilterStatusEnum;
+
+  filter_update_time_from?: string;
+
+  filter_update_time_to?: string;
+
+  filter_create_user_id?: string;
+
+  filter_create_time_from?: string;
+
+  filter_create_time_to?: string;
+
+  export_format?: ExportGlobalWorkflowsV2ExportFormatEnum;
+}
 
 export interface IGetGlobalWorkflowStatisticsV2Params {
   filter_project_uid?: string;

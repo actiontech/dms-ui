@@ -15,6 +15,7 @@ class MockGlobalDashboardApi implements MockSpyApy {
     this.getGlobalAccountList();
     this.getGlobalWorkflowStatistics();
     this.getGlobalWorkflowList();
+    this.exportGlobalWorkflows();
     this.getGlobalSqlManageStatistics();
     this.getGlobalSqlManageTaskList();
   }
@@ -57,6 +58,12 @@ class MockGlobalDashboardApi implements MockSpyApy {
         data: mockGlobalWorkflowListData
       })
     );
+    return spy;
+  }
+
+  public exportGlobalWorkflows() {
+    const spy = jest.spyOn(GlobalDashboard, 'ExportGlobalWorkflowsV2');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
