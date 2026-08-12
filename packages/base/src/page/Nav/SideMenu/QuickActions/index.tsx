@@ -1,12 +1,12 @@
 import {
   // #if [ee]
   TodoListOutlined,
+  UserCircleFilled,
   // #endif
   SignalFilled,
   ProfileSquareFilled,
   RingOutlined,
-  BookMarkOutlined,
-  UserCircleFilled
+  BookMarkOutlined
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
 import { BasicToolTip, EmptyBox } from '@actiontech/dms-kit';
@@ -87,6 +87,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         icon: <SignalFilled width={18} height={18} color="currentColor" />,
         permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
       },
+      // #if [ee]
       {
         key: 'user-activity',
         title: t('dmsMenu.globalSettings.userActivity'),
@@ -94,6 +95,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         icon: <UserCircleFilled width={18} height={18} color="currentColor" />,
         permission: PERMISSIONS.PAGES.BASE.USER_ACTIVITY
       },
+      // #endif
       {
         key: 'view-rule',
         title: t('dmsMenu.globalSettings.viewRule'),
