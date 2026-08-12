@@ -1374,6 +1374,35 @@ exports[`App render App when token is existed 1`] = `
                       class="ant-space-item"
                     >
                       <div
+                        class="action-item user-activity"
+                      >
+                        <svg
+                          color="currentColor"
+                          height="18"
+                          viewBox="0 0 16 16"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 1.333A6.67 6.67 0 0 1 14.666 8 6.67 6.67 0 0 1 8 14.667 6.67 6.67 0 0 1 1.333 8 6.67 6.67 0 0 1 8 1.333m-3.985 8.944c.979 1.46 2.448 2.39 4.091 2.39s3.113-.93 4.091-2.39a5.98 5.98 0 0 0-4.09-1.61 5.98 5.98 0 0 0-4.092 1.61M8 7.333a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <div
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
                         class="action-item view-rule"
                       >
                         <svg
