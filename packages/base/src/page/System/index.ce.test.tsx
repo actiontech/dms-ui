@@ -45,10 +45,7 @@ describe('base/System-ee', () => {
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
 
-    const segmentedEle = getAllBySelector(
-      '.ant-segmented-item-label',
-      baseElement
-    );
+    const segmentedEle = getAllBySelector('.system-tab-item', baseElement);
     expect(segmentedEle.length).toBe(5);
     fireEvent.click(segmentedEle[1]);
     await act(async () => jest.advanceTimersByTime(500));

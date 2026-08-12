@@ -15,11 +15,39 @@ export default {
     processConnection: 'Integrations',
     loginConnection: 'Login connection',
     globalConfiguration: 'Global configuration',
+    accessSettings: 'Access settings',
     license: 'License',
     personalize: 'Personalization settings',
     gitSSH: 'Git SSH configuration',
     databaseAccountPasswordPolicy: 'DB Account Password Policy'
   },
+
+  accessSettings: {
+    titleTip:
+      'Maintain IP/CIDR whitelist and access restriction switch. When enabled, non-whitelisted sources cannot access the system.',
+    restrictionSwitch: 'Access restriction',
+    addRule: 'Add access rule',
+    addRuleTitle: 'Add access rule',
+    editRuleTitle: 'Edit access rule',
+    useCurrentIp: 'Use current IP',
+    whitelistPolicy: 'Whitelist policy',
+    sourcePlaceholder: 'Enter IPv4 or CIDR, e.g. 192.168.1.1 or 10.0.0.0/24',
+    invalidSource: 'Please enter a valid IPv4 address or IPv4 CIDR',
+    columns: {
+      source: 'Source',
+      policy: 'Access policy',
+      remark: 'Remark',
+      updatedAt: 'Updated at'
+    },
+    confirmDelete: 'Are you sure you want to delete this access rule?',
+    deleting: 'Deleting access rule...',
+    addSuccess: 'Access rule created successfully',
+    editSuccess: 'Access rule updated successfully',
+    deleteSuccess: 'Access rule deleted successfully',
+    enableSuccess: 'Access restriction enabled',
+    disableSuccess: 'Access restriction disabled'
+  },
+
   gitSSH: {
     title: 'Git SSH Key Configuration',
     description:

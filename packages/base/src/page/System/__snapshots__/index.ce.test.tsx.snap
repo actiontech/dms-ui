@@ -4,7 +4,7 @@ exports[`base/System-ee render snap 1`] = `
 <body>
   <div>
     <section
-      class="css-f69rf1"
+      class="css-1ww28xm"
     >
       <div
         class="actiontech-page-header-namespace css-ex8bfe"
@@ -19,85 +19,71 @@ exports[`base/System-ee render snap 1`] = `
         />
       </div>
       <div
-        class="ant-row ant-row-middle segmented-wrapper"
+        class="ant-row ant-row-middle system-tab-bar-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-18p941p"
+          class="ant-space ant-space-horizontal ant-space-align-center system-tab-bar"
+          style="flex-wrap: wrap; margin-bottom: -4px;"
         >
           <div
-            class="ant-segmented-group"
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
           >
-            <label
-              class="ant-segmented-item ant-segmented-item-selected"
+            <button
+              class="ant-segmented-item ant-segmented-item-selected system-tab-item system-tab-item-active"
+              title="消息推送"
+              type="button"
             >
-              <input
-                checked=""
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="消息推送"
-              >
-                消息推送
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              消息推送
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="流程对接"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="流程对接"
-              >
-                流程对接
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              流程对接
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="登录配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="登录配置"
-              >
-                登录配置
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              登录配置
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="全局配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="全局配置"
-              >
-                全局配置
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              全局配置
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="Git SSH配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="Git SSH配置"
-              >
-                Git SSH配置
-              </div>
-            </label>
+              Git SSH配置
+            </button>
           </div>
         </div>
       </div>
@@ -1716,7 +1702,7 @@ exports[`base/System-ee render snap 2`] = `
 <body>
   <div>
     <section
-      class="css-f69rf1"
+      class="css-1ww28xm"
     >
       <div
         class="actiontech-page-header-namespace css-ex8bfe"
@@ -1731,85 +1717,71 @@ exports[`base/System-ee render snap 2`] = `
         />
       </div>
       <div
-        class="ant-row ant-row-middle segmented-wrapper"
+        class="ant-row ant-row-middle system-tab-bar-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-18p941p"
+          class="ant-space ant-space-horizontal ant-space-align-center system-tab-bar"
+          style="flex-wrap: wrap; margin-bottom: -4px;"
         >
           <div
-            class="ant-segmented-group"
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
           >
-            <label
-              class="ant-segmented-item ant-segmented-item-selected"
+            <button
+              class="ant-segmented-item ant-segmented-item-selected system-tab-item system-tab-item-active"
+              title="消息推送"
+              type="button"
             >
-              <input
-                checked=""
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="消息推送"
-              >
-                消息推送
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              消息推送
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="流程对接"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="流程对接"
-              >
-                流程对接
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              流程对接
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="登录配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="登录配置"
-              >
-                登录配置
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              登录配置
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="全局配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="全局配置"
-              >
-                全局配置
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              全局配置
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="Git SSH配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="Git SSH配置"
-              >
-                Git SSH配置
-              </div>
-            </label>
+              Git SSH配置
+            </button>
           </div>
         </div>
       </div>
@@ -3500,7 +3472,7 @@ exports[`base/System-ee render snap 3`] = `
 <body>
   <div>
     <section
-      class="css-f69rf1"
+      class="css-1ww28xm"
     >
       <div
         class="actiontech-page-header-namespace css-ex8bfe"
@@ -3515,85 +3487,71 @@ exports[`base/System-ee render snap 3`] = `
         />
       </div>
       <div
-        class="ant-row ant-row-middle segmented-wrapper"
+        class="ant-row ant-row-middle system-tab-bar-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-18p941p"
+          class="ant-space ant-space-horizontal ant-space-align-center system-tab-bar"
+          style="flex-wrap: wrap; margin-bottom: -4px;"
         >
           <div
-            class="ant-segmented-group"
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
           >
-            <label
-              class="ant-segmented-item"
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="消息推送"
+              type="button"
             >
-              <input
-                checked=""
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="消息推送"
-              >
-                消息推送
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item ant-segmented-item-selected"
+              消息推送
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item ant-segmented-item-selected system-tab-item system-tab-item-active"
+              title="流程对接"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="流程对接"
-              >
-                流程对接
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              流程对接
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="登录配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="登录配置"
-              >
-                登录配置
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              登录配置
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px; padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="全局配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="全局配置"
-              >
-                全局配置
-              </div>
-            </label>
-            <label
-              class="ant-segmented-item"
+              全局配置
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 4px;"
+          >
+            <button
+              class="ant-segmented-item system-tab-item"
+              title="Git SSH配置"
+              type="button"
             >
-              <input
-                class="ant-segmented-item-input"
-                type="radio"
-              />
-              <div
-                class="ant-segmented-item-label"
-                title="Git SSH配置"
-              >
-                Git SSH配置
-              </div>
-            </label>
+              Git SSH配置
+            </button>
           </div>
         </div>
       </div>
