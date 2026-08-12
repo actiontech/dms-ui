@@ -8,6 +8,20 @@ import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../base/src/store';
 import { Select } from 'antd';
 
+/** Local near-square icon adapted from gbase.svg; overrides 1×1 API placeholder for GBase-8a only. */
+const GBASE_8A_DB_TYPE = 'GBase-8a';
+const GBASE_8A_LOGO_URL = '/db_type_logo/gbase-8a.svg';
+
+const resolveLogoUrlByDbType = (
+  dbType: string,
+  apiLogoPath?: string | null
+): string => {
+  if (dbType === GBASE_8A_DB_TYPE) {
+    return GBASE_8A_LOGO_URL;
+  }
+  return apiLogoPath ?? '';
+};
+
 const useDbServiceDriver = () => {
   const dispatch = useDispatch();
   const driverMeta = useSelector(
@@ -44,9 +58,10 @@ const useDbServiceDriver = () => {
     (dbType: string) => {
       if (!dbType) return '';
 
-      return (
-        driverMeta.find((driver) => dbType === driver?.db_type)?.logo_path ?? ''
-      );
+      const apiLogoPath = driverMeta.find(
+        (driver) => dbType === driver?.db_type
+      )?.logo_path;
+      return resolveLogoUrlByDbType(dbType, apiLogoPath);
     },
     [driverMeta]
   );
@@ -59,11 +74,12 @@ const useDbServiceDriver = () => {
 
   const generateDriverSelectOptions = React.useCallback(() => {
     return driverMeta.map((v) => {
+      const dbType = v.db_type ?? '';
       return (
         <Select.Option key={v.db_type} value={v.db_type}>
           <DatabaseTypeLogo
-            dbType={v.db_type ?? ''}
-            logoUrl={v.logo_path ?? ''}
+            dbType={dbType}
+            logoUrl={resolveLogoUrlByDbType(dbType, v.logo_path)}
           />
         </Select.Option>
       );
