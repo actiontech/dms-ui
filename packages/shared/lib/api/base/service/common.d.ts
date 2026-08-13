@@ -1195,7 +1195,6 @@ export interface IGetSystemVariablesReply {
   message?: string;
 }
 
-
 export interface IAccessWhitelistRuleItem {
   uid?: string;
 

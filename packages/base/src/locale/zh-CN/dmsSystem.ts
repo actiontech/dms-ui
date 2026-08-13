@@ -21,7 +21,6 @@ export default {
     databaseAccountPasswordPolicy: '数据库账号密码策略'
   },
 
-
   accessSettings: {
     titleTip:
       '维护 IP/CIDR 白名单与访问限制开关。开启后，非白名单来源将无法访问系统。',

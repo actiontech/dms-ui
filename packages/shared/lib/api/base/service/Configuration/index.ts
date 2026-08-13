@@ -433,5 +433,4 @@ class ConfigurationService extends ServiceBase {
   }
 }
 
-
 export default new ConfigurationService();

@@ -125,7 +125,6 @@ export interface IUpdateSystemVariablesParams
 
 export interface IUpdateSystemVariablesReturn extends IGenericResp {}
 
-
 export interface IGetAccessRestrictionReturn
   extends IGetAccessRestrictionReply {}
 
