@@ -120,6 +120,38 @@ export interface IExportSqlManageRemediationV1Params {
   instance_audit_plan_id?: string;
 
   audit_plan_type?: string;
+
+  /** project scope：与 SQL管控列表 / 导出 SQL管控报表同款筛参 */
+  fuzzy_search_sql_fingerprint?: string;
+
+  filter_assignee?: string;
+
+  filter_business?: string;
+
+  filter_source?: exportSqlManageV1FilterSourceEnum | string;
+
+  filter_audit_level?: exportSqlManageV1FilterAuditLevelEnum | string;
+
+  filter_last_audit_start_time_from?: string;
+
+  filter_last_audit_start_time_to?: string;
+
+  filter_status?: exportSqlManageV1FilterStatusEnum | string;
+
+  filter_db_type?: string;
+
+  filter_rule_name?: string;
+
+  filter_priority?: exportSqlManageV1FilterPriorityEnum | string;
+
+  fuzzy_search_endpoint?: string;
+
+  fuzzy_search_schema_name?: string;
+
+  extra_filters?: string;
+
+  /** scan_task scope：与明细 sql_data / 扫描任务报表同结构的 filter_list JSON 字符串 */
+  filter_list?: string;
 }
 
 export interface IGetSqlManageRuleTipsParams {

@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dev-zjrc-scan-immediate-collect   d19f939e
+                            dev-zjrc-sql-export-precheck-metrics   aabdd9fc
                           </article>
                         </div>
                         <div
@@ -345,7 +345,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dev-zjrc-scan-immediate-collect   d19f939e
+                            dev-zjrc-sql-export-precheck-metrics   aabdd9fc
                           </article>
                         </div>
                         <div

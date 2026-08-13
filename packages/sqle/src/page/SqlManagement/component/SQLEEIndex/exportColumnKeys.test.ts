@@ -15,6 +15,12 @@ const columns = SqlManagementColumn(
   mockOpenModal
 );
 
+const OCCURRENCE_EXPORT_KEYS = [
+  'fp_count',
+  'first_appear_timestamp',
+  'last_receive_timestamp'
+] as const;
+
 describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
   afterEach(() => {
     localStorage.clear();
@@ -32,6 +38,9 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
       'instance_name',
       'schema_name',
       'priority',
+      'fp_count',
+      'first_appear_timestamp',
+      'last_receive_timestamp',
       'assignees',
       'endpoints',
       'status',
@@ -64,6 +73,9 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
       'instance_name',
       'schema_name',
       'priority',
+      'fp_count',
+      'first_appear_timestamp',
+      'last_receive_timestamp',
       'assignees',
       'endpoints',
       'status',
@@ -84,6 +96,7 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
             'instance_name',
             'schema_name',
             'priority',
+            ...OCCURRENCE_EXPORT_KEYS,
             'assignees',
             'endpoints',
             'status',
@@ -104,6 +117,37 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
     expect(keys).not.toContain('audit_result');
     expect(keys).toEqual(
       expect.arrayContaining(['audit_level', 'rule_desc', 'object_name'])
+    );
+  });
+
+  it('deduplicates endpoints when classic column and source_extra share dataIndex', () => {
+    const columnsWithDuplicateEndpoints = [
+      ...columns,
+      {
+        dataIndex: 'endpoints',
+        title: () => '客户端 IP',
+        className: 'sql-manage-source-extra-column'
+      },
+      {
+        dataIndex: 'query_time_avg',
+        title: () => '平均查询时间',
+        className: 'sql-manage-source-extra-column'
+      }
+    ] as typeof columns;
+
+    const keys = getSqlManagementExportColumnKeys(
+      columnsWithDuplicateEndpoints,
+      'admin',
+      ['endpoints', 'query_time_avg']
+    );
+
+    expect(keys.filter((key) => key === 'endpoints')).toHaveLength(1);
+    expect(keys).toEqual(
+      expect.arrayContaining([
+        ...OCCURRENCE_EXPORT_KEYS,
+        'endpoints',
+        'query_time_avg'
+      ])
     );
   });
 });

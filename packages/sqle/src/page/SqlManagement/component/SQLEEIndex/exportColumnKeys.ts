@@ -20,6 +20,9 @@ const SQL_MANAGEMENT_EXPORT_COLUMN_KEYS = [
   'instance_name',
   'schema_name',
   'priority',
+  'fp_count',
+  'first_appear_timestamp',
+  'last_receive_timestamp',
   'assignees',
   'endpoints',
   'status',
@@ -147,5 +150,7 @@ export const getSqlManagementExportColumnKeys = (
     })
     .flatMap((column) => expandListColumnKeyToExportKeys(column.key));
 
-  return injectObjectNameExportKey(visibleExportKeys);
+  // Fixed columns + source_extra head may share the same dataIndex (e.g. endpoints);
+  // backend rejects duplicate export_column_keys.
+  return Array.from(new Set(injectObjectNameExportKey(visibleExportKeys)));
 };

@@ -442,15 +442,38 @@ const SQLEEIndex = () => {
       t('sqlManagement.pageHeader.action.remediationExporting')
     );
 
+    // 当前项目整改导出跟随列表生效筛参；跨项目全局导出不带项目内筛选
     const exportPromise =
       scope === 'project'
-        ? SqlManage.exportSqlManageRemediationV1(
-            {
-              project_name: projectName,
-              export_scope: exportSqlManageRemediationV1ExportScopeEnum.project
-            },
-            { responseType: 'blob' }
-          )
+        ? (() => {
+            const listParams = buildListRequestParams();
+            return SqlManage.exportSqlManageRemediationV1(
+              {
+                project_name: projectName,
+                export_scope:
+                  exportSqlManageRemediationV1ExportScopeEnum.project,
+                fuzzy_search_sql_fingerprint:
+                  listParams.fuzzy_search_sql_fingerprint,
+                filter_assignee: listParams.filter_assignee,
+                filter_business: listParams.filter_business,
+                filter_instance_id: listParams.filter_instance_id,
+                filter_source: listParams.filter_source,
+                filter_audit_level: listParams.filter_audit_level,
+                filter_last_audit_start_time_from:
+                  listParams.filter_last_audit_start_time_from,
+                filter_last_audit_start_time_to:
+                  listParams.filter_last_audit_start_time_to,
+                filter_status: listParams.filter_status,
+                filter_db_type: listParams.filter_db_type,
+                filter_rule_name: listParams.filter_rule_name,
+                filter_priority: listParams.filter_priority,
+                fuzzy_search_endpoint: listParams.fuzzy_search_endpoint,
+                fuzzy_search_schema_name: listParams.fuzzy_search_schema_name,
+                extra_filters: listParams.extra_filters
+              },
+              { responseType: 'blob' }
+            );
+          })()
         : SqlManage.exportGlobalSqlManageRemediationV1({
             responseType: 'blob'
           });
