@@ -415,12 +415,16 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         0
       );
 
+      const filterList = getFilterListByTableFilterInfo();
       SqlManage.exportSqlManageRemediationV1(
         {
           project_name: projectName,
           export_scope: exportSqlManageRemediationV1ExportScopeEnum.scan_task,
           instance_audit_plan_id: instanceAuditPlanId ?? '',
-          audit_plan_type: auditPlanType
+          audit_plan_type: auditPlanType,
+          // 与「导出扫描任务报表」一致：明细动态筛 + SQL/规则搜索写入 filter_list
+          filter_list:
+            filterList.length > 0 ? JSON.stringify(filterList) : undefined
         },
         { responseType: 'blob' }
       )
@@ -446,6 +450,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     };
   }, [
     auditPlanType,
+    getFilterListByTableFilterInfo,
     instanceAuditPlanId,
     messageApi,
     projectName,

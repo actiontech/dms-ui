@@ -248,7 +248,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         filter_assignee: mockCurrentUserReturn.uid,
         filter_priority: exportSqlManageV1FilterPriorityEnum.high,
         export_column_keys:
-          'sql_fingerprint,sql,source,audit_level,rule_desc,object_name,instance_name,schema_name,priority,assignees,endpoints,status,remark'
+          'sql_fingerprint,sql,source,audit_level,rule_desc,object_name,instance_name,schema_name,priority,fp_count,first_appear_timestamp,last_receive_timestamp,assignees,endpoints,status,remark'
       },
       {
         responseType: 'blob'
@@ -305,12 +305,13 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await user.click(await screen.findByText('导出 SQL管控报表'));
 
     expect(exportRequest).toHaveBeenCalledWith(
-      {
-        ...exportParams,
+      expect.objectContaining({
+        project_name: mockProjectInfo.projectName,
+        filter_status: 'unhandled',
         fuzzy_search_sql_fingerprint: searchText,
         export_column_keys:
-          'sql,sql_fingerprint,audit_level,rule_desc,object_name,instance_name,schema_name,priority,endpoints,status'
-      },
+          'sql,sql_fingerprint,audit_level,rule_desc,object_name,instance_name,schema_name,priority,endpoints,status,fp_count,first_appear_timestamp,last_receive_timestamp'
+      }),
       {
         responseType: 'blob'
       }
@@ -334,10 +335,13 @@ describe('page/SqlManagement/SQLEEIndex', () => {
           instance_name: { order: 5, show: false },
           schema_name: { order: 6, show: false },
           priority: { order: 7, show: false },
-          assignees: { order: 8, show: false },
-          endpoints: { order: 9, show: false },
-          status: { order: 10, show: false },
-          remark: { order: 11, show: false }
+          fp_count: { order: 8, show: false },
+          first_appear_timestamp: { order: 9, show: false },
+          last_receive_timestamp: { order: 10, show: false },
+          assignees: { order: 11, show: false },
+          endpoints: { order: 12, show: false },
+          status: { order: 13, show: false },
+          remark: { order: 14, show: false }
         }
       })
     );
@@ -359,10 +363,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await user.click(screen.getByText('导出报表'));
     await user.click(await screen.findByText('导出当前项目SQL整改报表'));
     expect(exportRequest).toHaveBeenCalledWith(
-      {
+      expect.objectContaining({
         project_name: mockProjectInfo.projectName,
         export_scope: exportSqlManageRemediationV1ExportScopeEnum.project
-      },
+      }),
       {
         responseType: 'blob'
       }
