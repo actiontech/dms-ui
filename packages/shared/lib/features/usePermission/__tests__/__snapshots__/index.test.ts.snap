@@ -94,6 +94,12 @@ exports[`usePermission should match snapshot 1`] = `
         "SYNC": "action:sync_task",
       },
       "SYSTEM": {
+        "ACCESS_SETTINGS": {
+          "ADD_RULE": "action:access_settings_add_rule",
+          "DELETE_RULE": "action:access_settings_delete_rule",
+          "EDIT_RULE": "action:access_settings_edit_rule",
+          "TOGGLE_RESTRICTION": "action:access_settings_toggle_restriction",
+        },
         "GLOBAL_SETTING": {
           "CB_OPERATION_LOG_EXPIRED_HOURS": "action:cb_operation_log_expired_hours",
           "OPERATION_LOG_EXPIRED_HOURS": "action:operation_log_expired_hours",
@@ -259,6 +265,7 @@ exports[`usePermission should match snapshot 1`] = `
   },
   "PAGES": {
     "BASE": {
+      "ACCESS_SETTINGS": "page:access_settings",
       "DATA_SOURCE_MANAGEMENT": "page:data_source_management",
       "DB_SERVICE": "page:db_service",
       "GLOBAL_DATA_SOURCE": "page:global_data_source",
@@ -290,6 +297,38 @@ exports[`usePermission should match snapshot 2`] = `
 {
   "action: edit_system_notice": {
     "id": "action: edit_system_notice",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:access_settings_add_rule": {
+    "id": "action:access_settings_add_rule",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:access_settings_delete_rule": {
+    "id": "action:access_settings_delete_rule",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:access_settings_edit_rule": {
+    "id": "action:access_settings_edit_rule",
+    "role": [
+      "admin",
+      "systemAdministrator",
+    ],
+    "type": "action",
+  },
+  "action:access_settings_toggle_restriction": {
+    "id": "action:access_settings_toggle_restriction",
     "role": [
       "admin",
       "systemAdministrator",
@@ -1906,6 +1945,15 @@ exports[`usePermission should match snapshot 2`] = `
   "page: workflow_template": {
     "id": "page: workflow_template",
     "projectPermission": "manage_approval_template",
+    "role": [
+      "admin",
+      "systemAdministrator",
+      "auditAdministrator",
+    ],
+    "type": "page",
+  },
+  "page:access_settings": {
+    "id": "page:access_settings",
     "role": [
       "admin",
       "systemAdministrator",

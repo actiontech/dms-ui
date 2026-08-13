@@ -1195,6 +1195,82 @@ export interface IGetSystemVariablesReply {
   message?: string;
 }
 
+export interface IAccessWhitelistRuleItem {
+  uid?: string;
+
+  source?: string;
+
+  policy_type?: string;
+
+  remark?: string;
+
+  updated_at?: string;
+}
+
+export interface IAccessRestrictionConfig {
+  enabled?: boolean;
+
+  rules?: IAccessWhitelistRuleItem[];
+}
+
+export interface IGetAccessRestrictionReply {
+  code?: number;
+
+  data?: IAccessRestrictionConfig;
+
+  message?: string;
+}
+
+export interface IUpdateAccessRestrictionReq {
+  enabled: boolean;
+}
+
+export interface ICreateAccessWhitelistRuleReq {
+  source: string;
+
+  remark?: string;
+
+  policy_type?: string;
+}
+
+export interface ICreateAccessWhitelistRuleReply {
+  code?: number;
+
+  data?: IAccessWhitelistRuleItem;
+
+  message?: string;
+}
+
+export interface IUpdateAccessWhitelistRuleReq {
+  rule_uid: string;
+
+  source: string;
+
+  remark?: string;
+
+  policy_type?: string;
+}
+
+export interface IUpdateAccessWhitelistRuleReply {
+  code?: number;
+
+  data?: IAccessWhitelistRuleItem;
+
+  message?: string;
+}
+
+export interface IAccessRestrictionClientIP {
+  client_ip?: string;
+}
+
+export interface IGetAccessRestrictionClientIPReply {
+  code?: number;
+
+  data?: IAccessRestrictionClientIP;
+
+  message?: string;
+}
+
 export interface IGetTableColumnMaskingDetailsReply {
   code?: number;
 

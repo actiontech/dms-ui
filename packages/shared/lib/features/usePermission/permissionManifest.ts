@@ -185,6 +185,15 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.auditAdministrator
     ]
   },
+  [PERMISSIONS.PAGES.BASE.ACCESS_SETTINGS]: {
+    id: PERMISSIONS.PAGES.BASE.ACCESS_SETTINGS,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
+  },
   [PERMISSIONS.PAGES.SQLE.OPERATION_RECORD]: {
     id: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD,
     type: 'page',
@@ -626,6 +635,26 @@ export const PERMISSION_MANIFEST: Record<
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.SMS_SERVICE]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.SMS_SERVICE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.TOGGLE_RESTRICTION]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.TOGGLE_RESTRICTION,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.ADD_RULE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.ADD_RULE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.EDIT_RULE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.EDIT_RULE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.DELETE_RULE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.ACCESS_SETTINGS.DELETE_RULE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator]
   },

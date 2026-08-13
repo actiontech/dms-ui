@@ -40,6 +40,16 @@ import {
   IGetSystemVariablesReturn,
   IUpdateSystemVariablesParams,
   IUpdateSystemVariablesReturn,
+  IGetAccessRestrictionReturn,
+  IUpdateAccessRestrictionParams,
+  IUpdateAccessRestrictionReturn,
+  ICreateAccessWhitelistRuleParams,
+  ICreateAccessWhitelistRuleReturn,
+  IUpdateAccessWhitelistRuleParams,
+  IUpdateAccessWhitelistRuleReturn,
+  IDeleteAccessWhitelistRuleParams,
+  IDeleteAccessWhitelistRuleReturn,
+  IGetAccessRestrictionClientIPReturn,
   IGetWebHookConfigurationReturn,
   IUpdateWebHookConfigurationParams,
   IUpdateWebHookConfigurationReturn,
@@ -351,6 +361,73 @@ class ConfigurationService extends ServiceBase {
     return this.post<ITestWeChatConfigurationReturn>(
       '/v1/dms/configurations/wechat/test',
       paramsData,
+      options
+    );
+  }
+
+  public GetAccessRestriction(options?: AxiosRequestConfig) {
+    return this.get<IGetAccessRestrictionReturn>(
+      '/v1/dms/configurations/access_restriction',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateAccessRestriction(
+    params: IUpdateAccessRestrictionParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateAccessRestrictionReturn>(
+      '/v1/dms/configurations/access_restriction',
+      paramsData,
+      options
+    );
+  }
+
+  public CreateAccessWhitelistRule(
+    params: ICreateAccessWhitelistRuleParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ICreateAccessWhitelistRuleReturn>(
+      '/v1/dms/configurations/access_restriction/rules',
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateAccessWhitelistRule(
+    params: IUpdateAccessWhitelistRuleParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const ruleUid = paramsData.rule_uid;
+    delete paramsData.rule_uid;
+    return this.put<IUpdateAccessWhitelistRuleReturn>(
+      `/v1/dms/configurations/access_restriction/rules/${ruleUid}`,
+      paramsData,
+      options
+    );
+  }
+
+  public DeleteAccessWhitelistRule(
+    params: IDeleteAccessWhitelistRuleParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const ruleUid = paramsData.rule_uid;
+    return this.delete<IDeleteAccessWhitelistRuleReturn>(
+      `/v1/dms/configurations/access_restriction/rules/${ruleUid}`,
+      undefined,
+      options
+    );
+  }
+
+  public GetAccessRestrictionClientIP(options?: AxiosRequestConfig) {
+    return this.get<IGetAccessRestrictionClientIPReturn>(
+      '/v1/dms/configurations/access_restriction/client_ip',
+      undefined,
       options
     );
   }

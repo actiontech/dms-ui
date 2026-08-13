@@ -23,6 +23,13 @@ import {
   ITestSMTPConfigurationReply,
   IGetSystemVariablesReply,
   IUpdateSystemVariablesReqV1,
+  IGetAccessRestrictionReply,
+  IUpdateAccessRestrictionReq,
+  ICreateAccessWhitelistRuleReq,
+  ICreateAccessWhitelistRuleReply,
+  IUpdateAccessWhitelistRuleReq,
+  IUpdateAccessWhitelistRuleReply,
+  IGetAccessRestrictionClientIPReply,
   IGetWebHookConfigurationReply,
   IUpdateWebHookConfigurationReq,
   ITestWebHookConfigurationReply,
@@ -117,6 +124,35 @@ export interface IUpdateSystemVariablesParams
   extends IUpdateSystemVariablesReqV1 {}
 
 export interface IUpdateSystemVariablesReturn extends IGenericResp {}
+
+export interface IGetAccessRestrictionReturn
+  extends IGetAccessRestrictionReply {}
+
+export interface IUpdateAccessRestrictionParams
+  extends IUpdateAccessRestrictionReq {}
+
+export interface IUpdateAccessRestrictionReturn extends IGenericResp {}
+
+export interface ICreateAccessWhitelistRuleParams
+  extends ICreateAccessWhitelistRuleReq {}
+
+export interface ICreateAccessWhitelistRuleReturn
+  extends ICreateAccessWhitelistRuleReply {}
+
+export interface IUpdateAccessWhitelistRuleParams
+  extends IUpdateAccessWhitelistRuleReq {}
+
+export interface IUpdateAccessWhitelistRuleReturn
+  extends IUpdateAccessWhitelistRuleReply {}
+
+export interface IDeleteAccessWhitelistRuleParams {
+  rule_uid: string;
+}
+
+export interface IDeleteAccessWhitelistRuleReturn extends IGenericResp {}
+
+export interface IGetAccessRestrictionClientIPReturn
+  extends IGetAccessRestrictionClientIPReply {}
 
 export interface IGetWebHookConfigurationReturn
   extends IGetWebHookConfigurationReply {}

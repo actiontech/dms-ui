@@ -6,6 +6,7 @@ export const PERMISSIONS = {
       GLOBAL_DATA_SOURCE: 'page:global_data_source',
       SYNC_DATA_SOURCE: 'page:sync_data_source',
       SYSTEM_SETTING: 'page:system_setting',
+      ACCESS_SETTINGS: 'page:access_settings',
       RESOURCE_OVERVIEW: 'page:resource_overview',
       MEMBER: 'page:member',
       DB_SERVICE: 'page:db_service',
@@ -87,6 +88,12 @@ export const PERMISSIONS = {
             'action:cb_operation_log_expired_hours',
           URL_ADDRESS_PREFIX: 'action:url_address_prefix',
           SMS_SERVICE: 'action:sms_service'
+        },
+        ACCESS_SETTINGS: {
+          TOGGLE_RESTRICTION: 'action:access_settings_toggle_restriction',
+          ADD_RULE: 'action:access_settings_add_rule',
+          EDIT_RULE: 'action:access_settings_edit_rule',
+          DELETE_RULE: 'action:access_settings_delete_rule'
         },
         LICENSE: {
           COLLECT_LICENSE: 'action:collect_license',

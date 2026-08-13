@@ -1,4 +1,4 @@
-import SystemEEPage from './';
+import SystemEEPage from '.';
 import { useDispatch } from 'react-redux';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../testUtils/superRender';
@@ -59,11 +59,8 @@ describe('base/System-ee', () => {
       type: 'system/initModalStatus'
     });
 
-    const segmentedEle = getAllBySelector(
-      '.ant-segmented-item-label',
-      baseElement
-    );
-    expect(segmentedEle.length).toBe(8);
+    const segmentedEle = getAllBySelector('.system-tab-item', baseElement);
+    expect(segmentedEle.length).toBe(9);
     fireEvent.click(segmentedEle[1]);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
@@ -74,7 +71,7 @@ describe('base/System-ee', () => {
       '/system?active_tab=process_connection'
     ]);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(screen.getByTitle('流程对接').parentElement).toHaveClass(
+    expect(screen.getByTitle('流程对接')).toHaveClass(
       'ant-segmented-item-selected'
     );
     expect(baseElement).toMatchSnapshot();

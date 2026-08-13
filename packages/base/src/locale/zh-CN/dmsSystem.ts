@@ -14,10 +14,37 @@ export default {
     processConnection: '流程对接',
     loginConnection: '登录配置',
     globalConfiguration: '全局配置',
+    accessSettings: '访问设置',
     license: '许可证',
     personalize: '个性化设置',
     gitSSH: 'Git SSH配置',
     databaseAccountPasswordPolicy: '数据库账号密码策略'
+  },
+
+  accessSettings: {
+    titleTip:
+      '维护 IP/CIDR 白名单与访问限制开关。开启后，非白名单来源将无法访问系统。',
+    restrictionSwitch: '访问限制',
+    addRule: '新增访问规则',
+    addRuleTitle: '新增访问规则',
+    editRuleTitle: '编辑访问规则',
+    useCurrentIp: '使用当前 IP',
+    whitelistPolicy: '白名单策略',
+    sourcePlaceholder: '请输入 IPv4 或 CIDR，例如 192.168.1.1 或 10.0.0.0/24',
+    invalidSource: '请输入合法的 IPv4 地址或 IPv4 CIDR',
+    columns: {
+      source: '来源',
+      policy: '访问策略',
+      remark: '备注',
+      updatedAt: '更新时间'
+    },
+    confirmDelete: '确认删除该访问规则吗？',
+    deleting: '正在删除访问规则...',
+    addSuccess: '新增访问规则成功',
+    editSuccess: '编辑访问规则成功',
+    deleteSuccess: '删除访问规则成功',
+    enableSuccess: '已开启访问限制',
+    disableSuccess: '已关闭访问限制'
   },
 
   gitSSH: {
