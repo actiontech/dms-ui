@@ -1,6 +1,7 @@
 import {
   // #if [ee]
   TodoListOutlined,
+  UserCircleFilled,
   // #endif
   SignalFilled,
   ProfileSquareFilled,
@@ -86,6 +87,15 @@ const QuickActions: React.FC<QuickActionsProps> = ({
         icon: <SignalFilled width={18} height={18} color="currentColor" />,
         permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
       },
+      // #if [ee]
+      {
+        key: 'user-activity',
+        title: t('dmsMenu.globalSettings.userActivity'),
+        path: ROUTE_PATHS.BASE.USER_ACTIVITY,
+        icon: <UserCircleFilled width={18} height={18} color="currentColor" />,
+        permission: PERMISSIONS.PAGES.BASE.USER_ACTIVITY
+      },
+      // #endif
       {
         key: 'view-rule',
         title: t('dmsMenu.globalSettings.viewRule'),

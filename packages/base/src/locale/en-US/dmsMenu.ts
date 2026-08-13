@@ -60,6 +60,7 @@ export default {
     title: 'Global settings',
     userCenter: 'User center',
     reportStatistics: 'Report statistics',
+    userActivity: 'User activity',
     viewRule: 'View rule',
     ruleManage: 'Rule management',
     system: 'System settings',

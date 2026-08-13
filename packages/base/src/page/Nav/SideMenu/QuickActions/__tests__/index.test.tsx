@@ -166,7 +166,7 @@ describe('base/Nav/QuickActions', () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
     const actions = getAllBySelector('.action-item');
-    expect(actions).toHaveLength(4);
+    expect(actions).toHaveLength(5);
 
     fireEvent.click(actions[0]);
     await act(async () => jest.advanceTimersByTime(0));
@@ -189,7 +189,7 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(3);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       3,
-      ROUTE_PATHS.SQLE.RULE.index.path
+      ROUTE_PATHS.BASE.USER_ACTIVITY
     );
 
     fireEvent.click(actions[3]);
@@ -197,6 +197,14 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(4);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       4,
+      ROUTE_PATHS.SQLE.RULE.index.path
+    );
+
+    fireEvent.click(actions[4]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(navigateSpy).toHaveBeenCalledTimes(5);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      5,
       ROUTE_PATHS.SQLE.KNOWLEDGE.index.path
     );
   });
@@ -212,7 +220,7 @@ describe('base/Nav/QuickActions', () => {
       pathname: ROUTE_PATHS.SQLE.KNOWLEDGE.index.path
     });
     customRender();
-    expect(getAllBySelector('.action-item')[3]).toHaveClass(
+    expect(getAllBySelector('.action-item')[4]).toHaveClass(
       'action-item-active'
     );
 
@@ -221,7 +229,7 @@ describe('base/Nav/QuickActions', () => {
       pathname: `${ROUTE_PATHS.SQLE.KNOWLEDGE.index.path}/${ROUTE_PATHS.SQLE.KNOWLEDGE.refined.path}`
     });
     customRender();
-    expect(getAllBySelector('.action-item')[3]).toHaveClass(
+    expect(getAllBySelector('.action-item')[4]).toHaveClass(
       'action-item-active'
     );
   });

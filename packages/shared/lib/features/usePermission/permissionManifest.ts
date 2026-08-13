@@ -225,6 +225,11 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.certainProjectManager
     ]
   },
+  [PERMISSIONS.PAGES.BASE.USER_ACTIVITY]: {
+    id: PERMISSIONS.PAGES.BASE.USER_ACTIVITY,
+    type: 'page',
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
+  },
   [PERMISSIONS.PAGES.SQLE.PROJECT_RULE_TEMPLATE]: {
     id: PERMISSIONS.PAGES.SQLE.PROJECT_RULE_TEMPLATE,
     type: 'page',
