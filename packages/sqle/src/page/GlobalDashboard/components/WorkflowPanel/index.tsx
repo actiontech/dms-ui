@@ -4,6 +4,7 @@ import {
   CustomAvatar,
   CustomSegmentedFilter,
   getErrorMessage,
+  ResponseCode,
   ROUTE_PATHS,
   TableToolbar,
   useTableRequestParams,
@@ -39,6 +40,9 @@ import {
   workflowTypeLabelDictionary
 } from './data';
 import { UserService } from '@actiontech/shared/lib/api/base';
+import { DmsApi } from '@actiontech/shared/lib/api';
+import type { IOpsType } from '@actiontech/shared/lib/api/base/service/common';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 // #if [ee]
 import ExportGlobalWorkflowButton from './ExportGlobalWorkflowButton';
 // #endif
@@ -60,6 +64,7 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
 }) => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
+  const { bindProjects } = useCurrentUser();
   const [messageApi, messageContextHolder] = message.useMessage();
   const [workflowType, setWorkflowType] =
     useState<GetGlobalWorkflowListV2WorkflowTypeEnum | null>(null);
@@ -163,6 +168,61 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
     }));
   }, [userListData]);
 
+  const opsTypeProjectIds = useMemo(() => {
+    if (projectId) {
+      return [projectId];
+    }
+    return Array.from(
+      new Set(
+        bindProjects
+          .map((project) => project.project_id)
+          .filter((id): id is string => Boolean(id))
+      )
+    );
+  }, [projectId, bindProjects]);
+
+  const { data: opsTypeList } = useRequest(
+    async () => {
+      if (opsTypeProjectIds.length === 0) {
+        return [] as IOpsType[];
+      }
+      const results = await Promise.all(
+        opsTypeProjectIds.map((uid) =>
+          DmsApi.ProjectService.ListOpsTypes({
+            page_size: 1000,
+            project_uid: uid
+          })
+            .then((res) => {
+              if (res.data.code === ResponseCode.SUCCESS) {
+                return res.data.data ?? [];
+              }
+              return [] as IOpsType[];
+            })
+            .catch(() => [] as IOpsType[])
+        )
+      );
+      const byUid = new Map<string, IOpsType>();
+      results.flat().forEach((opsType) => {
+        if (opsType.uid) {
+          byUid.set(opsType.uid, opsType);
+        }
+      });
+      return Array.from(byUid.values());
+    },
+    {
+      refreshDeps: [opsTypeProjectIds]
+    }
+  );
+
+  const opsTypeOptions = useMemo(
+    () =>
+      (opsTypeList ?? []).map((opsType) => ({
+        label: opsType.name ?? '',
+        value: opsType.uid ?? ''
+      })),
+    [opsTypeList]
+  );
+
   const columns = useMemo(() => workflowPanelColumns(), []);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
@@ -177,9 +237,10 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
         ['status', { options: workflowFilterStatusOptions() }],
         ['updated_at', { showTime: true }],
         ['create_user_name', { options: userOptions }],
-        ['created_at', { showTime: true }]
+        ['created_at', { showTime: true }],
+        ['ops_type', { options: opsTypeOptions }]
       ]),
-    [userOptions]
+    [userOptions, opsTypeOptions]
   );
 
   const openWorkflow = useCallback(

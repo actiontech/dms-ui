@@ -30,6 +30,7 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
           createTime={formatTime(workflowInfo?.create_time, '-')}
           createUserName={workflowInfo?.create_user_name ?? '-'}
           workflowStatus={workflowInfo?.record?.status}
+          opsTypeName={workflowInfo?.ops_type?.name}
         />
 
         <WorkflowSteps

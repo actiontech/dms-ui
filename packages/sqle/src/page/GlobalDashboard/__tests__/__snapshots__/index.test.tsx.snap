@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GlobalDashboard should render workflow tab by default 1`] = `
+exports[`GlobalDashboard (dms) should render tabs including account tab 1`] = `
 <body>
   <div>
     <div
@@ -112,6 +112,20 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                 title="SQL治理"
               >
                 SQL治理
+              </div>
+            </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="账号管理"
+              >
+                账号管理
               </div>
             </label>
           </div>

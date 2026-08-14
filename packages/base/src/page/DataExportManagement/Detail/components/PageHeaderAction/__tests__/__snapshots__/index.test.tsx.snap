@@ -48,7 +48,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction clicked workflow detail bu
       role="separator"
     />
     <div
-      class="toggle-export-detail-wrapper"
+      class="toggle-export-detail-wrapper toggle-workflow-detail-wrapper"
     >
       工单详情
     </div>
@@ -104,7 +104,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction should match snapshot 1`] 
       role="separator"
     />
     <div
-      class="toggle-export-detail-wrapper"
+      class="toggle-export-detail-wrapper toggle-workflow-detail-wrapper"
     >
       工单详情
     </div>

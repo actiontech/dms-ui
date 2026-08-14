@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowBasicInfoProps } from './index.type';
-import { CustomAvatar } from '@actiontech/dms-kit';
+import { BasicTag, CustomAvatar } from '@actiontech/dms-kit';
 import { Space } from 'antd';
 import WorkflowStatus from '../../../Common/WorkflowStatus';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
@@ -9,7 +9,11 @@ import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
   createTime,
   createUserName,
-  workflowStatus
+  workflowStatus,
+  isPlaintextExport,
+  waitingMaskingApproval,
+  partialExportFailed,
+  opsTypeName
 }) => {
   const { t } = useTranslation();
   return (
@@ -50,10 +54,38 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
               status={
                 workflowStatus as unknown as ListDataExportWorkflowStatusEnum
               }
+              waitingMaskingApproval={waitingMaskingApproval}
+              partialExportFailed={partialExportFailed}
             />
           ) : (
             '-'
           )}
+        </div>
+      </div>
+
+      <div className="workflow-steps-basic-info-item">
+        <div className="workflow-steps-basic-info-item-label">
+          {t('dmsDataExport.detail.record.basicInfo.exportMode')}
+        </div>
+        <div className="workflow-steps-basic-info-item-value">
+          {isPlaintextExport ? (
+            <BasicTag color="orange">
+              {t('dmsDataExport.detail.record.basicInfo.exportModePlaintext')}
+            </BasicTag>
+          ) : (
+            <span>
+              {t('dmsDataExport.detail.record.basicInfo.exportModeMasked')}
+            </span>
+          )}
+        </div>
+      </div>
+
+      <div className="workflow-steps-basic-info-item">
+        <div className="workflow-steps-basic-info-item-label">
+          {t('dmsDataExport.list.column.opsType')}
+        </div>
+        <div className="workflow-steps-basic-info-item-value">
+          {opsTypeName || '-'}
         </div>
       </div>
     </div>

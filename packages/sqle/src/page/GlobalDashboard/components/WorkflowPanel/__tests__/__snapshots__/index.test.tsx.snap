@@ -391,6 +391,7 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                         <col />
                         <col />
                         <col />
+                        <col />
                         <col
                           style="width: 100px;"
                         />
@@ -442,6 +443,12 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             状态
                           </th>
                           <th
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                            scope="col"
+                          >
+                            运维类型
+                          </th>
+                          <th
                             class="ant-table-cell"
                             scope="col"
                           >
@@ -476,6 +483,15 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -665,6 +681,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             -
@@ -784,6 +805,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已完成
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"
@@ -907,6 +933,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             -
@@ -1026,6 +1057,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               处理中
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"
@@ -1149,6 +1185,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             -
@@ -1268,6 +1309,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已驳回
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"
@@ -1391,6 +1437,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             -
@@ -1510,6 +1561,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已失败
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"
@@ -1634,6 +1690,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             </span>
                           </td>
                           <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             -
@@ -1717,6 +1778,11 @@ exports[`GlobalDashboard/WorkflowPanel should render workflow panel and request 
                             >
                               已完成
                             </span>
+                          </td>
+                          <td
+                            class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"

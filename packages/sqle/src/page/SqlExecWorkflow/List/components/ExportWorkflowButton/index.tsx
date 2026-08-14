@@ -48,7 +48,8 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       filter_create_user_id,
       filter_current_step_assignee_user_id,
       filter_subject,
-      filter_task_instance_id
+      filter_task_instance_id,
+      filter_by_ops_type_uid
     } = tableFilterInfo;
 
     const params: IExportWorkflowV1Params = {
@@ -63,6 +64,7 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       filter_create_time_to,
       filter_task_execute_start_time_from,
       filter_task_execute_start_time_to,
+      filter_by_ops_type_uid,
       fuzzy_keyword: searchKeyword,
       export_format:
         selectedExportFormat as unknown as exportWorkflowV1ExportFormatEnum

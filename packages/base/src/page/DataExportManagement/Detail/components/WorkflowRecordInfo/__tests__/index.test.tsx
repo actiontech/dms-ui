@@ -10,7 +10,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 // 暂时先只匹配快照，页面逻辑等后续添加流程模板后再补充
 describe('test base/DataExport/Detail/WorkflowRecordInfo', () => {
   beforeEach(() => {
-    mockUseDataExportDetailReduxManage();
+    mockUseDataExportDetailReduxManage({ workflowStepOpen: true });
   });
 
   afterEach(() => {

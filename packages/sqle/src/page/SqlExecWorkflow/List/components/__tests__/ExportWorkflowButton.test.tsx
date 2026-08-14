@@ -44,7 +44,8 @@ describe('test ExportWorkflowButton', () => {
           filter_create_time_to: '2024-05-10T17:02:30+08:00',
           filter_create_user_id: '700200',
           filter_current_step_assignee_user_id: '700200',
-          filter_task_instance_id: '1739531942258282496'
+          filter_task_instance_id: '1739531942258282496',
+          filter_by_ops_type_uid: '2088169590281474048'
         }}
         filterStatus={exportWorkflowV1FilterStatusEnum.exec_failed}
         searchKeyword="filter value"
@@ -71,6 +72,7 @@ describe('test ExportWorkflowButton', () => {
         filter_create_user_id: '700200',
         filter_current_step_assignee_user_id: '700200',
         filter_task_instance_id: '1739531942258282496',
+        filter_by_ops_type_uid: '2088169590281474048',
         filter_status: exportWorkflowV1FilterStatusEnum.exec_failed,
         fuzzy_keyword: 'filter value',
         project_name: mockProjectInfo.projectName,

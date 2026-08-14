@@ -21,6 +21,8 @@ export type WorkflowBasicInfoProps = {
   createUserName: string;
   createTime: string;
   workflowStatus?: WorkflowRecordResV2StatusEnum;
+  /** 只读展示；无值时页面显示「-」 */
+  opsTypeName?: string;
 };
 
 export type WorkflowStepsProps = {

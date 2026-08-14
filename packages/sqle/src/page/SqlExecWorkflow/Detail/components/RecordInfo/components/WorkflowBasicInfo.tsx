@@ -9,7 +9,8 @@ import { CommonIconStyleWrapper } from '@actiontech/dms-kit';
 const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
   createTime,
   createUserName,
-  workflowStatus
+  workflowStatus,
+  opsTypeName
 }) => {
   const { t } = useTranslation();
   return (
@@ -54,6 +55,15 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
           ) : (
             '-'
           )}
+        </div>
+      </div>
+
+      <div className="workflow-steps-basic-info-item">
+        <div className="workflow-steps-basic-info-item-label">
+          {t('execWorkflow.list.opsType')}
+        </div>
+        <div className="workflow-steps-basic-info-item-value">
+          {opsTypeName || '-'}
         </div>
       </div>
     </div>

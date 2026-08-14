@@ -240,6 +240,15 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
         )
     },
     {
+      dataIndex: 'ops_type',
+      title: t('globalDashboard.workflow.column.opsType'),
+      className: 'global-dashboard-workflow-ops-type-column',
+      filterCustomType: 'select',
+      filterKey: 'filter_by_ops_type_uid',
+      filterLabel: t('globalDashboard.workflow.column.opsType'),
+      render: (opsType) => opsType?.name || '-'
+    },
+    {
       dataIndex: 'create_user_name',
       title: t('globalDashboard.workflow.column.createUser'),
       filterCustomType: 'select',
