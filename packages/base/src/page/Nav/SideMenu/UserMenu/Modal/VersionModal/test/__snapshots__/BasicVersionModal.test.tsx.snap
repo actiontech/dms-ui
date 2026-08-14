@@ -74,7 +74,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       <h2
                         class="ant-typography"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography"
                           >
                             UI: 
-                            dms-ui/feat-2983   ce77b682
+                            dev-workflow-ops-type   6df7d3962
                           </article>
                         </div>
                         <div
@@ -124,6 +124,10 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             dms-ce 081d27e60f
                           </article>
                         </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        />
                         <div
                           class="ant-space-item"
                         >
@@ -309,7 +313,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       <h2
                         class="ant-typography"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -345,9 +349,13 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography"
                           >
                             UI: 
-                            dms-ui/feat-2983   ce77b682
+                            dev-workflow-ops-type   6df7d3962
                           </article>
                         </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        />
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
