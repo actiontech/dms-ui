@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { PageHeader, SegmentedTabs } from '@actiontech/dms-kit';
 import { TableRefreshButton } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { WorkflowTemplatePageHeaderActions } from './actions';
 import { WorkflowTemplateStyleWrapper } from './style';
 import WorkflowTemplateListTable from './components/WorkflowTemplateListTable';
@@ -18,8 +18,8 @@ const WorkflowTemplateDetail: React.FC = () => {
   // #if [ee]
   const { projectID } = useCurrentProject();
   const [activeKey, setActiveKey] =
-    useState<getWorkflowTemplatesV1FilterWorkflowTypeEnum>(
-      getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow
+    useState<getWorkflowTemplateListV1WorkflowTypeEnum>(
+      getWorkflowTemplateListV1WorkflowTypeEnum.workflow
     );
   const pageHeaderActions = WorkflowTemplatePageHeaderActions(
     projectID,
@@ -45,22 +45,22 @@ const WorkflowTemplateDetail: React.FC = () => {
         items={[
           {
             label: t('workflowTemplate.list.type.workflow'),
-            value: getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow,
+            value: getWorkflowTemplateListV1WorkflowTypeEnum.workflow,
             children: (
               <WorkflowTemplateListTable
                 workflowType={
-                  getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow
+                  getWorkflowTemplateListV1WorkflowTypeEnum.workflow
                 }
               />
             )
           },
           {
             label: t('workflowTemplate.list.type.dataExport'),
-            value: getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export,
+            value: getWorkflowTemplateListV1WorkflowTypeEnum.data_export,
             children: (
               <WorkflowTemplateListTable
                 workflowType={
-                  getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+                  getWorkflowTemplateListV1WorkflowTypeEnum.data_export
                 }
               />
             )

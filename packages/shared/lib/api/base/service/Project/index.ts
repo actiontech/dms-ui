@@ -49,6 +49,14 @@ import {
   IUpdateEnvironmentTagReturn,
   IDeleteEnvironmentTagParams,
   IDeleteEnvironmentTagReturn,
+  IListOpsTypesParams,
+  IListOpsTypesReturn,
+  ICreateOpsTypeParams,
+  ICreateOpsTypeReturn,
+  IUpdateOpsTypeParams,
+  IUpdateOpsTypeReturn,
+  IDeleteOpsTypeParams,
+  IDeleteOpsTypeReturn,
   IUnarchiveProjectParams,
   IUnarchiveProjectReturn,
   IListProjectsV2Params,
@@ -387,6 +395,72 @@ class ProjectService extends ServiceBase {
 
     return this.delete<IDeleteEnvironmentTagReturn>(
       `/v1/dms/projects/${project_uid}/environment_tags/${environment_tag_uid}`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListOpsTypes(
+    params: IListOpsTypesParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IListOpsTypesReturn>(
+      `/v1/dms/projects/${project_uid}/ops_types`,
+      paramsData,
+      options
+    );
+  }
+
+  public CreateOpsType(
+    params: ICreateOpsTypeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<ICreateOpsTypeReturn>(
+      `/v1/dms/projects/${project_uid}/ops_types`,
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateOpsType(
+    params: IUpdateOpsTypeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const ops_type_uid = paramsData.ops_type_uid;
+    delete paramsData.ops_type_uid;
+
+    return this.put<IUpdateOpsTypeReturn>(
+      `/v1/dms/projects/${project_uid}/ops_types/${ops_type_uid}`,
+      paramsData,
+      options
+    );
+  }
+
+  public DeleteOpsType(
+    params: IDeleteOpsTypeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const ops_type_uid = paramsData.ops_type_uid;
+    delete paramsData.ops_type_uid;
+
+    return this.delete<IDeleteOpsTypeReturn>(
+      `/v1/dms/projects/${project_uid}/ops_types/${ops_type_uid}`,
       paramsData,
       options
     );

@@ -14,7 +14,9 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { BaseFormFields } from './components/BasicInfo/index.type';
 import {
+  CreateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
   CreateWorkflowTemplateReqV1WorkflowTypeEnum,
+  UpdateWorkflowTemplateByIdReqV1AllowSubmitWhenLessAuditLevelEnum,
   UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
@@ -30,7 +32,7 @@ import { useForm } from 'antd/es/form/Form';
 import { WorkflowTemplateStyleWrapper } from '../WorkflowTemplateDetail/style';
 import useUsername from '../../../hooks/useUsername';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 
 const UpdateWorkflowTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -112,7 +114,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
   const workflowType = useMemo(() => {
     if (isCreateMode) {
       return (createParams.workflowType ||
-        getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow) as CreateWorkflowTemplateReqV1WorkflowTypeEnum;
+        getWorkflowTemplateListV1WorkflowTypeEnum.workflow) as CreateWorkflowTemplateReqV1WorkflowTypeEnum;
     }
     return (workflowTemplate?.workflow_type ||
       CreateWorkflowTemplateReqV1WorkflowTypeEnum.workflow) as CreateWorkflowTemplateReqV1WorkflowTypeEnum;
@@ -153,25 +155,26 @@ const UpdateWorkflowTemplate: React.FC = () => {
       }
     ];
     startSubmit();
-    const commonPayload = {
-      project_name: projectName,
-      workflow_template_name: values.workflowTemplateName,
-      desc: values.desc,
-      workflow_step_template_list: templateList,
-      allow_submit_when_less_audit_level:
-        values.allowSubmitWhenLessAuditLevel as
-          | UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum
-          | undefined
-    };
+    const allowSubmitWhenLessAuditLevel =
+      values.allowSubmitWhenLessAuditLevel as string | undefined;
     const request = isCreateMode
       ? workflow.createWorkflowTemplateV1({
-          ...commonPayload,
+          project_name: projectName,
           workflow_template_name: values.workflowTemplateName ?? '',
-          workflow_type: workflowType
+          workflow_type: workflowType,
+          desc: values.desc,
+          workflow_step_template_list: templateList,
+          allow_submit_when_less_audit_level:
+            allowSubmitWhenLessAuditLevel as CreateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum
         })
       : workflow.updateWorkflowTemplateByIdV1({
-          ...commonPayload,
-          workflow_template_id: workflowTemplateId
+          project_name: projectName,
+          workflow_template_name: values.workflowTemplateName,
+          desc: values.desc,
+          workflow_step_template_list: templateList,
+          workflow_template_id: workflowTemplateId,
+          allow_submit_when_less_audit_level:
+            allowSubmitWhenLessAuditLevel as UpdateWorkflowTemplateByIdReqV1AllowSubmitWhenLessAuditLevelEnum
         });
     return request
       .then(() => {

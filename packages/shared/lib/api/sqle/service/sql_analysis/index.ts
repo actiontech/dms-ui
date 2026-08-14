@@ -8,7 +8,9 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IDirectGetSQLAnalysisV1Params,
-  IDirectGetSQLAnalysisV1Return
+  IDirectGetSQLAnalysisV1Return,
+  ISqlLineageAnalyzeV1Params,
+  ISqlLineageAnalyzeV1Return
 } from './index.d';
 
 class SqlAnalysisService extends ServiceBase {
@@ -19,6 +21,18 @@ class SqlAnalysisService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IDirectGetSQLAnalysisV1Return>(
       '/v1/sql_analysis',
+      paramsData,
+      options
+    );
+  }
+
+  public sqlLineageAnalyzeV1(
+    params: ISqlLineageAnalyzeV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ISqlLineageAnalyzeV1Return>(
+      '/v1/sql_lineage_analysis',
       paramsData,
       options
     );

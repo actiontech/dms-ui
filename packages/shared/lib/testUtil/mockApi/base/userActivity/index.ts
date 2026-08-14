@@ -18,7 +18,7 @@ class MockUserActivityApi implements MockSpyApy {
   }
 
   public getUserActivitySummaryV1() {
-    const spy = jest.spyOn(UserActivityService, 'GetUserActivitySummaryV1');
+    const spy = jest.spyOn(UserActivityService, 'GetUserActivitySummary');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockUserActivitySummary })
     );
@@ -26,7 +26,7 @@ class MockUserActivityApi implements MockSpyApy {
   }
 
   public getUserActivityDailyTrendV1() {
-    const spy = jest.spyOn(UserActivityService, 'GetUserActivityDailyTrendV1');
+    const spy = jest.spyOn(UserActivityService, 'ListUserActivityDailyTrend');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockUserActivityDailyTrend })
     );
@@ -36,7 +36,7 @@ class MockUserActivityApi implements MockSpyApy {
   public getUserActivityModuleDistributionV1() {
     const spy = jest.spyOn(
       UserActivityService,
-      'GetUserActivityModuleDistributionV1'
+      'ListUserActivityModuleDistribution'
     );
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockUserActivityModuleDistribution })
@@ -47,7 +47,7 @@ class MockUserActivityApi implements MockSpyApy {
   public getUserActivityHourlyDistributionV1() {
     const spy = jest.spyOn(
       UserActivityService,
-      'GetUserActivityHourlyDistributionV1'
+      'ListUserActivityHourlyDistribution'
     );
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockUserActivityHourlyDistribution })
@@ -56,7 +56,7 @@ class MockUserActivityApi implements MockSpyApy {
   }
 
   public getUserActivityUsersV1() {
-    const spy = jest.spyOn(UserActivityService, 'GetUserActivityUsersV1');
+    const spy = jest.spyOn(UserActivityService, 'ListUserActivityUsers');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: mockUserActivityUsers,

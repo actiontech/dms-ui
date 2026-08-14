@@ -6,7 +6,7 @@ import {
   workflowTemplateListData
 } from './data';
 import { cloneDeep } from 'lodash';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '../../../../api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '../../../../api/sqle/service/workflow/index.enum';
 
 class MockWorkflowTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -37,11 +37,11 @@ class MockWorkflowTemplateApi implements MockSpyApy {
   }
 
   public getWorkflowTemplates() {
-    const spy = jest.spyOn(workflow, 'getWorkflowTemplatesV1');
+    const spy = jest.spyOn(workflow, 'getWorkflowTemplateListV1');
     spy.mockImplementation((params) => {
       const list =
         params.workflow_type ===
-        getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+        getWorkflowTemplateListV1WorkflowTypeEnum.data_export
           ? dataExportWorkflowTemplateListData
           : workflowTemplateListData;
       return createSpySuccessResponse({

@@ -1,7 +1,14 @@
 import {
+  IGetAccessRestrictionReply,
+  IUpdateAccessRestrictionReq,
+  IGenericResp,
+  IGetAccessRestrictionClientIPReply,
+  ICreateAccessWhitelistRuleReq,
+  ICreateAccessWhitelistRuleReply,
+  IUpdateAccessWhitelistRuleReq,
+  IUpdateAccessWhitelistRuleReply,
   IGetFeishuConfigurationReply,
   IUpdateFeishuConfigurationReq,
-  IGenericResp,
   ITestFeishuConfigurationReq,
   ITestFeishuConfigurationReply,
   IGetLDAPConfigurationResDataReply,
@@ -23,13 +30,6 @@ import {
   ITestSMTPConfigurationReply,
   IGetSystemVariablesReply,
   IUpdateSystemVariablesReqV1,
-  IGetAccessRestrictionReply,
-  IUpdateAccessRestrictionReq,
-  ICreateAccessWhitelistRuleReq,
-  ICreateAccessWhitelistRuleReply,
-  IUpdateAccessWhitelistRuleReq,
-  IUpdateAccessWhitelistRuleReply,
-  IGetAccessRestrictionClientIPReply,
   IGetWebHookConfigurationReply,
   IUpdateWebHookConfigurationReq,
   ITestWebHookConfigurationReply,
@@ -38,6 +38,37 @@ import {
   ITestWeChatConfigurationReq,
   ITestWeChatConfigurationReply
 } from '../common.d';
+
+export interface IGetAccessRestrictionReturn
+  extends IGetAccessRestrictionReply {}
+
+export interface IUpdateAccessRestrictionParams
+  extends IUpdateAccessRestrictionReq {}
+
+export interface IUpdateAccessRestrictionReturn extends IGenericResp {}
+
+export interface IGetAccessRestrictionClientIPReturn
+  extends IGetAccessRestrictionClientIPReply {}
+
+export interface ICreateAccessWhitelistRuleParams
+  extends ICreateAccessWhitelistRuleReq {}
+
+export interface ICreateAccessWhitelistRuleReturn
+  extends ICreateAccessWhitelistRuleReply {}
+
+export interface IUpdateAccessWhitelistRuleParams
+  extends IUpdateAccessWhitelistRuleReq {
+  rule_uid: string;
+}
+
+export interface IUpdateAccessWhitelistRuleReturn
+  extends IUpdateAccessWhitelistRuleReply {}
+
+export interface IDeleteAccessWhitelistRuleParams {
+  rule_uid: string;
+}
+
+export interface IDeleteAccessWhitelistRuleReturn extends IGenericResp {}
 
 export interface IGetFeishuConfigurationReturn
   extends IGetFeishuConfigurationReply {}
@@ -124,35 +155,6 @@ export interface IUpdateSystemVariablesParams
   extends IUpdateSystemVariablesReqV1 {}
 
 export interface IUpdateSystemVariablesReturn extends IGenericResp {}
-
-export interface IGetAccessRestrictionReturn
-  extends IGetAccessRestrictionReply {}
-
-export interface IUpdateAccessRestrictionParams
-  extends IUpdateAccessRestrictionReq {}
-
-export interface IUpdateAccessRestrictionReturn extends IGenericResp {}
-
-export interface ICreateAccessWhitelistRuleParams
-  extends ICreateAccessWhitelistRuleReq {}
-
-export interface ICreateAccessWhitelistRuleReturn
-  extends ICreateAccessWhitelistRuleReply {}
-
-export interface IUpdateAccessWhitelistRuleParams
-  extends IUpdateAccessWhitelistRuleReq {}
-
-export interface IUpdateAccessWhitelistRuleReturn
-  extends IUpdateAccessWhitelistRuleReply {}
-
-export interface IDeleteAccessWhitelistRuleParams {
-  rule_uid: string;
-}
-
-export interface IDeleteAccessWhitelistRuleReturn extends IGenericResp {}
-
-export interface IGetAccessRestrictionClientIPReturn
-  extends IGetAccessRestrictionClientIPReply {}
 
 export interface IGetWebHookConfigurationReturn
   extends IGetWebHookConfigurationReply {}

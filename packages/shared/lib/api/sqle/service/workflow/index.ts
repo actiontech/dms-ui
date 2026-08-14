@@ -18,18 +18,18 @@ import {
   IGetGlobalWorkflowStatisticsReturn,
   IGetWorkflowTemplateV1Params,
   IGetWorkflowTemplateV1Return,
-  IGetWorkflowTemplatesV1Params,
-  IGetWorkflowTemplatesV1Return,
+  IUpdateWorkflowTemplateV1Params,
+  IUpdateWorkflowTemplateV1Return,
+  IGetWorkflowTemplateListV1Params,
+  IGetWorkflowTemplateListV1Return,
   ICreateWorkflowTemplateV1Params,
   ICreateWorkflowTemplateV1Return,
   IGetWorkflowTemplateByIdV1Params,
   IGetWorkflowTemplateByIdV1Return,
-  IUpdateWorkflowTemplateByIdV1Params,
-  IUpdateWorkflowTemplateByIdV1Return,
   IDeleteWorkflowTemplateV1Params,
   IDeleteWorkflowTemplateV1Return,
-  IUpdateWorkflowTemplateV1Params,
-  IUpdateWorkflowTemplateV1Return,
+  IUpdateWorkflowTemplateByIdV1Params,
+  IUpdateWorkflowTemplateByIdV1Return,
   IGetWorkflowsV1Params,
   IGetWorkflowsV1Return,
   ICreateWorkflowV1Params,
@@ -176,15 +176,33 @@ class WorkflowService extends ServiceBase {
     );
   }
 
-  public getWorkflowTemplatesV1(
-    params: IGetWorkflowTemplatesV1Params,
+  public updateWorkflowTemplateV1(
+    params: IUpdateWorkflowTemplateV1Params,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
     const project_name = paramsData.project_name;
     delete paramsData.project_name;
 
-    return this.get<IGetWorkflowTemplatesV1Return>(
+    const workflow_type = paramsData.workflow_type;
+    delete paramsData.workflow_type;
+
+    return this.patch<IUpdateWorkflowTemplateV1Return>(
+      `/v1/projects/${project_name}/workflow_template/${workflow_type}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public getWorkflowTemplateListV1(
+    params: IGetWorkflowTemplateListV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetWorkflowTemplateListV1Return>(
       `/v1/projects/${project_name}/workflow_templates`,
       paramsData,
       options
@@ -224,24 +242,6 @@ class WorkflowService extends ServiceBase {
     );
   }
 
-  public updateWorkflowTemplateByIdV1(
-    params: IUpdateWorkflowTemplateByIdV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const workflow_template_id = paramsData.workflow_template_id;
-    delete paramsData.workflow_template_id;
-
-    return this.patch<IUpdateWorkflowTemplateByIdV1Return>(
-      `/v1/projects/${project_name}/workflow_templates/${workflow_template_id}/`,
-      paramsData,
-      options
-    );
-  }
-
   public deleteWorkflowTemplateV1(
     params: IDeleteWorkflowTemplateV1Params,
     options?: AxiosRequestConfig
@@ -260,27 +260,19 @@ class WorkflowService extends ServiceBase {
     );
   }
 
-  public updateWorkflowTemplateV1(
-    params: IUpdateWorkflowTemplateV1Params,
+  public updateWorkflowTemplateByIdV1(
+    params: IUpdateWorkflowTemplateByIdV1Params,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
     const project_name = paramsData.project_name;
     delete paramsData.project_name;
 
-    const workflow_type = paramsData.workflow_type;
-    delete paramsData.workflow_type;
+    const workflow_template_id = paramsData.workflow_template_id;
+    delete paramsData.workflow_template_id;
 
-    if (workflow_type) {
-      return this.patch<IUpdateWorkflowTemplateV1Return>(
-        `/v1/projects/${project_name}/workflow_template/${workflow_type}/`,
-        paramsData,
-        options
-      );
-    }
-
-    return this.patch<IUpdateWorkflowTemplateV1Return>(
-      `/v1/projects/${project_name}/workflow_template`,
+    return this.patch<IUpdateWorkflowTemplateByIdV1Return>(
+      `/v1/projects/${project_name}/workflow_templates/${workflow_template_id}/`,
       paramsData,
       options
     );

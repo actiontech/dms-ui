@@ -26,6 +26,7 @@ import {
   IGetProjectTipsReply,
   IUpdateProjectReq,
   IListEnvironmentTagsReply,
+  IListOpsTypesReply,
   IListProjectReplyV2,
   IAddProjectReqV2,
   IAddProjectReplyV2,
@@ -193,6 +194,42 @@ export interface IDeleteEnvironmentTagParams {
 }
 
 export interface IDeleteEnvironmentTagReturn extends IGenericResp {}
+
+export interface IListOpsTypesParams {
+  project_uid: string;
+
+  page_index?: number;
+
+  page_size: number;
+}
+
+export interface IListOpsTypesReturn extends IListOpsTypesReply {}
+
+export interface ICreateOpsTypeParams {
+  project_uid: string;
+
+  ops_type_name: string;
+}
+
+export interface ICreateOpsTypeReturn extends IGenericResp {}
+
+export interface IUpdateOpsTypeParams {
+  project_uid: string;
+
+  ops_type_uid: string;
+
+  ops_type_name: string;
+}
+
+export interface IUpdateOpsTypeReturn extends IGenericResp {}
+
+export interface IDeleteOpsTypeParams {
+  ops_type_uid: string;
+
+  project_uid: string;
+}
+
+export interface IDeleteOpsTypeReturn extends IGenericResp {}
 
 export interface IUnarchiveProjectParams {
   project_uid: string;

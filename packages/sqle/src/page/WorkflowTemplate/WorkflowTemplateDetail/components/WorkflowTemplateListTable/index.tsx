@@ -14,14 +14,14 @@ import {
 } from '@actiontech/shared/lib/features';
 import { useTypedNavigate } from '@actiontech/shared';
 import { ResponseCode, ROUTE_PATHS } from '@actiontech/dms-kit';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { WorkflowTemplateListColumn } from '../../columns';
 import { WorkflowTemplateTableActions } from '../../actions';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 
 export type WorkflowTemplateListTableProps = {
-  workflowType: getWorkflowTemplatesV1FilterWorkflowTypeEnum;
+  workflowType: getWorkflowTemplateListV1WorkflowTypeEnum;
 };
 
 const WorkflowTemplateListTable: React.FC<WorkflowTemplateListTableProps> = ({
@@ -42,7 +42,7 @@ const WorkflowTemplateListTable: React.FC<WorkflowTemplateListTableProps> = ({
   } = useRequest(
     () =>
       handleTableRequestError(
-        workflow.getWorkflowTemplatesV1({
+        workflow.getWorkflowTemplateListV1({
           project_name: projectName,
           workflow_type: workflowType
         })

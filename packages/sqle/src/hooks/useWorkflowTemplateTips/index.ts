@@ -2,11 +2,11 @@ import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const useWorkflowTemplateTips = (
-  workflowType: getWorkflowTemplatesV1FilterWorkflowTypeEnum,
+  workflowType: getWorkflowTemplateListV1WorkflowTypeEnum,
   ready = true
 ) => {
   const { projectName } = useCurrentProject();
@@ -14,7 +14,7 @@ const useWorkflowTemplateTips = (
   const { data, loading, refresh } = useRequest(
     () =>
       workflow
-        .getWorkflowTemplatesV1({
+        .getWorkflowTemplateListV1({
           project_name: projectName,
           workflow_type: workflowType
         })

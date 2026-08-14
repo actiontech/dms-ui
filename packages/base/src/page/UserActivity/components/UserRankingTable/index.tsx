@@ -11,7 +11,7 @@ import {
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
 import { IUserActivityUserItem } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
-import { IGetUserActivityUsersV1Params } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
+import { IListUserActivityUsersParams } from '@actiontech/shared/lib/api/base/service/UserActivity/index.d';
 
 type UserRankingTableProps = {
   filterDateFrom: string;
@@ -28,13 +28,13 @@ const UserRankingTable = ({
 
   const { tableChange, pagination } = useTableRequestParams<
     IUserActivityUserItem,
-    IGetUserActivityUsersV1Params
+    IListUserActivityUsersParams
   >();
 
   const { data, loading } = useRequest(
     () =>
       handleTableRequestError(
-        DmsApi.UserActivityService.GetUserActivityUsersV1({
+        DmsApi.UserActivityService.ListUserActivityUsers({
           filter_date_from: filterDateFrom,
           filter_date_to: filterDateTo,
           page_index: pagination.page_index,
