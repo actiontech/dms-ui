@@ -42,7 +42,8 @@ export default {
     taskScore: '审核结果评分',
     id: '工单号',
     version: '版本',
-    workflowTemplate: '审批模板'
+    workflowTemplate: '审批模板',
+    opsType: '运维类型'
   },
   create: {
     backToList: '返回工单列表',
@@ -60,7 +61,14 @@ export default {
         describe: '工单描述',
         describePlaceholder: '点此添加工单描述（选填）',
         workflowTemplate: '审批流程模板',
-        workflowTemplateTips: '多套审批模板时请选择本次工单使用的审批流程'
+        workflowTemplateTips: '多套审批模板时请选择本次工单使用的审批流程',
+        addOpsType: '添加运维类型',
+        addOpsTypeSuccess: '运维类型添加成功',
+        updateOpsTypeSuccess: '运维类型更新成功',
+        deleteOpsTypeSuccess: '运维类型删除成功',
+        deleteOpsTypeConfirm: '确认删除该运维类型吗？',
+        deleteOpsTypeReferenced: '该运维类型已被工单引用，暂无法删除',
+        emptyOpsTypeMemberTip: '请联系项目管理员配置运维类型'
       },
 
       sqlInfo: {

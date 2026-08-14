@@ -27,6 +27,13 @@ exports[`test BaseInfoFormItem should match snapshot 1`] = `
     </FormItemNoLabel>
   </section>
   <FormItemLabel
+    className="workflow-base-info-ops-type-form-item"
+    label="运维类型"
+    name="ops_type_uid"
+  >
+    <OpsTypeField />
+  </FormItemLabel>
+  <FormItemLabel
     label="审批流程模板"
     name="workflow_template_id"
     rules={
@@ -94,6 +101,13 @@ exports[`test BaseInfoFormItem should match snapshot with slot 1`] = `
   <div>
      slot 
   </div>
+  <FormItemLabel
+    className="workflow-base-info-ops-type-form-item"
+    label="运维类型"
+    name="ops_type_uid"
+  >
+    <OpsTypeField />
+  </FormItemLabel>
   <FormItemLabel
     label="审批流程模板"
     name="workflow_template_id"

@@ -138,6 +138,61 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                     </div>
                   </section>
                   <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
@@ -1984,6 +2039,61 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -3835,6 +3945,61 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -6257,6 +6422,61 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                     </div>
                   </section>
                   <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
                     <div
@@ -8374,6 +8594,61 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -10866,6 +11141,61 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -13613,6 +13943,61 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -16422,6 +16807,61 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       </div>
                     </div>
                     <div
+                      class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class=""
+                            for="ops_type_uid"
+                            title="运维类型"
+                          >
+                            运维类型
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                              >
+                                <span
+                                  class="placeholder"
+                                >
+                                  请选择运维类型
+                                </span>
+                                <span
+                                  class="arrow-icon"
+                                >
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                      fill="#C3C6CD"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
                       class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                     >
                       <div
@@ -17801,6 +18241,61 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -21078,6 +21573,61 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       </div>
                     </div>
                     <div
+                      class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class=""
+                            for="ops_type_uid"
+                            title="运维类型"
+                          >
+                            运维类型
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                              >
+                                <span
+                                  class="placeholder"
+                                >
+                                  请选择运维类型
+                                </span>
+                                <span
+                                  class="arrow-icon"
+                                >
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                      fill="#C3C6CD"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
                       class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                     >
                       <div
@@ -22788,6 +23338,61 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                     </div>
                   </section>
                   <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     class="ant-form-item css-1jlm9cy"
                   >
                     <div
@@ -24209,6 +24814,61 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -26228,6 +26888,61 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -28335,6 +29050,61 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -31013,6 +31783,61 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                     </div>
                   </section>
                   <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     class="ant-form-item css-1jlm9cy"
                   >
                     <div
@@ -32355,6 +33180,61 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                       </div>
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >
@@ -36172,6 +37052,61 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                       />
                     </div>
                   </section>
+                  <div
+                    class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="ops_type_uid"
+                          title="运维类型"
+                        >
+                          运维类型
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                            >
+                              <span
+                                class="placeholder"
+                              >
+                                请选择运维类型
+                              </span>
+                              <span
+                                class="arrow-icon"
+                              >
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                   >

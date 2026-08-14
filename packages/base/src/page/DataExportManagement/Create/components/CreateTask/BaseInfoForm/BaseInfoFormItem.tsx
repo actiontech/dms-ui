@@ -9,14 +9,15 @@ import { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form } from 'antd';
 import useWorkflowTemplateTips from '../../../../../../hooks/useWorkflowTemplateTips';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import OpsTypeField from './OpsTypeField';
 
 const BaseInfoFormItem: React.FC<{ slot?: ReactNode }> = ({ slot }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance();
   const { templateOptions, defaultTemplateId, templateList, loading } =
     useWorkflowTemplateTips(
-      getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+      getWorkflowTemplateListV1WorkflowTypeEnum.data_export
     );
 
   useEffect(() => {
@@ -57,6 +58,14 @@ const BaseInfoFormItem: React.FC<{ slot?: ReactNode }> = ({ slot }) => {
       </FormItemNoLabel>
 
       {slot}
+
+      <FormItemLabel
+        name="ops_type_uid"
+        label={t('dmsDataExport.list.column.opsType')}
+        className="workflow-base-info-ops-type-form-item"
+      >
+        <OpsTypeField />
+      </FormItemLabel>
 
       <FormItemLabel
         name="workflow_template_id"

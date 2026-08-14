@@ -177,7 +177,8 @@ const useCloneExecWorkflowInfo = (
     dispatch(
       updateClonedExecWorkflowBaseInfo({
         workflow_subject: workflowInfo?.workflow_name ?? '',
-        desc: workflowInfo?.desc ?? ''
+        desc: workflowInfo?.desc ?? '',
+        ops_type_uid: workflowInfo?.ops_type?.uid
       })
     );
 

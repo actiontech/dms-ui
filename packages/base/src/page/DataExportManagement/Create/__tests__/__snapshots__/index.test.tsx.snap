@@ -132,6 +132,61 @@ exports[`first should match snapshot when pageState is equal CREATE_TASK 1`] = `
                 </div>
               </div>
               <div
+                class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+              >
+                <div
+                  class="ant-row ant-form-item-row"
+                >
+                  <div
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="ops_type_uid"
+                      title="运维类型"
+                    >
+                      运维类型
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-form-item-control"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                        >
+                          <span
+                            class="placeholder"
+                          >
+                            请选择运维类型
+                          </span>
+                          <span
+                            class="arrow-icon"
+                          >
+                            <svg
+                              height="20"
+                              viewBox="0 0 16 16"
+                              width="20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="#C3C6CD"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
                 class="ant-form-item css-1jlm9cy"
               >
                 <div
@@ -1589,6 +1644,8 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                     <col />
                     <col />
                     <col />
+                    <col />
+                    <col />
                     <col
                       style="width: 82px;"
                     />
@@ -1620,6 +1677,18 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                         scope="col"
                       >
                         审核结果
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        导出原文
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        血缘/脱敏快照
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1683,13 +1752,31 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="5"
+                        colspan="7"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"

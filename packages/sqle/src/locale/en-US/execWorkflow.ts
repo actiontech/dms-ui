@@ -38,7 +38,8 @@ export default {
     taskScore: 'Audit score',
     id: 'Workflow id',
     version: 'Version',
-    workflowTemplate: 'Approval template'
+    workflowTemplate: 'Approval template',
+    opsType: 'Ops type'
   },
   create: {
     backToList: 'Back to workflow list',
@@ -57,7 +58,16 @@ export default {
         describePlaceholder: 'Click to add workflow description (optional)',
         workflowTemplate: 'Approval workflow template',
         workflowTemplateTips:
-          'When multiple templates exist, please select the approval flow for this workflow'
+          'When multiple templates exist, please select the approval flow for this workflow',
+        addOpsType: 'Add ops type',
+        addOpsTypeSuccess: 'Ops type added successfully',
+        updateOpsTypeSuccess: 'Ops type updated successfully',
+        deleteOpsTypeSuccess: 'Ops type deleted successfully',
+        deleteOpsTypeConfirm: 'Are you sure to delete this ops type?',
+        deleteOpsTypeReferenced:
+          'This ops type is referenced by workflows and cannot be deleted',
+        emptyOpsTypeMemberTip:
+          'Please contact the project admin to configure ops types'
       },
       sqlInfo: {
         title: 'Audit SQL statement information',

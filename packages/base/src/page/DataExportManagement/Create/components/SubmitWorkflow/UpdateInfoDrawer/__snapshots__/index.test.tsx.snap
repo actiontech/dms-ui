@@ -206,6 +206,61 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                       </div>
                     </div>
                     <div
+                      class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class=""
+                            for="ops_type_uid"
+                            title="运维类型"
+                          >
+                            运维类型
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                              >
+                                <span
+                                  class="placeholder"
+                                >
+                                  请选择运维类型
+                                </span>
+                                <span
+                                  class="arrow-icon"
+                                >
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                      fill="#C3C6CD"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
                       class="ant-form-item css-1jlm9cy"
                     >
                       <div
@@ -1235,6 +1290,61 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                             admin
                           </span>
                         </span>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item workflow-base-info-ops-type-form-item css-1jlm9cy"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class=""
+                            for="ops_type_uid"
+                            title="运维类型"
+                          >
+                            运维类型
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-dropdown-trigger editable-select-trigger css-1xfzz7b"
+                              >
+                                <span
+                                  class="placeholder"
+                                >
+                                  请选择运维类型
+                                </span>
+                                <span
+                                  class="arrow-icon"
+                                >
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                      fill="#C3C6CD"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div
