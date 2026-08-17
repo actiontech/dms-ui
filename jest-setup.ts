@@ -4,14 +4,11 @@ import { initReactI18next } from 'react-i18next';
 import baseZhCN from './packages/base/src/locale/zh-CN';
 import sqleZhCN from './packages/sqle/src/locale/zh-CN';
 import commonZhCN from './packages/dms-kit/src/locale/zh-CN';
-import provisionZhCN from './packages/provision/src/locale/zh-CN';
-import diagnosisZhCN from './packages/diagnosis/src/locale/zh-CN';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 import * as Enzyme from 'enzyme';
 import 'jest-canvas-mock';
 
-// sqle 包依赖 rehype-sanitize；根 node_modules 未必解析得到，virtual 保证 jest-setup 可跑
-jest.mock('rehype-sanitize', () => () => jest.fn(), { virtual: true });
+jest.mock('rehype-sanitize', () => () => jest.fn());
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -36,8 +33,6 @@ i18n.use(initReactI18next).init({
       translation: {
         ...baseZhCN.translation,
         ...sqleZhCN.translation,
-        ...provisionZhCN.translation,
-        ...diagnosisZhCN.translation,
         ...commonZhCN.translation
       }
     }
