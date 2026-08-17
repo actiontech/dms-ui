@@ -31,6 +31,8 @@ import {
   CreateAuditWhitelistReqV1MatchTypeEnum,
   CreateBlacklistReqV1TypeEnum,
   CreateCustomRuleReqV1LevelEnum,
+  CreateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
+  CreateWorkflowTemplateReqV1WorkflowTypeEnum,
   CustomRuleResV1LevelEnum,
   DatabaseDiffObjectObjectTypeEnum,
   DatabaseObjectObjectTypeEnum,
@@ -87,8 +89,8 @@ import {
   UpdateReportPushConfigReqV1TriggerTypeEnum,
   UpdateSqlBackupStrategyReqStrategyEnum,
   UpdateTaskBackupStrategyReqStrategyEnum,
+  UpdateWorkflowTemplateByIdReqV1AllowSubmitWhenLessAuditLevelEnum,
   UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
-  CreateWorkflowTemplateReqV1WorkflowTypeEnum,
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
   WorkflowDetailResV1StatusEnum,
@@ -242,6 +244,8 @@ export interface IGlobalWorkflowListData {
 }
 
 export interface IGlobalWorkflowListItem {
+  assignee?: string;
+
   create_user_name?: string;
 
   created_at?: string;
@@ -251,6 +255,8 @@ export interface IGlobalWorkflowListItem {
   instance_id?: string;
 
   instance_name?: string;
+
+  ops_type?: IOpsType;
 
   priority?: string;
 
@@ -295,6 +301,12 @@ export interface IGlobalWorkflowStatisticsV2 {
   pending_for_me_count?: number;
 
   view_all_count?: number;
+}
+
+export interface IOpsType {
+  name?: string;
+
+  uid?: string;
 }
 
 export interface IAuditResultInfo {
@@ -752,23 +764,15 @@ export interface IAuditTaskResV1 {
 
   exec_end_time?: string;
 
-  /** 任务级上线失败主导阶段（backend §5.2） */
-  exec_fail_stage?: string;
-
-  /** 任务级代表失败原因 */
   exec_fail_reason?: string;
 
-  /** 同阶段失败 SQL 计数 */
   exec_fail_sql_count?: number;
 
-  /** 出错 SQL 的 number（AC-010 定位主键） */
-  exec_fail_sql_number?: number;
-
-  /** 出错 SQL 的 exec_sql_id（可选双保险） */
   exec_fail_sql_id?: number;
 
-  /** 可选摘要素材，如「SQL 备份失败」 */
-  exec_fail_summary?: string;
+  exec_fail_sql_number?: number;
+
+  exec_fail_stage?: string;
 
   exec_mode?: string;
 
@@ -1149,6 +1153,8 @@ export interface ICreateRollbackWorkflowReq {
   task_ids?: number[];
 
   workflow_subject?: string;
+
+  workflow_template_id?: number;
 }
 
 export interface ICreateRollbackWorkflowRes {
@@ -1223,6 +1229,20 @@ export interface ICreateWorkflowReqV1 {
   task_ids?: number[];
 
   workflow_subject?: string;
+}
+
+export interface ICreateWorkflowTemplateReqV1 {
+  allow_submit_when_less_audit_level?: CreateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
+
+  desc?: string;
+
+  is_default?: boolean;
+
+  workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
+
+  workflow_template_name?: string;
+
+  workflow_type?: CreateWorkflowTemplateReqV1WorkflowTypeEnum;
 }
 
 export interface ICustomRuleResV1 {
@@ -1321,6 +1341,8 @@ export interface IDatabaseDriverLogosV1 {
 
 export interface IDatabaseDriverOptionsV1 {
   db_type?: string;
+
+  default_port?: number;
 
   params?: IInstanceAdditionalParamResV1[];
 }
@@ -3427,6 +3449,94 @@ export interface ISQLExplain {
   sql?: string;
 }
 
+export interface ISQLLineageAnalyzeReqV1 {
+  default_schema?: string;
+
+  instance_type?: string;
+
+  result_columns?: string[];
+
+  sql?: string;
+}
+
+export interface ISQLLineageAnalyzeResDataV1 {
+  result?: ISQLLineageAnalyzeResultV1;
+}
+
+export interface ISQLLineageAnalyzeResV1 {
+  code?: number;
+
+  data?: ISQLLineageAnalyzeResDataV1;
+
+  message?: string;
+}
+
+export interface ISQLLineageAnalyzeResultV1 {
+  edges?: ISQLLineageEdgeV1[];
+
+  nodes?: ISQLLineageNodeV1[];
+
+  original_sql?: string;
+
+  result_columns?: ISQLLineageResultColumnV1[];
+
+  source_columns?: ISQLLineageColumnRefV1[];
+
+  tables?: ISQLLineageTableRefV1[];
+
+  title?: string;
+
+  warnings?: string[];
+}
+
+export interface ISQLLineageColumnRefV1 {
+  column?: string;
+
+  schema?: string;
+
+  table?: string;
+}
+
+export interface ISQLLineageEdgeV1 {
+  from_id?: string;
+
+  to_id?: string;
+
+  type?: string;
+}
+
+export interface ISQLLineageNodeV1 {
+  column?: string;
+
+  expr?: string;
+
+  id?: string;
+
+  name?: string;
+
+  schema?: string;
+
+  table?: string;
+
+  type?: string;
+}
+
+export interface ISQLLineageResultColumnV1 {
+  expression?: string;
+
+  name?: string;
+
+  sources?: ISQLLineageColumnRefV1[];
+}
+
+export interface ISQLLineageTableRefV1 {
+  alias?: string;
+
+  schema?: string;
+
+  table?: string;
+}
+
 export interface ISQLQueryConfigResV1 {
   allow_query_when_less_than_audit_level?: SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum;
 
@@ -4153,6 +4263,18 @@ export interface IUpdateWorkflowScheduleReqV1 {
   schedule_time?: string;
 }
 
+export interface IUpdateWorkflowTemplateByIdReqV1 {
+  allow_submit_when_less_audit_level?: UpdateWorkflowTemplateByIdReqV1AllowSubmitWhenLessAuditLevelEnum;
+
+  desc?: string;
+
+  is_default?: boolean;
+
+  workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
+
+  workflow_template_name?: string;
+}
+
 export interface IUpdateWorkflowTemplateReqV1 {
   allow_submit_when_less_audit_level?: UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
 
@@ -4239,6 +4361,8 @@ export interface IWorkflowDetailResV1 {
   desc?: string;
 
   instance_info?: IInstanceInfo[];
+
+  ops_type?: IOpsType;
 
   project_name?: string;
 
@@ -4421,32 +4545,6 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_type?: WorkflowTemplateDetailResV1WorkflowTypeEnum;
 }
 
-export interface ICreateWorkflowTemplateReqV1 {
-  allow_submit_when_less_audit_level?: UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
-
-  desc?: string;
-
-  is_default?: boolean;
-
-  workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
-
-  workflow_template_name: string;
-
-  workflow_type: CreateWorkflowTemplateReqV1WorkflowTypeEnum;
-}
-
-export interface IUpdateWorkflowTemplateByIdReqV1 {
-  allow_submit_when_less_audit_level?: UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum;
-
-  desc?: string;
-
-  is_default?: boolean;
-
-  workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
-
-  workflow_template_name?: string;
-}
-
 export interface ICreatePipelineResData {
   pipeline_id?: number;
 }
@@ -4539,6 +4637,10 @@ export interface IUpdatePipelineNode {
   rule_template_name?: string;
 
   type?: updatePipelineNodeTypeEnum;
+}
+
+export interface IApproveWorkflowReqV2 {
+  reason?: string;
 }
 
 export interface IAssociatedRollbackWorkflow {
@@ -4692,11 +4794,9 @@ export interface IAuditTaskSQLResV2 {
 
   exec_status?: string;
 
-  /** 失败/未执行阶段（backend §5.1） */
-  fail_stage?: string;
-
-  /** 原因行优先字段；缺省回退 exec_result */
   fail_reason?: string;
+
+  fail_stage?: string;
 
   number?: number;
 
@@ -4719,6 +4819,8 @@ export interface IBatchCompleteWorkflowsReqV2 {
 
 export interface ICreateWorkflowReqV2 {
   desc?: string;
+
+  ops_type_uid?: string;
 
   sql_version_id?: number;
 
@@ -4988,6 +5090,12 @@ export interface IInstanceResV2 {
 
   desc?: string;
 
+  environment_tag_color?: string;
+
+  environment_tag_name?: string;
+
+  environment_tag_uid?: string;
+
   instance_name?: string;
 
   maintenance_times?: IMaintenanceTimeResV1[];
@@ -5128,6 +5236,8 @@ export interface IWorkflowResV2 {
 
   mode?: WorkflowResV2ModeEnum;
 
+  ops_type?: IOpsType;
+
   record?: IWorkflowRecordResV2;
 
   record_history_list?: IWorkflowRecordResV2[];
@@ -5137,6 +5247,10 @@ export interface IWorkflowResV2 {
   workflow_id?: string;
 
   workflow_name?: string;
+
+  workflow_template_id?: number;
+
+  workflow_template_name?: string;
 }
 
 export interface IWorkflowStepResV2 {

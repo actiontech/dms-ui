@@ -57,7 +57,7 @@ const ExportDetailPageHeaderAction: React.FC = () => {
       </EmptyBox>
       <div
         hidden={workflowStepOpen}
-        className="toggle-export-detail-wrapper"
+        className="toggle-export-detail-wrapper toggle-workflow-detail-wrapper"
         onClick={workflowDetailClickHandle}
       >
         {t('dmsDataExport.detail.action.workflowDetail')}

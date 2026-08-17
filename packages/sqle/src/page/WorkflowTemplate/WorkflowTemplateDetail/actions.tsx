@@ -8,7 +8,7 @@ import { IWorkflowTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/se
 import { ActionButton } from '@actiontech/shared';
 import { PlusOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 
 export const WorkflowTemplateTableActions = (
   onEdit: (record?: IWorkflowTemplateDetailResV1) => void,
@@ -55,7 +55,7 @@ export const WorkflowTemplateTableActions = (
 
 export const WorkflowTemplatePageHeaderActions = (
   projectID: string,
-  workflowType: getWorkflowTemplatesV1FilterWorkflowTypeEnum
+  workflowType: getWorkflowTemplateListV1WorkflowTypeEnum
 ): Record<'create-workflow-template', React.ReactNode> => ({
   'create-workflow-template': (
     <PermissionControl

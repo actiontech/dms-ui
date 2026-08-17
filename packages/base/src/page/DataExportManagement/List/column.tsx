@@ -14,6 +14,7 @@ import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { IListDataExportWorkflowWithExtraParams } from './index.type';
+
 export type ExportWorkflowListFilterParamType = PageInfoWithoutIndexAndSize<
   IListDataExportWorkflowsParams & {
     page_index: number;
@@ -92,6 +93,15 @@ export const ExportWorkflowListColumn: (
         ) : (
           '-'
         )
+    },
+    {
+      dataIndex: 'ops_type',
+      title: () => t('dmsDataExport.list.column.opsType'),
+      className: 'export-workflow-list-ops-type-column',
+      filterCustomType: 'select',
+      filterKey: 'filter_by_ops_type_uid',
+      filterLabel: t('dmsDataExport.list.column.opsType'),
+      render: (opsType) => opsType?.name || '-'
     },
     {
       dataIndex: 'workflow_template_name',

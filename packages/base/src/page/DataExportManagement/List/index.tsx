@@ -29,14 +29,13 @@ import {
 import { TableRowSelection } from 'antd/es/table/interface';
 import WorkflowStatusFilter from './components/WorkflowStatusFilter';
 import useDbService from '../../../hooks/useDbService';
-import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.d';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
 import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import useMemberTips from '../../../hooks/useMemberTips';
 import useWorkflowTemplateTips from '../../../hooks/useWorkflowTemplateTips';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { ResponseCode } from '@actiontech/dms-kit';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
@@ -45,6 +44,8 @@ import {
   DataExportManagementCreateAction
 } from './actions';
 import { IListDataExportWorkflowWithExtraParams } from './index.type';
+import { DataExportWorkflowsService } from '@actiontech/shared/lib/api/base';
+import useOpsType from 'sqle/src/hooks/useOpsType';
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
@@ -62,8 +63,9 @@ const ExportWorkflowList: React.FC = () => {
   const { dbServiceIDOptions, updateDbServiceList } = useDbService();
   const { memberOptions, updateMemberTips } = useMemberTips();
   const { templateOptions } = useWorkflowTemplateTips(
-    getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+    getWorkflowTemplateListV1WorkflowTypeEnum.data_export
   );
+  const { opsTypeOptions, updateOpsTypeList } = useOpsType();
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -128,9 +130,15 @@ const ExportWorkflowList: React.FC = () => {
         {
           options: templateOptions
         }
+      ],
+      [
+        'ops_type',
+        {
+          options: opsTypeOptions
+        }
       ]
     ]);
-  }, [dbServiceIDOptions, memberOptions, templateOptions]);
+  }, [dbServiceIDOptions, memberOptions, templateOptions, opsTypeOptions]);
   const rowSelection = {
     selectedRowKeys,
     onChange: (keys: string[]) => {
@@ -153,13 +161,14 @@ const ExportWorkflowList: React.FC = () => {
         fuzzy_keyword: searchKeyword
       };
       return handleTableRequestError(
-        DataExportWorkflows.ListDataExportWorkflows(params)
+        DataExportWorkflowsService.ListDataExportWorkflows(params)
       );
     },
     {
       refreshDeps: [tableFilterInfo, pagination, filterStatus]
     }
   );
+
   const batchCloseWorkflowAction = useCallback(() => {
     const canCancel: boolean = selectedRowKeys.every((e) => {
       const status = exportWorkflowList?.list?.filter(
@@ -172,7 +181,7 @@ const ExportWorkflowList: React.FC = () => {
     });
     if (canCancel) {
       setBatchCloseConfirmLoading(true);
-      DataExportWorkflows.CancelDataExportWorkflow({
+      DataExportWorkflowsService.CancelDataExportWorkflow({
         payload: {
           data_export_workflow_uids: selectedRowKeys
         },
@@ -226,7 +235,8 @@ const ExportWorkflowList: React.FC = () => {
     updateMemberTips({
       project_uid: projectID
     });
-  }, [projectID, updateDbServiceList, updateMemberTips]);
+    updateOpsTypeList(projectID);
+  }, [projectID, updateDbServiceList, updateMemberTips, updateOpsTypeList]);
   return (
     <section>
       {messageContextHolder}

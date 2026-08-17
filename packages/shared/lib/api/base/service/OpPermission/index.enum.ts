@@ -1,21 +1,21 @@
 /* tslint:disable no-duplicate-string */
 
 export enum ListOpPermissionsOrderByEnum {
-  'name' = 'name'
+  name = 'name'
 }
 
 export enum ListOpPermissionsFilterByTargetEnum {
-  'all' = 'all',
+  all = 'all',
 
-  'user' = 'user',
+  user = 'user',
 
-  'member' = 'member',
+  member = 'member',
 
-  'project' = 'project'
+  project = 'project'
 }
 
 export enum ListOpPermissionsServiceEnum {
-  'dms' = 'dms',
+  dms = 'dms',
 
-  'sqle' = 'sqle'
+  sqle = 'sqle'
 }

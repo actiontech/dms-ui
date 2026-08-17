@@ -100,7 +100,8 @@ const SqlWorkflowDetail: React.FC = () => {
       execFailStage: task?.exec_fail_stage,
       execFailSqlCount: task?.exec_fail_sql_count,
       execFailSqlNumber: task?.exec_fail_sql_number,
-      execFailSummary: task?.exec_fail_summary
+      execFailSummary: (task as { exec_fail_summary?: string } | undefined)
+        ?.exec_fail_summary
     });
     if (!plan) {
       return null;

@@ -9,7 +9,8 @@ import { ReactNode, forwardRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form } from 'antd';
 import useWorkflowTemplateTips from '../../../../../../hooks/useWorkflowTemplateTips';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import OpsTypeField from './OpsTypeField';
 
 const BaseInfoFormItem = forwardRef<
   HTMLElement,
@@ -21,9 +22,7 @@ const BaseInfoFormItem = forwardRef<
   const form = Form.useFormInstance();
   // #if [ee]
   const { templateOptions, defaultTemplateId, templateList, loading } =
-    useWorkflowTemplateTips(
-      getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow
-    );
+    useWorkflowTemplateTips(getWorkflowTemplateListV1WorkflowTypeEnum.workflow);
   useEffect(() => {
     if (defaultTemplateId && !form?.getFieldValue('workflow_template_id')) {
       form?.setFieldsValue({
@@ -64,6 +63,14 @@ const BaseInfoFormItem = forwardRef<
       </section>
 
       {slot}
+
+      <FormItemLabel
+        name="ops_type_uid"
+        label={t('execWorkflow.list.opsType')}
+        className="workflow-base-info-ops-type-form-item"
+      >
+        <OpsTypeField />
+      </FormItemLabel>
 
       {/* #if [ee] */}
       <FormItemLabel

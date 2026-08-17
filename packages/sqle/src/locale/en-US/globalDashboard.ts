@@ -31,6 +31,7 @@ export default {
       assignee: 'Assignee',
       priority: 'Priority',
       status: 'Status',
+      opsType: 'Ops type',
       createUser: 'Initiator',
       createdAt: 'Created At',
       updatedAt: 'Last Updated'
@@ -187,6 +188,15 @@ export default {
     confirm: {
       recycle: 'Recycle this account?',
       logout: 'Deactivate this account?'
+    },
+    toolbar: {
+      searchPlaceholder: 'Search by account name, project, or database'
+    },
+    renewalPassword: {
+      title: 'Renew Account',
+      dateTime: 'Renewal period',
+      dayUnit: 'days',
+      successTip: 'Account renewed successfully'
     }
   },
   filter: {

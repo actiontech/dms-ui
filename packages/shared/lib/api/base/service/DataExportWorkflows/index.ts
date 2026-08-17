@@ -7,6 +7,7 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetGlobalDataExportWorkflowsParams,
   IGetGlobalDataExportWorkflowsReturn,
   IListAllDataExportWorkflowsParams,
   IListAllDataExportWorkflowsReturn,
@@ -16,21 +17,28 @@ import {
   IAddDataExportWorkflowReturn,
   ICancelDataExportWorkflowParams,
   ICancelDataExportWorkflowReturn,
+  ICheckDataExportWorkflowTemplateUsedParams,
+  ICheckDataExportWorkflowTemplateUsedReturn,
   IGetDataExportWorkflowParams,
   IGetDataExportWorkflowReturn,
   IApproveDataExportWorkflowParams,
   IApproveDataExportWorkflowReturn,
   IExportDataExportWorkflowParams,
   IExportDataExportWorkflowReturn,
+  IDownloadOriginalDataExportWorkflowParams,
   IRejectDataExportWorkflowParams,
   IRejectDataExportWorkflowReturn
 } from './index.d';
 
 class DataExportWorkflowsService extends ServiceBase {
-  public GetGlobalDataExportWorkflows(options?: AxiosRequestConfig) {
+  public GetGlobalDataExportWorkflows(
+    params: IGetGlobalDataExportWorkflowsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
     return this.get<IGetGlobalDataExportWorkflowsReturn>(
       '/v1/dms/dashboard/data_export_workflows',
-      undefined,
+      paramsData,
       options
     );
   }
@@ -92,6 +100,21 @@ class DataExportWorkflowsService extends ServiceBase {
     );
   }
 
+  public CheckDataExportWorkflowTemplateUsed(
+    params: ICheckDataExportWorkflowTemplateUsedParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<ICheckDataExportWorkflowTemplateUsedReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows/workflow_template_used`,
+      paramsData,
+      options
+    );
+  }
+
   public GetDataExportWorkflow(
     params: IGetDataExportWorkflowParams,
     options?: AxiosRequestConfig
@@ -141,6 +164,24 @@ class DataExportWorkflowsService extends ServiceBase {
 
     return this.post<IExportDataExportWorkflowReturn>(
       `/v1/dms/projects/${project_uid}/data_export_workflows/${data_export_workflow_uid}/export`,
+      paramsData,
+      options
+    );
+  }
+
+  public DownloadOriginalDataExportWorkflow(
+    params: IDownloadOriginalDataExportWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_workflow_uid = paramsData.data_export_workflow_uid;
+    delete paramsData.data_export_workflow_uid;
+
+    return this.get(
+      `/v1/dms/projects/${project_uid}/data_export_workflows/${data_export_workflow_uid}/original-export/download`,
       paramsData,
       options
     );

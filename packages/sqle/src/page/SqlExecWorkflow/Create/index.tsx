@@ -64,7 +64,9 @@ const CreateSqlExecWorkflow: React.FC = () => {
         workflow_subject:
           sqlExecWorkflowReduxState.clonedExecWorkflowBaseInfo
             ?.workflow_subject ?? '',
-        desc: sqlExecWorkflowReduxState.clonedExecWorkflowBaseInfo?.desc ?? ''
+        desc: sqlExecWorkflowReduxState.clonedExecWorkflowBaseInfo?.desc ?? '',
+        ops_type_uid:
+          sqlExecWorkflowReduxState.clonedExecWorkflowBaseInfo?.ops_type_uid
       });
       if (sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo) {
         Object.keys(
@@ -189,6 +191,9 @@ const CreateSqlExecWorkflow: React.FC = () => {
       messageApi.error(t('execWorkflow.create.mustHaveAuditResultTips'));
       return;
     }
+    const opsTypeUid = baseInfo?.ops_type_uid
+      ? String(baseInfo.ops_type_uid)
+      : undefined;
     const commonParams = {
       task_ids: taskInfos.map((v) => v.task_id!),
       desc: baseInfo?.desc,
@@ -212,6 +217,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
     }
     const createWorkflowParam: ICreateWorkflowV2Params = {
       ...commonParams,
+      ops_type_uid: opsTypeUid,
       sql_version_id: isAssociationVersionMode ? Number(versionId) : undefined
     };
     return workflow.createWorkflowV2(createWorkflowParam).then((res) => {

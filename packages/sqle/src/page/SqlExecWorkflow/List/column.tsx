@@ -106,6 +106,15 @@ export const SqlExecWorkflowListColumn: (
           '-'
         )
     },
+    {
+      dataIndex: 'ops_type',
+      title: () => t('execWorkflow.list.opsType'),
+      className: 'workflow-list-table-ops-type-column',
+      filterCustomType: 'select',
+      filterKey: 'filter_by_ops_type_uid',
+      filterLabel: t('execWorkflow.list.opsType'),
+      render: (opsType) => opsType?.name || '-'
+    },
     // #if [ee]
     {
       dataIndex: 'sql_version_name',

@@ -512,6 +512,12 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                               工单描述
                             </th>
                             <th
+                              class="ant-table-cell workflow-list-table-ops-type-column"
+                              scope="col"
+                            >
+                              运维类型
+                            </th>
+                            <th
                               class="ant-table-cell"
                               scope="col"
                             >
@@ -557,6 +563,15 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -786,6 +801,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                               </div>
                             </td>
                             <td
+                              class="ant-table-cell workflow-list-table-ops-type-column"
+                            >
+                              -
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               <div
@@ -986,6 +1006,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                               </div>
                             </td>
                             <td
+                              class="ant-table-cell workflow-list-table-ops-type-column"
+                            >
+                              -
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               -
@@ -1172,6 +1197,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                               </div>
                             </td>
                             <td
+                              class="ant-table-cell workflow-list-table-ops-type-column"
+                            >
+                              -
+                            </td>
+                            <td
                               class="ant-table-cell"
                             >
                               -
@@ -1355,6 +1385,11 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                                   </div>
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell workflow-list-table-ops-type-column"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell"
@@ -2222,6 +2257,12 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                               工单描述
                             </th>
                             <th
+                              class="ant-table-cell workflow-list-table-ops-type-column"
+                              scope="col"
+                            >
+                              运维类型
+                            </th>
+                            <th
                               class="ant-table-cell"
                               scope="col"
                             >
@@ -2267,6 +2308,15 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -2494,6 +2544,11 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                                   </div>
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell workflow-list-table-ops-type-column"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell"

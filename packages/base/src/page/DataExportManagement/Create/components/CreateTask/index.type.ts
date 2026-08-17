@@ -5,6 +5,7 @@ export type BaseFormFieldsType = {
   workflow_subject: string;
   desc?: string;
   workflow_template_id?: number;
+  ops_type_uid?: string;
 };
 
 export type SourceFormFieldsType = {

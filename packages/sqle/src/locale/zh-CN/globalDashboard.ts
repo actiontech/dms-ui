@@ -31,6 +31,7 @@ export default {
       assignee: '当前处理人',
       priority: '优先级',
       status: '状态',
+      opsType: '运维类型',
       createUser: '发起人',
       createdAt: '创建时间',
       updatedAt: '最后操作时间'
@@ -185,6 +186,15 @@ export default {
     confirm: {
       recycle: '确定要强制回收该账号吗？',
       logout: '确定要注销该账号吗？'
+    },
+    toolbar: {
+      searchPlaceholder: '搜索账号名称'
+    },
+    renewalPassword: {
+      title: '续期账号',
+      dateTime: '续期时间',
+      dayUnit: '天',
+      successTip: '续期账号成功'
     }
   },
   filter: {

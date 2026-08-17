@@ -1,27 +1,27 @@
 /* tslint:disable no-duplicate-string */
 
 export enum ListUsersOrderByEnum {
-  'name' = 'name'
+  name = 'name'
 }
 
 export enum ListUsersFilterByStatEnum {
-  'Normal' = 'Normal',
+  Normal = 'Normal',
 
-  'Disabled' = 'Disabled'
+  Disabled = 'Disabled'
 }
 
 export enum ListUsersFilterByAuthenticationTypeEnum {
-  'ldap' = 'ldap',
+  ldap = 'ldap',
 
-  'dms' = 'dms',
+  dms = 'dms',
 
-  'oauth2' = 'oauth2',
+  oauth2 = 'oauth2',
 
-  'unknown' = 'unknown'
+  unknown = 'unknown'
 }
 
 export enum ListUsersFilterBySystemEnum {
-  'WORKBENCH' = 'WORKBENCH',
+  WORKBENCH = 'WORKBENCH',
 
-  'MANAGEMENT' = 'MANAGEMENT'
+  MANAGEMENT = 'MANAGEMENT'
 }

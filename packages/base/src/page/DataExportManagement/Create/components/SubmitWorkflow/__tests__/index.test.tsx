@@ -109,6 +109,9 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
       data_export_workflow: {
         name: mockCreateDataExportRedux.formValues.baseValues.workflow_subject,
         desc: mockCreateDataExportRedux.formValues.baseValues.desc,
+        workflow_template_id:
+          mockCreateDataExportRedux.formValues.baseValues.workflow_template_id,
+        ops_type_uid: undefined,
         tasks: mockCreateDataExportRedux.taskIDs.map((v) => ({ task_uid: v }))
       }
     });
@@ -139,6 +142,29 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockCreateDataExportRedux.updateWorkflowID).toHaveBeenCalledTimes(0);
     expect(mockCreateDataExportRedux.updatePageState).toHaveBeenCalledTimes(0);
+  });
+
+  it('should include ops_type_uid in submit payload when selected', async () => {
+    const addDataExportWorkflowSpy = dataExport.AddDataExportWorkflow();
+    mockUseCreateDataExportReduxManage({
+      formValues: {
+        ...mockCreateDataExportRedux.formValues,
+        baseValues: {
+          ...mockCreateDataExportRedux.formValues.baseValues,
+          ops_type_uid: 'ops-uid-create-1'
+        }
+      }
+    });
+    baseSuperRender(<SubmitExportWorkflow />);
+
+    fireEvent.click(screen.getByText('提交工单'));
+
+    expect(addDataExportWorkflowSpy).toHaveBeenCalledWith({
+      project_uid: mockProjectInfo.projectID,
+      data_export_workflow: expect.objectContaining({
+        ops_type_uid: 'ops-uid-create-1'
+      })
+    });
   });
 
   it('should disabled submit button when sqls is exits dml type', async () => {

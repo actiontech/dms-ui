@@ -4513,6 +4513,20 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </div>
                   </div>
                 </div>
+                <div
+                  class="workflow-steps-basic-info-item"
+                >
+                  <div
+                    class="workflow-steps-basic-info-item-label"
+                  >
+                    运维类型
+                  </div>
+                  <div
+                    class="workflow-steps-basic-info-item-value"
+                  >
+                    -
+                  </div>
+                </div>
               </div>
               <div
                 class="custom-steps-wrapper"

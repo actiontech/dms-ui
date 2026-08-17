@@ -8,4 +8,5 @@ export type GlobalDashboardWorkflowTableFilterParam = Pick<
   | 'filter_create_user_id'
   | 'filter_create_time_from'
   | 'filter_create_time_to'
+  | 'filter_by_ops_type_uid'
 >;

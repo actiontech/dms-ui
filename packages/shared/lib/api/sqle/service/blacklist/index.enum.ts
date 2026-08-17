@@ -1,15 +1,15 @@
 /* tslint:disable no-duplicate-string */
 
 export enum getBlacklistV1FilterTypeEnum {
-  'sql' = 'sql',
+  sql = 'sql',
 
-  'fp_sql' = 'fp_sql',
+  fp_sql = 'fp_sql',
 
-  'ip' = 'ip',
+  ip = 'ip',
 
-  'cidr' = 'cidr',
+  cidr = 'cidr',
 
-  'host' = 'host',
+  host = 'host',
 
-  'instance' = 'instance'
+  instance = 'instance'
 }

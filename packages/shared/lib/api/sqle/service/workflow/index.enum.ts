@@ -1,179 +1,179 @@
 /* tslint:disable no-duplicate-string */
 
 export enum getGlobalDataExportWorkflowsV1FilterStatusListEnum {
-  'wait_for_approve' = 'wait_for_approve',
+  wait_for_approve = 'wait_for_approve',
 
-  'wait_for_export' = 'wait_for_export',
+  wait_for_export = 'wait_for_export',
 
-  'exporting' = 'exporting',
+  exporting = 'exporting',
 
-  'failed' = 'failed',
+  failed = 'failed',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'cancel' = 'cancel',
+  cancel = 'cancel',
 
-  'finish' = 'finish'
+  finish = 'finish'
 }
 
 export enum getGlobalDataExportWorkflowsV1FilterProjectPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'medium' = 'medium',
+  medium = 'medium',
 
-  'low' = 'low'
+  low = 'low'
 }
 
 export enum getGlobalDataExportWorkflowStatisticsV1FilterStatusListEnum {
-  'wait_for_approve' = 'wait_for_approve',
+  wait_for_approve = 'wait_for_approve',
 
-  'wait_for_export' = 'wait_for_export',
+  wait_for_export = 'wait_for_export',
 
-  'exporting' = 'exporting',
+  exporting = 'exporting',
 
-  'failed' = 'failed',
+  failed = 'failed',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'cancel' = 'cancel',
+  cancel = 'cancel',
 
-  'finish' = 'finish'
+  finish = 'finish'
 }
 
 export enum getGlobalDataExportWorkflowStatisticsV1FilterProjectPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'medium' = 'medium',
+  medium = 'medium',
 
-  'low' = 'low'
+  low = 'low'
 }
 
 export enum getGlobalWorkflowsV1FilterStatusListEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum getGlobalWorkflowsV1FilterProjectPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'medium' = 'medium',
+  medium = 'medium',
 
-  'low' = 'low'
+  low = 'low'
 }
 
 export enum GetGlobalWorkflowStatisticsFilterStatusListEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum GetGlobalWorkflowStatisticsFilterProjectPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'medium' = 'medium',
+  medium = 'medium',
 
-  'low' = 'low'
+  low = 'low'
 }
 
 export enum getWorkflowTemplateV1WorkflowTypeEnum {
-  'workflow' = 'workflow',
+  workflow = 'workflow',
 
-  'data_export' = 'data_export'
+  data_export = 'data_export'
 }
 
 export enum updateWorkflowTemplateV1WorkflowTypeEnum {
-  'workflow' = 'workflow',
+  workflow = 'workflow',
 
-  'data_export' = 'data_export'
+  data_export = 'data_export'
+}
+
+export enum getWorkflowTemplateListV1WorkflowTypeEnum {
+  workflow = 'workflow',
+
+  data_export = 'data_export'
 }
 
 export enum getWorkflowsV1FilterStatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum autoCreateAndExecuteWorkflowV1ExecModeEnum {
-  'sql_file' = 'sql_file',
+  sql_file = 'sql_file',
 
-  'sqls' = 'sqls'
+  sqls = 'sqls'
 }
 
 export enum exportWorkflowV1FilterStatusEnum {
-  'wait_for_audit' = 'wait_for_audit',
+  wait_for_audit = 'wait_for_audit',
 
-  'wait_for_execution' = 'wait_for_execution',
+  wait_for_execution = 'wait_for_execution',
 
-  'rejected' = 'rejected',
+  rejected = 'rejected',
 
-  'executing' = 'executing',
+  executing = 'executing',
 
-  'canceled' = 'canceled',
+  canceled = 'canceled',
 
-  'exec_failed' = 'exec_failed',
+  exec_failed = 'exec_failed',
 
-  'finished' = 'finished'
+  finished = 'finished'
 }
 
 export enum exportWorkflowV1ExportFormatEnum {
-  'csv' = 'csv',
+  csv = 'csv',
 
-  'excel' = 'excel'
+  excel = 'excel'
 }
 
 export enum GetBackupSqlListV1FilterExecStatusEnum {
-  'initialized' = 'initialized',
+  initialized = 'initialized',
 
-  'doing' = 'doing',
+  doing = 'doing',
 
-  'succeeded' = 'succeeded',
+  succeeded = 'succeeded',
 
-  'failed' = 'failed',
+  failed = 'failed',
 
-  'manually_executed' = 'manually_executed',
+  manually_executed = 'manually_executed',
 
-  'terminating' = 'terminating',
+  terminating = 'terminating',
 
-  'terminate_succeeded' = 'terminate_succeeded',
+  terminate_succeeded = 'terminate_succeeded',
 
-  'terminate_failed' = 'terminate_failed',
+  terminate_failed = 'terminate_failed',
 
-  'execute_rollback' = 'execute_rollback'
-}
-
-export enum getWorkflowTemplatesV1FilterWorkflowTypeEnum {
-  'workflow' = 'workflow',
-
-  'data_export' = 'data_export'
+  execute_rollback = 'execute_rollback'
 }

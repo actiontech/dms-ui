@@ -3,11 +3,11 @@ import {
   IGetWorkflowsResV1,
   IGlobalWorkflowStatisticsResV1,
   IGetWorkflowTemplateResV1,
-  IGetWorkflowTemplateListResV1,
   IUpdateWorkflowTemplateReqV1,
+  IBaseRes,
+  IGetWorkflowTemplateListResV1,
   ICreateWorkflowTemplateReqV1,
   IUpdateWorkflowTemplateByIdReqV1,
-  IBaseRes,
   ICreateWorkflowReqV1,
   IAutoCreateAndExecuteWorkflowResV1,
   IBatchCancelWorkflowsReqV1,
@@ -30,6 +30,7 @@ import {
   IBatchCompleteWorkflowsReqV2,
   IGetWorkflowResV2,
   IUpdateWorkflowReqV2,
+  IApproveWorkflowReqV2,
   IRejectWorkflowReqV2,
   IGetWorkflowTasksResV2,
   IUpdateWorkflowScheduleReqV2,
@@ -45,14 +46,14 @@ import {
   getGlobalWorkflowsV1FilterProjectPriorityEnum,
   GetGlobalWorkflowStatisticsFilterStatusListEnum,
   GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
+  getWorkflowTemplateV1WorkflowTypeEnum,
+  updateWorkflowTemplateV1WorkflowTypeEnum,
+  getWorkflowTemplateListV1WorkflowTypeEnum,
   getWorkflowsV1FilterStatusEnum,
   autoCreateAndExecuteWorkflowV1ExecModeEnum,
   exportWorkflowV1FilterStatusEnum,
   exportWorkflowV1ExportFormatEnum,
-  GetBackupSqlListV1FilterExecStatusEnum,
-  getWorkflowTemplatesV1FilterWorkflowTypeEnum,
-  getWorkflowTemplateV1WorkflowTypeEnum,
-  updateWorkflowTemplateV1WorkflowTypeEnum
+  GetBackupSqlListV1FilterExecStatusEnum
 } from './index.enum';
 
 export interface IGetScheduledTaskDefaultOptionV1Return
@@ -144,13 +145,22 @@ export interface IGetWorkflowTemplateV1Params {
 export interface IGetWorkflowTemplateV1Return
   extends IGetWorkflowTemplateResV1 {}
 
-export interface IGetWorkflowTemplatesV1Params {
+export interface IUpdateWorkflowTemplateV1Params
+  extends IUpdateWorkflowTemplateReqV1 {
   project_name: string;
 
-  workflow_type?: getWorkflowTemplatesV1FilterWorkflowTypeEnum;
+  workflow_type: updateWorkflowTemplateV1WorkflowTypeEnum;
 }
 
-export interface IGetWorkflowTemplatesV1Return
+export interface IUpdateWorkflowTemplateV1Return extends IBaseRes {}
+
+export interface IGetWorkflowTemplateListV1Params {
+  project_name: string;
+
+  workflow_type?: getWorkflowTemplateListV1WorkflowTypeEnum;
+}
+
+export interface IGetWorkflowTemplateListV1Return
   extends IGetWorkflowTemplateListResV1 {}
 
 export interface ICreateWorkflowTemplateV1Params
@@ -170,15 +180,6 @@ export interface IGetWorkflowTemplateByIdV1Params {
 export interface IGetWorkflowTemplateByIdV1Return
   extends IGetWorkflowTemplateResV1 {}
 
-export interface IUpdateWorkflowTemplateByIdV1Params
-  extends IUpdateWorkflowTemplateByIdReqV1 {
-  project_name: string;
-
-  workflow_template_id: number;
-}
-
-export interface IUpdateWorkflowTemplateByIdV1Return extends IBaseRes {}
-
 export interface IDeleteWorkflowTemplateV1Params {
   project_name: string;
 
@@ -187,14 +188,14 @@ export interface IDeleteWorkflowTemplateV1Params {
 
 export interface IDeleteWorkflowTemplateV1Return extends IBaseRes {}
 
-export interface IUpdateWorkflowTemplateV1Params
-  extends IUpdateWorkflowTemplateReqV1 {
+export interface IUpdateWorkflowTemplateByIdV1Params
+  extends IUpdateWorkflowTemplateByIdReqV1 {
   project_name: string;
 
-  workflow_type?: updateWorkflowTemplateV1WorkflowTypeEnum;
+  workflow_template_id: number;
 }
 
-export interface IUpdateWorkflowTemplateV1Return extends IBaseRes {}
+export interface IUpdateWorkflowTemplateByIdV1Return extends IBaseRes {}
 
 export interface IGetWorkflowsV1Params {
   filter_subject?: string;
@@ -222,6 +223,8 @@ export interface IGetWorkflowsV1Params {
   filter_sql_version_id?: string;
 
   filter_workflow_template_id?: number;
+
+  filter_by_ops_type_uid?: string;
 
   page_index: number;
 
@@ -299,6 +302,8 @@ export interface IExportWorkflowV1Params {
   filter_current_step_assignee_user_id?: string;
 
   filter_task_instance_id?: string;
+
+  filter_by_ops_type_uid?: string;
 
   project_name: string;
 
@@ -519,14 +524,12 @@ export interface ICancelWorkflowV2Params {
 
 export interface ICancelWorkflowV2Return extends IBaseRes {}
 
-export interface IApproveWorkflowV2Params {
+export interface IApproveWorkflowV2Params extends IApproveWorkflowReqV2 {
   workflow_id: string;
 
   workflow_step_id: string;
 
   project_name: string;
-
-  reason?: string;
 }
 
 export interface IApproveWorkflowV2Return extends IBaseRes {}

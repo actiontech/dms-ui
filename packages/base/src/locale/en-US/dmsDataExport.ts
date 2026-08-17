@@ -5,6 +5,7 @@ export default {
     'When you do not have permission to view a certain DB instance, but need to export data from it, you can use the data export function. by going through the approval process, you can get the corresponding data. this way, even without direct viewing permission, you can still get the data you need.',
   status: {
     wait_for_audit: 'Pending audit',
+    wait_for_masking_approve: 'Pending masking approval',
     partial_failed: 'Partial export failed',
     wait_for_export: 'Pending export',
     finished: 'Export success',
@@ -45,7 +46,16 @@ export default {
         describePlaceholder: 'Click to add data export description',
         workflowTemplate: 'Approval workflow template',
         workflowTemplateTips:
-          'When multiple templates exist, please select the approval flow for this export workflow'
+          'When multiple templates exist, please select the approval flow for this export workflow',
+        addOpsType: 'Add ops type',
+        addOpsTypeSuccess: 'Ops type added successfully',
+        updateOpsTypeSuccess: 'Ops type updated successfully',
+        deleteOpsTypeSuccess: 'Ops type deleted successfully',
+        deleteOpsTypeConfirm: 'Are you sure to delete this ops type?',
+        deleteOpsTypeReferenced:
+          'This ops type is referenced by workflows and cannot be deleted',
+        emptyOpsTypeMemberTip:
+          'Please contact the project admin to configure ops types'
       },
       source: {
         title: 'Select export target',
@@ -71,7 +81,20 @@ export default {
         'Only supports creating export workflows for DQL statements',
       hasExceptionRule:
         'There are unchecked audit exception rules. Please fix and re-audit first',
-      continueSubmission: 'Create anyway'
+      continueSubmission: 'Create anyway',
+      plaintextWarning:
+        'Sensitive fields detected. You can choose "Export plaintext data" per SQL.',
+      plaintextReasonPlaceholder:
+        'Please explain the business reason for exporting plaintext data',
+      plaintextReasonRequired:
+        'Please select plaintext SQL statements and fill in the apply reason',
+      plaintextApplyCreateFailed:
+        'Export workflow created, but plaintext apply creation failed. Please verify in approvals later.',
+      plaintextApplyCreateFailedWithDetail:
+        'Export workflow created, but plaintext apply creation failed ({{count}} datasource(s) failed).',
+      plaintextApplyCompensateGuide:
+        'You can open the created workflow first, then complete or re-initiate plaintext approvals from approvals.',
+      plaintextApplyCompensateAction: 'View created workflow'
     },
     approvalProcess: {
       title: 'Approval Process',
@@ -121,6 +144,8 @@ export default {
       status: 'Status',
       assignee: 'Assignee',
       workflowTemplate: 'Approval template',
+      opsType: 'Ops type',
+      plaintextExport: 'Plaintext export',
       viewOrderDetail: 'View workflow detail'
     },
     actions: {
@@ -137,6 +162,40 @@ export default {
       title: 'Export result',
       overview: {
         title: 'Overview',
+        plaintextNotice: {
+          pending: {
+            message: 'Plaintext export pending approval',
+            description:
+              'A plaintext export request has been submitted. Plaintext data will be downloadable after approval.',
+            link: 'Go to approval page'
+          },
+          approved: {
+            message: 'Plaintext export approved',
+            description:
+              'Please complete the download before {{deadline}}. Time remaining: {{remain}}.'
+          },
+          downloaded: {
+            message: 'Plaintext data downloaded',
+            description:
+              'Current download credential expires at {{deadline}} ({{remain}} remaining). You can re-download within this window.'
+          },
+          rejected: {
+            message: 'Plaintext export request rejected',
+            description:
+              'Please review the rejection details on the approval page and resubmit if needed.',
+            link: 'View approval details'
+          },
+          postDownloadExpired: {
+            message: 'Plaintext data downloaded successfully',
+            description:
+              'The 30-minute re-download window has closed. Submit a new request to download again.'
+          },
+          expired: {
+            message: 'Plaintext export request expired',
+            description:
+              'The download window has expired. Submit a new plaintext export request to get the data.'
+          }
+        },
         partialFailedNotice:
           'This workflow is partially failed: successful tasks remain downloadable, failed tasks need retry after fixes.',
         column: {
@@ -151,8 +210,11 @@ export default {
           exportFileType: 'Export file type',
           action: {
             download: 'Download data',
+            downloadOriginal: 'Download plaintext data',
             downloadTips:
-              'Please download the dataset within 24 hours. if it expires, you will need to resubmit the workflow.'
+              'Please download the dataset within 24 hours. if it expires, you will need to resubmit the workflow.',
+            downloadOriginalFailed:
+              'Failed to download plaintext data. Please try again later.'
           }
         }
       },
@@ -174,7 +236,10 @@ export default {
         status: 'Status',
         exportFailSummaryLabel: 'Failure reason:',
         exportFailSummaryFallback:
-          'Export failed. No specific reason is available yet; please contact the administrator to check service logs'
+          'Export failed. No specific reason is available yet; please contact the administrator to check service logs',
+        exportMode: 'Export type',
+        exportModePlaintext: 'Plaintext export',
+        exportModeMasked: 'Masked export'
       },
       steps: {
         title: 'Workflow progress',
@@ -231,7 +296,15 @@ export default {
         execSql: 'Execute statement',
         sqlType: 'Statement type',
         auditResult: 'Audit result',
-        createWhitelist: 'Add to audit whitelist'
+        createWhitelist: 'Add to audit whitelist',
+        exportPlaintext: 'Plaintext Export',
+        exportPlaintextAction: 'Export plaintext data (requires approval)',
+        snapshotInfo: 'Lineage/Masking Snapshot',
+        maskingSnapshotCount: '{{count}} masked field(s)',
+        lineageSnapshotCount: '{{count}} lineage source(s)',
+        snapshotDetail: 'View details',
+        maskingFields: 'Masked fields and rules',
+        lineagePathPreview: 'Lineage path preview'
       }
     }
   }

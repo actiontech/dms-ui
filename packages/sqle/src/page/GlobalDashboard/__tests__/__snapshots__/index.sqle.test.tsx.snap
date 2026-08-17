@@ -636,6 +636,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                             <col />
                             <col />
                             <col />
+                            <col />
                             <col
                               style="width: 100px;"
                             />
@@ -687,6 +688,12 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 状态
                               </th>
                               <th
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                                scope="col"
+                              >
+                                运维类型
+                              </th>
+                              <th
                                 class="ant-table-cell"
                                 scope="col"
                               >
@@ -721,6 +728,15 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                               class="ant-table-measure-row"
                               style="height: 0px; font-size: 0px;"
                             >
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
                               <td
                                 style="padding: 0px; border: 0px; height: 0px;"
                               >
@@ -910,6 +926,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 </span>
                               </td>
                               <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
+                              </td>
+                              <td
                                 class="ant-table-cell"
                               >
                                 -
@@ -1029,6 +1050,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 >
                                   已完成
                                 </span>
+                              </td>
+                              <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
                               </td>
                               <td
                                 class="ant-table-cell"
@@ -1152,6 +1178,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 </span>
                               </td>
                               <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
+                              </td>
+                              <td
                                 class="ant-table-cell"
                               >
                                 -
@@ -1271,6 +1302,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 >
                                   处理中
                                 </span>
+                              </td>
+                              <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
                               </td>
                               <td
                                 class="ant-table-cell"
@@ -1394,6 +1430,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 </span>
                               </td>
                               <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
+                              </td>
+                              <td
                                 class="ant-table-cell"
                               >
                                 -
@@ -1513,6 +1554,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 >
                                   已驳回
                                 </span>
+                              </td>
+                              <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
                               </td>
                               <td
                                 class="ant-table-cell"
@@ -1636,6 +1682,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 </span>
                               </td>
                               <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
+                              </td>
+                              <td
                                 class="ant-table-cell"
                               >
                                 -
@@ -1755,6 +1806,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 >
                                   已失败
                                 </span>
+                              </td>
+                              <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
                               </td>
                               <td
                                 class="ant-table-cell"
@@ -1879,6 +1935,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 </span>
                               </td>
                               <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
+                              </td>
+                              <td
                                 class="ant-table-cell"
                               >
                                 -
@@ -1962,6 +2023,11 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 >
                                   已完成
                                 </span>
+                              </td>
+                              <td
+                                class="ant-table-cell global-dashboard-workflow-ops-type-column"
+                              >
+                                -
                               </td>
                               <td
                                 class="ant-table-cell"

@@ -382,6 +382,12 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             描述
                           </th>
                           <th
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                            scope="col"
+                          >
+                            运维类型
+                          </th>
+                          <th
                             class="ant-table-cell"
                             scope="col"
                           >
@@ -421,6 +427,15 @@ exports[`test base/DataExport/List render batch close button When the user is no
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -611,6 +626,11 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             </div>
                           </td>
                           <td
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             700300-DataExportTemplate
@@ -776,6 +796,11 @@ exports[`test base/DataExport/List render batch close button When the user is no
                                 </div>
                               </span>
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"
@@ -1502,6 +1527,12 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                             描述
                           </th>
                           <th
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                            scope="col"
+                          >
+                            运维类型
+                          </th>
+                          <th
                             class="ant-table-cell"
                             scope="col"
                           >
@@ -1622,13 +1653,22 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-placeholder"
                         >
                           <td
                             class="ant-table-cell"
-                            colspan="9"
+                            colspan="10"
                           >
                             <div
                               class="ant-table-expanded-row-fixed"
@@ -2124,6 +2164,12 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             描述
                           </th>
                           <th
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                            scope="col"
+                          >
+                            运维类型
+                          </th>
+                          <th
                             class="ant-table-cell"
                             scope="col"
                           >
@@ -2163,6 +2209,15 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -2382,6 +2437,11 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             </div>
                           </td>
                           <td
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             700300-DataExportTemplate
@@ -2567,6 +2627,11 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                                 </div>
                               </span>
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"
@@ -3235,6 +3300,64 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                     <span
                       class="custom-select-placeholder-prefix"
                     >
+                      运维类型
+                    </span>
+                    <span
+                      class="custom-select-placeholder-value"
+                    >
+                      请选择{{name}}
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <span
+                aria-hidden="true"
+                class="ant-select-arrow"
+                style="user-select: none;"
+                unselectable="on"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 12px; padding-bottom: 12px;"
+          >
+            <div
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-15f13hq ant-select-single ant-select-allow-clear ant-select-show-arrow"
+            >
+              <div
+                class="ant-select-selector"
+              >
+                <span
+                  class="ant-select-selection-search"
+                >
+                  <input
+                    aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                    aria-autocomplete="list"
+                    aria-controls="rc_select_TEST_OR_SSR_list"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="rc_select_TEST_OR_SSR_list"
+                    autocomplete="off"
+                    class="ant-select-selection-search-input"
+                    id="rc_select_TEST_OR_SSR"
+                    readonly=""
+                    role="combobox"
+                    style="opacity: 0;"
+                    type="search"
+                    unselectable="on"
+                    value=""
+                  />
+                </span>
+                <span
+                  class="ant-select-selection-placeholder"
+                >
+                  <span
+                    class="custom-select-placeholder css-qly0fu"
+                  >
+                    <span
+                      class="custom-select-placeholder-prefix"
+                    >
                       审批模板
                     </span>
                     <span
@@ -3570,6 +3693,12 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             描述
                           </th>
                           <th
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                            scope="col"
+                          >
+                            运维类型
+                          </th>
+                          <th
                             class="ant-table-cell"
                             scope="col"
                           >
@@ -3609,6 +3738,15 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -3828,6 +3966,11 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             </div>
                           </td>
                           <td
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
                           >
                             700300-DataExportTemplate
@@ -4013,6 +4156,11 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                                 </div>
                               </span>
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell export-workflow-list-ops-type-column"
+                          >
+                            -
                           </td>
                           <td
                             class="ant-table-cell"

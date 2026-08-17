@@ -4,7 +4,6 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
 <div>
   <div
     class="css-1uy8bg8"
-    hidden=""
   >
     <div
       class="workflow-record-info-header"
@@ -147,6 +146,20 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
               导出成功
             </span>
           </div>
+        </div>
+      </div>
+      <div
+        class="workflow-steps-basic-info-item"
+      >
+        <div
+          class="workflow-steps-basic-info-item-label"
+        >
+          运维类型
+        </div>
+        <div
+          class="workflow-steps-basic-info-item-value"
+        >
+          -
         </div>
       </div>
     </div>

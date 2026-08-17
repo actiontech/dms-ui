@@ -67,10 +67,40 @@ describe('GlobalDashboard/WorkflowPanel/column', () => {
     expect(screen.getByText('-')).toBeInTheDocument();
   });
 
-  describe('create_user_name column (index 7)', () => {
+  describe('ops_type column (index 7)', () => {
+    it('should render ops type name when provided', () => {
+      const columns = workflowPanelColumns();
+      const render = columns[7].render as (opsType?: { name?: string }) => any;
+
+      superRender(<>{render({ name: '数据修改' })}</>);
+
+      expect(screen.getByText('数据修改')).toBeInTheDocument();
+    });
+
+    it('should render dash when ops type is empty', () => {
+      const columns = workflowPanelColumns();
+      const render = columns[7].render as (opsType?: { name?: string }) => any;
+
+      superRender(<>{render(undefined)}</>);
+
+      expect(screen.getByText('-')).toBeInTheDocument();
+    });
+
+    it('should assemble filter_by_ops_type_uid via filterKey', () => {
+      const columns = workflowPanelColumns();
+      const col = columns[7];
+
+      expect(col.dataIndex).toBe('ops_type');
+      expect(col.filterCustomType).toBe('select');
+      expect(col.filterKey).toBe('filter_by_ops_type_uid');
+      expect(col.filterLabel).toBe('运维类型');
+    });
+  });
+
+  describe('create_user_name column (index 8)', () => {
     it('should render CustomAvatar when create_user_name is provided', () => {
       const columns = workflowPanelColumns();
-      const render = columns[7].render as (name: string | undefined) => any;
+      const render = columns[8].render as (name: string | undefined) => any;
 
       superRender(<>{render('admin')}</>);
 
@@ -80,7 +110,7 @@ describe('GlobalDashboard/WorkflowPanel/column', () => {
 
     it('should render dash when create_user_name is empty', () => {
       const columns = workflowPanelColumns();
-      const render = columns[7].render as (name: string | undefined) => any;
+      const render = columns[8].render as (name: string | undefined) => any;
 
       superRender(<>{render(undefined)}</>);
 
@@ -89,7 +119,7 @@ describe('GlobalDashboard/WorkflowPanel/column', () => {
 
     it('should have filterCustomType select and correct filterKey', () => {
       const columns = workflowPanelColumns();
-      const col = columns[7];
+      const col = columns[8];
 
       expect(col.filterCustomType).toBe('select');
       expect(col.filterKey).toBe('filter_create_user_id');
@@ -97,10 +127,10 @@ describe('GlobalDashboard/WorkflowPanel/column', () => {
     });
   });
 
-  describe('created_at column (index 8)', () => {
+  describe('created_at column (index 9)', () => {
     it('should render formatted time when created_at is provided', () => {
       const columns = workflowPanelColumns();
-      const render = columns[8].render as (time: string | undefined) => any;
+      const render = columns[9].render as (time: string | undefined) => any;
 
       superRender(<>{render('2026-04-13 10:00:00')}</>);
 
@@ -108,38 +138,6 @@ describe('GlobalDashboard/WorkflowPanel/column', () => {
     });
 
     it('should render dash when created_at is empty', () => {
-      const columns = workflowPanelColumns();
-      const render = columns[8].render as (time: string | undefined) => any;
-
-      superRender(<>{render(undefined)}</>);
-
-      expect(screen.getByText('-')).toBeInTheDocument();
-    });
-
-    it('should have filterCustomType date-range and correct filterKey array', () => {
-      const columns = workflowPanelColumns();
-      const col = columns[8];
-
-      expect(col.filterCustomType).toBe('date-range');
-      expect(col.filterKey).toEqual([
-        'filter_create_time_from',
-        'filter_create_time_to'
-      ]);
-      expect(col.filterLabel).toBe('创建时间');
-    });
-  });
-
-  describe('updated_at column (index 9)', () => {
-    it('should render formatted time when updated_at is provided', () => {
-      const columns = workflowPanelColumns();
-      const render = columns[9].render as (time: string | undefined) => any;
-
-      superRender(<>{render('2026-04-13 16:00:00')}</>);
-
-      expect(screen.getByText('2026-04-13 16:00:00')).toBeInTheDocument();
-    });
-
-    it('should render dash when updated_at is empty', () => {
       const columns = workflowPanelColumns();
       const render = columns[9].render as (time: string | undefined) => any;
 
@@ -151,6 +149,38 @@ describe('GlobalDashboard/WorkflowPanel/column', () => {
     it('should have filterCustomType date-range and correct filterKey array', () => {
       const columns = workflowPanelColumns();
       const col = columns[9];
+
+      expect(col.filterCustomType).toBe('date-range');
+      expect(col.filterKey).toEqual([
+        'filter_create_time_from',
+        'filter_create_time_to'
+      ]);
+      expect(col.filterLabel).toBe('创建时间');
+    });
+  });
+
+  describe('updated_at column (index 10)', () => {
+    it('should render formatted time when updated_at is provided', () => {
+      const columns = workflowPanelColumns();
+      const render = columns[10].render as (time: string | undefined) => any;
+
+      superRender(<>{render('2026-04-13 16:00:00')}</>);
+
+      expect(screen.getByText('2026-04-13 16:00:00')).toBeInTheDocument();
+    });
+
+    it('should render dash when updated_at is empty', () => {
+      const columns = workflowPanelColumns();
+      const render = columns[10].render as (time: string | undefined) => any;
+
+      superRender(<>{render(undefined)}</>);
+
+      expect(screen.getByText('-')).toBeInTheDocument();
+    });
+
+    it('should have filterCustomType date-range and correct filterKey array', () => {
+      const columns = workflowPanelColumns();
+      const col = columns[10];
 
       expect(col.filterCustomType).toBe('date-range');
       expect(col.filterKey).toEqual([

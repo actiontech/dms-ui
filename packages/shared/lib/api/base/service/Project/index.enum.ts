@@ -1,33 +1,33 @@
 /* tslint:disable no-duplicate-string */
 
 export enum ListProjectsOrderByEnum {
-  'name' = 'name'
+  name = 'name'
 }
 
 export enum ListProjectsFilterByProjectPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'medium' = 'medium',
+  medium = 'medium',
 
-  'low' = 'low',
+  low = 'low',
 
-  'unknown' = 'unknown'
+  unknown = 'unknown'
 }
 
 export enum ExportProjectsOrderByEnum {
-  'name' = 'name'
+  name = 'name'
 }
 
 export enum ListProjectsV2OrderByEnum {
-  'name' = 'name'
+  name = 'name'
 }
 
 export enum ListProjectsV2FilterByProjectPriorityEnum {
-  'high' = 'high',
+  high = 'high',
 
-  'medium' = 'medium',
+  medium = 'medium',
 
-  'low' = 'low',
+  low = 'low',
 
-  'unknown' = 'unknown'
+  unknown = 'unknown'
 }

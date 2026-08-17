@@ -238,7 +238,8 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
         workflow_subject: `${workflowInfo?.workflow_name}_Rollback_${
           (workflowInfo?.associated_rollback_workflows?.length ?? 0) + 1
         }`,
-        desc: description
+        desc: description,
+        ops_type_uid: workflowInfo?.ops_type?.uid
       })
     );
     dispatch(

@@ -7,7 +7,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -48,7 +48,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
 
     expect(getListSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
-      workflow_type: getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow
+      workflow_type: getWorkflowTemplateListV1WorkflowTypeEnum.workflow
     });
     expect(screen.getByText('审批流程模板')).toBeInTheDocument();
     expect(screen.getByText('SQL上线审批')).toBeInTheDocument();
@@ -62,7 +62,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getListSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
-      workflow_type: getWorkflowTemplatesV1FilterWorkflowTypeEnum.data_export
+      workflow_type: getWorkflowTemplateListV1WorkflowTypeEnum.data_export
     });
   });
 

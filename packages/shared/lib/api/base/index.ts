@@ -22,7 +22,7 @@ export { default as ResourceOverviewService } from './service/ResourceOverview';
 export { default as RoleService } from './service/Role';
 export { default as SMSService } from './service/SMS';
 export { default as SessionService } from './service/Session';
-export { default as UserActivityService } from './service/UserActivity';
 export { default as UserService } from './service/User';
+export { default as UserActivityService } from './service/UserActivity';
 export { default as UserGroupService } from './service/UserGroup';
 export { default as WebhookService } from './service/Webhook';

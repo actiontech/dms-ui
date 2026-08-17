@@ -16,7 +16,7 @@ type Stateful<S> = {
 
 export type WorkflowBaseInfoFormFields = Pick<
   ICreateWorkflowV2Params,
-  'desc' | 'workflow_subject' | 'workflow_template_id'
+  'desc' | 'workflow_subject' | 'workflow_template_id' | 'ops_type_uid'
 >;
 
 export type SqlStatementFields = Record<

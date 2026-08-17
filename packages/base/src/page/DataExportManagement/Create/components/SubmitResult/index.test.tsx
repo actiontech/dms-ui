@@ -12,7 +12,11 @@ describe('test base/DataExport/Create/SubmitResult', () => {
     mockUseCreateDataExportReduxManage({
       formValues: {
         ...mockCreateDataExportRedux.formValues,
-        baseValues: { workflow_subject: 'test', desc: 'desc-desc' }
+        baseValues: {
+          ...mockCreateDataExportRedux.formValues.baseValues,
+          workflow_subject: 'test',
+          desc: 'desc-desc'
+        }
       },
       workflowID: '123'
     });

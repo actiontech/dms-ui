@@ -99,6 +99,8 @@ export interface IGetGlobalWorkflowListV2Params {
   filter_create_time_from?: string;
 
   filter_create_time_to?: string;
+
+  filter_by_ops_type_uid?: string;
 }
 
 export interface IGetGlobalWorkflowListV2Return

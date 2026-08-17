@@ -126,6 +126,20 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowBasicInfo render snap when workflow
           </div>
         </div>
       </div>
+      <div
+        class="workflow-steps-basic-info-item"
+      >
+        <div
+          class="workflow-steps-basic-info-item-label"
+        >
+          运维类型
+        </div>
+        <div
+          class="workflow-steps-basic-info-item-value"
+        >
+          -
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -225,6 +239,20 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowBasicInfo render snap when workflow
           class="workflow-steps-basic-info-item-label"
         >
           工单状态
+        </div>
+        <div
+          class="workflow-steps-basic-info-item-value"
+        >
+          -
+        </div>
+      </div>
+      <div
+        class="workflow-steps-basic-info-item"
+      >
+        <div
+          class="workflow-steps-basic-info-item-label"
+        >
+          运维类型
         </div>
         <div
           class="workflow-steps-basic-info-item-value"

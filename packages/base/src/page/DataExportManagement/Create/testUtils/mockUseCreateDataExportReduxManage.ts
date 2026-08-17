@@ -1,11 +1,15 @@
 import { CreateDataExportPageEnum } from '../../../../store/dataExport';
 import { ExportMethodEnum } from '../components/CreateTask/ExportMethodForm/index.enum';
 import * as useCreateDataExportReduxManage from '../hooks/index.redux';
+import type { BaseFormFieldsType } from '../components/CreateTask/index.type';
 
 export const mockCreateDataExportRedux = {
   updateDataExportInfoOpen: false,
   formValues: {
-    baseValues: { workflow_subject: 'test', desc: 'desc' },
+    baseValues: {
+      workflow_subject: 'test',
+      desc: 'desc'
+    } as BaseFormFieldsType,
     sourceValues: { dbService: '121' },
     methodValues: { sql: 'select 1;', exportMethod: ExportMethodEnum.sql }
   },

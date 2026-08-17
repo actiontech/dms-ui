@@ -40,7 +40,7 @@ const UserActivity = () => {
     refresh: refreshSummary
   } = useRequest(
     () =>
-      DmsApi.UserActivityService.GetUserActivitySummaryV1({
+      DmsApi.UserActivityService.GetUserActivitySummary({
         stat_date: statDateStr
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -58,7 +58,7 @@ const UserActivity = () => {
     refresh: refreshDailyTrend
   } = useRequest(
     () =>
-      DmsApi.UserActivityService.GetUserActivityDailyTrendV1({
+      DmsApi.UserActivityService.ListUserActivityDailyTrend({
         filter_date_from: trendFrom,
         filter_date_to: trendTo
       }).then((res) => {
@@ -77,7 +77,7 @@ const UserActivity = () => {
     refresh: refreshModule
   } = useRequest(
     () =>
-      DmsApi.UserActivityService.GetUserActivityModuleDistributionV1({
+      DmsApi.UserActivityService.ListUserActivityModuleDistribution({
         stat_date: statDateStr
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -95,7 +95,7 @@ const UserActivity = () => {
     refresh: refreshHourly
   } = useRequest(
     () =>
-      DmsApi.UserActivityService.GetUserActivityHourlyDistributionV1({
+      DmsApi.UserActivityService.ListUserActivityHourlyDistribution({
         stat_date: statDateStr
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

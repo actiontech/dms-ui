@@ -47,7 +47,8 @@ import {
 } from './action';
 import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
 import useWorkflowTemplateTips from '../../../hooks/useWorkflowTemplateTips';
-import { getWorkflowTemplatesV1FilterWorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
+import useOpsType from '../../../hooks/useOpsType';
+import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { WorkflowDetailResV1WithExtraParams } from './index.type';
 const SqlExecWorkflowList: React.FC = () => {
@@ -64,8 +65,9 @@ const SqlExecWorkflowList: React.FC = () => {
     usePermission();
   const { sqlVersionOptions, updateSqlVersionList } = useSQLVersionTips();
   const { templateOptions } = useWorkflowTemplateTips(
-    getWorkflowTemplatesV1FilterWorkflowTypeEnum.workflow
+    getWorkflowTemplateListV1WorkflowTypeEnum.workflow
   );
+  const { opsTypeOptions, updateOpsTypeList } = useOpsType();
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -158,11 +160,23 @@ const SqlExecWorkflowList: React.FC = () => {
           {
             options: templateOptions
           }
-        ]
+        ],
         // #endif
+        [
+          'ops_type',
+          {
+            options: opsTypeOptions
+          }
+        ]
       ]
     );
-  }, [instanceIDOptions, usernameOptions, sqlVersionOptions, templateOptions]);
+  }, [
+    instanceIDOptions,
+    usernameOptions,
+    sqlVersionOptions,
+    templateOptions,
+    opsTypeOptions
+  ]);
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
@@ -237,7 +251,14 @@ const SqlExecWorkflowList: React.FC = () => {
     updateInstanceList({
       project_name: projectName
     });
-  }, [projectName, updateInstanceList, updateUsernameList]);
+    updateOpsTypeList(projectID);
+  }, [
+    projectID,
+    projectName,
+    updateInstanceList,
+    updateOpsTypeList,
+    updateUsernameList
+  ]);
 
   // #if [ee]
   useEffect(() => {
