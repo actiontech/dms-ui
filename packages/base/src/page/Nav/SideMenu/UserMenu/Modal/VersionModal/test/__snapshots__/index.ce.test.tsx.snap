@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography"
                           >
                             UI: 
-                            dev-workflow-ops-type   6df7d3962
+                            dms-ui/feat-2983   ce77b682
                           </article>
                         </div>
                         <div
@@ -124,10 +124,6 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             -
                           </article>
                         </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-bottom: 8px;"
-                        />
                         <div
                           class="ant-space-item"
                         >
@@ -1554,7 +1550,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography"
                           >
                             UI: 
-                            dev-workflow-ops-type   6df7d3962
+                            dms-ui/feat-2983   ce77b682
                           </article>
                         </div>
                         <div
@@ -1568,10 +1564,6 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             -
                           </article>
                         </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-bottom: 8px;"
-                        />
                         <div
                           class="ant-space-item"
                         >

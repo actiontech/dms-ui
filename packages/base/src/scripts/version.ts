@@ -1,1 +1,1 @@
-export const UI_VERSION = 'dev-workflow-ops-type   6df7d3962';
+export const UI_VERSION = 'dms-ui/feat-2983   ce77b682';
