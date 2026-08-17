@@ -154,22 +154,6 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
         <div
           class="workflow-steps-basic-info-item-label"
         >
-          导出类型
-        </div>
-        <div
-          class="workflow-steps-basic-info-item-value"
-        >
-          <span>
-            脱敏导出
-          </span>
-        </div>
-      </div>
-      <div
-        class="workflow-steps-basic-info-item"
-      >
-        <div
-          class="workflow-steps-basic-info-item-label"
-        >
           运维类型
         </div>
         <div

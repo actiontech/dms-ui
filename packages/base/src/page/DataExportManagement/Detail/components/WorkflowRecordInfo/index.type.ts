@@ -9,9 +9,6 @@ export type WorkflowBasicInfoProps = {
   createUserName: string;
   createTime: string;
   workflowStatus?: WorkflowRecordStatusEnum;
-  isPlaintextExport?: boolean;
-  waitingMaskingApproval?: boolean;
-  partialExportFailed?: boolean;
   /** 只读展示；无值时页面显示「-」 */
   opsTypeName?: string;
 };

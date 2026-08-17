@@ -14,7 +14,6 @@ import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/
 import { TableColumnWithIconStyleWrapper } from '@actiontech/dms-kit';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { IListDataExportWorkflowWithExtraParams } from './index.type';
-import { DataExportRelatedUnmaskingWorkflowApprovalStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export type ExportWorkflowListFilterParamType = PageInfoWithoutIndexAndSize<
   IListDataExportWorkflowsParams & {
@@ -49,18 +48,6 @@ export const ExportWorkflowListColumn: (
   IListDataExportWorkflow,
   ExportWorkflowListFilterParamType
 > = (projectID) => {
-  const isWaitingMaskingApproval = (
-    record: IListDataExportWorkflowWithExtraParams
-  ) => {
-    if (record.waiting_masking_approval) {
-      return true;
-    }
-    return (
-      record.unmasking_workflow?.approval_status ===
-      DataExportRelatedUnmaskingWorkflowApprovalStatusEnum.pending
-    );
-  };
-
   return [
     {
       dataIndex: 'workflow_uid',
@@ -144,15 +131,8 @@ export const ExportWorkflowListColumn: (
     {
       dataIndex: 'status',
       title: () => t('dmsDataExport.list.column.status'),
-      render: (status, record) => {
-        return (
-          <WorkflowStatus
-            status={status}
-            waitingMaskingApproval={isWaitingMaskingApproval(
-              record as IListDataExportWorkflowWithExtraParams
-            )}
-          />
-        );
+      render: (status) => {
+        return <WorkflowStatus status={status} />;
       }
     },
     {

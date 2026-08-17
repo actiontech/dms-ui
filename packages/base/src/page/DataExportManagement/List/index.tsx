@@ -28,11 +28,11 @@ import {
 } from './column';
 import { TableRowSelection } from 'antd/es/table/interface';
 import WorkflowStatusFilter from './components/WorkflowStatusFilter';
-import { DataExportWorkflowStatusFilterValue } from './components/WorkflowStatusFilter';
 import useDbService from '../../../hooks/useDbService';
 import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.d';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
 import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
+import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import useMemberTips from '../../../hooks/useMemberTips';
 import useWorkflowTemplateTips from '../../../hooks/useWorkflowTemplateTips';
 import { getWorkflowTemplateListV1WorkflowTypeEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
@@ -54,8 +54,9 @@ const ExportWorkflowList: React.FC = () => {
   const { username } = useCurrentUser();
   const { parse2TableToolbarActionPermissions, checkActionPermission } =
     usePermission();
-  const [filterStatus, setFilterStatus] =
-    useState<DataExportWorkflowStatusFilterValue>('all');
+  const [filterStatus, setFilterStatus] = useState<
+    ListDataExportWorkflowsFilterByStatusEnum | 'all'
+  >('all');
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
