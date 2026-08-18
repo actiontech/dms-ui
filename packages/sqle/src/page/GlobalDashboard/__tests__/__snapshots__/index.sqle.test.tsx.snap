@@ -971,8 +971,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 class="ant-table-cell ellipsis-column-width"
                               >
                                 <a
-                                  href="/project/2/data/export/workflow-2"
-                                  target="__blank"
+                                  class="ant-typography"
                                 >
                                   Data Export Workflow
                                 </a>
@@ -1349,8 +1348,7 @@ exports[`GlobalDashboard should render workflow tab by default 1`] = `
                                 class="ant-table-cell ellipsis-column-width"
                               >
                                 <a
-                                  href="/project/2/data/export/workflow-5"
-                                  target="__blank"
+                                  class="ant-typography"
                                 >
                                   Workflow Exporting
                                 </a>

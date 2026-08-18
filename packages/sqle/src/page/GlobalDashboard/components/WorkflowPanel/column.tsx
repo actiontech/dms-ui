@@ -6,6 +6,7 @@ import {
   ROUTE_PATHS
 } from '@actiontech/dms-kit';
 import { TypedLink } from '@actiontech/shared';
+import { Typography } from 'antd';
 import { IGlobalWorkflowListItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ActiontechTableColumn } from '@actiontech/dms-kit/es/components/ActiontechTable';
 import { GlobalDashboardWorkflowTableFilterParam } from './index.type';
@@ -122,7 +123,9 @@ const getWorkflowTypeColor = (
   return 'default';
 };
 
-export const workflowPanelColumns = (): ActiontechTableColumn<
+export const workflowPanelColumns = (
+  onOpenWorkflow?: (record: IGlobalWorkflowListItem) => void
+): ActiontechTableColumn<
   IGlobalWorkflowListItem,
   GlobalDashboardWorkflowTableFilterParam
 > => {
@@ -139,16 +142,14 @@ export const workflowPanelColumns = (): ActiontechTableColumn<
           GlobalWorkflowListItemWorkflowTypeEnum.data_export
         ) {
           return (
-            <TypedLink
-              to={ROUTE_PATHS.BASE.DATA_EXPORT.detail}
-              params={{
-                projectID,
-                workflowID: workflowId
+            <Typography.Link
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenWorkflow?.(record);
               }}
-              target="__blank"
             >
               {name}
-            </TypedLink>
+            </Typography.Link>
           );
         }
         return (
