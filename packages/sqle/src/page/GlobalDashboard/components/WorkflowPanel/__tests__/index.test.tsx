@@ -29,7 +29,6 @@ describe('GlobalDashboard/WorkflowPanel', () => {
   let getGlobalWorkflowStatisticsSpy: jest.SpyInstance;
   let getGlobalWorkflowListSpy: jest.SpyInstance;
   let getUserListSpy: jest.SpyInstance;
-  let getDataExportWorkflowSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -40,7 +39,6 @@ describe('GlobalDashboard/WorkflowPanel', () => {
     getGlobalWorkflowListSpy =
       sqleMockApi.globalDashboard.getGlobalWorkflowList();
     getUserListSpy = baseMockApi.userCenter.getUserList();
-    getDataExportWorkflowSpy = baseMockApi.dataExport.GetDataExportWorkflow();
   });
 
   afterEach(() => {
@@ -101,9 +99,7 @@ describe('GlobalDashboard/WorkflowPanel', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(screen.getAllByText('去处理')[1]);
-    await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(getDataExportWorkflowSpy).toHaveBeenCalled();
     expect(openSpy).toHaveBeenCalledWith(
       expect.stringContaining('/data/export/'),
       '_blank'
