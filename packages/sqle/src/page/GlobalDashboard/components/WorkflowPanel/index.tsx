@@ -39,7 +39,6 @@ import {
   workflowFilterStatusOptions,
   workflowTypeLabelDictionary
 } from './data';
-import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { UserService } from '@actiontech/shared/lib/api/base';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import type { IOpsType } from '@actiontech/shared/lib/api/base/service/common';
@@ -47,8 +46,6 @@ import { useCurrentUser } from '@actiontech/shared/lib/features';
 // #if [ee]
 import ExportGlobalWorkflowButton from './ExportGlobalWorkflowButton';
 // #endif
-
-const DATA_MASKING_APPROVALS_TAB = 'Approvals';
 
 type WorkflowPanelProps = {
   projectId?: string;
@@ -226,70 +223,7 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
     [opsTypeList]
   );
 
-  const openWorkflow = useCallback(
-    async (record: IGlobalWorkflowListItem) => {
-      const projectID = record.project_uid?.trim();
-      const workflowId = record.workflow_id?.trim();
-      if (!projectID || !workflowId) {
-        messageApi.warning(t('globalDashboard.common.missingProject'));
-        return;
-      }
-
-      if (
-        record.workflow_type ===
-        GlobalWorkflowListItemWorkflowTypeEnum.data_export
-      ) {
-        try {
-          const res = await DataExportWorkflows.GetDataExportWorkflow({
-            project_uid: projectID,
-            data_export_workflow_uid: workflowId
-          });
-          const unmaskingWorkflowUid =
-            res?.data?.data?.unmasking_workflow?.unmasking_workflow_uid?.trim();
-          if (
-            res?.data?.code === ResponseCode.SUCCESS &&
-            unmaskingWorkflowUid
-          ) {
-            const approvalsPath = parse2ReactRouterPath(
-              ROUTE_PATHS.BASE.DATA_MASKING.index,
-              {
-                params: { projectID },
-                queries: {
-                  active: DATA_MASKING_APPROVALS_TAB,
-                  workflowId: unmaskingWorkflowUid
-                }
-              }
-            );
-            window.open(approvalsPath, '_blank');
-            return;
-          }
-        } catch {
-          // 解析失败时回落导出详情，避免阻断原有打开路径
-        }
-
-        window.open(
-          parse2ReactRouterPath(ROUTE_PATHS.BASE.DATA_EXPORT.detail, {
-            params: { projectID, workflowID: workflowId }
-          }),
-          '_blank'
-        );
-        return;
-      }
-
-      window.open(
-        parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
-          params: { projectID, workflowId }
-        }),
-        '_blank'
-      );
-    },
-    [t, messageApi]
-  );
-
-  const columns = useMemo(
-    () => workflowPanelColumns(openWorkflow),
-    [openWorkflow]
-  );
+  const columns = useMemo(() => workflowPanelColumns(), []);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer<
@@ -307,6 +241,39 @@ const WorkflowPanel: React.FC<WorkflowPanelProps> = ({
         ['ops_type', { options: opsTypeOptions }]
       ]),
     [userOptions, opsTypeOptions]
+  );
+
+  const openWorkflow = useCallback(
+    (record: IGlobalWorkflowListItem) => {
+      const getGlobalWorkflowDetailPath = (): string | null => {
+        const projectID = record.project_uid?.trim();
+        const workflowId = record.workflow_id?.trim();
+        if (!projectID || !workflowId) {
+          return null;
+        }
+        if (
+          record.workflow_type ===
+          GlobalWorkflowListItemWorkflowTypeEnum.data_export
+        ) {
+          return parse2ReactRouterPath(ROUTE_PATHS.BASE.DATA_EXPORT.detail, {
+            params: { projectID, workflowID: workflowId }
+          });
+        }
+        return parse2ReactRouterPath(
+          ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
+          {
+            params: { projectID, workflowId }
+          }
+        );
+      };
+      const path = getGlobalWorkflowDetailPath();
+      if (!path) {
+        messageApi.warning(t('globalDashboard.common.missingProject'));
+        return;
+      }
+      window.open(path, '_blank');
+    },
+    [t, messageApi]
   );
 
   const actions = useMemo(
