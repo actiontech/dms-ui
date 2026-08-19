@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import {
   ActiontechTable,
+  TableToolbar,
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
@@ -34,10 +35,13 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const { pagination, tableChange } = useTableRequestParams<
-    IListUser,
-    IListUsersParams
-  >();
+  const {
+    pagination,
+    tableChange,
+    searchKeyword,
+    setSearchKeyword,
+    refreshBySearchKeyword
+  } = useTableRequestParams<IListUser, IListUsersParams>();
 
   const {
     data: userList,
@@ -48,6 +52,10 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
       const params: IListUsersParams = {
         ...pagination
       };
+      const nameFuzzy = searchKeyword.trim();
+      if (nameFuzzy) {
+        params.filter_by_name_fuzzy = nameFuzzy;
+      }
       return handleTableRequestError(User.ListUsers(params));
     },
     {
@@ -105,6 +113,19 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   return (
     <>
       {contextHolder}
+      <TableToolbar
+        loading={loading}
+        searchInput={{
+          onChange: setSearchKeyword,
+          defaultValue: searchKeyword,
+          onSearch: () => {
+            refreshBySearchKeyword();
+          },
+          placeholder: t('common.form.placeholder.searchInput', {
+            name: t('common.username')
+          })
+        }}
+      />
       <ActiontechTable
         rowKey="uid"
         dataSource={userList?.list}

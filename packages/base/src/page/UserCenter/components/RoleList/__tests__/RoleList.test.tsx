@@ -44,6 +44,9 @@ describe('base/UserCenter/RoleList', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     expect(roleListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
+    expect(
+      queryBySelector('#actiontech-table-search-input', baseElement)
+    ).not.toBeInTheDocument();
     expect(screen.getByText('test role 1')).toBeInTheDocument();
     expect(screen.getAllByText('编 辑')).toHaveLength(3);
     expect(screen.getAllByText('删 除')).toHaveLength(3);

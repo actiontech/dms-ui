@@ -42,6 +42,9 @@ describe('base/UserCenter', () => {
       page_index: 1,
       page_size: 20
     });
+    expect(
+      getBySelector('#actiontech-table-search-input', baseElement)
+    ).toHaveAttribute('placeholder', '请输入要搜索的 用户名');
     fireEvent.click(screen.getByText('添加用户'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(dispatchSpy).toHaveBeenCalledWith({
@@ -70,6 +73,9 @@ describe('base/UserCenter', () => {
       page_index: 1,
       page_size: 20
     });
+    expect(
+      screen.queryByPlaceholderText('请输入要搜索的 用户名')
+    ).not.toBeVisible();
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('添加角色'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -94,6 +100,9 @@ describe('base/UserCenter', () => {
       page_size: 20,
       filter_by_target: ListOpPermissionsFilterByTargetEnum.all
     });
+    expect(
+      screen.queryByPlaceholderText('请输入要搜索的 用户名')
+    ).not.toBeVisible();
     expect(baseElement).toMatchSnapshot();
   });
 

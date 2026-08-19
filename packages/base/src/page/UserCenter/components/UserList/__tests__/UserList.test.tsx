@@ -2,7 +2,10 @@ import userCenter from '../../../../../testUtils/mockApi/userCenter';
 import { userList } from '../../../../../testUtils/mockApi/userCenter/data';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  queryBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import UserList from '../List';
 import {
   createSpyErrorResponse,
@@ -42,6 +45,20 @@ describe('base/UserCenter/UserList', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20
+    });
+    expect(userListSpy.mock.calls[0][0]).not.toHaveProperty(
+      'filter_by_name_fuzzy'
+    );
+    expect(userListSpy.mock.calls[0][0]).not.toHaveProperty('filter_by_name');
+    expect(
+      getBySelector('#actiontech-table-search-input', baseElement)
+    ).toBeInTheDocument();
+    expect(
+      getBySelector('#actiontech-table-search-input', baseElement)
+    ).toHaveAttribute('placeholder', '请输入要搜索的 用户名');
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('admin')).toBeInTheDocument();
     expect(screen.getByText('test')).toBeInTheDocument();
@@ -133,6 +150,83 @@ describe('base/UserCenter/UserList', () => {
     expect(screen.getByText(`删除用户 "${userName}" 成功`)).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalled();
+  });
+
+  it('should send filter_by_name_fuzzy when search by username', async () => {
+    const { baseElement } = renderWithReduxAndTheme(
+      <UserList activePage={UserCenterListEnum.user_list} />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+
+    const searchInputEle = getBySelector(
+      '#actiontech-table-search-input',
+      baseElement
+    );
+    fireEvent.change(searchInputEle, {
+      target: {
+        value: 'zjrc_assignee_repro_user_1001'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(searchInputEle).toHaveValue('zjrc_assignee_repro_user_1001');
+
+    fireEvent.click(getBySelector('.custom-icon-search'));
+    await act(async () => jest.advanceTimersByTime(3200));
+    expect(userListSpy).toHaveBeenCalledTimes(2);
+    expect(userListSpy).toHaveBeenNthCalledWith(2, {
+      page_index: 1,
+      page_size: 20,
+      filter_by_name_fuzzy: 'zjrc_assignee_repro_user_1001'
+    });
+    expect(userListSpy.mock.calls[1][0]).not.toHaveProperty('filter_by_name');
+    expect(userListSpy.mock.calls[1][0]).not.toHaveProperty('fuzzy_keyword');
+  });
+
+  it('should not send filter_by_name_fuzzy when keyword is empty or whitespace', async () => {
+    const { baseElement } = renderWithReduxAndTheme(
+      <UserList activePage={UserCenterListEnum.user_list} />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+
+    const searchInputEle = getBySelector(
+      '#actiontech-table-search-input',
+      baseElement
+    );
+    fireEvent.change(searchInputEle, {
+      target: {
+        value: '   '
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('.custom-icon-search'));
+    await act(async () => jest.advanceTimersByTime(3200));
+    expect(userListSpy).toHaveBeenCalledTimes(2);
+    expect(userListSpy).toHaveBeenNthCalledWith(2, {
+      page_index: 1,
+      page_size: 20
+    });
+    expect(userListSpy.mock.calls[1][0]).not.toHaveProperty(
+      'filter_by_name_fuzzy'
+    );
+
+    fireEvent.change(searchInputEle, {
+      target: {
+        value: ''
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('.custom-icon-search'));
+    await act(async () => jest.advanceTimersByTime(3200));
+    expect(userListSpy).toHaveBeenCalledTimes(3);
+    expect(userListSpy).toHaveBeenNthCalledWith(3, {
+      page_index: 1,
+      page_size: 20
+    });
+    expect(userListSpy.mock.calls[2][0]).not.toHaveProperty(
+      'filter_by_name_fuzzy'
+    );
   });
 
   it('should dispatch action when edit user info', async () => {
