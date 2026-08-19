@@ -49,7 +49,7 @@ import {
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
-import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
+import useLazyFilterTips from './useLazyFilterTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { Link } from 'react-router-dom';
@@ -76,12 +76,16 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
 }) => {
   const { t } = useTranslation();
   const { openAuditWhitelistCreateWithPrefill } = useWhitelistRedux();
-  const { sortableTableColumnFactory, tableFilterMetaFactory } =
-    useBackendTable();
-
-  const [dynamicTableFilterMeta, setDynamicTableFilterMeta] =
-    useState<ReturnType<typeof tableFilterMetaFactory>>();
+  const { sortableTableColumnFactory } = useBackendTable();
   const { projectName, projectID } = useCurrentProject();
+
+  const { dynamicTableFilterMeta, buildFilterMetaFromList } = useLazyFilterTips(
+    {
+      projectName,
+      instanceAuditPlanId,
+      auditPlanId
+    }
+  );
   const { username } = useCurrentUser();
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
@@ -217,11 +221,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     ]
   );
 
-  const {
-    data: tableMetas,
-    loading: getFilterMetaListLoading,
-    refresh: refreshFilterMetaList
-  } = useRequest(
+  const { data: tableMetas, refresh: refreshFilterMetaList } = useRequest(
     () =>
       instance_audit_plan
         .getInstanceAuditPlanSQLMetaV1({
@@ -231,17 +231,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            const { tableFilterCustomProps, extraTableFilterMeta } =
-              tableFilterMetaFactory(
-                res.data.data?.filter_meta_list ?? [],
-                true
-              );
-            setDynamicTableFilterMeta({
-              tableFilterCustomProps,
-              extraTableFilterMeta
-            });
-            updateFilterButtonMeta(
-              mergeFilterButtonMeta([], extraTableFilterMeta)
+            buildFilterMetaFromList(
+              res.data.data?.filter_meta_list ?? [],
+              updateFilterButtonMeta
             );
             return res.data.data;
           }
@@ -467,11 +459,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   }, [username, auditPlanType]);
 
   const loading = useMemo(
-    () =>
-      polling && !getFilterMetaListLoading
-        ? false
-        : getFilterMetaListLoading || getTableRowLoading,
-    [polling, getFilterMetaListLoading, getTableRowLoading]
+    () => (polling ? false : getTableRowLoading),
+    [polling, getTableRowLoading]
   );
 
   const tableHead = useMemo(
