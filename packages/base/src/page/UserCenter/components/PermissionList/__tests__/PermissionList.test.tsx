@@ -32,6 +32,9 @@ describe('base/UserCenter/PermissionList', () => {
 
     expect(permissionListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
+    expect(
+      queryBySelector('#actiontech-table-search-input', baseElement)
+    ).not.toBeInTheDocument();
     expect(screen.getAllByText('创建项目')).toHaveLength(2);
     expect(screen.getByText('修改项目')).toBeInTheDocument();
     expect(screen.getAllByText('数据源')).toHaveLength(2);
