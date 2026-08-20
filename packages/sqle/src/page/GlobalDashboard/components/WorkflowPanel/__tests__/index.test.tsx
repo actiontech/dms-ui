@@ -477,6 +477,9 @@ describe('GlobalDashboard/WorkflowPanel', () => {
       expect(exportGlobalWorkflowsSpy.mock.calls[0][0]).not.toHaveProperty(
         'cursor'
       );
+      expect(
+        exportGlobalWorkflowsSpy.mock.calls[0][0].filter_by_ops_type_uid
+      ).toBeUndefined();
     });
   });
 });
