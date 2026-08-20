@@ -4,6 +4,21 @@ export const SQLStatisticsWrapper = styled('div')`
   padding: 20px 40px 4px;
 
   .card-wrapper {
+    position: relative;
+
+    .stats-info {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      z-index: 1;
+      line-height: 1;
+
+      .tooltips-default-icon {
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+        font-size: 14px;
+      }
+    }
+
     .ant-card-body {
       padding: 20px !important;
       display: flex;
