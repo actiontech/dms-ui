@@ -142,15 +142,20 @@ const useRuleTips = () => {
   );
 
   const generateFlatRuleOptionsByDbType = React.useCallback(
-    (dbType?: string) => {
+    (dbType?: string, level?: string) => {
       if (!dbType) {
         return [];
       }
       const group = ruleTips.find((item) => item.db_type === dbType);
-      return (group?.rule ?? []).map((rule) => ({
-        label: rule.desc,
-        value: `${dbType}${DB_TYPE_RULE_NAME_SEPARATOR}${rule.rule_name}`
-      }));
+      return (group?.rule ?? [])
+        .filter((rule) => !level || rule.level === level)
+        .map((rule) => ({
+          label: rule.desc,
+          text: `${rule.desc ?? ''} ${rule.rule_name ?? ''} ${
+            rule.level ?? ''
+          }`,
+          value: `${dbType}${DB_TYPE_RULE_NAME_SEPARATOR}${rule.rule_name}`
+        }));
     },
     [ruleTips]
   );

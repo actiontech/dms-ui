@@ -53,8 +53,11 @@ const useSqlManageSourceExtra = ({
   const [sourceExtra, setSourceExtra] = useState<ISourceExtra | undefined>();
   const prevSourceExtraFilterNamesRef = useRef<string[]>([]);
   const { tableFilterMetaFactory } = useBackendTable();
-  const { filterCustomProps: staticFilterCustomProps } =
-    useGetTableFilterInfo();
+  const { filterCustomProps: staticFilterCustomProps } = useGetTableFilterInfo({
+    filterRuleName: tableFilterInfo.filter_rule_name,
+    tableFilterInfo,
+    updateTableFilterInfo
+  });
 
   const sourceExtraActive = canApplySourceExtraFilters(
     sourceExtra,
