@@ -21,7 +21,9 @@ export default {
   statistics: {
     SQLTotalNum: 'SQL total',
     problemSQlNum: 'Problem SQL',
-    optimizedSQLNum: 'Optimized SQL'
+    optimizedSQLNum: 'Optimized SQL',
+    filterScopeTips:
+      'All three numbers follow the current filters (including the status tab). Problem = unhandled with warn/error level; Optimized = solved. On Ignored / Manual audited tabs, the last two cards are 0 by design.'
   },
   ceTips:
     'SQL management provides full lifecycle monitoring for users. The panel integrates all business SQLs, where users can view all SQLs collected and audited in the project, expose the problem SQLs, and support users to solve them.',
@@ -49,6 +51,13 @@ export default {
           manualAudit: 'Manual audit',
           signalUpdateStatusSuccessTips: 'Updated SQL status successfully'
         }
+      },
+      optimistic: {
+        movedToSolved: 'Moved to Solved',
+        movedToIgnored: 'Moved to Ignored',
+        movedToManualAudited: 'Moved to Manual audited',
+        movedToUnhandled: 'Moved to Unhandled',
+        syncFailedRetry: 'Not synced, you can retry'
       },
       analyze: 'Analyze',
       createSqlManagementException: 'Add to SQL management whitelist',
@@ -116,8 +125,12 @@ export default {
       },
       assignee: 'Related to me',
       viewHighPrioritySql: 'View high priority SQL',
-      rule: 'Audit rule'
+      rule: 'Audit rule',
+      ruleSelectDbTypeFirst: 'Select a database type first',
+      ruleLevelFilter: 'Filter by rule level',
+      ruleLevelAll: 'All levels'
     },
+    emptyFilterResult: 'No matches under current filters',
     statusReport: {
       title: 'SQL audit result'
     }

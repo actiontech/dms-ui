@@ -67,7 +67,10 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
       sql_manage_id_list: [249]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockBatch).toHaveBeenCalledWith('批量解决SQL成功');
+    expect(mockBatch).toHaveBeenCalledWith('批量解决SQL成功', {
+      ids: [249],
+      patch: { status: 'solved' }
+    });
     expect(result.current.batchSolveLoading).toBe(false);
   });
 
@@ -86,7 +89,10 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
       sql_manage_id_list: [249]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockBatch).toHaveBeenCalledWith('批量忽略SQL成功');
+    expect(mockBatch).toHaveBeenCalledWith('批量忽略SQL成功', {
+      ids: [249],
+      patch: { status: 'ignored' }
+    });
     expect(result.current.batchIgnoreLoading).toBe(false);
   });
 });

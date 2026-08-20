@@ -18,7 +18,9 @@ export default {
   statistics: {
     SQLTotalNum: 'SQL总数',
     problemSQlNum: '问题SQL数',
-    optimizedSQLNum: '已优化SQL数'
+    optimizedSQLNum: '已优化SQL数',
+    filterScopeTips:
+      '三个数字均按当前筛选条件统计（含页签）。问题 = 未处理且审核等级为告警/错误；已优化 = 已解决。因此在「已忽略」「已人工审核」页签上，后两张卡为 0 属预期。'
   },
   ceTips:
     'SQL管控为用户提供SQL全生命周期监控，面板将整合所有的业务SQL，用户可以在该面板中查看项目中采集并审核的所有SQL，暴露其中的问题SQL，同时支持用户解决问题SQL。',
@@ -52,6 +54,13 @@ export default {
           manualAudit: '人工审核',
           signalUpdateStatusSuccessTips: '更新SQL状态成功'
         }
+      },
+      optimistic: {
+        movedToSolved: '已移至已解决',
+        movedToIgnored: '已移至已忽略',
+        movedToManualAudited: '已移至已人工审核',
+        movedToUnhandled: '已移至未处理',
+        syncFailedRetry: '未同步，可重试'
       },
       analyze: '分析',
       createSqlManagementException: '添加为管控SQL例外',
@@ -119,8 +128,12 @@ export default {
       },
       assignee: '与我相关',
       viewHighPrioritySql: '查看高优先级SQL',
-      rule: '审核规则'
+      rule: '审核规则',
+      ruleSelectDbTypeFirst: '请先选择库型',
+      ruleLevelFilter: '按规则等级筛选',
+      ruleLevelAll: '全部等级'
     },
+    emptyFilterResult: '当前筛选下无命中',
     statusReport: {
       title: 'SQL审核结果'
     }

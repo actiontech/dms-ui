@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Space, message, Form, Radio } from 'antd';
+import { Space, Form, Radio } from 'antd';
 import { useBoolean } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
@@ -21,7 +21,6 @@ export type ChangeStatusFields = {
 
 const ChangeStatus = () => {
   const { t } = useTranslation();
-  const [messageApi, contextMessageHolder] = message.useMessage();
 
   const {
     open,
@@ -57,12 +56,13 @@ const ChangeStatus = () => {
     SqlManage.BatchUpdateSqlManage(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(
-            t(
+          EventEmitter.emit(EmitterKey.Refresh_SQL_Management, {
+            ids: [currentSelected?.id as number],
+            patch: { status: values.status },
+            successMessage: t(
               'sqlManagement.table.action.single.updateStatus.signalUpdateStatusSuccessTips'
             )
-          );
-          EventEmitter.emit(EmitterKey.Refresh_SQL_Management);
+          });
           onCloseModal();
         }
       })
@@ -73,7 +73,6 @@ const ChangeStatus = () => {
 
   return (
     <>
-      {contextMessageHolder}
       <BasicModal
         open={open}
         size="small"

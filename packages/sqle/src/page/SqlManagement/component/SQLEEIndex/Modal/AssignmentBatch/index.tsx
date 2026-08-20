@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../data/ModalName';
 
-import { Space, message } from 'antd';
+import { Space } from 'antd';
 import AssignmentForm from '../AssignmentForm';
 
 import { useBoolean } from 'ahooks';
@@ -25,8 +25,6 @@ const AssignmentBatch = () => {
     setBatchSelectData,
     updateModalStatus
   } = useSqlManagementRedux(ModalName.Assignment_Member_Batch);
-
-  const [messageApi, contextMessageHolder] = message.useMessage();
 
   const { projectName } = useCurrentProject();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -56,10 +54,17 @@ const AssignmentBatch = () => {
     SqlManage.BatchUpdateSqlManage(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(
-            t('sqlManagement.table.action.batch.assignmentSuccessTips')
-          );
-          EventEmitter.emit(EmitterKey.Refresh_SQL_Management);
+          const ids =
+            currentSelected
+              ?.filter((item) => item?.id)
+              .map((item) => Number(item?.id)) ?? [];
+          EventEmitter.emit(EmitterKey.Refresh_SQL_Management, {
+            ids,
+            patch: { assignees: values.assignees },
+            successMessage: t(
+              'sqlManagement.table.action.batch.assignmentSuccessTips'
+            )
+          });
           onCloseModal();
         }
       })
@@ -68,34 +73,29 @@ const AssignmentBatch = () => {
       });
   };
   return (
-    <>
-      {contextMessageHolder}
-      <BasicModal
-        size="small"
-        open={open}
-        title={t('sqlManagement.table.action.batch.assignment')}
-        closable={false}
-        onCancel={onCloseModal}
-        destroyOnClose
-        afterClose={handleReset}
-        footer={
-          <Space>
-            <BasicButton onClick={onCloseModal}>
-              {t('common.cancel')}
-            </BasicButton>
-            <BasicButton
-              onClick={onSubmit}
-              disabled={submitLoading}
-              type="primary"
-            >
-              {t('common.ok')}
-            </BasicButton>
-          </Space>
-        }
-      >
-        <AssignmentForm form={form} submitLoading={submitLoading} init={open} />
-      </BasicModal>
-    </>
+    <BasicModal
+      size="small"
+      open={open}
+      title={t('sqlManagement.table.action.batch.assignment')}
+      closable={false}
+      onCancel={onCloseModal}
+      destroyOnClose
+      afterClose={handleReset}
+      footer={
+        <Space>
+          <BasicButton onClick={onCloseModal}>{t('common.cancel')}</BasicButton>
+          <BasicButton
+            onClick={onSubmit}
+            disabled={submitLoading}
+            type="primary"
+          >
+            {t('common.ok')}
+          </BasicButton>
+        </Space>
+      }
+    >
+      <AssignmentForm form={form} submitLoading={submitLoading} init={open} />
+    </BasicModal>
   );
 };
 
