@@ -14,6 +14,7 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
+import { ListUsersFilterByStatEnum } from '@actiontech/shared/lib/api/base/service/User/index.enum';
 
 describe('useUsername', () => {
   let listUsernameSpy: jest.SpyInstance;
@@ -36,6 +37,10 @@ describe('useUsername', () => {
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(listUsernameSpy).toHaveBeenCalledWith({
+      page_size: 9999,
+      filter_by_stat: ListUsersFilterByStatEnum.Normal
+    });
     expect(result.current.usernameList).toEqual(userList);
     expect(result.current.loading).toBeFalsy();
   });
