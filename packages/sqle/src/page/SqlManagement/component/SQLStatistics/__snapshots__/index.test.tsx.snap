@@ -4,7 +4,7 @@ exports[`page/SqlManagement/SQLStatistics render statics data 1`] = `
 <body>
   <div>
     <div
-      class="css-wl13ms"
+      class="css-1lrp847"
     >
       <div
         class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
@@ -12,6 +12,40 @@ exports[`page/SqlManagement/SQLStatistics render statics data 1`] = `
         <div
           class="ant-card-body"
         >
+          <div
+            class="stats-info"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <span
+                  aria-label="info-circle"
+                  class="anticon anticon-info-circle tooltips-default-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="info-circle"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                    />
+                    <path
+                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
           <div
             class="cont-item"
           >
@@ -63,11 +97,11 @@ exports[`page/SqlManagement/SQLStatistics render statics data 1`] = `
 </body>
 `;
 
-exports[`page/SqlManagement/SQLStatistics render when has error message 1`] = `
+exports[`page/SqlManagement/SQLStatistics render unset placeholder when data is null 1`] = `
 <body>
   <div>
     <div
-      class="css-wl13ms"
+      class="css-1lrp847"
     >
       <div
         class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
@@ -76,12 +110,46 @@ exports[`page/SqlManagement/SQLStatistics render when has error message 1`] = `
           class="ant-card-body"
         >
           <div
+            class="stats-info"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <span
+                  aria-label="info-circle"
+                  class="anticon anticon-info-circle tooltips-default-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="info-circle"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                    />
+                    <path
+                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
             class="cont-item"
           >
             <strong
               class="num total"
             >
-              -
+              —
             </strong>
             <span
               class="desc"
@@ -96,7 +164,7 @@ exports[`page/SqlManagement/SQLStatistics render when has error message 1`] = `
               <strong
                 class="num problem"
               >
-                -
+                —
               </strong>
               <span
                 class="desc problemSQlNum"
@@ -111,7 +179,7 @@ exports[`page/SqlManagement/SQLStatistics render when has error message 1`] = `
             <strong
               class="num optimized"
             >
-              -
+              —
             </strong>
             <span
               class="desc"
@@ -130,7 +198,7 @@ exports[`page/SqlManagement/SQLStatistics render when still loading 1`] = `
 <body>
   <div>
     <div
-      class="css-wl13ms"
+      class="css-1lrp847"
     >
       <div
         class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
@@ -138,6 +206,40 @@ exports[`page/SqlManagement/SQLStatistics render when still loading 1`] = `
         <div
           class="ant-card-body"
         >
+          <div
+            class="stats-info"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <span
+                  aria-label="info-circle"
+                  class="anticon anticon-info-circle tooltips-default-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="info-circle"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                    />
+                    <path
+                      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
           <div
             class="cont-item"
           >
