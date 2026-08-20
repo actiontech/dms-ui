@@ -3,37 +3,48 @@ import { Card } from 'antd';
 import { SQLStatisticsWrapper } from './style';
 import { useMemo } from 'react';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { BasicToolTips } from '@actiontech/shared';
 
 export interface ISQLStatisticsProps {
   loading: boolean;
   errorMessage?: Error;
-  data: { SQLTotalNum: number; problemSQlNum: number; optimizedSQLNum: number };
+  data: {
+    SQLTotalNum: number | null;
+    problemSQlNum: number | null;
+    optimizedSQLNum: number | null;
+  };
 }
 
-const errorDefaultVal = '-';
+const unsetDefaultVal = '—';
 
 const SQLStatistics = (props: ISQLStatisticsProps) => {
   const { t } = useTranslation();
 
   const { totalNum, problemNum, optimizedNum } = useMemo(() => {
-    if (props.errorMessage && !props.loading) {
-      return {
-        totalNum: errorDefaultVal,
-        problemNum: errorDefaultVal,
-        optimizedNum: errorDefaultVal
-      };
-    }
+    const formatOrUnset = (value: number | null) => {
+      if (value === null) {
+        return unsetDefaultVal;
+      }
+      return formatParamsBySeparator(value);
+    };
     const { SQLTotalNum, problemSQlNum, optimizedSQLNum } = props.data;
     return {
-      totalNum: formatParamsBySeparator(SQLTotalNum),
-      problemNum: formatParamsBySeparator(problemSQlNum),
-      optimizedNum: formatParamsBySeparator(optimizedSQLNum)
+      totalNum: formatOrUnset(SQLTotalNum),
+      problemNum: formatOrUnset(problemSQlNum),
+      optimizedNum: formatOrUnset(optimizedSQLNum)
     };
-  }, [props]);
+  }, [props.data]);
 
   return (
     <SQLStatisticsWrapper>
       <Card className="card-wrapper">
+        <div className="stats-info">
+          <BasicToolTips
+            title={t('sqlManagement.statistics.filterScopeTips')}
+            titleWidth={320}
+            suffixIcon
+          />
+        </div>
         <div className="cont-item">
           <strong className="num total">{totalNum}</strong>
           <span className="desc">

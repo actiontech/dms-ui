@@ -20,7 +20,9 @@ import {
   IGetSqlManageSqlAnalysisV1Params,
   IGetSqlManageSqlAnalysisV1Return,
   IGetSqlManageListV2Params,
-  IGetSqlManageListV2Return
+  IGetSqlManageListV2Return,
+  IGetSqlManageStatisticsV2Params,
+  IGetSqlManageStatisticsV2Return
 } from './index.d';
 
 class SqlManageService extends ServiceBase {
@@ -153,6 +155,21 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageListV2Return>(
       `/v2/projects/${project_name}/sql_manages`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetSqlManageStatisticsV2(
+    params: IGetSqlManageStatisticsV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSqlManageStatisticsV2Return>(
+      `/v2/projects/${project_name}/sql_manages/statistics`,
       paramsData,
       options
     );

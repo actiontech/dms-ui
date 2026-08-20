@@ -37,6 +37,7 @@ import {
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
   ScheduleTaskDefaultOptionDefaultSelectorEnum,
+  SqlManageAuditStatusEnum,
   SqlManageStatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
@@ -793,6 +794,9 @@ export interface IFilterTip {
 
   group?: string;
 
+  /** 规则 tip 等级（error/warn/notice/normal）；其它 tip 可空 */
+  level?: string;
+
   value?: string;
 }
 
@@ -1442,6 +1446,18 @@ export interface IGetSqlManageListResp {
   message?: string;
 
   source_extra?: ISourceExtra;
+
+  sql_manage_bad_num?: number;
+
+  sql_manage_optimized_num?: number;
+
+  sql_manage_total_num?: number;
+}
+
+export interface IGetSqlManageStatisticsResp {
+  code?: number;
+
+  message?: string;
 
   sql_manage_bad_num?: number;
 
@@ -2252,6 +2268,8 @@ export interface IRuleResV1 {
 export interface IRuleRespV1 {
   desc?: string;
 
+  level?: string;
+
   rule_name?: string;
 }
 
@@ -2455,6 +2473,8 @@ export interface ISqlManage {
   assignees?: string[];
 
   audit_result?: IAuditResult[];
+
+  audit_status?: SqlManageAuditStatusEnum;
 
   endpoints?: string;
 

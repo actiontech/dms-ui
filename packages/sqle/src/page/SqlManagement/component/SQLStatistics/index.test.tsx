@@ -31,13 +31,17 @@ describe('page/SqlManagement/SQLStatistics', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render when has error message', () => {
+  it('render unset placeholder when data is null', () => {
     const { baseElement } = customRender({
       ...staticsData,
-      errorMessage: new Error('error')
+      data: {
+        SQLTotalNum: null,
+        problemSQlNum: null,
+        optimizedSQLNum: null
+      }
     });
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getAllByText('-').length).toBe(3);
+    expect(screen.getAllByText('—').length).toBe(3);
   });
 
   it('render statics data', () => {

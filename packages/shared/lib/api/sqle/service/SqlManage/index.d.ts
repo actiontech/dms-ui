@@ -19,6 +19,7 @@ import {
 
 import {
   IGetSqlManageListResp,
+  IGetSqlManageStatisticsResp,
   IBatchUpdateSqlManageReq,
   IBaseRes,
   IGetSqlManageRuleTipsResp,
@@ -222,3 +223,40 @@ export interface IGetSqlManageListV2Params {
 }
 
 export interface IGetSqlManageListV2Return extends IGetSqlManageListResp {}
+
+export interface IGetSqlManageStatisticsV2Params {
+  project_name: string;
+
+  fuzzy_search_sql_fingerprint?: string;
+
+  filter_assignee?: string;
+
+  filter_instance_id?: string;
+
+  filter_source?: GetSqlManageListV2FilterSourceEnum;
+
+  filter_audit_level?: GetSqlManageListV2FilterAuditLevelEnum;
+
+  filter_last_audit_start_time_from?: string;
+
+  filter_last_audit_start_time_to?: string;
+
+  filter_status?: GetSqlManageListV2FilterStatusEnum;
+
+  filter_rule_name?: string;
+
+  filter_db_type?: string;
+
+  filter_business?: string;
+
+  filter_priority?: GetSqlManageListV2FilterPriorityEnum;
+
+  fuzzy_search_endpoint?: string;
+
+  fuzzy_search_schema_name?: string;
+
+  extra_filters?: string;
+}
+
+export interface IGetSqlManageStatisticsV2Return
+  extends IGetSqlManageStatisticsResp {}
