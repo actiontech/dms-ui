@@ -92,8 +92,6 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   const [remediationDrawerRecord, setRemediationDrawerRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
-    useBoolean();
 
   const {
     tableChange,
@@ -281,7 +279,6 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
 
   const {
     data: tableRows,
-    loading: getTableRowLoading,
     refresh: refreshTableRows,
     error: getTableRowError,
     cancel: cancelTableRowsRequest
@@ -309,16 +306,12 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       pollingInterval: 1000,
       pollingErrorRetryCount: 3,
       onSuccess: (res) => {
-        if (res.data?.some((row) => row?.audit_status === BEING_AUDITED)) {
-          startPollRequest();
-        } else {
+        if (!res.data?.some((row) => row?.audit_status === BEING_AUDITED)) {
           cancelTableRowsRequest();
-          finishPollRequest();
         }
       },
       onError: () => {
         cancelTableRowsRequest();
-        finishPollRequest();
       }
     }
   );
@@ -458,11 +451,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     };
   }, [username, auditPlanType]);
 
-  const loading = useMemo(
-    () => (polling ? false : getTableRowLoading),
-    [polling, getTableRowLoading]
-  );
-
+  // AC-019：进页/改筛直接换行，禁止表格蓝底 Spin；可留旧行；无旧数据时空表
   const tableHead = useMemo(
     () =>
       buildTableHeadWithAuditStatus(tableMetas?.head, {
@@ -615,13 +604,20 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         rowKey="id"
         setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
-        loading={loading}
         columns={columns}
         dataSource={tableRows?.data}
         onChange={tableChange}
         pagination={{
-          total: tableRows?.total
+          total: tableRows?.total,
+          current: pagination.page_index
         }}
+        {...(getTableRowError
+          ? {}
+          : {
+              locale: {
+                emptyText: t('sqlManagement.table.emptyFilterResult')
+              }
+            })}
       />
       <ReportDrawer
         title={t(

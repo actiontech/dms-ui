@@ -8,8 +8,39 @@ export const LAZY_TIP_FILTER_NAMES = new Set([
   'rule_name'
 ]);
 
+export const RULE_NAME_FILTER = 'rule_name';
+
 export const isLazyTipFilter = (filterName?: string) =>
   !!filterName && LAZY_TIP_FILTER_NAMES.has(filterName);
+
+export const isRuleNameFilter = (filterName?: string) =>
+  filterName === RULE_NAME_FILTER;
+
+export type RuleTipClientFilter = {
+  level?: string;
+  keyword?: string;
+};
+
+/** 规则 tip：仅前端按等级 / 关键字筛已返回数据，不再打接口 */
+export const filterRuleTipsClientSide = (
+  tips: IFilterTip[] | undefined,
+  { level, keyword }: RuleTipClientFilter
+): IFilterTip[] => {
+  if (!tips?.length) {
+    return [];
+  }
+  const normalizedKeyword = keyword?.trim().toLowerCase() ?? '';
+  return tips.filter((tip) => {
+    if (level && tip.level !== level) {
+      return false;
+    }
+    if (!normalizedKeyword) {
+      return true;
+    }
+    const haystack = `${tip.desc ?? ''} ${tip.value ?? ''}`.toLowerCase();
+    return haystack.includes(normalizedKeyword);
+  });
+};
 
 export const filterTipsToSelectOptions = (filterTips?: IFilterTip[]) => {
   if (!filterTips?.length) {

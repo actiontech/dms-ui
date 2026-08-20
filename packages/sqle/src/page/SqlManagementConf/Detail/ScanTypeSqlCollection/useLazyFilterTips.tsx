@@ -6,8 +6,13 @@ import {
   useRef,
   useState
 } from 'react';
+import type { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
-import { IFilterMeta } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IFilterMeta,
+  IFilterTip
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   ActiontechTableFilterButtonMeta,
@@ -18,9 +23,15 @@ import {
 import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
 import useBackendTable from '../../../../hooks/useBackendTable';
 import {
+  filterRuleTipsClientSide,
   filterTipsToSelectOptions,
-  isLazyTipFilter
+  isLazyTipFilter,
+  isRuleNameFilter,
+  RULE_NAME_FILTER
 } from './lazyFilterTips.utils';
+import ScanRuleTipsFilterDropdownExtra from './ScanRuleTipsFilterDropdownExtra';
+import { ruleLevelDictionary } from '../../../../hooks/useStaticStatus/index.data';
+import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 type DynamicTableFilterMeta = {
   extraTableFilterMeta: ActiontechTableFilterMeta;
@@ -38,23 +49,30 @@ const useLazyFilterTips = ({
   instanceAuditPlanId,
   auditPlanId
 }: UseLazyFilterTipsParams) => {
+  const { t } = useTranslation();
   const { tableFilterMetaFactory } = useBackendTable();
   const [dynamicTableFilterMeta, setDynamicTableFilterMeta] =
     useState<DynamicTableFilterMeta>();
-  const [tipOptionsByFilter, setTipOptionsByFilter] = useState<
-    Record<string, ReturnType<typeof filterTipsToSelectOptions>>
+  const [rawTipsByFilter, setRawTipsByFilter] = useState<
+    Record<string, IFilterTip[]>
   >({});
   const [tipLoadingByFilter, setTipLoadingByFilter] = useState<
     Record<string, boolean>
   >({});
+  const [selectedRuleLevel, setSelectedRuleLevel] = useState<
+    string | undefined
+  >();
+  const [ruleKeyword, setRuleKeyword] = useState('');
   const loadedTipsRef = useRef(new Set<string>());
   const inflightRef = useRef(new Set<string>());
 
   const resetLazyTips = useCallback(() => {
     loadedTipsRef.current.clear();
     inflightRef.current.clear();
-    setTipOptionsByFilter({});
+    setRawTipsByFilter({});
     setTipLoadingByFilter({});
+    setSelectedRuleLevel(undefined);
+    setRuleKeyword('');
   }, []);
 
   const fetchFilterTips = useCallback(
@@ -80,9 +98,9 @@ const useLazyFilterTips = ({
           const meta = res.data.data?.filter_meta_list?.find(
             (item) => item.filter_name === filterName
           );
-          setTipOptionsByFilter((prev) => ({
+          setRawTipsByFilter((prev) => ({
             ...prev,
-            [filterName]: filterTipsToSelectOptions(meta?.filter_tip_list)
+            [filterName]: meta?.filter_tip_list ?? []
           }));
           loadedTipsRef.current.add(filterName);
         }
@@ -128,6 +146,54 @@ const useLazyFilterTips = ({
     [resetLazyTips, tableFilterMetaFactory]
   );
 
+  const ruleLevelFilterOptions = useMemo(() => {
+    return [
+      {
+        label: t('sqlManagement.table.filter.ruleLevelAll'),
+        value: ''
+      },
+      ...Object.keys(ruleLevelDictionary).map((key) => ({
+        label: t(ruleLevelDictionary[key as RuleResV1LevelEnum]),
+        value: key
+      }))
+    ];
+  }, [t]);
+
+  const ruleFilterDropdownRender = useCallback(
+    (menu: ReactElement) => (
+      <ScanRuleTipsFilterDropdownExtra
+        menu={menu}
+        ruleLevelFilterOptions={ruleLevelFilterOptions}
+        selectedRuleLevel={selectedRuleLevel}
+        onRuleLevelChange={(level) => setSelectedRuleLevel(level || undefined)}
+        keyword={ruleKeyword}
+        onKeywordChange={setRuleKeyword}
+      />
+    ),
+    [ruleKeyword, ruleLevelFilterOptions, selectedRuleLevel]
+  );
+
+  const tipOptionsByFilter = useMemo(() => {
+    const result: Record<
+      string,
+      ReturnType<typeof filterTipsToSelectOptions>
+    > = {};
+    Object.keys(rawTipsByFilter).forEach((filterName) => {
+      const tips = rawTipsByFilter[filterName];
+      if (isRuleNameFilter(filterName)) {
+        result[filterName] = filterTipsToSelectOptions(
+          filterRuleTipsClientSide(tips, {
+            level: selectedRuleLevel,
+            keyword: ruleKeyword
+          })
+        );
+      } else {
+        result[filterName] = filterTipsToSelectOptions(tips);
+      }
+    });
+    return result;
+  }, [rawTipsByFilter, ruleKeyword, selectedRuleLevel]);
+
   const mergedFilterCustomProps = useMemo(() => {
     if (!dynamicTableFilterMeta?.tableFilterCustomProps) {
       return dynamicTableFilterMeta?.tableFilterCustomProps;
@@ -138,7 +204,7 @@ const useLazyFilterTips = ({
         return;
       }
       const key = String(filterName);
-      map.set(key, {
+      const selectProps = {
         ...(map.get(key) ?? {}),
         options: tipOptionsByFilter[key] ?? [],
         loading: !!tipLoadingByFilter[key],
@@ -146,13 +212,21 @@ const useLazyFilterTips = ({
           if (open) {
             fetchFilterTips(key);
           }
-        }
-      } as FilterCustomProps<'select'>);
+        },
+        ...(key === RULE_NAME_FILTER
+          ? {
+              popupMatchSelectWidth: 400,
+              dropdownRender: ruleFilterDropdownRender
+            }
+          : {})
+      } as FilterCustomProps<'select'>;
+      map.set(key, selectProps);
     });
     return map;
   }, [
     dynamicTableFilterMeta,
     fetchFilterTips,
+    ruleFilterDropdownRender,
     tipLoadingByFilter,
     tipOptionsByFilter
   ]);
