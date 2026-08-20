@@ -129,6 +129,8 @@ export interface IExportGlobalWorkflowsV2Params {
 
   filter_create_time_to?: string;
 
+  filter_by_ops_type_uid?: string;
+
   export_format?: ExportGlobalWorkflowsV2ExportFormatEnum;
 }
 
