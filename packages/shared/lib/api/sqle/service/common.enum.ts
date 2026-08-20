@@ -344,6 +344,10 @@ export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
   feishu = 'feishu'
 }
 
+export enum SqlManageAuditStatusEnum {
+  being_audited = 'being_audited'
+}
+
 export enum SqlManageStatusEnum {
   unhandled = 'unhandled',
 
