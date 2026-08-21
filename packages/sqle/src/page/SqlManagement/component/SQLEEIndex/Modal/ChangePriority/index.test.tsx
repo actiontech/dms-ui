@@ -72,7 +72,6 @@ describe('page/SqlManagement/ChangePriority', () => {
       priority: BatchUpdateSqlManageReqPriorityEnum.UNKNOWN
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('变更SQL优先级成功')).toBeInTheDocument();
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
@@ -87,7 +86,12 @@ describe('page/SqlManagement/ChangePriority', () => {
     });
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitSpy).toHaveBeenCalledWith(
-      EmitterKey.Refresh_SQL_Management
+      EmitterKey.Refresh_SQL_Management,
+      {
+        ids: [sqlManageListData.data[0].id],
+        patch: { priority: 'low' },
+        successMessage: '变更SQL优先级成功'
+      }
     );
   });
 

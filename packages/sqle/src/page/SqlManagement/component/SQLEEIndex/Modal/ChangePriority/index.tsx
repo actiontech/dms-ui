@@ -1,4 +1,4 @@
-import { Form, Radio, Space, message } from 'antd';
+import { Form, Radio, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../data/ModalName';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
@@ -25,7 +25,6 @@ type FormFields = {
 
 const ChangePriority: React.FC = () => {
   const { t } = useTranslation();
-  const [messageApi, contextMessageHolder] = message.useMessage();
 
   const {
     open,
@@ -64,10 +63,18 @@ const ChangePriority: React.FC = () => {
     SqlManage.BatchUpdateSqlManage(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(
-            t('sqlManagement.table.action.single.updatePriority.successTips')
-          );
-          EventEmitter.emit(EmitterKey.Refresh_SQL_Management);
+          EventEmitter.emit(EmitterKey.Refresh_SQL_Management, {
+            ids: [currentSelected?.id as number],
+            patch: {
+              priority:
+                values.priority === SqlManagePriority.high
+                  ? BatchUpdateSqlManageReqPriorityEnum.high
+                  : 'low'
+            },
+            successMessage: t(
+              'sqlManagement.table.action.single.updatePriority.successTips'
+            )
+          });
           onCloseModal();
         }
       })
@@ -88,51 +95,46 @@ const ChangePriority: React.FC = () => {
   }, [currentSelected?.priority, form, open]);
 
   return (
-    <>
-      {contextMessageHolder}
-      <BasicModal
-        open={open}
-        size="small"
-        title={t(
-          'sqlManagement.table.action.single.updatePriority.triggerText'
-        )}
-        closable={false}
-        onCancel={onCloseModal}
-        footer={
-          <Space>
-            <BasicButton onClick={onCloseModal} disabled={submitLoading}>
-              {t('common.cancel')}
-            </BasicButton>
-            <BasicButton
-              onClick={onSubmit}
-              disabled={submitLoading}
-              type="primary"
-            >
-              {t('common.ok')}
-            </BasicButton>
-          </Space>
-        }
-      >
-        <Form form={form}>
-          <FormItemLabelStyleWrapper
-            label={t('sqlManagement.table.action.single.updatePriority.label')}
-            name="priority"
-            rules={[{ required: true }]}
+    <BasicModal
+      open={open}
+      size="small"
+      title={t('sqlManagement.table.action.single.updatePriority.triggerText')}
+      closable={false}
+      onCancel={onCloseModal}
+      footer={
+        <Space>
+          <BasicButton onClick={onCloseModal} disabled={submitLoading}>
+            {t('common.cancel')}
+          </BasicButton>
+          <BasicButton
+            onClick={onSubmit}
+            disabled={submitLoading}
+            type="primary"
           >
-            <Radio.Group>
-              <Space direction="vertical">
-                <Radio value={SqlManagePriority.high}>
-                  {t('sqlManagement.table.action.single.updatePriority.high')}
-                </Radio>
-                <Radio value={SqlManagePriority.low}>
-                  {t('sqlManagement.table.action.single.updatePriority.low')}
-                </Radio>
-              </Space>
-            </Radio.Group>
-          </FormItemLabelStyleWrapper>
-        </Form>
-      </BasicModal>
-    </>
+            {t('common.ok')}
+          </BasicButton>
+        </Space>
+      }
+    >
+      <Form form={form}>
+        <FormItemLabelStyleWrapper
+          label={t('sqlManagement.table.action.single.updatePriority.label')}
+          name="priority"
+          rules={[{ required: true }]}
+        >
+          <Radio.Group>
+            <Space direction="vertical">
+              <Radio value={SqlManagePriority.high}>
+                {t('sqlManagement.table.action.single.updatePriority.high')}
+              </Radio>
+              <Radio value={SqlManagePriority.low}>
+                {t('sqlManagement.table.action.single.updatePriority.low')}
+              </Radio>
+            </Space>
+          </Radio.Group>
+        </FormItemLabelStyleWrapper>
+      </Form>
+    </BasicModal>
   );
 };
 

@@ -28,6 +28,29 @@ describe('lib/ActiontechTable-RefreshButton', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('render refreshing and success states', () => {
+    const spinning = customRender({
+      refresh: jest.fn(),
+      refreshing: true
+    });
+    expect(
+      spinning.baseElement.querySelector('.custom-icon-refresh-spinning')
+    ).toBeTruthy();
+    cleanup();
+
+    const success = customRender({
+      refresh: jest.fn(),
+      success: true,
+      lastRefreshTime: '12:34:56'
+    });
+    expect(
+      success.baseElement.querySelector('.custom-icon-refresh-success')
+    ).toBeTruthy();
+    expect(
+      success.baseElement.querySelector('[data-testid="table-refresh-time"]')
+    ).toHaveTextContent('12:34:56');
+  });
+
   it('render click refresh fn', async () => {
     const refreshFn = jest.fn();
     const { baseElement } = customRender({

@@ -163,12 +163,17 @@ describe('test Overview', () => {
     );
   });
 
-  it('should match snapshot when getUserOperationPermissionLoading is equal true', async () => {
-    const { container } = customRender(true, true);
-    expect(container).toMatchSnapshot();
-  });
+  const eeIt = process.env.JEST_TEST_VERSION_ENV === 'ee' ? it : it.skip;
 
-  it('should match snapshot when hasOpPermission is equal false', () => {
+  eeIt(
+    'should match snapshot when getUserOperationPermissionLoading is equal true',
+    async () => {
+      const { container } = customRender(true, true);
+      expect(container).toMatchSnapshot();
+    }
+  );
+
+  eeIt('should match snapshot when hasOpPermission is equal false', () => {
     const { container } = customRender(false);
     expect(container).toMatchSnapshot();
   });

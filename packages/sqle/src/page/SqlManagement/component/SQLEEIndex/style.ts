@@ -17,4 +17,11 @@ export const SqlManagementListStyleWrapper = styled('section')`
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
     }
   }
+
+  .actiontech-table-namespace {
+    tr.sql-manage-optimistic-green > td {
+      background-color: ${({ theme }) =>
+        `${theme.sharedTheme.uiToken.colorSuccess}22`} !important;
+    }
+  }
 `;

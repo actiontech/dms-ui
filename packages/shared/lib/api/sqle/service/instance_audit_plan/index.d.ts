@@ -173,6 +173,19 @@ export interface IGetInstanceAuditPlanSQLMetaV1Params {
 export interface IGetInstanceAuditPlanSQLMetaV1Return
   extends IGetAuditPlanSQLMetaResV1 {}
 
+export interface IGetInstanceAuditPlanSQLFilterTipsV1Params {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_id: string;
+
+  filter_name: string;
+}
+
+export interface IGetInstanceAuditPlanSQLFilterTipsV1Return
+  extends IGetAuditPlanSQLMetaResV1 {}
+
 export interface IGetInstanceAuditPlanSQLsV1Params {
   project_name: string;
 

@@ -67,6 +67,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     mockUseProjectBusinessTips();
     mockUseAuditPlanTypes();
     jest.useFakeTimers();
+    jest.setSystemTime(new Date('2024-01-01T12:00:00+08:00'));
     instance.mockAllApi();
     sqlManage.mockAllApi();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
@@ -109,9 +110,9 @@ describe('page/SqlManagement/SQLEEIndex', () => {
 
   it('render sql statics data', async () => {
     const request = sqlManage.getSqlManageList();
-    request.mockImplementation(() =>
+    const statisticsRequest = sqlManage.getSqlManageStatistics();
+    statisticsRequest.mockImplementation(() =>
       createSpySuccessResponse({
-        ...sqlManageListData,
         sql_manage_bad_num: undefined,
         sql_manage_optimized_num: undefined,
         sql_manage_total_num: undefined
@@ -119,9 +120,14 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     );
     const { baseElement } = superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getAllByText('0').length).toBe(3);
-    expect(screen.getAllByText('0')?.[0]).toHaveClass('total');
+    expect(
+      baseElement.querySelectorAll('.num.total, .num.problem, .num.optimized')
+    ).toHaveLength(3);
+    expect(baseElement.querySelector('.num.total')).toHaveTextContent('0');
+    expect(baseElement.querySelector('.num.problem')).toHaveTextContent('0');
+    expect(baseElement.querySelector('.num.optimized')).toHaveTextContent('0');
   });
 
   it('filter data with rule name', async () => {
@@ -130,17 +136,46 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const { baseElement } = superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     expect(ruleTipsRequest).toHaveBeenCalled();
-    expect(screen.getByText('筛选')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('筛选'));
     expect(screen.getByText('审核规则')).toBeInTheDocument();
-    const searchInput = getAllBySelector('.ant-select-selection-search-input');
-    fireEvent.mouseDown(searchInput[searchInput.length - 1]);
-    await act(async () => jest.advanceTimersByTime(3000));
+    const ruleSelect = screen.getByText('审核规则').closest('.ant-select')!;
+    fireEvent.mouseDown(ruleSelect.querySelector('.ant-select-selector')!);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.queryByText('请先选择库型')).not.toBeInTheDocument();
+    expect(screen.getByText('规则等级')).toBeInTheDocument();
+    expect(screen.getByText('数据源类型')).toBeInTheDocument();
+    const keyword = screen.getByTestId('sql-manage-rule-keyword-filter');
+    expect(keyword).toBeEnabled();
+    // 未选库型时应已可见规则项（含等级 icon）
+    const ruleOptionBeforeDb = Array.from(
+      getAllBySelector('.ant-select-item-option-content')
+    ).find((el) => el.textContent?.includes('用于测试'));
+    expect(ruleOptionBeforeDb).toBeTruthy();
+    const extraRoot = keyword.closest('.ant-space')!;
+    // 同一行：左等级、右数据源类型
+    const dbTypeSelect = extraRoot.querySelectorAll('.ant-select')[1];
+    fireEvent.mouseDown(dbTypeSelect.querySelector('.ant-select-selector')!);
+    await act(async () => jest.advanceTimersByTime(300));
+    const mysqlOption = Array.from(
+      getAllBySelector('.ant-select-item-option-content')
+    ).find((el) => el.textContent === 'MySQL');
+    expect(mysqlOption).toBeTruthy();
+    fireEvent.click(mysqlOption!);
+    await act(async () => jest.advanceTimersByTime(300));
+    // 点选库型后外层审核规则面板应仍打开
+    expect(ruleSelect.className.includes('ant-select-open')).toBe(true);
+    if (!ruleSelect.className.includes('ant-select-open')) {
+      fireEvent.mouseDown(ruleSelect.querySelector('.ant-select-selector')!);
+      await act(async () => jest.advanceTimersByTime(300));
+    }
     expect(baseElement).toMatchSnapshot();
-    const options = getAllBySelector('.ant-select-item-option');
-    expect(options.length).toBe(2);
+    const ruleOption = Array.from(
+      getAllBySelector('.ant-select-item-option-content')
+    ).find((el) => el.textContent?.includes('用于测试'));
+    expect(ruleOption).toBeTruthy();
     await act(async () => {
-      fireEvent.click(options[0]);
+      fireEvent.click(ruleOption!);
       await act(async () => jest.advanceTimersByTime(3000));
     });
     await act(async () => jest.advanceTimersByTime(3000));
@@ -551,15 +586,19 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('添加为管控SQL例外'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenCalledTimes(6);
     expect(mockDispatch).toHaveBeenNthCalledWith(4, {
+      type: 'sqlManagement/setSqlManagementSelectData',
+      payload: sqlManageListData.data[0]
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
       payload: {
         modalName: ModalName.Create_Sql_Management_Exception,
         status: true
       },
       type: 'sqlManagementException/updateModalStatus'
     });
-    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(6, {
       payload: { selectRow: null },
       type: 'sqlManagementException/updateSelectSqlManagementException'
     });

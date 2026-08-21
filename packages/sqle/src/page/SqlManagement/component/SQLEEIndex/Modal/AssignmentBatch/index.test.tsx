@@ -80,7 +80,6 @@ describe('page/SqlManagement/AssignmentBatch', () => {
       assignees: [userTipListData[0].user_id]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('批量指派负责人成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenCalledWith({
@@ -96,7 +95,12 @@ describe('page/SqlManagement/AssignmentBatch', () => {
     });
     expect(eventEmitSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitSpy).toHaveBeenCalledWith(
-      EmitterKey.Refresh_SQL_Management
+      EmitterKey.Refresh_SQL_Management,
+      {
+        ids: [sqlManageListData.data[0].id],
+        patch: { assignees: [userTipListData[0].user_name] },
+        successMessage: '批量指派负责人成功'
+      }
     );
   });
 

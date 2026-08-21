@@ -1,1 +1,1 @@
-export const UI_VERSION = 'dev-zjrc-sql-export-precheck-metrics   aabdd9fc';
+export const UI_VERSION = 'dev-zjrc-sql-manage-tips-sql-meta-perf   456fd4b26';

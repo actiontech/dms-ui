@@ -49,7 +49,7 @@ import {
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
-import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
+import useLazyFilterTips from './useLazyFilterTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { Link } from 'react-router-dom';
@@ -76,20 +76,22 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
 }) => {
   const { t } = useTranslation();
   const { openAuditWhitelistCreateWithPrefill } = useWhitelistRedux();
-  const { sortableTableColumnFactory, tableFilterMetaFactory } =
-    useBackendTable();
-
-  const [dynamicTableFilterMeta, setDynamicTableFilterMeta] =
-    useState<ReturnType<typeof tableFilterMetaFactory>>();
+  const { sortableTableColumnFactory } = useBackendTable();
   const { projectName, projectID } = useCurrentProject();
+
+  const { dynamicTableFilterMeta, buildFilterMetaFromList } = useLazyFilterTips(
+    {
+      projectName,
+      instanceAuditPlanId,
+      auditPlanId
+    }
+  );
   const { username } = useCurrentUser();
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
   const [remediationDrawerRecord, setRemediationDrawerRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
-    useBoolean();
 
   const {
     tableChange,
@@ -217,11 +219,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     ]
   );
 
-  const {
-    data: tableMetas,
-    loading: getFilterMetaListLoading,
-    refresh: refreshFilterMetaList
-  } = useRequest(
+  const { data: tableMetas, refresh: refreshFilterMetaList } = useRequest(
     () =>
       instance_audit_plan
         .getInstanceAuditPlanSQLMetaV1({
@@ -231,17 +229,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            const { tableFilterCustomProps, extraTableFilterMeta } =
-              tableFilterMetaFactory(
-                res.data.data?.filter_meta_list ?? [],
-                true
-              );
-            setDynamicTableFilterMeta({
-              tableFilterCustomProps,
-              extraTableFilterMeta
-            });
-            updateFilterButtonMeta(
-              mergeFilterButtonMeta([], extraTableFilterMeta)
+            buildFilterMetaFromList(
+              res.data.data?.filter_meta_list ?? [],
+              updateFilterButtonMeta
             );
             return res.data.data;
           }
@@ -289,7 +279,6 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
 
   const {
     data: tableRows,
-    loading: getTableRowLoading,
     refresh: refreshTableRows,
     error: getTableRowError,
     cancel: cancelTableRowsRequest
@@ -317,16 +306,12 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       pollingInterval: 1000,
       pollingErrorRetryCount: 3,
       onSuccess: (res) => {
-        if (res.data?.some((row) => row?.audit_status === BEING_AUDITED)) {
-          startPollRequest();
-        } else {
+        if (!res.data?.some((row) => row?.audit_status === BEING_AUDITED)) {
           cancelTableRowsRequest();
-          finishPollRequest();
         }
       },
       onError: () => {
         cancelTableRowsRequest();
-        finishPollRequest();
       }
     }
   );
@@ -466,14 +451,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     };
   }, [username, auditPlanType]);
 
-  const loading = useMemo(
-    () =>
-      polling && !getFilterMetaListLoading
-        ? false
-        : getFilterMetaListLoading || getTableRowLoading,
-    [polling, getFilterMetaListLoading, getTableRowLoading]
-  );
-
+  // AC-019：进页/改筛直接换行，禁止表格蓝底 Spin；可留旧行；无旧数据时空表
   const tableHead = useMemo(
     () =>
       buildTableHeadWithAuditStatus(tableMetas?.head, {
@@ -626,13 +604,20 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         rowKey="id"
         setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
-        loading={loading}
         columns={columns}
         dataSource={tableRows?.data}
         onChange={tableChange}
         pagination={{
-          total: tableRows?.total
+          total: tableRows?.total,
+          current: pagination.page_index
         }}
+        {...(getTableRowError
+          ? {}
+          : {
+              locale: {
+                emptyText: t('sqlManagement.table.emptyFilterResult')
+              }
+            })}
       />
       <ReportDrawer
         title={t(

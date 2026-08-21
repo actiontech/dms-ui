@@ -193,7 +193,19 @@ export type TableSearchInputProps = {
  */
 export type TableRefreshButtonProps = {
   refresh?: () => void;
-} & Omit<IBasicButton, 'onClick'>;
+  /**
+   * 相关请求在途时旋转刷新图标（勿与 antd Button.loading 混用）
+   */
+  refreshing?: boolean;
+  /**
+   * 相关请求结束后短暂展示绿勾
+   */
+  success?: boolean;
+  /**
+   * 最近一次刷新完成时间，格式 HH:mm:ss
+   */
+  lastRefreshTime?: string;
+} & Omit<IBasicButton, 'onClick' | 'loading'>;
 
 /**
  * 表格列缓存数据格式

@@ -12,15 +12,17 @@ import {
   resolveThreeSecond
 } from '../../testUtils/mockRequest';
 import { Select } from 'antd';
-import useUsername from '.';
+import useUsername, { clearUsernameTipCache } from '.';
 import user from '@actiontech/shared/lib/api/sqle/service/user';
 
 describe('useUsername', () => {
   beforeEach(() => {
     jest.useFakeTimers();
+    clearUsernameTipCache();
   });
 
   afterEach(() => {
+    clearUsernameTipCache();
     jest.useRealTimers();
   });
 

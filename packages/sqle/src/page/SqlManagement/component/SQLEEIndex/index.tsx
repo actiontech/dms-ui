@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
@@ -14,7 +15,8 @@ import {
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import {
   IExportSqlManageV1Params,
-  IGetSqlManageListV2Params
+  IGetSqlManageListV2Params,
+  IGetSqlManageStatisticsV2Params
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
@@ -40,7 +42,7 @@ import {
   ISourceExtra,
   ISqlManage
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Spin, message, Dropdown } from 'antd';
+import { message, Dropdown } from 'antd';
 import type { MenuProps } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -53,7 +55,10 @@ import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
 import { toSqlManageRuleExceptionRecord } from '../../../RuleException/index.data';
-import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  BlacklistResV1TypeEnum,
+  SqlManageAuditStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlManagementListStyleWrapper } from './style';
 import { pickStaticSqlManageFilters } from './sourceExtra.utils';
 import useSqlManageSourceExtra from './hooks/useSqlManageSourceExtra';
@@ -61,6 +66,18 @@ import {
   getSqlManagementExportColumnKeys,
   SQL_MANAGEMENT_TABLE_NAME
 } from './exportColumnKeys';
+import dayjs from 'dayjs';
+import {
+  leaveTabMessageKeyByStatus,
+  mergeOptimisticList,
+  OPTIMISTIC_GREEN_ROW_CLASS,
+  SqlManageOptimisticPatch,
+  SqlManageOptimisticWritePayload,
+  willLeaveCurrentTab
+} from './optimisticWrite';
+
+const REFRESH_SUCCESS_VISIBLE_MS = 1000;
+const OPTIMISTIC_GREEN_MIN_MS = 650;
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -91,16 +108,170 @@ const SQLEEIndex = () => {
     updateTableFilterInfo,
     tableChange,
     pagination,
+    setPagination,
     sortInfo,
     searchKeyword,
     setSearchKeyword,
     refreshBySearchKeyword
   } = useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
   const [SQLNum, setSQLNum] = useState<ISQLStatisticsProps['data']>({
-    SQLTotalNum: 0,
-    problemSQlNum: 0,
-    optimizedSQLNum: 0
+    SQLTotalNum: null,
+    problemSQlNum: null,
+    optimizedSQLNum: null
   });
+  const [listTotal, setListTotal] = useState(0);
+  const statisticsRequestSeq = useRef(0);
+  const [refreshSpinning, setRefreshSpinning] = useState(false);
+  const [refreshSuccess, setRefreshSuccess] = useState(false);
+  const [lastRefreshTime, setLastRefreshTime] = useState('');
+  const refreshSuccessTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const optimisticClearTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const optimisticGreenStartedAtRef = useRef<number | null>(null);
+  const wasRefreshBusyRef = useRef(false);
+  const writeRefreshPendingRef = useRef(false);
+  const filterStatusRef = useRef(filterStatus);
+  filterStatusRef.current = filterStatus;
+  const [
+    auditPolling,
+    { setFalse: finishAuditPollRequest, setTrue: startAuditPollRequest }
+  ] = useBoolean(false);
+  const auditPollingActiveRef = useRef(false);
+  const refreshStatisticsRef = useRef<() => void>(() => undefined);
+
+  const [optimisticOverlay, setOptimisticOverlay] = useState<
+    Record<number, SqlManageOptimisticPatch>
+  >({});
+  const [optimisticGreenIds, setOptimisticGreenIds] = useState<Set<number>>(
+    () => new Set()
+  );
+  const [optimisticHiddenIds, setOptimisticHiddenIds] = useState<Set<number>>(
+    () => new Set()
+  );
+  const [optimisticPinnedRows, setOptimisticPinnedRows] = useState<
+    Record<number, ISqlManage>
+  >({});
+  const listSnapshotForPinRef = useRef<ISqlManage[]>([]);
+
+  const clearOptimisticState = useCallback(() => {
+    setOptimisticOverlay({});
+    setOptimisticGreenIds(new Set());
+    setOptimisticHiddenIds(new Set());
+    setOptimisticPinnedRows({});
+  }, []);
+
+  const waitAndClearOptimisticAfterMinGreen = useCallback(async () => {
+    const startedAt = optimisticGreenStartedAtRef.current ?? Date.now();
+    const waitMs = Math.max(
+      0,
+      OPTIMISTIC_GREEN_MIN_MS - (Date.now() - startedAt)
+    );
+    if (optimisticClearTimerRef.current) {
+      clearTimeout(optimisticClearTimerRef.current);
+      optimisticClearTimerRef.current = undefined;
+    }
+    if (waitMs > 0) {
+      await new Promise<void>((resolve) => {
+        optimisticClearTimerRef.current = setTimeout(() => {
+          optimisticClearTimerRef.current = undefined;
+          resolve();
+        }, waitMs);
+      });
+    }
+    clearOptimisticState();
+    optimisticGreenStartedAtRef.current = null;
+  }, [clearOptimisticState]);
+
+  const resetPageIndex = useCallback(() => {
+    setPagination((prevPage) => ({
+      page_index: 1,
+      page_size: prevPage.page_size
+    }));
+  }, [setPagination]);
+
+  const onFilterStatusChange = useCallback(
+    (status: TypeStatus) => {
+      setFilterStatus(status);
+      resetPageIndex();
+    },
+    [resetPageIndex]
+  );
+
+  const onAssigneeSelfChange = useCallback(
+    (value: boolean) => {
+      setAssigneeSelf(value);
+      resetPageIndex();
+    },
+    [resetPageIndex]
+  );
+
+  const onHighPriorityChange = useCallback(
+    (value: boolean) => {
+      setIsHighPriority(value);
+      resetPageIndex();
+    },
+    [resetPageIndex]
+  );
+
+  const applyOptimisticWrite = useCallback(
+    (payload: SqlManageOptimisticWritePayload) => {
+      const ids = payload.ids.filter((id) => Number.isFinite(id));
+      if (!ids.length) {
+        return;
+      }
+      const nextStatus = payload.patch?.status;
+      const leave =
+        !!nextStatus &&
+        willLeaveCurrentTab(filterStatusRef.current, nextStatus);
+
+      if (optimisticClearTimerRef.current) {
+        clearTimeout(optimisticClearTimerRef.current);
+        optimisticClearTimerRef.current = undefined;
+      }
+
+      // 先改行+绿底再刷列表；离页签先 pin 住行，满绿后再移走（禁止立刻 hidden）
+      flushSync(() => {
+        setOptimisticOverlay((prev) => {
+          const next = { ...prev };
+          ids.forEach((id) => {
+            next[id] = { ...next[id], ...payload.patch };
+          });
+          return next;
+        });
+        setOptimisticGreenIds((prev) => {
+          const next = new Set(prev);
+          ids.forEach((id) => next.add(id));
+          return next;
+        });
+        if (leave) {
+          setOptimisticPinnedRows((prev) => {
+            const next = { ...prev };
+            ids.forEach((id) => {
+              const row = listSnapshotForPinRef.current.find(
+                (item) => Number(item.id) === id
+              );
+              if (row) {
+                next[id] = { ...row, ...payload.patch };
+              }
+            });
+            return next;
+          });
+        }
+      });
+      optimisticGreenStartedAtRef.current = Date.now();
+
+      if (leave) {
+        const leaveKey = nextStatus
+          ? leaveTabMessageKeyByStatus(nextStatus)
+          : undefined;
+        if (leaveKey) {
+          messageApi.success(t(leaveKey));
+        }
+      } else if (payload.successMessage) {
+        messageApi.success(payload.successMessage);
+      }
+    },
+    [messageApi, t]
+  );
 
   const filterSource = tableFilterInfo.filter_source;
 
@@ -124,6 +295,9 @@ const SQLEEIndex = () => {
 
   const onCreateSqlManagementException = useCallback(
     (record?: ISqlManage) => {
+      if (record) {
+        setSelectData(record);
+      }
       const fingerprint =
         toSqlManageRuleExceptionRecord(record)?.sql_fingerprint?.trim();
       openCreateSqlManagementExceptionModal();
@@ -138,6 +312,7 @@ const SQLEEIndex = () => {
     },
     [
       openCreateSqlManagementExceptionModal,
+      setSelectData,
       updateSelectSqlManagementExceptionRecord
     ]
   );
@@ -252,11 +427,23 @@ const SQLEEIndex = () => {
     resolveListSortField
   ]);
 
+  const buildStatisticsRequestParams =
+    useCallback((): IGetSqlManageStatisticsV2Params => {
+      const {
+        page_index: _pageIndex,
+        page_size: _pageSize,
+        sort_field: _sortField,
+        sort_order: _sortOrder,
+        ...filterParams
+      } = buildListRequestParams();
+      return filterParams;
+    }, [buildListRequestParams]);
+
   const {
     data: sqlList,
     loading: getListLoading,
     refresh,
-    error: getListError
+    cancel: cancelListRequest
   } = useRequest(
     () => {
       return handleTableRequestError(
@@ -273,17 +460,143 @@ const SQLEEIndex = () => {
         tableFilterInfo,
         sortInfo
       ],
-      onFinally: (_params, data) => {
-        setSQLNum({
-          SQLTotalNum: data?.otherData?.sql_manage_total_num ?? 0,
-          problemSQlNum: data?.otherData?.sql_manage_bad_num ?? 0,
-          optimizedSQLNum: data?.otherData?.sql_manage_optimized_num ?? 0
-        });
-        handleSourceExtraFromResponse(
-          data?.otherData?.source_extra as ISourceExtra | undefined
-        );
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
+      onFinally: (_params, data, error) => {
+        const hasBeingAudited =
+          !error &&
+          !!data?.list?.some(
+            (item) =>
+              item?.audit_status === SqlManageAuditStatusEnum.being_audited
+          );
+
+        if (!error) {
+          setListTotal(data?.otherData?.sql_manage_total_num ?? 0);
+          handleSourceExtraFromResponse(
+            data?.otherData?.source_extra as ISourceExtra | undefined
+          );
+        }
+
+        if (hasBeingAudited) {
+          auditPollingActiveRef.current = true;
+          startAuditPollRequest();
+          return;
+        }
+
+        const shouldRefreshStatisticsAfterPoll = auditPollingActiveRef.current;
+        auditPollingActiveRef.current = false;
+        cancelListRequest();
+        finishAuditPollRequest();
+        if (shouldRefreshStatisticsAfterPoll) {
+          refreshStatisticsRef.current();
+        }
       }
     }
+  );
+
+  const { refresh: refreshStatistics, loading: getStatisticsLoading } =
+    useRequest(
+      () => {
+        const seq = ++statisticsRequestSeq.current;
+        return SqlManage.GetSqlManageStatisticsV2(
+          buildStatisticsRequestParams()
+        ).then((res) => {
+          if (seq !== statisticsRequestSeq.current) {
+            return;
+          }
+          if (res.data.code === ResponseCode.SUCCESS) {
+            setSQLNum({
+              SQLTotalNum: res.data.sql_manage_total_num ?? 0,
+              problemSQlNum: res.data.sql_manage_bad_num ?? 0,
+              optimizedSQLNum: res.data.sql_manage_optimized_num ?? 0
+            });
+          }
+        });
+      },
+      {
+        refreshDeps: [
+          projectName,
+          filterStatus,
+          isAssigneeSelf,
+          isHighPriority,
+          tableFilterInfo
+        ]
+      }
+    );
+  refreshStatisticsRef.current = refreshStatistics;
+
+  // 审核中轮询：列表 loading 不驱动刷新按钮长时间转圈
+  const listLoadingForUi = auditPolling ? false : getListLoading;
+  const refreshBusy = listLoadingForUi || getStatisticsLoading;
+
+  useEffect(() => {
+    if (refreshBusy) {
+      wasRefreshBusyRef.current = true;
+      setRefreshSpinning(true);
+      setRefreshSuccess(false);
+      return;
+    }
+    if (!wasRefreshBusyRef.current) {
+      return;
+    }
+    wasRefreshBusyRef.current = false;
+    setRefreshSpinning(false);
+    setRefreshSuccess(true);
+    setLastRefreshTime(dayjs().format('HH:mm:ss'));
+    if (refreshSuccessTimerRef.current) {
+      clearTimeout(refreshSuccessTimerRef.current);
+    }
+    refreshSuccessTimerRef.current = setTimeout(() => {
+      setRefreshSuccess(false);
+    }, REFRESH_SUCCESS_VISIBLE_MS);
+  }, [refreshBusy]);
+
+  useEffect(() => {
+    return () => {
+      if (refreshSuccessTimerRef.current) {
+        clearTimeout(refreshSuccessTimerRef.current);
+      }
+      if (optimisticClearTimerRef.current) {
+        clearTimeout(optimisticClearTimerRef.current);
+      }
+    };
+  }, []);
+
+  const refreshAll = useCallback(() => {
+    refresh();
+    refreshStatistics();
+  }, [refresh, refreshStatistics]);
+
+  const runDualRefreshAfterWrite = useCallback(async () => {
+    writeRefreshPendingRef.current = true;
+    try {
+      await Promise.all([refresh(), refreshStatistics()]);
+      await waitAndClearOptimisticAfterMinGreen();
+    } catch {
+      messageApi.warning(
+        t('sqlManagement.table.action.optimistic.syncFailedRetry')
+      );
+    } finally {
+      writeRefreshPendingRef.current = false;
+    }
+  }, [
+    messageApi,
+    refresh,
+    refreshStatistics,
+    waitAndClearOptimisticAfterMinGreen,
+    t
+  ]);
+
+  const onSqlManagementRefresh = useCallback(
+    (payload?: SqlManageOptimisticWritePayload) => {
+      if (payload?.ids?.length) {
+        applyOptimisticWrite(payload);
+        void runDualRefreshAfterWrite();
+        return;
+      }
+      refreshAll();
+    },
+    [applyOptimisticWrite, refreshAll, runDualRefreshAfterWrite]
   );
 
   const updateRemark = useCallback(
@@ -302,14 +615,17 @@ const SQLEEIndex = () => {
       })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            refresh();
+            onSqlManagementRefresh({
+              ids: [id],
+              patch: { remark }
+            });
           }
         })
         .finally(() => {
           updateRemarkProtect.current = false;
         });
     },
-    [actionPermission, projectName, refresh, projectArchive]
+    [actionPermission, projectName, projectArchive, onSqlManagementRefresh]
   );
   updateRemarkRef.current = updateRemark;
 
@@ -342,10 +658,22 @@ const SQLEEIndex = () => {
     [username]
   );
 
-  const dataSource = useMemo(
-    () => joinListData(sqlList?.list),
-    [joinListData, sqlList?.list]
-  );
+  const dataSource = useMemo(() => {
+    const merged = mergeOptimisticList(
+      joinListData(sqlList?.list),
+      optimisticOverlay,
+      optimisticHiddenIds,
+      optimisticPinnedRows
+    );
+    listSnapshotForPinRef.current = merged;
+    return merged;
+  }, [
+    joinListData,
+    sqlList?.list,
+    optimisticOverlay,
+    optimisticHiddenIds,
+    optimisticPinnedRows
+  ]);
 
   const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,
@@ -356,10 +684,22 @@ const SQLEEIndex = () => {
   };
 
   // batch action
-  const batchSuccessOperate = (msg: string) => {
+  const batchSuccessOperate = (
+    msg: string,
+    payload?: SqlManageOptimisticWritePayload
+  ) => {
+    if (payload?.ids?.length) {
+      applyOptimisticWrite({
+        ...payload,
+        successMessage: payload.successMessage ?? msg
+      });
+      setSelectedRowKeys([]);
+      void runDualRefreshAfterWrite();
+      return;
+    }
     messageApi.success(msg);
     setSelectedRowKeys([]);
-    refresh();
+    refreshAll();
   };
 
   const { batchIgnoreLoading, batchSolveLoading, onBatchIgnore, onBatchSolve } =
@@ -534,12 +874,17 @@ const SQLEEIndex = () => {
   };
 
   useEffect(() => {
-    EventEmitter.subscribe(EmitterKey.Refresh_SQL_Management, refresh);
+    EventEmitter.subscribe(
+      EmitterKey.Refresh_SQL_Management,
+      onSqlManagementRefresh
+    );
     return () => {
-      EventEmitter.unsubscribe(EmitterKey.Refresh_SQL_Management, refresh);
+      EventEmitter.unsubscribe(
+        EmitterKey.Refresh_SQL_Management,
+        onSqlManagementRefresh
+      );
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onSqlManagementRefresh]);
 
   const onBatchAssignment = () => {
     updateModalStatus(ModalName.Assignment_Member_Batch, true);
@@ -551,8 +896,8 @@ const SQLEEIndex = () => {
     const defaultButton = defaultActionButton({
       isAssigneeSelf,
       isHighPriority,
-      setAssigneeSelf,
-      setIsHighPriority
+      setAssigneeSelf: onAssigneeSelfChange,
+      setIsHighPriority: onHighPriorityChange
     });
     const actionButton = actionsButtonData(
       selectedRowKeys?.length === 0,
@@ -569,85 +914,98 @@ const SQLEEIndex = () => {
 
   return (
     <SqlManagementListStyleWrapper>
-      <Spin spinning={getListLoading} delay={300}>
-        {messageContextHolder}
-        <PageHeader
-          title={t('sqlManagement.pageTitle')}
-          extra={
-            exportMenuItems.length <= 1 ? (
+      {messageContextHolder}
+      <PageHeader
+        title={t('sqlManagement.pageTitle')}
+        extra={
+          exportMenuItems.length <= 1 ? (
+            <BasicButton
+              icon={<DownArrowLineOutlined />}
+              disabled={exportButtonDisabled}
+              onClick={handleExport}
+            >
+              {t('sqlManagement.pageHeader.action.exportReport')}
+            </BasicButton>
+          ) : (
+            <Dropdown
+              menu={{
+                items: exportMenuItems,
+                onClick: onExportMenuClick
+              }}
+              disabled={exportButtonDisabled}
+            >
               <BasicButton
                 icon={<DownArrowLineOutlined />}
                 disabled={exportButtonDisabled}
-                onClick={handleExport}
               >
                 {t('sqlManagement.pageHeader.action.exportReport')}
               </BasicButton>
-            ) : (
-              <Dropdown
-                menu={{
-                  items: exportMenuItems,
-                  onClick: onExportMenuClick
-                }}
-                disabled={exportButtonDisabled}
-              >
-                <BasicButton
-                  icon={<DownArrowLineOutlined />}
-                  disabled={exportButtonDisabled}
-                >
-                  {t('sqlManagement.pageHeader.action.exportReport')}
-                </BasicButton>
-              </Dropdown>
-            )
+            </Dropdown>
+          )
+        }
+      />
+      <SQLStatistics data={SQLNum} loading={false} />
+      <TableToolbar
+        refreshButton={{
+          refresh: refreshAll,
+          refreshing: refreshSpinning,
+          success: refreshSuccess,
+          lastRefreshTime,
+          disabled: refreshSpinning
+        }}
+        setting={tableSetting}
+        actions={getTableActions()}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+        searchInput={{
+          onChange: setSearchKeyword,
+          onSearch: () => {
+            refreshBySearchKeyword();
+            refreshStatistics();
           }
-        />
-        <SQLStatistics
-          data={SQLNum}
-          errorMessage={getListError}
-          loading={getListLoading}
-        />
-        <TableToolbar
-          refreshButton={{ refresh, disabled: getListLoading }}
-          setting={tableSetting}
-          actions={getTableActions()}
-          filterButton={{
-            filterButtonMeta,
-            updateAllSelectedFilterItem
-          }}
-          searchInput={{
-            onChange: setSearchKeyword,
-            onSearch: () => {
-              refreshBySearchKeyword();
-            }
-          }}
-        >
-          <StatusFilter status={filterStatus} onChange={setFilterStatus} />
-        </TableToolbar>
-        <TableFilterContainer
-          filterContainerMeta={filterContainerMeta}
-          updateTableFilterInfo={updateTableFilterInfo}
-          disabled={getListLoading}
-          filterCustomProps={filterCustomProps}
-        />
-        <ActiontechTable
-          className="table-row-cursor"
-          disableRowHover
-          setting={tableSetting}
-          dataSource={dataSource}
-          rowKey={(record: ISqlManage) => {
-            return `${record?.id}`;
-          }}
-          rowSelection={rowSelection as TableRowSelection<ISqlManage>}
-          pagination={{
-            total: SQLNum.SQLTotalNum,
-            current: pagination.page_index
-          }}
-          columns={columns}
-          errorMessage={requestErrorMessage}
-          onChange={tableChange}
-          actions={projectArchive ? undefined : actions}
-        />
-        <SqlManagementModal />
-      </Spin>
+        }}
+      >
+        <StatusFilter status={filterStatus} onChange={onFilterStatusChange} />
+      </TableToolbar>
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={listLoadingForUi}
+        filterCustomProps={filterCustomProps}
+      />
+      <ActiontechTable
+        className="table-row-cursor"
+        disableRowHover
+        setting={tableSetting}
+        dataSource={dataSource}
+        rowKey={(record: ISqlManage) => {
+          return `${record?.id}`;
+        }}
+        rowClassName={(record: ISqlManage) =>
+          record.id != null && optimisticGreenIds.has(Number(record.id))
+            ? OPTIMISTIC_GREEN_ROW_CLASS
+            : ''
+        }
+        rowSelection={rowSelection as TableRowSelection<ISqlManage>}
+        pagination={{
+          total: listTotal,
+          current: pagination.page_index
+        }}
+        columns={columns}
+        errorMessage={requestErrorMessage}
+        onChange={tableChange}
+        actions={projectArchive ? undefined : actions}
+        {...(requestErrorMessage
+          ? {}
+          : {
+              locale: {
+                emptyText: t('sqlManagement.table.emptyFilterResult')
+              }
+            })}
+      />
+      <SqlManagementModal />
     </SqlManagementListStyleWrapper>
   );
 };

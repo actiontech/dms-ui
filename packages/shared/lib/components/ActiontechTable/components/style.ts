@@ -257,3 +257,39 @@ export const ColumnsSettingStyleWrapper = styled(Space)`
     display: flex;
   }
 `;
+
+export const RefreshButtonStyleWrapper = styled('span')`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  .custom-icon-refresh-spinning {
+    animation: actiontech-table-refresh-spin 0.8s linear infinite;
+  }
+
+  .custom-icon-refresh-success {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+  }
+
+  .refresh-button-success.ant-btn {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+    border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+  }
+
+  .refresh-time {
+    font-size: 12px;
+    line-height: 20px;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+    font-variant-numeric: tabular-nums;
+  }
+
+  @keyframes actiontech-table-refresh-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;

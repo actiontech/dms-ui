@@ -13,7 +13,7 @@ import ChangePriority from './ChangePriority';
 import RemediationDetailDrawer from './RemediationDetailDrawer';
 
 const SqlManagementModal = () => {
-  const { initModalStatus } = useSqlManagementRedux();
+  const { initModalStatus, selectSqlManagement } = useSqlManagementRedux();
 
   useEffect(() => {
     initModalStatus({
@@ -28,6 +28,13 @@ const SqlManagementModal = () => {
   }, []);
 
   const onCreated = () => {
+    const id = selectSqlManagement?.id;
+    if (id != null) {
+      EventEmitter.emit(EmitterKey.Refresh_SQL_Management, {
+        ids: [Number(id)]
+      });
+      return;
+    }
     EventEmitter.emit(EmitterKey.Refresh_SQL_Management);
   };
 

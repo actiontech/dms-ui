@@ -111,27 +111,31 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  disabled=""
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -557,27 +561,31 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  disabled=""
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -1012,26 +1020,30 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -2012,26 +2024,30 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -2946,26 +2962,30 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -3690,26 +3710,30 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -4520,26 +4544,30 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -5350,26 +5378,30 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -6162,27 +6194,31 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  disabled=""
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -6999,26 +7035,30 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -7420,26 +7460,30 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -7841,26 +7885,30 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
               <div
                 class="ant-space-item"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                  type="button"
+                <span
+                  class="actiontech-table-refresh-button css-44onfq"
                 >
-                  <span
-                    class="ant-btn-icon"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <svg
-                      class="custom-icon custom-icon-refresh"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <path
-                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>

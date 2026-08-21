@@ -8,6 +8,10 @@ import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelec
 import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
 import { useSelector } from 'react-redux';
 import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
+import {
+  DB_TYPE_RULE_NAME_SEPARATOR,
+  resetRuleTipsCacheForTests
+} from '../../../../../../hooks/useRuleTips';
 
 jest.mock('react-redux', () => {
   return {
@@ -18,6 +22,7 @@ jest.mock('react-redux', () => {
 
 describe('SqlManagement/useGetTableFilterInfo', () => {
   beforeEach(() => {
+    resetRuleTipsCacheForTests();
     mockUseCurrentProject();
     instance.mockAllApi();
     sqlManage.mockAllApi();
@@ -36,7 +41,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     cleanup();
   });
 
-  it('send request and render select options', async () => {
+  it('send request and show all rule options before db type selected', async () => {
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
     const instanceRequest = instance.getInstanceTipList();
     const { result } = renderHooksWithRedux(() => useGetTableFilterInfo());
@@ -98,19 +103,33 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
       )?.loading
     ).toBe(false);
 
-    expect(
-      (
-        result.current.filterCustomProps.get(
-          'filter_rule_name'
-        ) as CustomSelectProps
-      )?.options?.length
-    ).toBe(3);
-    expect(
-      (
-        result.current.filterCustomProps.get(
-          'filter_rule_name'
-        ) as CustomSelectProps
-      )?.loading
-    ).toBe(false);
+    const ruleFilterProps = result.current.filterCustomProps.get(
+      'filter_rule_name'
+    ) as CustomSelectProps;
+    expect(ruleFilterProps?.options?.length).toBeGreaterThan(0);
+    expect(ruleFilterProps?.loading).toBe(false);
+    expect(ruleFilterProps?.notFoundContent).toBeUndefined();
+    expect(ruleFilterProps?.dropdownRender).toBeDefined();
+  });
+
+  it('shows flat rule options after db type is known from filter value', async () => {
+    const { result } = renderHooksWithRedux(() =>
+      useGetTableFilterInfo({
+        filterRuleName: `MySQL${DB_TYPE_RULE_NAME_SEPARATOR}test`
+      })
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const ruleFilterProps = result.current.filterCustomProps.get(
+      'filter_rule_name'
+    ) as CustomSelectProps;
+    expect(ruleFilterProps?.options?.length).toBe(1);
+    expect(ruleFilterProps?.options?.[0]).toEqual(
+      expect.objectContaining({
+        text: expect.stringContaining('用于测试'),
+        value: `MySQL${DB_TYPE_RULE_NAME_SEPARATOR}test`
+      })
+    );
+    expect(ruleFilterProps?.options?.[0]?.label).toBeDefined();
   });
 });

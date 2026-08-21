@@ -3,14 +3,21 @@ import { useBoolean } from 'ahooks';
 import { Key } from 'antd/es/table/interface';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  BatchUpdateSqlManageReqStatusEnum,
+  SqlManageStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { SqlManageOptimisticWritePayload } from '../optimisticWrite';
 
 const useBatchIgnoreOrSolve = (
   hasPermissionAndNotArchive: boolean,
   selectedRowKeys: Key[],
-  batchSuccessOperate: (message: string) => void
+  batchSuccessOperate: (
+    message: string,
+    payload?: SqlManageOptimisticWritePayload
+  ) => void
 ) => {
   const { projectName } = useCurrentProject();
 
@@ -41,7 +48,11 @@ const useBatchIgnoreOrSolve = (
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           batchSuccessOperate(
-            i18n.t('sqlManagement.table.action.batch.solveSuccessTips')
+            i18n.t('sqlManagement.table.action.batch.solveSuccessTips'),
+            {
+              ids: selectedRowKeysNum,
+              patch: { status: SqlManageStatusEnum.solved }
+            }
           );
         }
       })
@@ -63,7 +74,11 @@ const useBatchIgnoreOrSolve = (
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           batchSuccessOperate(
-            i18n.t('sqlManagement.table.action.batch.ignoreSuccessTips')
+            i18n.t('sqlManagement.table.action.batch.ignoreSuccessTips'),
+            {
+              ids: selectedRowKeysNum,
+              patch: { status: SqlManageStatusEnum.ignored }
+            }
           );
         }
       })

@@ -5,6 +5,7 @@ import { IRuleTips } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { notifyRuleTipsListeners, ruleTipsStore } from './ruleTipsCache';
+import { AuditLevelRuleOptionLabel } from '../../components/AuditResultMessage/AuditLevelIcon';
 
 export { resetRuleTipsCacheForTests } from './ruleTipsCache';
 
@@ -142,15 +143,25 @@ const useRuleTips = () => {
   );
 
   const generateFlatRuleOptionsByDbType = React.useCallback(
-    (dbType?: string) => {
-      if (!dbType) {
-        return [];
-      }
-      const group = ruleTips.find((item) => item.db_type === dbType);
-      return (group?.rule ?? []).map((rule) => ({
-        label: rule.desc,
-        value: `${dbType}${DB_TYPE_RULE_NAME_SEPARATOR}${rule.rule_name}`
-      }));
+    (dbType?: string, level?: string) => {
+      const groups = dbType
+        ? ruleTips.filter((item) => item.db_type === dbType)
+        : ruleTips;
+      return groups.flatMap((group) =>
+        (group?.rule ?? [])
+          .filter((rule) => !level || rule.level === level)
+          .map((rule) => ({
+            label: (
+              <AuditLevelRuleOptionLabel level={rule.level} text={rule.desc} />
+            ),
+            text: `${rule.desc ?? ''} ${rule.rule_name ?? ''} ${
+              rule.level ?? ''
+            } ${group.db_type ?? ''}`,
+            value: `${group.db_type ?? ''}${DB_TYPE_RULE_NAME_SEPARATOR}${
+              rule.rule_name
+            }`
+          }))
+      );
     },
     [ruleTips]
   );
