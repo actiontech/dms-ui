@@ -41,7 +41,6 @@ const SQLStatistics = (props: ISQLStatisticsProps) => {
         <div className="stats-info">
           <BasicToolTips
             title={t('sqlManagement.statistics.filterScopeTips')}
-            titleWidth={320}
             suffixIcon
           />
         </div>
