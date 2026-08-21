@@ -51,6 +51,8 @@ const ExportGlobalWorkflowButton: React.FC<ExportGlobalWorkflowButtonProps> = ({
         filter_create_user_id: tableFilterInfo.filter_create_user_id,
         filter_create_time_from: tableFilterInfo.filter_create_time_from,
         filter_create_time_to: tableFilterInfo.filter_create_time_to,
+        filter_by_ops_type_uid:
+          tableFilterInfo.filter_by_ops_type_uid || undefined,
         keyword: searchKeyword?.trim() || undefined,
         export_format:
           selectedExportFormat as unknown as ExportGlobalWorkflowsV2ExportFormatEnum
