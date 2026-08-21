@@ -142,10 +142,19 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const ruleSelect = screen.getByText('审核规则').closest('.ant-select')!;
     fireEvent.mouseDown(ruleSelect.querySelector('.ant-select-selector')!);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getAllByText('请先选择库型').length).toBeGreaterThan(0);
+    expect(screen.queryByText('请先选择库型')).not.toBeInTheDocument();
+    expect(screen.getByText('规则等级')).toBeInTheDocument();
+    expect(screen.getByText('数据源类型')).toBeInTheDocument();
     const keyword = screen.getByTestId('sql-manage-rule-keyword-filter');
+    expect(keyword).toBeEnabled();
+    // 未选库型时应已可见规则项（含等级 icon）
+    const ruleOptionBeforeDb = Array.from(
+      getAllBySelector('.ant-select-item-option-content')
+    ).find((el) => el.textContent?.includes('用于测试'));
+    expect(ruleOptionBeforeDb).toBeTruthy();
     const extraRoot = keyword.closest('.ant-space')!;
-    const dbTypeSelect = extraRoot.querySelectorAll('.ant-select')[0];
+    // 同一行：左等级、右数据源类型
+    const dbTypeSelect = extraRoot.querySelectorAll('.ant-select')[1];
     fireEvent.mouseDown(dbTypeSelect.querySelector('.ant-select-selector')!);
     await act(async () => jest.advanceTimersByTime(300));
     const mysqlOption = Array.from(
@@ -154,6 +163,8 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(mysqlOption).toBeTruthy();
     fireEvent.click(mysqlOption!);
     await act(async () => jest.advanceTimersByTime(300));
+    // 点选库型后外层审核规则面板应仍打开
+    expect(ruleSelect.className.includes('ant-select-open')).toBe(true);
     if (!ruleSelect.className.includes('ant-select-open')) {
       fireEvent.mouseDown(ruleSelect.querySelector('.ant-select-selector')!);
       await act(async () => jest.advanceTimersByTime(300));
@@ -161,7 +172,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(baseElement).toMatchSnapshot();
     const ruleOption = Array.from(
       getAllBySelector('.ant-select-item-option-content')
-    ).find((el) => el.textContent === '用于测试');
+    ).find((el) => el.textContent?.includes('用于测试'));
     expect(ruleOption).toBeTruthy();
     await act(async () => {
       fireEvent.click(ruleOption!);

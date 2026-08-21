@@ -36,28 +36,34 @@ const RuleTipsFilterDropdownExtra = ({
         style={{ display: 'flex', padding: '8px 12px' }}
         onMouseDown={(event) => event.preventDefault()}
       >
-        <Select
-          allowClear
-          placeholder={t('sqlManagement.table.filter.ruleSelectDbTypeFirst')}
-          options={dbTypeOptions}
-          value={selectedDbType}
-          onChange={(value) => onDbTypeChange(value)}
-          style={{ width: '100%' }}
-          popupMatchSelectWidth={false}
-        />
-        <Select
-          allowClear
-          disabled={!selectedDbType}
-          placeholder={t('sqlManagement.table.filter.ruleLevelFilter')}
-          options={ruleLevelFilterOptions}
-          value={selectedRuleLevel ?? ''}
-          onChange={(value) => onRuleLevelChange(value as string | undefined)}
-          style={{ width: '100%' }}
-          popupMatchSelectWidth={false}
-        />
+        <div style={{ display: 'flex', gap: 8, width: '100%' }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <Select
+              allowClear
+              placeholder={t('sqlManagement.table.filter.ruleLevelFilter')}
+              options={ruleLevelFilterOptions}
+              value={selectedRuleLevel}
+              onChange={(value) =>
+                onRuleLevelChange(value as string | undefined)
+              }
+              style={{ width: '100%' }}
+              popupMatchSelectWidth={false}
+            />
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <Select
+              allowClear
+              placeholder={t('sqlManagement.table.filter.ruleDbTypeFilter')}
+              options={dbTypeOptions}
+              value={selectedDbType}
+              onChange={(value) => onDbTypeChange(value)}
+              style={{ width: '100%' }}
+              popupMatchSelectWidth={false}
+            />
+          </div>
+        </div>
         <Input
           allowClear
-          disabled={!selectedDbType}
           placeholder={t('common.search')}
           value={keyword}
           onChange={(event) => onKeywordChange(event.target.value)}

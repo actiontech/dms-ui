@@ -98,7 +98,7 @@ describe('page/SqlManagement/AssignmentBatch', () => {
       EmitterKey.Refresh_SQL_Management,
       {
         ids: [sqlManageListData.data[0].id],
-        patch: { assignees: [userTipListData[0].user_id] },
+        patch: { assignees: [userTipListData[0].user_name] },
         successMessage: '批量指派负责人成功'
       }
     );

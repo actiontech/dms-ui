@@ -4,7 +4,7 @@ import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TypeStatus } from './StatusFilter';
 
 export type SqlManageOptimisticPatch = Partial<
-  Pick<ISqlManage, 'status' | 'assignees' | 'remark'>
+  Pick<ISqlManage, 'status' | 'assignees' | 'remark' | 'priority'>
 >;
 
 export type SqlManageOptimisticWritePayload = {
@@ -50,12 +50,24 @@ export const leaveTabMessageKeyByStatus = (
 export const mergeOptimisticList = (
   list: ISqlManage[] | undefined,
   overlay: Record<number, SqlManageOptimisticPatch>,
-  hiddenIds: Set<number>
+  hiddenIds: Set<number>,
+  pinnedRows?: Record<number, ISqlManage>
 ): ISqlManage[] => {
-  if (!list?.length) {
-    return [];
-  }
-  return list
+  const base = list ?? [];
+  const baseIds = new Set(
+    base
+      .map((row) => (row.id != null ? Number(row.id) : NaN))
+      .filter((id) => Number.isFinite(id))
+  );
+  const pinned = Object.values(pinnedRows ?? {}).filter((row) => {
+    if (row.id == null) {
+      return false;
+    }
+    const id = Number(row.id);
+    return Number.isFinite(id) && !baseIds.has(id) && !hiddenIds.has(id);
+  });
+
+  return [...base, ...pinned]
     .filter((row) => row.id != null && !hiddenIds.has(Number(row.id)))
     .map((row) => {
       const id = Number(row.id);

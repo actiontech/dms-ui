@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../data/ModalName';
 
@@ -15,6 +16,7 @@ import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import { AssignmentFormField } from '../AssignmentForm/index.type';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
+import useUsername from '../../../../../../hooks/useUsername';
 
 const AssignmentSingle = () => {
   const { t } = useTranslation();
@@ -30,6 +32,13 @@ const AssignmentSingle = () => {
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const [form] = useForm<AssignmentFormField>();
+  const { updateUsernameList, resolveAssigneeDisplayNames } = useUsername();
+
+  useEffect(() => {
+    if (open) {
+      updateUsernameList({ filter_project: projectName });
+    }
+  }, [open, projectName, updateUsernameList]);
 
   const handleReset = () => {
     form.resetFields();
@@ -54,7 +63,9 @@ const AssignmentSingle = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           EventEmitter.emit(EmitterKey.Refresh_SQL_Management, {
             ids: [Number(currentSelected?.id ?? '')],
-            patch: { assignees: values.assignees },
+            patch: {
+              assignees: resolveAssigneeDisplayNames(values.assignees)
+            },
             successMessage: t(
               'sqlManagement.table.action.single.assignmentSuccessTips'
             )

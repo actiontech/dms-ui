@@ -147,11 +147,16 @@ const SQLEEIndex = () => {
   const [optimisticHiddenIds, setOptimisticHiddenIds] = useState<Set<number>>(
     () => new Set()
   );
+  const [optimisticPinnedRows, setOptimisticPinnedRows] = useState<
+    Record<number, ISqlManage>
+  >({});
+  const listSnapshotForPinRef = useRef<ISqlManage[]>([]);
 
   const clearOptimisticState = useCallback(() => {
     setOptimisticOverlay({});
     setOptimisticGreenIds(new Set());
     setOptimisticHiddenIds(new Set());
+    setOptimisticPinnedRows({});
   }, []);
 
   const waitAndClearOptimisticAfterMinGreen = useCallback(async () => {
@@ -223,7 +228,7 @@ const SQLEEIndex = () => {
         optimisticClearTimerRef.current = undefined;
       }
 
-      // 先同步上色，避免双刷回写抢在首次 paint 前把计时吃掉
+      // 先改行+绿底再刷列表；离页签先 pin 住行，满绿后再移走（禁止立刻 hidden）
       flushSync(() => {
         setOptimisticOverlay((prev) => {
           const next = { ...prev };
@@ -238,9 +243,16 @@ const SQLEEIndex = () => {
           return next;
         });
         if (leave) {
-          setOptimisticHiddenIds((prev) => {
-            const next = new Set(prev);
-            ids.forEach((id) => next.add(id));
+          setOptimisticPinnedRows((prev) => {
+            const next = { ...prev };
+            ids.forEach((id) => {
+              const row = listSnapshotForPinRef.current.find(
+                (item) => Number(item.id) === id
+              );
+              if (row) {
+                next[id] = { ...row, ...payload.patch };
+              }
+            });
             return next;
           });
         }
@@ -646,15 +658,22 @@ const SQLEEIndex = () => {
     [username]
   );
 
-  const dataSource = useMemo(
-    () =>
-      mergeOptimisticList(
-        joinListData(sqlList?.list),
-        optimisticOverlay,
-        optimisticHiddenIds
-      ),
-    [joinListData, sqlList?.list, optimisticOverlay, optimisticHiddenIds]
-  );
+  const dataSource = useMemo(() => {
+    const merged = mergeOptimisticList(
+      joinListData(sqlList?.list),
+      optimisticOverlay,
+      optimisticHiddenIds,
+      optimisticPinnedRows
+    );
+    listSnapshotForPinRef.current = merged;
+    return merged;
+  }, [
+    joinListData,
+    sqlList?.list,
+    optimisticOverlay,
+    optimisticHiddenIds,
+    optimisticPinnedRows
+  ]);
 
   const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,

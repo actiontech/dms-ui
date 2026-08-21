@@ -41,7 +41,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     cleanup();
   });
 
-  it('send request and keep rule options empty until db type selected', async () => {
+  it('send request and show all rule options before db type selected', async () => {
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
     const instanceRequest = instance.getInstanceTipList();
     const { result } = renderHooksWithRedux(() => useGetTableFilterInfo());
@@ -106,9 +106,9 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     const ruleFilterProps = result.current.filterCustomProps.get(
       'filter_rule_name'
     ) as CustomSelectProps;
-    expect(ruleFilterProps?.options?.length).toBe(0);
+    expect(ruleFilterProps?.options?.length).toBeGreaterThan(0);
     expect(ruleFilterProps?.loading).toBe(false);
-    expect(ruleFilterProps?.notFoundContent).toBe('请先选择库型');
+    expect(ruleFilterProps?.notFoundContent).toBeUndefined();
     expect(ruleFilterProps?.dropdownRender).toBeDefined();
   });
 
@@ -126,9 +126,10 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     expect(ruleFilterProps?.options?.length).toBe(1);
     expect(ruleFilterProps?.options?.[0]).toEqual(
       expect.objectContaining({
-        label: '用于测试',
+        text: expect.stringContaining('用于测试'),
         value: `MySQL${DB_TYPE_RULE_NAME_SEPARATOR}test`
       })
     );
+    expect(ruleFilterProps?.options?.[0]?.label).toBeDefined();
   });
 });

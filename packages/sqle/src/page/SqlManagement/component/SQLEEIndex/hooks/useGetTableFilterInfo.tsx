@@ -28,8 +28,7 @@ type UseGetTableFilterInfoParams = {
 const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const { filterRuleName, tableFilterInfo, updateTableFilterInfo } =
-    params ?? {};
+  const { filterRuleName } = params ?? {};
 
   const { generateAuditLevelSelectOptions } = useStaticStatus();
 
@@ -60,6 +59,7 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     string | undefined
   >();
   const [ruleKeyword, setRuleKeyword] = useState('');
+  const [ruleDropdownOpen, setRuleDropdownOpen] = useState(false);
 
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
@@ -82,41 +82,27 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     }
   }, [filterRuleName]);
 
-  const clearRuleFilterValue = useCallback(() => {
-    if (!updateTableFilterInfo || !tableFilterInfo) {
-      return;
-    }
-    updateTableFilterInfo({
-      ...tableFilterInfo,
-      filter_rule_name: undefined
-    });
-  }, [tableFilterInfo, updateTableFilterInfo]);
-
-  const onDbTypeChange = useCallback(
-    (dbType?: string) => {
-      setSelectedDbType(dbType);
-      setSelectedRuleLevel(undefined);
-      setRuleKeyword('');
-      // 仅在已选规则时清空，避免首次选库型触发筛参更新把下拉关掉
-      if (filterRuleName) {
-        clearRuleFilterValue();
-      }
-    },
-    [clearRuleFilterValue, filterRuleName]
-  );
+  const onDbTypeChange = useCallback((dbType?: string) => {
+    // 仅筛选下拉选项，不改 tableFilterInfo，避免关闭外层「审核规则」面板
+    setSelectedDbType(dbType);
+    setRuleDropdownOpen(true);
+  }, []);
 
   const onRuleLevelChange = useCallback((level?: string) => {
     setSelectedRuleLevel(level || undefined);
+    setRuleDropdownOpen(true);
   }, []);
 
   const onRuleKeywordChange = useCallback((keyword: string) => {
     setRuleKeyword(keyword);
+    setRuleDropdownOpen(true);
+  }, []);
+
+  const onRuleDropdownVisibleChange = useCallback((open: boolean) => {
+    setRuleDropdownOpen(open);
   }, []);
 
   const ruleSelectOptions = useMemo(() => {
-    if (!selectedDbType) {
-      return [];
-    }
     const options = generateFlatRuleOptionsByDbType(
       selectedDbType,
       selectedRuleLevel
@@ -126,7 +112,7 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
       return options;
     }
     return options.filter((option) => {
-      const haystack = `${option.label ?? ''} ${option.text ?? ''} ${
+      const haystack = `${option.text ?? ''} ${
         option.value ?? ''
       }`.toLowerCase();
       return haystack.includes(keyword);
@@ -196,9 +182,8 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
           options: ruleSelectOptions,
           loading: getRuleTipsLoading,
           popupMatchSelectWidth: 400,
-          notFoundContent: selectedDbType
-            ? undefined
-            : t('sqlManagement.table.filter.ruleSelectDbTypeFirst'),
+          open: ruleDropdownOpen,
+          onDropdownVisibleChange: onRuleDropdownVisibleChange,
           dropdownRender: ruleFilterDropdownRender
         }
       ]
@@ -213,9 +198,9 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     generateAuditLevelSelectOptions,
     ruleSelectOptions,
     getRuleTipsLoading,
-    selectedDbType,
-    ruleFilterDropdownRender,
-    t
+    ruleDropdownOpen,
+    onRuleDropdownVisibleChange,
+    ruleFilterDropdownRender
   ]);
 
   return {
