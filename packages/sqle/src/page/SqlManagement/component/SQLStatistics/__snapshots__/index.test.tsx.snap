@@ -4,7 +4,7 @@ exports[`page/SqlManagement/SQLStatistics render statics data 1`] = `
 <body>
   <div>
     <div
-      class="css-1lrp847"
+      class="css-1222ymg"
     >
       <div
         class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
@@ -101,7 +101,7 @@ exports[`page/SqlManagement/SQLStatistics render unset placeholder when data is 
 <body>
   <div>
     <div
-      class="css-1lrp847"
+      class="css-1222ymg"
     >
       <div
         class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
@@ -198,7 +198,7 @@ exports[`page/SqlManagement/SQLStatistics render when still loading 1`] = `
 <body>
   <div>
     <div
-      class="css-1lrp847"
+      class="css-1222ymg"
     >
       <div
         class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"

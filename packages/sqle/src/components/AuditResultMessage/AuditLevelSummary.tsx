@@ -1,10 +1,5 @@
 import { useMemo, type FC } from 'react';
 import { Space } from 'antd';
-import {
-  WarningFilled,
-  InfoHexagonFilled,
-  CloseCircleFilled
-} from '@actiontech/icons';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import AuditResultMessage from './index';
 import {
@@ -14,14 +9,15 @@ import {
   hasAuditViolations
 } from './auditLevelUtils';
 import { AuditLevelSummaryStyleWrapper } from './style';
+import { AUDIT_LEVEL_ICON_MAP } from './AuditLevelIcon';
 
 const LEVEL_ICON_MAP: Record<
   AuditLevelSummaryKey,
   FC<{ width?: number; height?: number }>
 > = {
-  error: CloseCircleFilled,
-  warn: WarningFilled,
-  notice: InfoHexagonFilled
+  error: AUDIT_LEVEL_ICON_MAP.error,
+  warn: AUDIT_LEVEL_ICON_MAP.warn,
+  notice: AUDIT_LEVEL_ICON_MAP.notice
 };
 
 export type AuditLevelSummaryProps = {

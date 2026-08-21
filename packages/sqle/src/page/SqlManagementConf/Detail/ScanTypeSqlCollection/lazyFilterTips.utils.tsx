@@ -1,5 +1,6 @@
 import { IFilterTip } from '@actiontech/shared/lib/api/sqle/service/common';
 import { groupBy } from 'lodash';
+import { AuditLevelRuleOptionLabel } from '../../../../components/AuditResultMessage/AuditLevelIcon';
 
 /** 动态枚举：进页不预填，点开下拉才拉 filter_tips（AC-006 schema/user；AC-007 rule_name） */
 export const LAZY_TIP_FILTER_NAMES = new Set([
@@ -42,6 +43,13 @@ export const filterRuleTipsClientSide = (
   });
 };
 
+const tipOptionLabel = (tip: IFilterTip) =>
+  tip.level ? (
+    <AuditLevelRuleOptionLabel level={tip.level} text={tip.desc} />
+  ) : (
+    tip.desc
+  );
+
 export const filterTipsToSelectOptions = (filterTips?: IFilterTip[]) => {
   if (!filterTips?.length) {
     return [];
@@ -54,12 +62,12 @@ export const filterTipsToSelectOptions = (filterTips?: IFilterTip[]) => {
         return {
           label: group,
           options: tips.map((v) => ({
-            label: v.desc,
+            label: tipOptionLabel(v),
             value: v.value
           }))
         };
       }
-      return tips.map((v) => ({ label: v.desc, value: v.value }));
+      return tips.map((v) => ({ label: tipOptionLabel(v), value: v.value }));
     })
     .flat();
 };

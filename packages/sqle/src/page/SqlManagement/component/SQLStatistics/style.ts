@@ -32,7 +32,7 @@ export const SQLStatisticsWrapper = styled('div')`
           text-align: center;
         }
 
-        &:nth-of-type(2) {
+        &:has(.num.problem) {
           display: flex;
           align-items: center;
           width: 100%;
