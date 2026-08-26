@@ -1,1 +1,2 @@
-export const UI_VERSION = 'dev-zjrc-sql-manage-tips-sql-meta-perf   456fd4b26';
+export const UI_VERSION =
+  'dev-zjrc-sql-manage-rule-filter-memberof   bdf1f7ff3';

@@ -119,7 +119,7 @@ const SQLEEIndex = () => {
     problemSQlNum: null,
     optimizedSQLNum: null
   });
-  const [listTotal, setListTotal] = useState(0);
+  // 分页总数与卡片「SQL总数」同源（统计接口）；列表回包 sql_manage_total_num 固定为 0，不可写入
   const statisticsRequestSeq = useRef(0);
   const [refreshSpinning, setRefreshSpinning] = useState(false);
   const [refreshSuccess, setRefreshSuccess] = useState(false);
@@ -463,6 +463,7 @@ const SQLEEIndex = () => {
       pollingInterval: 1000,
       pollingErrorRetryCount: 3,
       onFinally: (_params, data, error) => {
+        // AC-008：有审核中则继续列表轮询且不打统计；离开审核中后停轮询并补打一次统计
         const hasBeingAudited =
           !error &&
           !!data?.list?.some(
@@ -471,7 +472,6 @@ const SQLEEIndex = () => {
           );
 
         if (!error) {
-          setListTotal(data?.otherData?.sql_manage_total_num ?? 0);
           handleSourceExtraFromResponse(
             data?.otherData?.source_extra as ISourceExtra | undefined
           );
@@ -500,18 +500,23 @@ const SQLEEIndex = () => {
         const seq = ++statisticsRequestSeq.current;
         return SqlManage.GetSqlManageStatisticsV2(
           buildStatisticsRequestParams()
-        ).then((res) => {
-          if (seq !== statisticsRequestSeq.current) {
-            return;
-          }
-          if (res.data.code === ResponseCode.SUCCESS) {
-            setSQLNum({
-              SQLTotalNum: res.data.sql_manage_total_num ?? 0,
-              problemSQlNum: res.data.sql_manage_bad_num ?? 0,
-              optimizedSQLNum: res.data.sql_manage_optimized_num ?? 0
-            });
-          }
-        });
+        )
+          .then((res) => {
+            if (seq !== statisticsRequestSeq.current) {
+              return;
+            }
+            // 仅成功回包更新；失败/非 SUCCESS 保持上次总数（AC-007）
+            if (res.data.code === ResponseCode.SUCCESS) {
+              setSQLNum({
+                SQLTotalNum: res.data.sql_manage_total_num ?? 0,
+                problemSQlNum: res.data.sql_manage_bad_num ?? 0,
+                optimizedSQLNum: res.data.sql_manage_optimized_num ?? 0
+              });
+            }
+          })
+          .catch(() => {
+            // 网络或请求异常：不写入 0，分页与卡片沿用失败前 SQLNum
+          });
       },
       {
         refreshDeps: [
@@ -990,7 +995,7 @@ const SQLEEIndex = () => {
         }
         rowSelection={rowSelection as TableRowSelection<ISqlManage>}
         pagination={{
-          total: listTotal,
+          total: SQLNum.SQLTotalNum ?? 0,
           current: pagination.page_index
         }}
         columns={columns}

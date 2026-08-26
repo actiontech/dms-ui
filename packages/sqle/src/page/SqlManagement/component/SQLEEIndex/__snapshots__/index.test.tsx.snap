@@ -4457,7 +4457,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                 class="ant-pagination-total-text"
               >
                 <span>
-                  共 2 条数据
+                  共 1 条数据
                 </span>
               </li>
               <li
