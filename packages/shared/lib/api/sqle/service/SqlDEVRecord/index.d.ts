@@ -33,3 +33,23 @@ export interface IGetSqlDEVRecordListParams {
 }
 
 export interface IGetSqlDEVRecordListReturn extends IGetSqlDEVRecordListResp {}
+
+export interface IExportSqlDEVRecordParams {
+  project_name: string;
+
+  fuzzy_search_sql_fingerprint?: string;
+
+  filter_instance_name?: string;
+
+  filter_db_type?: string;
+
+  filter_source?: GetSqlDEVRecordListFilterSourceEnum;
+
+  filter_creator?: string;
+
+  filter_last_receive_time_from?: string;
+
+  filter_last_receive_time_to?: string;
+
+  filter_sql_dev_record_ids?: string;
+}

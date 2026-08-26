@@ -20,6 +20,16 @@ class SqlDEVRecord implements MockSpyApy {
     );
     return spy;
   }
+
+  public exportSqlDEVRecord() {
+    const spy = jest.spyOn(sqlDEVRecord, 'ExportSqlDEVRecord');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: new Blob(['mock'])
+      })
+    );
+    return spy;
+  }
 }
 
 export default new SqlDEVRecord();

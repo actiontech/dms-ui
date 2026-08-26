@@ -1,8 +1,9 @@
 import { useRequest, useBoolean } from 'ahooks';
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import DefaultPrompts from '../components/DefaultPrompts';
 import sqlDEVRecord from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord';
 import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IExportSqlDEVRecordParams } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
 import {
   useCurrentProject,
   useCurrentUser
@@ -31,12 +32,17 @@ import {
   TableToolbar,
   FilterCustomProps,
   ColumnsSettingProps,
-  useTableRequestParams
+  useTableRequestParams,
+  ActiontechTableToolbarActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '../../../data/common';
 import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
 import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { message } from 'antd';
+import { TableRowSelection } from 'antd/es/table/interface';
+import { DownArrowLineOutlined } from '@actiontech/icons';
+import { t } from '../../../locale';
 
 const PluginAuditList = () => {
   const dispatch = useDispatch();
@@ -51,6 +57,9 @@ const PluginAuditList = () => {
     updateSelectWhitelistRecord,
     actionPermission
   } = useWhitelistRedux();
+
+  const [messageApi, messageContextHolder] = message.useMessage();
+  const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
 
   const {
     tableFilterInfo,
@@ -71,6 +80,11 @@ const PluginAuditList = () => {
   const firstRequest = useRef<boolean>(true);
 
   const [showEmptyPrompt, { setTrue: setEmptyPromptShow }] = useBoolean();
+
+  const [
+    exportButtonDisabled,
+    { setFalse: finishExport, setTrue: startExport }
+  ] = useBoolean(false);
 
   const { data, loading, refresh } = useRequest(
     () => {
@@ -100,6 +114,44 @@ const PluginAuditList = () => {
       refreshDeps: [pagination, tableFilterInfo]
     }
   );
+
+  useEffect(() => {
+    setSelectedRowKeys([]);
+  }, [tableFilterInfo, searchKeyword]);
+
+  const buildExportParams = useCallback((): IExportSqlDEVRecordParams => {
+    const params: IExportSqlDEVRecordParams = {
+      project_name: projectName,
+      ...tableFilterInfo,
+      fuzzy_search_sql_fingerprint: searchKeyword || undefined
+    };
+    if (selectedRowKeys.length > 0) {
+      params.filter_sql_dev_record_ids = selectedRowKeys.join(',');
+    }
+    return params;
+  }, [projectName, tableFilterInfo, searchKeyword, selectedRowKeys]);
+
+  const handleExport = useCallback(() => {
+    startExport();
+    const hideLoading = messageApi.loading(t('pluginAudit.table.exporting'));
+    sqlDEVRecord
+      .ExportSqlDEVRecord(buildExportParams(), { responseType: 'blob' })
+      .then((res) => {
+        if (
+          (res.data as unknown as { code?: number }).code ===
+          ResponseCode.SUCCESS
+        ) {
+          messageApi.success(t('pluginAudit.table.exportSuccessTips'));
+        }
+      })
+      .catch((e: Error) => {
+        messageApi.error(e?.message ?? t('pluginAudit.table.exportFailedTips'));
+      })
+      .finally(() => {
+        hideLoading();
+        finishExport();
+      });
+  }, [buildExportParams, finishExport, messageApi, startExport]);
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
@@ -136,6 +188,12 @@ const PluginAuditList = () => {
         }
       ],
       [
+        'db_type',
+        {
+          options: PLUGIN_AUDIT_DB_TYPE_FILTER_OPTIONS
+        }
+      ],
+      [
         'last_receive_timestamp',
         {
           showTime: true
@@ -161,6 +219,31 @@ const PluginAuditList = () => {
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
 
+  const rowSelection = useMemo<TableRowSelection<ISqlDEVRecord>>(
+    () => ({
+      selectedRowKeys,
+      onChange: (keys) => {
+        setSelectedRowKeys(keys.filter((v) => v) as number[]);
+      }
+    }),
+    [selectedRowKeys]
+  );
+
+  const toolbarActions = useMemo<ActiontechTableToolbarActionMeta[]>(
+    () => [
+      {
+        key: 'export-report',
+        text: t('pluginAudit.table.exportReport'),
+        buttonProps: {
+          icon: <DownArrowLineOutlined />,
+          disabled: exportButtonDisabled,
+          onClick: handleExport
+        }
+      }
+    ],
+    [exportButtonDisabled, handleExport]
+  );
+
   useEffect(() => {
     updateUsernameList({ filter_project: projectName });
     updateInstanceList({
@@ -185,6 +268,7 @@ const PluginAuditList = () => {
               refreshBySearchKeyword();
             }
           }}
+          actions={toolbarActions}
           loading={loading}
         />
         <TableFilterContainer
@@ -200,6 +284,7 @@ const PluginAuditList = () => {
           rowKey={(record: ISqlDEVRecord) => {
             return `${record?.id}`;
           }}
+          rowSelection={rowSelection}
           pagination={{
             total: data?.total ?? 0,
             current: pagination.page_index

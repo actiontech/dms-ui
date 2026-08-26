@@ -7,6 +7,7 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IExportSqlDEVRecordParams,
   IGetSqlDEVRecordListParams,
   IGetSqlDEVRecordListReturn
 } from './index.d';
@@ -22,6 +23,21 @@ class SqlDEVRecordService extends ServiceBase {
 
     return this.get<IGetSqlDEVRecordListReturn>(
       `/v1/projects/${project_name}/sql_dev_records`,
+      paramsData,
+      options
+    );
+  }
+
+  public ExportSqlDEVRecord(
+    params: IExportSqlDEVRecordParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<any>(
+      `/v1/projects/${project_name}/sql_dev_records/exports`,
       paramsData,
       options
     );
