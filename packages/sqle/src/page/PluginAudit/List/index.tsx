@@ -10,7 +10,8 @@ import {
 import {
   PluginAuditListColumns,
   PluginAuditListTableFilterParamType,
-  PluginAuditListActions
+  PluginAuditListActions,
+  PLUGIN_AUDIT_DB_TYPE_FILTER_OPTIONS
 } from './columns';
 import useInstance from '../../../hooks/useInstance';
 import useUsername from '../../../hooks/useUsername';
@@ -170,6 +171,7 @@ const PluginAuditList = () => {
   return (
     <EmptyBox if={!showEmptyPrompt || loading} defaultNode={<DefaultPrompts />}>
       <>
+        {messageContextHolder}
         <TableToolbar
           refreshButton={{ refresh, disabled: loading }}
           setting={tableSetting}

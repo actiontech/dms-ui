@@ -14,12 +14,17 @@ export default {
     sqlFingerprint: 'SQL fingerprint',
     source: 'DB instance',
     schema: 'Schema',
+    dbType: 'Database type',
     result: 'Audit result',
     count: 'Occurrences',
     firstAppearTime: 'First appearance time',
     lastReceiveTime: 'Last appearance time',
     creator: 'Creator',
-    createWhitelist: 'Add to SQL management whitelist'
+    createWhitelist: 'Add to SQL management whitelist',
+    exportReport: 'Export report',
+    exporting: 'Exporting file',
+    exportSuccessTips: 'Export file successfully',
+    exportFailedTips: 'Export file failed'
   },
   drawerTitle: 'IDE audit result'
 };

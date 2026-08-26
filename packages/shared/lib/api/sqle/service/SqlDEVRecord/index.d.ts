@@ -13,6 +13,8 @@ export interface IGetSqlDEVRecordListParams {
 
   filter_instance_name?: string;
 
+  filter_db_type?: string;
+
   filter_source?: GetSqlDEVRecordListFilterSourceEnum;
 
   filter_creator?: string;
