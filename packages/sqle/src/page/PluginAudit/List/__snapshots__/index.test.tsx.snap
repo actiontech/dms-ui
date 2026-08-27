@@ -100,6 +100,41 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                 class="ant-space-item"
                 style="margin-right: 12px;"
               >
+                <div
+                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      type="button"
+                    >
+                      <span
+                        class="ant-btn-icon"
+                      >
+                        <svg
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        导出报表
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
                 <button
                   class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 8px;"
@@ -205,6 +240,10 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                   style="table-layout: auto;"
                 >
                   <colgroup>
+                    <col
+                      class="ant-table-selection-col"
+                    />
+                    <col />
                     <col />
                     <col />
                     <col />
@@ -224,6 +263,31 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                     class="ant-table-thead"
                   >
                     <tr>
+                      <th
+                        class="ant-table-cell ant-table-selection-column"
+                        scope="col"
+                      >
+                        <div
+                          class="ant-table-selection"
+                        >
+                          <label
+                            class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <span
+                              class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                            >
+                              <input
+                                aria-label="Select all"
+                                class="ant-checkbox-input"
+                                type="checkbox"
+                              />
+                              <span
+                                class="ant-checkbox-inner"
+                              />
+                            </span>
+                          </label>
+                        </div>
+                      </th>
                       <th
                         class="ant-table-cell ellipsis-column-width"
                         scope="col"
@@ -247,6 +311,12 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                         scope="col"
                       >
                         Schema
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        数据库类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -294,6 +364,25 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                       class="ant-table-row ant-table-row-level-0"
                       data-row-key="1"
                     >
+                      <td
+                        class="ant-table-cell ant-table-selection-column"
+                      >
+                        <label
+                          class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                        >
+                          <span
+                            class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <input
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                        </label>
+                      </td>
                       <td
                         class="ant-table-cell ellipsis-column-width"
                       >
@@ -401,6 +490,11 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                         class="ant-table-cell"
                       >
                         dms
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -764,6 +858,41 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                 class="ant-space-item"
                 style="margin-right: 12px;"
               >
+                <div
+                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      type="button"
+                    >
+                      <span
+                        class="ant-btn-icon"
+                      >
+                        <svg
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        导出报表
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
                 <button
                   class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 8px;"
@@ -869,6 +998,10 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                   style="table-layout: auto;"
                 >
                   <colgroup>
+                    <col
+                      class="ant-table-selection-col"
+                    />
+                    <col />
                     <col />
                     <col />
                     <col />
@@ -888,6 +1021,32 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                     class="ant-table-thead"
                   >
                     <tr>
+                      <th
+                        class="ant-table-cell ant-table-selection-column"
+                        scope="col"
+                      >
+                        <div
+                          class="ant-table-selection"
+                        >
+                          <label
+                            class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <span
+                              class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                            >
+                              <input
+                                aria-label="Select all"
+                                class="ant-checkbox-input"
+                                disabled=""
+                                type="checkbox"
+                              />
+                              <span
+                                class="ant-checkbox-inner"
+                              />
+                            </span>
+                          </label>
+                        </div>
+                      </th>
                       <th
                         class="ant-table-cell ellipsis-column-width"
                         scope="col"
@@ -911,6 +1070,12 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                         scope="col"
                       >
                         Schema
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        数据库类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -959,7 +1124,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="10"
+                        colspan="12"
                       >
                         <div
                           class="css-dev-only-do-not-override-bj9uhl ant-empty ant-empty-normal"
@@ -1235,6 +1400,41 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                 class="ant-space-item"
                 style="margin-right: 12px;"
               >
+                <div
+                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      type="button"
+                    >
+                      <span
+                        class="ant-btn-icon"
+                      >
+                        <svg
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        导出报表
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
                 <button
                   class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 8px;"
@@ -1340,6 +1540,10 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                   style="table-layout: auto;"
                 >
                   <colgroup>
+                    <col
+                      class="ant-table-selection-col"
+                    />
+                    <col />
                     <col />
                     <col />
                     <col />
@@ -1359,6 +1563,31 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                     class="ant-table-thead"
                   >
                     <tr>
+                      <th
+                        class="ant-table-cell ant-table-selection-column"
+                        scope="col"
+                      >
+                        <div
+                          class="ant-table-selection"
+                        >
+                          <label
+                            class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <span
+                              class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                            >
+                              <input
+                                aria-label="Select all"
+                                class="ant-checkbox-input"
+                                type="checkbox"
+                              />
+                              <span
+                                class="ant-checkbox-inner"
+                              />
+                            </span>
+                          </label>
+                        </div>
+                      </th>
                       <th
                         class="ant-table-cell ellipsis-column-width"
                         scope="col"
@@ -1382,6 +1611,12 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                         scope="col"
                       >
                         Schema
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        数据库类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1429,6 +1664,25 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                       class="ant-table-row ant-table-row-level-0"
                       data-row-key="1"
                     >
+                      <td
+                        class="ant-table-cell ant-table-selection-column"
+                      >
+                        <label
+                          class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                        >
+                          <span
+                            class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <input
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                        </label>
+                      </td>
                       <td
                         class="ant-table-cell ellipsis-column-width"
                       >
@@ -1536,6 +1790,11 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                         class="ant-table-cell"
                       >
                         dms
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1642,6 +1901,25 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                       data-row-key="2"
                     >
                       <td
+                        class="ant-table-cell ant-table-selection-column"
+                      >
+                        <label
+                          class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                        >
+                          <span
+                            class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <input
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                        </label>
+                      </td>
+                      <td
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
@@ -1752,6 +2030,11 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         <div
                           class="audit-result-wrapper"
                         >
@@ -1844,6 +2127,25 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                       data-row-key="3"
                     >
                       <td
+                        class="ant-table-cell ant-table-selection-column"
+                      >
+                        <label
+                          class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                        >
+                          <span
+                            class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <input
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                        </label>
+                      </td>
+                      <td
                         class="ant-table-cell ellipsis-column-width"
                       />
                       <td
@@ -1857,6 +2159,11 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                       <td
                         class="ant-table-cell"
                       />
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
                       <td
                         class="ant-table-cell"
                       >

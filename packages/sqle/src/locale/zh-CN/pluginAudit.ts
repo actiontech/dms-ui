@@ -13,12 +13,17 @@ export default {
     sqlFingerprint: 'SQL指纹',
     source: '数据源',
     schema: 'Schema',
+    dbType: '数据库类型',
     result: '审核结果',
     count: '出现次数',
     firstAppearTime: '最早出现时间',
     lastReceiveTime: '最近一次出现时间',
     creator: '创建人',
-    createWhitelist: '添加为审核SQL例外'
+    createWhitelist: '添加为审核SQL例外',
+    exportReport: '导出报表',
+    exporting: '正在导出文件',
+    exportSuccessTips: '导出文件成功',
+    exportFailedTips: '导出文件失败'
   },
   drawerTitle: 'IDE审核结果'
 };

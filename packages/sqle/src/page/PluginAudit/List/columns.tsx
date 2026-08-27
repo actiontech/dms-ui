@@ -16,6 +16,12 @@ export type PluginAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   'project_name'
 >;
 
+export const PLUGIN_AUDIT_DB_TYPE_FILTER_OPTIONS = [
+  { label: 'MySQL', value: 'MySQL' },
+  { label: 'TDSQL For InnoDB', value: 'TDSQL For InnoDB' },
+  { label: 'TBase', value: 'TBase' }
+];
+
 export const PluginAuditListColumns: (
   onOpenDrawer: (record: ISqlDEVRecord) => void
 ) => ActiontechTableColumn<ISqlDEVRecord, IGetSqlDEVRecordListParams> = (
@@ -69,6 +75,15 @@ export const PluginAuditListColumns: (
     {
       dataIndex: 'schema_name',
       title: () => t('pluginAudit.table.schema')
+    },
+    {
+      dataIndex: 'db_type',
+      title: () => t('pluginAudit.table.dbType'),
+      filterCustomType: 'select',
+      filterKey: 'filter_db_type',
+      render: (db_type) => {
+        return db_type || '-';
+      }
     },
     {
       dataIndex: 'audit_result',

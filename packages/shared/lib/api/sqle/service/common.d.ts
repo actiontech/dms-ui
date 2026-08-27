@@ -2432,6 +2432,8 @@ export interface ISqlAverageExecutionTime {
 export interface ISqlDEVRecord {
   audit_result?: IAuditResult[];
 
+  db_type?: string;
+
   creator?: string;
 
   first_appear_timestamp?: string;
