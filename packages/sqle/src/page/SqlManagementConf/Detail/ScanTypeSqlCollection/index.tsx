@@ -12,7 +12,7 @@ import RemediationDetailDrawer from '../../../../components/RemediationDetailDra
 import { OpenCreateAuditWhitelistExceptionParams } from '../../../../components/RuleException/AddRuleExceptionButton';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelist from '../../../Whitelist/Drawer/AddWhitelist';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { ScanTypeSqlCollectionStyleWrapper } from './style';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
@@ -60,6 +60,29 @@ import {
   buildSqlManageRuleExceptionContext,
   toScanTaskRuleExceptionRecord
 } from '../../../../page/RuleException/index.data';
+
+type ScanTableRequestResult = {
+  data?: ScanTypeSqlTableDataSourceItem[];
+  total: number;
+  hasPendingAudit: boolean;
+  pendingAuditCount: number;
+};
+
+const SCAN_SQL_COLUMN_WIDTHS: Record<string, number> = {
+  sql: 360,
+  fingerprint: 280,
+  audit_status: 110,
+  priority: 100,
+  first_audit_results: 200,
+  audit_results: 200,
+  schema_name: 140,
+  schema_meta_name: 160,
+  object_name: 160,
+  schema_meta_type: 120,
+  object_type: 120
+};
+
+const DEFAULT_SCAN_SQL_COLUMN_WIDTH = 140;
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
@@ -277,44 +300,86 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     );
   }, [tableFilterInfo]);
 
+  const tableRowsRequestRef = useRef<Promise<ScanTableRequestResult> | null>(
+    null
+  );
+  const queuedTableRowsRefreshRef = useRef(false);
+  const refreshTableRowsRef = useRef<() => void>(() => undefined);
+  const requestTableRows = useCallback(() => {
+    if (tableRowsRequestRef.current) {
+      queuedTableRowsRefreshRef.current = true;
+      return tableRowsRequestRef.current;
+    }
+    const params: IGetInstanceAuditPlanSQLDataV1Params = {
+      project_name: projectName,
+      instance_audit_plan_id: instanceAuditPlanId,
+      audit_plan_id: auditPlanId,
+      page_index: pagination.page_index,
+      page_size: pagination.page_size,
+      filter_list: getFilterListByTableFilterInfo()
+    };
+    createSortParams(params);
+    const request = instance_audit_plan
+      .getInstanceAuditPlanSQLDataV1(params)
+      .then((res) => ({
+        data: res.data.data?.rows,
+        total: res.data.total_nums ?? 0,
+        hasPendingAudit: res.data.has_pending_audit === true,
+        pendingAuditCount: res.data.pending_audit_count ?? 0
+      }))
+      .finally(() => {
+        tableRowsRequestRef.current = null;
+        if (queuedTableRowsRefreshRef.current) {
+          queuedTableRowsRefreshRef.current = false;
+          queueMicrotask(() => refreshTableRowsRef.current());
+        }
+      });
+    tableRowsRequestRef.current = request;
+    return request;
+  }, [
+    auditPlanId,
+    createSortParams,
+    getFilterListByTableFilterInfo,
+    instanceAuditPlanId,
+    pagination.page_index,
+    pagination.page_size,
+    projectName
+  ]);
+
   const {
     data: tableRows,
     refresh: refreshTableRows,
     error: getTableRowError,
     cancel: cancelTableRowsRequest
-  } = useRequest(
-    () => {
-      const params: IGetInstanceAuditPlanSQLDataV1Params = {
-        project_name: projectName,
-        instance_audit_plan_id: instanceAuditPlanId,
-        audit_plan_id: auditPlanId,
-        page_index: pagination.page_index,
-        page_size: pagination.page_size,
-        filter_list: getFilterListByTableFilterInfo()
-      };
-      createSortParams(params);
-      return instance_audit_plan
-        .getInstanceAuditPlanSQLDataV1(params)
-        .then((res) => ({
-          data: res.data.data?.rows,
-          total: res.data.total_nums ?? 0
-        }));
-    },
-    {
-      refreshDeps: [pagination, tableFilterInfo, sortInfo],
-      ready: activeTabKey === auditPlanId,
-      pollingInterval: 1000,
-      pollingErrorRetryCount: 3,
-      onSuccess: (res) => {
-        if (!res.data?.some((row) => row?.audit_status === BEING_AUDITED)) {
-          cancelTableRowsRequest();
-        }
-      },
-      onError: () => {
+  } = useRequest(requestTableRows, {
+    refreshDeps: [pagination, tableFilterInfo, sortInfo],
+    ready: activeTabKey === auditPlanId,
+    pollingInterval: 3000,
+    pollingWhenHidden: false,
+    pollingErrorRetryCount: 3,
+    onSuccess: (res) => {
+      if (!res.hasPendingAudit) {
         cancelTableRowsRequest();
       }
+    },
+    onError: () => {
+      cancelTableRowsRequest();
     }
-  );
+  });
+  refreshTableRowsRef.current = refreshTableRows;
+
+  useEffect(() => {
+    if (activeTabKey !== auditPlanId) {
+      queuedTableRowsRefreshRef.current = false;
+      cancelTableRowsRequest();
+    }
+  }, [activeTabKey, auditPlanId, cancelTableRowsRequest]);
+
+  useEffect(() => {
+    return () => {
+      refreshTableRowsRef.current = () => undefined;
+    };
+  }, []);
 
   // 智能扫描特例：从 audit_results 按 is_exempted 拆分，供 ReportDrawer 展示例外区。
   const currentScanAuditBuckets = useMemo(
@@ -533,7 +598,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       return [];
     }
 
-    return sortableTableColumnFactory(tableHead, {
+    const generatedColumns = sortableTableColumnFactory(tableHead, {
       columnClassName: (type) =>
         type === 'sql' ? 'ellipsis-column-large-width' : undefined,
       customRender: (text, record, fieldName, type) => {
@@ -580,6 +645,24 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         return text;
       }
     });
+
+    const columnTypeMap = new Map(
+      tableHead.map((item) => [item.field_name ?? '', item.type])
+    );
+
+    return generatedColumns.map((column) => {
+      const fieldName = String(column.dataIndex ?? '');
+      const width =
+        SCAN_SQL_COLUMN_WIDTHS[fieldName] ??
+        (columnTypeMap.get(fieldName) === 'sql'
+          ? 320
+          : DEFAULT_SCAN_SQL_COLUMN_WIDTH);
+
+      return {
+        ...column,
+        width
+      };
+    });
   }, [
     onClickSql,
     renderAuditResultCell,
@@ -602,6 +685,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       {messageContextHolder}
       <ActiontechTable
         rowKey="id"
+        enableBodyScrollY
         setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
         columns={columns}
