@@ -113,7 +113,7 @@ export default {
     exportRemediationReport: 'Export SQL remediation report',
     exportDataSourceRemediationReport: 'Export data source remediation report',
     auditImmediately: 'Audit immediately',
-    auditImmediatelySuccessTips: 'Audit successfully',
+    auditImmediatelySuccessTips: 'Audit triggered',
     exportTips: 'Exporting scan task details',
     remediationExport: 'SQL remediation',
     remediationExportTips: 'Exporting SQL management remediation report',
@@ -131,14 +131,23 @@ export default {
           normal: 'Enabled',
           disabled: 'Disabled'
         },
-        pipelineStatus: {
-          title: 'Current stage',
+        taskStatus: {
+          title: 'Execution status',
           headerTips:
-            'Where this scan type is in the collect–audit flow.\n\n• Idle: not collecting/auditing; can Collect now or wait for schedule\n• Collecting: in progress; Collect now disabled until finished\n• Pending audit: data collected; awaiting audit; Collect now allowed\n• Auditing: audit in progress; Collect now allowed',
-          idle: 'Idle',
-          collecting: 'Collecting',
-          pendingAudit: 'Pending audit',
-          auditing: 'Auditing'
+            'Collection and audit are independent and may both be in progress. Hover to view the current status and update time.',
+          collection: {
+            collecting: 'Collecting',
+            completed: 'Collection completed'
+          },
+          audit: {
+            pendingAudit: 'Pending audit',
+            auditing: 'Auditing',
+            completed: 'Audit completed'
+          },
+          currentStatus: 'Current status: {{value}}',
+          executionNode: 'Execution node: {{value}}',
+          updatedAt: 'Updated at: {{value}}',
+          statusSeparator: ', '
         },
         nextCollectionTime: {
           title: 'Next collection time',
@@ -172,9 +181,9 @@ export default {
         deleteConfirmTips:
           'After deleting, intelligent scan data of this type will no longer be retained, confirm delete?',
         triggerCollect: 'Collect now',
-        triggerCollectSuccessTips: 'Collection triggered',
+        triggerCollectSuccessTips: 'Collect now triggered',
         triggerCollectDisabledTips: 'Please enable first',
-        triggerCollectCollectingTips: 'Collecting in progress'
+        triggerCollectCollectingTips: 'Collection is in progress'
       }
     },
     scanTypeSqlCollection: {
@@ -199,6 +208,7 @@ export default {
         auditStatus: 'Audit status',
         firstAuditResult: 'Initial audit result',
         currentAuditResult: 'Current audit result',
+        pendingAudit: 'Pending audit',
         audited: 'Audited',
         explanation: {
           text: 'Explanation',
