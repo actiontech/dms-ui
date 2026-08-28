@@ -260,7 +260,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                           <col />
                           <col />
                           <col
-                            style="width: 360px;"
+                            style="width: 220px;"
                           />
                         </colgroup>
                         <thead
@@ -306,7 +306,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span>
-                                    当前环节
+                                    执行状态
                                   </span>
                                 </div>
                               </div>
@@ -712,7 +712,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                           <col />
                           <col />
                           <col
-                            style="width: 360px;"
+                            style="width: 220px;"
                           />
                         </colgroup>
                         <thead
@@ -758,7 +758,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span>
-                                    当前环节
+                                    执行状态
                                   </span>
                                 </div>
                               </div>
@@ -964,7 +964,19 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              空闲
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    采集完成
+                                  </span>
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1014,6 +1026,8 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      title="正在采集，请等待"
                                       type="button"
                                     >
                                       <span>
@@ -1110,7 +1124,15 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              空闲
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  --
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1307,12 +1329,34 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              空闲
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    采集中
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-17gmaof css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    待审核
+                                  </span>
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
                             >
-                              —
+                              采集后展示
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1357,6 +1401,8 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      title="正在采集，请等待"
                                       type="button"
                                     >
                                       <span>
@@ -1445,7 +1491,15 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              空闲
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  --
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1471,7 +1525,9 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               <span>
-                                —
+                                <span>
+                                  失败
+                                </span>
                               </span>
                             </td>
                             <td
@@ -1495,6 +1551,8 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      title="正在采集，请等待"
                                       type="button"
                                     >
                                       <span>

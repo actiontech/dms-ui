@@ -42,7 +42,7 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                       <col />
                       <col />
                       <col
-                        style="width: 360px;"
+                        style="width: 220px;"
                       />
                     </colgroup>
                     <thead
@@ -88,7 +88,7 @@ exports[`test Overview should match snapshot when getUserOperationPermissionLoad
                               class="ant-space-item"
                             >
                               <span>
-                                当前环节
+                                执行状态
                               </span>
                             </div>
                           </div>
@@ -314,7 +314,7 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                       <col />
                       <col />
                       <col
-                        style="width: 360px;"
+                        style="width: 220px;"
                       />
                     </colgroup>
                     <thead
@@ -360,7 +360,7 @@ exports[`test Overview should match snapshot when hasOpPermission is equal false
                               class="ant-space-item"
                             >
                               <span>
-                                当前环节
+                                执行状态
                               </span>
                             </div>
                           </div>
