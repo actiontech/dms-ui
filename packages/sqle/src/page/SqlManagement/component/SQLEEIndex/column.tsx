@@ -213,6 +213,7 @@ const SqlManagementColumn: (
     {
       className: 'ellipsis-column-width',
       dataIndex: 'sql_fingerprint',
+      width: 320,
       title: () => t('sqlManagement.table.column.SQLFingerprint'),
       render: (sql_fingerprint, record) => {
         if (!sql_fingerprint) return null;
@@ -233,6 +234,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'sql',
       className: 'ellipsis-column-width',
+      width: 320,
       title: 'SQL',
       render: (sql, record) => {
         if (!sql) return null;
@@ -252,6 +254,7 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'source',
+      width: 160,
       title: () => t('sqlManagement.table.column.source'),
       render: (source) => {
         if (
@@ -279,6 +282,36 @@ const SqlManagementColumn: (
             >
               {source.sql_source_desc ?? source.sql_source_type}
             </Link>
+          );
+        }
+        return '-';
+      }
+    },
+    {
+      dataIndex: 'audit_status',
+      width: 110,
+      title: () => t('sqlManagement.table.column.auditStatus'),
+      render: (status) => {
+        const value = status as string | undefined;
+        if (value === 'pending') {
+          return (
+            <BasicTag color="orange">
+              {t('sqlManagement.table.auditStatus.pending')}
+            </BasicTag>
+          );
+        }
+        if (value === 'audited') {
+          return (
+            <BasicTag color="green">
+              {t('sqlManagement.table.auditStatus.audited')}
+            </BasicTag>
+          );
+        }
+        if (value === 'being_audited') {
+          return (
+            <BasicTag color="blue">
+              {t('sqlManagement.table.auditStatus.beingAudited')}
+            </BasicTag>
           );
         }
         return '-';
@@ -340,6 +373,7 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'instance_name',
+      width: 160,
       title: () => t('sqlManagement.table.column.instanceName'),
       render: (instance_name) => {
         return instance_name || '-';
@@ -347,6 +381,7 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'schema_name',
+      width: 140,
       title: () => 'Schema',
       render: (schemaName) => {
         return schemaName || '-';
@@ -354,6 +389,7 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'priority',
+      width: 100,
       title: () => t('sqlManagement.table.column.priority'),
       render: (priority) => {
         if (priority === 'high') {
@@ -369,12 +405,14 @@ const SqlManagementColumn: (
     {
       dataIndex: 'fp_count',
       align: 'right',
+      width: 120,
       title: () => t('sqlManagement.table.column.occurrenceCount'),
       sorter: true,
       sortDirections: ['descend', 'ascend']
     },
     {
       dataIndex: 'first_appear_timestamp',
+      width: 180,
       title: () => t('sqlManagement.table.column.firstOccurrence'),
       render: (value) => {
         return formatTime(value, '-');
@@ -384,6 +422,7 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'last_receive_timestamp',
+      width: 180,
       title: () => t('sqlManagement.table.column.lastOccurrence'),
       render: (value) => {
         return formatTime(value, '-');
@@ -394,7 +433,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'assignees',
       title: () => t('sqlManagement.table.column.personInCharge'),
-      width: 200,
+      width: 160,
       render: (assignees) => {
         if (!Array.isArray(assignees)) {
           return '-';
@@ -413,6 +452,7 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'endpoints',
+      width: 160,
       title: () => t('sqlManagement.table.column.endpoints'),
       render: (endpoints) => {
         if (!endpoints) {
@@ -424,6 +464,7 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'status',
+      width: 110,
       title: () => t('sqlManagement.table.column.status'),
       render: (status) => {
         if (!status) return '-';
@@ -434,6 +475,7 @@ const SqlManagementColumn: (
       dataIndex: 'remark',
       title: () => t('sqlManagement.table.column.comment'),
       className: 'ellipsis-column-width',
+      width: 200,
       render: (remark, record) => {
         if (!hasPermissionAndNotArchive)
           return remark ? <BasicTypographyEllipsis textCont={remark} /> : '-';
