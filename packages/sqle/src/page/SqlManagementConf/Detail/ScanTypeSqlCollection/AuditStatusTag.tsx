@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ResultIconTagStyleWrapper } from '../../../../components/AuditResultMessage/style';
-import { AUDITED, BEING_AUDITED } from './utils';
+import { AUDITED, BEING_AUDITED, PENDING } from './utils';
 
 type AuditStatusTagProps = {
   status?: string;
@@ -9,10 +9,14 @@ type AuditStatusTagProps = {
 const AuditStatusTag: React.FC<AuditStatusTagProps> = ({ status }) => {
   const { t } = useTranslation();
 
-  if (status === BEING_AUDITED) {
+  if (status === BEING_AUDITED || status === PENDING) {
     return (
       <ResultIconTagStyleWrapper size="small" color="geekblue">
-        {t('components.auditResultMessage.auditing')}
+        {status === BEING_AUDITED
+          ? t('components.auditResultMessage.auditing')
+          : t(
+              'managementConf.detail.scanTypeSqlCollection.column.pendingAudit'
+            )}
       </ResultIconTagStyleWrapper>
     );
   }
@@ -25,7 +29,7 @@ const AuditStatusTag: React.FC<AuditStatusTagProps> = ({ status }) => {
     );
   }
 
-  return <>{status || '-'}</>;
+  return <>-</>;
 };
 
 export default AuditStatusTag;
