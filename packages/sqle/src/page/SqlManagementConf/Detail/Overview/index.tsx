@@ -1,8 +1,5 @@
-import {
-  ActiontechTable,
-  useTableRequestError
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { useEffect } from 'react';
+import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { useCallback, useEffect, useRef } from 'react';
 import {
   ConfDetailOverviewColumnActions,
   ConfDetailOverviewColumns
@@ -18,6 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   activeTabKey,
@@ -32,9 +30,6 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
 
   const columns = ConfDetailOverviewColumns(projectID);
 
-  const { requestErrorMessage, handleTableRequestError } =
-    useTableRequestError();
-
   const {
     disabledAction,
     disabledActionPending,
@@ -46,17 +41,59 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
     triggerCollectActionPending
   } = useTableAction();
 
-  const { data, loading, refresh } = useRequest(
-    () =>
-      handleTableRequestError(
-        instance_audit_plan.getInstanceAuditPlanOverviewV1({
-          project_name: projectName,
-          instance_audit_plan_id: instanceAuditPlanId
-        })
-      ),
-    {
-      ready: activeTabKey === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
+  const latestRowsRef = useRef<IInstanceAuditPlanInfo[]>([]);
+  const requestPromiseRef = useRef<Promise<IInstanceAuditPlanInfo[]> | null>(
+    null
+  );
+  const queuedOverviewRefreshRef = useRef(false);
+  const refreshOverviewRef = useRef<() => void>(() => undefined);
+  const requestOverview = useCallback(() => {
+    if (requestPromiseRef.current) {
+      queuedOverviewRefreshRef.current = true;
+      return requestPromiseRef.current;
     }
+    const request = instance_audit_plan
+      .getInstanceAuditPlanOverviewV1({
+        project_name: projectName,
+        instance_audit_plan_id: instanceAuditPlanId
+      })
+      .then((res) => {
+        if (res.data.code !== ResponseCode.SUCCESS) {
+          throw new Error(res.data.message);
+        }
+        const rows = res.data.data ?? [];
+        latestRowsRef.current = rows;
+        return rows;
+      })
+      .catch(() => latestRowsRef.current)
+      .finally(() => {
+        requestPromiseRef.current = null;
+        if (queuedOverviewRefreshRef.current) {
+          queuedOverviewRefreshRef.current = false;
+          queueMicrotask(() => refreshOverviewRef.current());
+        }
+      });
+    requestPromiseRef.current = request;
+    return request;
+  }, [instanceAuditPlanId, projectName]);
+
+  const { data, loading, refresh } = useRequest(requestOverview, {
+    ready: activeTabKey === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY,
+    pollingInterval: 5000,
+    pollingWhenHidden: false
+  });
+  refreshOverviewRef.current = refresh;
+
+  useEffect(() => {
+    latestRowsRef.current = [];
+  }, [instanceAuditPlanId]);
+
+  useEffect(
+    () => () => {
+      queuedOverviewRefreshRef.current = false;
+      refreshOverviewRef.current = () => undefined;
+    },
+    []
   );
 
   useEffect(() => {
@@ -71,14 +108,13 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   }, [refresh]);
 
   return (
-    <Spin spinning={loading} delay={300}>
+    <Spin spinning={loading && !data} delay={300}>
       {messageContextHolder}
 
       <ActiontechTable
         rowKey={(record) => record.audit_plan_type?.audit_plan_id!}
         className="table-row-cursor"
-        dataSource={data?.list}
-        errorMessage={requestErrorMessage}
+        dataSource={data}
         columns={columns}
         onRow={(record) => {
           return {
@@ -133,6 +169,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
                     )
                   );
                   refresh();
+                } else {
+                  messageApi.error(res.data.message);
                 }
               }
             );
