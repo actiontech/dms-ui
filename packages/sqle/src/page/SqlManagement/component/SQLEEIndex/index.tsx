@@ -6,7 +6,6 @@ import { BasicButton, PageHeader } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   ActiontechTable,
-  useTableRequestError,
   TableFilterContainer,
   TableToolbar,
   ColumnsSettingProps,
@@ -59,10 +58,7 @@ import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
 import { toSqlManageRuleExceptionRecord } from '../../../RuleException/index.data';
-import {
-  BlacklistResV1TypeEnum,
-  SqlManageAuditStatusEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlManagementListStyleWrapper } from './style';
 import { pickStaticSqlManageFilters } from './sourceExtra.utils';
 import useSqlManageSourceExtra from './hooks/useSqlManageSourceExtra';
@@ -79,9 +75,21 @@ import {
   SqlManageOptimisticWritePayload,
   willLeaveCurrentTab
 } from './optimisticWrite';
+import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 
 const REFRESH_SUCCESS_VISIBLE_MS = 1000;
 const OPTIMISTIC_GREEN_MIN_MS = 650;
+
+type SqlManageListRequestResult = {
+  list: ISqlManage[];
+  total: number;
+  otherData: {
+    sql_manage_total_num?: number;
+    source_extra?: ISourceExtra;
+    has_pending_audit?: boolean;
+    pending_audit_count?: number;
+  };
+};
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -89,8 +97,7 @@ const SQLEEIndex = () => {
   // api
   const { projectID, projectName, projectArchive } = useCurrentProject();
   const { isAdmin, username, isProjectManager, uid } = useCurrentUser();
-  const { requestErrorMessage, handleTableRequestError } =
-    useTableRequestError();
+  const [listRequestError, setListRequestError] = useState('');
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
     GetSqlManageListV2FilterStatusEnum.unhandled
   );
@@ -455,60 +462,90 @@ const SQLEEIndex = () => {
       return filterParams;
     }, [buildListRequestParams]);
 
+  const listRequestRef = useRef<Promise<SqlManageListRequestResult> | null>(
+    null
+  );
+  const queuedListRefreshRef = useRef(false);
+  const refreshListRef = useRef<() => void>(() => undefined);
+  const requestSqlManageList = useCallback(() => {
+    if (listRequestRef.current) {
+      queuedListRefreshRef.current = true;
+      return listRequestRef.current;
+    }
+    const request = SqlManage.GetSqlManageListV2(buildListRequestParams())
+      .then((res) => {
+        setListRequestError('');
+        return {
+          list: res.data.data ?? [],
+          total: res.data.data?.length ?? 0,
+          otherData: {
+            sql_manage_total_num: res.data.sql_manage_total_num,
+            source_extra: res.data.source_extra,
+            has_pending_audit: res.data.has_pending_audit,
+            pending_audit_count: res.data.pending_audit_count
+          }
+        };
+      })
+      .catch((error) => {
+        setListRequestError(getErrorMessage(error));
+        throw error;
+      })
+      .finally(() => {
+        listRequestRef.current = null;
+        if (queuedListRefreshRef.current) {
+          queuedListRefreshRef.current = false;
+          queueMicrotask(() => refreshListRef.current());
+        }
+      });
+    listRequestRef.current = request;
+    return request;
+  }, [buildListRequestParams]);
+
   const {
     data: sqlList,
     loading: getListLoading,
     refresh,
     cancel: cancelListRequest
-  } = useRequest(
-    () => {
-      return handleTableRequestError(
-        SqlManage.GetSqlManageListV2(buildListRequestParams())
-      );
-    },
-    {
-      refreshDeps: [
-        pagination,
-        projectName,
-        filterStatus,
-        isAssigneeSelf,
-        isHighPriority,
-        tableFilterInfo,
-        sortInfo
-      ],
-      pollingInterval: 1000,
-      pollingErrorRetryCount: 3,
-      onFinally: (_params, data, error) => {
-        // AC-008：有审核中则继续列表轮询且不打统计；离开审核中后停轮询并补打一次统计
-        const hasBeingAudited =
-          !error &&
-          !!data?.list?.some(
-            (item) =>
-              item?.audit_status === SqlManageAuditStatusEnum.being_audited
-          );
+  } = useRequest(requestSqlManageList, {
+    refreshDeps: [
+      pagination,
+      projectName,
+      filterStatus,
+      isAssigneeSelf,
+      isHighPriority,
+      tableFilterInfo,
+      sortInfo
+    ],
+    pollingInterval: 3000,
+    pollingWhenHidden: false,
+    pollingErrorRetryCount: 3,
+    onFinally: (_params, data, error) => {
+      const hasPendingAudit =
+        !error && data?.otherData?.has_pending_audit === true;
 
-        if (!error) {
-          handleSourceExtraFromResponse(
-            data?.otherData?.source_extra as ISourceExtra | undefined
-          );
-        }
+      if (!error) {
+        setListTotal(data?.otherData?.sql_manage_total_num ?? 0);
+        handleSourceExtraFromResponse(
+          data?.otherData?.source_extra as ISourceExtra | undefined
+        );
+      }
 
-        if (hasBeingAudited) {
-          auditPollingActiveRef.current = true;
-          startAuditPollRequest();
-          return;
-        }
+      if (hasPendingAudit) {
+        auditPollingActiveRef.current = true;
+        startAuditPollRequest();
+        return;
+      }
 
-        const shouldRefreshStatisticsAfterPoll = auditPollingActiveRef.current;
-        auditPollingActiveRef.current = false;
-        cancelListRequest();
-        finishAuditPollRequest();
-        if (shouldRefreshStatisticsAfterPoll) {
-          refreshStatisticsRef.current();
-        }
+      const shouldRefreshStatisticsAfterPoll = auditPollingActiveRef.current;
+      auditPollingActiveRef.current = false;
+      cancelListRequest();
+      finishAuditPollRequest();
+      if (shouldRefreshStatisticsAfterPoll) {
+        refreshStatisticsRef.current();
       }
     }
-  );
+  });
+  refreshListRef.current = refresh;
 
   const { refresh: refreshStatistics, loading: getStatisticsLoading } =
     useRequest(
@@ -546,7 +583,7 @@ const SQLEEIndex = () => {
     );
   refreshStatisticsRef.current = refreshStatistics;
 
-  // 审核中轮询：列表 loading 不驱动刷新按钮长时间转圈
+  // 待审核轮询：列表 loading 不驱动刷新按钮长时间转圈
   const listLoadingForUi = auditPolling ? false : getListLoading;
   const refreshBusy = listLoadingForUi || getStatisticsLoading;
 
@@ -580,6 +617,8 @@ const SQLEEIndex = () => {
       if (optimisticClearTimerRef.current) {
         clearTimeout(optimisticClearTimerRef.current);
       }
+      queuedListRefreshRef.current = false;
+      refreshListRef.current = () => undefined;
     };
   }, []);
 
@@ -999,6 +1038,7 @@ const SQLEEIndex = () => {
       />
       <ActiontechTable
         className="table-row-cursor"
+        enableBodyScrollY
         disableRowHover
         setting={tableSetting}
         dataSource={dataSource}
@@ -1016,10 +1056,10 @@ const SQLEEIndex = () => {
           current: pagination.page_index
         }}
         columns={columns}
-        errorMessage={requestErrorMessage}
+        errorMessage={listRequestError}
         onChange={tableChange}
         actions={projectArchive ? undefined : actions}
-        {...(requestErrorMessage
+        {...(listRequestError
           ? {}
           : {
               locale: {
