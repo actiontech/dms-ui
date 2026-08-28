@@ -524,7 +524,6 @@ const SQLEEIndex = () => {
         !error && data?.otherData?.has_pending_audit === true;
 
       if (!error) {
-        setListTotal(data?.otherData?.sql_manage_total_num ?? 0);
         handleSourceExtraFromResponse(
           data?.otherData?.source_extra as ISourceExtra | undefined
         );
