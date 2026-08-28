@@ -105,6 +105,10 @@ describe('test ScanTypeSqlCollection', () => {
         }
       ]
     });
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+      await Promise.resolve();
+    });
 
     fireEvent.change(getAllBySelector('.ant-input')[0], {
       target: { value: '' }
@@ -139,7 +143,7 @@ describe('test ScanTypeSqlCollection', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should polling request when sql audit status is being_audited', async () => {
+  it('should polling request when sql has pending audit', async () => {
     getInstanceAuditPlanSQLDataSpy
       .mockImplementationOnce(() => {
         return createSpySuccessResponse({
@@ -151,7 +155,9 @@ describe('test ScanTypeSqlCollection', () => {
                 audit_status: 'being_audited'
               }
             ]
-          }
+          },
+          has_pending_audit: true,
+          pending_audit_count: 1
         });
       })
       .mockImplementationOnce(() => {
@@ -162,7 +168,8 @@ describe('test ScanTypeSqlCollection', () => {
                 ...mockAuditPlanSQLData?.rows?.[0]
               }
             ]
-          }
+          },
+          has_pending_audit: false
         });
       });
 
@@ -173,7 +180,7 @@ describe('test ScanTypeSqlCollection', () => {
     expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(2);
   });
 
-  it('should stop polling request when sql audit status is not being_audited', async () => {
+  it('should stop polling request when sql has no pending audit', async () => {
     getInstanceAuditPlanSQLDataSpy.mockImplementation(() => {
       return createSpySuccessResponse({
         data: {
@@ -182,11 +189,14 @@ describe('test ScanTypeSqlCollection', () => {
               ...mockAuditPlanSQLData?.rows?.[0]
             }
           ]
-        }
+        },
+        has_pending_audit: false
       });
     });
 
     customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
   });
