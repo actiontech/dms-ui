@@ -210,6 +210,21 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     });
   });
 
+  it('filter data with parse failed', async () => {
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    expect(request).toHaveBeenCalledWith(
+      expect.not.objectContaining({ filter_parse_failed: true })
+    );
+    fireEvent.click(screen.getByText('语法错误或解析器不支持'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledWith({
+      ...requestParams,
+      filter_parse_failed: true
+    });
+  });
+
   it('filter data with status', async () => {
     const request = sqlManage.getSqlManageList();
     superRender(<SQLEEIndex />);

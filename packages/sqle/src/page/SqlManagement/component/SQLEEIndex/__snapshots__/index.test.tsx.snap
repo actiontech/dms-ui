@@ -346,6 +346,19 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                         type="button"
                       >
                         <span>
+                          语法错误或解析器不支持
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
                           与我相关
                         </span>
                       </button>
@@ -606,6 +619,26 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
               unselectable="on"
             />
           </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 12px; padding-bottom: 12px;"
+        >
+          <span
+            class="ant-input-affix-wrapper basic-input-wrapper custom-input-namespace css-1v8xzxw ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+          >
+            <span
+              class="ant-input-prefix"
+            >
+              Schema
+            </span>
+            <input
+              class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
+              placeholder="请输入{{name}}"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
         <div
           class="ant-space-item"
@@ -2489,6 +2522,19 @@ exports[`page/SqlManagement/SQLEEIndex filter data with sort 1`] = `
                         type="button"
                       >
                         <span>
+                          语法错误或解析器不支持
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
                           与我相关
                         </span>
                       </button>
@@ -3489,6 +3535,19 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                       >
                         <span>
                           查看高优先级SQL
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          语法错误或解析器不支持
                         </span>
                       </button>
                     </div>
@@ -4933,6 +4992,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                       >
                         <span>
                           查看高优先级SQL
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          语法错误或解析器不支持
                         </span>
                       </button>
                     </div>
@@ -7864,6 +7936,19 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                       >
                         <span>
                           查看高优先级SQL
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          语法错误或解析器不支持
                         </span>
                       </button>
                     </div>

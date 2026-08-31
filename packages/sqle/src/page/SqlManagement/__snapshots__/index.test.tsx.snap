@@ -338,6 +338,19 @@ exports[`page/SqlManagement render sql management page 1`] = `
                           type="button"
                         >
                           <span>
+                            语法错误或解析器不支持
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
                             与我相关
                           </span>
                         </button>
