@@ -54,6 +54,8 @@ export interface IGetSqlManageListParams {
 
   fuzzy_search_schema_name?: string;
 
+  filter_schema_name?: string;
+
   sort_field?: GetSqlManageListSortFieldEnum;
 
   sort_order?: GetSqlManageListSortOrderEnum;
@@ -102,6 +104,10 @@ export interface IExportSqlManageV1Params {
 
   fuzzy_search_schema_name?: string;
 
+  filter_schema_name?: string;
+
+  filter_parse_failed?: boolean;
+
   sort_field?: string;
 
   sort_order?: exportSqlManageV1SortOrderEnum;
@@ -148,6 +154,10 @@ export interface IExportSqlManageRemediationV1Params {
   fuzzy_search_endpoint?: string;
 
   fuzzy_search_schema_name?: string;
+
+  filter_schema_name?: string;
+
+  filter_parse_failed?: boolean;
 
   extra_filters?: string;
 
@@ -211,6 +221,10 @@ export interface IGetSqlManageListV2Params {
 
   fuzzy_search_schema_name?: string;
 
+  filter_schema_name?: string;
+
+  filter_parse_failed?: boolean;
+
   sort_field?: string;
 
   sort_order?: GetSqlManageListV2SortOrderEnum;
@@ -254,6 +268,10 @@ export interface IGetSqlManageStatisticsV2Params {
   fuzzy_search_endpoint?: string;
 
   fuzzy_search_schema_name?: string;
+
+  filter_schema_name?: string;
+
+  filter_parse_failed?: boolean;
 
   extra_filters?: string;
 }
