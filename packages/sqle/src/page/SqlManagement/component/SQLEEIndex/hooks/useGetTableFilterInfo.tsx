@@ -1,13 +1,17 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FilterCustomProps } from '@actiontech/shared/lib/components/ActiontechTable';
-import { UpdateTableFilterInfoType } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import {
+  TypeFilterElement,
+  UpdateTableFilterInfoType
+} from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import {
   useCurrentProject,
   useProjectBusinessTips
 } from '@actiontech/shared/lib/global';
 import useInstance from '../../../../../hooks/useInstance';
+import useInstanceSchema from '../../../../../hooks/useInstanceSchema';
 import useRuleTips, {
   extractDbTypeFromRuleSelectValue
 } from '../../../../../hooks/useRuleTips';
@@ -19,6 +23,8 @@ import useSourceTips from './useSourceTips';
 import useStaticStatus from './useStaticStatus';
 import RuleTipsFilterDropdownExtra from './RuleTipsFilterDropdownExtra';
 
+const MYSQL_INSTANCE_TYPE = 'MySQL';
+
 type UseGetTableFilterInfoParams = {
   filterRuleName?: string;
   tableFilterInfo?: SqlManagementTableFilterParamType;
@@ -28,7 +34,8 @@ type UseGetTableFilterInfoParams = {
 const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const { filterRuleName } = params ?? {};
+  const { filterRuleName, tableFilterInfo, updateTableFilterInfo } =
+    params ?? {};
 
   const { generateAuditLevelSelectOptions } = useStaticStatus();
 
@@ -37,6 +44,7 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
 
   const {
     instanceIDOptions,
+    instanceList,
     updateInstanceList,
     loading: getInstanceLoading
   } = useInstance();
@@ -61,6 +69,61 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
   const [ruleKeyword, setRuleKeyword] = useState('');
   const [ruleDropdownOpen, setRuleDropdownOpen] = useState(false);
 
+  const filterInstanceId = tableFilterInfo?.filter_instance_id as
+    | string
+    | undefined;
+
+  const selectedInstance = useMemo(
+    () =>
+      instanceList.find(
+        (item) => String(item.instance_id) === String(filterInstanceId ?? '')
+      ),
+    [filterInstanceId, instanceList]
+  );
+
+  const isMySQLSchemaSelectMode =
+    !!selectedInstance &&
+    selectedInstance.instance_type === MYSQL_INSTANCE_TYPE;
+
+  const schemaFilterCustomType: TypeFilterElement = isMySQLSchemaSelectMode
+    ? 'select'
+    : 'input';
+
+  const {
+    schemaList,
+    loading: getSchemaLoading,
+    updateSchemaList
+  } = useInstanceSchema(projectName, selectedInstance?.instance_name, {
+    autoFetch: false
+  });
+
+  const prevFilterInstanceIdRef = useRef(filterInstanceId);
+
+  const clearSchemaFilterValue = useCallback(() => {
+    if (!updateTableFilterInfo) {
+      return;
+    }
+    // useTableRequestParams 会先无参调用 updater 做浅比较，再交给 setState；
+    // 故无参时必须安全返回，真正清空依赖 React setState 传入的 prev。
+    const updater = (
+      prev?: SqlManagementTableFilterParamType
+    ): SqlManagementTableFilterParamType => {
+      if (!prev) {
+        return {} as SqlManagementTableFilterParamType;
+      }
+      if (prev.filter_schema_name === undefined) {
+        return prev;
+      }
+      return {
+        ...prev,
+        filter_schema_name: undefined
+      };
+    };
+    updateTableFilterInfo(
+      updater as unknown as SqlManagementTableFilterParamType
+    );
+  }, [updateTableFilterInfo]);
+
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
     updateRuleTips(projectName);
@@ -82,6 +145,15 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     }
   }, [filterRuleName]);
 
+  useEffect(() => {
+    const prev = prevFilterInstanceIdRef.current;
+    if (prev === filterInstanceId) {
+      return;
+    }
+    prevFilterInstanceIdRef.current = filterInstanceId;
+    clearSchemaFilterValue();
+  }, [clearSchemaFilterValue, filterInstanceId]);
+
   const onDbTypeChange = useCallback((dbType?: string) => {
     // 仅筛选下拉选项，不改 tableFilterInfo，避免关闭外层「审核规则」面板
     setSelectedDbType(dbType);
@@ -101,6 +173,22 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
   const onRuleDropdownVisibleChange = useCallback((open: boolean) => {
     setRuleDropdownOpen(open);
   }, []);
+
+  const onSchemaDropdownVisibleChange = useCallback(
+    (open: boolean) => {
+      if (open && isMySQLSchemaSelectMode) {
+        updateSchemaList();
+      }
+    },
+    [isMySQLSchemaSelectMode, updateSchemaList]
+  );
+
+  const onInstanceFilterChange = useCallback(() => {
+    // Select 内部随后写入 filter_instance_id；下一 macrotask 再清 Schema，保证读到新 instance
+    setTimeout(() => {
+      clearSchemaFilterValue();
+    }, 0);
+  }, [clearSchemaFilterValue]);
 
   const ruleSelectOptions = useMemo(() => {
     const options = generateFlatRuleOptionsByDbType(
@@ -160,7 +248,25 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     ]
   );
 
+  const schemaSelectOptions = useMemo(
+    () =>
+      schemaList.map((schema) => ({
+        label: schema,
+        value: schema
+      })),
+    [schemaList]
+  );
+
   const filterCustomProps = useMemo(() => {
+    const schemaProps: FilterCustomProps = isMySQLSchemaSelectMode
+      ? {
+          options: schemaSelectOptions,
+          loading: getSchemaLoading,
+          allowClear: true,
+          onDropdownVisibleChange: onSchemaDropdownVisibleChange
+        }
+      : {};
+
     return new Map<keyof ExtraFilterMetaType, FilterCustomProps>([
       [
         'filter_business',
@@ -168,8 +274,13 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
       ],
       [
         'filter_instance_id',
-        { options: instanceIDOptions, loading: getInstanceLoading }
+        {
+          options: instanceIDOptions,
+          loading: getInstanceLoading,
+          onChange: onInstanceFilterChange
+        }
       ],
+      ['filter_schema_name', schemaProps],
       [
         'filter_source',
         { options: generateSourceSelectOptions, loading: getSourceTipsLoading }
@@ -193,6 +304,11 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     getProjectBusinessLoading,
     instanceIDOptions,
     getInstanceLoading,
+    onInstanceFilterChange,
+    isMySQLSchemaSelectMode,
+    schemaSelectOptions,
+    getSchemaLoading,
+    onSchemaDropdownVisibleChange,
     generateSourceSelectOptions,
     getSourceTipsLoading,
     generateAuditLevelSelectOptions,
@@ -204,7 +320,8 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
   ]);
 
   return {
-    filterCustomProps
+    filterCustomProps,
+    schemaFilterCustomType
   };
 };
 

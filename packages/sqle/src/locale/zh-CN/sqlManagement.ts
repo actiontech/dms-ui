@@ -112,6 +112,7 @@ export default {
       },
       business: '业务',
       instanceName: '数据源',
+      schema: 'Schema',
       source: {
         label: '来源',
         auditPlan: '扫描任务',
@@ -127,6 +128,7 @@ export default {
       },
       assignee: '与我相关',
       viewHighPrioritySql: '查看高优先级SQL',
+      parseFailed: '语法错误或解析器不支持',
       rule: '审核规则',
       ruleSelectDbTypeFirst: '数据源类型',
       ruleDbTypeFilter: '数据源类型',

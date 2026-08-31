@@ -27,6 +27,7 @@ export const SQL_MANAGE_STATIC_FILTER_KEYS = [
   'filter_business',
   'filter_source',
   'filter_instance_id',
+  'filter_schema_name',
   'filter_audit_level',
   'filter_rule_name',
   'filter_last_audit_start_time_from',

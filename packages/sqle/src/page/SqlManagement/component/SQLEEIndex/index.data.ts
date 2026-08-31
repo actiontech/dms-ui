@@ -9,13 +9,17 @@ export const SQLAuditRecordIDValuesSplit = ',';
 export const defaultActionButton = ({
   isAssigneeSelf,
   isHighPriority,
+  isParseFailedFilter,
   setAssigneeSelf,
-  setIsHighPriority
+  setIsHighPriority,
+  setIsParseFailedFilter
 }: {
   isAssigneeSelf: boolean;
   setAssigneeSelf: (value: boolean) => void;
   isHighPriority: boolean;
   setIsHighPriority: (value: boolean) => void;
+  isParseFailedFilter: boolean;
+  setIsParseFailedFilter: (value: boolean) => void;
 }) => [
   {
     key: 'is-high-priority',
@@ -24,6 +28,18 @@ export const defaultActionButton = ({
       className: isHighPriority ? 'switch-btn-active' : 'switch-btn-default',
       onClick: () => {
         setIsHighPriority(!isHighPriority);
+      }
+    }
+  },
+  {
+    key: 'parse-failed-filter',
+    text: t('sqlManagement.table.filter.parseFailed'),
+    buttonProps: {
+      className: isParseFailedFilter
+        ? 'switch-btn-active'
+        : 'switch-btn-default',
+      onClick: () => {
+        setIsParseFailedFilter(!isParseFailedFilter);
       }
     }
   },

@@ -103,6 +103,7 @@ const SQLEEIndex = () => {
 
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
   const [isHighPriority, setIsHighPriority] = useState(false);
+  const [isParseFailedFilter, setIsParseFailedFilter] = useState(false);
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -207,6 +208,14 @@ const SQLEEIndex = () => {
   const onHighPriorityChange = useCallback(
     (value: boolean) => {
       setIsHighPriority(value);
+      resetPageIndex();
+    },
+    [resetPageIndex]
+  );
+
+  const onParseFailedFilterChange = useCallback(
+    (value: boolean) => {
+      setIsParseFailedFilter(value);
       resetPageIndex();
     },
     [resetPageIndex]
@@ -394,6 +403,12 @@ const SQLEEIndex = () => {
     const staticFilters = pickStaticSqlManageFilters(
       otherTableFilterInfo as Record<string, unknown>
     );
+    if (
+      staticFilters.filter_schema_name === '' ||
+      staticFilters.filter_schema_name === undefined
+    ) {
+      delete staticFilters.filter_schema_name;
+    }
 
     return {
       ...(staticFilters as Partial<IGetSqlManageListV2Params>),
@@ -410,6 +425,7 @@ const SQLEEIndex = () => {
       filter_priority: isHighPriority
         ? GetSqlManageListV2FilterPriorityEnum.high
         : undefined,
+      filter_parse_failed: isParseFailedFilter ? true : undefined,
       extra_filters: buildExtraFiltersForRequest(tableFilterInfo)
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -424,6 +440,7 @@ const SQLEEIndex = () => {
     isAssigneeSelf,
     uid,
     isHighPriority,
+    isParseFailedFilter,
     resolveListSortField
   ]);
 
@@ -457,6 +474,7 @@ const SQLEEIndex = () => {
         filterStatus,
         isAssigneeSelf,
         isHighPriority,
+        isParseFailedFilter,
         tableFilterInfo,
         sortInfo
       ],
@@ -524,6 +542,7 @@ const SQLEEIndex = () => {
           filterStatus,
           isAssigneeSelf,
           isHighPriority,
+          isParseFailedFilter,
           tableFilterInfo
         ]
       }
@@ -813,7 +832,8 @@ const SQLEEIndex = () => {
                 filter_rule_name: listParams.filter_rule_name,
                 filter_priority: listParams.filter_priority,
                 fuzzy_search_endpoint: listParams.fuzzy_search_endpoint,
-                fuzzy_search_schema_name: listParams.fuzzy_search_schema_name,
+                filter_schema_name: listParams.filter_schema_name,
+                filter_parse_failed: listParams.filter_parse_failed,
                 extra_filters: listParams.extra_filters
               },
               { responseType: 'blob' }
@@ -901,8 +921,10 @@ const SQLEEIndex = () => {
     const defaultButton = defaultActionButton({
       isAssigneeSelf,
       isHighPriority,
+      isParseFailedFilter,
       setAssigneeSelf: onAssigneeSelfChange,
-      setIsHighPriority: onHighPriorityChange
+      setIsHighPriority: onHighPriorityChange,
+      setIsParseFailedFilter: onParseFailedFilterChange
     });
     const actionButton = actionsButtonData(
       selectedRowKeys?.length === 0,

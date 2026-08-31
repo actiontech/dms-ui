@@ -109,6 +109,7 @@ export default {
       },
       business: 'Business',
       instanceName: 'DB instance',
+      schema: 'Schema',
       source: {
         label: 'Source',
         auditPlan: 'Scan task',
@@ -124,6 +125,7 @@ export default {
       },
       assignee: 'Related to me',
       viewHighPrioritySql: 'View high priority SQL',
+      parseFailed: 'Syntax error or unsupported by parser',
       rule: 'Audit rule',
       ruleSelectDbTypeFirst: 'Database type',
       ruleDbTypeFilter: 'Database type',
