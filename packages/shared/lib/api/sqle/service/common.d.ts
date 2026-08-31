@@ -27,6 +27,7 @@ import {
   InstanceAuditPlanInfoAuditStatusEnum,
   InstanceAuditPlanInfoCollectionStatusEnum,
   InstanceAuditPlanInfoLastCollectStatusEnum,
+  InstanceAuditPlanInfoLastAuditStatusEnum,
   InstanceAuditPlanInfoNextCollectionModeEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   MatchConditionReqV1TypeEnum,
@@ -1759,6 +1760,10 @@ export interface IInstanceAuditPlanInfo {
   id?: number;
 
   last_audit_finished_at?: string | null;
+
+  last_audit_status?: InstanceAuditPlanInfoLastAuditStatusEnum | string | null;
+
+  last_audit_failure_msg?: string | null;
 
   last_collection_time?: string;
 

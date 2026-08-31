@@ -270,6 +270,14 @@ export enum InstanceAuditPlanInfoLastCollectStatusEnum {
   failed = 'failed'
 }
 
+export enum InstanceAuditPlanInfoLastAuditStatusEnum {
+  success = 'success',
+
+  partial_failed = 'partial_failed',
+
+  failed = 'failed'
+}
+
 export enum InstanceAuditPlanResV1ActiveStatusEnum {
   normal = 'normal',
 

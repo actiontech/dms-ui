@@ -21,6 +21,7 @@ import {
 } from '@actiontech/icons';
 import { Popover, Space, Typography } from 'antd';
 import LastCollectResultCell from './LastCollectResultCell';
+import LastAuditResultCell from './LastAuditResultCell';
 
 const renderColumnHeaderTip = (title: string, tip: string) => (
   <BasicToolTips
@@ -302,27 +303,16 @@ export const ConfDetailOverviewColumns: (
       }
     },
     {
-      dataIndex: 'total_sql_nums',
-      title: () => t('managementConf.detail.overview.column.collectedSqlCount')
-    },
-    // #if [ee]
-    {
-      dataIndex: 'unsolved_sql_nums',
-      title: () =>
-        t('managementConf.detail.overview.column.problematicSqlCount')
-    },
-    // #endif
-    {
       dataIndex: 'last_collect_status',
       title: () =>
         t('managementConf.detail.overview.column.lastCollectResult.title'),
       render: (_status, record) => <LastCollectResultCell record={record} />
     },
     {
-      dataIndex: 'last_collection_time',
+      dataIndex: 'last_audit_status',
       title: () =>
-        t('managementConf.detail.overview.column.lastCollectionTime'),
-      render: (time) => formatTime(time, '-')
+        t('managementConf.detail.overview.column.lastAuditResult.title'),
+      render: (_status, record) => <LastAuditResultCell record={record} />
     }
   ];
 };

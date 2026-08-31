@@ -1,30 +1,26 @@
 import { BasicButton } from '@actiontech/shared';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { InstanceAuditPlanInfoLastCollectStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { InstanceAuditPlanInfoLastAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import Copy from '@actiontech/shared/lib/utils/Copy';
 import { Popover, Space, Typography, message } from 'antd';
 import { t } from '../../../../locale';
 
-const mapLastCollectStatusText = (status?: string | null) => {
+const mapLastAuditStatusText = (status?: string | null) => {
   if (status === undefined || status === null || status === '') {
-    return t('managementConf.detail.overview.column.lastCollectResult.none');
+    return t('managementConf.detail.overview.column.lastAuditResult.none');
   }
   switch (status) {
-    case InstanceAuditPlanInfoLastCollectStatusEnum.success:
+    case InstanceAuditPlanInfoLastAuditStatusEnum.success:
+      return t('managementConf.detail.overview.column.lastAuditResult.success');
+    case InstanceAuditPlanInfoLastAuditStatusEnum.partial_failed:
       return t(
-        'managementConf.detail.overview.column.lastCollectResult.success'
+        'managementConf.detail.overview.column.lastAuditResult.partialFailed'
       );
-    case InstanceAuditPlanInfoLastCollectStatusEnum.success_empty:
-      return t(
-        'managementConf.detail.overview.column.lastCollectResult.successEmpty'
-      );
-    case InstanceAuditPlanInfoLastCollectStatusEnum.failed:
-      return t(
-        'managementConf.detail.overview.column.lastCollectResult.failed'
-      );
+    case InstanceAuditPlanInfoLastAuditStatusEnum.failed:
+      return t('managementConf.detail.overview.column.lastAuditResult.failed');
     default:
-      return t('managementConf.detail.overview.column.lastCollectResult.none');
+      return t('managementConf.detail.overview.column.lastAuditResult.none');
   }
 };
 
@@ -37,14 +33,17 @@ const copyFailureMsg = async (text: string) => {
   message.success(t('common.copied'));
 };
 
-const LastCollectResultCell: React.FC<{
+const isFailureStatus = (status?: string | null) =>
+  status === InstanceAuditPlanInfoLastAuditStatusEnum.failed ||
+  status === InstanceAuditPlanInfoLastAuditStatusEnum.partial_failed;
+
+const LastAuditResultCell: React.FC<{
   record: IInstanceAuditPlanInfo;
 }> = ({ record }) => {
-  const status = record.last_collect_status;
-  const mainText = mapLastCollectStatusText(status);
+  const status = record.last_audit_status;
+  const mainText = mapLastAuditStatusText(status);
   const hasStatus = !(status === undefined || status === null || status === '');
-  const failureMsg = record.last_collect_failure_msg ?? '';
-  const isFailed = status === InstanceAuditPlanInfoLastCollectStatusEnum.failed;
+  const failureMsg = record.last_audit_failure_msg ?? '';
 
   if (!hasStatus) {
     return <span>{mainText}</span>;
@@ -65,28 +64,22 @@ const LastCollectResultCell: React.FC<{
           <Space direction="vertical" size={4} style={{ maxWidth: 420 }}>
             <span>
               {t(
-                'managementConf.detail.overview.column.lastCollectResult.collectedSqlCount',
-                { n: record.total_sql_nums ?? 0 }
+                'managementConf.detail.overview.column.lastAuditResult.problematicSqlCount',
+                { n: record.unsolved_sql_nums ?? 0 }
               )}
             </span>
             <span>
               {t(
-                'managementConf.detail.overview.column.lastCollectResult.roundSuccessCount',
-                { n: record.last_collect_success_count ?? 0 }
-              )}
-            </span>
-            <span>
-              {t(
-                'managementConf.detail.overview.column.lastCollectResult.lastCollectionTime',
+                'managementConf.detail.overview.column.lastAuditResult.lastAuditTime',
                 {
                   time: formatTime(
-                    record.last_collection_time ?? undefined,
+                    record.last_audit_finished_at ?? undefined,
                     '—'
                   )
                 }
               )}
             </span>
-            {isFailed ? (
+            {isFailureStatus(status) ? (
               <>
                 <Typography.Paragraph
                   style={{ marginBottom: 0, whiteSpace: 'pre-wrap' }}
@@ -103,7 +96,7 @@ const LastCollectResultCell: React.FC<{
                   }}
                 >
                   {t(
-                    'managementConf.detail.overview.column.lastCollectResult.copy'
+                    'managementConf.detail.overview.column.lastAuditResult.copy'
                   )}
                 </BasicButton>
               </>
@@ -117,4 +110,4 @@ const LastCollectResultCell: React.FC<{
   );
 };
 
-export default LastCollectResultCell;
+export default LastAuditResultCell;

@@ -150,7 +150,7 @@ export default {
           statusSeparator: ', '
         },
         nextCollectionTime: {
-          title: 'Next collection time',
+          title: 'Next execution time',
           afterCollect: 'Show after collection',
           none: '—'
         },
@@ -164,7 +164,19 @@ export default {
           success: 'Success',
           successEmpty: 'Success with no data',
           failed: 'Failed',
-          successCountTips: 'Collected {{n}} SQL(s) this round',
+          collectedSqlCount: 'Collected SQL count: {{n}}',
+          roundSuccessCount: 'Collected this round: {{n}}',
+          lastCollectionTime: 'Last collection time: {{time}}',
+          copy: 'Copy'
+        },
+        lastAuditResult: {
+          title: 'Last audit result',
+          none: '—',
+          success: 'Success',
+          partialFailed: 'Partially failed',
+          failed: 'Failed',
+          problematicSqlCount: 'Problematic SQL count: {{n}}',
+          lastAuditTime: 'Last audit time: {{time}}',
           copy: 'Copy'
         },
         lastCollectionTime: 'Last collection time'

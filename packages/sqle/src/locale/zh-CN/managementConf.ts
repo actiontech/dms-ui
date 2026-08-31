@@ -145,7 +145,7 @@ export default {
           statusSeparator: '、'
         },
         nextCollectionTime: {
-          title: '下次采集时间',
+          title: '下次执行时间',
           afterCollect: '采集后展示',
           none: '—'
         },
@@ -154,12 +154,24 @@ export default {
         collectedSqlCount: '采集到的SQL数',
         problematicSqlCount: '审核有问题的SQL数',
         lastCollectResult: {
-          title: '最近一次采集结果',
+          title: '最近采集结果',
           none: '—',
           success: '成功',
           successEmpty: '成功无数据',
           failed: '失败',
-          successCountTips: '本轮采集成功 {{n}} 条',
+          collectedSqlCount: '采集到的 SQL 数：{{n}}',
+          roundSuccessCount: '本轮采集成功：{{n}}',
+          lastCollectionTime: '最近采集时间：{{time}}',
+          copy: '复制'
+        },
+        lastAuditResult: {
+          title: '最近审核结果',
+          none: '—',
+          success: '成功',
+          partialFailed: '部分失败',
+          failed: '失败',
+          problematicSqlCount: '审核有问题的 SQL 数：{{n}}',
+          lastAuditTime: '最近审核时间：{{time}}',
           copy: '复制'
         },
         lastCollectionTime: '最近一次采集时间'
