@@ -71,7 +71,18 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
           'filter_rule_name'
         ) as CustomSelectProps
       )?.options?.length
-    ).toBe(0);
+    ).toBe(1);
+    expect(
+      (
+        result.current.filterCustomProps.get(
+          'filter_rule_name'
+        ) as CustomSelectProps
+      )?.options?.[0]
+    ).toEqual(
+      expect.objectContaining({
+        value: '__PARSE_FAILED__'
+      })
+    );
     expect(
       (
         result.current.filterCustomProps.get(
@@ -123,13 +134,18 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     const ruleFilterProps = result.current.filterCustomProps.get(
       'filter_rule_name'
     ) as CustomSelectProps;
-    expect(ruleFilterProps?.options?.length).toBe(1);
+    expect(ruleFilterProps?.options?.length).toBe(2);
     expect(ruleFilterProps?.options?.[0]).toEqual(
+      expect.objectContaining({
+        value: '__PARSE_FAILED__'
+      })
+    );
+    expect(ruleFilterProps?.options?.[1]).toEqual(
       expect.objectContaining({
         text: expect.stringContaining('用于测试'),
         value: `MySQL${DB_TYPE_RULE_NAME_SEPARATOR}test`
       })
     );
-    expect(ruleFilterProps?.options?.[0]?.label).toBeDefined();
+    expect(ruleFilterProps?.options?.[1]?.label).toBeDefined();
   });
 });
