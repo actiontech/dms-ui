@@ -360,9 +360,15 @@ export const ConfDetailOverviewColumnActions: (params: {
               'managementConf.detail.overview.actions.triggerCollectDisabledTips'
             );
           } else if (record?.can_trigger_collect !== true) {
-            title = t(
-              'managementConf.detail.overview.actions.triggerCollectCollectingTips'
-            );
+            title =
+              record?.collection_status ===
+              InstanceAuditPlanInfoCollectionStatusEnum.collecting
+                ? t(
+                    'managementConf.detail.overview.actions.triggerCollectCollectingTips'
+                  )
+                : t(
+                    'managementConf.detail.overview.actions.triggerCollectTaskRunningTips'
+                  );
           }
 
           return {

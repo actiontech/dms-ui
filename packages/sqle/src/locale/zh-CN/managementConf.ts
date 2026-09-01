@@ -190,7 +190,8 @@ export default {
         triggerCollect: '立即采集',
         triggerCollectSuccessTips: '已触发立即采集',
         triggerCollectDisabledTips: '请先启用',
-        triggerCollectCollectingTips: '正在采集，请等待'
+        triggerCollectCollectingTips: '正在采集，请等待',
+        triggerCollectTaskRunningTips: '任务执行中，请等待'
       }
     },
     scanTypeSqlCollection: {

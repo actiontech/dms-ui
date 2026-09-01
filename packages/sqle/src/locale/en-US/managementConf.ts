@@ -195,7 +195,8 @@ export default {
         triggerCollect: 'Collect now',
         triggerCollectSuccessTips: 'Collect now triggered',
         triggerCollectDisabledTips: 'Please enable first',
-        triggerCollectCollectingTips: 'Collection is in progress'
+        triggerCollectCollectingTips: 'Collection is in progress',
+        triggerCollectTaskRunningTips: 'Task is running, please wait'
       }
     },
     scanTypeSqlCollection: {
