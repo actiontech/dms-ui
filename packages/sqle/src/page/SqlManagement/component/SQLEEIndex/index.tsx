@@ -50,7 +50,11 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from '../../../../hooks/useRuleTips';
 import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
-import { actionsButtonData, defaultActionButton } from './index.data';
+import {
+  actionsButtonData,
+  defaultActionButton,
+  PARSE_FAILED_RULE_SELECT_VALUE
+} from './index.data';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
@@ -394,15 +398,26 @@ const SQLEEIndex = () => {
     const staticFilters = pickStaticSqlManageFilters(
       otherTableFilterInfo as Record<string, unknown>
     );
+    if (
+      staticFilters.filter_schema_name === '' ||
+      staticFilters.filter_schema_name === undefined
+    ) {
+      delete staticFilters.filter_schema_name;
+    }
+
+    const isParseFailedRuleSelected =
+      filter_rule_name === PARSE_FAILED_RULE_SELECT_VALUE;
 
     return {
       ...(staticFilters as Partial<IGetSqlManageListV2Params>),
       ...pagination,
       ...getCurrentSortParams(sortInfo),
-      filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
-      filter_rule_name: filter_rule_name?.split(
-        DB_TYPE_RULE_NAME_SEPARATOR
-      )?.[1],
+      filter_db_type: isParseFailedRuleSelected
+        ? undefined
+        : filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
+      filter_rule_name: isParseFailedRuleSelected
+        ? undefined
+        : filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[1],
       filter_status: filterStatus === 'all' ? undefined : filterStatus,
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
@@ -410,6 +425,7 @@ const SQLEEIndex = () => {
       filter_priority: isHighPriority
         ? GetSqlManageListV2FilterPriorityEnum.high
         : undefined,
+      filter_parse_failed: isParseFailedRuleSelected ? true : undefined,
       extra_filters: buildExtraFiltersForRequest(tableFilterInfo)
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -813,7 +829,8 @@ const SQLEEIndex = () => {
                 filter_rule_name: listParams.filter_rule_name,
                 filter_priority: listParams.filter_priority,
                 fuzzy_search_endpoint: listParams.fuzzy_search_endpoint,
-                fuzzy_search_schema_name: listParams.fuzzy_search_schema_name,
+                filter_schema_name: listParams.filter_schema_name,
+                filter_parse_failed: listParams.filter_parse_failed,
                 extra_filters: listParams.extra_filters
               },
               { responseType: 'blob' }

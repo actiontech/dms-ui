@@ -332,9 +332,17 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                         class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
-                        <span>
-                          查看高优先级SQL
-                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              高优先级
+                            </span>
+                          </div>
+                        </div>
                       </button>
                     </div>
                     <div
@@ -606,6 +614,36 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
               unselectable="on"
             />
           </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 12px; padding-bottom: 12px;"
+        >
+          <span
+            class="ant-input-affix-wrapper basic-input-wrapper custom-input-namespace css-1v8xzxw ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+          >
+            <span
+              class="ant-input-prefix"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-mlhibv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <span>
+                    Schema
+                  </span>
+                </div>
+              </div>
+            </span>
+            <input
+              class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
+              placeholder="请输入{{name}}"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
         <div
           class="ant-space-item"
@@ -2040,6 +2078,13 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
             id="rc_select_TEST_OR_SSR_list_0"
             role="option"
           >
+            __PARSE_FAILED__
+          </div>
+          <div
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
+          >
             MySQL_DB_TYPE_RULE_NAME_SEPARATOR_test
           </div>
         </div>
@@ -2059,6 +2104,53 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-jx040l ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 6px;"
+                      >
+                        <span
+                          class="audit-level-icon audit-level-icon-warn"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span>
+                          语法错误或解析器不支持
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
                 >
                   <div
                     class="ant-select-item-option-content"
@@ -2475,9 +2567,17 @@ exports[`page/SqlManagement/SQLEEIndex filter data with sort 1`] = `
                         class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
-                        <span>
-                          查看高优先级SQL
-                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              高优先级
+                            </span>
+                          </div>
+                        </div>
                       </button>
                     </div>
                     <div
@@ -3487,9 +3587,17 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                         class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
-                        <span>
-                          查看高优先级SQL
-                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              高优先级
+                            </span>
+                          </div>
+                        </div>
                       </button>
                     </div>
                     <div
@@ -4931,9 +5039,17 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
-                        <span>
-                          查看高优先级SQL
-                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              高优先级
+                            </span>
+                          </div>
+                        </div>
                       </button>
                     </div>
                     <div
@@ -7862,9 +7978,17 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                         class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
-                        <span>
-                          查看高优先级SQL
-                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              高优先级
+                            </span>
+                          </div>
+                        </div>
                       </button>
                     </div>
                     <div

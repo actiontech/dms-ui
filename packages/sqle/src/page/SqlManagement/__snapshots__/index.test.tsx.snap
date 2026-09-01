@@ -324,9 +324,17 @@ exports[`page/SqlManagement render sql management page 1`] = `
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
                           type="button"
                         >
-                          <span>
-                            查看高优先级SQL
-                          </span>
+                          <div
+                            class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span>
+                                高优先级
+                              </span>
+                            </div>
+                          </div>
                         </button>
                       </div>
                       <div

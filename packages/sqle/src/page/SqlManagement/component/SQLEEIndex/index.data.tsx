@@ -1,4 +1,8 @@
 import { t } from '../../../../locale';
+import { BasicToolTips } from '@actiontech/shared';
+
+/** UI-only sentinel for「语法错误或解析器不支持」in 审核规则 Select; never sent as filter_rule_name */
+export const PARSE_FAILED_RULE_SELECT_VALUE = '__PARSE_FAILED__';
 
 export const SQLAuditRecordListUrlParamsKey = {
   SQLAuditRecordID: 'SQLAuditRecordID'
@@ -19,7 +23,13 @@ export const defaultActionButton = ({
 }) => [
   {
     key: 'is-high-priority',
-    text: t('sqlManagement.table.filter.viewHighPrioritySql'),
+    text: (
+      <BasicToolTips
+        title={t('sqlManagement.table.filter.viewHighPrioritySql')}
+      >
+        <span>{t('sqlManagement.table.filter.highPriority')}</span>
+      </BasicToolTips>
+    ),
     buttonProps: {
       className: isHighPriority ? 'switch-btn-active' : 'switch-btn-default',
       onClick: () => {

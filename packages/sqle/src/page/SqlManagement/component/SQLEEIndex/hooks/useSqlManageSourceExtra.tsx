@@ -53,11 +53,12 @@ const useSqlManageSourceExtra = ({
   const [sourceExtra, setSourceExtra] = useState<ISourceExtra | undefined>();
   const prevSourceExtraFilterNamesRef = useRef<string[]>([]);
   const { tableFilterMetaFactory } = useBackendTable();
-  const { filterCustomProps: staticFilterCustomProps } = useGetTableFilterInfo({
-    filterRuleName: tableFilterInfo.filter_rule_name,
-    tableFilterInfo,
-    updateTableFilterInfo
-  });
+  const { filterCustomProps: staticFilterCustomProps, schemaFilterCustomType } =
+    useGetTableFilterInfo({
+      filterRuleName: tableFilterInfo.filter_rule_name,
+      tableFilterInfo,
+      updateTableFilterInfo
+    });
 
   const sourceExtraActive = canApplySourceExtraFilters(
     sourceExtra,
@@ -100,6 +101,21 @@ const useSqlManageSourceExtra = ({
       SqlManagementFilterMetaRecordType,
       SqlManagementTableFilterParamType
     >;
+    const schemaMeta = map.get('filter_schema_name');
+    if (schemaMeta) {
+      map.set('filter_schema_name', {
+        ...schemaMeta,
+        filterCustomType: schemaFilterCustomType,
+        // tip 仅挂在 prefix 文字；CustomInput/Select 的输入主体不携带 title
+        filterLabel: (
+          <BasicToolTips
+            title={t('sqlManagement.table.filter.schemaSelectTip')}
+          >
+            <span>{t('sqlManagement.table.filter.schema')}</span>
+          </BasicToolTips>
+        )
+      });
+    }
     dynamicSourceExtraFilterMeta?.extraTableFilterMeta.forEach((value, key) => {
       const labelText =
         typeof value.filterLabel === 'string' ? value.filterLabel : '';
@@ -115,7 +131,12 @@ const useSqlManageSourceExtra = ({
       });
     });
     return map;
-  }, [staticExtraFilterMeta, dynamicSourceExtraFilterMeta, t]);
+  }, [
+    staticExtraFilterMeta,
+    dynamicSourceExtraFilterMeta,
+    schemaFilterCustomType,
+    t
+  ]);
 
   const filterColumns = baseColumns as ActiontechTableColumn<
     SqlManagementFilterMetaRecordType,

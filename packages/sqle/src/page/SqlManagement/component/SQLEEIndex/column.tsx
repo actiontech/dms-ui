@@ -27,7 +27,10 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
-  'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
+  | 'fuzzy_search_sql_fingerprint'
+  | 'filter_status'
+  | 'project_name'
+  | 'filter_parse_failed'
 > &
   Record<string, string | [string, string] | undefined>;
 
@@ -35,6 +38,7 @@ export type ExtraFilterMetaType = ISqlManage & {
   filter_business?: string;
   filter_source?: string;
   filter_instance_id?: string;
+  filter_schema_name?: string;
   filter_audit_level?: string;
   filter_rule_name?: string;
   time?: string;
@@ -67,6 +71,15 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
         filterCustomType: 'select',
         filterKey: 'filter_instance_id',
         filterLabel: t('sqlManagement.table.filter.instanceName'),
+        checked: false
+      }
+    ],
+    [
+      'filter_schema_name',
+      {
+        filterCustomType: 'input',
+        filterKey: 'filter_schema_name',
+        filterLabel: t('sqlManagement.table.filter.schema'),
         checked: false
       }
     ],

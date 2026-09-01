@@ -43,8 +43,9 @@ const exportParams = {
   filter_db_type: undefined,
   filter_rule_name: undefined,
   project_name: mockProjectInfo.projectName,
-  filter_business: undefined,
   filter_priority: undefined,
+  filter_parse_failed: undefined,
+  extra_filters: undefined,
   fuzzy_search_sql_fingerprint: '',
   filter_status: 'unhandled'
 };
@@ -202,12 +203,56 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const request = sqlManage.getSqlManageList();
     superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
-    fireEvent.click(screen.getByText('查看高优先级SQL'));
+    fireEvent.click(screen.getByText('高优先级'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalledWith({
       ...requestParams,
       filter_priority: GetSqlManageListV2FilterPriorityEnum.high
     });
+  });
+
+  it('filter data with parse failed via audit rule select', async () => {
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    expect(request).toHaveBeenCalledWith(
+      expect.not.objectContaining({ filter_parse_failed: true })
+    );
+    expect(
+      screen.queryByRole('button', { name: '语法错误或解析器不支持' })
+    ).not.toBeInTheDocument();
+    fireEvent.click(screen.getByText('筛选'));
+    expect(screen.getByText('审核规则')).toBeInTheDocument();
+    const ruleSelect = screen.getByText('审核规则').closest('.ant-select')!;
+    fireEvent.mouseDown(ruleSelect.querySelector('.ant-select-selector')!);
+    await act(async () => jest.advanceTimersByTime(300));
+    const parseFailedOption = Array.from(
+      getAllBySelector('.ant-select-item-option-content')
+    ).find((el) => el.textContent === '语法错误或解析器不支持');
+    expect(parseFailedOption).toBeTruthy();
+    await act(async () => {
+      fireEvent.click(parseFailedOption!);
+      await act(async () => jest.advanceTimersByTime(3000));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledWith(
+      expect.objectContaining({
+        ...requestParams,
+        filter_parse_failed: true,
+        filter_rule_name: undefined,
+        filter_db_type: undefined
+      })
+    );
+    expect(request).toHaveBeenCalledWith(
+      expect.not.objectContaining({
+        filter_rule_name: '__PARSE_FAILED__'
+      })
+    );
+    expect(request).toHaveBeenCalledWith(
+      expect.not.objectContaining({
+        filter_rule_name: '语法错误或解析器不支持'
+      })
+    );
   });
 
   it('filter data with status', async () => {
@@ -271,7 +316,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('与我相关'));
-    fireEvent.click(screen.getByText('查看高优先级SQL'));
+    fireEvent.click(screen.getByText('高优先级'));
 
     expect(screen.getByText('导出报表')).toBeInTheDocument();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });

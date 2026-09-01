@@ -4,7 +4,17 @@ import React from 'react';
 import { ResponseCode } from '../../data/common';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 
-const useInstanceSchema = (projectName: string, instanceName?: string) => {
+type UseInstanceSchemaOptions = {
+  /** 默认 true：instanceName 变化时自动拉取。SQL 管控 Schema 筛选用 false，仅点开下拉时拉取。 */
+  autoFetch?: boolean;
+};
+
+const useInstanceSchema = (
+  projectName: string,
+  instanceName?: string,
+  options?: UseInstanceSchemaOptions
+) => {
+  const autoFetch = options?.autoFetch !== false;
   const [schemaList, setSchemaList] = React.useState<string[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
 
@@ -38,8 +48,12 @@ const useInstanceSchema = (projectName: string, instanceName?: string) => {
   }, [schemaList]);
 
   React.useEffect(() => {
-    updateSchemaList();
-  }, [instanceName, updateSchemaList]);
+    if (autoFetch) {
+      updateSchemaList();
+      return;
+    }
+    setSchemaList([]);
+  }, [autoFetch, instanceName, updateSchemaList]);
 
   return {
     schemaList,
