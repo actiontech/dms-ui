@@ -105,7 +105,15 @@ const useSqlManageSourceExtra = ({
     if (schemaMeta) {
       map.set('filter_schema_name', {
         ...schemaMeta,
-        filterCustomType: schemaFilterCustomType
+        filterCustomType: schemaFilterCustomType,
+        // tip 仅挂在 prefix 文字；CustomInput/Select 的输入主体不携带 title
+        filterLabel: (
+          <BasicToolTips
+            title={t('sqlManagement.table.filter.schemaSelectTip')}
+          >
+            <span>{t('sqlManagement.table.filter.schema')}</span>
+          </BasicToolTips>
+        )
       });
     }
     dynamicSourceExtraFilterMeta?.extraTableFilterMeta.forEach((value, key) => {

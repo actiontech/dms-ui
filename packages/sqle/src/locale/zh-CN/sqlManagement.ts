@@ -127,8 +127,10 @@ export default {
         notice: '提示'
       },
       assignee: '与我相关',
+      highPriority: '高优先级',
       viewHighPrioritySql: '查看高优先级SQL',
       parseFailed: '语法错误或解析器不支持',
+      schemaSelectTip: '选择数据源后可下拉选择',
       rule: '审核规则',
       ruleSelectDbTypeFirst: '数据源类型',
       ruleDbTypeFilter: '数据源类型',

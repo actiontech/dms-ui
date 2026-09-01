@@ -22,8 +22,8 @@ import {
 import useSourceTips from './useSourceTips';
 import useStaticStatus from './useStaticStatus';
 import RuleTipsFilterDropdownExtra from './RuleTipsFilterDropdownExtra';
-
-const MYSQL_INSTANCE_TYPE = 'MySQL';
+import { PARSE_FAILED_RULE_SELECT_VALUE } from '../index.data';
+import { AuditLevelRuleOptionLabel } from '../../../../../components/AuditResultMessage/AuditLevelIcon';
 
 type UseGetTableFilterInfoParams = {
   filterRuleName?: string;
@@ -81,11 +81,10 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     [filterInstanceId, instanceList]
   );
 
-  const isMySQLSchemaSelectMode =
-    !!selectedInstance &&
-    selectedInstance.instance_type === MYSQL_INSTANCE_TYPE;
+  // 开关只看是否选中数据源；禁止按库型 / MySQL 白名单分支（TDSQL 等须同样下拉）
+  const isSchemaSelectMode = !!selectedInstance;
 
-  const schemaFilterCustomType: TypeFilterElement = isMySQLSchemaSelectMode
+  const schemaFilterCustomType: TypeFilterElement = isSchemaSelectMode
     ? 'select'
     : 'input';
 
@@ -176,11 +175,11 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
 
   const onSchemaDropdownVisibleChange = useCallback(
     (open: boolean) => {
-      if (open && isMySQLSchemaSelectMode) {
+      if (open && isSchemaSelectMode) {
         updateSchemaList();
       }
     },
-    [isMySQLSchemaSelectMode, updateSchemaList]
+    [isSchemaSelectMode, updateSchemaList]
   );
 
   const onInstanceFilterChange = useCallback(() => {
@@ -191,25 +190,33 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
   }, [clearSchemaFilterValue]);
 
   const ruleSelectOptions = useMemo(() => {
+    const parseFailedText = t('sqlManagement.table.filter.parseFailed');
+    const parseFailedOption = {
+      label: <AuditLevelRuleOptionLabel level="warn" text={parseFailedText} />,
+      text: `${parseFailedText} warn`,
+      value: PARSE_FAILED_RULE_SELECT_VALUE
+    };
     const options = generateFlatRuleOptionsByDbType(
       selectedDbType,
       selectedRuleLevel
     );
     const keyword = ruleKeyword.trim().toLowerCase();
-    if (!keyword) {
-      return options;
-    }
-    return options.filter((option) => {
-      const haystack = `${option.text ?? ''} ${
-        option.value ?? ''
-      }`.toLowerCase();
-      return haystack.includes(keyword);
-    });
+    const filtered = !keyword
+      ? options
+      : options.filter((option) => {
+          const haystack = `${option.text ?? ''} ${
+            option.value ?? ''
+          }`.toLowerCase();
+          return haystack.includes(keyword);
+        });
+    // 固定项置顶，不依赖 rule_tips / 库型 / 关键词
+    return [parseFailedOption, ...filtered];
   }, [
     generateFlatRuleOptionsByDbType,
     ruleKeyword,
     selectedDbType,
-    selectedRuleLevel
+    selectedRuleLevel,
+    t
   ]);
 
   const ruleLevelFilterOptions = useMemo(() => {
@@ -258,7 +265,7 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
   );
 
   const filterCustomProps = useMemo(() => {
-    const schemaProps: FilterCustomProps = isMySQLSchemaSelectMode
+    const schemaProps: FilterCustomProps = isSchemaSelectMode
       ? {
           options: schemaSelectOptions,
           loading: getSchemaLoading,
@@ -292,6 +299,7 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
         {
           options: ruleSelectOptions,
           loading: getRuleTipsLoading,
+          allowClear: true,
           popupMatchSelectWidth: 400,
           open: ruleDropdownOpen,
           onDropdownVisibleChange: onRuleDropdownVisibleChange,
@@ -305,7 +313,7 @@ const useGetTableFilterInfo = (params?: UseGetTableFilterInfoParams) => {
     instanceIDOptions,
     getInstanceLoading,
     onInstanceFilterChange,
-    isMySQLSchemaSelectMode,
+    isSchemaSelectMode,
     schemaSelectOptions,
     getSchemaLoading,
     onSchemaDropdownVisibleChange,

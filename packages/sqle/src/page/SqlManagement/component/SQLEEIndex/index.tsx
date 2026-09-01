@@ -50,7 +50,11 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from '../../../../hooks/useRuleTips';
 import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
-import { actionsButtonData, defaultActionButton } from './index.data';
+import {
+  actionsButtonData,
+  defaultActionButton,
+  PARSE_FAILED_RULE_SELECT_VALUE
+} from './index.data';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
@@ -103,7 +107,6 @@ const SQLEEIndex = () => {
 
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
   const [isHighPriority, setIsHighPriority] = useState(false);
-  const [isParseFailedFilter, setIsParseFailedFilter] = useState(false);
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -208,14 +211,6 @@ const SQLEEIndex = () => {
   const onHighPriorityChange = useCallback(
     (value: boolean) => {
       setIsHighPriority(value);
-      resetPageIndex();
-    },
-    [resetPageIndex]
-  );
-
-  const onParseFailedFilterChange = useCallback(
-    (value: boolean) => {
-      setIsParseFailedFilter(value);
       resetPageIndex();
     },
     [resetPageIndex]
@@ -410,14 +405,19 @@ const SQLEEIndex = () => {
       delete staticFilters.filter_schema_name;
     }
 
+    const isParseFailedRuleSelected =
+      filter_rule_name === PARSE_FAILED_RULE_SELECT_VALUE;
+
     return {
       ...(staticFilters as Partial<IGetSqlManageListV2Params>),
       ...pagination,
       ...getCurrentSortParams(sortInfo),
-      filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
-      filter_rule_name: filter_rule_name?.split(
-        DB_TYPE_RULE_NAME_SEPARATOR
-      )?.[1],
+      filter_db_type: isParseFailedRuleSelected
+        ? undefined
+        : filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
+      filter_rule_name: isParseFailedRuleSelected
+        ? undefined
+        : filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[1],
       filter_status: filterStatus === 'all' ? undefined : filterStatus,
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
@@ -425,7 +425,7 @@ const SQLEEIndex = () => {
       filter_priority: isHighPriority
         ? GetSqlManageListV2FilterPriorityEnum.high
         : undefined,
-      filter_parse_failed: isParseFailedFilter ? true : undefined,
+      filter_parse_failed: isParseFailedRuleSelected ? true : undefined,
       extra_filters: buildExtraFiltersForRequest(tableFilterInfo)
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -440,7 +440,6 @@ const SQLEEIndex = () => {
     isAssigneeSelf,
     uid,
     isHighPriority,
-    isParseFailedFilter,
     resolveListSortField
   ]);
 
@@ -474,7 +473,6 @@ const SQLEEIndex = () => {
         filterStatus,
         isAssigneeSelf,
         isHighPriority,
-        isParseFailedFilter,
         tableFilterInfo,
         sortInfo
       ],
@@ -542,7 +540,6 @@ const SQLEEIndex = () => {
           filterStatus,
           isAssigneeSelf,
           isHighPriority,
-          isParseFailedFilter,
           tableFilterInfo
         ]
       }
@@ -921,10 +918,8 @@ const SQLEEIndex = () => {
     const defaultButton = defaultActionButton({
       isAssigneeSelf,
       isHighPriority,
-      isParseFailedFilter,
       setAssigneeSelf: onAssigneeSelfChange,
-      setIsHighPriority: onHighPriorityChange,
-      setIsParseFailedFilter: onParseFailedFilterChange
+      setIsHighPriority: onHighPriorityChange
     });
     const actionButton = actionsButtonData(
       selectedRowKeys?.length === 0,

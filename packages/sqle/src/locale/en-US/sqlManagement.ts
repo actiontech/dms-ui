@@ -124,8 +124,10 @@ export default {
         notice: 'Notice'
       },
       assignee: 'Related to me',
+      highPriority: 'High priority',
       viewHighPrioritySql: 'View high priority SQL',
       parseFailed: 'Syntax error or unsupported by parser',
+      schemaSelectTip: 'Select a data source to enable the dropdown',
       rule: 'Audit rule',
       ruleSelectDbTypeFirst: 'Database type',
       ruleDbTypeFilter: 'Database type',
