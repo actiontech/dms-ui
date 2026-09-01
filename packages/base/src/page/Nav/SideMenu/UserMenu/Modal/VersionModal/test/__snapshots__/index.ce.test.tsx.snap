@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dev-zjrc-sql-manage-rule-filter-memberof   bdf1f7ff3
+                            dev-zjrc-sql-manage-export-skip-parsesql   267c91729
                           </article>
                         </div>
                         <div
@@ -1312,7 +1312,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dev-zjrc-sql-manage-rule-filter-memberof   bdf1f7ff3
+                            dev-zjrc-sql-manage-export-skip-parsesql   267c91729
                           </article>
                         </div>
                         <div
