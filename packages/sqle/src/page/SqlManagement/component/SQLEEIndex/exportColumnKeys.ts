@@ -7,6 +7,7 @@ export const SQL_MANAGEMENT_TABLE_NAME = 'sql_management_list';
 
 const LIST_AUDIT_RESULT_COLUMN_KEY = 'audit_result';
 const AUDIT_LEVEL_EXPORT_KEY = 'audit_level';
+const RULE_NAME_EXPORT_KEY = 'rule_name';
 const RULE_DESC_EXPORT_KEY = 'rule_desc';
 const OBJECT_NAME_EXPORT_KEY = 'object_name';
 
@@ -15,6 +16,7 @@ const SQL_MANAGEMENT_EXPORT_COLUMN_KEYS = [
   'sql',
   'source',
   AUDIT_LEVEL_EXPORT_KEY,
+  RULE_NAME_EXPORT_KEY,
   RULE_DESC_EXPORT_KEY,
   OBJECT_NAME_EXPORT_KEY,
   'instance_name',
@@ -83,7 +85,7 @@ const isExportableColumnKey = (
 
 const expandListColumnKeyToExportKeys = (columnKey: string): string[] => {
   if (columnKey === LIST_AUDIT_RESULT_COLUMN_KEY) {
-    return [AUDIT_LEVEL_EXPORT_KEY, RULE_DESC_EXPORT_KEY];
+    return [AUDIT_LEVEL_EXPORT_KEY, RULE_NAME_EXPORT_KEY, RULE_DESC_EXPORT_KEY];
   }
 
   return [columnKey];

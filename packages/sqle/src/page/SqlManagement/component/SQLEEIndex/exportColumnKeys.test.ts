@@ -33,6 +33,7 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
       'sql',
       'source',
       'audit_level',
+      'rule_name',
       'rule_desc',
       'object_name',
       'instance_name',
@@ -68,6 +69,7 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
       'sql',
       'sql_fingerprint',
       'audit_level',
+      'rule_name',
       'rule_desc',
       'object_name',
       'instance_name',
@@ -116,7 +118,18 @@ describe('page/SqlManagement/SQLEEIndex/exportColumnKeys', () => {
     const keys = getSqlManagementExportColumnKeys(columns, 'admin');
     expect(keys).not.toContain('audit_result');
     expect(keys).toEqual(
-      expect.arrayContaining(['audit_level', 'rule_desc', 'object_name'])
+      expect.arrayContaining([
+        'audit_level',
+        'rule_name',
+        'rule_desc',
+        'object_name'
+      ])
+    );
+    expect(keys.indexOf('rule_name')).toBeGreaterThan(
+      keys.indexOf('audit_level')
+    );
+    expect(keys.indexOf('rule_desc')).toBeGreaterThan(
+      keys.indexOf('rule_name')
     );
   });
 
