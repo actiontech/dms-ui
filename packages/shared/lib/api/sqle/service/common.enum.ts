@@ -240,10 +240,14 @@ export enum InstanceAuditPlanInfoActiveStatusEnum {
   disabled = 'disabled'
 }
 
-export enum InstanceAuditPlanInfoPipelineStatusEnum {
+export enum InstanceAuditPlanInfoCollectionStatusEnum {
   idle = 'idle',
 
-  collecting = 'collecting',
+  collecting = 'collecting'
+}
+
+export enum InstanceAuditPlanInfoAuditStatusEnum {
+  idle = 'idle',
 
   pending_audit = 'pending_audit',
 
@@ -262,6 +266,14 @@ export enum InstanceAuditPlanInfoLastCollectStatusEnum {
   success = 'success',
 
   success_empty = 'success_empty',
+
+  failed = 'failed'
+}
+
+export enum InstanceAuditPlanInfoLastAuditStatusEnum {
+  success = 'success',
+
+  partial_failed = 'partial_failed',
 
   failed = 'failed'
 }
@@ -345,7 +357,9 @@ export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
 }
 
 export enum SqlManageAuditStatusEnum {
-  being_audited = 'being_audited'
+  pending = 'pending',
+
+  audited = 'audited'
 }
 
 export enum SqlManageStatusEnum {

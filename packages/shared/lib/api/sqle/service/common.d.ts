@@ -24,9 +24,11 @@ import {
   HighPriorityConditionTypeEnum,
   HighPriorityConditionReqOperatorEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
+  InstanceAuditPlanInfoAuditStatusEnum,
+  InstanceAuditPlanInfoCollectionStatusEnum,
   InstanceAuditPlanInfoLastCollectStatusEnum,
+  InstanceAuditPlanInfoLastAuditStatusEnum,
   InstanceAuditPlanInfoNextCollectionModeEnum,
-  InstanceAuditPlanInfoPipelineStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   MatchConditionReqV1TypeEnum,
   OperationRecordListStatusEnum,
@@ -895,7 +897,11 @@ export interface IGetAuditPlanSQLDataResV1 {
 
   data?: IAuditPlanSQLDataResV1;
 
+  has_pending_audit?: boolean;
+
   message?: string;
+
+  pending_audit_count?: number;
 
   total_nums?: number;
 }
@@ -1443,7 +1449,11 @@ export interface IGetSqlManageListResp {
 
   data?: ISqlManage[];
 
+  has_pending_audit?: boolean;
+
   message?: string;
+
+  pending_audit_count?: number;
 
   source_extra?: ISourceExtra;
 
@@ -1737,9 +1747,23 @@ export interface IInstanceAuditPlanInfo {
 
   audit_plan_type?: IAuditPlanTypeResBase;
 
+  audit_status?: InstanceAuditPlanInfoAuditStatusEnum | string;
+
+  can_trigger_collect?: boolean;
+
+  collection_status?: InstanceAuditPlanInfoCollectionStatusEnum | string;
+
   exec_cmd?: string;
 
+  execution_node_address?: string | null;
+
   id?: number;
+
+  last_audit_finished_at?: string | null;
+
+  last_audit_status?: InstanceAuditPlanInfoLastAuditStatusEnum | string | null;
+
+  last_audit_failure_msg?: string | null;
 
   last_collection_time?: string;
 
@@ -1760,7 +1784,11 @@ export interface IInstanceAuditPlanInfo {
 
   next_collection_time?: string;
 
-  pipeline_status?: InstanceAuditPlanInfoPipelineStatusEnum | string;
+  last_task_updated_at?: string | null;
+
+  pending_audit_count?: number;
+
+  task_running?: boolean;
 
   total_sql_nums?: number;
 

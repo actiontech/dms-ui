@@ -12,6 +12,8 @@ import {
   AuditPlanTypesV1InstanceTypeEnum,
   AuditPlanParamResV1TypeEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
+  InstanceAuditPlanInfoCollectionStatusEnum,
+  InstanceAuditPlanInfoAuditStatusEnum,
   AuditPlanSQLHeadV1TypeEnum,
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
@@ -475,7 +477,10 @@ export const mockInstanceAuditPlanInfo: IInstanceAuditPlanInfo[] = [
     total_sql_nums: 0,
     unsolved_sql_nums: 0,
     last_collection_time: '2024-08-06T11:30:43+08:00',
-    active_status: InstanceAuditPlanInfoActiveStatusEnum.normal
+    active_status: InstanceAuditPlanInfoActiveStatusEnum.normal,
+    collection_status: InstanceAuditPlanInfoCollectionStatusEnum.idle,
+    audit_status: InstanceAuditPlanInfoAuditStatusEnum.idle,
+    execution_node_address: null
   },
   {
     id: 2,
@@ -495,7 +500,10 @@ export const mockInstanceAuditPlanInfo: IInstanceAuditPlanInfo[] = [
     total_sql_nums: 0,
     unsolved_sql_nums: 0,
     last_collection_time: undefined,
-    active_status: InstanceAuditPlanInfoActiveStatusEnum.disabled
+    active_status: InstanceAuditPlanInfoActiveStatusEnum.disabled,
+    collection_status: InstanceAuditPlanInfoCollectionStatusEnum.idle,
+    audit_status: InstanceAuditPlanInfoAuditStatusEnum.idle,
+    execution_node_address: null
   },
   {
     id: 3,
@@ -514,7 +522,10 @@ export const mockInstanceAuditPlanInfo: IInstanceAuditPlanInfo[] = [
     total_sql_nums: 0,
     unsolved_sql_nums: 0,
     last_collection_time: undefined,
-    active_status: InstanceAuditPlanInfoActiveStatusEnum.normal
+    active_status: InstanceAuditPlanInfoActiveStatusEnum.normal,
+    collection_status: InstanceAuditPlanInfoCollectionStatusEnum.collecting,
+    audit_status: InstanceAuditPlanInfoAuditStatusEnum.idle,
+    execution_node_address: '10.0.0.11'
   },
   {
     id: 4,
@@ -533,7 +544,11 @@ export const mockInstanceAuditPlanInfo: IInstanceAuditPlanInfo[] = [
     total_sql_nums: 0,
     unsolved_sql_nums: 0,
     last_collection_time: undefined,
-    active_status: InstanceAuditPlanInfoActiveStatusEnum.normal
+    active_status: InstanceAuditPlanInfoActiveStatusEnum.normal,
+    collection_status: InstanceAuditPlanInfoCollectionStatusEnum.idle,
+    audit_status: InstanceAuditPlanInfoAuditStatusEnum.idle,
+    last_collect_status: 'failed',
+    execution_node_address: '10.0.0.22'
   }
 ];
 
@@ -730,7 +745,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '1',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '598',
       db_user: '',
       fingerprint: 'SELECT ?,SLEEP(?) LIMIT ?,?',
@@ -744,7 +759,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '12',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '299',
       db_user: '',
       fingerprint: 'SELECT ?,?,?,?,?,SLEEP(?) LIMIT ?,?',
@@ -758,7 +773,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '123',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '299',
       db_user: '',
       fingerprint: 'SELECT SLEEP(?) LIMIT ?,?',
@@ -788,7 +803,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '12345',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '8559',
       db_user: '',
       fingerprint: 'COMMIT',
@@ -802,7 +817,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '123456',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '299',
       db_user: '',
       fingerprint:

@@ -109,7 +109,7 @@ export default {
     exportRemediationReport: '导出SQL管控整改报表',
     exportDataSourceRemediationReport: '导出该数据源整改报表',
     auditImmediately: '立即审核',
-    auditImmediatelySuccessTips: '审核成功',
+    auditImmediatelySuccessTips: '已触发审核',
     exportTips: '正在导出扫描任务详情',
     remediationExport: 'SQL 管控整改',
     remediationExportTips: '正在导出 SQL 管控整改报表',
@@ -126,17 +126,26 @@ export default {
           normal: '已启用',
           disabled: '已停用'
         },
-        pipelineStatus: {
-          title: '当前环节',
+        taskStatus: {
+          title: '执行状态',
           headerTips:
-            '表示当前采集与审核进行到哪一步。\n\n• 空闲：未在采集/审核，可立即采集或等待下次调度\n• 采集中：正在采集，不可再次立即采集；结束后进入空闲或待审核\n• 待审核：本轮已采到数据，等待审核；仍可立即采集\n• 审核中：正在审核；仍可立即采集',
-          idle: '空闲',
-          collecting: '采集中',
-          pendingAudit: '待审核',
-          auditing: '审核中'
+            '采集与审核状态相互独立，可同时显示“采集中”和“审核中”。悬停查看当前状态和更新时间。',
+          collection: {
+            collecting: '采集中',
+            completed: '采集完成'
+          },
+          audit: {
+            pendingAudit: '待审核',
+            auditing: '审核中',
+            completed: '审核完成'
+          },
+          currentStatus: '当前状态：{{value}}',
+          executionNode: '执行节点：{{value}}',
+          updatedAt: '更新时间：{{value}}',
+          statusSeparator: '、'
         },
         nextCollectionTime: {
-          title: '下次采集时间',
+          title: '下次执行时间',
           afterCollect: '采集后展示',
           none: '—'
         },
@@ -145,12 +154,24 @@ export default {
         collectedSqlCount: '采集到的SQL数',
         problematicSqlCount: '审核有问题的SQL数',
         lastCollectResult: {
-          title: '最近一次采集结果',
+          title: '最近采集结果',
           none: '—',
           success: '成功',
           successEmpty: '成功无数据',
           failed: '失败',
-          successCountTips: '本轮采集成功 {{n}} 条',
+          collectedSqlCount: '采集到的 SQL 数：{{n}}',
+          roundSuccessCount: '本轮采集成功：{{n}}',
+          lastCollectionTime: '最近采集时间：{{time}}',
+          copy: '复制'
+        },
+        lastAuditResult: {
+          title: '最近审核结果',
+          none: '—',
+          success: '成功',
+          partialFailed: '部分失败',
+          failed: '失败',
+          problematicSqlCount: '审核有问题的 SQL 数：{{n}}',
+          lastAuditTime: '最近审核时间：{{time}}',
           copy: '复制'
         },
         lastCollectionTime: '最近一次采集时间'
@@ -167,9 +188,10 @@ export default {
         deleteConfirmTips:
           '删除后该类型智能扫描数据将不再被保留，是否确认删除？',
         triggerCollect: '立即采集',
-        triggerCollectSuccessTips: '已触发采集',
+        triggerCollectSuccessTips: '已触发立即采集',
         triggerCollectDisabledTips: '请先启用',
-        triggerCollectCollectingTips: '正在采集中'
+        triggerCollectCollectingTips: '正在采集，请等待',
+        triggerCollectTaskRunningTips: '任务执行中，请等待'
       }
     },
     scanTypeSqlCollection: {
@@ -194,6 +216,7 @@ export default {
         auditStatus: '审核状态',
         firstAuditResult: '最初审核结果',
         currentAuditResult: '当前审核结果',
+        pendingAudit: '待审核',
         audited: '已审核',
         explanation: {
           text: '说明',

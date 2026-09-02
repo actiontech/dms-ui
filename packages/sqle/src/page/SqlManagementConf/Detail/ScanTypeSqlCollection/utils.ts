@@ -4,7 +4,7 @@ import {
   ISkippedByRuleExceptionItem
 } from '@actiontech/shared/lib/api/sqle/service/common';
 
-export const BEING_AUDITED = 'being_audited';
+export const PENDING = 'pending';
 export const AUDITED = 'audited';
 
 const AUDIT_STATUS_FIELD = 'audit_status';
