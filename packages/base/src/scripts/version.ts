@@ -1,2 +1,1 @@
-export const UI_VERSION =
-  'dev-zjrc-sql-manage-export-skip-parsesql   267c91729';
+export const UI_VERSION = 'dms-ui/feat-3127   9e4430d27';
