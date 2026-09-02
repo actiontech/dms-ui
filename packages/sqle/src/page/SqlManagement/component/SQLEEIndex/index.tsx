@@ -80,7 +80,6 @@ import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 const REFRESH_SUCCESS_VISIBLE_MS = 1000;
 const OPTIMISTIC_GREEN_MIN_MS = 650;
 
-
 const SQLEEIndex = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();

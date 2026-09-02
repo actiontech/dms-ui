@@ -110,7 +110,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dms-ui/feat-3127   9e4430d27
+                            dev-zjrc-scan-collect-audit-lb-v3   0da534e4f
                           </article>
                         </div>
                         <div
@@ -209,7 +209,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
                                     >
                                       社区版
                                     </span>
@@ -499,7 +499,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
                                     >
                                       专业版
                                     </span>
@@ -789,7 +789,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
                                     >
                                       企业版
                                     </span>
@@ -1312,7 +1312,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            dms-ui/feat-3127   9e4430d27
+                            dev-zjrc-scan-collect-audit-lb-v3   0da534e4f
                           </article>
                         </div>
                         <div
@@ -1411,7 +1411,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
                                     >
                                       社区版
                                     </span>
@@ -1701,7 +1701,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
                                     >
                                       专业版
                                     </span>
@@ -1991,7 +1991,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
                                     >
                                       企业版
                                     </span>

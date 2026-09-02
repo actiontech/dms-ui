@@ -2585,7 +2585,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       class="flex-display"
                     >
                       <span
-                        class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7 css-dev-only-do-not-override-v9sov3"
+                        class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7 css-dev-only-do-not-override-v9sov3"
                       >
                         test
                       </span>
@@ -2603,7 +2603,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       class="flex-display"
                     >
                       <span
-                        class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7 css-dev-only-do-not-override-v9sov3"
+                        class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-7o2rh7 css-dev-only-do-not-override-v9sov3"
                       >
                         test1
                       </span>

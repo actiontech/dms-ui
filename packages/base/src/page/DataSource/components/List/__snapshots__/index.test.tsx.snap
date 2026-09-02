@@ -1482,7 +1482,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                             >
                               慢日志
                             </span>
@@ -2486,7 +2486,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                             >
                               慢日志
                             </span>
@@ -3245,7 +3245,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                             >
                               慢日志
                             </span>
@@ -3993,7 +3993,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                             >
                               慢日志
                             </span>
@@ -4827,7 +4827,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                             >
                               慢日志
                             </span>
@@ -5661,7 +5661,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                             >
                               慢日志
                             </span>
@@ -6502,7 +6502,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                             href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
-                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                             >
                               慢日志
                             </span>
