@@ -93,9 +93,11 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  // Full CI serial/maxWorkers=2 can exceed Jest 60s default (~70s observed).
   it('render expect page index set 1 when change exec status & duplicate', async () => {
     const taskSQLsData: IAuditTaskSQLResV2[] = [];
-    for (let i = 0; i < 50; i++) {
+    // page_size=20 → need >40 rows for 3 pagination items
+    for (let i = 0; i < 41; i++) {
       const index = i + 1;
       taskSQLsData.push({
         number: index,
@@ -170,5 +172,5 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
       page_size: '20',
       task_id: '1'
     });
-  });
+  }, 120000);
 });

@@ -328,7 +328,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         filter_assignee: mockCurrentUserReturn.uid,
         filter_priority: exportSqlManageV1FilterPriorityEnum.high,
         export_column_keys:
-          'sql_fingerprint,sql,source,audit_level,rule_desc,object_name,instance_name,schema_name,priority,fp_count,first_appear_timestamp,last_receive_timestamp,assignees,endpoints,status,remark'
+          'sql_fingerprint,sql,source,audit_level,rule_name,rule_desc,object_name,instance_name,schema_name,priority,fp_count,first_appear_timestamp,last_receive_timestamp,assignees,endpoints,status,remark'
       },
       {
         responseType: 'blob'
@@ -390,7 +390,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         filter_status: 'unhandled',
         fuzzy_search_sql_fingerprint: searchText,
         export_column_keys:
-          'sql,sql_fingerprint,audit_level,rule_desc,object_name,instance_name,schema_name,priority,endpoints,status,fp_count,first_appear_timestamp,last_receive_timestamp'
+          'sql,sql_fingerprint,audit_level,rule_name,rule_desc,object_name,instance_name,schema_name,priority,endpoints,status,fp_count,first_appear_timestamp,last_receive_timestamp'
       }),
       {
         responseType: 'blob'

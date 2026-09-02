@@ -1,2 +1,1 @@
-export const UI_VERSION =
-  'dev-zjrc-sql-manage-rule-filter-memberof   bdf1f7ff3';
+export const UI_VERSION = 'dms-ui/feat-3127   9e4430d27';
