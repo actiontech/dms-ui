@@ -11,7 +11,6 @@ import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/comm
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
-import rule_template from '../../../../../testUtils/mockApi/rule_template';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import {
   UtilsConsoleErrorStringsEnum,
@@ -66,7 +65,6 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
     mockUseCurrentUser();
     jest.useFakeTimers();
     execWorkflow.mockAllApi();
-    rule_template.getRuleList();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();
     mockUseCurrentProject();
   });
@@ -95,10 +93,10 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  // 全量 CI 下该用例墙钟常贴近默认 60s：mock 按页切片，避免每次渲染 40+ 行；超时放宽兜底
+  // Full CI serial/maxWorkers=2 can exceed Jest 60s default (~70s observed).
   it('render expect page index set 1 when change exec status & duplicate', async () => {
-    const PAGE_SIZE = 20;
     const taskSQLsData: IAuditTaskSQLResV2[] = [];
+    // page_size=20 → need >40 rows for 3 pagination items
     for (let i = 0; i < 41; i++) {
       const index = i + 1;
       taskSQLsData.push({
@@ -112,16 +110,11 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
         description: ''
       });
     }
-    requestGetAuditTaskSQLs.mockImplementation(
-      (params?: { page_index?: string; page_size?: string }) => {
-        const pageIndex = Number(params?.page_index ?? 1);
-        const pageSize = Number(params?.page_size ?? PAGE_SIZE);
-        const start = (pageIndex - 1) * pageSize;
-        return createSpySuccessResponse({
-          data: taskSQLsData.slice(start, start + pageSize),
-          total_nums: taskSQLsData.length
-        });
-      }
+    requestGetAuditTaskSQLs.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: taskSQLsData,
+        total_nums: taskSQLsData.length
+      })
     );
     const { baseElement } = customRender({
       tasks: tasksData
