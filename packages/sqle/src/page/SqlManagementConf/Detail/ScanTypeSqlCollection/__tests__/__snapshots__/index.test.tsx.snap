@@ -1264,9 +1264,9 @@ LIMIT
                           class="ant-table-cell"
                         >
                           <span
-                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                           >
-                            审核中
+                            待审核
                           </span>
                         </td>
                         <td
@@ -1463,9 +1463,9 @@ LIMIT
                           class="ant-table-cell"
                         >
                           <span
-                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                           >
-                            审核中
+                            待审核
                           </span>
                         </td>
                         <td
@@ -1632,9 +1632,9 @@ LIMIT
                           class="ant-table-cell"
                         >
                           <span
-                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                           >
-                            审核中
+                            待审核
                           </span>
                         </td>
                         <td
@@ -2007,9 +2007,9 @@ LIMIT
                           class="ant-table-cell"
                         >
                           <span
-                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                           >
-                            审核中
+                            待审核
                           </span>
                         </td>
                         <td
@@ -2193,9 +2193,9 @@ LIMIT
                           class="ant-table-cell"
                         >
                           <span
-                            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                           >
-                            审核中
+                            待审核
                           </span>
                         </td>
                         <td
@@ -3499,9 +3499,9 @@ LIMIT
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                             >
-                              审核中
+                              待审核
                             </span>
                           </td>
                           <td
@@ -3698,9 +3698,9 @@ LIMIT
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                             >
-                              审核中
+                              待审核
                             </span>
                           </td>
                           <td
@@ -3867,9 +3867,9 @@ LIMIT
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                             >
-                              审核中
+                              待审核
                             </span>
                           </td>
                           <td
@@ -4242,9 +4242,9 @@ LIMIT
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                             >
-                              审核中
+                              待审核
                             </span>
                           </td>
                           <td
@@ -4428,9 +4428,9 @@ LIMIT
                             class="ant-table-cell"
                           >
                             <span
-                              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-1ydch4c css-dev-only-do-not-override-bj9uhl"
                             >
-                              审核中
+                              待审核
                             </span>
                           </td>
                           <td

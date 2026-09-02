@@ -152,7 +152,7 @@ describe('test ScanTypeSqlCollection', () => {
               {
                 ...mockAuditPlanSQLData?.rows?.[0],
                 audit_results: '[]',
-                audit_status: 'being_audited'
+                audit_status: 'pending'
               }
             ]
           },

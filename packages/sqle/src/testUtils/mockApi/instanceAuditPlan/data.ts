@@ -745,7 +745,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '1',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '598',
       db_user: '',
       fingerprint: 'SELECT ?,SLEEP(?) LIMIT ?,?',
@@ -759,7 +759,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '12',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '299',
       db_user: '',
       fingerprint: 'SELECT ?,?,?,?,?,SLEEP(?) LIMIT ?,?',
@@ -773,7 +773,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '123',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '299',
       db_user: '',
       fingerprint: 'SELECT SLEEP(?) LIMIT ?,?',
@@ -803,7 +803,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '12345',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '8559',
       db_user: '',
       fingerprint: 'COMMIT',
@@ -817,7 +817,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     {
       id: '123456',
       audit_results: 'null',
-      audit_status: 'being_audited',
+      audit_status: 'pending',
       counter: '299',
       db_user: '',
       fingerprint:

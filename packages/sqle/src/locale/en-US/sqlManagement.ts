@@ -88,8 +88,7 @@ export default {
     },
     auditStatus: {
       pending: 'Pending audit',
-      audited: 'Audited',
-      beingAudited: 'Auditing'
+      audited: 'Audited'
     },
     remediationStatus: {
       resolved: 'Resolved',

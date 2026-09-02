@@ -307,13 +307,6 @@ const SqlManagementColumn: (
             </BasicTag>
           );
         }
-        if (value === 'being_audited') {
-          return (
-            <BasicTag color="blue">
-              {t('sqlManagement.table.auditStatus.beingAudited')}
-            </BasicTag>
-          );
-        }
         return '-';
       }
     },

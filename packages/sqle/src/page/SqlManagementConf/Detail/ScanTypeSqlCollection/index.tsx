@@ -39,7 +39,6 @@ import AuditLevelSummary from '../../../../components/AuditResultMessage/AuditLe
 import AuditResultExemptionSummary from '../../../../components/AuditResultMessage/AuditResultExemptionSummary';
 import AuditStatusTag from './AuditStatusTag';
 import {
-  BEING_AUDITED,
   buildTableHeadWithAuditStatus,
   parseAuditResult,
   parseScanAuditResult,
@@ -538,8 +537,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       record: ScanTypeSqlTableDataSourceItem,
       fieldName: 'first_audit_results' | 'audit_results'
     ) => {
-      // 「审核中」只在 audit_status 列展示（AuditStatusTag），审核结果列不重复显示。
-      // 审核进行中时仍渲染已有结果；无结果则显示 "-"。
+      // 审核状态只在 audit_status 列展示（AuditStatusTag），审核结果列不重复显示。
+      // 待审核时仍渲染已有结果；无结果则显示 "-"。
 
       // 智能扫描详情特例：例外留在 audit_results，用 is_exempted 标记，
       // 不拆到 skipped_by_rule_exception（与 SQL 管控 / 工单不同）。
@@ -602,8 +601,6 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       columnClassName: (type) =>
         type === 'sql' ? 'ellipsis-column-large-width' : undefined,
       customRender: (text, record, fieldName, type) => {
-        const isBeingAudited = record['audit_status'] === BEING_AUDITED;
-
         if (fieldName === 'audit_status') {
           return <AuditStatusTag status={text} />;
         }
@@ -630,9 +627,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
               tooltip={false}
               className="pointer"
               onClick={() => {
-                if (!isBeingAudited) {
-                  onClickSql(record);
-                }
+                onClickSql(record);
               }}
               sql={text}
               rows={1}

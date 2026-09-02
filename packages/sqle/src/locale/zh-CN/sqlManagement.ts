@@ -91,8 +91,7 @@ export default {
     },
     auditStatus: {
       pending: '待审核',
-      audited: '已审核',
-      beingAudited: '审核中'
+      audited: '已审核'
     },
     remediationStatus: {
       resolved: '已整改',
