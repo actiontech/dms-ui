@@ -80,16 +80,6 @@ import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 const REFRESH_SUCCESS_VISIBLE_MS = 1000;
 const OPTIMISTIC_GREEN_MIN_MS = 650;
 
-type SqlManageListRequestResult = {
-  list: ISqlManage[];
-  total: number;
-  otherData: {
-    sql_manage_total_num?: number;
-    source_extra?: ISourceExtra;
-    has_pending_audit?: boolean;
-    pending_audit_count?: number;
-  };
-};
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -462,16 +452,7 @@ const SQLEEIndex = () => {
       return filterParams;
     }, [buildListRequestParams]);
 
-  const listRequestRef = useRef<Promise<SqlManageListRequestResult> | null>(
-    null
-  );
-  const queuedListRefreshRef = useRef(false);
-  const refreshListRef = useRef<() => void>(() => undefined);
   const requestSqlManageList = useCallback(() => {
-    if (listRequestRef.current) {
-      queuedListRefreshRef.current = true;
-      return listRequestRef.current;
-    }
     const request = SqlManage.GetSqlManageListV2(buildListRequestParams())
       .then((res) => {
         setListRequestError('');
@@ -489,23 +470,14 @@ const SQLEEIndex = () => {
       .catch((error) => {
         setListRequestError(getErrorMessage(error));
         throw error;
-      })
-      .finally(() => {
-        listRequestRef.current = null;
-        if (queuedListRefreshRef.current) {
-          queuedListRefreshRef.current = false;
-          queueMicrotask(() => refreshListRef.current());
-        }
       });
-    listRequestRef.current = request;
     return request;
   }, [buildListRequestParams]);
 
   const {
     data: sqlList,
     loading: getListLoading,
-    refresh,
-    cancel: cancelListRequest
+    refresh
   } = useRequest(requestSqlManageList, {
     refreshDeps: [
       pagination,
@@ -516,7 +488,9 @@ const SQLEEIndex = () => {
       tableFilterInfo,
       sortInfo
     ],
-    pollingInterval: 3000,
+    // Enable polling only while pending audit exists. Never cancel() the request
+    // instance — cancel breaks subsequent refreshDeps (filter/sort) refetches.
+    pollingInterval: auditPolling ? 3000 : undefined,
     pollingWhenHidden: false,
     pollingErrorRetryCount: 3,
     onFinally: (_params, data, error) => {
@@ -537,14 +511,12 @@ const SQLEEIndex = () => {
 
       const shouldRefreshStatisticsAfterPoll = auditPollingActiveRef.current;
       auditPollingActiveRef.current = false;
-      cancelListRequest();
       finishAuditPollRequest();
       if (shouldRefreshStatisticsAfterPoll) {
         refreshStatisticsRef.current();
       }
     }
   });
-  refreshListRef.current = refresh;
 
   const { refresh: refreshStatistics, loading: getStatisticsLoading } =
     useRequest(
@@ -582,6 +554,14 @@ const SQLEEIndex = () => {
     );
   refreshStatisticsRef.current = refreshStatistics;
 
+  // ahooks only schedules polls after a request finishes while pollingInterval
+  // is set; kick one refresh when polling is newly enabled.
+  useEffect(() => {
+    if (auditPolling) {
+      refresh();
+    }
+  }, [auditPolling, refresh]);
+
   // 待审核轮询：列表 loading 不驱动刷新按钮长时间转圈
   const listLoadingForUi = auditPolling ? false : getListLoading;
   const refreshBusy = listLoadingForUi || getStatisticsLoading;
@@ -616,8 +596,6 @@ const SQLEEIndex = () => {
       if (optimisticClearTimerRef.current) {
         clearTimeout(optimisticClearTimerRef.current);
       }
-      queuedListRefreshRef.current = false;
-      refreshListRef.current = () => undefined;
     };
   }, []);
 
