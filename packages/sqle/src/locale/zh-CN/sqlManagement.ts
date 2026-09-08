@@ -75,6 +75,7 @@ export default {
       auditResult: '审核结果',
       firstAuditResult: '最初审核结果',
       currentAuditResult: '当前审核结果',
+      auditStatus: '审核状态',
       viewAuditResultCompare: '查看审核结果对比',
       viewFirstAuditResultDetail: '查看审核结果对比',
       viewCurrentAuditResultDetail: '查看审核结果对比',
@@ -87,6 +88,10 @@ export default {
       comment: '备注',
       endpoints: '客户端 IP',
       sourceExtraTips: '仅在筛选来源时展示'
+    },
+    auditStatus: {
+      pending: '待审核',
+      audited: '已审核'
     },
     remediationStatus: {
       resolved: '已整改',

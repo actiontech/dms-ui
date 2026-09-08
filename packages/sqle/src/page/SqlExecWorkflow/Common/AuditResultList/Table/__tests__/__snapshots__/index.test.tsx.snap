@@ -3266,7 +3266,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                                 >
                                   <svg
                                     color="#4583FF"
@@ -3299,7 +3299,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                         >
                           <svg
                             height="18"

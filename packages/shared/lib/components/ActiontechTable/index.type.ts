@@ -421,4 +421,10 @@ export interface ActiontechTableProps<
    * 禁用表格行 hover 时的背景色变化（sticky 操作列场景下避免左侧内容透出）
    */
   disableRowHover?: boolean;
+
+  /**
+   * 将表体限制在当前视口内，使原生横向滚动条保持在固定分页器上方。
+   * 默认关闭，仅供需要固定横向滚动条的页面选择开启。
+   */
+  enableBodyScrollY?: boolean;
 }

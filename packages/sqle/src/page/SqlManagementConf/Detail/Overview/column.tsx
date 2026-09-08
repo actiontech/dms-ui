@@ -5,11 +5,12 @@ import {
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { BasicToolTips, TokenCom } from '@actiontech/shared';
+import { BasicTag, BasicToolTips, TokenCom } from '@actiontech/shared';
 import {
   InstanceAuditPlanInfoActiveStatusEnum,
-  InstanceAuditPlanInfoNextCollectionModeEnum,
-  InstanceAuditPlanInfoPipelineStatusEnum
+  InstanceAuditPlanInfoAuditStatusEnum,
+  InstanceAuditPlanInfoCollectionStatusEnum,
+  InstanceAuditPlanInfoNextCollectionModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -18,8 +19,9 @@ import {
   CloseHexagonOutlined,
   InfoHexagonOutlined
 } from '@actiontech/icons';
-import { Typography } from 'antd';
+import { Popover, Space, Typography } from 'antd';
 import LastCollectResultCell from './LastCollectResultCell';
+import LastAuditResultCell from './LastAuditResultCell';
 
 const renderColumnHeaderTip = (title: string, tip: string) => (
   <BasicToolTips
@@ -31,25 +33,136 @@ const renderColumnHeaderTip = (title: string, tip: string) => (
   </BasicToolTips>
 );
 
-const renderPipelineStatus = (status?: string) => {
-  switch (status) {
-    case InstanceAuditPlanInfoPipelineStatusEnum.collecting:
-      return t(
-        'managementConf.detail.overview.column.pipelineStatus.collecting'
-      );
-    case InstanceAuditPlanInfoPipelineStatusEnum.pending_audit:
-      return t(
-        'managementConf.detail.overview.column.pipelineStatus.pendingAudit'
-      );
-    case InstanceAuditPlanInfoPipelineStatusEnum.auditing:
-      return t('managementConf.detail.overview.column.pipelineStatus.auditing');
-    case InstanceAuditPlanInfoPipelineStatusEnum.idle:
-    case undefined:
-    case '':
-      return t('managementConf.detail.overview.column.pipelineStatus.idle');
-    default:
-      return t('managementConf.detail.overview.column.pipelineStatus.idle');
+type TaskStatusItem = {
+  key: 'collection' | 'audit';
+  color: 'blue' | 'green' | 'orange';
+  text: string;
+};
+
+const isCollectingStatus = (record: IInstanceAuditPlanInfo) =>
+  record.collection_status ===
+  InstanceAuditPlanInfoCollectionStatusEnum.collecting;
+
+const hasPendingAuditBacklog = (record: IInstanceAuditPlanInfo) =>
+  (record.pending_audit_count ?? 0) > 0 ||
+  record.audit_status === InstanceAuditPlanInfoAuditStatusEnum.pending_audit ||
+  record.audit_status === 'pending';
+
+/** 采集/审核双 Tag 与 Hover「当前状态」共用，避免展示漂移 */
+const getTaskStatusItems = (
+  record: IInstanceAuditPlanInfo
+): TaskStatusItem[] => {
+  const items: TaskStatusItem[] = [];
+  const collecting = isCollectingStatus(record);
+
+  if (collecting) {
+    items.push({
+      key: 'collection',
+      color: 'blue',
+      text: t(
+        'managementConf.detail.overview.column.taskStatus.collection.collecting'
+      )
+    });
+  } else if (
+    record.collection_status ===
+      InstanceAuditPlanInfoCollectionStatusEnum.idle &&
+    !!record.last_collection_time
+  ) {
+    items.push({
+      key: 'collection',
+      color: 'green',
+      text: t(
+        'managementConf.detail.overview.column.taskStatus.collection.completed'
+      )
+    });
   }
+
+  // 审核：auditing > 积压/采集中(待审核) > 已结束完成；采集中禁止「审核完成」
+  if (record.audit_status === InstanceAuditPlanInfoAuditStatusEnum.auditing) {
+    items.push({
+      key: 'audit',
+      color: 'blue',
+      text: t('managementConf.detail.overview.column.taskStatus.audit.auditing')
+    });
+  } else if (hasPendingAuditBacklog(record) || collecting) {
+    items.push({
+      key: 'audit',
+      color: 'orange',
+      text: t(
+        'managementConf.detail.overview.column.taskStatus.audit.pendingAudit'
+      )
+    });
+  } else if (
+    record.audit_status === InstanceAuditPlanInfoAuditStatusEnum.idle &&
+    !!record.last_audit_finished_at
+  ) {
+    items.push({
+      key: 'audit',
+      color: 'green',
+      text: t(
+        'managementConf.detail.overview.column.taskStatus.audit.completed'
+      )
+    });
+  }
+
+  return items;
+};
+
+const renderTaskStatus = (record: IInstanceAuditPlanInfo) => {
+  const statusItems = getTaskStatusItems(record);
+  const currentStatus =
+    statusItems.length > 0
+      ? statusItems
+          .map(({ text }) => text)
+          .join(
+            t(
+              'managementConf.detail.overview.column.taskStatus.statusSeparator'
+            )
+          )
+      : '--';
+
+  return (
+    <Popover
+      content={
+        <Space direction="vertical" size={4}>
+          <span>
+            {t(
+              'managementConf.detail.overview.column.taskStatus.currentStatus',
+              {
+                value: currentStatus
+              }
+            )}
+          </span>
+          <span>
+            {t(
+              'managementConf.detail.overview.column.taskStatus.executionNode',
+              {
+                value: record.execution_node_address ?? '--'
+              }
+            )}
+          </span>
+          <span>
+            {t('managementConf.detail.overview.column.taskStatus.updatedAt', {
+              value: formatTime(record.last_task_updated_at ?? undefined, '--')
+            })}
+          </span>
+        </Space>
+      }
+    >
+      <Space
+        onClick={(event) => event.stopPropagation()}
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        {statusItems.length > 0
+          ? statusItems.map(({ key, color, text }) => (
+              <BasicTag key={key} color={color}>
+                {text}
+              </BasicTag>
+            ))
+          : '--'}
+      </Space>
+    </Popover>
+  );
 };
 
 const renderNextCollectionTime = (record: IInstanceAuditPlanInfo) => {
@@ -69,13 +182,13 @@ const renderNextCollectionTime = (record: IInstanceAuditPlanInfo) => {
     );
   }
 
-  // 旧后端未带 mode：按 active_status / pipeline_status 兜底
+  // 旧后端未带 mode：按 active_status / collection_status 兜底
   if (record.active_status === InstanceAuditPlanInfoActiveStatusEnum.disabled) {
     return t('managementConf.detail.overview.column.nextCollectionTime.none');
   }
   if (
-    record.pipeline_status ===
-    InstanceAuditPlanInfoPipelineStatusEnum.collecting
+    record.collection_status ===
+    InstanceAuditPlanInfoCollectionStatusEnum.collecting
   ) {
     return t(
       'managementConf.detail.overview.column.nextCollectionTime.afterCollect'
@@ -167,13 +280,13 @@ export const ConfDetailOverviewColumns: (
       }
     },
     {
-      dataIndex: 'pipeline_status',
+      dataIndex: 'collection_status',
       title: () =>
         renderColumnHeaderTip(
-          t('managementConf.detail.overview.column.pipelineStatus.title'),
-          t('managementConf.detail.overview.column.pipelineStatus.headerTips')
+          t('managementConf.detail.overview.column.taskStatus.title'),
+          t('managementConf.detail.overview.column.taskStatus.headerTips')
         ),
-      render: (status) => renderPipelineStatus(status)
+      render: (_status, record) => renderTaskStatus(record)
     },
     {
       dataIndex: 'next_collection_time',
@@ -190,27 +303,16 @@ export const ConfDetailOverviewColumns: (
       }
     },
     {
-      dataIndex: 'total_sql_nums',
-      title: () => t('managementConf.detail.overview.column.collectedSqlCount')
-    },
-    // #if [ee]
-    {
-      dataIndex: 'unsolved_sql_nums',
-      title: () =>
-        t('managementConf.detail.overview.column.problematicSqlCount')
-    },
-    // #endif
-    {
       dataIndex: 'last_collect_status',
       title: () =>
         t('managementConf.detail.overview.column.lastCollectResult.title'),
       render: (_status, record) => <LastCollectResultCell record={record} />
     },
     {
-      dataIndex: 'last_collection_time',
+      dataIndex: 'last_audit_status',
       title: () =>
-        t('managementConf.detail.overview.column.lastCollectionTime'),
-      render: (time) => formatTime(time, '-')
+        t('managementConf.detail.overview.column.lastAuditResult.title'),
+      render: (_status, record) => <LastAuditResultCell record={record} />
     }
   ];
 };
@@ -237,7 +339,7 @@ export const ConfDetailOverviewColumnActions: (params: {
   hasOpPermission
 }) => {
   return {
-    width: 360,
+    width: 220,
     buttons: [
       {
         key: 'triggerCollect',
@@ -247,21 +349,26 @@ export const ConfDetailOverviewColumnActions: (params: {
           const isDisabled =
             record?.active_status ===
             InstanceAuditPlanInfoActiveStatusEnum.disabled;
-          const isCollecting =
-            record?.pipeline_status ===
-            InstanceAuditPlanInfoPipelineStatusEnum.collecting;
           const cannotTrigger =
-            isDisabled || isCollecting || triggerCollectActionPending;
+            isDisabled ||
+            record?.can_trigger_collect !== true ||
+            triggerCollectActionPending;
 
           let title: string | undefined;
           if (isDisabled) {
             title = t(
               'managementConf.detail.overview.actions.triggerCollectDisabledTips'
             );
-          } else if (isCollecting) {
-            title = t(
-              'managementConf.detail.overview.actions.triggerCollectCollectingTips'
-            );
+          } else if (record?.can_trigger_collect !== true) {
+            title =
+              record?.collection_status ===
+              InstanceAuditPlanInfoCollectionStatusEnum.collecting
+                ? t(
+                    'managementConf.detail.overview.actions.triggerCollectCollectingTips'
+                  )
+                : t(
+                    'managementConf.detail.overview.actions.triggerCollectTaskRunningTips'
+                  );
           }
 
           return {

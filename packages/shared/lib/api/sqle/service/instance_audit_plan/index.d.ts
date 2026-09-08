@@ -134,7 +134,7 @@ export interface ITriggerAuditPlanCollectV1Params {
 export interface ITriggerAuditPlanCollectResData {
   audit_plan_id?: number;
 
-  pipeline_status?: string;
+  collection_status?: string;
 }
 
 export interface ITriggerAuditPlanCollectV1Return extends IBaseRes {

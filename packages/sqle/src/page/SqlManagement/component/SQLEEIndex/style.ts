@@ -19,6 +19,11 @@ export const SqlManagementListStyleWrapper = styled('section')`
   }
 
   .actiontech-table-namespace {
+    .ant-table-thead > tr > th {
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
     tr.sql-manage-optimistic-green > td {
       background-color: ${({ theme }) =>
         `${theme.sharedTheme.uiToken.colorSuccess}22`} !important;

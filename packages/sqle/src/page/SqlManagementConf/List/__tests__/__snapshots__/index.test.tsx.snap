@@ -624,7 +624,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                                   >
                                     SQL文件
                                   </span>
@@ -743,7 +743,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                                   >
                                     SQL文件
                                   </span>
@@ -752,7 +752,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=2"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                                   >
                                     MySQL库表元数据
                                   </span>
@@ -3009,7 +3009,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                                   >
                                     SQL文件
                                   </span>
@@ -3128,7 +3128,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                                   >
                                     SQL文件
                                   </span>
@@ -3137,7 +3137,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=2"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-bj9uhl"
                                   >
                                     MySQL库表元数据
                                   </span>

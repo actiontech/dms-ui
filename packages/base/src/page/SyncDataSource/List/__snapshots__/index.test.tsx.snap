@@ -203,7 +203,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-1ubynud css-dev-only-do-not-override-bj9uhl"
                             >
                               成功
                             </span>
@@ -286,7 +286,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-1ubynud css-dev-only-do-not-override-bj9uhl"
                             >
                               成功
                             </span>
@@ -744,7 +744,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-1ubynud css-dev-only-do-not-override-bj9uhl"
                             >
                               成功
                             </span>
@@ -854,7 +854,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-1ubynud css-dev-only-do-not-override-bj9uhl"
                             >
                               成功
                             </span>

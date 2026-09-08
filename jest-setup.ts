@@ -32,6 +32,17 @@ Object.defineProperty(global, 'matchMedia', {
     };
   }
 });
+
+class ResizeObserverMock {
+  observe = jest.fn();
+  unobserve = jest.fn();
+  disconnect = jest.fn();
+}
+Object.defineProperty(global, 'ResizeObserver', {
+  writable: true,
+  configurable: true,
+  value: ResizeObserverMock
+});
 i18n.use(initReactI18next).init({
   resources: {
     'zh-CN': {

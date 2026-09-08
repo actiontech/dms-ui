@@ -72,6 +72,7 @@ export default {
       auditResult: 'Audit result',
       firstAuditResult: 'Initial audit result',
       currentAuditResult: 'Current audit result',
+      auditStatus: 'Audit status',
       viewAuditResultCompare: 'View audit result comparison',
       viewFirstAuditResultDetail: 'View audit result comparison',
       viewCurrentAuditResultDetail: 'View audit result comparison',
@@ -84,6 +85,10 @@ export default {
       comment: 'Comment',
       endpoints: 'Client IP',
       sourceExtraTips: 'shown only when a source filter is applied'
+    },
+    auditStatus: {
+      pending: 'Pending audit',
+      audited: 'Audited'
     },
     remediationStatus: {
       resolved: 'Resolved',

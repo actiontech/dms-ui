@@ -51,7 +51,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                           >
                             准备执行
                           </span>
@@ -66,7 +66,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
                                 style="background-color: gray;"
                               >
                                 <svg
@@ -166,7 +166,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                                   >
                                     <svg
                                       color="#4583FF"
@@ -198,7 +198,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                           >
                             <svg
                               height="18"
@@ -625,7 +625,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                           >
                             准备执行
                           </span>
@@ -640,7 +640,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
                                 style="background-color: gray;"
                               >
                                 <svg
@@ -740,7 +740,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                                   >
                                     <svg
                                       color="#4583FF"
@@ -772,7 +772,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                           >
                             <svg
                               height="18"

@@ -600,7 +600,7 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default ellipsis-column-width basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default ellipsis-column-width basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                         >
                           <svg
                             color="#4583FF"
@@ -632,7 +632,7 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                         >
                           <svg
                             height="18"
@@ -1067,7 +1067,7 @@ exports[`sqle/components/ReportDrawer render snap when loading is true 1`] = `
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default ellipsis-column-width basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default ellipsis-column-width basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                         >
                           <svg
                             color="#4583FF"
@@ -1099,7 +1099,7 @@ exports[`sqle/components/ReportDrawer render snap when loading is true 1`] = `
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                         >
                           <svg
                             height="18"
@@ -1329,7 +1329,7 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default ellipsis-column-width basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default ellipsis-column-width basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                         >
                           <svg
                             color="#4583FF"
@@ -1361,7 +1361,7 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                         >
                           <svg
                             height="18"

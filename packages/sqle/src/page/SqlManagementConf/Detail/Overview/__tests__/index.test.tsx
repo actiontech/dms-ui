@@ -102,10 +102,18 @@ describe('test Overview', () => {
     });
     expect(getAllByText('停 用')[0].closest('button')).toBeDisabled();
 
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+      await Promise.resolve();
+    });
     expect(getAllByText('停 用')[0].closest('button')).not.toBeDisabled();
     expect(getByText('停用成功！')).toBeInTheDocument();
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(2);
+    // drain overview refresh started by disable success
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+      await Promise.resolve();
+    });
 
     // enabled
     fireEvent.click(getAllByText('启 用')[0]);
@@ -123,10 +131,17 @@ describe('test Overview', () => {
     });
 
     expect(getAllByText('启 用')[0].closest('button')).toBeDisabled();
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+      await Promise.resolve();
+    });
     expect(getAllByText('启 用')[0].closest('button')).not.toBeDisabled();
     expect(getByText('启用成功！')).toBeInTheDocument();
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(3);
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+      await Promise.resolve();
+    });
 
     //delete
     fireEvent.click(getAllByText('删 除')[0]);
@@ -141,11 +156,18 @@ describe('test Overview', () => {
     });
 
     expect(getAllByText('删 除')[0].closest('button')).toBeDisabled();
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+      await Promise.resolve();
+    });
     expect(getAllByText('删 除')[0].closest('button')).not.toBeDisabled();
     expect(getByText('删除成功！')).toBeInTheDocument();
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(4);
     expect(refreshAuditPlanDetailSpy).toHaveBeenCalledTimes(1);
+    await act(async () => {
+      jest.advanceTimersByTime(3000);
+      await Promise.resolve();
+    });
   });
 
   it('should handle row click events to change the active tab', async () => {

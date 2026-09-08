@@ -3,17 +3,19 @@ import { Space } from 'antd';
 import {
   WarningFilled,
   InfoHexagonFilled,
-  CloseCircleFilled
+  CloseCircleFilled,
+  ProfileSquareFilled
 } from '@actiontech/icons';
 
-/** 与 AuditLevelSummary / 列表「当前审核结果」列同源 */
+/** 与 AuditLevelSummary / 列表「当前审核结果」列 / 规则列表 level-icon 同源 */
 export const AUDIT_LEVEL_ICON_MAP: Record<
   string,
   FC<{ width?: number; height?: number }>
 > = {
   error: CloseCircleFilled,
   warn: WarningFilled,
-  notice: InfoHexagonFilled
+  notice: InfoHexagonFilled,
+  normal: ProfileSquareFilled
 };
 
 export type AuditLevelIconProps = {

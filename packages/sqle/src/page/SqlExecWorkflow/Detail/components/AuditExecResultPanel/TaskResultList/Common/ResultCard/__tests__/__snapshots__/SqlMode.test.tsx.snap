@@ -30,14 +30,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -136,7 +136,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -168,7 +168,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
@@ -477,14 +477,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -583,7 +583,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -615,7 +615,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
@@ -924,14 +924,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -1030,7 +1030,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -1062,7 +1062,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
@@ -1371,14 +1371,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -1477,7 +1477,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -1509,7 +1509,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
@@ -1809,14 +1809,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -1915,7 +1915,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -1947,7 +1947,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
@@ -2271,7 +2271,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -2362,7 +2362,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -2394,7 +2394,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
@@ -2690,14 +2690,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -2796,7 +2796,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -2828,7 +2828,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
@@ -3124,14 +3124,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1ubynud css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -3230,7 +3230,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
                       >
                         <svg
                           color="#4583FF"
@@ -3262,7 +3262,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1q0j97r css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="18"
