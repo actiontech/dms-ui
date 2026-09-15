@@ -94,7 +94,8 @@ const BUSINESS_ERROR_I18N_KEYS: Record<string, string> = {
   'privilege_apply.duplicate_open':
     'privilegeApply.create.errors.duplicateOpen',
   'privilege_apply.invalid_account_name':
-    'privilegeApply.create.errors.invalidAccountName'
+    'privilegeApply.create.errors.invalidAccountName',
+  'privilege_apply.forbidden': 'privilegeApply.detail.errors.forbidden'
 };
 
 const BUSINESS_ERROR_FALLBACK_ZH: Record<string, string> = {
@@ -105,7 +106,8 @@ const BUSINESS_ERROR_FALLBACK_ZH: Record<string, string> = {
   'privilege_apply.duplicate_open':
     '该数据源已有进行中的提权申请，请等待处理完成后再提交',
   'privilege_apply.invalid_account_name':
-    '新账号名不合法：仅支持字母开头，字母、数字、下划线、连字符与点，最长 32 字符'
+    '新账号名不合法：仅支持字母开头，字母、数字、下划线、连字符与点，最长 32 字符',
+  'privilege_apply.forbidden': '没有账号管理权限，无法审批该提权申请'
 };
 
 const mapBusinessErrorMessage = (message: string): string => {
