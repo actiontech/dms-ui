@@ -42,7 +42,7 @@ const TARGET_DATA = (
 
 const Transit: React.FC = () => {
   const navigate = useTypedNavigate();
-  const { bindProjects } = useCurrentUser();
+  const { bindProjects, isUserInfoFetched } = useCurrentUser();
   const extractQueries = useTypedQuery();
   useEffect(() => {
     const searchParams = extractQueries(ROUTE_PATHS.BASE.TRANSIT.index);
@@ -51,6 +51,9 @@ const Transit: React.FC = () => {
     const compressionData = searchParams?.compression_data;
     const projectName = searchParams?.project_name;
     const workflowId = searchParams?.workflow_id;
+    if (!isUserInfoFetched) {
+      return;
+    }
     if (!from || !to) {
       console.error(`Missing required parameters!\n from=${from}\n to=${to}\n`);
       navigate(ROUTE_PATHS.BASE.HOME, {
@@ -85,9 +88,15 @@ const Transit: React.FC = () => {
         return;
       }
       if (compressionData) {
-        navigate(`${path}?from=${from}&compression_data=${compressionData}`, {
-          replace: true
-        });
+        // useTypedQuery / URLSearchParams 已解码；再拼 URL 必须重新编码，否则 + 变空格破坏预填
+        navigate(
+          `${path}?from=${encodeURIComponent(
+            from
+          )}&compression_data=${encodeURIComponent(compressionData)}`,
+          {
+            replace: true
+          }
+        );
       } else {
         navigate(path, {
           replace: true
@@ -99,7 +108,7 @@ const Transit: React.FC = () => {
         replace: true
       });
     }
-  }, [bindProjects, navigate, extractQueries]);
+  }, [bindProjects, isUserInfoFetched, navigate, extractQueries]);
   return <HeaderProgress />;
 };
 export default Transit;

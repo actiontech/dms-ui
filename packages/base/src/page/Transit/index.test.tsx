@@ -38,6 +38,21 @@ describe('Transit Component', () => {
     console.error = originOutputError;
   });
 
+  it('should wait until user info is fetched before resolving project', () => {
+    mockUseCurrentUser({
+      isUserInfoFetched: false,
+      bindProjects: []
+    });
+    mockExtractQueries.mockReturnValue({
+      from: 'cloudbeaver',
+      to: 'create_workflow',
+      project_name: 'default',
+      compression_data: 'data'
+    });
+    superRender(<Transit />);
+    expect(mockNavigate).not.toHaveBeenCalled();
+  });
+
   it('should navigate to / when required parameters are missing', () => {
     mockExtractQueries.mockReturnValue({
       from: 'cloudbeaver'
