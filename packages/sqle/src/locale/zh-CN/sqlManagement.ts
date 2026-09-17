@@ -130,7 +130,9 @@ export default {
         normal: '普通',
         error: '错误',
         warn: '告警',
-        notice: '提示'
+        notice: '提示',
+        error_P0: '错误(P0)',
+        error_P1: '错误(P1)'
       },
       assignee: '与我相关',
       highPriority: '高优先级',

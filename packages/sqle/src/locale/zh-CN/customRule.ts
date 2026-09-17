@@ -48,6 +48,7 @@ export default {
     dbType: '适用数据源类型',
     ruleType: '规则分类',
     level: '默认告警等级',
+    errorPriority: '错误优先级',
     addExtraRuleType: '新增规则分类',
     addExtraRuleTypePlaceholder: '请输入需要新增的规则分类名称'
   },

@@ -48,6 +48,7 @@ export default {
     dbType: 'Applicable DB instance type',
     ruleType: 'Rule classification',
     level: 'Default alert level',
+    errorPriority: 'Error priority',
     addExtraRuleType: 'Add rule classification',
     addExtraRuleTypePlaceholder:
       'Please enter the name of the rule classification you need to add'

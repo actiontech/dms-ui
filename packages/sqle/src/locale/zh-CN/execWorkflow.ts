@@ -113,6 +113,15 @@ export default {
     auditResult: {
       clearDuplicate: '数据去重',
       allLevel: '全部等级',
+      // S2 §8.13：allLevel 旁六项（普通/提示/告警/错误/错误(P0)/错误(P1)）
+      level: {
+        normal: '普通',
+        notice: '提示',
+        warn: '告警',
+        error: '错误',
+        error_P0: '错误(P0)',
+        error_P1: '错误(P1)'
+      },
       submit: '提交工单',
       updateInfo: '修改工单',
       disabledOperatorWorkflowBtnTips:

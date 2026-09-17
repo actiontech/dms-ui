@@ -102,6 +102,7 @@ export default {
       title: '工单潜在风险',
       tableColumn: {
         name: '工单',
+        level: '等级',
         status: '状态',
         time: '时间',
         createUser: '创建人'
@@ -119,6 +120,7 @@ export default {
       tableColumn: {
         name: '扫描任务报告',
         source: '来源',
+        level: '等级',
         time: '时间',
         count: '风险SQL'
       }

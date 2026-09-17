@@ -67,6 +67,8 @@ export default {
     disableAllRules: '禁用全部规则',
     disableRule: '禁用该规则',
     editRule: '编辑该规则',
+    errorPriorityLegend:
+      '错误级规则可设置优先级，列表中显示为错误(P0)或错误(P1)',
 
     emptyRule: '没有找到对应规则',
     ruleValue: '规则值',
@@ -110,6 +112,8 @@ export default {
     ruleLevelLabel: '规则等级',
     ruleLevelValue: '预设值',
     ruleLevelLabelPlace: '请选择规则对应的等级',
+    errorPriorityLabel: '错误优先级',
+    errorPriorityPlace: '请选择错误优先级',
 
     ruleLevelValuePlace: '请填写规则的默认值',
     ruleDescLabel: '规则描述',
@@ -133,6 +137,8 @@ export default {
   ruleLevel: {
     normal: '普通',
     error: '错误',
+    error_P0: '错误(P0)',
+    error_P1: '错误(P1)',
     warn: '告警',
     notice: '提示',
     unknown: '未知'

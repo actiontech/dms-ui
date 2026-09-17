@@ -144,6 +144,8 @@ export default {
     normal: '普通(Normal)',
     error: '错误(Error)',
     warn: '告警(Warning)',
-    notice: '提示(Notice)'
+    notice: '提示(Notice)',
+    error_P0: '错误(P0)',
+    error_P1: '错误(P1)'
   }
 };

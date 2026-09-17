@@ -23,6 +23,7 @@ export default {
     tableColumn: {
       name: '扫描任务报告',
       source: '来源',
+      level: '等级',
       time: '时间',
       count: '风险SQL'
     }
