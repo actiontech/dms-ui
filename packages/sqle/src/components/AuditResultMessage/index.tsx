@@ -14,10 +14,12 @@ import {
   WarningFilled,
   InfoHexagonFilled,
   CloseCircleFilled,
-  PartialHexagonFilled
+  PartialHexagonFilled,
+  MinusCircleFilled
 } from '@actiontech/icons';
 import { getAuditTaskSQLsV2FilterAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { getAuditResultDisplayText } from './getAuditResultDisplayText';
+import { resolveAuditLevelDisplayMeta } from './errorPriorityDisplay';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
 
@@ -68,21 +70,39 @@ const AuditResultMessage = ({
 
   const [visible, { toggle }] = useBoolean(defaultAnnotationExpanded);
 
+  const levelDisplay = useMemo(() => {
+    const meta = resolveAuditLevelDisplayMeta(
+      auditResult?.level,
+      auditResult?.error_priority
+    );
+    return {
+      ...meta,
+      label: t(meta.labelKey)
+    };
+  }, [auditResult?.error_priority, auditResult?.level, t]);
+
   const renderIcon = useMemo(() => {
-    const { level } = auditResult || {};
-    if (!level || passStatusLevelData.includes(level)) {
+    const { iconKey } = levelDisplay;
+    if (iconKey === 'normal') {
       return <CheckCircleFilled width={20} height={20} />;
     }
-    if (level === 'notice') {
+    if (iconKey === 'notice') {
       return <InfoHexagonFilled width={20} height={20} />;
     }
-    if (level === 'warn') {
+    if (iconKey === 'warn') {
       return <WarningFilled width={20} height={20} />;
     }
-    if (level === 'error') {
+    if (iconKey === 'error_P0') {
+      return <CloseCircleFilled width={20} height={20} color="#C41D3A" />;
+    }
+    if (iconKey === 'error_P1') {
+      return <MinusCircleFilled width={20} height={20} color="#FA8C16" />;
+    }
+    if (iconKey === 'error') {
       return <CloseCircleFilled width={20} height={20} />;
     }
-  }, [auditResult]);
+    return null;
+  }, [levelDisplay]);
 
   const renderMessage = useMemo(() => {
     const { level } = auditResult || {};
@@ -132,12 +152,18 @@ const AuditResultMessage = ({
     );
   }
 
+  const isErrorLevel = (auditResult?.level ?? '').toLowerCase() === 'error';
+
   return (
     <AuditResultMessageWithAnnotationStyleWrapper
       className={classNames(styleClass, {
         'has-delete-rule-wrapper': isRuleDeleted
       })}
       expandable={hasExpandableAnnotation}
+      data-error-priority={
+        isErrorLevel ? levelDisplay.dataErrorPriority || 'ungraded' : undefined
+      }
+      data-icon-key={levelDisplay.iconKey}
     >
       <EmptyBox if={isRuleDeleted}>
         <Tag color="volcano" className="message-rule-disabled">
@@ -146,8 +172,31 @@ const AuditResultMessage = ({
       </EmptyBox>
       <AuditResultMessageStyleWrapper
         onClick={hasExpandableAnnotation ? toggle : undefined}
+        className={classNames('audit-result-message', {
+          [`audit-result-icon-${levelDisplay.iconKey}`]: true
+        })}
       >
-        <span className="icon-wrapper">{renderIcon}</span>
+        <span
+          className="icon-wrapper"
+          data-error-priority={
+            isErrorLevel
+              ? levelDisplay.dataErrorPriority || 'ungraded'
+              : undefined
+          }
+          data-icon-key={levelDisplay.iconKey}
+          aria-label={levelDisplay.label}
+          title={levelDisplay.label}
+        >
+          {renderIcon}
+        </span>
+        <EmptyBox if={isErrorLevel}>
+          <span
+            className={`audit-result-priority-label audit-result-priority-label-${levelDisplay.iconKey}`}
+            data-error-priority={levelDisplay.dataErrorPriority || 'ungraded'}
+          >
+            {levelDisplay.label}
+          </span>
+        </EmptyBox>
         <span className="text-wrapper">{renderMessage}</span>
         {/* #if [ee] */}
         <EmptyBox if={showMoreInDescRow}>

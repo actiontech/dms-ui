@@ -33,6 +33,10 @@ import {
   WarningFilled,
   CloseCircleFilled
 } from '@actiontech/icons';
+import {
+  getAuditLevelDisplayLabel,
+  resolveRuleConfigErrorPriority
+} from '../AuditResultMessage/errorPriorityDisplay';
 
 const scrollStepRange = 30;
 
@@ -54,7 +58,8 @@ const RuleList: React.FC<RuleListProps> = ({
     [actionType]
   );
 
-  const renderLevelIcon = (level?: RuleResV1LevelEnum) => {
+  const renderLevelIcon = (rule: IRuleResV1) => {
+    const level = rule.level;
     const levelIcon = () => {
       if (level === RuleResV1LevelEnum.error) {
         return <CloseCircleFilled width={18} height={19} />;
@@ -66,10 +71,31 @@ const RuleList: React.FC<RuleListProps> = ({
         return <WarningFilled width={18} height={19} />;
       }
     };
+    const configPriority = resolveRuleConfigErrorPriority(
+      level,
+      rule.error_priority
+    );
+    const levelText = getAuditLevelDisplayLabel(
+      t,
+      level,
+      configPriority || undefined
+    );
     return (
-      <div className="level-icon">
+      <div
+        className="level-icon"
+        data-error-priority={
+          level === RuleResV1LevelEnum.error
+            ? configPriority || undefined
+            : undefined
+        }
+        title={
+          level === RuleResV1LevelEnum.error
+            ? t('rule.ruleLevelIcon.toolTipsTitle', { text: levelText })
+            : undefined
+        }
+      >
         {levelIcon()}
-        <span className="level-icon-text">{level}</span>
+        <span className="level-icon-text">{levelText}</span>
       </div>
     );
   };
@@ -308,7 +334,7 @@ const RuleList: React.FC<RuleListProps> = ({
                       }
                     }}
                   >
-                    {renderLevelIcon(v.level)}
+                    {renderLevelIcon(v)}
                     {renderLevelContent(v)}
                     {isAction && renderAction(v)}
                   </RuleItemStyleWrapper>

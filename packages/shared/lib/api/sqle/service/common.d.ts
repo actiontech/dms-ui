@@ -572,6 +572,9 @@ export interface ICreateCustomRuleReqV1 {
 
   desc?: string;
 
+  /** orthogonal to level; P0 / P1 / empty */
+  error_priority?: string;
+
   level?: CreateCustomRuleReqV1LevelEnum;
 
   rule_script?: string;
@@ -645,6 +648,9 @@ export interface ICustomRuleResV1 {
   db_type?: string;
 
   desc?: string;
+
+  /** orthogonal to level; P0 / P1 / empty */
+  error_priority?: string;
 
   level?: CustomRuleResV1LevelEnum;
 
@@ -2262,6 +2268,9 @@ export interface IRuleProjectTemplateDetailResV1 {
 }
 
 export interface IRuleReqV1 {
+  /** orthogonal to level; P0 / P1 / empty（非 error 不传或传空） */
+  error_priority?: string;
+
   is_custom_rule?: boolean;
 
   level?: string;
@@ -2277,6 +2286,9 @@ export interface IRuleResV1 {
   db_type?: string;
 
   desc?: string;
+
+  /** orthogonal to level; empty = ungraded / 配置侧默认按 P1 展示 */
+  error_priority?: string;
 
   has_audit_power?: boolean;
 
@@ -2781,6 +2793,9 @@ export interface IUpdateCustomRuleReqV1 {
   annotation?: string;
 
   desc?: string;
+
+  /** orthogonal to level; P0 / P1 / empty */
+  error_priority?: string;
 
   level?: UpdateCustomRuleReqV1LevelEnum;
 

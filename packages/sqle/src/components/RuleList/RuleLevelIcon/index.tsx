@@ -7,22 +7,39 @@ import {
 } from '@ant-design/icons';
 import { Tooltip, Space, Typography } from 'antd';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  getAuditLevelDisplayLabel,
+  resolveAuditLevelDisplayMeta,
+  resolveRuleConfigErrorPriority
+} from '../../AuditResultMessage/errorPriorityDisplay';
 
 import './index.less';
 
 export type typeRuleLevelIcon = {
   ruleLevel?: string;
+  /** 正交错误优先级；仅 level=error 时有意义 */
+  errorPriority?: string | null;
   iconFontSize?: number;
   onlyShowIcon?: boolean;
 };
 
 const RuleLevelIcon: React.FC<typeRuleLevelIcon> = ({
   ruleLevel = RuleResV1LevelEnum.normal,
+  errorPriority,
   iconFontSize = 25,
   onlyShowIcon = false
 }) => {
   let icon: React.ReactNode;
-  let text = t('rule.ruleLevelIcon.normal');
+  const configPriority = resolveRuleConfigErrorPriority(
+    ruleLevel,
+    errorPriority
+  );
+  const displayMeta = resolveAuditLevelDisplayMeta(ruleLevel, configPriority);
+  const text = getAuditLevelDisplayLabel(
+    t,
+    ruleLevel,
+    configPriority || undefined
+  );
 
   switch (ruleLevel) {
     case RuleResV1LevelEnum.notice:
@@ -31,13 +48,11 @@ const RuleLevelIcon: React.FC<typeRuleLevelIcon> = ({
           style={{ fontSize: iconFontSize, color: '#3282e6' }}
         />
       );
-      text = t('rule.ruleLevelIcon.notice');
       break;
     case RuleResV1LevelEnum.warn:
       icon = (
         <WarningOutlined style={{ fontSize: iconFontSize, color: '#ff8c00' }} />
       );
-      text = t('rule.ruleLevelIcon.warn');
       break;
     case RuleResV1LevelEnum.error:
       icon = (
@@ -45,19 +60,20 @@ const RuleLevelIcon: React.FC<typeRuleLevelIcon> = ({
           style={{ fontSize: iconFontSize, color: '#f00000' }}
         />
       );
-      text = t('rule.ruleLevelIcon.error');
       break;
     default:
       icon = <AuditOutlined style={{ fontSize: iconFontSize }} />;
   }
+
+  const labelText =
+    ruleLevel === RuleResV1LevelEnum.error ? text : t(displayMeta.labelKey);
 
   return onlyShowIcon ? (
     icon
   ) : (
     <Tooltip
       overlay={t<string>('rule.ruleLevelIcon.toolTipsTitle', {
-        ruleLevel,
-        text
+        text: labelText
       })}
       placement="topLeft"
     >
@@ -66,9 +82,14 @@ const RuleLevelIcon: React.FC<typeRuleLevelIcon> = ({
         size={1}
         className="sqle-rule-icon"
         align="center"
+        data-error-priority={
+          ruleLevel === RuleResV1LevelEnum.error
+            ? configPriority || undefined
+            : undefined
+        }
       >
         <div>{icon}</div>
-        <Typography.Text type="secondary">{ruleLevel}</Typography.Text>
+        <Typography.Text type="secondary">{labelText}</Typography.Text>
       </Space>
     </Tooltip>
   );

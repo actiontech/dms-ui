@@ -137,6 +137,7 @@ export const buildAuditResultDisplayPayload = (
   rule_name: item.rule_name ?? '',
   desc: item.desc ?? '',
   annotation: item.annotation ?? '',
+  error_priority: item.error_priority ?? '',
   i18n_audit_result_info: item.i18n_audit_result_info,
   db_type: item.db_type
 });
