@@ -98,6 +98,16 @@ export const auditLevelDictionary: StaticEnumDictionary<WorkflowTemplateDetailRe
       'workflowTemplate.auditLevel.error'
   };
 
+/** S2 §8.13 / S3 §8.4：结果页六项分段文案（含错误 P0/P1）；落点 execWorkflow */
+export const auditLevelFilterLabelDictionary: Record<string, string> = {
+  normal: 'execWorkflow.create.auditResult.level.normal',
+  notice: 'execWorkflow.create.auditResult.level.notice',
+  warn: 'execWorkflow.create.auditResult.level.warn',
+  error: 'execWorkflow.create.auditResult.level.error',
+  error_P0: 'execWorkflow.create.auditResult.level.error_P0',
+  error_P1: 'execWorkflow.create.auditResult.level.error_P1'
+};
+
 export const sqlAuditStatusDictionary: StaticEnumDictionary<getSQLAuditRecordsV1FilterSqlAuditStatusEnum> =
   {
     [getSQLAuditRecordsV1FilterSqlAuditStatusEnum.auditing]:

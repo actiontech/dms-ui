@@ -29,6 +29,7 @@ export const SQL_MANAGE_STATIC_FILTER_KEYS = [
   'filter_instance_id',
   'filter_schema_name',
   'filter_audit_level',
+  'filter_error_priority',
   'filter_rule_name',
   'filter_last_audit_start_time_from',
   'filter_last_audit_start_time_to',
