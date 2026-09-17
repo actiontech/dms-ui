@@ -1,11 +1,11 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { SqlAuditRuleExceptionSourceContext } from '../../../../RuleException/index.data';
+import { AuditLevelFilterUIValue } from '../../auditLevelFilter';
 
 export type AuditResultTableProps = {
   noDuplicate: boolean;
   taskID?: string;
-  auditLevelFilterValue?: getAuditTaskSQLsV2FilterAuditLevelEnum;
+  auditLevelFilterValue?: AuditLevelFilterUIValue;
   projectID: string;
   updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
   dbType?: string;

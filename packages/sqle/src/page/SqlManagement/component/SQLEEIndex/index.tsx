@@ -62,6 +62,7 @@ import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/
 import { SqlManagementListStyleWrapper } from './style';
 import { pickStaticSqlManageFilters } from './sourceExtra.utils';
 import useSqlManageSourceExtra from './hooks/useSqlManageSourceExtra';
+import { applyDerivedAuditLevelFilters } from '../../../SqlExecWorkflow/Common/auditLevelFilter';
 import {
   getSqlManagementExportColumnKeys,
   SQL_MANAGEMENT_TABLE_NAME
@@ -410,7 +411,7 @@ const SQLEEIndex = () => {
     const isParseFailedRuleSelected =
       filter_rule_name === PARSE_FAILED_RULE_SELECT_VALUE;
 
-    return {
+    const params = applyDerivedAuditLevelFilters({
       ...(staticFilters as Partial<IGetSqlManageListV2Params>),
       ...pagination,
       ...getCurrentSortParams(sortInfo),
@@ -429,7 +430,9 @@ const SQLEEIndex = () => {
         : undefined,
       filter_parse_failed: isParseFailedRuleSelected ? true : undefined,
       extra_filters: buildExtraFiltersForRequest(tableFilterInfo)
-    };
+    }) as IGetSqlManageListV2Params & { filter_error_priority?: string };
+
+    return params;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     tableFilterInfo,
@@ -852,8 +855,22 @@ const SQLEEIndex = () => {
                 fuzzy_search_endpoint: listParams.fuzzy_search_endpoint,
                 filter_schema_name: listParams.filter_schema_name,
                 filter_parse_failed: listParams.filter_parse_failed,
-                extra_filters: listParams.extra_filters
-              },
+                extra_filters: listParams.extra_filters,
+                // S3 §8.4：导出复用列表筛选（含 error priority）；swagger 未再生前交叉扩展
+                ...((
+                  listParams as IGetSqlManageListV2Params & {
+                    filter_error_priority?: string;
+                  }
+                ).filter_error_priority
+                  ? {
+                      filter_error_priority: (
+                        listParams as IGetSqlManageListV2Params & {
+                          filter_error_priority?: string;
+                        }
+                      ).filter_error_priority
+                    }
+                  : {})
+              } as Parameters<typeof SqlManage.exportSqlManageRemediationV1>[0],
               { responseType: 'blob' }
             );
           })()

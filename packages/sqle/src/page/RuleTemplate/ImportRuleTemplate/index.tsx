@@ -31,6 +31,7 @@ import {
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
 import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
+import { mapActiveRuleToRuleReq } from '../utils/mapActiveRuleToRuleReq';
 
 const ImportRuleTemplate = () => {
   const { t } = useTranslation();
@@ -67,16 +68,9 @@ const ImportRuleTemplate = () => {
   const submit = useCallback(() => {
     startCreate();
     const baseInfo = ruleTemplateForm.getFieldsValue();
-    const activeRuleWithNewField: IRuleReqV1[] = activeRule.map((rule) => {
-      return {
-        name: rule.rule_name,
-        level: rule.level,
-        params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
-          : [],
-        is_custom_rule: !!rule.is_custom_rule
-      };
-    });
+    const activeRuleWithNewField: IRuleReqV1[] = activeRule.map(
+      mapActiveRuleToRuleReq
+    );
     rule_template
       .createProjectRuleTemplateV1({
         rule_template_name: baseInfo.templateName,

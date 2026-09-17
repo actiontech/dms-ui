@@ -2,8 +2,9 @@ import { Popover, Space } from 'antd';
 import { DownloadRecordProps } from './index.type';
 import { BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
+import { IDownloadAuditTaskSQLReportV1Params } from '@actiontech/shared/lib/api/sqle/service/task/index.d';
 import { DownloadDropdownStyleWrapper } from './style';
 import {
   ProfileFilled,
@@ -13,13 +14,25 @@ import {
   DownArrowLineOutlined
 } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { deriveAuditLevelFilterParams } from '../auditLevelFilter';
+
+type DownloadReportParams = IDownloadAuditTaskSQLReportV1Params & {
+  filter_audit_level?: string;
+  filter_error_priority?: string;
+};
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,
-  taskId
+  taskId,
+  auditLevelFilterValue
 }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+
+  const filterParams = useMemo(
+    () => deriveAuditLevelFilterParams(auditLevelFilterValue),
+    [auditLevelFilterValue]
+  );
 
   const downloadSql = () => {
     task.downloadAuditTaskSQLFileV1(
@@ -32,13 +45,12 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
   };
 
   const downloadReport = () => {
-    task.downloadAuditTaskSQLReportV1(
-      {
-        task_id: taskId,
-        no_duplicate: noDuplicate
-      },
-      { responseType: 'blob' }
-    );
+    const params: DownloadReportParams = {
+      task_id: taskId,
+      no_duplicate: noDuplicate,
+      ...filterParams
+    };
+    task.downloadAuditTaskSQLReportV1(params, { responseType: 'blob' });
     setOpen(false);
   };
 

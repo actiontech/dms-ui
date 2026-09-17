@@ -43,13 +43,17 @@ const AuditResultTree: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
         ),
         key: 'audit_tree_title',
         children: auditResult.map((item, index) => {
+          const itemWithPriority = item as IAuditSQLResult & {
+            error_priority?: string;
+          };
           return {
             title: (
               <AuditResultMessage
                 key={`${item.rule_name ?? ''}${item.message ?? ''}-${index}`}
                 auditResult={{
-                  level: item?.level ?? '',
-                  message: item?.message ?? ''
+                  level: itemWithPriority?.level ?? '',
+                  message: itemWithPriority?.message ?? '',
+                  error_priority: itemWithPriority?.error_priority ?? ''
                 }}
               />
             ),

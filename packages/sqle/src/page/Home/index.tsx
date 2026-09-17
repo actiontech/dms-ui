@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@actiontech/shared';
 import DBAPanel from './DBAPanel';
 import DEVPanel from './DEVPanel';
+import AuditPlanRiskList from './AuditPlanRiskList';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import dashboard from '@actiontech/shared/lib/api/sqle/service/dashboard';
 
 const Home = () => {
   const { t } = useTranslation();
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
 
   const { data: workflowStatistics, refresh: getWorkflowStatistics } =
     useRequest(
@@ -37,8 +38,8 @@ const Home = () => {
         getWorkflowStatistics={getWorkflowStatistics}
         projectName={projectName}
       />
-      {/* todo 智能扫描重构，先隐藏 
-      <AuditPlanRiskList projectName={projectName} projectID={projectID} /> */}
+      {/* S2 §8.10：启用审核计划风险 SQL 列表，等级列三态展示 */}
+      <AuditPlanRiskList projectName={projectName} projectID={projectID} />
     </>
   );
 };

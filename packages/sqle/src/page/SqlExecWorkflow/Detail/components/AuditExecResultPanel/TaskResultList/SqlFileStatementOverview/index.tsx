@@ -33,6 +33,12 @@ import { ToggleButtonStyleWrapper } from '../../../../../Common/style';
 import DownloadRecord from '../../../../../Common/DownloadRecord';
 import { AuditResultFilterContainerStyleWrapper } from '../../../../../Common/AuditResultFilterContainer/style';
 import { LeftArrowOutlined, SqlFileOutlined } from '@actiontech/icons';
+import { deriveAuditLevelFilterParams } from '../../../../../Common/auditLevelFilter';
+import { IGetAuditTaskSQLsV2Params } from '@actiontech/shared/lib/api/sqle/service/task/index.d';
+
+type GetAuditTaskSQLsV2ParamsWithPriority = IGetAuditTaskSQLsV2Params & {
+  filter_error_priority?: string;
+};
 
 const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();
@@ -72,18 +78,21 @@ const SqlFileStatementOverview: React.FC = () => {
   );
 
   const { data, loading } = useRequest(
-    () =>
-      handleTableRequestError(
-        task.getAuditTaskSQLsV2({
-          task_id: taskId ?? '',
-          filter_audit_file_id: Number(fileId),
-          page_index: pagination.page_index.toString(),
-          page_size: pagination.page_size.toString(),
-          filter_audit_level: tableFilterInfo.filter_audit_level,
-          filter_exec_status: execStatusFilterValue,
-          no_duplicate: noDuplicate
-        })
-      ),
+    () => {
+      const levelFilters = deriveAuditLevelFilterParams(
+        tableFilterInfo.filter_audit_level
+      );
+      const params: GetAuditTaskSQLsV2ParamsWithPriority = {
+        task_id: taskId ?? '',
+        filter_audit_file_id: Number(fileId),
+        page_index: pagination.page_index.toString(),
+        page_size: pagination.page_size.toString(),
+        filter_exec_status: execStatusFilterValue,
+        no_duplicate: noDuplicate,
+        ...levelFilters
+      };
+      return handleTableRequestError(task.getAuditTaskSQLsV2(params));
+    },
     {
       refreshDeps: [
         pagination,
@@ -145,7 +154,11 @@ const SqlFileStatementOverview: React.FC = () => {
           >
             {t('execWorkflow.create.auditResult.clearDuplicate')}
           </ToggleButtonStyleWrapper>
-          <DownloadRecord taskId={taskId ?? ''} noDuplicate={noDuplicate} />
+          <DownloadRecord
+            taskId={taskId ?? ''}
+            noDuplicate={noDuplicate}
+            auditLevelFilterValue={tableFilterInfo.filter_audit_level}
+          />
         </Space>
       </SegmentedRowStyleWrapper>
       <TableFilterContainer

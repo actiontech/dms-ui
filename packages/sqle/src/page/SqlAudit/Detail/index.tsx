@@ -6,9 +6,16 @@ import { BasicButton, PageHeader } from '@actiontech/shared';
 import BasicInfoWrapper from './BasicInfoWrapper';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
+import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { useMemo } from 'react';
 import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
 import { PlusOutlined, LeftArrowOutlined } from '@actiontech/icons';
+import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+
+/** swagger 未再生前：任务侧最高错误优先级 */
+type AuditTaskWithPriority = IAuditTaskResV1 & {
+  audit_error_priority?: string;
+};
 
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
@@ -26,6 +33,31 @@ const SqlAuditDetail = () => {
       .then((res) => res.data.data)
   );
 
+  /**
+   * 快捷审核详情嵌套 task 偶发返回空 audit_error_priority；
+   * 任务详情接口为权威值，用于实例角标（S2 §8.5）。
+   */
+  const nestedTask = pluginAuditRecord?.task as
+    | AuditTaskWithPriority
+    | undefined;
+  const nestedPriority = (nestedTask?.audit_error_priority ?? '').trim();
+  const needTaskPriorityEnrich = !!nestedTask?.task_id && !nestedPriority;
+
+  const { data: enrichedTaskPriority, loading: taskPriorityLoading } =
+    useRequest(
+      () =>
+        task
+          .getAuditTaskV1({ task_id: `${nestedTask!.task_id}` })
+          .then((res) => {
+            const data = res.data.data as AuditTaskWithPriority | undefined;
+            return (data?.audit_error_priority ?? '').trim();
+          }),
+      {
+        ready: needTaskPriorityEnrich,
+        refreshDeps: [nestedTask?.task_id, nestedPriority]
+      }
+    );
+
   const basicInfoData = useMemo(() => {
     return {
       id: pluginAuditRecord?.sql_audit_record_id ?? '',
@@ -36,8 +68,18 @@ const SqlAuditDetail = () => {
   }, [pluginAuditRecord]);
 
   const auditResultData = useMemo(() => {
-    return pluginAuditRecord?.task ? [pluginAuditRecord?.task] : [];
-  }, [pluginAuditRecord]);
+    if (!nestedTask) {
+      return [];
+    }
+    const priority =
+      nestedPriority || enrichedTaskPriority || nestedTask.audit_error_priority;
+    return [
+      {
+        ...nestedTask,
+        audit_error_priority: priority
+      } as AuditTaskWithPriority
+    ];
+  }, [nestedTask, nestedPriority, enrichedTaskPriority]);
 
   const ruleExceptionSourceContext = useMemo(() => {
     if (!pluginAuditRecord?.task) {
@@ -51,7 +93,11 @@ const SqlAuditDetail = () => {
 
   return (
     <>
-      <Spin spinning={dataLoading}>
+      <Spin
+        spinning={
+          dataLoading || (needTaskPriorityEnrich && taskPriorityLoading)
+        }
+      >
         <PageHeader
           fixed
           title={

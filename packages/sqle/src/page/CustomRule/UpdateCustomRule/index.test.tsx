@@ -152,7 +152,8 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
       annotation: 'anno',
       rule_script: 'SELECT 1',
       type: '规范1',
-      rule_id: testRuleID
+      rule_id: testRuleID,
+      error_priority: ''
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);
     expect(resultTip).not.toBeVisible();
@@ -184,7 +185,8 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
       annotation: 'anno',
       rule_script: 'SELECT 1;',
       type: '规范1',
-      rule_id: testRuleID
+      rule_id: testRuleID,
+      error_priority: 'P1'
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);
     expect(resultTip).not.toBeVisible();

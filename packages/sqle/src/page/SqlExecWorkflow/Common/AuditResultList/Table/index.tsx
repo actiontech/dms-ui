@@ -17,6 +17,12 @@ import AuditResultDrawer from './AuditResultDrawer';
 import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
 import { MatchConditionReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { deriveAuditLevelFilterParams } from '../../auditLevelFilter';
+import { IGetAuditTaskSQLsV2Params } from '@actiontech/shared/lib/api/sqle/service/task/index.d';
+
+type GetAuditTaskSQLsV2ParamsWithPriority = IGetAuditTaskSQLsV2Params & {
+  filter_error_priority?: string;
+};
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   noDuplicate,
@@ -79,16 +85,17 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   };
 
   const { data, loading, refresh } = useRequest(
-    () =>
-      handleTableRequestError(
-        task.getAuditTaskSQLsV2({
-          task_id: taskID!,
-          filter_audit_level: auditLevelFilterValue,
-          page_index: pagination.page_index.toString(),
-          page_size: pagination.page_size.toString(),
-          no_duplicate: noDuplicate
-        })
-      ),
+    () => {
+      const levelFilters = deriveAuditLevelFilterParams(auditLevelFilterValue);
+      const params: GetAuditTaskSQLsV2ParamsWithPriority = {
+        task_id: taskID!,
+        page_index: pagination.page_index.toString(),
+        page_size: pagination.page_size.toString(),
+        no_duplicate: noDuplicate,
+        ...levelFilters
+      };
+      return handleTableRequestError(task.getAuditTaskSQLsV2(params));
+    },
     {
       ready: typeof taskID === 'string',
       refreshDeps: [pagination, taskID],

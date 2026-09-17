@@ -15,6 +15,8 @@ import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { IRuleTemplateForm } from './index.type';
 import { IRuleParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import RuleBaseInfo from '../../../components/RuleList/RuleDetailModal/RuleBaseInfo';
+import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { resolveRuleConfigErrorPriority } from '../../../components/AuditResultMessage/errorPriorityDisplay';
 
 export type IEditRuleTemplate = {
   visible: boolean;
@@ -25,6 +27,11 @@ export type IEditRuleTemplate = {
   submitLoading?: boolean;
 };
 
+const ERROR_PRIORITY_OPTIONS = [
+  { label: 'P0', value: 'P0' },
+  { label: 'P1', value: 'P1' }
+];
+
 const EditRuleTemplate = (props: IEditRuleTemplate) => {
   const { t } = useTranslation();
 
@@ -32,13 +39,19 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
   const [form] = Form.useForm<IRuleTemplateForm>();
   const { getRuleLevelStatusSelectOption } = useStaticStatus();
   const { generateFormValueByParams } = useAsyncParams();
+  const currentLevel = Form.useWatch('level', form);
 
   useEffect(() => {
     if (!!dataSource) {
+      const errorPriority = resolveRuleConfigErrorPriority(
+        dataSource.level,
+        dataSource.error_priority
+      );
       if (!!dataSource.params && dataSource.params.length > 0) {
         form.setFieldsValue({
           params: generateFormValueByParams(dataSource.params),
           level: dataSource?.level,
+          error_priority: errorPriority || undefined,
           desc: dataSource?.desc ?? '',
           type: dataSource?.type ?? '',
           rule_name: dataSource?.rule_name ?? '',
@@ -48,6 +61,7 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
       } else {
         form.setFieldsValue({
           level: dataSource?.level,
+          error_priority: errorPriority || undefined,
           desc: dataSource?.desc ?? '',
           type: dataSource?.type ?? '',
           rule_name: dataSource?.rule_name ?? '',
@@ -62,6 +76,17 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
   const onCancel = () => {
     form?.resetFields();
     onClosed();
+  };
+
+  const onLevelChange = (level: RuleResV1LevelEnum) => {
+    if (level === RuleResV1LevelEnum.error) {
+      const current = form.getFieldValue('error_priority');
+      form.setFieldsValue({
+        error_priority: current || 'P1'
+      });
+    } else {
+      form.setFieldsValue({ error_priority: undefined });
+    }
   };
 
   const onPreSubmit = useCallback(async () => {
@@ -86,10 +111,14 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
       }
       return temp;
     });
+    const isError = values.level === RuleResV1LevelEnum.error;
     props.onSubmit({
       ...props.dataSource,
       params,
-      level: values.level
+      level: values.level,
+      error_priority: isError
+        ? resolveRuleConfigErrorPriority(values.level, values.error_priority)
+        : ''
     });
   }, [form, props]);
 
@@ -132,10 +161,31 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
         >
           <BasicSelect
             placeholder={t('ruleTemplate.editModal.ruleLevelLabelPlace')}
+            onChange={onLevelChange}
           >
             {getRuleLevelStatusSelectOption()}
           </BasicSelect>
         </Form.Item>
+        <EmptyBox if={currentLevel === RuleResV1LevelEnum.error}>
+          <Form.Item
+            label={t('ruleTemplate.editModal.errorPriorityLabel')}
+            name="error_priority"
+            rules={[
+              {
+                required: true,
+                message: t('common.form.placeholder.select', {
+                  name: t('ruleTemplate.editModal.errorPriorityLabel')
+                })
+              }
+            ]}
+            initialValue="P1"
+          >
+            <BasicSelect
+              placeholder={t('ruleTemplate.editModal.errorPriorityPlace')}
+              options={ERROR_PRIORITY_OPTIONS}
+            />
+          </Form.Item>
+        </EmptyBox>
         <EmptyBox if={!!dataSource?.params && dataSource.params.length > 0}>
           <AutoCreatedFormItemByApi
             isFullLine

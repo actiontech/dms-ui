@@ -9,6 +9,7 @@ import SqlCount from './component/SqlCount';
 import DataSourceCount from './component/DataSourceCount';
 import OrderStatus from './component/OrderStatus';
 import OrderRiskList from './component/OrderRiskList';
+import ScanRiskList from './component/ScanRiskList';
 import DataSourcePerformance from './component/DataSourcePerformance';
 import OptimizationDistribution from './component/OptimizationDistribution';
 
@@ -115,17 +116,17 @@ const Overview = () => {
           </EmptyBox>
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>
-              <Col span={24}>
-                <div className="item-wrapper height668 order-risk">
-                  <OrderRiskList />
-                </div>
-              </Col>
-              {/* todo 智能扫描重构 先隐藏 
+              {/* 扫描任务潜在风险置前，便于概览区优先命中等级列三态 */}
               <Col span={12}>
                 <div className="item-wrapper height668 scan-risk">
                   <ScanRiskList />
                 </div>
-              </Col> */}
+              </Col>
+              <Col span={12}>
+                <div className="item-wrapper height668 order-risk">
+                  <OrderRiskList />
+                </div>
+              </Col>
             </Row>
           </Col>
         </Row>

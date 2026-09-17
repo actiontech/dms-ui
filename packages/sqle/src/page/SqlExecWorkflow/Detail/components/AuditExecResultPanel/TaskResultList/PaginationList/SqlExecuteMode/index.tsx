@@ -5,6 +5,7 @@ import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/servi
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { applyDerivedAuditLevelFilters } from '../../../../../../Common/auditLevelFilter';
 import ResultCard from '../../Common/ResultCard';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
@@ -33,7 +34,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
       return task
         .getAuditTaskSQLsV2({
           task_id: taskId,
-          ...tableFilterInfo,
+          ...applyDerivedAuditLevelFilters({
+            ...(tableFilterInfo as Record<string, unknown>)
+          }),
           page_index: pagination.page_index.toString(),
           page_size: pagination.page_size.toString(),
           no_duplicate: noDuplicate,

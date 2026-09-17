@@ -8,6 +8,10 @@ import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 import { SQLRenderer } from '@actiontech/shared';
 
+type AuditSqlResultWithPriority = NonNullable<
+  IListDataExportTaskSQL['audit_sql_result']
+>[number] & { error_priority?: string };
+
 export const AuditResultForCreateOrderColumn = (
   onClickAuditResult: (record: IListDataExportTaskSQL) => void
 ): ActiontechTableColumn<IListDataExportTaskSQL> => {
@@ -44,19 +48,23 @@ export const AuditResultForCreateOrderColumn = (
       title: () => t('dmsDataExport.common.auditResult.column.auditResult'),
       className: 'audit-result-column',
       render: (result = [], record) => {
+        const results = (result ?? []) as AuditSqlResultWithPriority[];
         return (
-          <div onClick={() => onClickAuditResult(record)}>
-            {result?.length > 1 ? (
+          <div
+            className="audit-result-wrapper"
+            onClick={() => onClickAuditResult(record)}
+          >
+            {results.length > 1 ? (
               <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
+                auditResultInfo={results.map((item) => ({
+                  level: item.level ?? '',
+                  executionFailed: false,
+                  error_priority: item.error_priority
+                }))}
               />
             ) : (
               <AuditResultMessage
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
+                auditResult={results.length ? results[0] : {}}
               />
             )}
           </div>

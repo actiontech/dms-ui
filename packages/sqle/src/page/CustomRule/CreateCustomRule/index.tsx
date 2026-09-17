@@ -47,7 +47,10 @@ const CreateCustomRule: React.FC = () => {
         level: baseInfo.level as CreateCustomRuleReqV1LevelEnum | undefined,
         annotation: baseInfo.annotation,
         rule_script: values.script,
-        type: baseInfo.ruleType
+        type: baseInfo.ruleType,
+        ...(baseInfo.level === 'error'
+          ? { error_priority: baseInfo.error_priority === 'P0' ? 'P0' : 'P1' }
+          : {})
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
