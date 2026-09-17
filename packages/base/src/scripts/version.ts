@@ -1,1 +1,1 @@
-export const UI_VERSION = 'dev-zjrc-scan-collect-audit-lb-v3   0da534e4f';
+export const UI_VERSION = 'dev-zjrc-sql-fingerprint-id-filter   93c9fa7e2';
