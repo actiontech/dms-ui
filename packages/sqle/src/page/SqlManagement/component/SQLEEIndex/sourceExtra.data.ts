@@ -37,6 +37,7 @@ export const SQL_MANAGE_STATIC_FILTER_KEYS = [
   'filter_status',
   'filter_db_type',
   'fuzzy_search_sql_fingerprint',
+  'fuzzy_search_id',
   'fuzzy_search_endpoint',
   'fuzzy_search_schema_name'
 ] as const;

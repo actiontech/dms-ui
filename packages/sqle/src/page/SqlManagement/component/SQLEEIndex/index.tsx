@@ -400,6 +400,12 @@ const SQLEEIndex = () => {
     ) {
       delete staticFilters.filter_schema_name;
     }
+    if (
+      staticFilters.fuzzy_search_id === '' ||
+      staticFilters.fuzzy_search_id === undefined
+    ) {
+      delete staticFilters.fuzzy_search_id;
+    }
 
     const isParseFailedRuleSelected =
       filter_rule_name === PARSE_FAILED_RULE_SELECT_VALUE;

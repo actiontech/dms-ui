@@ -64,6 +64,7 @@ export default {
     },
     column: {
       SQLFingerprint: 'SQL fingerprint',
+      sqlId: 'SQL ID',
       source: 'Source',
       instanceName: 'DB instance',
       priority: 'Priority',

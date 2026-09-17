@@ -827,7 +827,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
         </div>
         <div
           class="ant-space-item"
-          style="padding-bottom: 12px;"
+          style="margin-right: 12px; padding-bottom: 12px;"
         >
           <div
             class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-open"
@@ -882,6 +882,26 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
               unselectable="on"
             />
           </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 12px;"
+        >
+          <span
+            class="ant-input-affix-wrapper basic-input-wrapper custom-input-namespace css-1v8xzxw ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+          >
+            <span
+              class="ant-input-prefix"
+            >
+              SQL ID
+            </span>
+            <input
+              class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
+              placeholder="请输入{{name}}"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
       </div>
       <div>
