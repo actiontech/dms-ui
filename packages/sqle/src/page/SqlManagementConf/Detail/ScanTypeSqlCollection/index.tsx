@@ -653,9 +653,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
           ? 320
           : DEFAULT_SCAN_SQL_COLUMN_WIDTH);
 
+      // SQL ID（主键 id）：与管控页同口径，默认不勾选（清本地设置后 cur.show ?? true 不会误展示）
       return {
         ...column,
-        width
+        width,
+        ...(fieldName === 'id' ? { show: false as const } : {})
       };
     });
   }, [
