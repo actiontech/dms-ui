@@ -125,13 +125,19 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            aria-label="错误"
+            class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            data-error-priority="ungraded"
+            data-icon-key="error"
+            title="错误"
           >
             <svg
               height="16"
@@ -145,7 +151,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
               />
             </svg>
             <span>
-              1
+              <span
+                class="audit-result-tag-label"
+              >
+                错误
+              </span>
+              <span
+                class="audit-result-tag-count"
+              >
+                 
+                1
+              </span>
             </span>
           </span>
         </div>
@@ -154,13 +170,19 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   </body>,
   "container": <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
     >
       <div
         class="ant-space-item"
+        style="padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+          aria-label="错误"
+          class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+          data-error-priority="ungraded"
+          data-icon-key="error"
+          title="错误"
         >
           <svg
             height="16"
@@ -174,7 +196,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
             />
           </svg>
           <span>
-            1
+            <span
+              class="audit-result-tag-label"
+            >
+              错误
+            </span>
+            <span
+              class="audit-result-tag-count"
+            >
+               
+              1
+            </span>
           </span>
         </span>
       </div>
@@ -260,13 +292,19 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            aria-label="错误"
+            class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            data-error-priority="ungraded"
+            data-icon-key="error"
+            title="错误"
           >
             <svg
               height="16"
@@ -280,7 +318,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
               />
             </svg>
             <span>
-              1
+              <span
+                class="audit-result-tag-label"
+              >
+                错误
+              </span>
+              <span
+                class="audit-result-tag-count"
+              >
+                 
+                1
+              </span>
             </span>
           </span>
         </div>
@@ -288,14 +336,72 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-      />
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          <span
+            aria-label="普通"
+            class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+            data-icon-key="normal"
+            style="background-color: gray;"
+            title="普通"
+          >
+            <svg
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                fill="#C3C6CD"
+              />
+            </svg>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-    />
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
+    >
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 8px;"
+      >
+        <span
+          aria-label="普通"
+          class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+          data-icon-key="normal"
+          style="background-color: gray;"
+          title="普通"
+        >
+          <svg
+            height="19"
+            viewBox="0 0 18 19"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+              fill="#C3C6CD"
+            />
+          </svg>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -377,13 +483,19 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            aria-label="错误"
+            class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            data-error-priority="ungraded"
+            data-icon-key="error"
+            title="错误"
           >
             <svg
               height="16"
@@ -397,6 +509,50 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
               />
             </svg>
             <span>
+              <span
+                class="audit-result-tag-label"
+              >
+                错误
+              </span>
+              <span
+                class="audit-result-tag-count"
+              >
+                 
+                1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          <span
+            aria-label="普通"
+            class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+            data-icon-key="normal"
+            style="background-color: gray;"
+            title="普通"
+          >
+            <svg
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                fill="#C3C6CD"
+              />
+            </svg>
+            <span>
               1
             </span>
           </span>
@@ -405,23 +561,23 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-      />
-    </div>
-    <div>
-      <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            aria-label="提示"
+            class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            data-icon-key="notice"
+            title="提示"
           >
             <svg
-              height="16"
+              height="19"
               viewBox="0 0 18 19"
-              width="16"
+              width="18"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -439,18 +595,23 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   </body>,
   "container": <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
     >
       <div
         class="ant-space-item"
+        style="padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+          aria-label="提示"
+          class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+          data-icon-key="notice"
+          title="提示"
         >
           <svg
-            height="16"
+            height="19"
             viewBox="0 0 18 19"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -545,13 +706,19 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            aria-label="错误"
+            class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            data-error-priority="ungraded"
+            data-icon-key="error"
+            title="错误"
           >
             <svg
               height="16"
@@ -565,6 +732,50 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
               />
             </svg>
             <span>
+              <span
+                class="audit-result-tag-label"
+              >
+                错误
+              </span>
+              <span
+                class="audit-result-tag-count"
+              >
+                 
+                1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          <span
+            aria-label="普通"
+            class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+            data-icon-key="normal"
+            style="background-color: gray;"
+            title="普通"
+          >
+            <svg
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                fill="#C3C6CD"
+              />
+            </svg>
+            <span>
               1
             </span>
           </span>
@@ -573,23 +784,23 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-      />
-    </div>
-    <div>
-      <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            aria-label="提示"
+            class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            data-icon-key="notice"
+            title="提示"
           >
             <svg
-              height="16"
+              height="19"
               viewBox="0 0 18 19"
-              width="16"
+              width="18"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -606,19 +817,24 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+            aria-label="告警"
+            class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+            data-icon-key="warn"
+            title="告警"
           >
             <svg
               fill="none"
-              height="16"
+              height="19"
               viewBox="0 0 16 16"
-              width="16"
+              width="18"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -636,19 +852,24 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   </body>,
   "container": <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
     >
       <div
         class="ant-space-item"
+        style="padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+          aria-label="告警"
+          class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+          data-icon-key="warn"
+          title="告警"
         >
           <svg
             fill="none"
-            height="16"
+            height="19"
             viewBox="0 0 16 16"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -743,13 +964,19 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            aria-label="错误"
+            class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            data-error-priority="ungraded"
+            data-icon-key="error"
+            title="错误"
           >
             <svg
               height="16"
@@ -763,6 +990,50 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
               />
             </svg>
             <span>
+              <span
+                class="audit-result-tag-label"
+              >
+                错误
+              </span>
+              <span
+                class="audit-result-tag-count"
+              >
+                 
+                1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          <span
+            aria-label="普通"
+            class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+            data-icon-key="normal"
+            style="background-color: gray;"
+            title="普通"
+          >
+            <svg
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                fill="#C3C6CD"
+              />
+            </svg>
+            <span>
               1
             </span>
           </span>
@@ -771,23 +1042,23 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-      />
-    </div>
-    <div>
-      <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            aria-label="提示"
+            class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            data-icon-key="notice"
+            title="提示"
           >
             <svg
-              height="16"
+              height="19"
               viewBox="0 0 18 19"
-              width="16"
+              width="18"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -804,19 +1075,24 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+            aria-label="告警"
+            class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+            data-icon-key="warn"
+            title="告警"
           >
             <svg
               fill="none"
-              height="16"
+              height="19"
               viewBox="0 0 16 16"
-              width="16"
+              width="18"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -833,43 +1109,61 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
     </div>
     <div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
       >
         <div
           class="ant-space-item"
-          style="margin-right: 8px;"
+          style="margin-right: 8px; padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            aria-label="错误"
+            class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            data-error-priority="ungraded"
+            data-icon-key="error"
+            title="错误"
           >
             <svg
               height="16"
-              viewBox="0 0 18 19"
+              viewBox="0 0 16 16"
               width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
-                fill="#6094FC"
+                d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                fill="#F66074"
               />
             </svg>
             <span>
-              1
+              <span
+                class="audit-result-tag-label"
+              >
+                错误
+              </span>
+              <span
+                class="audit-result-tag-count"
+              >
+                 
+                1
+              </span>
             </span>
           </span>
         </div>
         <div
           class="ant-space-item"
-          style="margin-right: 8px;"
+          style="margin-right: 8px; padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+            aria-label="告警"
+            class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+            data-icon-key="warn"
+            title="告警"
           >
             <svg
               fill="none"
-              height="16"
+              height="19"
               viewBox="0 0 16 16"
-              width="16"
+              width="18"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -884,19 +1178,23 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
         </div>
         <div
           class="ant-space-item"
+          style="padding-bottom: 8px;"
         >
           <span
-            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+            aria-label="提示"
+            class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+            data-icon-key="notice"
+            title="提示"
           >
             <svg
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                fill="#F66074"
+                d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                fill="#6094FC"
               />
             </svg>
             <span>
@@ -909,43 +1207,61 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
   </body>,
   "container": <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+      style="flex-wrap: wrap; margin-bottom: -8px;"
     >
       <div
         class="ant-space-item"
-        style="margin-right: 8px;"
+        style="margin-right: 8px; padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+          aria-label="错误"
+          class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+          data-error-priority="ungraded"
+          data-icon-key="error"
+          title="错误"
         >
           <svg
             height="16"
-            viewBox="0 0 18 19"
+            viewBox="0 0 16 16"
             width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
-              fill="#6094FC"
+              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+              fill="#F66074"
             />
           </svg>
           <span>
-            1
+            <span
+              class="audit-result-tag-label"
+            >
+              错误
+            </span>
+            <span
+              class="audit-result-tag-count"
+            >
+               
+              1
+            </span>
           </span>
         </span>
       </div>
       <div
         class="ant-space-item"
-        style="margin-right: 8px;"
+        style="margin-right: 8px; padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+          aria-label="告警"
+          class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+          data-icon-key="warn"
+          title="告警"
         >
           <svg
             fill="none"
-            height="16"
+            height="19"
             viewBox="0 0 16 16"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -960,19 +1276,23 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag 
       </div>
       <div
         class="ant-space-item"
+        style="padding-bottom: 8px;"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+          aria-label="提示"
+          class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+          data-icon-key="notice"
+          title="提示"
         >
           <svg
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
+            height="19"
+            viewBox="0 0 18 19"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-              fill="#F66074"
+              d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+              fill="#6094FC"
             />
           </svg>
           <span>

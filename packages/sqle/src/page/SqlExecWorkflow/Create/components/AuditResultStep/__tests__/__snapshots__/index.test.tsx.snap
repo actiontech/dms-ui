@@ -108,7 +108,9 @@ exports[`test AuditResultStep should match snapshot 1`] = `
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                data-audit-error-priority="ungraded"
+                title="错误"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -130,6 +132,11 @@ exports[`test AuditResultStep should match snapshot 1`] = `
                     />
                   </svg>
                 </span>
+                <span
+                  class="instance-segmented-label-priority"
+                >
+                  错误
+                </span>
               </div>
             </div>
           </label>
@@ -144,7 +151,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -264,22 +271,27 @@ exports[`test AuditResultStep should match snapshot 1`] = `
         <div
           class="custom-segmented-filter-item"
         >
-          普通(Normal)
+          普通
         </div>
         <div
           class="custom-segmented-filter-item"
         >
-          提示(Notice)
+          提示
         </div>
         <div
           class="custom-segmented-filter-item"
         >
-          告警(Warning)
+          告警
         </div>
         <div
           class="custom-segmented-filter-item"
         >
-          错误(Error)
+          错误(P0)
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          错误(P1)
         </div>
       </div>
       <div

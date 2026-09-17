@@ -198,6 +198,12 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                     class="ant-table-cell"
                                     scope="col"
                                   >
+                                    等级
+                                  </th>
+                                  <th
+                                    class="ant-table-cell"
+                                    scope="col"
+                                  >
                                     状态
                                   </th>
                                   <th
@@ -244,6 +250,11 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                         mysql-1_20240105013651
                                       </a>
                                     </div>
+                                  </td>
+                                  <td
+                                    class="ant-table-cell"
+                                  >
+                                    -
                                   </td>
                                   <td
                                     class="ant-table-cell"
@@ -331,6 +342,11 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                   <td
                                     class="ant-table-cell"
                                   >
+                                    -
+                                  </td>
+                                  <td
+                                    class="ant-table-cell"
+                                  >
                                     <div
                                       class="css-3q8fl"
                                     >
@@ -373,6 +389,11 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                   class="ant-table-row ant-table-row-level-0"
                                   data-row-key="1743144533085917183-undefined"
                                 >
+                                  <td
+                                    class="ant-table-cell"
+                                  >
+                                    -
+                                  </td>
                                   <td
                                     class="ant-table-cell"
                                   >

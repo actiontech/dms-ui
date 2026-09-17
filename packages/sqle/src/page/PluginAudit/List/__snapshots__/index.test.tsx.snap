@@ -619,12 +619,16 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                         >
                           <div
                             class=" css-1737itt"
+                            data-icon-key="warn"
                           >
                             <div
-                              class="css-9paak3"
+                              class="audit-result-message audit-result-icon-warn css-1lugxev"
                             >
                               <span
+                                aria-label="告警"
                                 class="icon-wrapper"
+                                data-icon-key="warn"
+                                title="告警"
                               >
                                 <svg
                                   fill="none"
@@ -2108,12 +2112,16 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                         >
                           <div
                             class=" css-1737itt"
+                            data-icon-key="warn"
                           >
                             <div
-                              class="css-9paak3"
+                              class="audit-result-message audit-result-icon-warn css-1lugxev"
                             >
                               <span
+                                aria-label="告警"
                                 class="icon-wrapper"
+                                data-icon-key="warn"
+                                title="告警"
                               >
                                 <svg
                                   fill="none"
@@ -2348,17 +2356,24 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             <div
                               class="ant-space-item"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <span
+                                aria-label="错误"
+                                class="audit-result-icon audit-result-icon-error"
+                                data-icon-key="error"
+                                title="错误"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                    fill="#F66074"
+                                  />
+                                </svg>
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -2475,7 +2490,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                           class="audit-result-wrapper"
                         >
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"

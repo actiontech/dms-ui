@@ -104,36 +104,18 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
-                    >
-                      <svg
-                        height="19"
-                        viewBox="0 0 18 19"
-                        width="18"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
-                          fill="#6094FC"
-                        />
-                      </svg>
-                      <span>
-                        2
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      aria-label="告警"
+                      class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="warn"
+                      title="告警"
                     >
                       <svg
                         fill="none"
@@ -145,6 +127,32 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                         <path
                           d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
                           fill="#EBAD1C"
+                        />
+                      </svg>
+                      <span>
+                        2
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <span
+                      aria-label="提示"
+                      class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="notice"
+                      title="提示"
+                    >
+                      <svg
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                          fill="#6094FC"
                         />
                       </svg>
                       <span>
@@ -267,36 +275,18 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
-                    >
-                      <svg
-                        height="19"
-                        viewBox="0 0 18 19"
-                        width="18"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
-                          fill="#6094FC"
-                        />
-                      </svg>
-                      <span>
-                        2
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      aria-label="告警"
+                      class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="warn"
+                      title="告警"
                     >
                       <svg
                         fill="none"
@@ -308,6 +298,32 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                         <path
                           d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
                           fill="#EBAD1C"
+                        />
+                      </svg>
+                      <span>
+                        2
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <span
+                      aria-label="提示"
+                      class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="notice"
+                      title="提示"
+                    >
+                      <svg
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                          fill="#6094FC"
                         />
                       </svg>
                       <span>
@@ -430,37 +446,55 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+                      aria-label="错误"
+                      class="ant-tag ant-tag-red ant-tag-borderless audit-result-tag-item audit-result-tag-item-error basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+                      data-error-priority="ungraded"
+                      data-icon-key="error"
+                      title="错误"
                     >
                       <svg
-                        height="19"
-                        viewBox="0 0 18 19"
-                        width="18"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
-                          fill="#6094FC"
+                          d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                          fill="#F66074"
                         />
                       </svg>
                       <span>
-                        5
+                        <span
+                          class="audit-result-tag-label"
+                        >
+                          错误
+                        </span>
+                        <span
+                          class="audit-result-tag-count"
+                        >
+                           
+                          2
+                        </span>
                       </span>
                     </span>
                   </div>
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      aria-label="告警"
+                      class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="warn"
+                      title="告警"
                     >
                       <svg
                         fill="none"
@@ -481,23 +515,27 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                   </div>
                   <div
                     class="ant-space-item"
+                    style="padding-bottom: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-3qh3vw css-dev-only-do-not-override-txh9fw"
+                      aria-label="提示"
+                      class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="notice"
+                      title="提示"
                     >
                       <svg
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                          fill="#F66074"
+                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                          fill="#6094FC"
                         />
                       </svg>
                       <span>
-                        2
+                        5
                       </span>
                     </span>
                   </div>
@@ -617,36 +655,18 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
-                    >
-                      <svg
-                        height="19"
-                        viewBox="0 0 18 19"
-                        width="18"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
-                          fill="#6094FC"
-                        />
-                      </svg>
-                      <span>
-                        2
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      aria-label="告警"
+                      class="ant-tag ant-tag-orange ant-tag-borderless audit-result-tag-item audit-result-tag-item-warn basic-tag-wrapper basic-large-tag-wrapper css-91vcnh css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="warn"
+                      title="告警"
                     >
                       <svg
                         fill="none"
@@ -658,6 +678,32 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                         <path
                           d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
                           fill="#EBAD1C"
+                        />
+                      </svg>
+                      <span>
+                        2
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <span
+                      aria-label="提示"
+                      class="ant-tag ant-tag-blue ant-tag-borderless audit-result-tag-item audit-result-tag-item-notice basic-tag-wrapper basic-large-tag-wrapper css-1dyku9p css-dev-only-do-not-override-txh9fw"
+                      data-icon-key="notice"
+                      title="提示"
+                    >
+                      <svg
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                          fill="#6094FC"
                         />
                       </svg>
                       <span>
@@ -860,7 +906,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                     class="audit-result-wrapper"
                                   >
                                     <div
-                                      class=" css-9paak3"
+                                      class=" css-1lugxev"
                                     >
                                       <span
                                         class="icon-wrapper"

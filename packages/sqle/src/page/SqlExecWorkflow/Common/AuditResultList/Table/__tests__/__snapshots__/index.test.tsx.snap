@@ -190,7 +190,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -656,7 +656,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -1450,7 +1450,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                       >
                         <div>
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -2046,7 +2046,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class="css-yzky0k"
+                            class="css-xp02z7"
                           >
                             <div
                               class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -2057,7 +2057,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                 style="padding-bottom: 12px;"
                               >
                                 <span
-                                  class="audit-level-summary-item"
+                                  aria-label="错误"
+                                  class="audit-level-summary-item audit-level-summary-item-error"
+                                  data-icon-key="error"
+                                  title="错误"
                                 >
                                   <svg
                                     height="20"
@@ -2070,6 +2073,11 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                       fill="#F66074"
                                     />
                                   </svg>
+                                  <span
+                                    class="audit-level-summary-label"
+                                  >
+                                    错误
+                                  </span>
                                   <span
                                     class="audit-level-summary-count"
                                   >
@@ -2196,7 +2204,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class="css-yzky0k"
+                            class="css-xp02z7"
                           >
                             <div
                               class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -2207,7 +2215,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                 style="padding-bottom: 12px;"
                               >
                                 <span
-                                  class="audit-level-summary-item"
+                                  aria-label="错误"
+                                  class="audit-level-summary-item audit-level-summary-item-error"
+                                  data-icon-key="error"
+                                  title="错误"
                                 >
                                   <svg
                                     height="20"
@@ -2220,6 +2231,11 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                       fill="#F66074"
                                     />
                                   </svg>
+                                  <span
+                                    class="audit-level-summary-label"
+                                  >
+                                    错误
+                                  </span>
                                   <span
                                     class="audit-level-summary-count"
                                   >
@@ -2651,7 +2667,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class="css-yzky0k"
+                            class="css-xp02z7"
                           >
                             <div
                               class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -2662,7 +2678,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                 style="padding-bottom: 12px;"
                               >
                                 <span
-                                  class="audit-level-summary-item"
+                                  aria-label="错误"
+                                  class="audit-level-summary-item audit-level-summary-item-error"
+                                  data-icon-key="error"
+                                  title="错误"
                                 >
                                   <svg
                                     height="20"
@@ -2675,6 +2694,11 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                       fill="#F66074"
                                     />
                                   </svg>
+                                  <span
+                                    class="audit-level-summary-label"
+                                  >
+                                    错误
+                                  </span>
                                   <span
                                     class="audit-level-summary-count"
                                   >
@@ -2801,7 +2825,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class="css-yzky0k"
+                            class="css-xp02z7"
                           >
                             <div
                               class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -2812,7 +2836,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                 style="padding-bottom: 12px;"
                               >
                                 <span
-                                  class="audit-level-summary-item"
+                                  aria-label="错误"
+                                  class="audit-level-summary-item audit-level-summary-item-error"
+                                  data-icon-key="error"
+                                  title="错误"
                                 >
                                   <svg
                                     height="20"
@@ -2825,6 +2852,11 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                       fill="#F66074"
                                     />
                                   </svg>
+                                  <span
+                                    class="audit-level-summary-label"
+                                  >
+                                    错误
+                                  </span>
                                   <span
                                     class="audit-level-summary-count"
                                   >
@@ -3172,12 +3204,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                   >
                                     <div
                                       class=" css-1737itt"
+                                      data-error-priority="ungraded"
+                                      data-icon-key="error"
                                     >
                                       <div
-                                        class="css-9paak3"
+                                        class="audit-result-message audit-result-icon-error css-1lugxev"
                                       >
                                         <span
+                                          aria-label="错误"
                                           class="icon-wrapper"
+                                          data-error-priority="ungraded"
+                                          data-icon-key="error"
+                                          title="错误"
                                         >
                                           <svg
                                             height="20"
@@ -3190,6 +3228,12 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                                               fill="#F66074"
                                             />
                                           </svg>
+                                        </span>
+                                        <span
+                                          class="audit-result-priority-label audit-result-priority-label-error"
+                                          data-error-priority="ungraded"
+                                        >
+                                          错误
                                         </span>
                                         <span
                                           class="text-wrapper"

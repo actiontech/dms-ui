@@ -204,6 +204,12 @@ exports[`page/ProjectOverview/ScanRiskList render scan risk list and check more 
                                     class="ant-table-cell"
                                     scope="col"
                                   >
+                                    等级
+                                  </th>
+                                  <th
+                                    class="ant-table-cell"
+                                    scope="col"
+                                  >
                                     时间
                                   </th>
                                   <th
@@ -260,6 +266,26 @@ exports[`page/ProjectOverview/ScanRiskList render scan risk list and check more 
                                   <td
                                     class="ant-table-cell"
                                   >
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-1ror0i4 ant-space-horizontal ant-space-align-center"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          aria-label="错误"
+                                          class="audit-result-icon audit-result-icon-error"
+                                          data-icon-key="error"
+                                          title="错误"
+                                        >
+                                          错误
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="ant-table-cell"
+                                  >
                                     2023-12-27 10:32:38
                                   </td>
                                   <td
@@ -278,6 +304,11 @@ exports[`page/ProjectOverview/ScanRiskList render scan risk list and check more 
                                   class="ant-table-row ant-table-row-level-0"
                                   data-row-key="32416134612"
                                 >
+                                  <td
+                                    class="ant-table-cell"
+                                  >
+                                    -
+                                  </td>
                                   <td
                                     class="ant-table-cell"
                                   >

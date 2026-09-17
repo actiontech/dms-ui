@@ -1790,7 +1790,7 @@ LIMIT
                                 data-testid="trigger-open-remediation-drawer"
                               >
                                 <div
-                                  class="css-yzky0k"
+                                  class="css-xp02z7"
                                 >
                                   <div
                                     class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -1840,7 +1840,7 @@ LIMIT
                                 data-testid="trigger-open-remediation-drawer"
                               >
                                 <div
-                                  class="css-yzky0k"
+                                  class="css-xp02z7"
                                 >
                                   <div
                                     class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -1851,7 +1851,10 @@ LIMIT
                                       style="padding-bottom: 12px;"
                                     >
                                       <span
-                                        class="audit-level-summary-item"
+                                        aria-label="告警"
+                                        class="audit-level-summary-item audit-level-summary-item-warn"
+                                        data-icon-key="warn"
+                                        title="告警"
                                       >
                                         <svg
                                           fill="none"
@@ -1865,6 +1868,11 @@ LIMIT
                                             fill="#EBAD1C"
                                           />
                                         </svg>
+                                        <span
+                                          class="audit-level-summary-label"
+                                        >
+                                          告警
+                                        </span>
                                         <span
                                           class="audit-level-summary-count"
                                         >
@@ -4025,7 +4033,7 @@ LIMIT
                                   data-testid="trigger-open-remediation-drawer"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -4075,7 +4083,7 @@ LIMIT
                                   data-testid="trigger-open-remediation-drawer"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -4086,7 +4094,10 @@ LIMIT
                                         style="padding-bottom: 12px;"
                                       >
                                         <span
-                                          class="audit-level-summary-item"
+                                          aria-label="告警"
+                                          class="audit-level-summary-item audit-level-summary-item-warn"
+                                          data-icon-key="warn"
+                                          title="告警"
                                         >
                                           <svg
                                             fill="none"
@@ -4100,6 +4111,11 @@ LIMIT
                                               fill="#EBAD1C"
                                             />
                                           </svg>
+                                          <span
+                                            class="audit-level-summary-label"
+                                          >
+                                            告警
+                                          </span>
                                           <span
                                             class="audit-level-summary-count"
                                           >
@@ -4769,7 +4785,7 @@ LIMIT
                           </span>
                         </div>
                         <div
-                          class=" css-9paak3"
+                          class=" css-1lugxev"
                         >
                           <span
                             class="icon-wrapper"
@@ -4811,7 +4827,7 @@ LIMIT
                           </span>
                         </div>
                         <div
-                          class=" css-9paak3"
+                          class=" css-1lugxev"
                         >
                           <span
                             class="icon-wrapper"

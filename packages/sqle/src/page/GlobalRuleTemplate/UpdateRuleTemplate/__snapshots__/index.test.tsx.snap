@@ -429,6 +429,17 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                 </div>
               </div>
               <div
+                class="rule-error-priority-legend"
+                style="margin-bottom: 8px;"
+              >
+                <span
+                  class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  style="font-size: 12px;"
+                >
+                  错误级规则可设置优先级，列表中显示为错误(P0)或错误(P1)
+                </span>
+              </div>
+              <div
                 class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
               >
                 <div
@@ -477,6 +488,8 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           >
                             <div
                               class="level-icon"
+                              data-error-priority="P1"
+                              title="告警等级: 错误(P1)"
                             >
                               <svg
                                 height="19"
@@ -492,7 +505,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                               <span
                                 class="level-icon-text"
                               >
-                                error
+                                错误(P1)
                               </span>
                             </div>
                             <div
@@ -1416,6 +1429,100 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                   </div>
                 </div>
                 <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="error_priority"
+                        title="错误优先级"
+                      >
+                        错误优先级
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="error_priority_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="error_priority_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="error_priority_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="error_priority"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="P1"
+                              >
+                                P1
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
@@ -1926,6 +2033,17 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                 </div>
               </div>
               <div
+                class="rule-error-priority-legend"
+                style="margin-bottom: 8px;"
+              >
+                <span
+                  class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  style="font-size: 12px;"
+                >
+                  错误级规则可设置优先级，列表中显示为错误(P0)或错误(P1)
+                </span>
+              </div>
+              <div
                 class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
               >
                 <div
@@ -1950,6 +2068,8 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           >
                             <div
                               class="level-icon"
+                              data-error-priority="P1"
+                              title="告警等级: 错误(P1)"
                             >
                               <svg
                                 height="19"
@@ -1965,7 +2085,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                               <span
                                 class="level-icon-text"
                               >
-                                error
+                                错误(P1)
                               </span>
                             </div>
                             <div
@@ -2939,6 +3059,17 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                 </div>
               </div>
               <div
+                class="rule-error-priority-legend"
+                style="margin-bottom: 8px;"
+              >
+                <span
+                  class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  style="font-size: 12px;"
+                >
+                  错误级规则可设置优先级，列表中显示为错误(P0)或错误(P1)
+                </span>
+              </div>
+              <div
                 class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
               >
                 <div
@@ -2987,6 +3118,8 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           >
                             <div
                               class="level-icon"
+                              data-error-priority="P1"
+                              title="告警等级: 错误(P1)"
                             >
                               <svg
                                 height="19"
@@ -3002,7 +3135,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                               <span
                                 class="level-icon-text"
                               >
-                                error
+                                错误(P1)
                               </span>
                             </div>
                             <div
@@ -3133,6 +3266,8 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           >
                             <div
                               class="level-icon"
+                              data-error-priority="P1"
+                              title="告警等级: 错误(P1)"
                             >
                               <svg
                                 height="19"
@@ -3148,7 +3283,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                               <span
                                 class="level-icon-text"
                               >
-                                error
+                                错误(P1)
                               </span>
                             </div>
                             <div

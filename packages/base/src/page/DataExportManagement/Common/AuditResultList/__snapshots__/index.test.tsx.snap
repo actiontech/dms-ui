@@ -593,9 +593,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -712,9 +714,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -831,9 +835,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -950,9 +956,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1069,9 +1077,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1188,9 +1198,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1637,9 +1649,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1756,9 +1770,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1875,9 +1891,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -1994,9 +2012,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -2113,9 +2133,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -2232,9 +2254,11 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         <td
                           class="ant-table-cell audit-result-column"
                         >
-                          <div>
+                          <div
+                            class="audit-result-wrapper"
+                          >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
@@ -2539,7 +2563,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-9paak3"
+                          class="result-item css-1lugxev"
                         >
                           <span
                             class="icon-wrapper"
@@ -2803,15 +2827,23 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
                             class=" css-1737itt"
+                            data-error-priority="ungraded"
+                            data-icon-key="error"
                           >
                             <div
-                              class="css-9paak3"
+                              class="audit-result-message audit-result-icon-error css-1lugxev"
                             >
                               <span
+                                aria-label="错误"
                                 class="icon-wrapper"
+                                data-error-priority="ungraded"
+                                data-icon-key="error"
+                                title="错误"
                               >
                                 <svg
                                   height="20"
@@ -2824,6 +2856,12 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                                     fill="#F66074"
                                   />
                                 </svg>
+                              </span>
+                              <span
+                                class="audit-result-priority-label audit-result-priority-label-error"
+                                data-error-priority="ungraded"
+                              >
+                                错误
                               </span>
                               <span
                                 class="text-wrapper"
@@ -2926,24 +2964,33 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
                             class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
-                              <svg
-                                height="20"
-                                viewBox="0 0 16 16"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <span
+                                aria-label="错误"
+                                class="audit-result-icon audit-result-icon-error"
+                                data-icon-key="error"
+                                title="错误"
                               >
-                                <path
-                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                  fill="#F66074"
-                                />
-                              </svg>
+                                <svg
+                                  height="20"
+                                  viewBox="0 0 16 16"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                    fill="#F66074"
+                                  />
+                                </svg>
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -3392,9 +3439,11 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -3511,9 +3560,11 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -3630,9 +3681,11 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -3749,9 +3802,11 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -3868,9 +3923,11 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"
@@ -3987,9 +4044,11 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       <td
                         class="ant-table-cell audit-result-column"
                       >
-                        <div>
+                        <div
+                          class="audit-result-wrapper"
+                        >
                           <div
-                            class=" css-9paak3"
+                            class=" css-1lugxev"
                           >
                             <span
                               class="icon-wrapper"

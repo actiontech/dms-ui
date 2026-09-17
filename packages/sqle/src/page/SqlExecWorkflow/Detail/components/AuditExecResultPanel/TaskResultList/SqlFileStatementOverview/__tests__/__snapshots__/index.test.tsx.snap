@@ -784,7 +784,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                             class="audit-result-wrapper"
                           >
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"

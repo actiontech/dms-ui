@@ -100,6 +100,8 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                             >
                               <div
                                 class="result-item has-delete-rule-wrapper css-1737itt"
+                                data-error-priority="ungraded"
+                                data-icon-key="error"
                               >
                                 <span
                                   class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -107,10 +109,14 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                                   该规则已删除
                                 </span>
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-error css-1lugxev"
                                 >
                                   <span
+                                    aria-label="错误"
                                     class="icon-wrapper"
+                                    data-error-priority="ungraded"
+                                    data-icon-key="error"
+                                    title="错误"
                                   >
                                     <svg
                                       height="20"
@@ -123,6 +129,12 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                                         fill="#F66074"
                                       />
                                     </svg>
+                                  </span>
+                                  <span
+                                    class="audit-result-priority-label audit-result-priority-label-error"
+                                    data-error-priority="ungraded"
+                                  >
+                                    错误
                                   </span>
                                   <span
                                     class="text-wrapper"
@@ -137,6 +149,8 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                             >
                               <div
                                 class="result-item has-delete-rule-wrapper css-1737itt"
+                                data-error-priority="ungraded"
+                                data-icon-key="error"
                               >
                                 <span
                                   class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -144,10 +158,14 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                                   该规则已删除
                                 </span>
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-error css-1lugxev"
                                 >
                                   <span
+                                    aria-label="错误"
                                     class="icon-wrapper"
+                                    data-error-priority="ungraded"
+                                    data-icon-key="error"
+                                    title="错误"
                                   >
                                     <svg
                                       height="20"
@@ -160,6 +178,12 @@ exports[`sqle/PluginAudit/AuditResultDrawer should match snap shot 1`] = `
                                         fill="#F66074"
                                       />
                                     </svg>
+                                  </span>
+                                  <span
+                                    class="audit-result-priority-label audit-result-priority-label-error"
+                                    data-error-priority="ungraded"
+                                  >
+                                    错误
                                   </span>
                                   <span
                                     class="text-wrapper"

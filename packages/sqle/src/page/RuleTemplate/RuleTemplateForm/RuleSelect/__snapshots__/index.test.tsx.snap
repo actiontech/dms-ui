@@ -103,6 +103,17 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
       </div>
     </div>
     <div
+      class="rule-error-priority-legend"
+      style="margin-bottom: 8px;"
+    >
+      <span
+        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+        style="font-size: 12px;"
+      >
+        错误级规则可设置优先级，列表中显示为错误(P0)或错误(P1)
+      </span>
+    </div>
+    <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
     >
       <div>
@@ -205,6 +216,8 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                 >
                   <div
                     class="level-icon"
+                    data-error-priority="P1"
+                    title="告警等级: 错误(P1)"
                   >
                     <svg
                       height="19"
@@ -220,7 +233,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     <span
                       class="level-icon-text"
                     >
-                      error
+                      错误(P1)
                     </span>
                   </div>
                   <div
@@ -386,7 +399,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     <span
                       class="level-icon-text"
                     >
-                      normal
+                      普通
                     </span>
                   </div>
                   <div
@@ -521,7 +534,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     <span
                       class="level-icon-text"
                     >
-                      notice
+                      提示
                     </span>
                   </div>
                   <div
@@ -657,7 +670,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     <span
                       class="level-icon-text"
                     >
-                      warn
+                      告警
                     </span>
                   </div>
                   <div

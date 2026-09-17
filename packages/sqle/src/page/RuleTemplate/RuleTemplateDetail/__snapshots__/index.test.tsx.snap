@@ -269,6 +269,8 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
                   >
                     <div
                       class="level-icon"
+                      data-error-priority="P1"
+                      title="告警等级: 错误(P1)"
                     >
                       <svg
                         height="19"
@@ -284,7 +286,7 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
                       <span
                         class="level-icon-text"
                       >
-                        error
+                        错误(P1)
                       </span>
                     </div>
                     <div

@@ -512,7 +512,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -632,22 +632,27 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div
@@ -1383,7 +1388,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -1503,22 +1508,27 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div
@@ -2249,7 +2259,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -2369,22 +2379,27 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div
@@ -2636,7 +2651,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                               >
                                 <div>
                                   <div
-                                    class=" css-9paak3"
+                                    class=" css-1lugxev"
                                   >
                                     <span
                                       class="icon-wrapper"
@@ -3390,7 +3405,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -3510,22 +3525,27 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div
@@ -3777,7 +3797,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               >
                                 <div>
                                   <div
-                                    class=" css-9paak3"
+                                    class=" css-1lugxev"
                                   >
                                     <span
                                       class="icon-wrapper"

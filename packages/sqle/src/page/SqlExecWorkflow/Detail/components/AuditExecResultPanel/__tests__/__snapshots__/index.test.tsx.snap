@@ -45,7 +45,9 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                data-audit-error-priority="ungraded"
+                title="错误"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -67,6 +69,11 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                     />
                   </svg>
                 </span>
+                <span
+                  class="instance-segmented-label-priority"
+                >
+                  错误
+                </span>
               </div>
             </div>
           </label>
@@ -81,7 +88,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -640,7 +647,9 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                data-audit-error-priority="ungraded"
+                title="错误"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -662,6 +671,11 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                     />
                   </svg>
                 </span>
+                <span
+                  class="instance-segmented-label-priority"
+                >
+                  错误
+                </span>
               </div>
             </div>
           </label>
@@ -676,7 +690,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -1043,14 +1057,19 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
                           >
                             <div
                               class="ant-space-item"
+                              style="padding-bottom: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+                                aria-label="普通"
+                                class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+                                data-icon-key="normal"
                                 style="background-color: gray;"
+                                title="普通"
                               >
                                 <svg
                                   height="19"
@@ -1063,7 +1082,9 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                     fill="#C3C6CD"
                                   />
                                 </svg>
-                                0
+                                <span>
+                                  1
+                                </span>
                               </span>
                             </div>
                           </div>
@@ -1344,12 +1365,16 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                   >
                                     <div
                                       class="result-item css-1737itt"
+                                      data-icon-key="normal"
                                     >
                                       <div
-                                        class="css-9paak3"
+                                        class="audit-result-message audit-result-icon-normal css-1lugxev"
                                       >
                                         <span
+                                          aria-label="普通"
                                           class="icon-wrapper"
+                                          data-icon-key="normal"
+                                          title="普通"
                                         >
                                           <svg
                                             height="20"
@@ -1703,7 +1728,9 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                data-audit-error-priority="ungraded"
+                title="错误"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -1725,6 +1752,11 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                     />
                   </svg>
                 </span>
+                <span
+                  class="instance-segmented-label-priority"
+                >
+                  错误
+                </span>
               </div>
             </div>
           </label>
@@ -1739,7 +1771,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -2451,7 +2483,9 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                data-audit-error-priority="ungraded"
+                title="错误"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -2473,6 +2507,11 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                     />
                   </svg>
                 </span>
+                <span
+                  class="instance-segmented-label-priority"
+                >
+                  错误
+                </span>
               </div>
             </div>
           </label>
@@ -2487,7 +2526,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
               class="ant-segmented-item-label"
             >
               <div
-                class="instance-segmented-label css-16xaun1"
+                class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
               >
                 <span
                   class="instance-segmented-label-text"
@@ -2861,14 +2900,19 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                 role="separator"
                               />
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
+                                  style="padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+                                    aria-label="普通"
+                                    class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+                                    data-icon-key="normal"
                                     style="background-color: gray;"
+                                    title="普通"
                                   >
                                     <svg
                                       height="19"
@@ -2881,7 +2925,9 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                         fill="#C3C6CD"
                                       />
                                     </svg>
-                                    0
+                                    <span>
+                                      1
+                                    </span>
                                   </span>
                                 </div>
                               </div>
@@ -3162,12 +3208,16 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                       >
                                         <div
                                           class="result-item css-1737itt"
+                                          data-icon-key="normal"
                                         >
                                           <div
-                                            class="css-9paak3"
+                                            class="audit-result-message audit-result-icon-normal css-1lugxev"
                                           >
                                             <span
+                                              aria-label="普通"
                                               class="icon-wrapper"
+                                              data-icon-key="normal"
+                                              title="普通"
                                             >
                                               <svg
                                                 height="20"

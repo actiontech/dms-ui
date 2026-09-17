@@ -2278,7 +2278,8 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                 role="separator"
               />
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                style="flex-wrap: wrap; margin-bottom: -8px;"
               />
             </div>
           </div>

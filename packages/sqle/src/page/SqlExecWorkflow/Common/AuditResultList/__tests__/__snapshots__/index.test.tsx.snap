@@ -58,22 +58,27 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap 1`] = `
           <div
             class="custom-segmented-filter-item"
           >
-            普通(Normal)
+            普通
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            提示(Notice)
+            提示
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            告警(Warning)
+            告警
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            错误(Error)
+            错误(P0)
+          </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            错误(P1)
           </div>
         </div>
         <div
@@ -322,22 +327,27 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap 2`] = `
           <div
             class="custom-segmented-filter-item"
           >
-            普通(Normal)
+            普通
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            提示(Notice)
+            提示
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            告警(Warning)
+            告警
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            错误(Error)
+            错误(P0)
+          </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            错误(P1)
           </div>
         </div>
         <div
@@ -555,7 +565,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
                 class="ant-segmented-item-label"
               >
                 <div
-                  class="instance-segmented-label css-16xaun1"
+                  class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
                 >
                   <span
                     class="instance-segmented-label-text"
@@ -592,7 +602,9 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
                 class="ant-segmented-item-label"
               >
                 <div
-                  class="instance-segmented-label css-16xaun1"
+                  class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                  data-audit-error-priority="ungraded"
+                  title="错误"
                 >
                   <span
                     class="instance-segmented-label-text"
@@ -613,6 +625,11 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
                         fill="#F66074"
                       />
                     </svg>
+                  </span>
+                  <span
+                    class="instance-segmented-label-priority"
+                  >
+                    错误
                   </span>
                 </div>
               </div>
@@ -711,22 +728,27 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
           <div
             class="custom-segmented-filter-item"
           >
-            普通(Normal)
+            普通
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            提示(Notice)
+            提示
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            告警(Warning)
+            告警
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            错误(Error)
+            错误(P0)
+          </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            错误(P1)
           </div>
         </div>
         <div
@@ -968,7 +990,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                 class="ant-segmented-item-label"
               >
                 <div
-                  class="instance-segmented-label css-16xaun1"
+                  class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
                 >
                   <span
                     class="instance-segmented-label-text"
@@ -1005,7 +1027,9 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                 class="ant-segmented-item-label"
               >
                 <div
-                  class="instance-segmented-label css-16xaun1"
+                  class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                  data-audit-error-priority="ungraded"
+                  title="错误"
                 >
                   <span
                     class="instance-segmented-label-text"
@@ -1026,6 +1050,11 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                         fill="#F66074"
                       />
                     </svg>
+                  </span>
+                  <span
+                    class="instance-segmented-label-priority"
+                  >
+                    错误
                   </span>
                 </div>
               </div>
@@ -1124,22 +1153,27 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
           <div
             class="custom-segmented-filter-item"
           >
-            普通(Normal)
+            普通
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            提示(Notice)
+            提示
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            告警(Warning)
+            告警
           </div>
           <div
             class="custom-segmented-filter-item"
           >
-            错误(Error)
+            错误(P0)
+          </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            错误(P1)
           </div>
         </div>
         <div
@@ -1391,7 +1425,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                         >
                           <div>
                             <div
-                              class=" css-9paak3"
+                              class=" css-1lugxev"
                             >
                               <span
                                 class="icon-wrapper"
