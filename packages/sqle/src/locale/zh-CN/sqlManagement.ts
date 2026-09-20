@@ -67,6 +67,7 @@ export default {
     },
     column: {
       SQLFingerprint: 'SQL指纹',
+      sqlId: 'SQL ID',
       source: '来源',
       instanceName: '数据源',
       priority: '优先级',

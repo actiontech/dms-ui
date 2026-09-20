@@ -195,6 +195,8 @@ export interface IGetSqlManageListV2Params {
 
   fuzzy_search_sql_fingerprint?: string;
 
+  fuzzy_search_id?: string;
+
   filter_assignee?: string;
 
   filter_instance_id?: string;
@@ -242,6 +244,8 @@ export interface IGetSqlManageStatisticsV2Params {
   project_name: string;
 
   fuzzy_search_sql_fingerprint?: string;
+
+  fuzzy_search_id?: string;
 
   filter_assignee?: string;
 

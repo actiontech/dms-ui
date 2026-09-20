@@ -13,6 +13,7 @@ const OBJECT_NAME_EXPORT_KEY = 'object_name';
 
 const SQL_MANAGEMENT_EXPORT_COLUMN_KEYS = [
   'sql_fingerprint',
+  'id',
   'sql',
   'source',
   AUDIT_LEVEL_EXPORT_KEY,

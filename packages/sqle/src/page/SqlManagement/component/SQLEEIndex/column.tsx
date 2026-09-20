@@ -41,6 +41,7 @@ export type ExtraFilterMetaType = ISqlManage & {
   filter_schema_name?: string;
   filter_audit_level?: string;
   filter_rule_name?: string;
+  fuzzy_search_id?: string;
   time?: string;
 };
 
@@ -119,6 +120,15 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
         filterCustomType: 'select',
         filterKey: 'filter_rule_name',
         filterLabel: t('sqlManagement.table.filter.rule'),
+        checked: false
+      }
+    ],
+    [
+      'fuzzy_search_id',
+      {
+        filterCustomType: 'input',
+        filterKey: 'fuzzy_search_id',
+        filterLabel: t('sqlManagement.table.column.sqlId'),
         checked: false
       }
     ]
@@ -229,6 +239,18 @@ const SqlManagementColumn: (
             cuttingLength={200}
           />
         );
+      }
+    },
+    {
+      className: 'ellipsis-column-width',
+      dataIndex: 'id',
+      key: 'id',
+      width: 200,
+      title: () => t('sqlManagement.table.column.sqlId'),
+      show: false,
+      render: (id) => {
+        if (id === undefined || id === null) return null;
+        return <BasicTypographyEllipsis textCont={String(id)} />;
       }
     },
     {
