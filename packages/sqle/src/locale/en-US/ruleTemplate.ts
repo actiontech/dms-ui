@@ -68,6 +68,8 @@ export default {
     disableAllRules: 'Disable all rules',
     disableRule: 'Disable this rule',
     editRule: 'Edit this rule',
+    errorPriorityLegend:
+      'Error-level rules can set priority; the list shows Error(P0) or Error(P1)',
 
     emptyRule: 'No matching rule found',
     ruleValue: 'Rule value',
@@ -111,6 +113,8 @@ export default {
     ruleLevelLabel: 'Rule level',
     ruleLevelValue: 'Preset value',
     ruleLevelLabelPlace: 'Select the level corresponding to the rule',
+    errorPriorityLabel: 'Error priority',
+    errorPriorityPlace: 'Please select error priority',
 
     ruleLevelValuePlace: 'Please fill in the default value of the rule',
     ruleDescLabel: 'Rule description',
@@ -134,6 +138,8 @@ export default {
   ruleLevel: {
     normal: 'Normal',
     error: 'Error',
+    error_P0: 'Error(P0)',
+    error_P1: 'Error(P1)',
     warn: 'Warning',
     notice: 'Notice',
     unknown: 'Unknown'

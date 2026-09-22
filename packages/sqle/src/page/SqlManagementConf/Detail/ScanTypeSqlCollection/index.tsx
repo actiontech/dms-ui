@@ -279,24 +279,81 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         }, {});
     };
 
-    return Object.keys(cleanEmptyFilterKey(tableFilterInfo)).map<IFilter>(
-      (key) => {
-        const value = cleanEmptyFilterKey(tableFilterInfo)[key];
-        if (Array.isArray(value) && value.length === 2) {
-          return {
-            filter_name: key,
-            filter_between_value: {
-              from: value[0],
-              to: value[1]
-            }
-          };
-        }
-        return {
+    const cleaned = cleanEmptyFilterKey(tableFilterInfo);
+    const filters: IFilter[] = [];
+    let hasAuditLevelFilter = false;
+    let needsErrorLevelWithPriority = false;
+
+    Object.keys(cleaned).forEach((key) => {
+      const value = cleaned[key];
+      if (Array.isArray(value) && value.length === 2) {
+        filters.push({
           filter_name: key,
-          filter_compare_value: value
-        };
+          filter_between_value: {
+            from: value[0],
+            to: value[1]
+          }
+        });
+        return;
       }
-    );
+
+      // S3 §8.2/§8.4：UI 值 error_P0/P1 展开为 level=error + filter_error_priority
+      if (
+        (key === 'filter_audit_level' || key === 'audit_level') &&
+        (value === 'error_P0' || value === 'error_P1')
+      ) {
+        filters.push({
+          filter_name: 'filter_audit_level',
+          filter_compare_value: 'error'
+        });
+        filters.push({
+          filter_name: 'filter_error_priority',
+          filter_compare_value: value === 'error_P0' ? 'P0' : 'P1'
+        });
+        hasAuditLevelFilter = true;
+        return;
+      }
+
+      if (key === 'filter_audit_level' || key === 'audit_level') {
+        hasAuditLevelFilter = true;
+      }
+
+      // 正交「错误优先级」：选 P0/P1 时须 AND 联传 filter_audit_level=error（S3 §8.1）
+      if (
+        key === 'filter_error_priority' &&
+        (value === 'P0' ||
+          value === 'P1' ||
+          value === 'error_P0' ||
+          value === 'error_P1')
+      ) {
+        const priority =
+          value === 'P0' || value === 'error_P0'
+            ? 'P0'
+            : value === 'P1' || value === 'error_P1'
+            ? 'P1'
+            : value;
+        filters.push({
+          filter_name: 'filter_error_priority',
+          filter_compare_value: priority
+        });
+        needsErrorLevelWithPriority = true;
+        return;
+      }
+
+      filters.push({
+        filter_name: key,
+        filter_compare_value: value
+      });
+    });
+
+    if (needsErrorLevelWithPriority && !hasAuditLevelFilter) {
+      filters.push({
+        filter_name: 'filter_audit_level',
+        filter_compare_value: 'error'
+      });
+    }
+
+    return filters;
   }, [tableFilterInfo]);
 
   const tableRowsRequestRef = useRef<Promise<ScanTableRequestResult> | null>(

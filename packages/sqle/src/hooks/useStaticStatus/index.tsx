@@ -5,7 +5,8 @@ import {
   auditStatusDictionary,
   execStatusDictionary,
   ruleLevelDictionary,
-  auditLevelDictionary
+  auditLevelDictionary,
+  auditLevelFilterLabelDictionary
 } from './index.data';
 import {
   RuleResV1LevelEnum,
@@ -165,16 +166,25 @@ const useStaticStatus = () => {
   }, [t]);
 
   const getAuditLevelStatusSelectOptionValues = useMemo(() => {
-    return Object.keys(
-      WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
-    ).map((v) => {
-      const key =
-        v as keyof typeof WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum;
-      return {
+    const baseLevels = [
+      WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum.normal,
+      WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum.notice,
+      WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum.warn
+    ];
+    return [
+      ...baseLevels.map((key) => ({
         label: t(auditLevelDictionary[key]),
         value: key
-      };
-    });
+      })),
+      {
+        label: t(auditLevelFilterLabelDictionary.error_P0),
+        value: 'error_P0'
+      },
+      {
+        label: t(auditLevelFilterLabelDictionary.error_P1),
+        value: 'error_P1'
+      }
+    ];
   }, [t]);
 
   const getAuditLevelStatusSelectOption = React.useCallback(() => {

@@ -58,7 +58,10 @@ const UpdateCustomRule: React.FC = () => {
         level: baseInfo.level as UpdateCustomRuleReqV1LevelEnum | undefined,
         annotation: baseInfo.annotation,
         rule_script: values.script,
-        type: baseInfo.ruleType
+        type: baseInfo.ruleType,
+        ...(baseInfo.level === 'error'
+          ? { error_priority: baseInfo.error_priority === 'P0' ? 'P0' : 'P1' }
+          : { error_priority: '' })
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

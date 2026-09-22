@@ -1531,7 +1531,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                   class="audit-result-wrapper"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -1542,7 +1542,10 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                         style="padding-bottom: 12px;"
                                       >
                                         <span
-                                          class="audit-level-summary-item"
+                                          aria-label="错误"
+                                          class="audit-level-summary-item audit-level-summary-item-error"
+                                          data-icon-key="error"
+                                          title="错误"
                                         >
                                           <svg
                                             height="20"
@@ -1555,6 +1558,11 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                               fill="#F66074"
                                             />
                                           </svg>
+                                          <span
+                                            class="audit-level-summary-label"
+                                          >
+                                            错误
+                                          </span>
                                           <span
                                             class="audit-level-summary-count"
                                           >
@@ -4513,7 +4521,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                                   class="audit-result-wrapper"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -4524,7 +4532,10 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                                         style="padding-bottom: 12px;"
                                       >
                                         <span
-                                          class="audit-level-summary-item"
+                                          aria-label="错误"
+                                          class="audit-level-summary-item audit-level-summary-item-error"
+                                          data-icon-key="error"
+                                          title="错误"
                                         >
                                           <svg
                                             height="20"
@@ -4537,6 +4548,11 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                                               fill="#F66074"
                                             />
                                           </svg>
+                                          <span
+                                            class="audit-level-summary-label"
+                                          >
+                                            错误
+                                          </span>
                                           <span
                                             class="audit-level-summary-count"
                                           >
@@ -6028,7 +6044,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="audit-result-wrapper"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -6039,7 +6055,10 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                         style="padding-bottom: 12px;"
                                       >
                                         <span
-                                          class="audit-level-summary-item"
+                                          aria-label="错误"
+                                          class="audit-level-summary-item audit-level-summary-item-error"
+                                          data-icon-key="error"
+                                          title="错误"
                                         >
                                           <svg
                                             height="20"
@@ -6052,6 +6071,11 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                               fill="#F66074"
                                             />
                                           </svg>
+                                          <span
+                                            class="audit-level-summary-label"
+                                          >
+                                            错误
+                                          </span>
                                           <span
                                             class="audit-level-summary-count"
                                           >
@@ -6826,7 +6850,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="audit-result-wrapper"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -6837,7 +6861,10 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                         style="padding-bottom: 12px;"
                                       >
                                         <span
-                                          class="audit-level-summary-item"
+                                          aria-label="错误"
+                                          class="audit-level-summary-item audit-level-summary-item-error"
+                                          data-icon-key="error"
+                                          title="错误"
                                         >
                                           <svg
                                             height="20"
@@ -6850,6 +6877,11 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                               fill="#F66074"
                                             />
                                           </svg>
+                                          <span
+                                            class="audit-level-summary-label"
+                                          >
+                                            错误
+                                          </span>
                                           <span
                                             class="audit-level-summary-count"
                                           >
@@ -7228,7 +7260,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="audit-result-wrapper"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -7239,7 +7271,10 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                         style="padding-bottom: 12px;"
                                       >
                                         <span
-                                          class="audit-level-summary-item"
+                                          aria-label="错误"
+                                          class="audit-level-summary-item audit-level-summary-item-error"
+                                          data-icon-key="error"
+                                          title="错误"
                                         >
                                           <svg
                                             height="20"
@@ -7252,6 +7287,11 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                               fill="#F66074"
                                             />
                                           </svg>
+                                          <span
+                                            class="audit-level-summary-label"
+                                          >
+                                            错误
+                                          </span>
                                           <span
                                             class="audit-level-summary-count"
                                           >
@@ -7555,7 +7595,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   class="audit-result-wrapper"
                                 >
                                   <div
-                                    class=" css-9paak3"
+                                    class=" css-1lugxev"
                                   >
                                     <span
                                       class="icon-wrapper"
@@ -9008,7 +9048,7 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                                   class="audit-result-wrapper"
                                 >
                                   <div
-                                    class="css-yzky0k"
+                                    class="css-xp02z7"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -9019,7 +9059,10 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                                         style="padding-bottom: 12px;"
                                       >
                                         <span
-                                          class="audit-level-summary-item"
+                                          aria-label="错误"
+                                          class="audit-level-summary-item audit-level-summary-item-error"
+                                          data-icon-key="error"
+                                          title="错误"
                                         >
                                           <svg
                                             height="20"
@@ -9032,6 +9075,11 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                                               fill="#F66074"
                                             />
                                           </svg>
+                                          <span
+                                            class="audit-level-summary-label"
+                                          >
+                                            错误
+                                          </span>
                                           <span
                                             class="audit-level-summary-count"
                                           >

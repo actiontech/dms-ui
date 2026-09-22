@@ -251,14 +251,19 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                         role="separator"
                       />
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-tag"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
                       >
                         <div
                           class="ant-space-item"
+                          style="padding-bottom: 8px;"
                         >
                           <span
-                            class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+                            aria-label="普通"
+                            class="ant-tag ant-tag-has-color ant-tag-borderless audit-result-tag-item audit-result-tag-item-normal basic-tag-wrapper basic-large-tag-wrapper css-194rg1q css-dev-only-do-not-override-txh9fw"
+                            data-icon-key="normal"
                             style="background-color: gray;"
+                            title="普通"
                           >
                             <svg
                               height="19"
@@ -271,7 +276,9 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                                 fill="#C3C6CD"
                               />
                             </svg>
-                            0
+                            <span>
+                              1
+                            </span>
                           </span>
                         </div>
                       </div>
@@ -552,12 +559,16 @@ exports[`test PaginationList/SQLExecuteMode should match snapshot 2`] = `
                               >
                                 <div
                                   class="result-item css-1737itt"
+                                  data-icon-key="normal"
                                 >
                                   <div
-                                    class="css-9paak3"
+                                    class="audit-result-message audit-result-icon-normal css-1lugxev"
                                   >
                                     <span
+                                      aria-label="普通"
                                       class="icon-wrapper"
+                                      data-icon-key="normal"
+                                      title="普通"
                                     >
                                       <svg
                                         height="20"

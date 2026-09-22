@@ -26,7 +26,9 @@ export default {
     notice: 'Notice',
     warn: 'Warn',
     error: 'Error',
-    toolTipsTitle: 'Warning level: {{ruleLevel}}({{text}})'
+    error_P0: 'Error(P0)',
+    error_P1: 'Error(P1)',
+    toolTipsTitle: 'Warning level: {{text}}'
   },
   ruleDetail: {
     title: 'View rule',

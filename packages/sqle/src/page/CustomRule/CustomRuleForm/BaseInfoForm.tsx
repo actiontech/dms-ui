@@ -16,7 +16,18 @@ import {
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
-import { BasicButton, BasicInput, BasicSelect } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicInput,
+  BasicSelect,
+  EmptyBox
+} from '@actiontech/shared';
+import { resolveRuleConfigErrorPriority } from '../../../components/AuditResultMessage/errorPriorityDisplay';
+
+const ERROR_PRIORITY_OPTIONS = [
+  { label: 'P0', value: 'P0' },
+  { label: 'P1', value: 'P1' }
+];
 
 const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
   const { t } = useTranslation();
@@ -43,6 +54,11 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
     props.form as FormInstance<CustomRuleFormBaseInfoFields>
   );
 
+  const currentLevel = Form.useWatch(
+    'level',
+    props.form as FormInstance<CustomRuleFormBaseInfoFields>
+  );
+
   const addRuleType = (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {
@@ -65,7 +81,12 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
         annotation: props.defaultData.annotation,
         dbType: props.defaultData.db_type,
         ruleType: props.defaultData.type,
-        level: props.defaultData.level
+        level: props.defaultData.level,
+        error_priority:
+          resolveRuleConfigErrorPriority(
+            props.defaultData.level,
+            props.defaultData.error_priority
+          ) || undefined
       });
     }
   }, [props.defaultData, props.form]);
@@ -75,6 +96,17 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
       updateRuleTypeList(currentDbType);
     }
   }, [currentDbType, props.form, updateRuleTypeList]);
+
+  const onLevelChange = (level: string) => {
+    if (level === 'error') {
+      const current = props.form.getFieldValue('error_priority');
+      props.form.setFieldsValue({
+        error_priority: current || 'P1'
+      });
+    } else {
+      props.form.setFieldsValue({ error_priority: undefined });
+    }
+  };
 
   return (
     <FormStyleWrapper
@@ -207,10 +239,35 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
           placeholder={t('common.form.placeholder.select', {
             name: t('customRule.baseInfoForm.level')
           })}
+          onChange={onLevelChange}
         >
           {getRuleLevelStatusSelectOption()}
         </BasicSelect>
       </FormItemLabel>
+      <EmptyBox if={currentLevel === 'error'}>
+        <FormItemLabel
+          className="has-required-style"
+          label={t('customRule.baseInfoForm.errorPriority')}
+          name="error_priority"
+          initialValue="P1"
+          rules={[
+            {
+              required: true,
+              message: t('common.form.placeholder.select', {
+                name: t('customRule.baseInfoForm.errorPriority')
+              })
+            }
+          ]}
+          {...formItemLayout.fullLine}
+        >
+          <BasicSelect
+            placeholder={t('common.form.placeholder.select', {
+              name: t('customRule.baseInfoForm.errorPriority')
+            })}
+            options={ERROR_PRIORITY_OPTIONS}
+          />
+        </FormItemLabel>
+      </EmptyBox>
       <BasicButton type="primary" onClick={props.submit}>
         {t('common.nextStep')}
       </BasicButton>

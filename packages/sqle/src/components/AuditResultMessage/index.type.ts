@@ -8,6 +8,11 @@ import { AuditResultDisplayMode } from './getAuditResultDisplayText';
 export type AuditResultExtra = {
   annotation?: string;
   desc?: string;
+  /**
+   * 结果项错误优先级（正交于 level；swagger 未再生前由此扩展）。
+   * 取值 P0 / P1 / 空；仅 level=error 时有展示意义。
+   */
+  error_priority?: string;
   i18n_audit_result_info?: Record<
     string,
     {
@@ -38,6 +43,8 @@ export type AuditResultMessageProps = {
 export type AuditResultInfoItem = {
   level: string;
   executionFailed: boolean;
+  /** 与 level 正交；error+P0 / error+P1 须可区分展示 */
+  error_priority?: string;
 };
 
 export type ResultIconRenderProps = {

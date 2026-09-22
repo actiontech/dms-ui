@@ -3,14 +3,15 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { ProfileFilled } from '@actiontech/icons';
+import RiskAuditLevelCell from '../../../components/AuditResultMessage/RiskAuditLevelCell';
+import type { RiskAuditPlanWithLevel } from './enrichRiskLevel';
 
 export const AuditPlanRiskColumns: (
   projectID: string
-) => ActiontechTableColumn<IRiskAuditPlan> = (projectID: string) => {
-  const column: ActiontechTableColumn<IRiskAuditPlan> = [
+) => ActiontechTableColumn<RiskAuditPlanWithLevel> = (projectID: string) => {
+  const column: ActiontechTableColumn<RiskAuditPlanWithLevel> = [
     {
       dataIndex: 'audit_plan_report_timestamp',
       title: t('dashboard.auditPlanRisk.tableColumn.name'),
@@ -47,6 +48,12 @@ export const AuditPlanRiskColumns: (
           </Link>
         );
       }
+    },
+    {
+      dataIndex: 'audit_level',
+      title: t('dashboard.auditPlanRisk.tableColumn.level'),
+      width: '18%',
+      render: (_level, record) => <RiskAuditLevelCell record={record} />
     },
     {
       width: '10%',

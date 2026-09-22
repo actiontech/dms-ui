@@ -22,6 +22,8 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
             >
               <div
                 class="level-icon"
+                data-error-priority="P1"
+                title="告警等级: 错误(P1)"
               >
                 <svg
                   height="19"
@@ -37,7 +39,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                 <span
                   class="level-icon-text"
                 >
-                  error
+                  错误(P1)
                 </span>
               </div>
               <div
@@ -172,7 +174,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                 <span
                   class="level-icon-text"
                 >
-                  normal
+                  普通
                 </span>
               </div>
               <div
@@ -276,7 +278,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                 <span
                   class="level-icon-text"
                 >
-                  notice
+                  提示
                 </span>
               </div>
               <div
@@ -381,7 +383,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                 <span
                   class="level-icon-text"
                 >
-                  warn
+                  告警
                 </span>
               </div>
               <div

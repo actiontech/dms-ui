@@ -118,6 +118,15 @@ export default {
     auditResult: {
       clearDuplicate: 'Data deduplication',
       allLevel: 'All levels',
+      // S2 §8.13: six levels beside allLevel
+      level: {
+        normal: 'Normal',
+        notice: 'Notice',
+        warn: 'Warn',
+        error: 'Error',
+        error_P0: 'Error(P0)',
+        error_P1: 'Error(P1)'
+      },
       submit: 'Submit workflow',
       updateInfo: 'Update workflow',
       disabledOperatorWorkflowBtnTips:

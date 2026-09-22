@@ -97,9 +97,12 @@ export const PluginAuditListColumns: (
           >
             {result?.length > 1 ? (
               <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
+                auditResultInfo={result.map((item) => ({
+                  level: item.level ?? '',
+                  executionFailed: false,
+                  error_priority: (item as { error_priority?: string })
+                    .error_priority
+                }))}
               />
             ) : (
               <AuditResultMessage

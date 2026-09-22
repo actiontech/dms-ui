@@ -23,6 +23,7 @@ export default {
     tableColumn: {
       name: 'Scan task report',
       source: 'DB instance',
+      level: 'Level',
       time: 'Time',
       count: 'Risk SQL'
     }

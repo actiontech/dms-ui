@@ -33,6 +33,7 @@ import {
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
+import { mapActiveRuleToRuleReq } from '../../RuleTemplate/utils/mapActiveRuleToRuleReq';
 
 const ImportRuleTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -76,15 +77,9 @@ const ImportRuleTemplate: React.FC = () => {
   const submit = useCallback(() => {
     startCreate();
     const baseInfo = ruleTemplateForm.getFieldsValue();
-    const activeRuleWithNewField: IRuleReqV1[] = activeRule.map((rule) => {
-      return {
-        name: rule.rule_name,
-        level: rule.level,
-        params: !!rule.params
-          ? rule.params.map((v) => ({ key: v.key, value: v.value }))
-          : []
-      };
-    });
+    const activeRuleWithNewField: IRuleReqV1[] = activeRule.map(
+      mapActiveRuleToRuleReq
+    );
     rule_template
       .createRuleTemplateV1({
         rule_template_name: baseInfo.templateName,

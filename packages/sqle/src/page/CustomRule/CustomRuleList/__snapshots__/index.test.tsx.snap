@@ -194,7 +194,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                         <span
                           class="level-icon-text"
                         >
-                          notice
+                          提示
                         </span>
                       </div>
                       <div
@@ -812,7 +812,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                         <span
                           class="level-icon-text"
                         >
-                          notice
+                          提示
                         </span>
                       </div>
                       <div
@@ -916,7 +916,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                         <span
                           class="level-icon-text"
                         >
-                          notice
+                          提示
                         </span>
                       </div>
                       <div

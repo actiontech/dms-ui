@@ -113,7 +113,7 @@ exports[`sqle/components/ReportDrawer render snap is empty 1`] = `
                         class="wrapper-cont"
                       >
                         <div
-                          class="result-item css-9paak3"
+                          class="result-item css-1lugxev"
                         >
                           <span
                             class="icon-wrapper"
@@ -310,13 +310,29 @@ exports[`sqle/components/ReportDrawer render snap when has data 1`] = `
                             >
                               <div
                                 class="result-item css-1v03opz"
+                                data-icon-key="normal"
                               >
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-normal css-1lugxev"
                                 >
                                   <span
+                                    aria-label="普通"
                                     class="icon-wrapper"
-                                  />
+                                    data-icon-key="normal"
+                                    title="普通"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                  </span>
                                   <span
                                     class="text-wrapper"
                                   >
@@ -509,6 +525,7 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                             >
                               <div
                                 class="result-item has-delete-rule-wrapper css-1v03opz"
+                                data-icon-key="normal"
                               >
                                 <span
                                   class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -516,11 +533,26 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                                   该规则已删除
                                 </span>
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-normal css-1lugxev"
                                 >
                                   <span
+                                    aria-label="普通"
                                     class="icon-wrapper"
-                                  />
+                                    data-icon-key="normal"
+                                    title="普通"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                  </span>
                                   <span
                                     class="text-wrapper"
                                   >
@@ -547,13 +579,29 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                             >
                               <div
                                 class="result-item css-1v03opz"
+                                data-icon-key="normal"
                               >
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-normal css-1lugxev"
                                 >
                                   <span
+                                    aria-label="普通"
                                     class="icon-wrapper"
-                                  />
+                                    data-icon-key="normal"
+                                    title="普通"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                  </span>
                                   <span
                                     class="text-wrapper"
                                   >
@@ -816,13 +864,29 @@ exports[`sqle/components/ReportDrawer render snap when has extra 1`] = `
                             >
                               <div
                                 class="result-item css-1v03opz"
+                                data-icon-key="normal"
                               >
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-normal css-1lugxev"
                                 >
                                   <span
+                                    aria-label="普通"
                                     class="icon-wrapper"
-                                  />
+                                    data-icon-key="normal"
+                                    title="普通"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                  </span>
                                   <span
                                     class="text-wrapper"
                                   >
@@ -1014,13 +1078,29 @@ exports[`sqle/components/ReportDrawer render snap when loading is true 1`] = `
                             >
                               <div
                                 class="result-item css-1v03opz"
+                                data-icon-key="normal"
                               >
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-normal css-1lugxev"
                                 >
                                   <span
+                                    aria-label="普通"
                                     class="icon-wrapper"
-                                  />
+                                    data-icon-key="normal"
+                                    title="普通"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                  </span>
                                   <span
                                     class="text-wrapper"
                                   >
@@ -1276,13 +1356,29 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                             >
                               <div
                                 class="result-item css-1v03opz"
+                                data-icon-key="normal"
                               >
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-normal css-1lugxev"
                                 >
                                   <span
+                                    aria-label="普通"
                                     class="icon-wrapper"
-                                  />
+                                    data-icon-key="normal"
+                                    title="普通"
+                                  >
+                                    <svg
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                        fill="#41BF9A"
+                                      />
+                                    </svg>
+                                  </span>
                                   <span
                                     class="text-wrapper"
                                   >

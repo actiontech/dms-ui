@@ -11,6 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
+import { applyDerivedAuditLevelFilters } from '../../../../../../Common/auditLevelFilter';
 
 const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   tableFilterInfo,
@@ -50,7 +51,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
       return task
         .getAuditTaskSQLsV2({
           task_id: auditResultActiveKey,
-          ...tableFilterInfo,
+          ...applyDerivedAuditLevelFilters({
+            ...(tableFilterInfo as Record<string, unknown>)
+          }),
           page_index: `${page}`,
           page_size: '20',
           no_duplicate: noDuplicate,
@@ -90,7 +93,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
       task
         .getAuditTaskSQLsV2({
           task_id: auditResultActiveKey,
-          ...tableFilterInfo,
+          ...applyDerivedAuditLevelFilters({
+            ...(tableFilterInfo as Record<string, unknown>)
+          }),
           page_index: `${page}`,
           page_size: '20',
           no_duplicate: noDuplicate,

@@ -39,7 +39,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when data is empty 1
         <span
           class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
         >
-          normal
+          普通
         </span>
       </div>
     </div>
@@ -52,6 +52,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is error 
   <div>
     <div
       class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center sqle-rule-icon"
+      data-error-priority="P1"
     >
       <div
         class="ant-space-item"
@@ -89,7 +90,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is error 
         <span
           class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
         >
-          error
+          错误(P1)
         </span>
       </div>
     </div>
@@ -139,7 +140,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is normal
         <span
           class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
         >
-          notice
+          提示
         </span>
       </div>
     </div>
@@ -186,7 +187,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is warn 1
         <span
           class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
         >
-          warn
+          告警
         </span>
       </div>
     </div>

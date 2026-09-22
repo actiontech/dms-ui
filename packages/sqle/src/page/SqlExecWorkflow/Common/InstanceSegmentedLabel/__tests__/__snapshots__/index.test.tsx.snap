@@ -4,7 +4,9 @@ exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit 
 <body>
   <div>
     <div
-      class="instance-segmented-label css-16xaun1"
+      class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+      data-audit-error-priority="ungraded"
+      title="错误"
     >
       <span
         class="instance-segmented-label-text"
@@ -26,6 +28,91 @@ exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit 
           />
         </svg>
       </span>
+      <span
+        class="instance-segmented-label-priority"
+      >
+        错误
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit level error with P0 1`] = `
+<body>
+  <div>
+    <div
+      class="instance-segmented-label instance-segmented-label--error_P0 css-1qtydny"
+      data-audit-error-priority="P0"
+      data-error-priority="P0"
+      title="错误(P0)"
+    >
+      <span
+        class="instance-segmented-label-text"
+      >
+        instance name a
+      </span>
+      <span
+        class="instance-segmented-label-icon"
+      >
+        <svg
+          color="#C41D3A"
+          height="14"
+          viewBox="0 0 16 16"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      <span
+        class="instance-segmented-label-priority"
+      >
+        错误(P0)
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit level error with P1 1`] = `
+<body>
+  <div>
+    <div
+      class="instance-segmented-label instance-segmented-label--error_P1 css-1qtydny"
+      data-audit-error-priority="P1"
+      data-error-priority="P1"
+      title="错误(P1)"
+    >
+      <span
+        class="instance-segmented-label-text"
+      >
+        instance name a
+      </span>
+      <span
+        class="instance-segmented-label-icon"
+      >
+        <svg
+          color="#FA8C16"
+          height="14"
+          viewBox="0 0 18 18"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      <span
+        class="instance-segmented-label-priority"
+      >
+        错误(P1)
+      </span>
     </div>
   </div>
 </body>
@@ -35,7 +122,7 @@ exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit 
 <body>
   <div>
     <div
-      class="instance-segmented-label css-16xaun1"
+      class="instance-segmented-label instance-segmented-label--normal css-1qtydny"
     >
       <span
         class="instance-segmented-label-text"
@@ -66,7 +153,7 @@ exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit 
 <body>
   <div>
     <div
-      class="instance-segmented-label css-16xaun1"
+      class="instance-segmented-label instance-segmented-label--notice css-1qtydny"
     >
       <span
         class="instance-segmented-label-text"
@@ -97,7 +184,7 @@ exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit 
 <body>
   <div>
     <div
-      class="instance-segmented-label css-16xaun1"
+      class="instance-segmented-label instance-segmented-label--normal css-1qtydny"
     >
       <span
         class="instance-segmented-label-text"
@@ -106,7 +193,19 @@ exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit 
       </span>
       <span
         class="instance-segmented-label-icon"
-      />
+      >
+        <svg
+          height="14"
+          viewBox="0 0 18 19"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
     </div>
   </div>
 </body>
@@ -116,7 +215,7 @@ exports[`sqle/ExecWorkflow/Common/InstanceSegmentedLabel render snap when audit 
 <body>
   <div>
     <div
-      class="instance-segmented-label css-16xaun1"
+      class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
     >
       <span
         class="instance-segmented-label-text"

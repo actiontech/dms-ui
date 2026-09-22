@@ -57,6 +57,8 @@ export type ScanAuditResultItem = IAuditResult & {
   exception_id?: number;
   created_by?: string;
   created_at?: string;
+  /** 结果级错误优先级；拆桶时须透传到活跃项供列/抽屉三态展示 */
+  error_priority?: string;
 };
 
 export const parseScanAuditResult = (raw?: unknown): ScanAuditResultItem[] =>
@@ -74,10 +76,10 @@ export const parseScanAuditResult = (raw?: unknown): ScanAuditResultItem[] =>
 export const splitScanAuditResultsByExemption = (
   auditResults: ScanAuditResultItem[] = []
 ): {
-  active: IAuditResult[];
+  active: Array<IAuditResult & { error_priority?: string }>;
   exempted: ISkippedByRuleExceptionItem[];
 } => {
-  const active: IAuditResult[] = [];
+  const active: Array<IAuditResult & { error_priority?: string }> = [];
   const exempted: ISkippedByRuleExceptionItem[] = [];
 
   auditResults.forEach((item) => {
@@ -94,11 +96,13 @@ export const splitScanAuditResultsByExemption = (
       return;
     }
 
+    // 须透传 error_priority，否则列/抽屉中枢只能展示未分级「错误」（S2 §8.8）
     active.push({
       db_type: item.db_type,
       level: item.level,
       message: item.message,
-      rule_name: item.rule_name
+      rule_name: item.rule_name,
+      error_priority: item.error_priority
     });
   });
 

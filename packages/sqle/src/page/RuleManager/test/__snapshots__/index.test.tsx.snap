@@ -364,7 +364,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                               <span
                                 class="level-icon-text"
                               >
-                                notice
+                                提示
                               </span>
                             </div>
                             <div
@@ -468,7 +468,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                               <span
                                 class="level-icon-text"
                               >
-                                notice
+                                提示
                               </span>
                             </div>
                             <div

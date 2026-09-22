@@ -105,6 +105,7 @@ export default {
       title: 'Potential risk of workflow',
       tableColumn: {
         name: 'Order',
+        level: 'Level',
         status: 'Status',
         time: 'Time',
         createUser: 'Creator'
@@ -122,6 +123,7 @@ export default {
       tableColumn: {
         name: 'Scan task report',
         source: 'Source',
+        level: 'Level',
         time: 'Time',
         count: 'Risk SQL'
       }

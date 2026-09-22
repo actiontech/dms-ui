@@ -1493,6 +1493,8 @@ exports[`sqle/components/RuleDetail render snap when has params 1`] = `
                   >
                     <div
                       class="level-icon"
+                      data-error-priority="P1"
+                      title="告警等级: 错误(P1)"
                     >
                       <svg
                         height="19"
@@ -1508,7 +1510,7 @@ exports[`sqle/components/RuleDetail render snap when has params 1`] = `
                       <span
                         class="level-icon-text"
                       >
-                        error
+                        错误(P1)
                       </span>
                     </div>
                     <div

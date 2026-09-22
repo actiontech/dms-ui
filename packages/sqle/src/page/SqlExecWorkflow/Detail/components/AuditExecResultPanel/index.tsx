@@ -54,7 +54,8 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
 
   const generateCurrentTaskLabel = (
     instanceName?: string,
-    auditLevel?: AuditTaskResV1AuditLevelEnum
+    auditLevel?: AuditTaskResV1AuditLevelEnum,
+    auditErrorPriority?: string | null
   ) => {
     if (!instanceName) {
       return '-';
@@ -64,6 +65,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
       <InstanceSegmentedLabel
         instanceName={instanceName}
         auditLevel={auditLevel}
+        auditErrorPriority={auditErrorPriority}
       />
     );
   };
@@ -103,7 +105,11 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
             },
             ...taskInfos.map((v) => ({
               value: `${v.task_id}`,
-              label: generateCurrentTaskLabel(v.instance_name, v.audit_level)
+              label: generateCurrentTaskLabel(
+                v.instance_name,
+                v.audit_level,
+                (v as { audit_error_priority?: string }).audit_error_priority
+              )
             }))
           ]}
         />
@@ -130,7 +136,11 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
               >
                 {t('execWorkflow.create.auditResult.clearDuplicate')}
               </ToggleButtonStyleWrapper>
-              <DownloadRecord taskId={activeTabKey} noDuplicate={noDuplicate} />
+              <DownloadRecord
+                taskId={activeTabKey}
+                noDuplicate={noDuplicate}
+                auditLevelFilterValue={tableFilterInfo.filter_audit_level}
+              />
             </Space>
           </EmptyBox>
 

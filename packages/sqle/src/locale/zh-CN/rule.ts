@@ -26,7 +26,9 @@ export default {
     notice: '提示',
     warn: '告警',
     error: '错误',
-    toolTipsTitle: '告警等级: {{ruleLevel}}({{text}})'
+    error_P0: '错误(P0)',
+    error_P1: '错误(P1)',
+    toolTipsTitle: '告警等级: {{text}}'
   },
   ruleDetail: {
     title: '查看规则',

@@ -4,7 +4,8 @@ import { Space } from 'antd';
 import {
   WarningFilled,
   InfoHexagonFilled,
-  CloseCircleFilled
+  CloseCircleFilled,
+  MinusCircleFilled
 } from '@actiontech/icons';
 import {
   IAuditResult,
@@ -12,9 +13,6 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import AuditResultMessage from './index';
 import {
-  AUDIT_LEVEL_DISPLAY_ORDER,
-  AuditLevelSummaryKey,
-  countAuditResultsByLevel,
   hasAuditViolations,
   resolveSkippedRuleExceptionDisplayLevel
 } from './auditLevelUtils';
@@ -23,14 +21,59 @@ import {
   buildAuditResultDisplayBuckets,
   isFullSqlExemption
 } from '../../page/RuleException/index.data';
+import {
+  AuditLevelIconKey,
+  getAuditResultIconDedupKey,
+  resolveAuditLevelDisplayMeta
+} from './errorPriorityDisplay';
 
-const LEVEL_ICON_MAP: Record<
-  AuditLevelSummaryKey,
-  FC<{ width?: number; height?: number }>
+const SUMMARY_ICON_MAP: Record<
+  AuditLevelIconKey,
+  FC<{ width?: number; height?: number; color?: string }> | null
 > = {
-  error: CloseCircleFilled,
+  normal: null,
+  notice: InfoHexagonFilled,
   warn: WarningFilled,
-  notice: InfoHexagonFilled
+  error: CloseCircleFilled,
+  error_P0: CloseCircleFilled,
+  error_P1: MinusCircleFilled
+};
+
+const SUMMARY_ICON_COLOR: Partial<Record<AuditLevelIconKey, string>> = {
+  error_P0: '#C41D3A',
+  error_P1: '#FA8C16'
+};
+
+/** 摘要展示顺序：P0 > P1 > 未分级 error > warn > notice */
+const SUMMARY_DISPLAY_ORDER: AuditLevelIconKey[] = [
+  'error_P0',
+  'error_P1',
+  'error',
+  'warn',
+  'notice'
+];
+
+type AuditResultWithPriority = IAuditResult & { error_priority?: string };
+
+const countActiveResultsByDisplayKey = (
+  auditResults?: AuditResultWithPriority[]
+): Partial<Record<AuditLevelIconKey, number>> => {
+  const counts: Partial<Record<AuditLevelIconKey, number>> = {};
+  if (!Array.isArray(auditResults)) {
+    return counts;
+  }
+  auditResults.forEach((item) => {
+    const level = item.level ?? '';
+    if (!level || level === 'normal' || level === 'UNKNOWN') {
+      return;
+    }
+    const key = getAuditResultIconDedupKey(level, item.error_priority);
+    if (!SUMMARY_DISPLAY_ORDER.includes(key)) {
+      return;
+    }
+    counts[key] = (counts[key] ?? 0) + 1;
+  });
+  return counts;
 };
 
 export type AuditResultExemptionSummaryProps = {
@@ -73,8 +116,8 @@ const AuditResultExemptionSummary = ({
     [active, exempted]
   );
 
-  const activeLevelCounts = useMemo(
-    () => countAuditResultsByLevel(active),
+  const activeDisplayCounts = useMemo(
+    () => countActiveResultsByDisplayKey(active as AuditResultWithPriority[]),
     [active]
   );
 
@@ -115,17 +158,35 @@ const AuditResultExemptionSummary = ({
   return (
     <AuditLevelSummaryStyleWrapper>
       <Space size={12} wrap align="center">
-        {AUDIT_LEVEL_DISPLAY_ORDER.map((level) => {
-          const count = activeLevelCounts[level];
+        {SUMMARY_DISPLAY_ORDER.map((iconKey) => {
+          const count = activeDisplayCounts[iconKey];
           if (!count) {
             return null;
           }
 
-          const Icon = LEVEL_ICON_MAP[level];
+          const Icon = SUMMARY_ICON_MAP[iconKey];
+          if (!Icon) {
+            return null;
+          }
+
+          const meta = resolveAuditLevelDisplayMeta(
+            iconKey.startsWith('error') ? 'error' : iconKey,
+            iconKey === 'error_P0' ? 'P0' : iconKey === 'error_P1' ? 'P1' : ''
+          );
+          const label = t(meta.labelKey);
+          const color = SUMMARY_ICON_COLOR[iconKey];
 
           return (
-            <span key={level} className="audit-level-summary-item">
-              <Icon width={20} height={20} />
+            <span
+              key={iconKey}
+              className={`audit-level-summary-item audit-level-summary-item-${iconKey}`}
+              data-icon-key={iconKey}
+              data-error-priority={meta.dataErrorPriority || undefined}
+              aria-label={label}
+              title={label}
+            >
+              <Icon width={20} height={20} color={color} />
+              <span className="audit-level-summary-label">{label}</span>
               <span className="audit-level-summary-count">× {count}</span>
             </span>
           );

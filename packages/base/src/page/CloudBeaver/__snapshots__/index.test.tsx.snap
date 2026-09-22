@@ -1442,12 +1442,16 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             >
                               <div
                                 class=" css-1737itt"
+                                data-icon-key="warn"
                               >
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-warn css-1lugxev"
                                 >
                                   <span
+                                    aria-label="告警"
                                     class="icon-wrapper"
+                                    data-icon-key="warn"
+                                    title="告警"
                                   >
                                     <svg
                                       fill="none"
@@ -2902,12 +2906,16 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             >
                               <div
                                 class=" css-1737itt"
+                                data-icon-key="warn"
                               >
                                 <div
-                                  class="css-9paak3"
+                                  class="audit-result-message audit-result-icon-warn css-1lugxev"
                                 >
                                   <span
+                                    aria-label="告警"
                                     class="icon-wrapper"
+                                    data-icon-key="warn"
+                                    title="告警"
                                   >
                                     <svg
                                       fill="none"

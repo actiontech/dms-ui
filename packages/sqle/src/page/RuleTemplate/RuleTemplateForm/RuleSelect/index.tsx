@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import { useMemo, useState, useCallback } from 'react';
 import { BasicButton } from '@actiontech/shared';
 import { RuleSelectProps } from './index.type';
-import { Spin } from 'antd';
+import { Spin, Typography } from 'antd';
 import {
   RuleList,
   RuleStatus,
@@ -180,6 +180,12 @@ const RuleSelect = (props: RuleSelectProps) => {
           allowClear
         />
       </FilterContainerStyleWrapper>
+      {/* 列表等级文案约定：错误(P0)/错误(P1)，供配置页区分（S4 §8.3） */}
+      <div className="rule-error-priority-legend" style={{ marginBottom: 8 }}>
+        <Typography.Text type="secondary" style={{ fontSize: 12 }}>
+          {t('ruleTemplate.ruleTemplateForm.errorPriorityLegend')}
+        </Typography.Text>
+      </div>
       <Spin spinning={props.listLoading || props.formSubmitLoading}>
         {props.dbType && (
           <RuleTypes

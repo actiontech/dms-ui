@@ -163,10 +163,10 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
       task_id: '1'
     });
 
-    fireEvent.click(screen.getByText('普通(Normal)'));
+    fireEvent.click(screen.getByText('普通'));
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
-      filter_audit_level: undefined,
+      filter_audit_level: 'normal',
       no_duplicate: true,
       page_index: '1',
       page_size: '20',

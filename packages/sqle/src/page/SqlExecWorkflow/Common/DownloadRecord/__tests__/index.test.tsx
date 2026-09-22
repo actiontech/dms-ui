@@ -88,22 +88,22 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord', () => {
     );
   });
 
-  it('render down report when noDuplicate is false', async () => {
+  it('render down report with error_P1 filter params', async () => {
     customRender({
       taskId: 'task Id',
-      noDuplicate: false
+      noDuplicate: false,
+      auditLevelFilterValue: 'error_P1'
     });
     fireEvent.click(screen.getByText('下载'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText('下载审核报告')).toBeInTheDocument();
-
     fireEvent.click(screen.getByText('下载审核报告'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestDownloadReport).toHaveBeenCalled();
     expect(requestDownloadReport).toHaveBeenCalledWith(
       {
         task_id: 'task Id',
-        no_duplicate: false
+        no_duplicate: false,
+        filter_audit_level: 'error',
+        filter_error_priority: 'P1'
       },
       { responseType: 'blob' }
     );

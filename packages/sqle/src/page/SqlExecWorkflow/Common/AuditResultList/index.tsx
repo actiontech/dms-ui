@@ -4,7 +4,6 @@ import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { AuditResultForCreateWorkflowStyleWrapper } from './style';
 import { useEffect, useMemo, useState } from 'react';
-import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { AuditResultListProps } from './index.type';
 import InstanceSegmentedLabel from '../InstanceSegmentedLabel';
 import { ToggleButtonStyleWrapper } from '../style';
@@ -15,9 +14,14 @@ import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/se
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useAuditResultFilterParams from '../AuditResultFilterContainer/useAuditResultFilterParams';
 import {
-  auditLevelDictionary,
+  auditLevelFilterLabelDictionary,
   translateDictionaryI18nLabel
 } from '../../../../hooks/useStaticStatus/index.data';
+import { StaticEnumDictionary } from '../../../../hooks/useStaticStatus/index.type';
+import {
+  AUDIT_LEVEL_FILTER_SEGMENT_OPTIONS,
+  AuditLevelFilterUIValue
+} from '../auditLevelFilter';
 
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
@@ -63,7 +67,8 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
 
   const generateCurrentTaskLabel = (
     instanceName?: string,
-    auditLevel?: AuditTaskResV1AuditLevelEnum
+    auditLevel?: AuditTaskResV1AuditLevelEnum,
+    auditErrorPriority?: string | null
   ) => {
     if (!instanceName) {
       return '-';
@@ -73,9 +78,14 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
       <InstanceSegmentedLabel
         instanceName={instanceName}
         auditLevel={auditLevel}
+        auditErrorPriority={auditErrorPriority}
       />
     );
   };
+
+  const currentTaskAuditErrorPriority = (
+    currentTask as { audit_error_priority?: string } | undefined
+  )?.audit_error_priority;
 
   useEffect(() => {
     if (typeof tasks?.[0]?.task_id !== 'undefined') {
@@ -93,13 +103,23 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
               handleChangeCurrentTask(v as string);
             }}
             options={tasks.map((v) => ({
-              label: generateCurrentTaskLabel(v.instance_name, v.audit_level),
+              label: generateCurrentTaskLabel(
+                v.instance_name,
+                v.audit_level,
+                (v as { audit_error_priority?: string }).audit_error_priority
+              ),
               value: !!v?.task_id ? `${v.task_id}` : '',
               key: v.task_id
             }))}
           />
         ) : (
-          <div />
+          <EmptyBox if={!!currentTask?.instance_name}>
+            {generateCurrentTaskLabel(
+              currentTask?.instance_name,
+              currentTask?.audit_level,
+              currentTaskAuditErrorPriority
+            )}
+          </EmptyBox>
         )}
 
         <Space size={4}>
@@ -114,26 +134,33 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
 
           <Divider type="vertical" style={{ height: 28 }} />
           <EmptyBox if={!!currentTaskID}>
-            <DownloadRecord noDuplicate={noDuplicate} taskId={currentTaskID!} />
+            <DownloadRecord
+              noDuplicate={noDuplicate}
+              taskId={currentTaskID!}
+              auditLevelFilterValue={auditLevelFilterValue}
+            />
           </EmptyBox>
         </Space>
       </SegmentedRowStyleWrapper>
       {/* todo: options 中部分数据需要后端接口支持 http://10.186.18.11/jira/browse/DMS-424*/}
-      <AuditResultFilterContainer<
-        getAuditTaskSQLsV2FilterAuditLevelEnum | undefined
-      >
+      <AuditResultFilterContainer<AuditLevelFilterUIValue>
         passRate={currentTask?.pass_rate}
         score={currentTask?.score}
         instanceSchemaName={currentTask?.instance_schema}
         auditLevel={currentTask?.audit_level}
         value={auditLevelFilterValue}
         onChange={setAuditLevelFilterValue}
-        options={Object.keys(getAuditTaskSQLsV2FilterAuditLevelEnum)}
+        options={AUDIT_LEVEL_FILTER_SEGMENT_OPTIONS}
         withAll={{
           label: t('execWorkflow.create.auditResult.allLevel'),
           value: undefined
         }}
-        labelDictionary={translateDictionaryI18nLabel(auditLevelDictionary)}
+        labelDictionary={translateDictionaryI18nLabel(
+          // i18n key 已写入 locale；类型表未再生前放宽
+          auditLevelFilterLabelDictionary as unknown as StaticEnumDictionary<
+            Exclude<AuditLevelFilterUIValue, undefined> | 'error'
+          >
+        )}
       />
       <AuditResultTable
         taskID={currentTaskID}

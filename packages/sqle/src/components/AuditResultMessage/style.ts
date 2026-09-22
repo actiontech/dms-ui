@@ -1,7 +1,6 @@
 import { styled } from '@mui/material/styles';
 
 import { BasicTag } from '@actiontech/shared';
-import { AuditResultMessageProps } from './index.type';
 
 export const ResultIconTagStyleWrapper = styled(BasicTag)`
   width: fit-content;
@@ -16,6 +15,16 @@ export const AuditResultMessageStyleWrapper = styled('div')`
     margin-right: 12px;
     display: inline-flex;
     align-items: center;
+  }
+
+  > .audit-result-priority-label {
+    flex-shrink: 0;
+    margin-right: 8px;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
   }
 
   > .text-wrapper {
@@ -74,10 +83,21 @@ export const AuditLevelSummaryStyleWrapper = styled('div')`
   .audit-level-summary-item {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    /* chrome 80: avoid flex gap */
+    margin-right: 4px;
+  }
+
+  .audit-level-summary-item .audit-level-summary-label {
+    margin-left: 4px;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
   }
 
   .audit-level-summary-count {
+    margin-left: 4px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
     font-size: 13px;
     font-weight: 400;

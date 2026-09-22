@@ -4,7 +4,7 @@ exports[`sqle/components/AuditResultMessage render snap when auditResult is {} 1
 <body>
   <div>
     <div
-      class="custom-class-name css-9paak3"
+      class="custom-class-name css-1lugxev"
     >
       <span
         class="icon-wrapper"
@@ -35,7 +35,7 @@ exports[`sqle/components/AuditResultMessage render snap when auditResult is empt
 <body>
   <div>
     <div
-      class=" css-9paak3"
+      class=" css-1lugxev"
     >
       <span
         class="icon-wrapper"
@@ -72,6 +72,7 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
   <div>
     <div
       class="has-delete-rule-wrapper css-1737itt"
+      data-icon-key="normal"
     >
       <span
         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -79,10 +80,13 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
         该规则已删除
       </span>
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-normal css-1lugxev"
       >
         <span
+          aria-label="普通"
           class="icon-wrapper"
+          data-icon-key="normal"
+          title="普通"
         >
           <svg
             height="20"
@@ -110,6 +114,7 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
   <div>
     <div
       class="has-delete-rule-wrapper css-1v03opz"
+      data-icon-key="normal"
     >
       <span
         class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
@@ -117,10 +122,13 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
         该规则已删除
       </span>
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-normal css-1lugxev"
       >
         <span
+          aria-label="普通"
           class="icon-wrapper"
+          data-icon-key="normal"
+          title="普通"
         >
           <svg
             height="20"
@@ -153,12 +161,16 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
   <div>
     <div
       class=" css-1737itt"
+      data-icon-key="normal"
     >
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-normal css-1lugxev"
       >
         <span
+          aria-label="普通"
           class="icon-wrapper"
+          data-icon-key="normal"
+          title="普通"
         >
           <svg
             height="20"
@@ -188,12 +200,16 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
   <div>
     <div
       class=" css-1737itt"
+      data-icon-key="normal"
     >
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-normal css-1lugxev"
       >
         <span
+          aria-label="普通"
           class="icon-wrapper"
+          data-icon-key="normal"
+          title="普通"
         >
           <svg
             height="20"
@@ -222,7 +238,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-9paak3"
+      class=" css-1lugxev"
     >
       <span
         class="icon-wrapper"
@@ -254,12 +270,18 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
   <div>
     <div
       class=" css-1737itt"
+      data-error-priority="ungraded"
+      data-icon-key="error"
     >
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-error css-1lugxev"
       >
         <span
+          aria-label="错误"
           class="icon-wrapper"
+          data-error-priority="ungraded"
+          data-icon-key="error"
+          title="错误"
         >
           <svg
             height="20"
@@ -272,6 +294,12 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
               fill="#F66074"
             />
           </svg>
+        </span>
+        <span
+          class="audit-result-priority-label audit-result-priority-label-error"
+          data-error-priority="ungraded"
+        >
+          错误
         </span>
         <span
           class="text-wrapper"
@@ -287,12 +315,16 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
   <div>
     <div
       class=" css-1737itt"
+      data-icon-key="normal"
     >
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-normal css-1lugxev"
       >
         <span
+          aria-label="普通"
           class="icon-wrapper"
+          data-icon-key="normal"
+          title="普通"
         >
           <svg
             height="20"
@@ -322,12 +354,16 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
   <div>
     <div
       class=" css-1737itt"
+      data-icon-key="notice"
     >
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-notice css-1lugxev"
       >
         <span
+          aria-label="提示"
           class="icon-wrapper"
+          data-icon-key="notice"
+          title="提示"
         >
           <svg
             height="20"
@@ -355,12 +391,16 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
   <div>
     <div
       class=" css-1737itt"
+      data-icon-key="warn"
     >
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-warn css-1lugxev"
       >
         <span
+          aria-label="告警"
           class="icon-wrapper"
+          data-icon-key="warn"
+          title="告警"
         >
           <svg
             fill="none"
@@ -389,12 +429,16 @@ exports[`sqle/components/AuditResultMessage render snap when showAnnotation 1`] 
   <div>
     <div
       class=" css-1v03opz"
+      data-icon-key="normal"
     >
       <div
-        class="css-9paak3"
+        class="audit-result-message audit-result-icon-normal css-1lugxev"
       >
         <span
+          aria-label="普通"
           class="icon-wrapper"
+          data-icon-key="normal"
+          title="普通"
         >
           <svg
             height="20"

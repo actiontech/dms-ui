@@ -154,6 +154,8 @@ export default {
     normal: 'Normal',
     error: 'Error',
     warn: 'Warning',
-    notice: 'Notice'
+    notice: 'Notice',
+    error_P0: 'Error(P0)',
+    error_P1: 'Error(P1)'
   }
 };

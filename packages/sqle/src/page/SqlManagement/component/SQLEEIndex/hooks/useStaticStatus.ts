@@ -7,6 +7,7 @@ import {
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { AUDIT_LEVEL_FILTER_UI } from '../../../../SqlExecWorkflow/Common/auditLevelFilter';
 
 export const sourceDictionary: StaticEnumDictionary<GetSqlManageListV2FilterSourceEnum> =
   {
@@ -40,17 +41,35 @@ export const statusDictionary: StaticEnumDictionary<GetSqlManageListV2FilterStat
       'sqlManagement.table.filter.status.manual_audited'
   };
 
+/** 高级筛选：普通/提示/告警 + 错误(P0)/错误(P1)；请求侧再派生双参数 */
+const AUDIT_LEVEL_FILTER_SELECT_VALUES = [
+  GetSqlManageListV2FilterAuditLevelEnum.normal,
+  GetSqlManageListV2FilterAuditLevelEnum.notice,
+  GetSqlManageListV2FilterAuditLevelEnum.warn,
+  AUDIT_LEVEL_FILTER_UI.error_P0,
+  AUDIT_LEVEL_FILTER_UI.error_P1
+] as const;
+
+const auditLevelFilterLabelKey: Record<string, string> = {
+  [GetSqlManageListV2FilterAuditLevelEnum.normal]:
+    'sqlManagement.table.filter.auditLevel.normal',
+  [GetSqlManageListV2FilterAuditLevelEnum.notice]:
+    'sqlManagement.table.filter.auditLevel.notice',
+  [GetSqlManageListV2FilterAuditLevelEnum.warn]:
+    'sqlManagement.table.filter.auditLevel.warn',
+  [AUDIT_LEVEL_FILTER_UI.error_P0]:
+    'sqlManagement.table.filter.auditLevel.error_P0',
+  [AUDIT_LEVEL_FILTER_UI.error_P1]:
+    'sqlManagement.table.filter.auditLevel.error_P1'
+};
+
 const useStaticStatus = () => {
   const { t } = useTranslation();
 
   const generateAuditLevelSelectOptions: SelectProps['options'] =
     useMemo(() => {
-      return Object.keys(auditLevelDictionary).map((key) => ({
-        label: t(
-          auditLevelDictionary[
-            key as keyof typeof GetSqlManageListV2FilterAuditLevelEnum
-          ]
-        ),
+      return AUDIT_LEVEL_FILTER_SELECT_VALUES.map((key) => ({
+        label: t(auditLevelFilterLabelKey[key]),
         value: key
       }));
     }, [t]);

@@ -1315,7 +1315,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--normal css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -1324,7 +1324,19 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         </span>
                         <span
                           class="instance-segmented-label-icon"
-                        />
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 18 19"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                              fill="#C3C6CD"
+                            />
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </label>
@@ -1422,22 +1434,27 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div
@@ -1689,7 +1706,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div>
                                   <div
-                                    class=" css-9paak3"
+                                    class=" css-1lugxev"
                                   >
                                     <span
                                       class="icon-wrapper"
@@ -3682,7 +3699,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--normal css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -3691,7 +3708,19 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         </span>
                         <span
                           class="instance-segmented-label-icon"
-                        />
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 18 19"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                              fill="#C3C6CD"
+                            />
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </label>
@@ -3789,22 +3818,27 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div
@@ -4056,7 +4090,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div>
                                   <div
-                                    class=" css-9paak3"
+                                    class=" css-1lugxev"
                                   >
                                     <span
                                       class="icon-wrapper"
@@ -7306,7 +7340,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--normal css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -7315,7 +7349,19 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         </span>
                         <span
                           class="instance-segmented-label-icon"
-                        />
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 18 19"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                              fill="#C3C6CD"
+                            />
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </label>
@@ -7413,22 +7459,27 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div
@@ -7680,7 +7731,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div>
                                   <div
-                                    class=" css-9paak3"
+                                    class=" css-1lugxev"
                                   >
                                     <span
                                       class="icon-wrapper"
@@ -16054,7 +16105,9 @@ from
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--error css-1qtydny"
+                        data-audit-error-priority="ungraded"
+                        title="错误"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -16076,6 +16129,11 @@ from
                             />
                           </svg>
                         </span>
+                        <span
+                          class="instance-segmented-label-priority"
+                        >
+                          错误
+                        </span>
                       </div>
                     </div>
                   </label>
@@ -16090,7 +16148,7 @@ from
                       class="ant-segmented-item-label"
                     >
                       <div
-                        class="instance-segmented-label css-16xaun1"
+                        class="instance-segmented-label instance-segmented-label--warn css-1qtydny"
                       >
                         <span
                           class="instance-segmented-label-text"
@@ -16210,22 +16268,27 @@ from
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  普通(Normal)
+                  普通
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  提示(Notice)
+                  提示
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  告警(Warning)
+                  告警
                 </div>
                 <div
                   class="custom-segmented-filter-item"
                 >
-                  错误(Error)
+                  错误(P0)
+                </div>
+                <div
+                  class="custom-segmented-filter-item"
+                >
+                  错误(P1)
                 </div>
               </div>
               <div

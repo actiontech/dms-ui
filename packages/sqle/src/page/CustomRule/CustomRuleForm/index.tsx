@@ -8,6 +8,8 @@ export type CustomRuleFormBaseInfoFields = {
   dbType: string;
   ruleType: string;
   level?: CustomRuleResV1LevelEnum;
+  /** 仅 level=error 时有意义；P0 | P1 */
+  error_priority?: string;
 };
 
 export type EditRuleScriptFields = {
