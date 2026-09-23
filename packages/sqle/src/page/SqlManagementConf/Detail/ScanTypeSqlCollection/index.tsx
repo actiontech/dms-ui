@@ -183,6 +183,14 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
           fingerprint: record['fingerprint'],
           sql: record['sql'],
           instance_id: record['instance_id'],
+          schema_name:
+            typeof record['schema_name'] === 'string'
+              ? record['schema_name']
+              : undefined,
+          schema_meta_name:
+            typeof record['schema_meta_name'] === 'string'
+              ? record['schema_meta_name']
+              : undefined,
           audit_result: active
         },
         scanTaskSourceContext
@@ -212,9 +220,13 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     (params: OpenCreateAuditWhitelistExceptionParams) => {
       closeRemediationDrawer();
       setRemediationDrawerRecord(undefined);
+      // 扫描详情 A/B 共用：preferSchemaObjectMatch 入口隔离（勿传给 SQL管控等）
       openAuditWhitelistCreateWithPrefill(
         toScanTaskRecord(remediationDrawerRecord),
-        { ruleName: params.auditResult?.rule_name }
+        {
+          ruleName: params.auditResult?.rule_name,
+          preferSchemaObjectMatch: true
+        }
       );
     },
     [
@@ -228,9 +240,13 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   const handleOpenCreateExceptionFromReport = useCallback(
     (params: OpenCreateAuditWhitelistExceptionParams) => {
       closeReportDrawer();
+      // 扫描详情 A/B 共用：preferSchemaObjectMatch 入口隔离（勿传给 SQL管控等）
       openAuditWhitelistCreateWithPrefill(
         toScanTaskRecord(currentAuditResultRecord),
-        { ruleName: params.auditResult?.rule_name }
+        {
+          ruleName: params.auditResult?.rule_name,
+          preferSchemaObjectMatch: true
+        }
       );
     },
     [

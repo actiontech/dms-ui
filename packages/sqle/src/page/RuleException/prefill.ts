@@ -37,6 +37,10 @@ export type SqlManageRuleExceptionRecord = {
   instance_name?: string;
   audit_plan_db_type?: string;
   db_type?: string;
+  /** Scan-task schema_name; used when preferSchemaObjectMatch */
+  schema_name?: string;
+  /** Scan-task schema_meta_name (table/view); used when preferSchemaObjectMatch */
+  schema_meta_name?: string;
   source?: ISqlManageRuleExceptionContext['source'];
   audit_result?: IAuditResult[] | null;
 };
@@ -71,6 +75,8 @@ export type ScanTaskRuleExceptionRecordInput = {
   fingerprint?: string;
   sql?: string;
   instance_id?: string;
+  schema_name?: string;
+  schema_meta_name?: string;
   audit_result?: IAuditResult[] | null;
 };
 
@@ -111,6 +117,8 @@ export const toScanTaskRuleExceptionRecord = (
     sql,
     instance_id: record.instance_id?.trim() || sourceContext?.instanceId,
     db_type: sourceContext?.instanceType,
+    schema_name: record.schema_name?.trim() || undefined,
+    schema_meta_name: record.schema_meta_name?.trim() || undefined,
     source: {
       sql_source_type: sourceContext?.auditPlanType,
       sql_source_ids: sourceContext?.auditPlanId
@@ -126,6 +134,12 @@ export type BuildBlacklistPrefillFromSqlManageOptions = {
   ruleName?: string;
   /** Row action entry: specific scope without pre-selecting rules */
   specificRuleScopeWithoutPreselect?: boolean;
+  /**
+   * Scan-task detail A/B only. When object name is present, prefill
+   * schema + object_name and skip fp_sql/sql fingerprint conditions.
+   * Must not be set for SQL管控 / workflow / SqlAnalyze callers (AC-001b).
+   */
+  preferSchemaObjectMatch?: boolean;
 };
 
 const AUDIT_TASK_MATCH_PREFILL_SKIP_SOURCE_TYPES = new Set<string>([
@@ -271,7 +285,24 @@ export const buildBlacklistPrefillFromSqlManage = (
 
   const match_conditions: IMatchConditionReqV1[] = [];
 
-  if (context.sql_fingerprint) {
+  const objectName = record?.schema_meta_name?.trim();
+  const schemaName = record?.schema_name?.trim();
+
+  if (options?.preferSchemaObjectMatch && objectName) {
+    if (schemaName) {
+      match_conditions.push({
+        type: MatchConditionReqV1TypeEnum.schema,
+        content: schemaName
+      });
+    }
+    match_conditions.push({
+      type: MatchConditionReqV1TypeEnum.object_name,
+      content: objectName
+    });
+  } else if (!options?.preferSchemaObjectMatch && context.sql_fingerprint) {
+    // Default fingerprint path (SQL管控 / 其它入口). When scan-task
+    // preferSchemaObjectMatch is on but object name is missing, do not
+    // fall back to full DDL as fp_sql (S1 §5.4).
     match_conditions.push({
       type: MatchConditionReqV1TypeEnum.fp_sql,
       content: context.sql_fingerprint
