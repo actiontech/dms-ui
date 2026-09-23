@@ -14,6 +14,7 @@ class TaskMockApi implements MockSpyApy {
     this.getAuditTaskSQLs();
     this.updateAuditTaskSQLs();
     this.getAuditTask();
+    this.getAuditTaskSummary();
     this.getAuditFileList();
     this.getSqlFileOrderMethod();
   }
@@ -40,6 +41,27 @@ class TaskMockApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: workflowTaskDetailMockData
+      })
+    );
+    return spy;
+  }
+
+  public getAuditTaskSummary() {
+    const spy = jest.spyOn(task, 'getAuditTaskSummaryV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          level_summary: {
+            error_count: 0,
+            error_p0_count: 0,
+            error_p1_count: 0,
+            warn_count: 0,
+            notice_count: 0,
+            normal_count: 0,
+            sql_count: 0
+          },
+          rule_hit_details: []
+        }
       })
     );
     return spy;

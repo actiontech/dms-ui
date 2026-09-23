@@ -84,7 +84,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
           style="height: 60px;"
         />
         <div
-          class="css-17a4b1i"
+          class="css-nuffxe"
         >
           <h3
             class="id-text"
@@ -118,6 +118,163 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 test
               </span>
             </div>
+          </div>
+          <div
+            class="source-fields-cont"
+          >
+            <div
+              class="source-field-item"
+              data-testid="sql-audit-report-header-instance_name"
+            >
+              数据源
+              ：
+              mysql-1
+            </div>
+            <div
+              class="source-field-item"
+              data-testid="sql-audit-report-header-address"
+            >
+              地址
+              ：
+              10.196.62.23:3333
+            </div>
+            <div
+              class="source-field-item"
+              data-testid="sql-audit-report-header-instance_db_type"
+            >
+              实例类型
+              ：
+              MySQL
+            </div>
+            <div
+              class="source-field-item"
+              data-testid="sql-audit-report-header-instance_schema"
+            >
+              Schema
+              ：
+              test
+            </div>
+            <div
+              class="source-field-item"
+              data-testid="sql-audit-report-header-sql_source"
+            >
+              SQL 来源
+              ：
+              表单
+            </div>
+            <div
+              class="source-field-item"
+              data-testid="sql-audit-report-header-source_files"
+            >
+              来源文件
+              ：
+              -
+            </div>
+          </div>
+        </div>
+        <div
+          class="sql-audit-level-hit-summary css-6ca1nr"
+          data-testid="sql-audit-level-hit-summary"
+        >
+          <div
+            class="section-title"
+          >
+            等级命中数
+          </div>
+          <div
+            class="level-hit-items"
+          >
+            <span
+              class="level-hit-item level-hit-error"
+              data-testid="sql-audit-level-hit-error"
+              data-value="0"
+            >
+              错误
+              <span
+                class="level-hit-value"
+              >
+                0
+              </span>
+              <span
+                class="level-hit-sub"
+                data-testid="sql-audit-level-hit-error-p0"
+                data-value="0"
+              >
+                P0 
+                0
+              </span>
+              <span
+                class="level-hit-sub"
+                data-testid="sql-audit-level-hit-error-p1"
+                data-value="0"
+              >
+                P1 
+                0
+              </span>
+            </span>
+            <span
+              class="level-hit-item"
+              data-testid="sql-audit-level-hit-warn"
+              data-value="0"
+            >
+              告警
+              <span
+                class="level-hit-value"
+              >
+                0
+              </span>
+            </span>
+            <span
+              class="level-hit-item"
+              data-testid="sql-audit-level-hit-notice"
+              data-value="0"
+            >
+              提示
+              <span
+                class="level-hit-value"
+              >
+                0
+              </span>
+            </span>
+            <span
+              class="level-hit-item"
+              data-testid="sql-audit-level-hit-normal"
+              data-value="0"
+            >
+              普通
+              <span
+                class="level-hit-value"
+              >
+                0
+              </span>
+            </span>
+            <span
+              class="level-hit-item"
+              data-testid="sql-audit-level-hit-sql-count"
+              data-value="0"
+            >
+              SQL 条数
+              <span
+                class="level-hit-value"
+              >
+                0
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="sql-audit-rule-hit-details css-17w2m6y"
+          data-testid="sql-audit-rule-hit-details"
+        >
+          <div
+            class="section-title"
+          >
+            命中规则细则
+          </div>
+          <div
+            class="rule-hit-empty"
+          >
+            暂无规则命中
           </div>
         </div>
         <section
