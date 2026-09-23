@@ -42,7 +42,41 @@ export default {
     download: '下载审核结果',
     auditID: '审核ID',
     auditRating: '审核评分',
-    auditPassRate: '审核通过率'
+    auditPassRate: '审核通过率',
+    sourceHeader: {
+      instanceName: '数据源',
+      address: '地址',
+      instanceDbType: '实例类型',
+      instanceSchema: 'Schema',
+      sqlSource: 'SQL 来源',
+      sourceFiles: '来源文件',
+      sqlSourceEnum: {
+        form_data: '表单',
+        sql_file: 'SQL 文件',
+        mybatis_xml_file: 'MyBatis',
+        zip_file: 'ZIP',
+        git_repository: 'GIT'
+      }
+    },
+    levelHitSummary: {
+      title: '等级命中数',
+      sqlCount: 'SQL 条数',
+      loading: '加载中…',
+      loadFailed: '等级命中数加载失败'
+    },
+    ruleHitDetails: {
+      title: '命中规则细则',
+      empty: '暂无规则命中',
+      loading: '加载中…',
+      loadFailed: '规则命中细则加载失败',
+      columns: {
+        rule: '规则',
+        level: '等级',
+        hitCount: '命中次数',
+        message: '说明',
+        sqlNumbers: '涉及 SQL'
+      }
+    }
   },
   create: {
     title: '创建SQL审核',
