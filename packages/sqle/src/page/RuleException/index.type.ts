@@ -1,5 +1,4 @@
 import {
-  IAuditResult,
   IAuditWhitelistResV1,
   ISkippedByRuleExceptionItem
 } from '@actiontech/shared/lib/api/sqle/service/common';
