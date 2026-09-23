@@ -31,6 +31,7 @@ describe('sqle/SqlAudit/Detail', () => {
   it('should match snap shot', async () => {
     const getSqlAuditRecordDetailSpy = sqlAuditRecord.getSQLAuditRecord();
     const getAuditTaskSqlSpy = task.getAuditTaskSQLs();
+    const getAuditTaskSummarySpy = task.getAuditTaskSummary();
     const { baseElement } = renderWithThemeAndRedux(
       <BrowserRouter>
         <SqlAuditDetail />
@@ -40,11 +41,13 @@ describe('sqle/SqlAudit/Detail', () => {
     expect(getSqlAuditRecordDetailSpy).toHaveBeenCalledTimes(1);
     expect(getAuditTaskSqlSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAuditTaskSummarySpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should hide create button when project is archived', async () => {
     sqlAuditRecord.getSQLAuditRecord();
+    task.getAuditTaskSummary();
     mockUseCurrentProjectSpy.mockClear();
     mockUseCurrentProjectSpy.mockImplementation(() => ({
       ...mockProjectInfo,
