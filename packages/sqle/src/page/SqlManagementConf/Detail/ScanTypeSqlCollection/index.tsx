@@ -220,12 +220,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     (params: OpenCreateAuditWhitelistExceptionParams) => {
       closeRemediationDrawer();
       setRemediationDrawerRecord(undefined);
-      // 扫描详情 A/B 共用：preferSchemaObjectMatch 入口隔离（勿传给 SQL管控等）
+      // AC-001a：扫描详情撤回库表对象预填，恢复改前指纹路径（勿传 preferSchemaObjectMatch）
       openAuditWhitelistCreateWithPrefill(
         toScanTaskRecord(remediationDrawerRecord),
         {
-          ruleName: params.auditResult?.rule_name,
-          preferSchemaObjectMatch: true
+          ruleName: params.auditResult?.rule_name
         }
       );
     },
@@ -240,12 +239,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   const handleOpenCreateExceptionFromReport = useCallback(
     (params: OpenCreateAuditWhitelistExceptionParams) => {
       closeReportDrawer();
-      // 扫描详情 A/B 共用：preferSchemaObjectMatch 入口隔离（勿传给 SQL管控等）
+      // AC-001a：扫描详情撤回库表对象预填，恢复改前指纹路径（勿传 preferSchemaObjectMatch）
       openAuditWhitelistCreateWithPrefill(
         toScanTaskRecord(currentAuditResultRecord),
         {
-          ruleName: params.auditResult?.rule_name,
-          preferSchemaObjectMatch: true
+          ruleName: params.auditResult?.rule_name
         }
       );
     },
