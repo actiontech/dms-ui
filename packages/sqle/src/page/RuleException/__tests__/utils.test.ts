@@ -11,6 +11,7 @@ import {
   normalizeMatchRowsOrder,
   rowsToAuditWhitelistBody,
   rowsToBlacklistBody,
+  toSqlManageRuleExceptionRecord,
   validateAuditWhitelistMatchRows,
   validateMatchRows
 } from '../utils';
@@ -137,7 +138,7 @@ describe('sqle/page/RuleException/utils', () => {
     });
   });
 
-  it('buildBlacklistPrefillFromSqlManage does not fall back to fp_sql when preferSchemaObjectMatch lacks object', () => {
+  it('buildBlacklistPrefillFromSqlManage falls back to fp_sql when preferSchemaObjectMatch lacks object (AC-001b)', () => {
     expect(
       buildBlacklistPrefillFromSqlManage(
         {
@@ -154,6 +155,10 @@ describe('sqle/page/RuleException/utils', () => {
       )
     ).toEqual({
       match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.fp_sql,
+          content: 'CREATE TABLE `t` (`id` int)'
+        },
         {
           type: MatchConditionReqV1TypeEnum.instance,
           content: '123'
@@ -176,6 +181,86 @@ describe('sqle/page/RuleException/utils', () => {
         }
       ]
     });
+  });
+
+  it('buildBlacklistPrefillFromSqlManage falls back to fp_sql when preferSchemaObjectMatch lacks schema (AC-001b)', () => {
+    expect(
+      buildBlacklistPrefillFromSqlManage(
+        {
+          sql_fingerprint: 'CREATE TABLE `t` (`id` int)',
+          instance_id: '123',
+          db_type: 'MySQL',
+          schema_meta_name: 't',
+          source: {
+            sql_source_type: 'mysql_schema_meta',
+            sql_source_ids: ['1']
+          }
+        },
+        { preferSchemaObjectMatch: true }
+      )
+    ).toEqual({
+      match_conditions: [
+        {
+          type: MatchConditionReqV1TypeEnum.fp_sql,
+          content: 'CREATE TABLE `t` (`id` int)'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.instance,
+          content: '123'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_type,
+          content: 'mysql_schema_meta'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.audit_task_id,
+          content: '1'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.sql_source,
+          content: 'audit_plan'
+        },
+        {
+          type: MatchConditionReqV1TypeEnum.db_type,
+          content: 'MySQL'
+        }
+      ]
+    });
+  });
+
+  it('toSqlManageRuleExceptionRecord reads schema_name and info.schema_meta_name (AC-011 consume)', () => {
+    const withObject = {
+      sql_fingerprint: 'CREATE TABLE `v` (`id` int)',
+      schema_name: 'sqle',
+      info: { schema_meta_name: 'v_exc_target' }
+    };
+    expect(toSqlManageRuleExceptionRecord(withObject)).toMatchObject({
+      schema_name: 'sqle',
+      schema_meta_name: 'v_exc_target'
+    });
+
+    const emptyObjectName = {
+      sql_fingerprint: 'select 1',
+      schema_name: 'sqle',
+      info: { schema_meta_name: '' }
+    };
+    expect(
+      toSqlManageRuleExceptionRecord(emptyObjectName)?.schema_meta_name
+    ).toBeUndefined();
+
+    const missingKey = {
+      sql_fingerprint: 'select 1',
+      info: {}
+    };
+    expect(
+      toSqlManageRuleExceptionRecord(missingKey)?.schema_meta_name
+    ).toBeUndefined();
+
+    expect(
+      toSqlManageRuleExceptionRecord({
+        sql_fingerprint: 'select 1'
+      })?.schema_meta_name
+    ).toBeUndefined();
   });
 
   it('buildBlacklistPrefillFromSqlManage skips audit task match for quick audit source', () => {
