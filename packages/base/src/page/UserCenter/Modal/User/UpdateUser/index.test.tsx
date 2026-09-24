@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -22,6 +23,8 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
   const mockUserData = userList[0];
   beforeEach(() => {
     jest.useFakeTimers();
+    // UpdateUser 经 useCurrentUser 读当前操作者；需内置 admin 才能编辑系统管理员边界
+    mockUseCurrentUser({ username: 'admin', uid: '700200' });
     updateUserSpy = userCenter.updateUser();
     opPermissionListSpy = userCenter.getOpPermissionsList();
 

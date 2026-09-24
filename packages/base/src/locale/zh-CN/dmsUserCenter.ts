@@ -25,7 +25,9 @@ export default {
       userGroups: '所属用户组',
       opPermissions: '平台管理权限',
       isDisabled: '是否禁用',
-      disabledTips: '当用户被禁用，该用户将无法登录'
+      disabledTips: '当用户被禁用，该用户将无法登录',
+      globalManagementLockedTips: '仅内置管理员可授予或收回「系统管理员」权限',
+      manageTargetForbidden: '无权管理该用户'
     },
     createUser: {
       createSuccessTips: '添加用户 "{{name}}" 成功'

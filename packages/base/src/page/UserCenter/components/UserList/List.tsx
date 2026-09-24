@@ -13,6 +13,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import { IListUsersParams } from '@actiontech/shared/lib/api/base/service/User/index.d';
 import User from '@actiontech/shared/lib/api/base/service/User';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { UserCenterListEnum } from '../../index.enum';
 import {
   updateSelectUser,
@@ -31,6 +32,8 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   const [messageApi, contextHolder] = message.useMessage();
 
   const dispatch = useDispatch();
+
+  const { username, uid } = useCurrentUser();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -97,9 +100,14 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
     [refresh, t, messageApi]
   );
 
+  const currentOperator = useMemo(
+    () => ({ name: username, uid }),
+    [username, uid]
+  );
+
   const actions = useMemo(() => {
-    return UserListActions(onEditUser, onDeleteUser);
-  }, [onEditUser, onDeleteUser]);
+    return UserListActions(onEditUser, onDeleteUser, currentOperator);
+  }, [onEditUser, onDeleteUser, currentOperator]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(

@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 import { Form, message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import { ModalName } from '../../../../../data/ModalName';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { OpPermissionTypeUid, ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import {
   IListUser,
@@ -19,6 +19,11 @@ import User from '@actiontech/shared/lib/api/base/service/User';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
 import { SystemRole } from '@actiontech/shared/lib/enum';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
+import {
+  canEditGlobalManagement,
+  canManageTarget
+} from '../../../utils/systemAdminBoundary';
 
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
@@ -37,6 +42,16 @@ const UpdateUser = () => {
     (state) => state.userCenter.selectUser
   );
 
+  const { username, uid } = useCurrentUser();
+  const currentOperator = useMemo(
+    () => ({ name: username, uid }),
+    [username, uid]
+  );
+  const allowEditGlobalManagement = useMemo(
+    () => canEditGlobalManagement(currentOperator),
+    [currentOperator]
+  );
+
   const [messageApi, contextHolder] = message.useMessage();
 
   const onClose = useCallback(() => {
@@ -52,12 +67,32 @@ const UpdateUser = () => {
   const updateUser = async () => {
     const values = await form.validateFields();
 
+    if (!canManageTarget(currentOperator, currentUser)) {
+      messageApi.error(t('dmsUserCenter.user.userForm.manageTargetForbidden'));
+      return;
+    }
+
+    const nextOpUids = values.opPermissionUids ?? [];
+    const prevHadGlobal =
+      currentUser?.op_permissions?.some(
+        (p) => p.uid === OpPermissionTypeUid.global_management
+      ) ?? false;
+    const nextHasGlobal = nextOpUids.includes(
+      OpPermissionTypeUid.global_management
+    );
+    if (!allowEditGlobalManagement && prevHadGlobal !== nextHasGlobal) {
+      messageApi.error(
+        t('dmsUserCenter.user.userForm.globalManagementLockedTips')
+      );
+      return;
+    }
+
     const userParams: IUpdateUser = {
       password: values.passwordConfirm,
       email: values.email ?? '',
       phone: values.phone ?? '',
       wxid: values.wxid ?? '',
-      op_permission_uids: values.opPermissionUids ?? [],
+      op_permission_uids: nextOpUids,
       is_disabled: values.username !== 'admin' ? !!values.isDisabled : false
     };
     setTrue();
@@ -124,6 +159,7 @@ const UpdateUser = () => {
         visible={visible}
         isUpdate={true}
         isAdmin={currentUser?.name === SystemRole.admin}
+        canEditGlobalManagement={allowEditGlobalManagement}
       />
     </BasicDrawer>
   );
