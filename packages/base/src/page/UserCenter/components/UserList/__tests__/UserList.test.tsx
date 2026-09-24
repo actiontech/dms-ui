@@ -17,6 +17,7 @@ import { ModalName } from '../../../../../data/ModalName';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { UserCenterListEnum } from '../../../index.enum';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => {
   return {
@@ -30,6 +31,8 @@ describe('base/UserCenter/UserList', () => {
   const dispatchSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
+    // 内置 admin：可管理列表内含 admin 在内的全部用户行
+    mockUseCurrentUser({ username: 'admin', uid: '700200' });
     userListSpy = userCenter.getUserList();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
   });
@@ -64,7 +67,8 @@ describe('base/UserCenter/UserList', () => {
     expect(screen.getByText('test')).toBeInTheDocument();
     expect(screen.getByText('test666')).toBeInTheDocument();
     expect(screen.getAllByText('dms')).toHaveLength(3);
-    expect(screen.getAllByText('删 除')).toHaveLength(2);
+    // 内置 admin 操作者：可管理/删除含 admin 在内的全部行（canManageTarget）
+    expect(screen.getAllByText('删 除')).toHaveLength(3);
     expect(screen.getAllByText('管 理')).toHaveLength(3);
   });
 
