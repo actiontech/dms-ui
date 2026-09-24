@@ -16,7 +16,9 @@ export const AuditWhitelistMatchTypeDirection: Record<
   | MatchConditionReqV1TypeEnum.audit_task_type
   | MatchConditionReqV1TypeEnum.audit_task_id
   | MatchConditionReqV1TypeEnum.db_type
-  | MatchConditionReqV1TypeEnum.sql_source,
+  | MatchConditionReqV1TypeEnum.sql_source
+  | MatchConditionReqV1TypeEnum.schema
+  | MatchConditionReqV1TypeEnum.object_name,
   string
 > = {
   sql: t('ruleException.matchType.sql'),
@@ -31,6 +33,10 @@ export const AuditWhitelistMatchTypeDirection: Record<
   [MatchConditionReqV1TypeEnum.db_type]: t('ruleException.matchType.db_type'),
   [MatchConditionReqV1TypeEnum.sql_source]: t(
     'ruleException.matchType.sql_source'
+  ),
+  [MatchConditionReqV1TypeEnum.schema]: t('ruleException.matchType.schema'),
+  [MatchConditionReqV1TypeEnum.object_name]: t(
+    'ruleException.matchType.object_name'
   )
 };
 
@@ -74,6 +80,8 @@ export const AuditWhitelistExtendedMatchTypeOptions = [
   MatchConditionReqV1TypeEnum.audit_task_id,
   MatchConditionReqV1TypeEnum.db_type,
   MatchConditionReqV1TypeEnum.sql_source,
+  MatchConditionReqV1TypeEnum.schema,
+  MatchConditionReqV1TypeEnum.object_name,
   MatchConditionReqV1TypeEnum.fp_sql,
   MatchConditionReqV1TypeEnum.sql
 ].map((value) => ({
@@ -87,7 +95,9 @@ export const AuditWhitelistAllMatchTypeOptions = [
   MatchConditionReqV1TypeEnum.audit_task_type,
   MatchConditionReqV1TypeEnum.audit_task_id,
   MatchConditionReqV1TypeEnum.db_type,
-  MatchConditionReqV1TypeEnum.sql_source
+  MatchConditionReqV1TypeEnum.sql_source,
+  MatchConditionReqV1TypeEnum.schema,
+  MatchConditionReqV1TypeEnum.object_name
 ].map((value) => ({
   label:
     AuditWhitelistMatchTypeDirection[

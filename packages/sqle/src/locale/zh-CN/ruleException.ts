@@ -41,6 +41,9 @@ export default {
     audit_task_type: '扫描任务类型',
     audit_task_id: '扫描任务',
     sql_source: '来源',
+    schema: '库名',
+    object_name: '对象名',
+    objectNameTip: '含表与视图',
     sqlSource: {
       sql_audit_record: '快捷审核',
       audit_plan: '扫描任务'
