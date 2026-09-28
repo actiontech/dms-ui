@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Form, message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -6,13 +6,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
 import { IReduxState } from '../../../../../store';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { OpPermissionTypeUid, ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
 import User from '@actiontech/shared/lib/api/base/service/User';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { canEditGlobalManagement } from '../../../utils/systemAdminBoundary';
 
 const AddUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
@@ -25,6 +27,12 @@ const AddUser = () => {
 
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.userCenter.modalStatus[ModalName.DMS_Add_User]
+  );
+
+  const { username, uid } = useCurrentUser();
+  const allowEditGlobalManagement = useMemo(
+    () => canEditGlobalManagement({ name: username, uid }),
+    [username, uid]
   );
 
   const [messageApi, contextHolder] = message.useMessage();
@@ -41,6 +49,16 @@ const AddUser = () => {
 
   const addUser = useCallback(async () => {
     const values = await form.validateFields();
+    const opPermissionUids = values.opPermissionUids ?? [];
+    if (
+      !allowEditGlobalManagement &&
+      opPermissionUids.includes(OpPermissionTypeUid.global_management)
+    ) {
+      messageApi.error(
+        t('dmsUserCenter.user.userForm.globalManagementLockedTips')
+      );
+      return;
+    }
     setTrue();
     User.AddUser({
       user: {
@@ -49,7 +67,7 @@ const AddUser = () => {
         email: values.email ?? '',
         phone: values.phone ?? '',
         wxid: values.wxid ?? '',
-        op_permission_uids: values.opPermissionUids ?? []
+        op_permission_uids: opPermissionUids
       }
     })
       .then((res) => {
@@ -66,7 +84,15 @@ const AddUser = () => {
       .finally(() => {
         setFalse();
       });
-  }, [onClose, form, setFalse, setTrue, t, messageApi]);
+  }, [
+    allowEditGlobalManagement,
+    onClose,
+    form,
+    setFalse,
+    setTrue,
+    t,
+    messageApi
+  ]);
 
   return (
     <BasicDrawer
@@ -86,7 +112,11 @@ const AddUser = () => {
       }
     >
       {contextHolder}
-      <UserForm form={form} visible={visible} />
+      <UserForm
+        form={form}
+        visible={visible}
+        canEditGlobalManagement={allowEditGlobalManagement}
+      />
     </BasicDrawer>
   );
 };

@@ -62,7 +62,8 @@ export enum OpPermissionTypeUid {
   'view_others_workflow' = '700007', // 查看其他工单权限 700007
   'view_other_audit_plan' = '700008', // 查看其他扫描任务权限 700008
   'save_audit_plan' = '700009', // 创建扫描任务权限；拥有该权限的用户可以创建/更新扫描任务 700009
-  'sql_query' = '700010' //SQL查询；SQL查询权限 700010
+  'sql_query' = '700010', //SQL查询；SQL查询权限 700010
+  'global_management' = '700017' // 系统管理员；可进行系统配置、用户管理等，权限低于内置 admin 700017
 }
 
 export enum CompanyNoticeDisplayStatusEnum {

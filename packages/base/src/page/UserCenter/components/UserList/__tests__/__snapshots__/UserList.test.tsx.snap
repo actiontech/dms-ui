@@ -495,7 +495,16 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </td>

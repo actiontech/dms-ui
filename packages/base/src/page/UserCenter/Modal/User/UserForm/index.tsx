@@ -1,7 +1,7 @@
 import { IUserFormProps } from './index.type';
 import { Form, Switch } from 'antd';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Rule } from 'antd/es/form';
 import { nameRule, phoneRule } from '@actiontech/shared/lib/utils/FormRule';
@@ -9,15 +9,29 @@ import EmptyBox from '@actiontech/shared/lib/components/EmptyBox';
 import { BasicToolTips } from '@actiontech/shared';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
+import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 
 const UserForm: React.FC<IUserFormProps> = (props) => {
   const { t } = useTranslation();
+  const canEditGlobalManagement = props.canEditGlobalManagement !== false;
 
   const {
     loading: getOpPermissionListLoading,
     opPermissionOptions,
     updateOpPermissionList
   } = useOpPermission();
+
+  const permissionOptions = useMemo(() => {
+    if (canEditGlobalManagement) {
+      return opPermissionOptions;
+    }
+    return opPermissionOptions.map((opt) => {
+      if (opt.value === OpPermissionTypeUid.global_management) {
+        return { ...opt, disabled: true };
+      }
+      return opt;
+    });
+  }, [canEditGlobalManagement, opPermissionOptions]);
 
   const userNameRules = (): Rule[] => {
     const baseRules = [
@@ -164,7 +178,21 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
       </Form.Item>
       <Form.Item
         name="opPermissionUids"
-        label={t('dmsUserCenter.user.userForm.opPermissions')}
+        label={
+          canEditGlobalManagement ? (
+            t('dmsUserCenter.user.userForm.opPermissions')
+          ) : (
+            <BasicToolTips
+              suffixIcon
+              titleWidth={320}
+              title={t(
+                'dmsUserCenter.user.userForm.globalManagementLockedTips'
+              )}
+            >
+              {t('dmsUserCenter.user.userForm.opPermissions')}
+            </BasicToolTips>
+          )
+        }
       >
         <BasicSelect
           mode="multiple"
@@ -173,7 +201,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.user.userForm.opPermissions')
           })}
-          options={opPermissionOptions}
+          options={permissionOptions}
           optionFilterProp="label"
         />
       </Form.Item>

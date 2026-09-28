@@ -7,8 +7,11 @@ import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common
 import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { SystemRole } from '@actiontech/shared/lib/enum';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
+import {
+  canManageTarget,
+  UserIdentityLike
+} from '../../utils/systemAdminBoundary';
 
 export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
@@ -65,8 +68,12 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
 
 export const UserListActions = (
   onEditUser: (record?: IListUser) => void,
-  onDeleteUser: (record?: IListUser) => void
+  onDeleteUser: (record?: IListUser) => void,
+  currentOperator?: UserIdentityLike | null
 ): ActiontechTableActionMeta<IListUser>[] => {
+  const canOperate = (record?: IListUser) =>
+    canManageTarget(currentOperator, record);
+
   return [
     {
       text: t('common.manage'),
@@ -77,7 +84,8 @@ export const UserListActions = (
             onEditUser(record);
           }
         };
-      }
+      },
+      permissions: (record) => canOperate(record)
     },
     {
       text: t('common.delete'),
@@ -95,9 +103,7 @@ export const UserListActions = (
           }
         };
       },
-      permissions: (record) => {
-        return record?.name !== SystemRole.admin;
-      }
+      permissions: (record) => canOperate(record)
     }
   ];
 };

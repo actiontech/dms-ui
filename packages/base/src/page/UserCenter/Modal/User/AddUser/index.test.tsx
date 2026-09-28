@@ -8,6 +8,7 @@ import { ModalName } from '../../../../../data/ModalName';
 import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => {
   return {
@@ -23,6 +24,7 @@ describe('base/UserCenter/Modal/AddUser', () => {
   let addUserSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
+    mockUseCurrentUser({ username: 'admin', uid: '700200' });
     addUserSpy = userCenter.addUser();
 
     opPermissionListSpy = userCenter.getOpPermissionsList();

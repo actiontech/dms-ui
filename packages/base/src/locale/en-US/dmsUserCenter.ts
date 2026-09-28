@@ -28,7 +28,10 @@ export default {
       opPermissions: 'Platform management permissions',
       isDisabled: 'Disabled',
       disabledTips:
-        'When the user is disabled, the user will not be able to log in'
+        'When the user is disabled, the user will not be able to log in',
+      globalManagementLockedTips:
+        'Only the built-in admin can grant or revoke the System Administrator permission',
+      manageTargetForbidden: 'You are not allowed to manage this user'
     },
     createUser: {
       createSuccessTips: 'Add user "{{name}}" successfully'
