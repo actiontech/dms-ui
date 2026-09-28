@@ -25,6 +25,12 @@ const LevelHitSummary = ({
   const noticeCount = toCount(levelSummary?.notice_count);
   const normalCount = toCount(levelSummary?.normal_count);
   const sqlCount = toCount(levelSummary?.sql_count);
+  const errorPriorityParts = [
+    errorP0 > 0 ? `P0 ${errorP0}` : '',
+    errorP1 > 0 ? `P1 ${errorP1}` : ''
+  ].filter(Boolean);
+  const errorPriorityText =
+    errorPriorityParts.length > 0 ? `（${errorPriorityParts.join('，')}）` : '';
 
   return (
     <LevelHitSummaryStyleWrapper
@@ -51,20 +57,16 @@ const LevelHitSummary = ({
           >
             {t('components.auditResultMessage.level.error')}
             <span className="level-hit-value">{errorCount}</span>
-            <span
-              className="level-hit-sub"
-              data-testid="sql-audit-level-hit-error-p0"
-              data-value={errorP0}
-            >
-              P0 {errorP0}
-            </span>
-            <span
-              className="level-hit-sub"
-              data-testid="sql-audit-level-hit-error-p1"
-              data-value={errorP1}
-            >
-              P1 {errorP1}
-            </span>
+            {errorPriorityText ? (
+              <span
+                className="level-hit-sub"
+                data-testid="sql-audit-level-hit-error-priority"
+                data-p0={errorP0}
+                data-p1={errorP1}
+              >
+                {errorPriorityText}
+              </span>
+            ) : null}
           </span>
           <span
             className="level-hit-item"
