@@ -14,6 +14,20 @@ import {
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil';
 import UpdateDataSource from '.';
+import { encryptPasswordForTransport } from '../../../../utils/passwordTransportEncryption';
+
+jest.mock('../../../../utils/passwordTransportEncryption', () => ({
+  encryptPasswordForTransport: jest.fn(async () => ({
+    secret_password: 'mocked-secret-password-b64'
+  })),
+  PasswordTransportError: class PasswordTransportError extends Error {
+    reason: string;
+    constructor(reason: string) {
+      super(reason);
+      this.reason = reason;
+    }
+  }
+}));
 
 jest.mock('react-router-dom', () => {
   return {
@@ -42,6 +56,9 @@ describe('page/DataSource/UpdateDataSource', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    (encryptPasswordForTransport as jest.Mock).mockResolvedValue({
+      secret_password: 'mocked-secret-password-b64'
+    });
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.spyOn(Router, 'useParams').mockReturnValue({
       dbServiceUid: uId
@@ -199,6 +216,10 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
     const firstCallParams = updateDBServiceSpy.mock.calls[0][0];
+    expect(firstCallParams.db_service.password).toBeUndefined();
+    expect(firstCallParams.db_service.secret_password).toBe(
+      'mocked-secret-password-b64'
+    );
     expect(
       firstCallParams.db_service.sqle_config.sql_query_config
         .workflow_exec_enabled
@@ -229,6 +250,8 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
     const params = updateDBServiceSpy.mock.calls[0][0];
+    expect(params.db_service.password).toBeUndefined();
+    expect(params.db_service.secret_password).toBeUndefined();
     expect(
       params.db_service.sqle_config.sql_query_config.workflow_exec_enabled
     ).toBe(true);

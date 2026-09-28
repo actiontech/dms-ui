@@ -15,6 +15,20 @@ import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import AddDataSource from '.';
+import { encryptPasswordForTransport } from '../../../../utils/passwordTransportEncryption';
+
+jest.mock('../../../../utils/passwordTransportEncryption', () => ({
+  encryptPasswordForTransport: jest.fn(async () => ({
+    secret_password: 'mocked-secret-password-b64'
+  })),
+  PasswordTransportError: class PasswordTransportError extends Error {
+    reason: string;
+    constructor(reason: string) {
+      super(reason);
+      this.reason = reason;
+    }
+  }
+}));
 
 jest.mock('react-router-dom', () => {
   return {
@@ -37,6 +51,9 @@ describe('page/DataSource/AddDataSource', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    (encryptPasswordForTransport as jest.Mock).mockResolvedValue({
+      secret_password: 'mocked-secret-password-b64'
+    });
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     baseMockApi.global.mockAllApi();
     getProjectListSpy = baseMockApi.project.getProjectList();
@@ -178,7 +195,7 @@ describe('page/DataSource/AddDataSource', () => {
         db_type: 'mysql',
         host: '1.1.1.1',
         user: 'root',
-        password: 'root',
+        secret_password: 'mocked-secret-password-b64',
         port: '3306',
         additional_params: [
           {
@@ -205,7 +222,7 @@ describe('page/DataSource/AddDataSource', () => {
         host: '1.1.1.1',
         maintenance_times: [],
         name: 'name-database',
-        password: 'root',
+        secret_password: 'mocked-secret-password-b64',
         port: '3306',
         sqle_config: {
           audit_enabled: true,
@@ -431,7 +448,7 @@ describe('page/DataSource/AddDataSource', () => {
         host: '1.1.1.1',
         maintenance_times: [],
         name: 'name-database',
-        password: 'root',
+        secret_password: 'mocked-secret-password-b64',
         port: '3306',
         sqle_config: {
           audit_enabled: true,

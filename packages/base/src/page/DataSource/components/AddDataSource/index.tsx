@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useCallback } from 'react';
 import { useForm } from 'antd/es/form/Form';
-import { Space, Typography } from 'antd';
+import { Space, Typography, message } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/dms-kit';
 import {
   BasicButton,
@@ -20,9 +20,14 @@ import { DataSourceFormField } from '../Form/index.type';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { DataSourceFormContextProvide } from '../../context';
 import useCheckConnectable from '../../hooks/useCheckConnectable';
+import {
+  encryptPasswordForTransport,
+  PasswordTransportError
+} from '../../../../utils/passwordTransportEncryption';
 const AddDataSource = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
+  const [messageApi, messageContextHolder] = message.useMessage();
   const [form] = useForm<DataSourceFormField>();
   const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
     useCheckConnectable(form);
@@ -30,8 +35,30 @@ const AddDataSource = () => {
     useBoolean();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
+
+  const resolveTransportErrorMessage = useCallback(
+    (error: unknown) => {
+      if (
+        error instanceof PasswordTransportError &&
+        error.reason === 'encrypt_failed'
+      ) {
+        return t('dmsDataSource.passwordTransport.encryptFailed');
+      }
+      return t('dmsDataSource.passwordTransport.encryptFailed');
+    },
+    [t]
+  );
+
   const addDatabase = async (values: DataSourceFormField) => {
     startSubmit();
+    let cipher;
+    try {
+      cipher = await encryptPasswordForTransport(values.password ?? '');
+    } catch (error) {
+      messageApi.error(resolveTransportErrorMessage(error));
+      submitFinish();
+      return;
+    }
     const dbService: IDBServiceV2 = {
       name: values.name,
       desc: values.describe,
@@ -39,7 +66,7 @@ const AddDataSource = () => {
       host: values.ip,
       port: values.port.toString(),
       user: values.user,
-      password: values.password,
+      secret_password: cipher.secret_password,
       environment_tag_uid: values.environmentTagId,
       maintenance_times:
         values.maintenanceTime?.map((time) => ({
@@ -104,6 +131,7 @@ const AddDataSource = () => {
   };
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
+      {messageContextHolder}
       <DataSourceFormContextProvide
         value={{
           loading,
