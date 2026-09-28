@@ -4,6 +4,8 @@ import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import BasicInfoWrapper from './BasicInfoWrapper';
+import LevelHitSummary from './LevelHitSummary';
+import RuleHitDetails from './RuleHitDetails';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
@@ -42,6 +44,7 @@ const SqlAuditDetail = () => {
     | undefined;
   const nestedPriority = (nestedTask?.audit_error_priority ?? '').trim();
   const needTaskPriorityEnrich = !!nestedTask?.task_id && !nestedPriority;
+  const taskId = nestedTask?.task_id ? `${nestedTask.task_id}` : '';
 
   const { data: enrichedTaskPriority, loading: taskPriorityLoading } =
     useRequest(
@@ -58,12 +61,31 @@ const SqlAuditDetail = () => {
       }
     );
 
+  /**
+   * 任务级汇总：只依赖 task_id，与 SQL 明细分页 / 等级筛选无联动（AC-4）。
+   */
+  const {
+    data: auditSummary,
+    loading: summaryLoading,
+    error: summaryError
+  } = useRequest(
+    () =>
+      task
+        .getAuditTaskSummaryV1({ task_id: taskId })
+        .then((res) => res.data.data),
+    {
+      ready: !!taskId,
+      refreshDeps: [taskId]
+    }
+  );
+
   const basicInfoData = useMemo(() => {
     return {
       id: pluginAuditRecord?.sql_audit_record_id ?? '',
       tags: pluginAuditRecord?.tags ?? [],
       status: pluginAuditRecord?.sql_audit_status,
-      task: pluginAuditRecord?.task
+      task: pluginAuditRecord?.task,
+      instance: pluginAuditRecord?.instance
     };
   }, [pluginAuditRecord]);
 
@@ -127,6 +149,20 @@ const SqlAuditDetail = () => {
           style={{ height: '60px' }}
         />
         <BasicInfoWrapper {...basicInfoData} />
+        {taskId ? (
+          <>
+            <LevelHitSummary
+              levelSummary={auditSummary?.level_summary}
+              loading={summaryLoading}
+              error={!!summaryError}
+            />
+            <RuleHitDetails
+              ruleHitDetails={auditSummary?.rule_hit_details}
+              loading={summaryLoading}
+              error={!!summaryError}
+            />
+          </>
+        ) : null}
         <AuditResultList
           tasks={auditResultData}
           showTaskTab={false}

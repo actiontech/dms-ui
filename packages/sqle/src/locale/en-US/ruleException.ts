@@ -41,6 +41,9 @@ export default {
     audit_task_type: 'Scan task type',
     audit_task_id: 'Scan task',
     sql_source: 'Source',
+    schema: 'Schema',
+    object_name: 'Object name',
+    objectNameTip: 'Includes tables and views',
     sqlSource: {
       sql_audit_record: 'Quick audit',
       audit_plan: 'Scan task'

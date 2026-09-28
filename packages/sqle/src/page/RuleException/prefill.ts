@@ -37,6 +37,10 @@ export type SqlManageRuleExceptionRecord = {
   instance_name?: string;
   audit_plan_db_type?: string;
   db_type?: string;
+  /** SQL管控行 schema_name；仅 preferSchemaObjectMatch 入口消费 */
+  schema_name?: string;
+  /** SQL管控行 info.schema_meta_name（表/视图）；仅 preferSchemaObjectMatch 入口消费 */
+  schema_meta_name?: string;
   source?: ISqlManageRuleExceptionContext['source'];
   audit_result?: IAuditResult[] | null;
 };
@@ -45,6 +49,25 @@ type ISqlManageWithInstanceId = ISqlManage & {
   instance_id?: string;
   db_type?: string;
   audit_plan_db_type?: string;
+  /** AC-011 list透出；三种缺省（缺键/空串/省略 info）均视为无对象名 */
+  info?: { schema_meta_name?: string } | null;
+};
+
+export const resolveSchemaMetaNameFromSqlManageInfo = (
+  info?: { schema_meta_name?: string } | null
+): string | undefined => {
+  if (!info || typeof info !== 'object') {
+    return undefined;
+  }
+  if (!Object.prototype.hasOwnProperty.call(info, 'schema_meta_name')) {
+    return undefined;
+  }
+  const raw = info.schema_meta_name;
+  if (typeof raw !== 'string') {
+    return undefined;
+  }
+  const trimmed = raw.trim();
+  return trimmed || undefined;
 };
 
 export const toSqlManageRuleExceptionRecord = (
@@ -61,6 +84,10 @@ export const toSqlManageRuleExceptionRecord = (
     instance_name: record.instance_name,
     audit_plan_db_type: recordWithExtra.audit_plan_db_type,
     db_type: recordWithExtra.db_type,
+    schema_name: record.schema_name?.trim() || undefined,
+    schema_meta_name: resolveSchemaMetaNameFromSqlManageInfo(
+      recordWithExtra.info
+    ),
     source: record.source,
     audit_result: record.audit_result
   };
@@ -71,6 +98,8 @@ export type ScanTaskRuleExceptionRecordInput = {
   fingerprint?: string;
   sql?: string;
   instance_id?: string;
+  schema_name?: string;
+  schema_meta_name?: string;
   audit_result?: IAuditResult[] | null;
 };
 
@@ -111,6 +140,8 @@ export const toScanTaskRuleExceptionRecord = (
     sql,
     instance_id: record.instance_id?.trim() || sourceContext?.instanceId,
     db_type: sourceContext?.instanceType,
+    schema_name: record.schema_name?.trim() || undefined,
+    schema_meta_name: record.schema_meta_name?.trim() || undefined,
     source: {
       sql_source_type: sourceContext?.auditPlanType,
       sql_source_ids: sourceContext?.auditPlanId
@@ -126,6 +157,13 @@ export type BuildBlacklistPrefillFromSqlManageOptions = {
   ruleName?: string;
   /** Row action entry: specific scope without pre-selecting rules */
   specificRuleScopeWithoutPreselect?: boolean;
+  /**
+   * SQL管控页「添加为审核SQL例外」专用（S1 §5.4）。
+   * 库名+对象名均有值 → 预填 schema + object_name，跳过 fp_sql；
+   * 缺任一侧 → 指纹回退（AC-001b）。
+   * 禁止传给扫描详情抽屉 / 快捷审核 / 工单 / SqlAnalyze（AC-001a / AC-012）。
+   */
+  preferSchemaObjectMatch?: boolean;
 };
 
 const AUDIT_TASK_MATCH_PREFILL_SKIP_SOURCE_TYPES = new Set<string>([
@@ -271,7 +309,22 @@ export const buildBlacklistPrefillFromSqlManage = (
 
   const match_conditions: IMatchConditionReqV1[] = [];
 
-  if (context.sql_fingerprint) {
+  const objectName = record?.schema_meta_name?.trim();
+  const schemaName = record?.schema_name?.trim();
+  // AC-001：须库名与对象名均非空才走对象预填；缺一则 AC-001b 指纹回退
+  const useSchemaObjectMatch =
+    !!options?.preferSchemaObjectMatch && !!schemaName && !!objectName;
+
+  if (useSchemaObjectMatch) {
+    match_conditions.push({
+      type: MatchConditionReqV1TypeEnum.schema,
+      content: schemaName
+    });
+    match_conditions.push({
+      type: MatchConditionReqV1TypeEnum.object_name,
+      content: objectName
+    });
+  } else if (context.sql_fingerprint) {
     match_conditions.push({
       type: MatchConditionReqV1TypeEnum.fp_sql,
       content: context.sql_fingerprint

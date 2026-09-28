@@ -320,9 +320,13 @@ const SQLEEIndex = () => {
 
   const onCreateWhitelist = useCallback(
     (record?: ISqlManage) => {
+      // SQL管控主路径：preferSchemaObjectMatch 仅本入口族（S1 §5.4）
       openAuditWhitelistCreateWithPrefill(
         toSqlManageRuleExceptionRecord(record),
-        { specificRuleScopeWithoutPreselect: true }
+        {
+          specificRuleScopeWithoutPreselect: true,
+          preferSchemaObjectMatch: true
+        }
       );
     },
     [openAuditWhitelistCreateWithPrefill]

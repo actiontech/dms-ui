@@ -268,6 +268,32 @@ const MatchRowContentField: React.FC<MatchRowContentFieldProps> = ({
     );
   }
 
+  if (
+    type === MatchConditionReqV1TypeEnum.schema ||
+    type === MatchConditionReqV1TypeEnum.object_name
+  ) {
+    return (
+      <Space align="center" size={8}>
+        <Form.Item
+          name={[fieldName, 'content']}
+          rules={[{ required: true, whitespace: true }]}
+          noStyle
+        >
+          <BasicInput
+            style={{ width: MATCH_ROW_CONTENT_WIDTH }}
+            placeholder={t('common.form.placeholder.input')}
+          />
+        </Form.Item>
+        <EmptyBox if={type === MatchConditionReqV1TypeEnum.object_name}>
+          <BasicToolTips
+            title={t('ruleException.matchType.objectNameTip')}
+            suffixIcon
+          />
+        </EmptyBox>
+      </Space>
+    );
+  }
+
   return (
     <Form.Item
       name={[fieldName, 'content']}

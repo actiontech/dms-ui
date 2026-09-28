@@ -104,9 +104,13 @@ const StatusDrawer = () => {
 
   const handleOpenCreateException = useCallback(
     (params: OpenCreateAuditWhitelistExceptionParams) => {
+      // SQL管控抽屉加号：与列表同入口族，挂对象预填（S1 §5.4）
       openAuditWhitelistCreateWithPrefill(
         toSqlManageRuleExceptionRecord(selectedData ?? undefined),
-        { ruleName: params.auditResult?.rule_name }
+        {
+          ruleName: params.auditResult?.rule_name,
+          preferSchemaObjectMatch: true
+        }
       );
     },
     [openAuditWhitelistCreateWithPrefill, selectedData]

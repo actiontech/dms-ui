@@ -21,10 +21,7 @@ import ExemptedAuditResultWithActions from '../ExemptedAuditResultWithActions';
 import CollapsibleExemptedSection from './CollapsibleExemptedSection';
 import FullSqlExemptedResultItem from '../FullSqlExemptedResultItem';
 import { AuditResultExemptionPanelStyleWrapper } from './style';
-import {
-  AuditResultExemptionPanelLayout,
-  AuditResultExemptionPanelProps
-} from './types';
+import { AuditResultExemptionPanelProps } from './types';
 import { IAuditResultItem } from '../../ReportDrawer/index.type';
 
 export type { AuditResultExemptionPanelLayout } from './types';

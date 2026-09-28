@@ -297,7 +297,11 @@ export enum MatchConditionReqV1TypeEnum {
 
   db_type = 'db_type',
 
-  sql_source = 'sql_source'
+  sql_source = 'sql_source',
+
+  schema = 'schema',
+
+  object_name = 'object_name'
 }
 
 export enum OperationRecordListStatusEnum {
