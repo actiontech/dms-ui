@@ -42,7 +42,41 @@ export default {
     download: 'Download audit result',
     auditID: 'Audit ID',
     auditRating: 'Audit rating',
-    auditPassRate: 'Audit pass rate'
+    auditPassRate: 'Audit pass rate',
+    sourceHeader: {
+      instanceName: 'Data source',
+      address: 'Address',
+      instanceDbType: 'Instance type',
+      instanceSchema: 'Schema',
+      sqlSource: 'SQL source',
+      sourceFiles: 'Source files',
+      sqlSourceEnum: {
+        form_data: 'Form',
+        sql_file: 'SQL file',
+        mybatis_xml_file: 'MyBatis',
+        zip_file: 'ZIP',
+        git_repository: 'GIT'
+      }
+    },
+    levelHitSummary: {
+      title: 'Level hit summary',
+      sqlCount: 'SQL count',
+      loading: 'Loading…',
+      loadFailed: 'Failed to load level hit summary'
+    },
+    ruleHitDetails: {
+      title: 'Rule hit details',
+      empty: 'No rule hits',
+      loading: 'Loading…',
+      loadFailed: 'Failed to load rule hit details',
+      columns: {
+        rule: 'Rule',
+        level: 'Level',
+        hitCount: 'Hit count',
+        message: 'Description',
+        sqlNumbers: 'Related SQL'
+      }
+    }
   },
   create: {
     title: 'Create SQL audit',

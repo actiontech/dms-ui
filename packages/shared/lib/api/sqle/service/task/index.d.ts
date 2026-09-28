@@ -3,6 +3,7 @@ import {
   ICreateAuditTasksGroupResV1,
   ICreateAuditTaskReqV1,
   IGetAuditTaskResV1,
+  IGetAuditTaskSummaryResV1,
   IUpdateSqlFileOrderV1Req,
   IGetSqlFileOrderMethodResV1,
   IAuditTaskGroupResV1,
@@ -87,6 +88,13 @@ export interface IGetAuditTaskV1Params {
 }
 
 export interface IGetAuditTaskV1Return extends IGetAuditTaskResV1 {}
+
+export interface IGetAuditTaskSummaryV1Params {
+  task_id: string;
+}
+
+export interface IGetAuditTaskSummaryV1Return
+  extends IGetAuditTaskSummaryResV1 {}
 
 export interface IDownloadAuditFileParams {
   task_id: string;

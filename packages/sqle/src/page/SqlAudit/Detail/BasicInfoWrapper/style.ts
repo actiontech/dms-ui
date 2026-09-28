@@ -41,4 +41,18 @@ export const BasicInfoStyleWrapper = styled('div')`
       }
     }
   }
+
+  .source-fields-cont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 12px;
+
+    .source-field-item {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 20px;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+    }
+  }
 `;

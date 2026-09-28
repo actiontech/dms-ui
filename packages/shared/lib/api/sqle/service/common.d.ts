@@ -964,6 +964,52 @@ export interface IGetAuditTaskResV1 {
   message?: string;
 }
 
+/** 任务级审核汇总 · level_summary（S2） */
+export interface IAuditLevelSummary {
+  error_count?: number;
+
+  error_p0_count?: number;
+
+  error_p1_count?: number;
+
+  warn_count?: number;
+
+  notice_count?: number;
+
+  normal_count?: number;
+
+  sql_count?: number;
+}
+
+/** 任务级审核汇总 · rule_hit_details 单项（S3） */
+export interface IAuditRuleHitDetail {
+  rule_name?: string;
+
+  level?: string;
+
+  error_priority?: string;
+
+  hit_count?: number;
+
+  message?: string;
+
+  sql_numbers?: number[];
+}
+
+export interface IAuditTaskSummaryResData {
+  level_summary?: IAuditLevelSummary;
+
+  rule_hit_details?: IAuditRuleHitDetail[];
+}
+
+export interface IGetAuditTaskSummaryResV1 {
+  code?: number;
+
+  data?: IAuditTaskSummaryResData;
+
+  message?: string;
+}
+
 export interface IGetAuditTaskSQLContentResV1 {
   code?: number;
 
