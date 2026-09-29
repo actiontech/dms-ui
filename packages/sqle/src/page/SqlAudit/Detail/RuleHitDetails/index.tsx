@@ -49,7 +49,6 @@ const RuleHitDetails = ({
               <th>{t('sqlAudit.detail.ruleHitDetails.columns.level')}</th>
               <th>{t('sqlAudit.detail.ruleHitDetails.columns.hitCount')}</th>
               <th>{t('sqlAudit.detail.ruleHitDetails.columns.message')}</th>
-              <th>{t('sqlAudit.detail.ruleHitDetails.columns.sqlNumbers')}</th>
             </tr>
           </thead>
           <tbody>
@@ -68,9 +67,6 @@ const RuleHitDetails = ({
                 Number.isFinite(item.hit_count)
                   ? item.hit_count
                   : 0;
-              const sqlNumbers = (item.sql_numbers ?? [])
-                .map((n) => `#${n}`)
-                .join(', ');
               const rowKey = `${item.rule_name ?? displayName}-${index}`;
 
               return (
@@ -84,7 +80,6 @@ const RuleHitDetails = ({
                     {hitCount}
                   </td>
                   <td>{(item.message ?? '').trim() || EMPTY}</td>
-                  <td>{sqlNumbers || EMPTY}</td>
                 </tr>
               );
             })}

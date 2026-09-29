@@ -232,18 +232,6 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 0
               </span>
             </span>
-            <span
-              class="level-hit-item"
-              data-testid="sql-audit-level-hit-sql-count"
-              data-value="0"
-            >
-              SQL 条数
-              <span
-                class="level-hit-value"
-              >
-                0
-              </span>
-            </span>
           </div>
         </div>
         <div
