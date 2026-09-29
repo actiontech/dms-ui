@@ -666,9 +666,17 @@ export interface ICheckDbConnectable {
 
   host: string;
 
-  password: string;
+  /**
+   * Plaintext password — forbidden on form connect after S1; kept optional for legacy callers.
+   */
+  password?: string;
 
   port: string;
+
+  /**
+   * Transport ciphertext (fixed AES-256-CBC, Base64). Preferred for form connect after S1.
+   */
+  secret_password?: string;
 
   user: string;
 }
@@ -936,9 +944,17 @@ export interface IDBServiceV2 {
 
   name: string;
 
-  password: string;
+  /**
+   * Plaintext password — forbidden on create after S2; kept optional for legacy callers.
+   */
+  password?: string;
 
   port: string;
+
+  /**
+   * Transport ciphertext (fixed AES-256-CBC, Base64). Preferred for create after S2.
+   */
+  secret_password?: string;
 
   sqle_config?: ISQLEConfig;
 
@@ -3988,9 +4004,17 @@ export interface IUpdateDBServiceV2 {
 
   maintenance_times: IMaintenanceTime[];
 
+  /**
+   * Plaintext password — forbidden on update after S3; kept optional for legacy callers.
+   */
   password?: string;
 
   port: string;
+
+  /**
+   * Transport ciphertext (fixed AES-256-CBC, Base64). Preferred when updating password after S3.
+   */
+  secret_password?: string;
 
   sqle_config?: ISQLEConfig;
 

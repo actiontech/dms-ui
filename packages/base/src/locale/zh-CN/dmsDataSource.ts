@@ -111,6 +111,10 @@ export default {
     continueSubmit: '继续提交'
   },
 
+  passwordTransport: {
+    encryptFailed: '口令加密失败，请稍后重试'
+  },
+
   testConnectModal: {
     errorTitle: '数据源{{instanceName}}连通性测试失败'
   },

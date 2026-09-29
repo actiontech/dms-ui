@@ -19,6 +19,10 @@ import { ROUTE_PATHS } from '@actiontech/dms-kit';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { DataSourceFormContextProvide } from '../../context';
 import useCheckConnectable from '../../hooks/useCheckConnectable';
+import {
+  encryptPasswordForTransport,
+  PasswordTransportError
+} from '../../../../utils/passwordTransportEncryption';
 const UpdateDataSource = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
@@ -36,6 +40,20 @@ const UpdateDataSource = () => {
   const [instanceInfo, setInstanceInfo] = useState<
     IListDBServiceV2 | undefined
   >();
+
+  const resolveTransportErrorMessage = useCallback(
+    (error: unknown) => {
+      if (
+        error instanceof PasswordTransportError &&
+        error.reason === 'encrypt_failed'
+      ) {
+        return t('dmsDataSource.passwordTransport.encryptFailed');
+      }
+      return t('dmsDataSource.passwordTransport.encryptFailed');
+    },
+    [t]
+  );
+
   const updateDatabase = async (values: DataSourceFormField) => {
     startSubmit();
     const params: IUpdateDBServiceV2Params = {
@@ -91,7 +109,15 @@ const UpdateDataSource = () => {
     // #endif
 
     if (!!values.needUpdatePassword && !!values.password && params.db_service) {
-      params.db_service.password = values.password;
+      let cipher;
+      try {
+        cipher = await encryptPasswordForTransport(values.password);
+      } catch (error) {
+        messageApi.error(resolveTransportErrorMessage(error));
+        submitFinish();
+        return;
+      }
+      params.db_service.secret_password = cipher.secret_password;
     }
     return DmsApi.DBServiceService.UpdateDBServiceV2(params)
       .then((res) => {

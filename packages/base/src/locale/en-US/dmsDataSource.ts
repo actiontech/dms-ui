@@ -119,6 +119,11 @@ export default {
     returnModify: 'Back to Edit',
     continueSubmit: 'Continue Submit'
   },
+
+  passwordTransport: {
+    encryptFailed: 'Failed to encrypt password. Please try again later.'
+  },
+
   testConnectModal: {
     errorTitle: 'DB instance {{instanceName}} connectivity test failed'
   },
