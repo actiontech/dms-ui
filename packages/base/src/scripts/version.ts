@@ -1,1 +1,2 @@
-export const UI_VERSION = 'dev-zjrc-user-system-admin   f4fab7b02';
+export const UI_VERSION =
+  'dev-zjrc-sql-audit-report-rule-hit-count-20260929   bbff01876';
