@@ -24,7 +24,6 @@ const LevelHitSummary = ({
   const warnCount = toCount(levelSummary?.warn_count);
   const noticeCount = toCount(levelSummary?.notice_count);
   const normalCount = toCount(levelSummary?.normal_count);
-  const sqlCount = toCount(levelSummary?.sql_count);
   const errorPriorityParts = [
     errorP0 > 0 ? `P0 ${errorP0}` : '',
     errorP1 > 0 ? `P1 ${errorP1}` : ''
@@ -91,14 +90,6 @@ const LevelHitSummary = ({
           >
             {t('components.auditResultMessage.level.normal')}
             <span className="level-hit-value">{normalCount}</span>
-          </span>
-          <span
-            className="level-hit-item"
-            data-testid="sql-audit-level-hit-sql-count"
-            data-value={sqlCount}
-          >
-            {t('sqlAudit.detail.levelHitSummary.sqlCount')}
-            <span className="level-hit-value">{sqlCount}</span>
           </span>
         </div>
       )}
