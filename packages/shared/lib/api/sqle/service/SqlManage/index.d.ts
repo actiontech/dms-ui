@@ -12,6 +12,7 @@ import {
   exportSqlManageRemediationV1ExportScopeEnum,
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterAuditLevelEnum,
+  GetSqlManageListV2FilterErrorPriorityEnum,
   GetSqlManageListV2FilterStatusEnum,
   GetSqlManageListV2FilterPriorityEnum,
   GetSqlManageListV2SortOrderEnum
@@ -205,6 +206,8 @@ export interface IGetSqlManageListV2Params {
 
   filter_audit_level?: GetSqlManageListV2FilterAuditLevelEnum;
 
+  filter_error_priority?: GetSqlManageListV2FilterErrorPriorityEnum;
+
   filter_last_audit_start_time_from?: string;
 
   filter_last_audit_start_time_to?: string;
@@ -254,6 +257,8 @@ export interface IGetSqlManageStatisticsV2Params {
   filter_source?: GetSqlManageListV2FilterSourceEnum;
 
   filter_audit_level?: GetSqlManageListV2FilterAuditLevelEnum;
+
+  filter_error_priority?: GetSqlManageListV2FilterErrorPriorityEnum;
 
   filter_last_audit_start_time_from?: string;
 

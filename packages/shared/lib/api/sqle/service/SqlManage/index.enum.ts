@@ -102,6 +102,12 @@ export enum GetSqlManageListV2FilterAuditLevelEnum {
   error = 'error'
 }
 
+export enum GetSqlManageListV2FilterErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1'
+}
+
 export enum GetSqlManageListV2FilterStatusEnum {
   unhandled = 'unhandled',
 
