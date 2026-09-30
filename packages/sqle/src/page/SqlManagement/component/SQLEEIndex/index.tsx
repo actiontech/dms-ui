@@ -434,7 +434,7 @@ const SQLEEIndex = () => {
         : undefined,
       filter_parse_failed: isParseFailedRuleSelected ? true : undefined,
       extra_filters: buildExtraFiltersForRequest(tableFilterInfo)
-    }) as IGetSqlManageListV2Params & { filter_error_priority?: string };
+    }) as IGetSqlManageListV2Params;
 
     return params;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -860,18 +860,10 @@ const SQLEEIndex = () => {
                 filter_schema_name: listParams.filter_schema_name,
                 filter_parse_failed: listParams.filter_parse_failed,
                 extra_filters: listParams.extra_filters,
-                // S3 §8.4：导出复用列表筛选（含 error priority）；swagger 未再生前交叉扩展
-                ...((
-                  listParams as IGetSqlManageListV2Params & {
-                    filter_error_priority?: string;
-                  }
-                ).filter_error_priority
+                // 导出 swagger 尚未声明 filter_error_priority；列表类型已含该字段，仅向导出参透传
+                ...(listParams.filter_error_priority
                   ? {
-                      filter_error_priority: (
-                        listParams as IGetSqlManageListV2Params & {
-                          filter_error_priority?: string;
-                        }
-                      ).filter_error_priority
+                      filter_error_priority: listParams.filter_error_priority
                     }
                   : {})
               } as Parameters<typeof SqlManage.exportSqlManageRemediationV1>[0],
