@@ -8,7 +8,10 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from '../../../../hooks/useDatabaseType/index.test.data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpySuccessResponse,
+  createSpyFailResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import { sqlManageListData } from '../../../../testUtils/mockApi/sqlManage/data';
 import {
   getAllBySelector,
@@ -24,6 +27,7 @@ import { mockUseAuditPlanTypes } from '../../../../testUtils/mockRequest';
 import { resetRuleTipsCacheForTests } from '../../../../hooks/useRuleTips';
 import {
   GetSqlManageListV2FilterPriorityEnum,
+  GetSqlManageListV2FilterErrorPriorityEnum,
   exportSqlManageV1FilterPriorityEnum,
   exportSqlManageRemediationV1ExportScopeEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
@@ -915,5 +919,120 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: rowWithFirstAudit
     });
+  });
+
+  const selectAuditLevelFilter = async (optionLabel: string) => {
+    fireEvent.click(screen.getByText('筛选'));
+    expect(screen.getByText('最低审核等级')).toBeInTheDocument();
+    const auditLevelFilterItem = screen
+      .getByText('最低审核等级')
+      .closest('.actiontech-table-filter-container-item');
+    const auditSelect =
+      auditLevelFilterItem?.querySelector('.ant-select') ??
+      screen.getByText('最低审核等级').closest('.ant-select');
+    expect(auditSelect).toBeTruthy();
+    fireEvent.mouseDown(auditSelect!.querySelector('.ant-select-selector')!);
+    await act(async () => jest.advanceTimersByTime(300));
+    const option = Array.from(
+      getAllBySelector('.ant-select-item-option-content')
+    ).find((el) => el.textContent === optionLabel);
+    expect(option).toBeTruthy();
+    await act(async () => {
+      fireEvent.click(option!);
+      await act(async () => jest.advanceTimersByTime(3000));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+  };
+
+  it('should send same filter_error_priority P0 on list and statistics', async () => {
+    const request = sqlManage.getSqlManageList();
+    const statisticsRequest = sqlManage.getSqlManageStatistics();
+    superRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await selectAuditLevelFilter('错误(P0)');
+    expect(request).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_audit_level: 'error',
+        filter_error_priority: GetSqlManageListV2FilterErrorPriorityEnum.P0
+      })
+    );
+    expect(statisticsRequest).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_audit_level: 'error',
+        filter_error_priority: GetSqlManageListV2FilterErrorPriorityEnum.P0
+      })
+    );
+    const statsParams = statisticsRequest.mock.calls.at(-1)?.[0] ?? {};
+    expect(statsParams).not.toHaveProperty('page_index');
+    expect(statsParams).not.toHaveProperty('page_size');
+  });
+
+  it('should send same filter_error_priority P1 on list and statistics', async () => {
+    const request = sqlManage.getSqlManageList();
+    const statisticsRequest = sqlManage.getSqlManageStatistics();
+    superRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await selectAuditLevelFilter('错误(P1)');
+    expect(request).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_audit_level: 'error',
+        filter_error_priority: GetSqlManageListV2FilterErrorPriorityEnum.P1
+      })
+    );
+    expect(statisticsRequest).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_audit_level: 'error',
+        filter_error_priority: GetSqlManageListV2FilterErrorPriorityEnum.P1
+      })
+    );
+  });
+
+  it('should omit filter_error_priority when audit level has no P0/P1', async () => {
+    const request = sqlManage.getSqlManageList();
+    const statisticsRequest = sqlManage.getSqlManageStatistics();
+    superRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await selectAuditLevelFilter('告警');
+    expect(request).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_audit_level: 'warn'
+      })
+    );
+    expect(request.mock.calls.at(-1)?.[0]).not.toHaveProperty(
+      'filter_error_priority'
+    );
+    expect(statisticsRequest).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        filter_audit_level: 'warn'
+      })
+    );
+    expect(statisticsRequest.mock.calls.at(-1)?.[0]).not.toHaveProperty(
+      'filter_error_priority'
+    );
+  });
+
+  it('should keep previous SQL total when statistics fails', async () => {
+    const statisticsRequest = sqlManage.getSqlManageStatistics();
+    statisticsRequest
+      .mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          sql_manage_total_num: 42,
+          sql_manage_bad_num: 10,
+          sql_manage_optimized_num: 5
+        })
+      )
+      .mockImplementation(() =>
+        createSpyFailResponse({
+          sql_manage_total_num: 0,
+          sql_manage_bad_num: 0,
+          sql_manage_optimized_num: 0
+        })
+      );
+    const { baseElement } = superRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement.querySelector('.num.total')).toHaveTextContent('42');
+    fireEvent.click(screen.getByText('已解决'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement.querySelector('.num.total')).toHaveTextContent('42');
   });
 });
