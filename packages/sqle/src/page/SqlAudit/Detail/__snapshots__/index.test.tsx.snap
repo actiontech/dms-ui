@@ -235,7 +235,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
           </div>
         </div>
         <div
-          class="sql-audit-rule-hit-details css-17w2m6y"
+          class="sql-audit-rule-hit-details css-18ogfz0"
           data-testid="sql-audit-rule-hit-details"
         >
           <div
