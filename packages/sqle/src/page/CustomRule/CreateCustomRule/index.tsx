@@ -7,7 +7,10 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import CustomRuleForm from '../CustomRuleForm/CustomRuleForm';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { CreateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  CreateCustomRuleReqV1ErrorPriorityEnum,
+  CreateCustomRuleReqV1LevelEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
@@ -49,7 +52,12 @@ const CreateCustomRule: React.FC = () => {
         rule_script: values.script,
         type: baseInfo.ruleType,
         ...(baseInfo.level === 'error'
-          ? { error_priority: baseInfo.error_priority === 'P0' ? 'P0' : 'P1' }
+          ? {
+              error_priority:
+                baseInfo.error_priority === 'P0'
+                  ? CreateCustomRuleReqV1ErrorPriorityEnum.P0
+                  : CreateCustomRuleReqV1ErrorPriorityEnum.P1
+            }
           : {})
       })
       .then((res) => {

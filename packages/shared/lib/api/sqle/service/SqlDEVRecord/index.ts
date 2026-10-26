@@ -7,9 +7,9 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
-  IExportSqlDEVRecordParams,
   IGetSqlDEVRecordListParams,
-  IGetSqlDEVRecordListReturn
+  IGetSqlDEVRecordListReturn,
+  IExportSqlDevRecordsV1Params
 } from './index.d';
 
 class SqlDEVRecordService extends ServiceBase {
@@ -28,8 +28,8 @@ class SqlDEVRecordService extends ServiceBase {
     );
   }
 
-  public ExportSqlDEVRecord(
-    params: IExportSqlDEVRecordParams,
+  public exportSqlDevRecordsV1(
+    params: IExportSqlDevRecordsV1Params,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);

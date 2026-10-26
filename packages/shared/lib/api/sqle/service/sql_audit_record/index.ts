@@ -11,6 +11,11 @@ import {
   IGetSQLAuditRecordsV1Return,
   ICreateSQLAuditRecordV1Params,
   ICreateSQLAuditRecordV1Return,
+  IExportSQLAuditRecordAggregateV1Params,
+  IGetSQLAuditRecordAggregateSqlsV1Params,
+  IGetSQLAuditRecordAggregateSqlsV1Return,
+  IGetSQLAuditRecordAggregateSummaryV1Params,
+  IGetSQLAuditRecordAggregateSummaryV1Return,
   IGetSQLAuditRecordTagTipsV1Params,
   IGetSQLAuditRecordTagTipsV1Return,
   IGetSQLAuditRecordV1Params,
@@ -98,6 +103,90 @@ class SqlAuditRecordService extends ServiceBase {
       `/v1/projects/${project_name}/sql_audit_records`,
       paramsData,
       config
+    );
+  }
+
+  /**
+   * 跨任务汇总导出 xlsx。responseType=blob；附件由 ApiBase 拦截器落盘。
+   * filter_instance_id 以 JSON 数字字面量发出，避免雪花 ID 经 Number 丢精度。
+   * （api_client:g 再生后保留；与 OpenAPI integer 语义一致，仅传输层规避 JS Number。）
+   */
+  public exportSQLAuditRecordAggregateV1(
+    params: IExportSQLAuditRecordAggregateV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instanceIdRaw = paramsData.filter_instance_id;
+    delete paramsData.filter_instance_id;
+    const instanceId =
+      instanceIdRaw !== undefined &&
+      instanceIdRaw !== null &&
+      String(instanceIdRaw).trim() !== '' &&
+      String(instanceIdRaw).trim() !== '0'
+        ? String(instanceIdRaw).trim()
+        : undefined;
+
+    return this.post<any>(
+      `/v1/projects/${project_name}/sql_audit_records/aggregate/export`,
+      paramsData,
+      {
+        responseType: 'blob',
+        ...options,
+        transformRequest: [
+          (data, headers) => {
+            if (headers) {
+              headers['Content-Type'] = 'application/json';
+            }
+            const payload =
+              data && typeof data === 'object'
+                ? data
+                : typeof data === 'string'
+                ? JSON.parse(data)
+                : {};
+            let json = JSON.stringify(payload ?? {});
+            if (instanceId) {
+              json =
+                json === '{}'
+                  ? `{"filter_instance_id":${instanceId}}`
+                  : `${json.slice(0, -1)},"filter_instance_id":${instanceId}}`;
+            }
+            return json;
+          }
+        ]
+      }
+    );
+  }
+
+  public getSQLAuditRecordAggregateSqlsV1(
+    params: IGetSQLAuditRecordAggregateSqlsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSQLAuditRecordAggregateSqlsV1Return>(
+      `/v1/projects/${project_name}/sql_audit_records/aggregate/sqls`,
+      paramsData,
+      options
+    );
+  }
+
+  public getSQLAuditRecordAggregateSummaryV1(
+    params: IGetSQLAuditRecordAggregateSummaryV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSQLAuditRecordAggregateSummaryV1Return>(
+      `/v1/projects/${project_name}/sql_audit_records/aggregate/summary`,
+      paramsData,
+      options
     );
   }
 

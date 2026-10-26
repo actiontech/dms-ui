@@ -42,7 +42,7 @@ const LastAuditResultCell: React.FC<{
 }> = ({ record }) => {
   const status = record.last_audit_status;
   const mainText = mapLastAuditStatusText(status);
-  const hasStatus = !(status === undefined || status === null || status === '');
+  const hasStatus = status !== undefined;
   const failureMsg = record.last_audit_failure_msg ?? '';
 
   if (!hasStatus) {

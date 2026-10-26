@@ -27,17 +27,17 @@ import {
   IUpdateAuditPlanStatusV1Return,
   IAuditPlanTriggerSqlAuditV1Params,
   IAuditPlanTriggerSqlAuditV1Return,
-  ITriggerAuditPlanCollectV1Params,
-  ITriggerAuditPlanCollectV1Return,
+  IGetInstanceAuditPlanFilterTipsV1Params,
+  IGetInstanceAuditPlanFilterTipsV1Return,
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLDataV1Return,
   IGetInstanceAuditPlanSQLExportV1Params,
   IGetInstanceAuditPlanSQLMetaV1Params,
   IGetInstanceAuditPlanSQLMetaV1Return,
-  IGetInstanceAuditPlanSQLFilterTipsV1Params,
-  IGetInstanceAuditPlanSQLFilterTipsV1Return,
   IGetInstanceAuditPlanSQLsV1Params,
   IGetInstanceAuditPlanSQLsV1Return,
+  ITriggerAuditPlanCollectV1Params,
+  ITriggerAuditPlanCollectV1Return,
   IGetAuditPlanSqlAnalysisDataV1Params,
   IGetAuditPlanSqlAnalysisDataV1Return,
   IUploadInstanceAuditPlanSQLsV2Params,
@@ -228,8 +228,8 @@ class InstanceAuditPlanService extends ServiceBase {
     );
   }
 
-  public triggerAuditPlanCollectV1(
-    params: ITriggerAuditPlanCollectV1Params,
+  public getInstanceAuditPlanFilterTipsV1(
+    params: IGetInstanceAuditPlanFilterTipsV1Params,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
@@ -242,8 +242,8 @@ class InstanceAuditPlanService extends ServiceBase {
     const audit_plan_id = paramsData.audit_plan_id;
     delete paramsData.audit_plan_id;
 
-    return this.post<ITriggerAuditPlanCollectV1Return>(
-      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/trigger_collect`,
+    return this.get<IGetInstanceAuditPlanFilterTipsV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/filter_tips`,
       paramsData,
       options
     );
@@ -312,30 +312,6 @@ class InstanceAuditPlanService extends ServiceBase {
     );
   }
 
-  public getInstanceAuditPlanSQLFilterTipsV1(
-    params: IGetInstanceAuditPlanSQLFilterTipsV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
-    delete paramsData.instance_audit_plan_id;
-
-    const audit_plan_id = paramsData.audit_plan_id;
-    delete paramsData.audit_plan_id;
-
-    const filter_name = paramsData.filter_name;
-    delete paramsData.filter_name;
-
-    return this.get<IGetInstanceAuditPlanSQLFilterTipsV1Return>(
-      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/filter_tips`,
-      { filter_name },
-      options
-    );
-  }
-
   public getInstanceAuditPlanSQLsV1(
     params: IGetInstanceAuditPlanSQLsV1Params,
     options?: AxiosRequestConfig
@@ -352,6 +328,27 @@ class InstanceAuditPlanService extends ServiceBase {
 
     return this.get<IGetInstanceAuditPlanSQLsV1Return>(
       `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/sqls`,
+      paramsData,
+      options
+    );
+  }
+
+  public triggerAuditPlanCollectV1(
+    params: ITriggerAuditPlanCollectV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
+
+    return this.post<ITriggerAuditPlanCollectV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/trigger_collect`,
       paramsData,
       options
     );

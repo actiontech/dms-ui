@@ -87,16 +87,15 @@ const useLazyFilterTips = ({
       inflightRef.current.add(filterName);
       setTipLoadingByFilter((prev) => ({ ...prev, [filterName]: true }));
       try {
-        const res =
-          await instance_audit_plan.getInstanceAuditPlanSQLFilterTipsV1({
-            project_name: projectName,
-            instance_audit_plan_id: instanceAuditPlanId,
-            audit_plan_id: auditPlanId,
-            filter_name: filterName
-          });
+        const res = await instance_audit_plan.getInstanceAuditPlanFilterTipsV1({
+          project_name: projectName,
+          instance_audit_plan_id: instanceAuditPlanId,
+          audit_plan_id: auditPlanId,
+          filter_name: [filterName]
+        });
         if (res.data.code === ResponseCode.SUCCESS) {
           const meta = res.data.data?.filter_meta_list?.find(
-            (item) => item.filter_name === filterName
+            (item: { filter_name?: string }) => item.filter_name === filterName
           );
           setRawTipsByFilter((prev) => ({
             ...prev,

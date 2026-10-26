@@ -42,7 +42,7 @@ const LastCollectResultCell: React.FC<{
 }> = ({ record }) => {
   const status = record.last_collect_status;
   const mainText = mapLastCollectStatusText(status);
-  const hasStatus = !(status === undefined || status === null || status === '');
+  const hasStatus = status !== undefined;
   const failureMsg = record.last_collect_failure_msg ?? '';
   const isFailed = status === InstanceAuditPlanInfoLastCollectStatusEnum.failed;
 

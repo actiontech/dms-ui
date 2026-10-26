@@ -22,7 +22,7 @@ class SqlDEVRecord implements MockSpyApy {
   }
 
   public exportSqlDEVRecord() {
-    const spy = jest.spyOn(sqlDEVRecord, 'ExportSqlDEVRecord');
+    const spy = jest.spyOn(sqlDEVRecord, 'exportSqlDevRecordsV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: new Blob(['mock'])

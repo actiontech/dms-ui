@@ -7,7 +7,10 @@ import classNames from 'classnames';
 import CustomRuleForm from '../CustomRuleForm/CustomRuleForm';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { UpdateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  UpdateCustomRuleReqV1ErrorPriorityEnum,
+  UpdateCustomRuleReqV1LevelEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -60,8 +63,15 @@ const UpdateCustomRule: React.FC = () => {
         rule_script: values.script,
         type: baseInfo.ruleType,
         ...(baseInfo.level === 'error'
-          ? { error_priority: baseInfo.error_priority === 'P0' ? 'P0' : 'P1' }
-          : { error_priority: '' })
+          ? {
+              error_priority:
+                baseInfo.error_priority === 'P0'
+                  ? UpdateCustomRuleReqV1ErrorPriorityEnum.P0
+                  : UpdateCustomRuleReqV1ErrorPriorityEnum.P1
+            }
+          : {
+              error_priority: UpdateCustomRuleReqV1ErrorPriorityEnum.UNKNOWN
+            })
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

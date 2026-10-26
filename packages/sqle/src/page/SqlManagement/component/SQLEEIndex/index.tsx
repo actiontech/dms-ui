@@ -461,7 +461,8 @@ const SQLEEIndex = () => {
         sort_order: _sortOrder,
         ...filterParams
       } = buildListRequestParams();
-      return filterParams;
+      // List/Statistics 各自 enum 同值不同型；对齐后透传筛选字段
+      return filterParams as IGetSqlManageStatisticsV2Params;
     }, [buildListRequestParams]);
 
   const requestSqlManageList = useCallback(() => {

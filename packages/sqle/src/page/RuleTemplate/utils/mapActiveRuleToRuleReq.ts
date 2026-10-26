@@ -2,7 +2,10 @@ import {
   IRuleReqV1,
   IRuleResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  RuleReqV1ErrorPriorityEnum,
+  RuleResV1LevelEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { resolveRuleConfigErrorPriority } from '../../../components/AuditResultMessage/errorPriorityDisplay';
 
 /** 模板保存：非 error 不带 priority，避免后端 400 */
@@ -20,7 +23,7 @@ export const mapActiveRuleToRuleReq = (rule: IRuleResV1): IRuleReqV1 => {
     req.error_priority = resolveRuleConfigErrorPriority(
       rule.level,
       rule.error_priority
-    );
+    ) as RuleReqV1ErrorPriorityEnum;
   }
   return req;
 };

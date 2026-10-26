@@ -8,7 +8,10 @@ import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable'
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useCustomRuleFilterForm from './useCustomRuleFilterForm';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { ICustomRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  ICustomRuleResV1,
+  IRuleResV1
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { RuleList } from '../../../components/RuleList';
 import {
@@ -145,7 +148,7 @@ const CustomRuleList: React.FC = () => {
           renderDisableNode={(rule) =>
             renderDisabledNode(rule as ICustomRuleResV1)
           }
-          rules={ruleList}
+          rules={ruleList as IRuleResV1[] | undefined}
           activeDataKeys={(ruleList ?? []).map((item) => item?.rule_id ?? '')}
           onActionHandle={(record, type) =>
             onAction(record as ICustomRuleResV1, type)

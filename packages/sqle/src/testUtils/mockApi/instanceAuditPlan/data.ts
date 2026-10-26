@@ -14,6 +14,7 @@ import {
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanInfoCollectionStatusEnum,
   InstanceAuditPlanInfoAuditStatusEnum,
+  InstanceAuditPlanInfoLastCollectStatusEnum,
   AuditPlanSQLHeadV1TypeEnum,
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
@@ -480,7 +481,7 @@ export const mockInstanceAuditPlanInfo: IInstanceAuditPlanInfo[] = [
     active_status: InstanceAuditPlanInfoActiveStatusEnum.normal,
     collection_status: InstanceAuditPlanInfoCollectionStatusEnum.idle,
     audit_status: InstanceAuditPlanInfoAuditStatusEnum.idle,
-    execution_node_address: null
+    execution_node_address: undefined
   },
   {
     id: 2,
@@ -503,7 +504,7 @@ export const mockInstanceAuditPlanInfo: IInstanceAuditPlanInfo[] = [
     active_status: InstanceAuditPlanInfoActiveStatusEnum.disabled,
     collection_status: InstanceAuditPlanInfoCollectionStatusEnum.idle,
     audit_status: InstanceAuditPlanInfoAuditStatusEnum.idle,
-    execution_node_address: null
+    execution_node_address: undefined
   },
   {
     id: 3,
@@ -547,7 +548,7 @@ export const mockInstanceAuditPlanInfo: IInstanceAuditPlanInfo[] = [
     active_status: InstanceAuditPlanInfoActiveStatusEnum.normal,
     collection_status: InstanceAuditPlanInfoCollectionStatusEnum.idle,
     audit_status: InstanceAuditPlanInfoAuditStatusEnum.idle,
-    last_collect_status: 'failed',
+    last_collect_status: InstanceAuditPlanInfoLastCollectStatusEnum.failed,
     execution_node_address: '10.0.0.22'
   }
 ];

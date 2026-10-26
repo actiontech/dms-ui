@@ -5,6 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { useMemo, useState } from 'react';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { IDownloadAuditTaskSQLReportV1Params } from '@actiontech/shared/lib/api/sqle/service/task/index.d';
+import {
+  downloadAuditTaskSQLReportV1FilterAuditLevelEnum,
+  downloadAuditTaskSQLReportV1FilterErrorPriorityEnum
+} from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { DownloadDropdownStyleWrapper } from './style';
 import {
   ProfileFilled,
@@ -15,11 +19,6 @@ import {
 } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { deriveAuditLevelFilterParams } from '../auditLevelFilter';
-
-type DownloadReportParams = IDownloadAuditTaskSQLReportV1Params & {
-  filter_audit_level?: string;
-  filter_error_priority?: string;
-};
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,
@@ -45,10 +44,15 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
   };
 
   const downloadReport = () => {
-    const params: DownloadReportParams = {
+    const params: IDownloadAuditTaskSQLReportV1Params = {
       task_id: taskId,
       no_duplicate: noDuplicate,
-      ...filterParams
+      filter_audit_level: filterParams.filter_audit_level as
+        | downloadAuditTaskSQLReportV1FilterAuditLevelEnum
+        | undefined,
+      filter_error_priority: filterParams.filter_error_priority as
+        | downloadAuditTaskSQLReportV1FilterErrorPriorityEnum
+        | undefined
     };
     task.downloadAuditTaskSQLReportV1(params, { responseType: 'blob' });
     setOpen(false);

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import DefaultPrompts from '../components/DefaultPrompts';
 import sqlDEVRecord from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord';
 import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
-import { IExportSqlDEVRecordParams } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
+import { IExportSqlDevRecordsV1Params } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
 import {
   useCurrentProject,
   useCurrentUser
@@ -119,12 +119,12 @@ const PluginAuditList = () => {
     setSelectedRowKeys([]);
   }, [tableFilterInfo, searchKeyword]);
 
-  const buildExportParams = useCallback((): IExportSqlDEVRecordParams => {
-    const params: IExportSqlDEVRecordParams = {
+  const buildExportParams = useCallback((): IExportSqlDevRecordsV1Params => {
+    const params = {
       project_name: projectName,
       ...tableFilterInfo,
       fuzzy_search_sql_fingerprint: searchKeyword || undefined
-    };
+    } as IExportSqlDevRecordsV1Params;
     if (selectedRowKeys.length > 0) {
       params.filter_sql_dev_record_ids = selectedRowKeys.join(',');
     }
@@ -135,7 +135,7 @@ const PluginAuditList = () => {
     startExport();
     const hideLoading = messageApi.loading(t('pluginAudit.table.exporting'));
     sqlDEVRecord
-      .ExportSqlDEVRecord(buildExportParams(), { responseType: 'blob' })
+      .exportSqlDevRecordsV1(buildExportParams(), { responseType: 'blob' })
       .then((res) => {
         if (
           (res.data as unknown as { code?: number }).code ===
