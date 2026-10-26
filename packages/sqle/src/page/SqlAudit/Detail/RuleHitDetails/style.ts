@@ -5,6 +5,11 @@ export const RuleHitDetailsStyleWrapper = styled('div')`
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
 
+  &.is-embedded {
+    padding: 0;
+    border-bottom: none;
+  }
+
   .section-title {
     font-size: 14px;
     font-weight: 600;
