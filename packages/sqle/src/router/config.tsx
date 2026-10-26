@@ -104,6 +104,10 @@ const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
+const SqlAuditAggregate = React.lazy(
+  () => import('../page/SqlAudit/Aggregate')
+);
+
 const WorkflowSqlAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/Workflow')
 );
@@ -247,6 +251,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         path: 'create',
         element: <SqlAuditCreate />,
         key: 'sqlAuditCreate'
+      },
+      {
+        path: 'aggregate',
+        element: <SqlAuditAggregate />,
+        key: 'sqlAuditAggregate'
       },
       {
         path: 'detail/:sql_audit_record_id',

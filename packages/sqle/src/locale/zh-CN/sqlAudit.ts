@@ -4,6 +4,7 @@ export default {
     pageTitle: '快捷审核',
     action: {
       create: '创建审核',
+      aggregate: '审核汇总',
       updateTags: {
         successTips: '更新业务标签成功',
         addTag: {
@@ -38,6 +39,134 @@ export default {
   common: {
     goBackList: '返回SQL审核列表'
   },
+  aggregate: {
+    pageTitle: '快捷审核汇总',
+    pageSubtitle:
+      '结果按当前账号在快捷审核列表中的可见范围过滤，不包含评分与通过率',
+    scopeMode: {
+      filters: '按筛选条件',
+      records: '指定审核记录'
+    },
+    filter: {
+      scopeMode: '汇总方式',
+      auditTime: '审核时间',
+      instance: '数据源',
+      tags: '快捷审核标签',
+      allInstances: '全部数据源',
+      allTags: '全部标签',
+      selectedTagsCount: '已选 {{count}} 个标签',
+      dateTo: '至',
+      tagsMatchAny: '多选时，匹配任意一个标签即可',
+      records: '审核记录',
+      recordsPlaceholder: '搜索并选择审核记录（记录 ID 或标签）',
+      recordsHint:
+        '可选 1–50 条当前账号可见且已审核完成的记录；支持按记录 ID 或标签搜索',
+      pickerTriggerEmpty: '选择审核记录',
+      pickerTriggerSelected: '已选择 {{count}} 条审核记录',
+      pickerOpen: '选择',
+      pickerTitle: '选择审核记录',
+      pickerHint: '仅展示当前账号有权查看且已完成审核的记录，最多选择 50 条',
+      pickerSearchPlaceholder: '搜索审核记录 ID 或标签',
+      pickerSelectVisible: '选择当前结果',
+      pickerClear: '清空',
+      pickerConfirm: '确认选择',
+      pickerSelectedCount: '已选择 {{count}} / {{max}} 条',
+      pickerEmptyTitle: '未找到审核记录',
+      pickerEmptyTip: '调整搜索关键字后重试。',
+      pickerOffline: '离线审核',
+      pickerSqlCount: '{{value}} 条 SQL'
+    },
+    action: {
+      query: '查询',
+      export: '导出报表',
+      back: '返回快捷审核'
+    },
+    export: {
+      title: '导出报表',
+      confirm: '确认下载',
+      reportTime: '报告时间',
+      customFieldsTitle: '文件名自定义字段',
+      customFieldsHint:
+        '可不填。最多 {{max}} 组；仅字段值会按顺序写入文件名；空值项将被忽略。',
+      customFieldsEmpty: '暂无自定义字段，可点击「添加字段」手动新增',
+      addField: '添加字段',
+      removeField: '删除',
+      moveUp: '上移',
+      moveDown: '下移',
+      fieldNamePlaceholder: '字段名（最多 16 字）',
+      fieldValuePlaceholder: '字段值（加入文件名，最多 32 字）',
+      filenamePreview: '文件名预览',
+      downloading: '正在导出报表…',
+      downloadSuccess: '报表已开始下载',
+      downloadFailed: '导出失败，请缩小范围或检查权限后重试'
+    },
+    validate: {
+      auditTimeRequired: '请选择审核时间后再查询',
+      spanExceeded: '审核时间跨度不能超过 31 天，请缩小查询范围',
+      recordsRequired: '请选择至少 1 条审核记录后再查询',
+      recordsOverLimit: '最多选择 50 条审核记录'
+    },
+    reportScope: {
+      title: '汇总报告范围',
+      permissionHint: '数据已按当前账号权限过滤',
+      project: '项目',
+      mode: '汇总方式',
+      auditTime: '审核时间',
+      instance: '数据源',
+      tags: '快捷审核标签',
+      instanceAndTags: '数据源 / 标签',
+      recordCount: '审核记录',
+      recordCountValue: '{{count}} 条',
+      visibility: '可见范围',
+      visibilityTip: '当前用户可见任务'
+    },
+    overview: {
+      title: '总览',
+      taskCount: '审核任务',
+      taskUnit: '次',
+      sqlCount: 'SQL',
+      sqlUnit: '条',
+      ruleHitCount: '规则触发',
+      ruleHitNote: '次（已排除豁免结果）',
+      placeholder: '--'
+    },
+    levelHint: '按未豁免规则问题统计',
+    content: {
+      sqlTab: 'SQL 明细',
+      rulesTab: '规则汇总'
+    },
+    result: {
+      notQueried: '查询条件已准备',
+      notQueriedTip: '已带入可用条件，确认后点击「查询」生成审核汇总。',
+      stale: '查询条件已变化',
+      staleTip: '当前结果已失效，请点击「查询」重新生成审核汇总。',
+      summaryTitle: '汇总报告',
+      loadFailed: '汇总报告加载失败，请稍后重试',
+      sqlsLoadFailed: 'SQL 明细加载失败，请稍后重试',
+      recordsRejected: '所选审核记录无效或不存在，请重新选择后重试',
+      emptyTitle: '未查询到审核数据',
+      emptyTip: '调整时间范围或数据源后重新查询。'
+    },
+    sqls: {
+      title: 'SQL 明细',
+      columns: {
+        createdAt: '审核时间',
+        recordId: '审核记录 ID',
+        taskId: '任务 ID',
+        creator: '创建人',
+        instanceName: '数据源名称',
+        offlineInstance: '（离线审核，无数据源）',
+        dbType: '数据库类型',
+        schema: 'Schema',
+        sqlSource: 'SQL 来源',
+        sourceFile: '来源文件及起始行',
+        execSql: 'SQL 原文',
+        auditLevel: '审核等级',
+        auditResult: '审核结果',
+        ruleHitCount: '规则触发数'
+      }
+    }
+  },
   detail: {
     download: '下载审核结果',
     auditID: '审核ID',
@@ -65,14 +194,14 @@ export default {
       loadFailed: '等级命中数加载失败'
     },
     ruleHitDetails: {
-      title: '命中规则细则',
+      title: '规则汇总',
       empty: '暂无规则命中',
       loading: '加载中…',
-      loadFailed: '规则命中细则加载失败',
+      loadFailed: '规则汇总加载失败',
       columns: {
-        rule: '规则',
+        rule: '规则名',
         level: '等级',
-        hitCount: '命中次数',
+        hitCount: '触发次数',
         message: '说明',
         sqlNumbers: '涉及 SQL'
       }

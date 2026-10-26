@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { message } from 'antd';
+import { message, Space } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import {
   ActiontechTable,
@@ -163,18 +163,32 @@ const SqlAuditList = () => {
         title={t('sqlAudit.list.pageTitle')}
         fixed
         extra={
-          !projectArchive ? (
-            <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
-              <BasicButton
-                type="primary"
-                icon={
-                  <PlusOutlined color="currentColor" width={10} height={10} />
-                }
-              >
-                {t('sqlAudit.list.action.create')}
-              </BasicButton>
+          <Space>
+            <Link
+              to={`/sqle/project/${projectID}/sql-audit/aggregate`}
+              state={{
+                filter_create_time_from:
+                  tableFilterInfo.filter_create_time_from,
+                filter_create_time_to: tableFilterInfo.filter_create_time_to,
+                filter_instance_id: tableFilterInfo.filter_instance_id,
+                fuzzy_search_tags: searchKeyword || undefined
+              }}
+            >
+              <BasicButton>{t('sqlAudit.list.action.aggregate')}</BasicButton>
             </Link>
-          ) : null
+            {!projectArchive ? (
+              <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
+                <BasicButton
+                  type="primary"
+                  icon={
+                    <PlusOutlined color="currentColor" width={10} height={10} />
+                  }
+                >
+                  {t('sqlAudit.list.action.create')}
+                </BasicButton>
+              </Link>
+            ) : null}
+          </Space>
         }
       />
       <div className="margin-top-60" />

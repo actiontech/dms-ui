@@ -710,6 +710,13 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
           },
           {
             "element": <div>
+              sqlAuditAggregate
+            </div>,
+            "key": "sqlAuditAggregate",
+            "path": "aggregate",
+          },
+          {
+            "element": <div>
               sqlAuditDetail
             </div>,
             "key": "sqlAuditDetail",
