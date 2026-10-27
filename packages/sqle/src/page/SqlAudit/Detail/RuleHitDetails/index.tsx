@@ -1,6 +1,11 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IAuditTaskRuleHitDetailV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import {
+  ActiontechTable,
+  ActiontechTableColumn
+} from '@actiontech/shared/lib/components/ActiontechTable';
 import { resolveAuditLevelDisplayMeta } from '../../../../components/AuditResultMessage/errorPriorityDisplay';
 import { RuleHitDetailsStyleWrapper } from './style';
 
@@ -13,13 +18,34 @@ type RuleHitDetailsProps = {
   /** 外层已有 Tab/标题时隐藏内嵌 section-title */
   hideTitle?: boolean;
   /**
-   * detail（默认）：列序 规则/等级/触发次数/说明；显示名 message → rule_name → -
-   * aggregate：列序 规则/等级/说明/触发次数；显示名 rule_name → -（不以说明顶替）
+   * detail（默认）：列序 规则/等级/触发次数/说明
+   * aggregate：列序 规则/等级/说明/触发次数
    */
   variant?: RuleHitDetailsVariant;
 };
 
 const EMPTY = '-';
+const RULE_COLUMN_WIDTH = 280;
+const LEVEL_COLUMN_WIDTH = 90;
+const HIT_COUNT_COLUMN_WIDTH = 90;
+const MESSAGE_COLUMN_WIDTH = 360;
+const TABLE_MIN_WIDTH =
+  RULE_COLUMN_WIDTH +
+  LEVEL_COLUMN_WIDTH +
+  HIT_COUNT_COLUMN_WIDTH +
+  MESSAGE_COLUMN_WIDTH;
+
+const renderEllipsisText = (text?: string | null) => {
+  const displayText = text?.trim() || EMPTY;
+
+  return (
+    <BasicTypographyEllipsis
+      copyable={false}
+      textCont={displayText}
+      tooltipLimitLength={displayText.length}
+    />
+  );
+};
 
 const RuleHitDetails = ({
   ruleHitDetails,
@@ -32,6 +58,80 @@ const RuleHitDetails = ({
   const isAggregate = variant === 'aggregate';
 
   const rows = useMemo(() => ruleHitDetails ?? [], [ruleHitDetails]);
+  const columns = useMemo<
+    ActiontechTableColumn<IAuditTaskRuleHitDetailV1>
+  >(() => {
+    const ruleColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
+      {
+        dataIndex: 'rule_name',
+        title: t('sqlAudit.detail.ruleHitDetails.columns.rule'),
+        width: RULE_COLUMN_WIDTH,
+        className: 'rule-hit-ellipsis-column',
+        render: (ruleName) => (
+          <div data-testid="sql-audit-rule-hit-name">
+            {renderEllipsisText(ruleName)}
+          </div>
+        )
+      };
+    const levelColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
+      {
+        dataIndex: 'level',
+        title: t('sqlAudit.detail.ruleHitDetails.columns.level'),
+        width: LEVEL_COLUMN_WIDTH,
+        render: (_, item) => {
+          const meta = resolveAuditLevelDisplayMeta(
+            item.level,
+            item.error_priority
+          );
+
+          return (
+            <span
+              data-testid="sql-audit-rule-hit-level"
+              data-error-priority={meta.dataErrorPriority}
+            >
+              {t(meta.labelKey)}
+            </span>
+          );
+        }
+      };
+    const hitCountColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
+      {
+        dataIndex: 'hit_count',
+        title: t('sqlAudit.detail.ruleHitDetails.columns.hitCount'),
+        width: HIT_COUNT_COLUMN_WIDTH,
+        render: (hitCount) => {
+          const displayHitCount =
+            typeof hitCount === 'number' && Number.isFinite(hitCount)
+              ? hitCount
+              : 0;
+
+          return (
+            <span
+              data-testid="sql-audit-rule-hit-count"
+              data-value={displayHitCount}
+            >
+              {displayHitCount}
+            </span>
+          );
+        }
+      };
+    const messageColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
+      {
+        dataIndex: 'message',
+        title: t('sqlAudit.detail.ruleHitDetails.columns.message'),
+        width: MESSAGE_COLUMN_WIDTH,
+        className: 'rule-hit-ellipsis-column',
+        render: (message) => (
+          <div data-testid="sql-audit-rule-hit-message">
+            {renderEllipsisText(message)}
+          </div>
+        )
+      };
+
+    return isAggregate
+      ? [ruleColumn, levelColumn, messageColumn, hitCountColumn]
+      : [ruleColumn, levelColumn, hitCountColumn, messageColumn];
+  }, [isAggregate, t]);
 
   return (
     <RuleHitDetailsStyleWrapper
@@ -57,91 +157,20 @@ const RuleHitDetails = ({
           {t('sqlAudit.detail.ruleHitDetails.empty')}
         </div>
       ) : (
-        <table className="rule-hit-table">
-          <thead>
-            <tr>
-              <th>{t('sqlAudit.detail.ruleHitDetails.columns.rule')}</th>
-              <th>{t('sqlAudit.detail.ruleHitDetails.columns.level')}</th>
-              {isAggregate ? (
-                <>
-                  <th>{t('sqlAudit.detail.ruleHitDetails.columns.message')}</th>
-                  <th>
-                    {t('sqlAudit.detail.ruleHitDetails.columns.hitCount')}
-                  </th>
-                </>
-              ) : (
-                <>
-                  <th>
-                    {t('sqlAudit.detail.ruleHitDetails.columns.hitCount')}
-                  </th>
-                  <th>{t('sqlAudit.detail.ruleHitDetails.columns.message')}</th>
-                </>
-              )}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((item, index) => {
-              const messageText = (item.message ?? '').trim() || EMPTY;
-              // detail 原行为：显示名优先说明文案；aggregate：规则名不以说明顶替
-              const displayName = isAggregate
-                ? (item.rule_name ?? '').trim() || EMPTY
-                : (item.message ?? '').trim() ||
-                  (item.rule_name ?? '').trim() ||
-                  EMPTY;
-              const meta = resolveAuditLevelDisplayMeta(
-                item.level,
-                item.error_priority
-              );
-              const levelLabel = t(meta.labelKey);
-              const hitCount =
-                typeof item.hit_count === 'number' &&
-                Number.isFinite(item.hit_count)
-                  ? item.hit_count
-                  : 0;
-              const rowKey = `${item.rule_name ?? displayName}-${
-                item.level ?? ''
-              }-${item.error_priority ?? ''}-${index}`;
-
-              const levelCell = (
-                <td
-                  data-testid="sql-audit-rule-hit-level"
-                  data-error-priority={meta.dataErrorPriority}
-                >
-                  {levelLabel}
-                </td>
-              );
-              const countCell = (
-                <td
-                  data-testid="sql-audit-rule-hit-count"
-                  data-value={hitCount}
-                >
-                  {hitCount}
-                </td>
-              );
-              const messageCell = (
-                <td data-testid="sql-audit-rule-hit-message">{messageText}</td>
-              );
-
-              return (
-                <tr key={rowKey} data-testid="sql-audit-rule-hit-row">
-                  <td data-testid="sql-audit-rule-hit-name">{displayName}</td>
-                  {levelCell}
-                  {isAggregate ? (
-                    <>
-                      {messageCell}
-                      {countCell}
-                    </>
-                  ) : (
-                    <>
-                      {countCell}
-                      {messageCell}
-                    </>
-                  )}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <ActiontechTable<IAuditTaskRuleHitDetailV1, Record<string, never>>
+          className="rule-hit-table"
+          columns={columns}
+          dataSource={rows}
+          pagination={false}
+          rowKey={(item) =>
+            `${item.rule_name ?? EMPTY}-${item.level ?? EMPTY}-${
+              item.message ?? EMPTY
+            }`
+          }
+          rowClassName="sql-audit-rule-hit-row"
+          scroll={{ x: TABLE_MIN_WIDTH }}
+          tableLayout="fixed"
+        />
       )}
     </RuleHitDetailsStyleWrapper>
   );

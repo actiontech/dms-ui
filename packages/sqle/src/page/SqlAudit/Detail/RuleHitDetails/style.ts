@@ -20,10 +20,8 @@ export const RuleHitDetailsStyleWrapper = styled('div')`
 
   .rule-hit-table {
     width: 100%;
-    border-collapse: collapse;
 
-    th,
-    td {
+    .ant-table-cell {
       padding: 8px 12px;
       text-align: left;
       font-size: 13px;
@@ -32,14 +30,18 @@ export const RuleHitDetailsStyleWrapper = styled('div')`
         ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
     }
 
-    th {
+    .ant-table-thead > tr > th {
       font-weight: 600;
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
     }
 
-    td {
+    .ant-table-tbody > tr > td {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
       font-weight: 500;
+    }
+
+    .rule-hit-ellipsis-column {
+      overflow: hidden;
     }
   }
 
