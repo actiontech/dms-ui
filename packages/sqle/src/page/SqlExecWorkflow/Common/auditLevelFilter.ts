@@ -3,7 +3,10 @@
  * 禁止把 P0/P1 写入 filter_audit_level。
  */
 
-import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
+import {
+  getAuditTaskSQLsV2FilterAuditLevelEnum,
+  getAuditTaskSQLsV2FilterErrorPriorityEnum
+} from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 
 export const AUDIT_LEVEL_FILTER_UI = {
   normal: 'normal',
@@ -31,7 +34,7 @@ export const AUDIT_LEVEL_FILTER_SEGMENT_OPTIONS: Exclude<
 
 export type AuditLevelFilterRequestParams = {
   filter_audit_level?: getAuditTaskSQLsV2FilterAuditLevelEnum;
-  filter_error_priority?: 'P0' | 'P1';
+  filter_error_priority?: getAuditTaskSQLsV2FilterErrorPriorityEnum;
 };
 
 /**
@@ -49,13 +52,13 @@ export const deriveAuditLevelFilterParams = (
   if (uiValue === AUDIT_LEVEL_FILTER_UI.error_P0) {
     return {
       filter_audit_level: getAuditTaskSQLsV2FilterAuditLevelEnum.error,
-      filter_error_priority: 'P0'
+      filter_error_priority: getAuditTaskSQLsV2FilterErrorPriorityEnum.P0
     };
   }
   if (uiValue === AUDIT_LEVEL_FILTER_UI.error_P1) {
     return {
       filter_audit_level: getAuditTaskSQLsV2FilterAuditLevelEnum.error,
-      filter_error_priority: 'P1'
+      filter_error_priority: getAuditTaskSQLsV2FilterErrorPriorityEnum.P1
     };
   }
   if (uiValue === 'normal') {

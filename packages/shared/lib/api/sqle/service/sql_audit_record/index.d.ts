@@ -3,6 +3,9 @@ import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from './index.enum';
 import {
   IGetSQLAuditRecordsResV1,
   ICreateSQLAuditRecordResV1,
+  IExportSQLAuditRecordAggregateReqV1,
+  IGetSQLAuditRecordAggregateSqlsResV1,
+  IGetSQLAuditRecordAggregateSummaryResV1,
   IGetSQLAuditRecordTagTipsResV1,
   IGetSQLAuditRecordResV1,
   IUpdateSQLAuditRecordReqV1,
@@ -57,6 +60,53 @@ export interface ICreateSQLAuditRecordV1Params {
 
 export interface ICreateSQLAuditRecordV1Return
   extends ICreateSQLAuditRecordResV1 {}
+
+export interface IExportSQLAuditRecordAggregateV1Params
+  extends IExportSQLAuditRecordAggregateReqV1 {
+  project_name: string;
+}
+
+export interface IGetSQLAuditRecordAggregateSqlsV1Params {
+  project_name: string;
+
+  scope_type: string;
+
+  filter_create_time_from?: string;
+
+  filter_create_time_to?: string;
+
+  filter_instance_id?: number;
+
+  filter_audit_tag_ids?: string[];
+
+  filter_audit_record_ids?: string[];
+
+  page_index: number;
+
+  page_size: number;
+}
+
+export interface IGetSQLAuditRecordAggregateSqlsV1Return
+  extends IGetSQLAuditRecordAggregateSqlsResV1 {}
+
+export interface IGetSQLAuditRecordAggregateSummaryV1Params {
+  project_name: string;
+
+  scope_type: string;
+
+  filter_create_time_from?: string;
+
+  filter_create_time_to?: string;
+
+  filter_instance_id?: number;
+
+  filter_audit_tag_ids?: string[];
+
+  filter_audit_record_ids?: string[];
+}
+
+export interface IGetSQLAuditRecordAggregateSummaryV1Return
+  extends IGetSQLAuditRecordAggregateSummaryResV1 {}
 
 export interface IGetSQLAuditRecordTagTipsV1Params {
   project_name: string;

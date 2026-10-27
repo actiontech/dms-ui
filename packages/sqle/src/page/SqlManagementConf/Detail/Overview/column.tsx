@@ -45,8 +45,7 @@ const isCollectingStatus = (record: IInstanceAuditPlanInfo) =>
 
 const hasPendingAuditBacklog = (record: IInstanceAuditPlanInfo) =>
   (record.pending_audit_count ?? 0) > 0 ||
-  record.audit_status === InstanceAuditPlanInfoAuditStatusEnum.pending_audit ||
-  record.audit_status === 'pending';
+  record.audit_status === InstanceAuditPlanInfoAuditStatusEnum.pending_audit;
 
 /** 采集/审核双 Tag 与 Hover「当前状态」共用，避免展示漂移 */
 const getTaskStatusItems = (

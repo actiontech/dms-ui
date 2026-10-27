@@ -1,5 +1,21 @@
 /* tslint:disable no-duplicate-string */
 
+export enum downloadAuditTaskSQLReportV1FilterAuditLevelEnum {
+  normal = 'normal',
+
+  notice = 'notice',
+
+  warn = 'warn',
+
+  error = 'error'
+}
+
+export enum downloadAuditTaskSQLReportV1FilterErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1'
+}
+
 export enum getAuditTaskSQLsV1FilterExecStatusEnum {
   initialized = 'initialized',
 
@@ -28,6 +44,12 @@ export enum getAuditTaskSQLsV1FilterAuditLevelEnum {
   warn = 'warn',
 
   error = 'error'
+}
+
+export enum getAuditTaskSQLsV1FilterErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1'
 }
 
 export enum getAuditTaskSQLsV2FilterExecStatusEnum {
@@ -64,4 +86,10 @@ export enum getAuditTaskSQLsV2FilterAuditLevelEnum {
   warn = 'warn',
 
   error = 'error'
+}
+
+export enum getAuditTaskSQLsV2FilterErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1'
 }

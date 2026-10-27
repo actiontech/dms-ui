@@ -15,7 +15,10 @@ import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { IRuleTemplateForm } from './index.type';
 import { IRuleParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import RuleBaseInfo from '../../../components/RuleList/RuleDetailModal/RuleBaseInfo';
-import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  RuleResV1ErrorPriorityEnum,
+  RuleResV1LevelEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { resolveRuleConfigErrorPriority } from '../../../components/AuditResultMessage/errorPriorityDisplay';
 
 export type IEditRuleTemplate = {
@@ -117,8 +120,11 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
       params,
       level: values.level,
       error_priority: isError
-        ? resolveRuleConfigErrorPriority(values.level, values.error_priority)
-        : ''
+        ? (resolveRuleConfigErrorPriority(
+            values.level,
+            values.error_priority
+          ) as RuleResV1ErrorPriorityEnum)
+        : RuleResV1ErrorPriorityEnum.UNKNOWN
     });
   }, [form, props]);
 

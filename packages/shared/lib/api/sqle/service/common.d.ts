@@ -14,20 +14,23 @@ import {
   CreateAuditTaskReqV1ExecModeEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum,
   CreateBlacklistReqV1TypeEnum,
+  CreateCustomRuleReqV1ErrorPriorityEnum,
   CreateCustomRuleReqV1LevelEnum,
+  CustomRuleResV1ErrorPriorityEnum,
   CustomRuleResV1LevelEnum,
   DirectAuditFileReqV1SqlTypeEnum,
   DirectAuditReqV1SqlTypeEnum,
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
+  FilterTipLevelEnum,
   GetWorkflowTasksItemV1StatusEnum,
   HighPriorityConditionTypeEnum,
   HighPriorityConditionReqOperatorEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanInfoAuditStatusEnum,
   InstanceAuditPlanInfoCollectionStatusEnum,
-  InstanceAuditPlanInfoLastCollectStatusEnum,
   InstanceAuditPlanInfoLastAuditStatusEnum,
+  InstanceAuditPlanInfoLastCollectStatusEnum,
   InstanceAuditPlanInfoNextCollectionModeEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   MatchConditionReqV1TypeEnum,
@@ -36,15 +39,20 @@ import {
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
   RuleParamResV1TypeEnum,
+  RuleReqV1ErrorPriorityEnum,
+  RuleResV1ErrorPriorityEnum,
   RuleResV1LevelEnum,
+  RuleRespV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
   ScheduleTaskDefaultOptionDefaultSelectorEnum,
   SqlManageAuditStatusEnum,
   SqlManageStatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
+  TriggerAuditPlanCollectResDataV1CollectionStatusEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
   UpdateAuditPlanStatusReqV1ActiveEnum,
   UpdateBlacklistReqV1TypeEnum,
+  UpdateCustomRuleReqV1ErrorPriorityEnum,
   UpdateCustomRuleReqV1LevelEnum,
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
   UpdateReportPushConfigReqV1PushUserTypeEnum,
@@ -97,6 +105,72 @@ export interface IAffectRows {
   err_message?: string;
 }
 
+export interface IAggregateExportCustomFieldV1 {
+  name?: string;
+
+  value?: string;
+}
+
+export interface IAggregateLevelSummaryV1 {
+  error_count?: number;
+
+  error_p0_count?: number;
+
+  error_p1_count?: number;
+
+  normal_count?: number;
+
+  notice_count?: number;
+
+  warn_count?: number;
+}
+
+export interface IAggregateRuleHitDetailV1 {
+  error_priority?: string;
+
+  hit_count?: number;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
+}
+
+export interface IAggregateSqlItemV1 {
+  audit_level?: string;
+
+  audit_results?: IAuditResult[];
+
+  created_at?: string;
+
+  creator?: string;
+
+  db_type?: string;
+
+  error_priority?: string;
+
+  exec_sql?: string;
+
+  instance_name?: string;
+
+  number?: number;
+
+  rule_hit_count?: number;
+
+  schema?: string;
+
+  source_file?: string;
+
+  sql_audit_record_id?: string;
+
+  sql_source?: string;
+
+  start_line?: number;
+
+  task_id?: number;
+}
+
 export interface IAuditFileResp {
   file_name?: string;
 }
@@ -119,6 +193,10 @@ export interface IAuditPlanCount {
   audit_plan_desc?: string;
 
   audit_plan_type?: string;
+}
+
+export interface IAuditPlanFilterTipsResV1 {
+  filter_meta_list?: IFilterMeta[];
 }
 
 export interface IAuditPlanMetaV1 {
@@ -288,6 +366,8 @@ export interface IAuditResDataV1 {
 export interface IAuditResult {
   db_type?: string;
 
+  error_priority?: string;
+
   level?: string;
 
   message?: string;
@@ -319,7 +399,25 @@ export interface IAuditTaskGroupResV1 {
   message?: string;
 }
 
+export interface IAuditTaskLevelSummaryV1 {
+  error_count?: number;
+
+  error_p0_count?: number;
+
+  error_p1_count?: number;
+
+  normal_count?: number;
+
+  notice_count?: number;
+
+  sql_count?: number;
+
+  warn_count?: number;
+}
+
 export interface IAuditTaskResV1 {
+  audit_error_priority?: string;
+
   audit_files?: IAuditFileResp[];
 
   audit_level?: AuditTaskResV1AuditLevelEnum;
@@ -349,6 +447,20 @@ export interface IAuditTaskResV1 {
   task_id?: number;
 }
 
+export interface IAuditTaskRuleHitDetailV1 {
+  error_priority?: string;
+
+  hit_count?: number;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
+
+  sql_numbers?: number[];
+}
+
 export interface IAuditTaskSQLContentResV1 {
   sql?: string;
 }
@@ -371,6 +483,12 @@ export interface IAuditTaskSQLResV1 {
   number?: number;
 
   rollback_sql?: string;
+}
+
+export interface IAuditTaskSummaryResDataV1 {
+  level_summary?: IAuditTaskLevelSummaryV1;
+
+  rule_hit_details?: IAuditTaskRuleHitDetailV1[];
 }
 
 export interface IAuditTasksGroupResV1 {
@@ -572,8 +690,7 @@ export interface ICreateCustomRuleReqV1 {
 
   desc?: string;
 
-  /** orthogonal to level; P0 / P1 / empty */
-  error_priority?: string;
+  error_priority?: CreateCustomRuleReqV1ErrorPriorityEnum;
 
   level?: CreateCustomRuleReqV1LevelEnum;
 
@@ -649,8 +766,7 @@ export interface ICustomRuleResV1 {
 
   desc?: string;
 
-  /** orthogonal to level; P0 / P1 / empty */
-  error_priority?: string;
+  error_priority?: CustomRuleResV1ErrorPriorityEnum;
 
   level?: CustomRuleResV1LevelEnum;
 
@@ -759,6 +875,22 @@ export interface IExplainValidationDetail {
   perform_improve_per?: number;
 }
 
+export interface IExportSQLAuditRecordAggregateReqV1 {
+  custom_fields?: IAggregateExportCustomFieldV1[];
+
+  filter_audit_record_ids?: string[];
+
+  filter_audit_tag_ids?: string[];
+
+  filter_create_time_from?: string;
+
+  filter_create_time_to?: string;
+
+  filter_instance_id?: number;
+
+  scope_type?: string;
+}
+
 export interface IFeishuConfigurationV1 {
   app_id?: string;
 
@@ -802,8 +934,7 @@ export interface IFilterTip {
 
   group?: string;
 
-  /** 规则 tip 等级（error/warn/notice/normal）；其它 tip 可空 */
-  level?: string;
+  level?: FilterTipLevelEnum;
 
   value?: string;
 }
@@ -816,6 +947,14 @@ export interface IGetAuditPlanAnalysisDataResV1 {
   code?: number;
 
   data?: IGetSQLAnalysisDataResItemV1;
+
+  message?: string;
+}
+
+export interface IGetAuditPlanFilterTipsResV1 {
+  code?: number;
+
+  data?: IAuditPlanFilterTipsResV1;
 
   message?: string;
 }
@@ -964,52 +1103,6 @@ export interface IGetAuditTaskResV1 {
   message?: string;
 }
 
-/** 任务级审核汇总 · level_summary（S2） */
-export interface IAuditLevelSummary {
-  error_count?: number;
-
-  error_p0_count?: number;
-
-  error_p1_count?: number;
-
-  warn_count?: number;
-
-  notice_count?: number;
-
-  normal_count?: number;
-
-  sql_count?: number;
-}
-
-/** 任务级审核汇总 · rule_hit_details 单项（S3） */
-export interface IAuditRuleHitDetail {
-  rule_name?: string;
-
-  level?: string;
-
-  error_priority?: string;
-
-  hit_count?: number;
-
-  message?: string;
-
-  sql_numbers?: number[];
-}
-
-export interface IAuditTaskSummaryResData {
-  level_summary?: IAuditLevelSummary;
-
-  rule_hit_details?: IAuditRuleHitDetail[];
-}
-
-export interface IGetAuditTaskSummaryResV1 {
-  code?: number;
-
-  data?: IAuditTaskSummaryResData;
-
-  message?: string;
-}
-
 export interface IGetAuditTaskSQLContentResV1 {
   code?: number;
 
@@ -1026,6 +1119,14 @@ export interface IGetAuditTaskSQLsResV1 {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IGetAuditTaskSummaryResV1 {
+  code?: number;
+
+  data?: IAuditTaskSummaryResDataV1;
+
+  message?: string;
 }
 
 export interface IGetAuditWhitelistDetailResV1 {
@@ -1436,6 +1537,24 @@ export interface IGetSQLAnalysisDataResItemV1 {
   table_metas?: ITableMeta[];
 }
 
+export interface IGetSQLAuditRecordAggregateSqlsResV1 {
+  code?: number;
+
+  data?: IAggregateSqlItemV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetSQLAuditRecordAggregateSummaryResV1 {
+  code?: number;
+
+  data?: ISQLAuditRecordAggregateSummaryDataV1;
+
+  message?: string;
+}
+
 export interface IGetSQLAuditRecordResV1 {
   code?: number;
 
@@ -1508,18 +1627,6 @@ export interface IGetSqlManageListResp {
   pending_audit_count?: number;
 
   source_extra?: ISourceExtra;
-
-  sql_manage_bad_num?: number;
-
-  sql_manage_optimized_num?: number;
-
-  sql_manage_total_num?: number;
-}
-
-export interface IGetSqlManageStatisticsResp {
-  code?: number;
-
-  message?: string;
 
   sql_manage_bad_num?: number;
 
@@ -1799,44 +1906,41 @@ export interface IInstanceAuditPlanInfo {
 
   audit_plan_type?: IAuditPlanTypeResBase;
 
-  audit_status?: InstanceAuditPlanInfoAuditStatusEnum | string;
+  audit_status?: InstanceAuditPlanInfoAuditStatusEnum;
 
   can_trigger_collect?: boolean;
 
-  collection_status?: InstanceAuditPlanInfoCollectionStatusEnum | string;
+  collection_status?: InstanceAuditPlanInfoCollectionStatusEnum;
 
   exec_cmd?: string;
 
-  execution_node_address?: string | null;
+  execution_node_address?: string;
 
   id?: number;
 
-  last_audit_finished_at?: string | null;
+  last_audit_failure_msg?: string;
 
-  last_audit_status?: InstanceAuditPlanInfoLastAuditStatusEnum | string | null;
+  last_audit_finished_at?: string;
 
-  last_audit_failure_msg?: string | null;
+  last_audit_status?: InstanceAuditPlanInfoLastAuditStatusEnum;
 
-  last_collection_time?: string;
-
-  last_collect_failure_msg?: string | null;
-
-  last_collect_status?:
-    | InstanceAuditPlanInfoLastCollectStatusEnum
-    | string
-    | null;
-
-  last_collect_success_count?: number;
+  last_collect_failure_msg?: string;
 
   last_collect_inserted_count?: number;
 
+  last_collect_status?: InstanceAuditPlanInfoLastCollectStatusEnum;
+
+  last_collect_success_count?: number;
+
   last_collect_updated_count?: number;
 
-  next_collection_mode?: InstanceAuditPlanInfoNextCollectionModeEnum | string;
+  last_collection_time?: string;
+
+  last_task_updated_at?: string;
+
+  next_collection_mode?: InstanceAuditPlanInfoNextCollectionModeEnum;
 
   next_collection_time?: string;
-
-  last_task_updated_at?: string | null;
 
   pending_audit_count?: number;
 
@@ -2314,8 +2418,7 @@ export interface IRuleProjectTemplateDetailResV1 {
 }
 
 export interface IRuleReqV1 {
-  /** orthogonal to level; P0 / P1 / empty（非 error 不传或传空） */
-  error_priority?: string;
+  error_priority?: RuleReqV1ErrorPriorityEnum;
 
   is_custom_rule?: boolean;
 
@@ -2333,8 +2436,7 @@ export interface IRuleResV1 {
 
   desc?: string;
 
-  /** orthogonal to level; empty = ungraded / 配置侧默认按 P1 展示 */
-  error_priority?: string;
+  error_priority?: RuleResV1ErrorPriorityEnum;
 
   has_audit_power?: boolean;
 
@@ -2354,7 +2456,7 @@ export interface IRuleResV1 {
 export interface IRuleRespV1 {
   desc?: string;
 
-  level?: string;
+  level?: RuleRespV1LevelEnum;
 
   rule_name?: string;
 }
@@ -2423,6 +2525,22 @@ export interface ISQLAuditRecord {
   tags?: string[];
 
   task?: IAuditTaskResV1;
+}
+
+export interface ISQLAuditRecordAggregateSummaryDataV1 {
+  level_summary?: IAggregateLevelSummaryV1;
+
+  report_time_from?: string;
+
+  report_time_to?: string;
+
+  rule_hit_count?: number;
+
+  rule_hit_details?: IAggregateRuleHitDetailV1[];
+
+  sql_count?: number;
+
+  task_count?: number;
 }
 
 export interface ISQLAuditRecordInstance {
@@ -2518,9 +2636,9 @@ export interface ISqlAverageExecutionTime {
 export interface ISqlDEVRecord {
   audit_result?: IAuditResult[];
 
-  db_type?: string;
-
   creator?: string;
+
+  db_type?: string;
 
   first_appear_timestamp?: string;
 
@@ -2576,6 +2694,8 @@ export interface ISqlManage {
 
   id?: number;
 
+  info?: ISqlManageInfo;
+
   instance_name?: string;
 
   last_receive_timestamp?: string;
@@ -2597,6 +2717,10 @@ export interface ISqlManage {
   sql_fingerprint?: string;
 
   status?: SqlManageStatusEnum;
+}
+
+export interface ISqlManageInfo {
+  schema_meta_name?: string;
 }
 
 export interface ISqlManageRemediation {
@@ -2773,6 +2897,20 @@ export interface ITimeResV1 {
   minute?: number;
 }
 
+export interface ITriggerAuditPlanCollectResDataV1 {
+  audit_plan_id?: number;
+
+  collection_status?: TriggerAuditPlanCollectResDataV1CollectionStatusEnum;
+}
+
+export interface ITriggerAuditPlanCollectResV1 {
+  code?: number;
+
+  data?: ITriggerAuditPlanCollectResDataV1;
+
+  message?: string;
+}
+
 export interface ITriggerAuditPlanResV1 {
   code?: number;
 
@@ -2840,8 +2978,7 @@ export interface IUpdateCustomRuleReqV1 {
 
   desc?: string;
 
-  /** orthogonal to level; P0 / P1 / empty */
-  error_priority?: string;
+  error_priority?: UpdateCustomRuleReqV1ErrorPriorityEnum;
 
   level?: UpdateCustomRuleReqV1LevelEnum;
 
@@ -3365,6 +3502,8 @@ export interface IAuditSQLResV2 {
 }
 
 export interface IAuditTaskSQLResV2 {
+  audit_error_priority?: string;
+
   audit_level?: string;
 
   audit_result?: IAuditResult[];
@@ -3552,6 +3691,18 @@ export interface IGetInstanceResV2 {
   data?: IInstanceResV2;
 
   message?: string;
+}
+
+export interface IGetSqlManageStatisticsResp {
+  code?: number;
+
+  message?: string;
+
+  sql_manage_bad_num?: number;
+
+  sql_manage_optimized_num?: number;
+
+  sql_manage_total_num?: number;
 }
 
 export interface IGetTaskAnalysisDataResV2 {

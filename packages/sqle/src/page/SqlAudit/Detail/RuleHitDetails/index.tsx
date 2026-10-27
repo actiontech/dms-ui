@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IAuditRuleHitDetail } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IAuditTaskRuleHitDetailV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import {
   ActiontechTable,
@@ -9,10 +9,19 @@ import {
 import { resolveAuditLevelDisplayMeta } from '../../../../components/AuditResultMessage/errorPriorityDisplay';
 import { RuleHitDetailsStyleWrapper } from './style';
 
+export type RuleHitDetailsVariant = 'detail' | 'aggregate';
+
 type RuleHitDetailsProps = {
-  ruleHitDetails?: IAuditRuleHitDetail[] | null;
+  ruleHitDetails?: IAuditTaskRuleHitDetailV1[] | null;
   loading?: boolean;
   error?: boolean;
+  /** 外层已有 Tab/标题时隐藏内嵌 section-title */
+  hideTitle?: boolean;
+  /**
+   * detail（默认）：列序 规则/等级/触发次数/说明
+   * aggregate：列序 规则/等级/说明/触发次数
+   */
+  variant?: RuleHitDetailsVariant;
 };
 
 const EMPTY = '-';
@@ -41,13 +50,18 @@ const renderEllipsisText = (text?: string | null) => {
 const RuleHitDetails = ({
   ruleHitDetails,
   loading,
-  error
+  error,
+  hideTitle = false,
+  variant = 'detail'
 }: RuleHitDetailsProps) => {
   const { t } = useTranslation();
+  const isAggregate = variant === 'aggregate';
 
   const rows = useMemo(() => ruleHitDetails ?? [], [ruleHitDetails]);
-  const columns = useMemo<ActiontechTableColumn<IAuditRuleHitDetail>>(
-    () => [
+  const columns = useMemo<
+    ActiontechTableColumn<IAuditTaskRuleHitDetailV1>
+  >(() => {
+    const ruleColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
       {
         dataIndex: 'rule_name',
         title: t('sqlAudit.detail.ruleHitDetails.columns.rule'),
@@ -58,7 +72,8 @@ const RuleHitDetails = ({
             {renderEllipsisText(ruleName)}
           </div>
         )
-      },
+      };
+    const levelColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
       {
         dataIndex: 'level',
         title: t('sqlAudit.detail.ruleHitDetails.columns.level'),
@@ -70,12 +85,16 @@ const RuleHitDetails = ({
           );
 
           return (
-            <span data-testid="sql-audit-rule-hit-level">
+            <span
+              data-testid="sql-audit-rule-hit-level"
+              data-error-priority={meta.dataErrorPriority}
+            >
               {t(meta.labelKey)}
             </span>
           );
         }
-      },
+      };
+    const hitCountColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
       {
         dataIndex: 'hit_count',
         title: t('sqlAudit.detail.ruleHitDetails.columns.hitCount'),
@@ -95,7 +114,8 @@ const RuleHitDetails = ({
             </span>
           );
         }
-      },
+      };
+    const messageColumn: ActiontechTableColumn<IAuditTaskRuleHitDetailV1>[number] =
       {
         dataIndex: 'message',
         title: t('sqlAudit.detail.ruleHitDetails.columns.message'),
@@ -106,19 +126,24 @@ const RuleHitDetails = ({
             {renderEllipsisText(message)}
           </div>
         )
-      }
-    ],
-    [t]
-  );
+      };
+
+    return isAggregate
+      ? [ruleColumn, levelColumn, messageColumn, hitCountColumn]
+      : [ruleColumn, levelColumn, hitCountColumn, messageColumn];
+  }, [isAggregate, t]);
 
   return (
     <RuleHitDetailsStyleWrapper
-      className="sql-audit-rule-hit-details"
+      className={`sql-audit-rule-hit-details${hideTitle ? ' is-embedded' : ''}`}
       data-testid="sql-audit-rule-hit-details"
+      data-variant={variant}
     >
-      <div className="section-title">
-        {t('sqlAudit.detail.ruleHitDetails.title')}
-      </div>
+      {hideTitle ? null : (
+        <div className="section-title">
+          {t('sqlAudit.detail.ruleHitDetails.title')}
+        </div>
+      )}
       {error ? (
         <div className="rule-hit-error-msg">
           {t('sqlAudit.detail.ruleHitDetails.loadFailed')}
@@ -132,7 +157,7 @@ const RuleHitDetails = ({
           {t('sqlAudit.detail.ruleHitDetails.empty')}
         </div>
       ) : (
-        <ActiontechTable<IAuditRuleHitDetail, Record<string, never>>
+        <ActiontechTable<IAuditTaskRuleHitDetailV1, Record<string, never>>
           className="rule-hit-table"
           columns={columns}
           dataSource={rows}

@@ -173,8 +173,9 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
           </div>
         </div>
         <div
-          class="sql-audit-level-hit-summary css-6ca1nr"
+          class="sql-audit-level-hit-summary is-inline css-pbjjkk"
           data-testid="sql-audit-level-hit-summary"
+          data-variant="inline"
         >
           <div
             class="section-title"
@@ -235,13 +236,14 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
           </div>
         </div>
         <div
-          class="sql-audit-rule-hit-details css-18ogfz0"
+          class="sql-audit-rule-hit-details css-teiaf7"
           data-testid="sql-audit-rule-hit-details"
+          data-variant="detail"
         >
           <div
             class="section-title"
           >
-            命中规则细则
+            规则汇总
           </div>
           <div
             class="rule-hit-empty"

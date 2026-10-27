@@ -17,3 +17,21 @@ export enum GetSqlDEVRecordListSortOrderEnum {
 
   desc = 'desc'
 }
+
+export enum exportSqlDevRecordsV1FilterSourceEnum {
+  ide_plugin = 'ide_plugin'
+}
+
+export enum exportSqlDevRecordsV1SortFieldEnum {
+  first_appear_timestamp = 'first_appear_timestamp',
+
+  last_receive_timestamp = 'last_receive_timestamp',
+
+  fp_count = 'fp_count'
+}
+
+export enum exportSqlDevRecordsV1SortOrderEnum {
+  asc = 'asc',
+
+  desc = 'desc'
+}

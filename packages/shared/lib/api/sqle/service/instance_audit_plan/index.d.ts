@@ -8,11 +8,13 @@ import {
   IUpdateInstanceAuditPlanStatusReqV1,
   IGetInstanceAuditPlanOverviewResV1,
   IUpdateAuditPlanStatusReqV1,
+  IGetAuditPlanFilterTipsResV1,
   IGetAuditPlanSQLDataReqV1,
   IGetAuditPlanSQLDataResV1,
   IGetAuditPlanSQLExportReqV1,
   IGetAuditPlanSQLMetaResV1,
   IGetAuditPlanSQLsResV1,
+  ITriggerAuditPlanCollectResV1,
   IGetSqlManageSqlAnalysisResp,
   IUploadInstanceAuditPlanSQLsReqV2
 } from '../common.d';
@@ -123,23 +125,18 @@ export interface IAuditPlanTriggerSqlAuditV1Params {
 
 export interface IAuditPlanTriggerSqlAuditV1Return extends IBaseRes {}
 
-export interface ITriggerAuditPlanCollectV1Params {
+export interface IGetInstanceAuditPlanFilterTipsV1Params {
   project_name: string;
 
   instance_audit_plan_id: string;
 
   audit_plan_id: string;
+
+  filter_name: string[];
 }
 
-export interface ITriggerAuditPlanCollectResData {
-  audit_plan_id?: number;
-
-  collection_status?: string;
-}
-
-export interface ITriggerAuditPlanCollectV1Return extends IBaseRes {
-  data?: ITriggerAuditPlanCollectResData;
-}
+export interface IGetInstanceAuditPlanFilterTipsV1Return
+  extends IGetAuditPlanFilterTipsResV1 {}
 
 export interface IGetInstanceAuditPlanSQLDataV1Params
   extends IGetAuditPlanSQLDataReqV1 {
@@ -173,19 +170,6 @@ export interface IGetInstanceAuditPlanSQLMetaV1Params {
 export interface IGetInstanceAuditPlanSQLMetaV1Return
   extends IGetAuditPlanSQLMetaResV1 {}
 
-export interface IGetInstanceAuditPlanSQLFilterTipsV1Params {
-  project_name: string;
-
-  instance_audit_plan_id: string;
-
-  audit_plan_id: string;
-
-  filter_name: string;
-}
-
-export interface IGetInstanceAuditPlanSQLFilterTipsV1Return
-  extends IGetAuditPlanSQLMetaResV1 {}
-
 export interface IGetInstanceAuditPlanSQLsV1Params {
   project_name: string;
 
@@ -200,6 +184,17 @@ export interface IGetInstanceAuditPlanSQLsV1Params {
 
 export interface IGetInstanceAuditPlanSQLsV1Return
   extends IGetAuditPlanSQLsResV1 {}
+
+export interface ITriggerAuditPlanCollectV1Params {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_id: string;
+}
+
+export interface ITriggerAuditPlanCollectV1Return
+  extends ITriggerAuditPlanCollectResV1 {}
 
 export interface IGetAuditPlanSqlAnalysisDataV1Params {
   project_name: string;

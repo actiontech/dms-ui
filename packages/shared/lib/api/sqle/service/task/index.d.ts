@@ -3,10 +3,10 @@ import {
   ICreateAuditTasksGroupResV1,
   ICreateAuditTaskReqV1,
   IGetAuditTaskResV1,
-  IGetAuditTaskSummaryResV1,
   IUpdateSqlFileOrderV1Req,
   IGetSqlFileOrderMethodResV1,
   IAuditTaskGroupResV1,
+  IGetAuditTaskSummaryResV1,
   IBaseRes,
   IGetAuditTaskSQLContentResV1,
   IGetAuditTaskSQLsResV1,
@@ -19,12 +19,16 @@ import {
 } from '../common.d';
 
 import {
+  downloadAuditTaskSQLReportV1FilterAuditLevelEnum,
+  downloadAuditTaskSQLReportV1FilterErrorPriorityEnum,
   getAuditTaskSQLsV1FilterExecStatusEnum,
   getAuditTaskSQLsV1FilterAuditStatusEnum,
   getAuditTaskSQLsV1FilterAuditLevelEnum,
+  getAuditTaskSQLsV1FilterErrorPriorityEnum,
   getAuditTaskSQLsV2FilterExecStatusEnum,
   getAuditTaskSQLsV2FilterAuditStatusEnum,
-  getAuditTaskSQLsV2FilterAuditLevelEnum
+  getAuditTaskSQLsV2FilterAuditLevelEnum,
+  getAuditTaskSQLsV2FilterErrorPriorityEnum
 } from './index.enum';
 
 export interface ICreateAuditTasksV1Params extends ICreateAuditTasksGroupReqV1 {
@@ -116,6 +120,10 @@ export interface IDownloadAuditTaskSQLFileV1Params {
 export interface IDownloadAuditTaskSQLReportV1Params {
   task_id: string;
 
+  filter_audit_level?: downloadAuditTaskSQLReportV1FilterAuditLevelEnum;
+
+  filter_error_priority?: downloadAuditTaskSQLReportV1FilterErrorPriorityEnum;
+
   no_duplicate?: boolean;
 }
 
@@ -127,6 +135,8 @@ export interface IGetAuditTaskSQLsV1Params {
   filter_audit_status?: getAuditTaskSQLsV1FilterAuditStatusEnum;
 
   filter_audit_level?: getAuditTaskSQLsV1FilterAuditLevelEnum;
+
+  filter_error_priority?: getAuditTaskSQLsV1FilterErrorPriorityEnum;
 
   no_duplicate?: boolean;
 
@@ -184,6 +194,8 @@ export interface IGetAuditTaskSQLsV2Params {
   filter_audit_status?: getAuditTaskSQLsV2FilterAuditStatusEnum;
 
   filter_audit_level?: getAuditTaskSQLsV2FilterAuditLevelEnum;
+
+  filter_error_priority?: getAuditTaskSQLsV2FilterErrorPriorityEnum;
 
   no_duplicate?: boolean;
 

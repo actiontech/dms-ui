@@ -148,6 +148,14 @@ export enum CreateBlacklistReqV1TypeEnum {
   instance = 'instance'
 }
 
+export enum CreateCustomRuleReqV1ErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1',
+
+  UNKNOWN = ''
+}
+
 export enum CreateCustomRuleReqV1LevelEnum {
   normal = 'normal',
 
@@ -156,6 +164,14 @@ export enum CreateCustomRuleReqV1LevelEnum {
   warn = 'warn',
 
   error = 'error'
+}
+
+export enum CustomRuleResV1ErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1',
+
+  UNKNOWN = ''
 }
 
 export enum CustomRuleResV1LevelEnum {
@@ -200,6 +216,14 @@ export enum FilterMetaFilterOpTypeEnum {
   between = 'between'
 }
 
+export enum FilterTipLevelEnum {
+  notice = 'notice',
+
+  warn = 'warn',
+
+  error = 'error'
+}
+
 export enum GetWorkflowTasksItemV1StatusEnum {
   wait_for_audit = 'wait_for_audit',
 
@@ -240,12 +264,6 @@ export enum InstanceAuditPlanInfoActiveStatusEnum {
   disabled = 'disabled'
 }
 
-export enum InstanceAuditPlanInfoCollectionStatusEnum {
-  idle = 'idle',
-
-  collecting = 'collecting'
-}
-
 export enum InstanceAuditPlanInfoAuditStatusEnum {
   idle = 'idle',
 
@@ -254,12 +272,18 @@ export enum InstanceAuditPlanInfoAuditStatusEnum {
   auditing = 'auditing'
 }
 
-export enum InstanceAuditPlanInfoNextCollectionModeEnum {
-  schedule = 'schedule',
+export enum InstanceAuditPlanInfoCollectionStatusEnum {
+  idle = 'idle',
 
-  after_collect = 'after_collect',
+  collecting = 'collecting'
+}
 
-  none = 'none'
+export enum InstanceAuditPlanInfoLastAuditStatusEnum {
+  success = 'success',
+
+  partial_failed = 'partial_failed',
+
+  failed = 'failed'
 }
 
 export enum InstanceAuditPlanInfoLastCollectStatusEnum {
@@ -270,12 +294,12 @@ export enum InstanceAuditPlanInfoLastCollectStatusEnum {
   failed = 'failed'
 }
 
-export enum InstanceAuditPlanInfoLastAuditStatusEnum {
-  success = 'success',
+export enum InstanceAuditPlanInfoNextCollectionModeEnum {
+  schedule = 'schedule',
 
-  partial_failed = 'partial_failed',
+  after_collect = 'after_collect',
 
-  failed = 'failed'
+  none = 'none'
 }
 
 export enum InstanceAuditPlanResV1ActiveStatusEnum {
@@ -334,9 +358,33 @@ export enum RuleParamResV1TypeEnum {
   bool = 'bool'
 }
 
+export enum RuleReqV1ErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1',
+
+  UNKNOWN = ''
+}
+
+export enum RuleResV1ErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1',
+
+  UNKNOWN = ''
+}
+
 export enum RuleResV1LevelEnum {
   normal = 'normal',
 
+  notice = 'notice',
+
+  warn = 'warn',
+
+  error = 'error'
+}
+
+export enum RuleRespV1LevelEnum {
   notice = 'notice',
 
   warn = 'warn',
@@ -382,6 +430,10 @@ export enum TestFeishuConfigurationReqV1AccountTypeEnum {
   phone = 'phone'
 }
 
+export enum TriggerAuditPlanCollectResDataV1CollectionStatusEnum {
+  collecting = 'collecting'
+}
+
 export enum UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum {
   normal = 'normal',
 
@@ -410,6 +462,14 @@ export enum UpdateBlacklistReqV1TypeEnum {
   host = 'host',
 
   instance = 'instance'
+}
+
+export enum UpdateCustomRuleReqV1ErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1',
+
+  UNKNOWN = ''
 }
 
 export enum UpdateCustomRuleReqV1LevelEnum {

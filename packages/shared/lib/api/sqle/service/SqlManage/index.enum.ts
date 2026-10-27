@@ -16,6 +16,12 @@ export enum GetSqlManageListFilterAuditLevelEnum {
   error = 'error'
 }
 
+export enum GetSqlManageListFilterErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1'
+}
+
 export enum GetSqlManageListFilterStatusEnum {
   unhandled = 'unhandled',
 
@@ -62,6 +68,12 @@ export enum exportSqlManageV1FilterAuditLevelEnum {
   error = 'error'
 }
 
+export enum exportSqlManageV1FilterErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1'
+}
+
 export enum exportSqlManageV1FilterStatusEnum {
   unhandled = 'unhandled',
 
@@ -84,6 +96,32 @@ export enum exportSqlManageRemediationV1ExportScopeEnum {
   data_source = 'data_source',
 
   scan_task = 'scan_task'
+}
+
+export enum exportSqlManageRemediationV1FilterAuditLevelEnum {
+  normal = 'normal',
+
+  notice = 'notice',
+
+  warn = 'warn',
+
+  error = 'error'
+}
+
+export enum exportSqlManageRemediationV1FilterStatusEnum {
+  unhandled = 'unhandled',
+
+  solved = 'solved',
+
+  ignored = 'ignored',
+
+  manual_audited = 'manual_audited'
+}
+
+export enum exportSqlManageRemediationV1FilterPriorityEnum {
+  high = 'high',
+
+  low = 'low'
 }
 
 export enum GetSqlManageListV2FilterSourceEnum {
@@ -128,4 +166,42 @@ export enum GetSqlManageListV2SortOrderEnum {
   asc = 'asc',
 
   desc = 'desc'
+}
+
+export enum GetSqlManageStatisticsV2FilterSourceEnum {
+  audit_plan = 'audit_plan',
+
+  sql_audit_record = 'sql_audit_record'
+}
+
+export enum GetSqlManageStatisticsV2FilterAuditLevelEnum {
+  normal = 'normal',
+
+  notice = 'notice',
+
+  warn = 'warn',
+
+  error = 'error'
+}
+
+export enum GetSqlManageStatisticsV2FilterErrorPriorityEnum {
+  P0 = 'P0',
+
+  P1 = 'P1'
+}
+
+export enum GetSqlManageStatisticsV2FilterStatusEnum {
+  unhandled = 'unhandled',
+
+  solved = 'solved',
+
+  ignored = 'ignored',
+
+  manual_audited = 'manual_audited'
+}
+
+export enum GetSqlManageStatisticsV2FilterPriorityEnum {
+  high = 'high',
+
+  low = 'low'
 }
