@@ -9,7 +9,10 @@ import { ModalName } from '../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import configuration from '../../../testUtils/mockApi/configuration';
 import ruleTemplate from '../../../testUtils/mockApi/rule_template';
 import {
@@ -79,6 +82,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('导出')).toBeInTheDocument();
     expect(screen.getByText('添加审核SQL例外')).toBeInTheDocument();
     expect(
       getBySelector('.custom-icon-refresh', baseElement)
@@ -89,6 +93,97 @@ describe('slqe/Whitelist/WhitelistList', () => {
     expect(screen.queryAllByText('编 辑')).toHaveLength(
       auditWhiteListMockData.length
     );
+  });
+
+  it('should show export button for project member without action permission', async () => {
+    useCurrentUserSpy.mockImplementation(() => ({
+      ...mockCurrentUserReturn,
+      isAdmin: false
+    }));
+    superRender(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('导出')).toBeInTheDocument();
+    expect(screen.queryByText('添加审核SQL例外')).not.toBeInTheDocument();
+  });
+
+  it('should hide export button when current project is not accessible', async () => {
+    useCurrentProjectSpy.mockImplementation(() => ({
+      ...mockProjectInfo,
+      projectName: ''
+    }));
+    superRender(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('导出')).not.toBeInTheDocument();
+  });
+
+  it('should hide export button when whitelist list request is forbidden', async () => {
+    whitelistSpy.mockImplementation(() =>
+      Promise.reject(new Error('Request failed with status code 403'))
+    );
+    superRender(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('导出')).not.toBeInTheDocument();
+  });
+
+  it('should export data file when click export button', async () => {
+    const exportSpy = auditWhiteList.exportAuditWhitelist();
+    superRender(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('导出'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('正在导出审核SQL例外…')).toBeInTheDocument();
+    expect(exportSpy).toHaveBeenCalledTimes(1);
+    expect(exportSpy).toHaveBeenCalledWith(
+      {
+        project_name: mockProjectInfo.projectName
+      },
+      {
+        responseType: 'blob'
+      }
+    );
+    expect(screen.getByText('导出').closest('button')).toBeDisabled();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(screen.getByText('审核SQL例外导出成功')).toBeInTheDocument();
+    expect(screen.getByText('导出').closest('button')).not.toBeDisabled();
+  });
+
+  it('should prevent duplicate export requests while exporting', async () => {
+    const exportSpy = auditWhiteList.exportAuditWhitelist();
+    let resolveExport: (value: unknown) => void = () => undefined;
+    exportSpy.mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          resolveExport = resolve;
+        }) as never
+    );
+    superRender(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('导出'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导出').closest('button')).toBeDisabled();
+    fireEvent.click(screen.getByText('导出'));
+    expect(exportSpy).toHaveBeenCalledTimes(1);
+    await act(async () => {
+      resolveExport(createSpySuccessResponse({}));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+  });
+
+  it('should restore export button when export fails', async () => {
+    const exportSpy = auditWhiteList.exportAuditWhitelist();
+    exportSpy.mockImplementation(() =>
+      createSpyFailResponse({
+        message: '导出条数超过上限，请缩小筛选条件后重试'
+      })
+    );
+    superRender(<WhitelistList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('导出'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导出').closest('button')).toBeDisabled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('审核SQL例外导出成功')).not.toBeInTheDocument();
+    expect(screen.getByText('导出').closest('button')).not.toBeDisabled();
   });
 
   test('refresh whitelist list', async () => {

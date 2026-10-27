@@ -30,12 +30,13 @@ import {
   TableFilterButton,
   SearchInput
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { PlusOutlined } from '@actiontech/icons';
+import { DownArrowLineOutlined, PlusOutlined } from '@actiontech/icons';
 import useWhitelistRedux from '../hooks/useWhitelistRedux';
 import { useBoolean } from 'ahooks';
 import AuditWhitelistListFilter from './ListFilter';
 import {
   AuditWhitelistListFilterValues,
+  buildAuditWhitelistExportParams,
   buildAuditWhitelistListParams
 } from './buildAuditWhitelistListParams';
 import { AUDIT_WHITELIST_DETAIL_QUERY_KEY } from '../index.data';
@@ -73,10 +74,22 @@ const WhitelistList = () => {
     { setTrue: expandFilters, setFalse: collapseFilters }
   ] = useBoolean(false);
 
+  const [
+    exportButtonDisabled,
+    { setFalse: finishExport, setTrue: startExport }
+  ] = useBoolean(false);
+
   const columns = useMemo(() => WhitelistColumn(), []);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
+
+  // 导出沿用「查看」权：能解析当前项目且列表未 403/Forbidden 时展示；
+  // 勿用 actionPermission（添加权）门控。无项目访问或列表拒绝时隐藏可用入口（AC-7）。
+  const exportVisible = useMemo(
+    () => !!projectName && !/403|Forbidden/i.test(requestErrorMessage),
+    [projectName, requestErrorMessage]
+  );
 
   const {
     data: whitelistList,
@@ -189,6 +202,36 @@ const WhitelistList = () => {
     [actionPermission, onView, openUpdateWhitelistModal, removeWhitelist, t]
   );
 
+  const onExport = useCallback(() => {
+    startExport();
+    const hideLoading = messageApi.loading(t('whitelist.operate.exporting'), 0);
+    const params = buildAuditWhitelistExportParams({
+      projectName,
+      globalSearchKeyword: searchKeyword,
+      filters: listFilters
+    });
+    AuditWhitelistService.getAuditWhitelistExportsV1(params, {
+      responseType: 'blob'
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(t('whitelist.operate.exportSuccess'));
+        }
+      })
+      .finally(() => {
+        hideLoading();
+        finishExport();
+      });
+  }, [
+    finishExport,
+    listFilters,
+    messageApi,
+    projectName,
+    searchKeyword,
+    startExport,
+    t
+  ]);
+
   const updateAllSelectedFilterItem = useCallback(
     (checked: boolean) => {
       if (checked) {
@@ -241,6 +284,15 @@ const WhitelistList = () => {
           </BasicToolTips>
         }
         extra={[
+          <EmptyBox if={exportVisible} key="export-whitelist">
+            <BasicButton
+              icon={<DownArrowLineOutlined fill="currentColor" />}
+              onClick={onExport}
+              disabled={exportButtonDisabled}
+            >
+              {t('whitelist.operate.export')}
+            </BasicButton>
+          </EmptyBox>,
           <EmptyBox if={actionPermission} key="add-whitelist">
             <BasicButton
               type="primary"

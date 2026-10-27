@@ -23,6 +23,9 @@ export default {
 
   operate: {
     addWhitelist: 'Add audit whitelist',
+    export: 'Export',
+    exporting: 'Exporting audit whitelist…',
+    exportSuccess: 'Audit whitelist exported successfully',
 
     deleting: 'Deleting audit whitelist item...',
     deleteSuccess: 'Successfully deleted audit whitelist item',
