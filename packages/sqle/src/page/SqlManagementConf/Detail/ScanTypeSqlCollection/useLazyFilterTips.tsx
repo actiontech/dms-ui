@@ -91,7 +91,7 @@ const useLazyFilterTips = ({
           project_name: projectName,
           instance_audit_plan_id: instanceAuditPlanId,
           audit_plan_id: auditPlanId,
-          filter_name: [filterName]
+          filter_name: filterName
         });
         if (res.data.code === ResponseCode.SUCCESS) {
           const meta = res.data.data?.filter_meta_list?.find(

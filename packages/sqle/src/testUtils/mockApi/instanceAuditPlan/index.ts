@@ -26,6 +26,7 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
     this.updateInstanceAuditPlan();
     this.getInstanceAuditPlanOverview();
     this.getInstanceAuditPlanSQLMeta();
+    this.getInstanceAuditPlanFilterTips();
     this.getInstanceAuditPlanSQLData();
     this.getInstanceAuditPlanSQLExport();
     this.deleteAuditPlanByType();
@@ -122,6 +123,21 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: mockAuditPlanSQLMeta
+      })
+    );
+    return spy;
+  }
+
+  public getInstanceAuditPlanFilterTips() {
+    const spy = jest.spyOn(
+      instance_audit_plan,
+      'getInstanceAuditPlanFilterTipsV1'
+    );
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          filter_meta_list: mockAuditPlanSQLMeta.filter_meta_list
+        }
       })
     );
     return spy;
