@@ -132,7 +132,7 @@ export interface IGetInstanceAuditPlanFilterTipsV1Params {
 
   audit_plan_id: string;
 
-  filter_name: string[];
+  filter_name: string;
 }
 
 export interface IGetInstanceAuditPlanFilterTipsV1Return
