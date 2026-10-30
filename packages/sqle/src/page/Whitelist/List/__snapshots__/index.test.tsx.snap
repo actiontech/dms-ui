@@ -50,6 +50,29 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
         class="extra"
       >
         <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              fill="currentColor"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+              />
+            </svg>
+          </span>
+          <span>
+            导出
+          </span>
+        </button>
+        <button
           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
           type="button"
         >

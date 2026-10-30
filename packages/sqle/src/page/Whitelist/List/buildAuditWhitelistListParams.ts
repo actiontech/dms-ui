@@ -1,4 +1,7 @@
-import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
+import {
+  IGetAuditWhitelistExportsV1Params,
+  IGetAuditWhitelistV1Params
+} from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
 import {
   getAuditWhitelistV1FilterRuleScopeModeEnum,
   getAuditWhitelistV1FilterSqlSourceEnum
@@ -21,6 +24,12 @@ type BuildAuditWhitelistListParamsOptions = {
   projectName: string;
   pageIndex: number;
   pageSize: number;
+  globalSearchKeyword?: string;
+  filters: AuditWhitelistListFilterValues;
+};
+
+type BuildAuditWhitelistExportParamsOptions = {
+  projectName: string;
   globalSearchKeyword?: string;
   filters: AuditWhitelistListFilterValues;
 };
@@ -88,4 +97,24 @@ export const buildAuditWhitelistListParams = ({
   }
 
   return params;
+};
+
+export const buildAuditWhitelistExportParams = ({
+  projectName,
+  globalSearchKeyword,
+  filters
+}: BuildAuditWhitelistExportParamsOptions): IGetAuditWhitelistExportsV1Params => {
+  const listParams = buildAuditWhitelistListParams({
+    projectName,
+    pageIndex: 0,
+    pageSize: 0,
+    globalSearchKeyword,
+    filters
+  });
+  const {
+    page_index: _pageIndex,
+    page_size: _pageSize,
+    ...exportParams
+  } = listParams;
+  return exportParams;
 };

@@ -24,6 +24,9 @@ export default {
 
   operate: {
     addWhitelist: '添加审核SQL例外',
+    export: '导出',
+    exporting: '正在导出审核SQL例外…',
+    exportSuccess: '审核SQL例外导出成功',
 
     deleting: '正在删除审核SQL例外语句...',
     deleteSuccess: '删除审核SQL例外语句成功',

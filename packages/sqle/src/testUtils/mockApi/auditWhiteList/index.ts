@@ -11,6 +11,13 @@ class AuditWhiteList implements MockSpyApy {
     this.getAuditWhitelistById();
     this.deleteAuthWhitelist();
     this.addAuthWhitelist();
+    this.exportAuditWhitelist();
+  }
+
+  public exportAuditWhitelist() {
+    const spy = jest.spyOn(AuditWhitelistService, 'getAuditWhitelistExportsV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
   }
 
   public getAuditWhitelistById() {
