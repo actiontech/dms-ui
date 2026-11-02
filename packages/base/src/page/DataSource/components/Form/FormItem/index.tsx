@@ -12,7 +12,11 @@ import {
   EmptyBox,
   TestDatabaseConnectButton
 } from '@actiontech/dms-kit';
-import { FormItemLabel, FormItemNoLabel } from '@actiontech/dms-kit';
+import {
+  CustomLabelContent,
+  FormItemLabel,
+  FormItemNoLabel
+} from '@actiontech/dms-kit';
 import { validatorPort } from '@actiontech/dms-kit';
 import {
   AutoCreatedFormItemByApi,
@@ -66,6 +70,11 @@ const DatabaseFormItem: React.FC<{
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    if (isRedis) {
+      props.form.setFields([{ name: 'user', errors: [] }]);
+    }
+  }, [isRedis, props.form]);
   return (
     <>
       <FormItemLabel
@@ -166,12 +175,21 @@ const DatabaseFormItem: React.FC<{
         />
       </FormItemLabel>
       <FormItemLabel
-        className={connectionMode === 'cluster' ? '' : 'has-required-style'}
-        label={t('dmsDataSource.dataSourceForm.user')}
+        className={isRedis ? 'has-label-tip' : 'has-required-style'}
+        label={
+          isRedis ? (
+            <CustomLabelContent
+              title={t('dmsDataSource.dataSourceForm.user')}
+              tips={t('dmsDataSource.dataSourceForm.userRedisTips')}
+            />
+          ) : (
+            t('dmsDataSource.dataSourceForm.user')
+          )
+        }
         name="user"
         rules={[
           {
-            required: connectionMode !== 'cluster',
+            required: !isRedis,
             message: t('common.form.rule.require', {
               name: t('dmsDataSource.dataSourceForm.user')
             })

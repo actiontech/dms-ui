@@ -57,6 +57,7 @@ export default {
     ipTips: '数据源IP或域名',
     port: '数据源端口',
     user: '连接用户',
+    userRedisTips: '仅 Redis 6+ ACL 需要；Redis 5.x 请留空',
     password: '密码',
     role: '可访问的角色',
     project: '所属项目',

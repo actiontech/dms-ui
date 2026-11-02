@@ -53,6 +53,7 @@ export default {
     ipTips: 'DB instance IP or domain name',
     port: 'DB instance port',
     user: 'Connection user',
+    userRedisTips: 'Required only for Redis 6+ ACL; leave empty for Redis 5.x',
     password: 'Password',
     role: 'Accessible roles',
     project: 'Project',
