@@ -1,5 +1,5 @@
 import { baseSuperRender } from '../../../../../testUtils/superRender';
-import { act, cleanup, fireEvent } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 
 import { Form, Select } from 'antd';
 import { BackendFormItemParams } from '@actiontech/shared';
@@ -18,8 +18,11 @@ jest.mock('antd', () => {
   };
 });
 
+const REDIS_USER_TIP = '仅 Redis 6+ ACL 需要；Redis 5.x 请留空';
+
 describe('page/DataSource/DatabaseFormItem', () => {
   const mockSetFieldsForm = jest.fn();
+  const mockSetFields = jest.fn();
   const databaseTypeChangeFn = jest.fn();
   const generateDriverSelectOptionsFn = jest
     .fn()
@@ -33,7 +36,8 @@ describe('page/DataSource/DatabaseFormItem', () => {
     currentAsyncParams = [] as BackendFormItemParams[]
   ) => {
     const mockedForm = {
-      setFieldsValue: mockSetFieldsForm
+      setFieldsValue: mockSetFieldsForm,
+      setFields: mockSetFields
     };
     (Form.useForm as jest.Mock).mockReturnValue([mockedForm]);
     return baseSuperRender(
@@ -125,5 +129,171 @@ describe('page/DataSource/DatabaseFormItem', () => {
     });
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  describe('Redis user field SPEC-UI', () => {
+    const actualUseForm = jest.requireActual('antd').Form.useForm;
+
+    const renderWithInitial = (initialValues: Record<string, unknown>) => {
+      (Form.useForm as jest.Mock).mockImplementation(actualUseForm);
+      const Wrapper = () => {
+        const [form] = Form.useForm();
+        return (
+          <Form form={form} initialValues={initialValues}>
+            <DatabaseFormItem
+              form={form}
+              isUpdate={false}
+              databaseTypeChange={databaseTypeChangeFn}
+              generateDriverSelectOptions={generateDriverSelectOptionsFn}
+              updateDriverListLoading={false}
+              currentAsyncParams={[]}
+              isExternalInstance={false}
+            />
+          </Form>
+        );
+      };
+      return baseSuperRender(<Wrapper />);
+    };
+
+    it('SPEC-UI-01 Redis standalone user not required', async () => {
+      const { baseElement } = renderWithInitial({
+        type: 'Redis',
+        connectionMode: 'standalone'
+      });
+      await act(async () => jest.advanceTimersByTime(0));
+      const userInput = getBySelector('#user', baseElement);
+      const userFormItem = userInput.closest('.ant-form-item');
+      expect(userInput).not.toHaveAttribute('aria-required', 'true');
+      expect(userFormItem).not.toHaveClass('has-required-style');
+      expect(userFormItem).toHaveClass('has-label-tip');
+    });
+
+    it('SPEC-UI-02 Redis shows ACL tip', async () => {
+      renderWithInitial({
+        type: 'Redis',
+        connectionMode: 'standalone'
+      });
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(screen.getByText(REDIS_USER_TIP)).toBeInTheDocument();
+    });
+
+    it('SPEC-UI-03 non-Redis user required without ACL tip', async () => {
+      const { baseElement } = renderWithInitial({ type: 'MySQL' });
+      await act(async () => jest.advanceTimersByTime(0));
+      const userInput = getBySelector('#user', baseElement);
+      const userFormItem = userInput.closest('.ant-form-item');
+      expect(userInput).toHaveAttribute('aria-required', 'true');
+      expect(userFormItem).toHaveClass('has-required-style');
+      expect(screen.queryByText(REDIS_USER_TIP)).not.toBeInTheDocument();
+    });
+
+    it('SPEC-UI-04 Redis cluster user not required', async () => {
+      const { baseElement } = renderWithInitial({
+        type: 'Redis',
+        connectionMode: 'cluster'
+      });
+      await act(async () => jest.advanceTimersByTime(0));
+      const userInput = getBySelector('#user', baseElement);
+      const userFormItem = userInput.closest('.ant-form-item');
+      expect(userInput).not.toHaveAttribute('aria-required', 'true');
+      expect(userFormItem).not.toHaveClass('has-required-style');
+      expect(screen.getByText(REDIS_USER_TIP)).toBeInTheDocument();
+    });
+
+    it('SPEC-UI-05 switch type clears Redis tip / restores required', async () => {
+      (Form.useForm as jest.Mock).mockImplementation(actualUseForm);
+      let formRef: ReturnType<typeof Form.useForm>[0] | undefined;
+      const Wrapper = () => {
+        const [form] = Form.useForm();
+        formRef = form;
+        return (
+          <Form form={form} initialValues={{ type: 'MySQL' }}>
+            <DatabaseFormItem
+              form={form}
+              isUpdate={false}
+              databaseTypeChange={databaseTypeChangeFn}
+              generateDriverSelectOptions={generateDriverSelectOptionsFn}
+              updateDriverListLoading={false}
+              currentAsyncParams={[]}
+              isExternalInstance={false}
+            />
+          </Form>
+        );
+      };
+      const { baseElement } = baseSuperRender(<Wrapper />);
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(screen.queryByText(REDIS_USER_TIP)).not.toBeInTheDocument();
+
+      await act(async () => {
+        formRef?.setFieldsValue({
+          type: 'Redis',
+          connectionMode: 'standalone'
+        });
+      });
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(screen.getByText(REDIS_USER_TIP)).toBeInTheDocument();
+      expect(getBySelector('#user', baseElement)).not.toHaveAttribute(
+        'aria-required',
+        'true'
+      );
+
+      await act(async () => {
+        formRef?.setFieldsValue({ type: 'MySQL' });
+      });
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(screen.queryByText(REDIS_USER_TIP)).not.toBeInTheDocument();
+      expect(getBySelector('#user', baseElement)).toHaveAttribute(
+        'aria-required',
+        'true'
+      );
+    });
+
+    it('SPEC-UI-06 Redis mode switch keeps user optional and tip', async () => {
+      (Form.useForm as jest.Mock).mockImplementation(actualUseForm);
+      let formRef: ReturnType<typeof Form.useForm>[0] | undefined;
+      const Wrapper = () => {
+        const [form] = Form.useForm();
+        formRef = form;
+        return (
+          <Form
+            form={form}
+            initialValues={{ type: 'Redis', connectionMode: 'standalone' }}
+          >
+            <DatabaseFormItem
+              form={form}
+              isUpdate={false}
+              databaseTypeChange={databaseTypeChangeFn}
+              generateDriverSelectOptions={generateDriverSelectOptionsFn}
+              updateDriverListLoading={false}
+              currentAsyncParams={[]}
+              isExternalInstance={false}
+            />
+          </Form>
+        );
+      };
+      const { baseElement } = baseSuperRender(<Wrapper />);
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(screen.getByText(REDIS_USER_TIP)).toBeInTheDocument();
+
+      await act(async () => {
+        formRef?.setFieldsValue({ connectionMode: 'cluster' });
+      });
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(getBySelector('#user', baseElement)).not.toHaveAttribute(
+        'aria-required',
+        'true'
+      );
+      expect(screen.getByText(REDIS_USER_TIP)).toBeInTheDocument();
+
+      await act(async () => {
+        formRef?.setFieldsValue({ connectionMode: 'standalone' });
+      });
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(getBySelector('#user', baseElement)).not.toHaveAttribute(
+        'aria-required',
+        'true'
+      );
+      expect(screen.getByText(REDIS_USER_TIP)).toBeInTheDocument();
+    });
   });
 });
