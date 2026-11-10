@@ -12,12 +12,19 @@ import { Select } from 'antd';
 const GBASE_8A_DB_TYPE = 'GBase-8a';
 const GBASE_8A_LOGO_URL = '/db_type_logo/gbase-8a.svg';
 
+/** Local icon for ClickHouse; API maps `/logo/clickhouse.*` but static file may be missing → SPA HTML 裂图. */
+const CLICKHOUSE_DB_TYPE = 'ClickHouse';
+const CLICKHOUSE_LOGO_URL = '/db_type_logo/clickhouse.svg';
+
 const resolveLogoUrlByDbType = (
   dbType: string,
   apiLogoPath?: string | null
 ): string => {
   if (dbType === GBASE_8A_DB_TYPE) {
     return GBASE_8A_LOGO_URL;
+  }
+  if (dbType === CLICKHOUSE_DB_TYPE) {
+    return CLICKHOUSE_LOGO_URL;
   }
   return apiLogoPath ?? '';
 };
