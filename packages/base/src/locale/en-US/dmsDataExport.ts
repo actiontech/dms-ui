@@ -67,7 +67,10 @@ export default {
       },
       method: {
         title: 'Select export method',
-        manualInput: 'Input sql statement'
+        manualInput: 'Input sql statement',
+        exportFileType: 'Export format',
+        exportFileTypeCSV: 'CSV',
+        exportFileTypeJSON: 'JSON'
       },
       action: {
         audit: 'Audit',
@@ -138,6 +141,7 @@ export default {
       name: 'Workflow name',
       dbService: 'DB instance',
       desc: 'Description',
+      exportFileType: 'Export file type',
       exportMethod: 'Export method',
       createUser: 'Creator',
       createTime: 'Create time',
