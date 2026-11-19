@@ -46,6 +46,7 @@ import {
 import { IListDataExportWorkflowWithExtraParams } from './index.type';
 import { DataExportWorkflowsService } from '@actiontech/shared/lib/api/base';
 import useOpsType from 'sqle/src/hooks/useOpsType';
+import { enrichExportWorkflowListWithFileType } from './utils/enrichExportFileType';
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useTypedNavigate();
@@ -152,7 +153,7 @@ const ExportWorkflowList: React.FC = () => {
     loading,
     refresh
   } = useRequest(
-    () => {
+    async () => {
       const params: IListDataExportWorkflowsParams = {
         ...tableFilterInfo,
         ...pagination,
@@ -160,9 +161,19 @@ const ExportWorkflowList: React.FC = () => {
         project_uid: projectID,
         fuzzy_keyword: searchKeyword
       };
-      return handleTableRequestError(
+      const result = await handleTableRequestError(
         DataExportWorkflowsService.ListDataExportWorkflows(params)
       );
+      const list = (result.list ??
+        []) as IListDataExportWorkflowWithExtraParams[];
+      const enrichedList = await enrichExportWorkflowListWithFileType(
+        projectID,
+        list
+      );
+      return {
+        ...result,
+        list: enrichedList
+      };
     },
     {
       refreshDeps: [tableFilterInfo, pagination, filterStatus]
