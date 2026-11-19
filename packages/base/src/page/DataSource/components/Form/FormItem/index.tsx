@@ -23,7 +23,7 @@ import { DEFAULT_REDIS_CONNECTION_MODE, isRedisDbType } from '../../../tool';
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
   isUpdate?: boolean;
-  databaseTypeChange?: (values: string) => void;
+  databaseTypeChange?: (values?: string) => void;
   generateDriverSelectOptions?: () => JSX.Element[];
   updateDriverListLoading: boolean;
   currentAsyncParams?: BackendFormItemParams[];

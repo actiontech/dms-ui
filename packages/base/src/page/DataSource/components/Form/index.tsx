@@ -99,12 +99,25 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       });
   }, []);
   const databaseTypeChange = useCallback(
-    (value: string) => {
-      setDatabaseType(value);
+    (value?: string) => {
+      // Select allowClear 会传入 undefined；归一为空串，避免下游对空类型崩溃
+      const nextType = value ?? '';
+      setDatabaseType(nextType);
       props.form.setFieldValue(
         'connectionMode',
-        isRedisDbType(value) ? DEFAULT_REDIS_CONNECTION_MODE : undefined
+        isRedisDbType(nextType) ? DEFAULT_REDIS_CONNECTION_MODE : undefined
       );
+      const driverDefaultPort = (
+        driverMeta.find((item) => item.db_type === nextType) as
+          | { default_port?: number }
+          | undefined
+      )?.default_port;
+      if (typeof driverDefaultPort === 'number') {
+        props.form.setFieldValue('port', driverDefaultPort);
+      } else if (nextType === 'ClickHouse') {
+        // DMS driver_options 暂无 default_port；与 SQLE/插件口径对齐 HTTP 8123
+        props.form.setFieldValue('port', 8123);
+      }
       // #if [sqle]
       props.form.resetFields([
         'ruleTemplateName',
@@ -118,10 +131,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       ]);
       // #endif
       // #if [sqle && ee]
-      getBackupSupportStatus(value);
+      if (nextType) {
+        getBackupSupportStatus(nextType);
+      }
       // #endif
     },
-    [props.form, getBackupSupportStatus]
+    [props.form, getBackupSupportStatus, driverMeta]
   );
   const { generateFormValueByParams, mergeFromValueIntoParams } =
     useAsyncParams();
