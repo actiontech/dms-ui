@@ -68,7 +68,8 @@ const ExportSourceFormItem: React.FC<
   }, [projectID, updateDbServiceList]);
 
   useEffect(() => {
-    if (dbServiceList?.length === 0 || mode === 'update') {
+    // tips 为空（如 ClickHouse 尚未进导出白名单）时仍须预填 SQL/库名；仅数据源按名匹配可选
+    if (mode === 'update' || getDbServiceListLoading) {
       return;
     }
 
@@ -100,7 +101,7 @@ const ExportSourceFormItem: React.FC<
           methodForm.setFieldValue('sql', sql);
         }
 
-        const serviceId = dbServiceList.find(
+        const serviceId = (dbServiceList || []).find(
           (v) => v.name === instanceName
         )?.id;
 
@@ -123,6 +124,7 @@ const ExportSourceFormItem: React.FC<
     baseForm,
     dbServiceList,
     extractQueries,
+    getDbServiceListLoading,
     methodForm,
     mode,
     sourceForm,
