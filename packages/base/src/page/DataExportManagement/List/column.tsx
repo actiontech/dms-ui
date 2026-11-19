@@ -76,6 +76,11 @@ export const ExportWorkflowListColumn: (
       }
     },
     {
+      dataIndex: 'export_file_type',
+      title: () => t('dmsDataExport.list.column.exportFileType'),
+      render: (type) => type || '-'
+    },
+    {
       dataIndex: 'desc',
       title: () => t('dmsDataExport.list.column.desc'),
       className: 'ellipsis-column-width',
