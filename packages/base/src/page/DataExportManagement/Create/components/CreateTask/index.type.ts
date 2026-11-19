@@ -18,6 +18,7 @@ export type SourceFormFieldsType = {
 export type MethodFormFieldsType = {
   sql: string;
   exportMethod: ExportMethodEnum;
+  exportFileType?: string;
   formatted?: boolean;
   originSql?: string;
 };

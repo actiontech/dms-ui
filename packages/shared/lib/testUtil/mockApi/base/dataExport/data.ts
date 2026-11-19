@@ -78,6 +78,25 @@ export const BatchGetDataExportTaskResponseData: IGetDataExportTask[] = [
     },
     export_type: 'SQL',
     export_file_type: 'CSV'
+  },
+  // 与 GetDataExportWorkflowResponseData.workflow_record.tasks 对齐，供列表二次拉取（FE-S3-03）
+  {
+    task_uid: '1752172791873933312',
+    db_info: {
+      uid: '1752583372904861696',
+      name: 'bl1',
+      db_type: '',
+      database_name: ''
+    },
+    status: GetDataExportTaskStatusEnum.init,
+    file_name: '',
+    audit_result: {
+      audit_level: '',
+      score: 100,
+      pass_rate: 1
+    },
+    export_type: 'SQL',
+    export_file_type: 'CSV'
   }
 ];
 
