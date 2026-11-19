@@ -376,6 +376,12 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             工单名称
                           </th>
                           <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            导出文件类型
+                          </th>
+                          <th
                             class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
@@ -508,6 +514,15 @@ exports[`test base/DataExport/List render batch close button When the user is no
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
@@ -544,6 +559,11 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             >
                               mysql-1_20240130113114
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            CSV
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -716,6 +736,11 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             >
                               mysql-2_20240130113114
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            CSV
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -1521,6 +1546,12 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                             工单名称
                           </th>
                           <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            导出文件类型
+                          </th>
+                          <th
                             class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
@@ -1662,13 +1693,22 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                                
                             </div>
                           </td>
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                         </tr>
                         <tr
                           class="ant-table-placeholder"
                         >
                           <td
                             class="ant-table-cell"
-                            colspan="10"
+                            colspan="11"
                           >
                             <div
                               class="ant-table-expanded-row-fixed"
@@ -2158,6 +2198,12 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             工单名称
                           </th>
                           <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            导出文件类型
+                          </th>
+                          <th
                             class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
@@ -2209,6 +2255,15 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -2355,6 +2410,11 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             >
                               mysql-1_20240130113114
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            CSV
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -2547,6 +2607,11 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             >
                               mysql-2_20240130113114
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            CSV
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -3687,6 +3752,12 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             工单名称
                           </th>
                           <th
+                            class="ant-table-cell"
+                            scope="col"
+                          >
+                            导出文件类型
+                          </th>
+                          <th
                             class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
@@ -3738,6 +3809,15 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                           class="ant-table-measure-row"
                           style="height: 0px; font-size: 0px;"
                         >
+                          <td
+                            style="padding: 0px; border: 0px; height: 0px;"
+                          >
+                            <div
+                              style="height: 0px; overflow: hidden;"
+                            >
+                               
+                            </div>
+                          </td>
                           <td
                             style="padding: 0px; border: 0px; height: 0px;"
                           >
@@ -3884,6 +3964,11 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             >
                               mysql-1_20240130113114
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            CSV
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -4076,6 +4161,11 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             >
                               mysql-2_20240130113114
                             </div>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            CSV
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"

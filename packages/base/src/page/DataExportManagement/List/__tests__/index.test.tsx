@@ -25,6 +25,13 @@ jest.mock('react-router-dom', () => {
   };
 });
 
+/** List → GetDataExportWorkflow → BatchGetDataExportTask，各 mock 延迟 3000ms */
+const flushListWithEnrich = async () => {
+  await act(async () => jest.advanceTimersByTime(3000));
+  await act(async () => jest.advanceTimersByTime(3000));
+  await act(async () => jest.advanceTimersByTime(3000));
+};
+
 describe('test base/DataExport/List', () => {
   let dbServiceTipsSpy: jest.SpyInstance;
   let exportWorkflowListSpy: jest.SpyInstance;
@@ -36,6 +43,8 @@ describe('test base/DataExport/List', () => {
     memberTipsSpy = userCenter.getMemberTips();
     dbServiceTipsSpy = dbServices.ListDBServicesTips();
     exportWorkflowListSpy = dataExport.ListDataExportWorkflows();
+    dataExport.GetDataExportWorkflow();
+    dataExport.BatchGetDataExportTask();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -72,7 +81,7 @@ describe('test base/DataExport/List', () => {
       fuzzy_keyword: '',
       project_uid: mockProjectInfo.projectID
     });
-    await act(async () => jest.advanceTimersByTime(3000));
+    await flushListWithEnrich();
 
     fireEvent.click(getBySelector('.custom-icon-refresh'));
     expect(exportWorkflowListSpy).toHaveBeenCalledTimes(2);
@@ -96,7 +105,7 @@ describe('test base/DataExport/List', () => {
     });
 
     const { container } = baseSuperRender(<ExportWorkflowList />);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await flushListWithEnrich();
     expect(container).toMatchSnapshot();
     expect(screen.queryByText('批量关闭')).not.toBeInTheDocument();
 
@@ -133,7 +142,7 @@ describe('test base/DataExport/List', () => {
 
     const batchCloseSpy = dataExport.batchCloseWorkflowAction();
     baseSuperRender(<ExportWorkflowList />);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await flushListWithEnrich();
 
     expect(screen.queryByText('批量关闭')).toBeInTheDocument();
     expect(screen.getByText('批量关闭').closest('button')).toBeDisabled();
@@ -182,7 +191,7 @@ describe('test base/DataExport/List', () => {
 
   it('render table filter items', async () => {
     const { container } = baseSuperRender(<ExportWorkflowList />);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await flushListWithEnrich();
     fireEvent.click(screen.getByText('待导出'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(exportWorkflowListSpy).toHaveBeenCalledTimes(2);
@@ -194,7 +203,7 @@ describe('test base/DataExport/List', () => {
       filter_by_status:
         ListDataExportWorkflowsFilterByStatusEnum.wait_for_export
     });
-    await act(async () => jest.advanceTimersByTime(3000));
+    await flushListWithEnrich();
 
     fireEvent.click(screen.getByText('筛选'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -235,7 +244,7 @@ describe('test base/DataExport/List', () => {
 
   it('should execute navigate function when clicked table row', async () => {
     baseSuperRender(<ExportWorkflowList />);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await flushListWithEnrich();
     fireEvent.click(screen.getByText(DataExportWorkflowList[0].workflow_name!));
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(

@@ -24,6 +24,13 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn()
 }));
 
+/** List → GetDataExportWorkflow → BatchGetDataExportTask，各 mock 延迟 3000ms */
+const flushListWithEnrich = async () => {
+  await act(async () => jest.advanceTimersByTime(3000));
+  await act(async () => jest.advanceTimersByTime(3000));
+  await act(async () => jest.advanceTimersByTime(3000));
+};
+
 describe('base/DataExportManagement/List workflow template filter', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
@@ -35,6 +42,8 @@ describe('base/DataExportManagement/List workflow template filter', () => {
     mockUseDbServiceDriver();
     mockUsePermission(undefined, { mockSelector: true });
     dataExport.mockAllApi();
+    dataExport.GetDataExportWorkflow();
+    dataExport.BatchGetDataExportTask();
     workflowTemplate.mockAllApi();
   });
 
@@ -46,7 +55,7 @@ describe('base/DataExportManagement/List workflow template filter', () => {
 
   it('should show template name column', async () => {
     baseSuperRender(<ExportWorkflowList />);
-    await act(async () => jest.advanceTimersByTime(3000));
+    await flushListWithEnrich();
     expect(screen.getByText('审批模板')).toBeInTheDocument();
     expect(
       screen.getByText(DataExportWorkflowList[0].workflow_template_name!)

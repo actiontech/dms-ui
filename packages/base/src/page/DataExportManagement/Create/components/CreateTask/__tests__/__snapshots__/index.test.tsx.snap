@@ -809,6 +809,82 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
               </div>
             </div>
             <div
+              class="ant-form-item has-required-style css-1jlm9cy"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-required ant-form-item-no-colon"
+                    for="exportFileType"
+                    title="导出格式"
+                  >
+                    导出格式
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-radio-group ant-radio-group-outline"
+                        id="exportFileType"
+                      >
+                        <label
+                          class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
+                        >
+                          <span
+                            class="ant-radio ant-radio-checked"
+                          >
+                            <input
+                              checked=""
+                              class="ant-radio-input"
+                              type="radio"
+                              value="CSV"
+                            />
+                            <span
+                              class="ant-radio-inner"
+                            />
+                          </span>
+                          <span>
+                            CSV
+                          </span>
+                        </label>
+                        <label
+                          class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
+                        >
+                          <span
+                            class="ant-radio"
+                          >
+                            <input
+                              class="ant-radio-input"
+                              type="radio"
+                              value="JSON"
+                            />
+                            <span
+                              class="ant-radio-inner"
+                            />
+                          </span>
+                          <span>
+                            JSON
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
               class="ant-form-item css-15d6abf"
             >
               <div
@@ -844,7 +920,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                             height="400px"
                             id="sql"
                             language="sql"
-                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":false}"
                             value="/* input your sql */"
                             width="100%"
                           />
@@ -1838,6 +1914,82 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
               </div>
             </div>
             <div
+              class="ant-form-item has-required-style css-1jlm9cy"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-required ant-form-item-no-colon"
+                    for="exportFileType"
+                    title="导出格式"
+                  >
+                    导出格式
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-radio-group ant-radio-group-outline"
+                        id="exportFileType"
+                      >
+                        <label
+                          class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
+                        >
+                          <span
+                            class="ant-radio ant-radio-checked"
+                          >
+                            <input
+                              checked=""
+                              class="ant-radio-input"
+                              type="radio"
+                              value="CSV"
+                            />
+                            <span
+                              class="ant-radio-inner"
+                            />
+                          </span>
+                          <span>
+                            CSV
+                          </span>
+                        </label>
+                        <label
+                          class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
+                        >
+                          <span
+                            class="ant-radio"
+                          >
+                            <input
+                              class="ant-radio-input"
+                              type="radio"
+                              value="JSON"
+                            />
+                            <span
+                              class="ant-radio-inner"
+                            />
+                          </span>
+                          <span>
+                            JSON
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
               class="ant-form-item css-15d6abf"
             >
               <div
@@ -1873,7 +2025,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                             height="400px"
                             id="sql"
                             language="sql"
-                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"wordWrap":"on","wrappingStrategy":"advanced","wrappingIndent":"indent","scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12,"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":false}"
                             value="/* input your sql */"
                             width="100%"
                           />

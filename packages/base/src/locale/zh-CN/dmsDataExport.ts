@@ -62,7 +62,10 @@ export default {
       },
       method: {
         title: '选择导出方式',
-        manualInput: '输入SQL语句'
+        manualInput: '输入SQL语句',
+        exportFileType: '导出格式',
+        exportFileTypeCSV: 'CSV',
+        exportFileTypeJSON: 'JSON'
       },
       action: {
         audit: '审核',
@@ -126,6 +129,7 @@ export default {
       name: '工单名称',
       dbService: '数据源',
       desc: '描述',
+      exportFileType: '导出文件类型',
       exportMethod: '导出方式',
       createUser: '创建人',
       createTime: '创建时间',

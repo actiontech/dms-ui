@@ -31,7 +31,11 @@ const useCreateExportTaskForm = () => {
     const dbType = sourceForm.getFieldValue('dbType');
 
     if (dbType && currentSQL !== SQL_EDITOR_PLACEHOLDER_VALUE) {
-      if (formatted && !isSupportLanguage(dbType)) {
+      // Mongo 等非 FormatLanguageSupport：美化为 no-op，避免 formatted=true 触发只读锁死（FE-S3-02）
+      if (!isSupportLanguage(dbType)) {
+        return;
+      }
+      if (formatted) {
         methodForm.setFieldsValue({
           sql: originSql,
           formatted: false
@@ -65,13 +69,17 @@ const useCreateExportTaskForm = () => {
       }
       return methodValues.originSql || methodValues.sql;
     };
+    const exportFileType =
+      methodValues.exportFileType === 'JSON' ? 'JSON' : 'CSV';
+
     return DataExportTask.AddDataExportTask({
       project_uid: projectID,
       data_export_tasks: [
         {
           database_name: sourceValues.schema,
           db_service_uid: sourceValues.dbService,
-          export_sql: getSql()
+          export_sql: getSql(),
+          export_file_type: exportFileType
         }
       ]
     })
