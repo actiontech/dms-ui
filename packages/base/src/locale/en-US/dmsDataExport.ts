@@ -59,7 +59,8 @@ export default {
       },
       source: {
         title: 'Select export target',
-        titleTips: 'Data export supports MySQL/Oracle/PG/SQL Server only',
+        titleTips:
+          'Data export supports MySQL/Oracle/PG/SQL Server/ClickHouse only',
         business: 'Business type',
         dbService: 'DB instance',
         schema: 'Database'

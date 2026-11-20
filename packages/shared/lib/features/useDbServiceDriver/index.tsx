@@ -11,6 +11,9 @@ import { Select } from 'antd';
 /** Local near-square icon adapted from gbase.svg; overrides 1×1 API placeholder for GBase-8a only. */
 const GBASE_8A_DB_TYPE = 'GBase-8a';
 const GBASE_8A_LOGO_URL = '/db_type_logo/gbase-8a.svg';
+/** Local logo for ClickHouse; API currently returns placeholder `/logo`. */
+const CLICKHOUSE_DB_TYPE = 'ClickHouse';
+const CLICKHOUSE_LOGO_URL = '/logo/clickhouse.svg';
 
 const resolveLogoUrlByDbType = (
   dbType: string,
@@ -18,6 +21,9 @@ const resolveLogoUrlByDbType = (
 ): string => {
   if (dbType === GBASE_8A_DB_TYPE) {
     return GBASE_8A_LOGO_URL;
+  }
+  if (dbType === CLICKHOUSE_DB_TYPE) {
+    return CLICKHOUSE_LOGO_URL;
   }
   return apiLogoPath ?? '';
 };
