@@ -1,8 +1,8 @@
 import {
   BasicInput,
   BasicSwitch,
-  FormItemNoLabel,
-  isSupportLanguage
+  FormItemLabel,
+  FormItemNoLabel
 } from '@actiontech/dms-kit';
 import { useMonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { whiteSpaceSql } from '@actiontech/dms-kit';
@@ -13,8 +13,11 @@ import { ModeSwitcher } from '@actiontech/dms-kit';
 import { PanelCardOutlined } from '@actiontech/icons';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/dms-kit';
 import CustomMonacoEditor from 'sqle/src/components/CustomMonacoEditor';
-import { useMemo } from 'react';
-import { Form } from 'antd';
+import { Form, Radio } from 'antd';
+
+const MONGODB_DB_TYPE = 'MongoDB';
+const EXPORT_FILE_TYPE_CSV = 'CSV';
+const EXPORT_FILE_TYPE_JSON = 'JSON';
 
 const ExportMethodFormItem: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'methodForm' | 'sourceForm'>
@@ -23,12 +26,11 @@ const ExportMethodFormItem: React.FC<
   const { editorDidMount } = useMonacoEditor(methodForm, {
     formName: 'sql'
   });
-  const formatted = Form.useWatch('formatted', methodForm);
   const dbType = Form.useWatch('dbType', sourceForm);
 
-  const isReadOnlyMode = useMemo(() => {
-    return formatted && !isSupportLanguage(dbType);
-  }, [formatted, dbType]);
+  const isMongoDb = dbType === MONGODB_DB_TYPE;
+  const editorLanguage = isMongoDb ? 'javascript' : 'sql';
+
   return (
     <>
       <FormItemNoLabel name="exportMethod" initialValue={ExportMethodEnum.sql}>
@@ -46,6 +48,30 @@ const ExportMethodFormItem: React.FC<
         />
       </FormItemNoLabel>
 
+      <FormItemLabel
+        className="has-required-style"
+        name="exportFileType"
+        initialValue={EXPORT_FILE_TYPE_CSV}
+        label={t('dmsDataExport.create.form.method.exportFileType')}
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.select', {
+              name: t('dmsDataExport.create.form.method.exportFileType')
+            })
+          }
+        ]}
+      >
+        <Radio.Group>
+          <Radio value={EXPORT_FILE_TYPE_CSV}>
+            {t('dmsDataExport.create.form.method.exportFileTypeCSV')}
+          </Radio>
+          <Radio value={EXPORT_FILE_TYPE_JSON}>
+            {t('dmsDataExport.create.form.method.exportFileTypeJSON')}
+          </Radio>
+        </Radio.Group>
+      </FormItemLabel>
+
       <FormItemNoLabel
         name="sql"
         initialValue={SQL_EDITOR_PLACEHOLDER_VALUE}
@@ -62,13 +88,13 @@ const ExportMethodFormItem: React.FC<
         <CustomMonacoEditor
           width="100%"
           height="400px"
-          language="sql"
+          language={editorLanguage}
           onMount={editorDidMount}
           options={{
             automaticLayout: true,
-            readOnly: isReadOnlyMode
+            // FE-S3-02：不因「不支持语言」只读锁死（含 Mongo）
+            readOnly: false
           }}
-          showAlert={isReadOnlyMode}
         />
       </FormItemNoLabel>
       <FormItemNoLabel name="formatted" hidden valuePropName="checked">

@@ -21,7 +21,6 @@ import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices'
 import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { formatterSQL } from '@actiontech/dms-kit';
 
 jest.mock('react-redux', () => {
   return {
@@ -173,18 +172,12 @@ describe('first', () => {
       await act(async () => jest.advanceTimersByTime(100));
     }
 
-    // 点击 SQL 美化按钮
+    // FE-S3-02：TiDB 等非 FormatLanguageSupport，美化为 no-op，SQL 保持原样
     const formatButton = screen.getByText('SQL美化');
-    fireEvent.click(formatButton);
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(sqlEditor).toHaveAttribute('value', formatterSQL(originalSql));
-    // 验证显示只读提示信息
     fireEvent.click(formatButton);
     await act(async () => jest.advanceTimersByTime(0));
     expect(sqlEditor).toHaveAttribute('value', originalSql);
 
-    fireEvent.click(formatButton);
-    await act(async () => jest.advanceTimersByTime(0));
     // 点击审核按钮
     const auditButton = screen.getByText('审 核');
     fireEvent.click(auditButton);
@@ -192,7 +185,7 @@ describe('first', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
 
-    // 验证：提交时应该使用原始 SQL，而不是格式化后的 SQL
+    // 验证：提交时应该使用原始 SQL
     expect(addDataExportTaskSpy).toHaveBeenCalledTimes(1);
     expect(addDataExportTaskSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
@@ -200,7 +193,8 @@ describe('first', () => {
         {
           database_name: 'test_schema',
           db_service_uid: '123123',
-          export_sql: originalSql // 应该使用原始 SQL，不是格式化后的
+          export_sql: originalSql,
+          export_file_type: 'CSV'
         }
       ]
     });

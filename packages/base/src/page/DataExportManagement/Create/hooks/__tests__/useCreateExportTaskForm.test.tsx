@@ -108,6 +108,7 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
   });
 
   it('should format sql when executed "formatSQLAction"', async () => {
+    (isSupportLanguage as jest.Mock).mockImplementation(() => true);
     const { result } = renderHook(() => useCreateExportTaskForm());
 
     render(<CustomCom {...result.current} />);
@@ -177,7 +178,8 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
         {
           database_name: 'schema',
           db_service_uid: '100',
-          export_sql: 'select 1;'
+          export_sql: 'select 1;',
+          export_file_type: 'CSV'
         }
       ]
     });
@@ -257,7 +259,8 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
         {
           database_name: 'schema',
           db_service_uid: '100',
-          export_sql: 'select 1;'
+          export_sql: 'select 1;',
+          export_file_type: 'CSV'
         }
       ]
     });

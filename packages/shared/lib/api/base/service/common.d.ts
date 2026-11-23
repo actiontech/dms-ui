@@ -1026,6 +1026,8 @@ export interface IDataExportTask {
 
   db_service_uid: string;
 
+  export_file_type?: string;
+
   export_sql?: string;
 }
 
@@ -2197,6 +2199,8 @@ export interface IListDataExportWorkflow {
   db_service_info?: IDBServiceUidWithNameInfo[];
 
   desc?: string;
+
+  export_file_type?: string;
 
   exported_at?: string;
 
