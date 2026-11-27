@@ -18,6 +18,15 @@ const useTableRequestError = () => {
     return request
       .then((response) => {
         setRequestErrorMessage('');
+        if (
+          typeof response.data !== 'object' ||
+          response.data === null
+        ) {
+          setRequestErrorMessage(
+            'Unexpected response format: expected JSON but received non-object data'
+          );
+          return { list: [], total: 0, otherData: {} };
+        }
         if ('data' in response.data && 'total_nums' in response.data) {
           const { data, total_nums, ...otherData } = response.data;
           return {
