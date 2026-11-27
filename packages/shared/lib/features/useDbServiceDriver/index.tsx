@@ -15,6 +15,10 @@ const GBASE_8A_LOGO_URL = '/db_type_logo/gbase-8a.svg';
 const CLICKHOUSE_DB_TYPE = 'ClickHouse';
 const CLICKHOUSE_LOGO_URL = '/logo/clickhouse.svg';
 
+/** Local icon for ClickHouse; API maps `/logo/clickhouse.*` but static file may be missing → SPA HTML 裂图. */
+const CLICKHOUSE_DB_TYPE = 'ClickHouse';
+const CLICKHOUSE_LOGO_URL = '/db_type_logo/clickhouse.svg';
+
 const resolveLogoUrlByDbType = (
   dbType: string,
   apiLogoPath?: string | null

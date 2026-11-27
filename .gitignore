@@ -52,5 +52,7 @@ es
 verdaccio
 ftp-data
 
+# local non-delivery artifacts
+zjrc_3.2408/
 
 /scripts/cli/dms-kit-publish/docs
